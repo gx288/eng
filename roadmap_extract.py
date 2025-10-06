@@ -18,7 +18,7 @@ config = {
     "password": "1234567",
     "max_consecutive_fails": 100,
     "step_sizes": [1, 10, 100, 1000],
-    "target_valid_ids": 20
+    "target_valid_ids": 10000
 }
 
 
@@ -96,7 +96,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_file, scope
 client = gspread.authorize(creds)
 
 # Open the Google Sheet
-sheet_id = "1ApE4EKFAXFXyLWWByYWSB9oNqLJGCAJcCKCA8HAReI8"
+sheet_id = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
 try:
     sheet = client.open_by_key(sheet_id).sheet1
     # Write headers only if the sheet is empty
