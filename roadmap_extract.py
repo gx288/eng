@@ -13,12 +13,12 @@ import re
 
 # Configuration from file
 config = {
-    "start_id": "61442HN",
+    "start_id": "59555HN",
     "direction": "decrease",
     "password": "1234567",
     "max_consecutive_fails": 100,
     "step_sizes": [1, 10, 100, 1000],
-    "target_valid_ids": 10000
+    "target_valid_ids": 20
 }
 
 
