@@ -13,7 +13,7 @@ import re
 
 # Configuration from file
 config = {
-    "start_id": "61613HN",
+    "start_id": "61462HN",
     "direction": "decrease",
     "password": "1234567",
     "max_consecutive_fails": 100,
