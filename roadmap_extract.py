@@ -15,11 +15,11 @@ import shutil
 
 # Default configuration
 default_config = {
-    "start_id": "61655HN",
+    "start_id": "58555HN",
     "direction": "decrease",
     "password": "1234567",
     "max_consecutive_fails": 100,
-    "step_sizes": [10, 100, 1000],
+    "step_sizes": [1, 10, 100, 1000],
     "target_valid_ids": 10
 }
 
@@ -100,13 +100,36 @@ if not os.path.exists(credentials_file):
     if github_credentials:
         with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
             f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Using GOOGLE_CREDENTIALS from environment (GitHub Actions)\n")
-        with open(credentials_file, "w", encoding="utf-8") as f:
-            json.dump(json.loads(github_credentials), f)
+        try:
+            # Attempt to decode base64-encoded credentials
+            credentials_content = base64.b64decode(github_credentials).decode('utf-8')
+            with open(credentials_file, "w", encoding="utf-8") as f:
+                f.write(credentials_content)
+        except Exception as e:
+            error_msg = f"Failed to decode GOOGLE_CREDENTIALS: {str(e)}"
+            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
+                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {error_msg}\n")
+            raise Exception(error_msg)
     else:
-        error_msg = f"Google Sheets credentials file '{credentials_file}' not found."
+        error_msg = f"Google Sheets credentials file '{credentials_file}' not found and GOOGLE_CREDENTIALS not set."
         with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
             f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {error_msg}\n")
         raise FileNotFoundError(error_msg)
+
+# Validate credentials.json
+try:
+    with open(credentials_file, "r", encoding="utf-8") as f:
+        json.load(f)  # Validate JSON
+        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f_log:
+            f_log.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Credentials JSON is valid\n")
+except json.JSONDecodeError as e:
+    error_msg = f"Invalid JSON in {credentials_file}: {str(e)}"
+    with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
+        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {error_msg}\n")
+        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Contents of {credentials_file} (first 1000 chars):\n")
+        with open(credentials_file, "r", encoding="utf-8") as cred_file:
+            f.write(cred_file.read(1000) + "...\n")
+    raise
 
 # Set up Google Sheets API
 with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
@@ -116,7 +139,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_file, scope
 client = gspread.authorize(creds)
 
 # Open the Google Sheet
-sheet_id = "1ApE4EKFAXFXyLWWByYWSB9oNqLJGCAJcCKCA8HAReI8"
+sheet_id = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
 try:
     sheet = client.open_by_key(sheet_id).sheet1
     # Write headers only if the sheet is empty
