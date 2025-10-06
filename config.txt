@@ -1,0 +1,5 @@
+start_id=61655HN
+direction=decrease
+password=1234567
+max_consecutive_fails=100
+step_sizes=10,100,1000
