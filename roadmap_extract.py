@@ -13,7 +13,7 @@ import re
 
 # Configuration from file
 config = {
-    "start_id": "61462HN",
+    "start_id": "61442HN",
     "direction": "decrease",
     "password": "1234567",
     "max_consecutive_fails": 100,
@@ -57,7 +57,7 @@ def clear_browser_cache(driver):
 
 # Set up Selenium WebDriver
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')  # Uncomment for GitHub Actions
+# options.add_argument('--headless')  # Uncomment for GitHub Actions
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
