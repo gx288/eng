@@ -1,15 +1,7 @@
 name: Selenium Login Test
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC (optional)
-  workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch:  # Only runs when manually triggered
 
 jobs:
   test:
@@ -26,7 +18,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      # Install Chrome
+      # Install Google Chrome
       - name: Install Google Chrome
         run: |
           wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
