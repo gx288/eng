@@ -1,4 +1,4 @@
-name: Selenium Login Test
+name: Selenium Roadmap Extract
 
 on:
   workflow_dispatch:
@@ -28,8 +28,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Add Google Sheets credentials
+        run: echo "${{ secrets.GOOGLE_CREDENTIALS }}" > credentials.json
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+
       - name: Run Selenium script
-        run: python script.py
+        run: python roadmap_extract.py
+
+      - name: Upload text file
+        uses: actions/upload-artifact@v4
+        with:
+          name: student-roadmap
+          path: student_roadmap.txt
 
       - name: Upload screenshot on failure
         if: failure()
