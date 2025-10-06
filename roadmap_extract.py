@@ -15,11 +15,11 @@ import shutil
 
 # Default configuration
 default_config = {
-    "start_id": "59555HN",
+    "start_id": "61655HN",
     "direction": "decrease",
     "password": "1234567",
     "max_consecutive_fails": 100,
-    "step_sizes": [1, 10, 100, 1000],
+    "step_sizes": [10, 100, 1000],
     "target_valid_ids": 10
 }
 
@@ -78,7 +78,9 @@ options = webdriver.ChromeOptions()
 options.add_argument(f'--user-data-dir={temp_user_data_dir}')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
-# options.add_argument('--headless')  # Uncomment for GitHub Actions
+options.add_argument('--headless')  # Enable headless mode for GitHub Actions
+with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
+    f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Chrome options: {options.arguments}\n")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 # Initialize variables
