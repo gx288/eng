@@ -42,12 +42,32 @@ try:
     login_button.click()
 
     print("Waiting for page to load after login...")
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+    # Wait for a non-login page to confirm successful login
+    WebDriverWait(driver, 30).until_not(
+        EC.url_contains("login")
+    )
+    print(f"Current URL after login: {driver.current_url}")
+
+    # Save cookies to maintain session
+    cookies = driver.get_cookies()
+    print("Cookies saved:", cookies)
 
     # Navigate to roadmap page
     print("Navigating to roadmap page...")
     driver.get("https://apps.cec.com.vn/student-roadmap/overview")
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "roadmap-container")))
+    
+    # Add cookies back to ensure session persistence
+    for cookie in cookies:
+        driver.add_cookie(cookie)
+    
+    # Refresh the page to apply cookies
+    driver.refresh()
+    
+    print("Waiting for roadmap page to load...")
+    WebDriverWait(driver, 30).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "roadmap-container"))
+    )
+    print(f"Current URL after navigation: {driver.current_url}")
 
     # Extract student information
     print("Extracting student information...")
@@ -59,7 +79,8 @@ try:
         student_info[label] = value
 
     # Extract username from header
-    username = driver.find_element(By.XPATH, "//p[contains(@class, 'fs-18 font-weight-bold')]").text.strip().replace("Hi, ", "")
+    username_elements = driver.find_elements(By.XPATH, "//p[contains(@class, 'fs-18 font-weight-bold')]")
+    username = username_elements[0].text.strip().replace("Hi, ", "") if username_elements else "Unknown"
 
     # Extract roadmap details
     print("Extracting roadmap details...")
@@ -81,7 +102,8 @@ try:
         })
 
     # Extract final commitment
-    final_commitment = driver.find_element(By.CLASS_NAME, "final").text.strip()
+    final_commitment_elements = driver.find_elements(By.CLASS_NAME, "final")
+    final_commitment = final_commitment_elements[0].text.strip() if final_commitment_elements else "Unknown"
 
     # Write to text file
     print("Writing to text file...")
