@@ -4839,3 +4839,5 @@ Unit 1 - Lesson 1 (page 1, 2): https://drive.google.com/drive/folders/1B4l6BtNW-
 [2025-10-08 07:29:00] Homework content for lesson 1: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
 Links:
 Unit 1 - Lesson 1 (page 1, 2): https://drive.google.com/drive/folders/1B4l6BtNW-LoUdHbvIHb0YJL5PTmdrAak?usp=sharing
+[2025-10-08 07:33:15] Lỗi đăng nhập: Vẫn ở trang login
+[2025-10-08 07:33:15] Lỗi đăng nhập: Login failed
