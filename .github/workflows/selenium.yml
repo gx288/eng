@@ -56,10 +56,3 @@ jobs:
           git add processed.json class_info_log.txt
           git commit -m "Update processed.json and logs" || echo "No changes to commit"
           git push || echo "Push failed, likely no changes or already up-to-date"
-
-      - name: Upload logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: logs
-          path: class_info_log.txt
