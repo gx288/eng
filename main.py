@@ -88,7 +88,7 @@ def login(driver):
         )
         log_message("Nhấn nút đăng nhập...")
         login_button.click()
-        time.sleep(5)
+        time.sleep(2)
 
         try:
             error_message = WebDriverWait(driver, 10).until(
@@ -173,7 +173,7 @@ def process_class_id(class_id, course_name, processed):
     driver = None
     try:
         options = webdriver.ChromeOptions()
-        # options.add_argument("--headless")  # Comment out for local debug
+        options.add_argument("--headless")  # Comment out for local debug
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
