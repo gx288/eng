@@ -4845,3 +4845,28 @@ Unit 1 - Lesson 1 (page 1, 2): https://drive.google.com/drive/folders/1B4l6BtNW-
 [2025-10-08 08:42:31] Scheduling hourly report check
 [2025-10-08 08:42:31] Entering main loop
 [2025-10-08 08:42:31] Starting schedule loop
+[2025-10-08 08:44:55] Starting script
+[2025-10-08 08:44:55] Starting report check for Class ID 11005
+[2025-10-08 08:44:55] Loaded processed.json: {'Reading Skills 1': {'11260': {'last_lesson': 33, 'total_lessons': 34, 'has_errors': True}, '10997': {'last_lesson': -1, 'total_lessons': 34, 'has_errors': False}}, 'Summer Kindy 4': {'11236': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': False}}, 'Summer Smart 3': {'11217': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': True}}, 'Summer Smart 4': {'11209': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': False}}, 'Summer Smart 2': {'11191': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': True}}, 'Summer Kindy 3': {'11190': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': True}}, 'Summer Smart 1': {'11184': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': False}}, 'Summer Smart 7': {'11174': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': False}}, 'Summer Smart 5': {'11167': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': False}}, 'Summer Smart 6': {'11143': {'last_lesson': 13, 'total_lessons': 14, 'has_errors': False}}, "Reader's Wonderland 3.2": {'11064': {'last_lesson': 7, 'total_lessons': 8, 'has_errors': False}}, "Reader's Wonderland 3.1": {'11053': {'last_lesson': 7, 'total_lessons': 8, 'has_errors': False}}, 'Reading Skills 2': {'11018': {'last_lesson': 30, 'total_lessons': 31, 'has_errors': True}}, 'Cambridge Literacy Ladder 1': {'11006': {'last_lesson': 28, 'total_lessons': 29, 'has_errors': True}}, 'Discover 2': {'10973': {'last_lesson': 38, 'total_lessons': 39, 'has_errors': True}}, "Reader's Wonderland 2.3": {'10954': {'last_lesson': 7, 'total_lessons': 8, 'has_errors': True}}, 'Kindergarten 4': {'10857': {'last_lesson': 40, 'total_lessons': 41, 'has_errors': True}}, 'Discover 1': {'10794': {'last_lesson': 28, 'total_lessons': 29, 'has_errors': True}}, 'Cambridge Literacy Ladder Foundation': {'10793': {'last_lesson': 65, 'total_lessons': 66, 'has_errors': True}}, 'Outing Think & Write': {'10756': {'last_lesson': 0, 'total_lessons': 1, 'has_errors': False}}, 'English Smart 2 - Look 2': {'10660': {'last_lesson': 0, 'total_lessons': 31, 'has_errors': False}}, 'Discover 5': {'10739': {'last_lesson': 0, 'total_lessons': 48, 'has_errors': False}}}
+[2025-10-08 08:44:55] Initializing Chrome WebDriver
+[2025-10-08 08:45:05] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-08 08:45:10] Entering username: 61655HN
+[2025-10-08 08:45:10] Entering password
+[2025-10-08 08:45:11] Clicking login button
+[2025-10-08 08:45:16] Login successful
+[2025-10-08 08:45:16] Navigating to class detail page: https://apps.cec.com.vn/student-calendar/class-detail?classID=11005
+[2025-10-08 08:45:20] Waiting for page to load
+[2025-10-08 08:45:25] Scrolled to bottom of page
+[2025-10-08 08:45:25] Counting report elements
+[2025-10-08 08:45:25] Found 48 reports for Class ID 11005
+[2025-10-08 08:45:25] New reports detected (current: 48, last: 0)
+[2025-10-08 08:45:25] Preparing to send Telegram notification
+[2025-10-08 08:45:25] Sending Telegram message: Hùng ơi, có 48 report cho lớp học CEC!
+Class ID: 11005
+[2025-10-08 08:45:31] Telegram notification sent successfully
+[2025-10-08 08:45:31] Updating Google Sheet with Class ID 11005, 48 reports
+[2025-10-08 08:45:32] Updated Google Sheet successfully: Class ID 11005, 48 reports at 2025-10-08 08:45:25
+[2025-10-08 08:45:32] Saving processed data to processed.json
+[2025-10-08 08:45:32] Saved processed.json successfully
+[2025-10-08 08:45:32] Git repository detected
+[2025-10-08 08:45:32] Committing and pushing changes to GitHub
