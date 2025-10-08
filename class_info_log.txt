@@ -4870,3 +4870,6 @@ Class ID: 11005
 [2025-10-08 08:45:32] Saved processed.json successfully
 [2025-10-08 08:45:32] Git repository detected
 [2025-10-08 08:45:32] Committing and pushing changes to GitHub
+[2025-10-08 08:45:32] Pushed processed.json and class_info_log.txt successfully
+[2025-10-08 08:45:32] Closing WebDriver
+[2025-10-08 08:45:32] Script completed
