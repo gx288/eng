@@ -3,7 +3,7 @@ name: Scrape Classes
 on:
   schedule:
     - cron: '0 0 * * *'  # Hàng ngày lúc 00:00 UTC
-  workflow_dispatch:  # Cho phép trigger manual
+  workflow_dispatch:
 
 jobs:
   scrape:
@@ -12,7 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # Cần để push processed.json và logs
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Ensure full Git history
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,10 +34,11 @@ jobs:
         env:
           CEC_USERNAME: ${{ secrets.CEC_USERNAME }}
           CEC_PASSWORD: ${{ secrets.CEC_PASSWORD }}
-        run: python -u main.py  # Thêm -u để unbuffer output
+          PYTHONUNBUFFERED: 1
+        run: python -u main.py
 
       - name: Commit and push changes
-        if: always()  # Chạy kể cả khi job fail
+        if: always()
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
