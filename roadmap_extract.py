@@ -1,331 +1,381 @@
+import pandas as pd
+from datetime import datetime
+import json
+import shutil
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
+from selenium.webdriver.common.keys import Keys
 import time
+import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-import os
-import json
-import re
-import tempfile
-import shutil
+import requests
+from urllib.parse import urlparse
+from webdriver_manager.chrome import ChromeDriverManager
+from multiprocessing import Pool, cpu_count
 
-# Default configuration
-default_config = {
-    "start_id": "58555HN",
-    "direction": "decrease",
-    "password": "1234567",
-    "max_consecutive_fails": 100,
-    "step_sizes": [1, 10, 100, 1000],
-    "target_valid_ids": 10
-}
+# Configuration
+CSV_FILE = "id.csv"
+PROCESSED_FILE = "processed.json"
+CREDENTIALS_FILE = "credentials.json"  # Will come from GitHub Secrets
+SHEET_ID = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
+SHEET_NAME = "Trang tính3"
+SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
-# Read or create config file
-config_file = "config.json"
-if os.path.exists(config_file):
-    with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Reading configuration from {config_file}\n")
-    with open(config_file, "r", encoding="utf-8") as f:
-        config = json.load(f)
-else:
-    with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Config file {config_file} not found, creating with default configuration\n")
-    config = default_config
-    with open(config_file, "w", encoding="utf-8") as f:
-        json.dump(config, f, indent=4)
+def log_message(message):
+    timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+    formatted_message = f"[{timestamp}] {message}"
+    print(formatted_message)
+    with open("class_info_log.txt", "a", encoding="utf-8") as f:
+        f.write(f"{formatted_message}\n")
 
-def generate_next_id(current_id, direction, step):
-    """Generate the next ID based on direction and step size."""
-    match = re.match(r"(\d+)([A-Z]+)", current_id)
-    if not match:
-        raise ValueError(f"Invalid ID format: {current_id}")
-    
-    number, suffix = match.groups()
-    number = int(number)
-    
-    if direction == "decrease":
-        next_number = number - step
-    else:
-        next_number = number + step
-    
-    if next_number < 0:
-        raise ValueError("ID number cannot go below 0")
-    
-    return f"{next_number}{suffix}"
-
-def clear_browser_cache(driver):
-    """Clear browser cookies and cache."""
+def check_doc_accessibility(url):
     try:
-        driver.delete_all_cookies()
-        driver.execute_script("window.localStorage.clear();")
-        driver.execute_script("window.sessionStorage.clear();")
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Browser cache and cookies cleared.\n")
+        if "docs.google.com/document" in url:
+            doc_id = urlparse(url).path.split('/d/')[1].split('/')[0]
+            export_url = f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
+            response = requests.head(export_url, allow_redirects=True, timeout=10)
+            if response.status_code == 200:
+                return True, export_url
+            elif response.status_code in (401, 403):
+                return False, "Requires authentication"
+            elif response.status_code == 404:
+                return False, "Deleted or not found"
+            else:
+                return False, f"HTTP {response.status_code}"
+        return False, "Not a Google Docs URL"
     except Exception as e:
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Error clearing cache: {str(e)}\n")
+        return False, str(e)
 
-# Create a temporary directory for Chrome user data
-temp_user_data_dir = tempfile.mkdtemp()
-with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-    f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Using temporary user data directory: {temp_user_data_dir}\n")
+def login(driver):
+    driver.get("https://apps.cec.com.vn/login")
+    current_id = os.getenv("USERNAME", "40183HN")  # From GitHub Secrets
+    password = os.getenv("PASSWORD", "1234567")   # From GitHub Secrets
+    try:
+        username_field = WebDriverWait(driver, 30).until(
+            EC.visibility_of_element_located((By.ID, "input-14"))
+        )
+        log_message(f"Đang nhập username: {current_id}")
+        username_field.clear()
+        username_field.send_keys(current_id)
 
-# Set up Selenium WebDriver
-options = webdriver.ChromeOptions()
-options.add_argument(f'--user-data-dir={temp_user_data_dir}')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-options.add_argument('--headless')  # Enable headless mode for GitHub Actions
-with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-    f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Chrome options: {options.arguments}\n")
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        password_field = WebDriverWait(driver, 30).until(
+            EC.visibility_of_element_located((By.ID, "input-18"))
+        )
+        log_message("Đang nhập password...")
+        password_field.clear()
+        password_field.send_keys(password)
 
-# Initialize variables
-consecutive_fails = 0
-valid_ids_found = 0
-current_id = config["start_id"]
-password = config["password"]
-step_index = 0
-step_sizes = config["step_sizes"]
-max_consecutive_fails = config["max_consecutive_fails"]
-target_valid_ids = config["target_valid_ids"]
+        login_button = WebDriverWait(driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))
+        )
+        log_message("Nhấn nút đăng nhập...")
+        login_button.click()
 
-# Check for credentials.json
-credentials_file = "credentials.json"
-if not os.path.exists(credentials_file):
-    github_credentials = os.getenv("GOOGLE_CREDENTIALS")
-    if github_credentials:
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Using GOOGLE_CREDENTIALS from environment (GitHub Actions)\n")
+        time.sleep(5)
+    except Exception as e:
+        log_message(f"Lỗi khi đăng nhập: {str(e)}")
+        raise
+
+def update_google_sheet(row_data, class_id, lesson_number):
+    try:
+        scope = SCOPES
+        creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, scope)
+        client = gspread.authorize(creds)
+        sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
+        sheet.append_row(row_data)
+        log_message(f"Đã cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}")
+        return True
+    except Exception as e:
+        log_message(f"Lỗi khi cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
+        return False
+
+def process_class_id(args):
+    class_id, course_name = args
+    invalid = False
+    has_errors = False
+    driver = None
+    folder_name = None
+    try:
+        options = webdriver.ChromeOptions()
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--start-maximized")
+        driver = webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
+        login(driver)
+        url = f"https://apps.cec.com.vn/student-calendar/class-detail?classID={class_id}"
+        driver.get(url)
+        log_message(f"Đang truy cập trang: {url} (Class ID {class_id})")
+        time.sleep(3)
+
+        # Extract class code
         try:
-            # Attempt to decode base64-encoded credentials
-            credentials_content = base64.b64decode(github_credentials).decode('utf-8')
-            with open(credentials_file, "w", encoding="utf-8") as f:
-                f.write(credentials_content)
+            class_code_element = WebDriverWait(driver, 20).until(
+                EC.presence_of_element_located((By.XPATH, "//h2[@data-v-50ef298c]/div[@data-v-50ef298c]"))
+            )
+            class_code = class_code_element.text.strip()
+            log_message(f"Lấy được class code: {class_code} (Class ID {class_id})")
         except Exception as e:
-            error_msg = f"Failed to decode GOOGLE_CREDENTIALS: {str(e)}"
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {error_msg}\n")
-            raise Exception(error_msg)
-    else:
-        error_msg = f"Google Sheets credentials file '{credentials_file}' not found and GOOGLE_CREDENTIALS not set."
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {error_msg}\n")
-        raise FileNotFoundError(error_msg)
+            log_message(f"Lỗi khi lấy class code cho class ID {class_id}: {str(e)}")
+            class_code = "Error"
+            invalid = True
+            has_errors = True
 
-# Validate credentials.json
-try:
-    with open(credentials_file, "r", encoding="utf-8") as f:
-        json.load(f)  # Validate JSON
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f_log:
-            f_log.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Credentials JSON is valid\n")
-except json.JSONDecodeError as e:
-    error_msg = f"Invalid JSON in {credentials_file}: {str(e)}"
-    with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {error_msg}\n")
-        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Contents of {credentials_file} (first 1000 chars):\n")
-        with open(credentials_file, "r", encoding="utf-8") as cred_file:
-            f.write(cred_file.read(1000) + "...\n")
-    raise
-
-# Set up Google Sheets API
-with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-    f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Setting up Google Sheets API...\n")
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_file, scope)
-client = gspread.authorize(creds)
-
-# Open the Google Sheet
-sheet_id = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
-try:
-    sheet = client.open_by_key(sheet_id).sheet1
-    # Write headers only if the sheet is empty
-    if not sheet.get_all_values():
-        headers = ["Username", "Học sinh", "Mã học sinh", "DOB", "Start date", "Trường học", "Nhân viên tư vấn",
-                   "Date", "Note", "Course Name", "Level", "Duration", "Final Commitment"]
-        sheet.append_row(headers)
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Wrote headers to Google Sheet\n")
-except gspread.exceptions.SpreadsheetNotFound:
-    error_msg = f"Google Sheet with ID '{sheet_id}' not found or not accessible."
-    with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {error_msg}\n")
-    raise Exception(error_msg)
-
-try:
-    while valid_ids_found < target_valid_ids and consecutive_fails < max_consecutive_fails:
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"\n[{time.strftime('%Y-%m-%d %H:%M:%S')}] Attempting login with ID: {current_id}\n")
+        # Extract course name (confirm)
         try:
-            clear_browser_cache(driver)
-            driver.get("https://apps.cec.com.vn/login")
-
-            username_field = WebDriverWait(driver, 20).until(
-                EC.visibility_of_element_located((By.ID, "input-14"))
+            course_name_element = WebDriverWait(driver, 20).until(
+                EC.presence_of_element_located((By.XPATH, "//div[@data-v-50ef298c and contains(@class, 'col-md-4 col') and text()='Course name']/following-sibling::div[@data-v-50ef298c and contains(@class, 'col-md-8 col')]"))
             )
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Entering username: {current_id}\n")
-            username_field.clear()
-            username_field.send_keys(current_id)
+            extracted_course_name = course_name_element.text.strip()
+            log_message(f"Lấy được course name: {extracted_course_name} (Class ID {class_id})")
+            if extracted_course_name != course_name:
+                log_message(f"Course name mismatch for class ID {class_id}: expected {course_name}, got {extracted_course_name}")
+                invalid = True
+                has_errors = True
+        except Exception as e:
+            log_message(f"Lỗi khi lấy course name cho class ID {class_id}: {str(e)}")
+            invalid = True
+            has_errors = True
 
-            password_field = WebDriverWait(driver, 20).until(
-                EC.visibility_of_element_located((By.ID, "input-18"))
-            )
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Entering password...\n")
-            password_field.clear()
-            password_field.send_keys(password)
+        if invalid:
+            return None, None, has_errors
 
-            login_button = WebDriverWait(driver, 20).until(
-                EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))
-            )
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Clicking login button...\n")
-            login_button.click()
+        report_links = []
+        homework_contents = []
 
-            # Check for login failure
+        # Collect all report links and homework data
+        lesson_index = 0
+        max_retries = 3
+        while True:
             try:
-                WebDriverWait(driver, 5).until(
-                    EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'The account or password you enter is not correct')]"))
+                # Re-fetch lesson rows to handle page reloads
+                lesson_rows = WebDriverWait(driver, 20).until(
+                    EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr"))
                 )
-                with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                    f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Login failed for ID {current_id}: The account or password is incorrect\n")
-                consecutive_fails += 1
-                if consecutive_fails % 10 == 0 and step_index < len(step_sizes) - 1:
-                    step_index += 1
-                    with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Increasing step size to {step_sizes[step_index]} due to {consecutive_fails} consecutive fails.\n")
-                current_id = generate_next_id(current_id, config["direction"], step_sizes[step_index])
-                continue
-            except:
-                pass
+                if lesson_index >= len(lesson_rows):
+                    break  # Exit loop when all lessons are processed
 
-            WebDriverWait(driver, 30).until_not(
-                EC.url_contains("login")
-            )
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Current URL after login: {driver.current_url}\n")
+                row = lesson_rows[lesson_index]
+                retry_count = 0
+                lesson_has_error = False
+                while retry_count < max_retries:
+                    try:
+                        lesson_number = row.find_element(By.XPATH, "./td[4]").text.strip()
+                        log_message(f"Processing lesson {lesson_number} for class ID {class_id}")
 
-            driver.get("https://apps.cec.com.vn/student-roadmap/overview")
-            WebDriverWait(driver, 30).until(
-                EC.presence_of_element_located((By.CLASS_NAME, "roadmap-container"))
-            )
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Current URL after navigation: {driver.current_url}\n")
+                        # Get report link
+                        report_link = "No report available"
+                        try:
+                            report_button = row.find_element(By.XPATH, ".//i[@data-v-50ef298c and contains(@class, 'isax-card-edit')]/parent::a")
+                            report_link = report_button.get_attribute('href')
+                            log_message(f"Lấy được report link cho lesson {lesson_number}: {report_link} (Class ID {class_id})")
+                            if "docs.google.com/document" in report_link:
+                                is_accessible, result = check_doc_accessibility(report_link)
+                                if not is_accessible:
+                                    log_message(f"Invalid report link for lesson {lesson_number}: {result} (Class ID {class_id})")
+                                    lesson_has_error = True
+                                    has_errors = True
+                            else:
+                                log_message(f"Invalid report link format for lesson {lesson_number}: {report_link} (Class ID {class_id})")
+                                lesson_has_error = True
+                                has_errors = True
+                        except Exception as e:
+                            log_message(f"Lỗi khi lấy report link cho lesson {lesson_number}: {str(e)} (Class ID {class_id})")
+                            lesson_has_error = True
+                            has_errors = True
 
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Extracting student information...\n")
-            student_info = {}
-            info_elements = driver.find_elements(By.XPATH, "//div[@class='list-info']//div[@class='item']")
-            for item in info_elements:
-                label = item.find_element(By.TAG_NAME, "h4").text.strip()
-                value = item.find_element(By.XPATH, "./div[@class='row']/div[2]").text.strip()
-                student_info[label] = value
+                        # Get homework popup
+                        homework_content = "No homework available"
+                        try:
+                            # Re-fetch row to avoid stale element
+                            lesson_rows = WebDriverWait(driver, 20).until(
+                                EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr"))
+                            )
+                            row = lesson_rows[lesson_index]
+                            homework_button = row.find_element(By.XPATH, ".//i[@data-v-50ef298c and contains(@class, 'isax-book-square')]")
+                            homework_button.click()
+                            log_message(f"Đã nhấn nút homework cho class ID {class_id}, lesson {lesson_number}")
+                            time.sleep(2)
 
-            username_elements = driver.find_elements(By.XPATH, "//p[contains(@class, 'fs-18 font-weight-bold')]")
-            username = username_elements[0].text.strip().replace("Hi, ", "") if username_elements else current_id
+                            popup = WebDriverWait(driver, 20).until(
+                                EC.visibility_of_element_located((By.CSS_SELECTOR, ".v-dialog--active"))
+                            )
+                            header = popup.find_element(By.CSS_SELECTOR, ".v-toolbar__title").text.strip()
+                            text_actions = [elem.text.strip() for elem in popup.find_elements(By.CSS_SELECTOR, ".text-action")]
+                            link_actions = popup.find_elements(By.CSS_SELECTOR, ".link-action")
+                            homework_links = []
+                            for link in link_actions:
+                                href = link.get_attribute('href')
+                                text = link.text.strip()
+                                homework_links.append(f"{text}: {href}")
+                                # Check non-Drive, non-Docs links (e.g., Quizlet)
+                                if 'docs.google.com' not in href and 'drive.google.com' not in href:
+                                    try:
+                                        response = requests.head(href, allow_redirects=True, timeout=10)
+                                        if response.status_code != 200:
+                                            log_message(f"Invalid homework link for lesson {lesson_number}: {href} (HTTP {response.status_code}) (Class ID {class_id})")
+                                            lesson_has_error = True
+                                            has_errors = True
+                                    except Exception as e:
+                                        log_message(f"Error checking homework link for lesson {lesson_number}: {href} ({str(e)}) (Class ID {class_id})")
+                                        lesson_has_error = True
+                                        has_errors = True
 
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Extracting roadmap details...\n")
-            roadmap_entries = []
-            roadmap_elements = driver.find_elements(By.XPATH, "//div[@class='roadmap']//div[@style='display: flex;']")
-            for entry in roadmap_elements:
-                date = entry.find_element(By.CLASS_NAME, "date").text.strip()
-                note = entry.find_element(By.CLASS_NAME, "note").text.strip()
-                subtext = entry.find_element(By.CLASS_NAME, "subtext").text.strip()
-                course_info = entry.find_elements(By.XPATH, ".//div[@class='rectangle']/p")
-                course_name = course_info[0].text.strip()
-                level = course_info[1].text.strip()
-                roadmap_entries.append({
-                    "Date": date,
-                    "Note": note,
-                    "Course Name": course_name,
-                    "Level": level,
-                    "Duration": subtext
-                })
+                            homework_content = f"Homework Header: {header}\n"
+                            if text_actions:
+                                homework_content += "Text Announcements:\n" + "\n".join(text_actions) + "\n"
+                            if homework_links:
+                                homework_content += "Links:\n" + "\n".join(homework_links) + "\n"
 
-            final_commitment_elements = driver.find_elements(By.CLASS_NAME, "final")
-            final_commitment = final_commitment_elements[0].text.strip() if final_commitment_elements else "Unknown"
+                            # Close popup
+                            try:
+                                cancel_button = popup.find_element(By.XPATH, ".//button[.//span[contains(text(), 'Cancel')]]")
+                                cancel_button.click()
+                                log_message(f"Đã đóng popup homework cho lesson {lesson_number} (Class ID {class_id})")
+                            except NoSuchElementException:
+                                log_message(f"Không tìm thấy nút Cancel, thử đóng popup bằng ESC cho lesson {lesson_number} (Class ID {class_id})")
+                                driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
+                            time.sleep(2)  # Wait for page to stabilize
+                        except Exception as e:
+                            log_message(f"Lỗi khi lấy homework cho lesson {lesson_number}: {str(e)} (Class ID {class_id})")
+                            lesson_has_error = True
+                            has_errors = True
 
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Writing data for ID {current_id}...\n")
-                f.write("Student Information:\n")
-                f.write(f"Username: {username}\n")
-                for key, value in student_info.items():
-                    f.write(f"{key}: {value}\n")
-                f.write("\nRoadmap Details:\n")
-                for entry in roadmap_entries:
-                    f.write(f"Date: {entry['Date']}\n")
-                    f.write(f"Note: {entry['Note']}\n")
-                    f.write(f"Course Name: {entry['Course Name']}\n")
-                    f.write(f"Level: {entry['Level']}\n")
-                    f.write(f"Duration: {entry['Duration']}\n")
-                    f.write("\n")
-                f.write(f"Final Commitment: {final_commitment}\n")
-                f.write("\n" + "="*50 + "\n")
+                        # Prepare row data for this lesson
+                        row_data = [str(class_id), class_code, course_name, lesson_number, report_link, homework_content]
+                        if lesson_has_error:
+                            row_data.append("Has Errors")  # Add status column if needed
+                        else:
+                            row_data.append("OK")
 
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Uploading to Google Sheet for ID {current_id}...\n")
-            for entry in roadmap_entries:
-                row = [
-                    username,
-                    student_info.get("Học sinh", ""),
-                    student_info.get("Mã học sinh", ""),
-                    student_info.get("DOB", ""),
-                    student_info.get("Start date", ""),
-                    student_info.get("Trường học", ""),
-                    student_info.get("Nhân viên tư vấn", ""),
-                    entry["Date"],
-                    entry["Note"],
-                    entry["Course Name"],
-                    entry["Level"],
-                    entry["Duration"],
-                    final_commitment
-                ]
-                sheet.append_row(row)
+                        # Update Google Sheet immediately for this lesson
+                        if not update_google_sheet(row_data, class_id, lesson_number):
+                            has_errors = True
 
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Data successfully uploaded for ID: {current_id}\n")
-            valid_ids_found += 1
-            consecutive_fails = 0
-            step_index = 0
-
-        except Exception as e:
-            error_msg = f"Error occurred for ID {current_id}: {str(e)}"
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {error_msg}\n")
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Current URL: {driver.current_url}\n")
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Page source at failure:\n{driver.page_source[:1000]}...\n")
-            driver.save_screenshot(f"error_screenshot_{current_id}.png")
-            consecutive_fails += 1
-            if consecutive_fails >= max_consecutive_fails:
-                with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                    f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Reached maximum consecutive fails ({max_consecutive_fails}). Stopping.\n")
+                        report_links.append((lesson_number, report_link))
+                        homework_contents.append((lesson_number, homework_content))
+                        lesson_index += 1
+                        break  # Exit retry loop on success
+                    except StaleElementReferenceException:
+                        retry_count += 1
+                        log_message(f"Stale element in lesson {lesson_number}, retry {retry_count}/{max_retries} (Class ID {class_id})")
+                        time.sleep(2)
+                        if retry_count == max_retries:
+                            log_message(f"Failed to process lesson {lesson_number} after {max_retries} retries (Class ID {class_id})")
+                            has_errors = True
+                            lesson_index += 1  # Skip to next lesson
+                            break
+                        # Re-fetch lesson rows for retry
+                        lesson_rows = WebDriverWait(driver, 20).until(
+                            EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr"))
+                        )
+                        row = lesson_rows[lesson_index]
+            except Exception as e:
+                log_message(f"Lỗi khi lấy danh sách lesson cho class ID {class_id}: {str(e)}")
+                invalid = True
+                has_errors = True
                 break
-            if consecutive_fails % 10 == 0 and step_index < len(step_sizes) - 1:
-                step_index += 1
-                with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                    f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Increasing step size to {step_sizes[step_index]} due to {consecutive_fails} consecutive fails.\n")
 
-        try:
-            current_id = generate_next_id(current_id, config["direction"], step_sizes[step_index])
-        except ValueError as e:
-            with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Error generating next ID: {str(e)}\n")
-            break
+        if invalid and not report_links and not homework_contents:
+            return None, None, has_errors
 
-finally:
-    with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-        f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Closing browser...\n")
-    driver.quit()
-    # Clean up temporary user data directory
-    try:
-        shutil.rmtree(temp_user_data_dir)
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Cleaned up temporary user data directory: {temp_user_data_dir}\n")
+        # Save homework and report info locally if needed (optional, as per original)
+        folder_name = f"{course_name.replace(' ', '_')}"
+        os.makedirs(folder_name, exist_ok=True)
+        for lesson_number, homework_content in homework_contents:
+            homework_file = os.path.join(folder_name, f"lesson_{lesson_number}_btvn.txt")
+            with open(homework_file, "w", encoding="utf-8") as f:
+                f.write(homework_content)
+
+        with open(f"{folder_name}/report_info.txt", "w", encoding="utf-8") as f:
+            f.write(f"Class ID: {class_id}\n")
+            f.write(f"Class Code: {class_code}\n")
+            f.write(f"Course Name: {course_name}\n")
+            f.write("Report Links:\n")
+            for lesson_number, report_link in report_links:
+                f.write(f"Lesson {lesson_number}: {report_link}\n")
+            f.write("\nHomework Contents:\n")
+            for lesson_number, homework_content in homework_contents:
+                f.write(f"Lesson {lesson_number}:\n{homework_content}\n")
+
+        return class_id, course_name, has_errors
+
     except Exception as e:
-        with open("student_roadmap_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Error cleaning up temporary user data directory: {str(e)}\n")
+        log_message(f"Lỗi chung khi xử lý class ID {class_id}: {str(e)}")
+        if folder_name and os.path.exists(folder_name):
+            shutil.rmtree(folder_name)
+            log_message(f"Đã xóa thư mục {folder_name} do lỗi (Class ID {class_id})")
+        return None, None, True
+    finally:
+        if driver:
+            driver.quit()
+
+def main():
+    try:
+        df = pd.read_csv(CSV_FILE)
+        df['Start date'] = pd.to_datetime(df['Start date'], dayfirst=True)
+    except Exception as e:
+        log_message(f"Lỗi khi đọc file CSV {CSV_FILE}: {str(e)}")
+        return
+
+    processed = {}
+    if os.path.exists(PROCESSED_FILE):
+        try:
+            with open(PROCESSED_FILE, 'r') as f:
+                processed = json.load(f)
+        except Exception as e:
+            log_message(f"Lỗi khi đọc file {PROCESSED_FILE}: {str(e)}")
+
+    course_names = df['Course name'].unique()
+    args_list = []
+
+    for course_name in course_names:
+        if course_name in processed:
+            log_message(f"Đã xử lý course {course_name} với Class ID {processed[course_name]}")
+            continue
+
+        log_message(f"Bắt đầu xử lý course: {course_name}")
+        course_group = df[df['Course name'] == course_name]
+        sorted_group = course_group.sort_values(by=['Start date', 'Rate'], ascending=[False, False])
+        class_ids = sorted_group['Class ID'].tolist()
+        max_class_ids = min(3, len(class_ids))
+        success = False
+
+        for i in range(max_class_ids):
+            class_id = class_ids[i]
+            log_message(f"Thử xử lý Class ID {class_id} (thứ {i+1}/{max_class_ids}) cho course {course_name}")
+            args_list.append((class_id, course_name))
+            # Since parallel, but to ensure one per course first, we collect all but process in order later if needed
+            # But with pool.map, it processes in order of args_list, so by building list course-by-course, it prioritizes one per course
+
+    # Parallel processing
+    num_processes = min(cpu_count(), 4)  # Limit to 4 to avoid overload on GitHub
+    with Pool(num_processes) as pool:
+        results = pool.map(process_class_id, args_list)
+
+    # Post-process results
+    for successful_id, course_name, has_errors in results:
+        if successful_id and not has_errors:
+            processed[course_name] = successful_id
+            log_message(f"Hoàn thành course {course_name} với Class ID {successful_id} (không có lỗi)")
+
+    # Save processed courses
+    try:
+        with open(PROCESSED_FILE, 'w') as f:
+            json.dump(processed, f, indent=2)
+        log_message(f"Đã lưu danh sách course đã xử lý vào {PROCESSED_FILE}")
+    except Exception as e:
+        log_message(f"Lỗi khi lưu file {PROCESSED_FILE}: {str(e)}")
+
+if __name__ == "__main__":
+    # Write credentials from secrets
+    if 'CREDENTIALS_JSON' in os.environ:
+        with open(CREDENTIALS_FILE, 'w') as f:
+            f.write(os.environ['CREDENTIALS_JSON'])
+
+    main()
