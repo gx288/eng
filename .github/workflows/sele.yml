@@ -2,7 +2,7 @@ name: CEC Report Checker
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Chạy mỗi giờ (UTC)
+    - cron: '5 * * * *'  # Chạy mỗi giờ (UTC)
   workflow_dispatch:  # Cho phép chạy thủ công
 
 jobs:
