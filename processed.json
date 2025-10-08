@@ -120,5 +120,12 @@
       "total_lessons": 8,
       "has_errors": true
     }
+  },
+  "Kindergarten 4": {
+    "10857": {
+      "last_lesson": 0,
+      "total_lessons": 41,
+      "has_errors": false
+    }
   }
 }
