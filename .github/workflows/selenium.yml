@@ -29,18 +29,22 @@ jobs:
 
       - name: Debug credentials
         run: |
+          # Validate JSON with jq
           echo "${{ secrets.GOOGLE_CREDENTIALS }}" | jq . || echo "Invalid JSON in GOOGLE_CREDENTIALS"
-          echo "${{ secrets.GOOGLE_CREDENTIALS }}" > credentials.json
-
-      - name: Debug Git
-        run: |
-          pwd
-          git status
+          # Save to temp file for debug
+          echo "${{ secrets.GOOGLE_CREDENTIALS }}" > temp_credentials.json
+          echo "Content of temp_credentials.json:"
+          cat temp_credentials.json
+          echo "Hex dump of temp_credentials.json:"
+          xxd -l 50 temp_credentials.json
+          # Check encoding
+          file temp_credentials.json
 
       - name: Run script
         env:
           CEC_USERNAME: ${{ secrets.CEC_USERNAME }}
           CEC_PASSWORD: ${{ secrets.CEC_PASSWORD }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           PYTHONUNBUFFERED: 1
         run: python -u main.py
 
