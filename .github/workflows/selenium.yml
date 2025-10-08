@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0  # Ensure full Git history
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,10 +25,27 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          sudo apt-get install -y google-chrome-stable jq xxd
 
-      - name: Write credentials
-        run: echo "${{ secrets.GOOGLE_CREDENTIALS }}" > credentials.json
+      - name: Debug credentials
+        run: |
+          echo "${{ secrets.GOOGLE_CREDENTIALS }}" | jq . || echo "Invalid JSON in GOOGLE_CREDENTIALS"
+          echo "${{ secrets.GOOGLE_CREDENTIALS }}" > temp_credentials.json
+          echo "Content of temp_credentials.json:"
+          cat temp_credentials.json
+          echo "Hex dump of temp_credentials.json:"
+          xxd -l 50 temp_credentials.json
+          # Write credentials.json using Python to avoid echo issues
+          python -c "import json; import os; content = os.environ['GOOGLE_CREDENTIALS'].encode('utf-8').decode('utf-8-sig').strip(); json.dump(json.loads(content), open('credentials.json', 'w', encoding='utf-8'), indent=2, ensure_ascii=False)"
+          echo "Content of credentials.json:"
+          cat credentials.json
+          echo "Hex dump of credentials.json:"
+          xxd -l 50 credentials.json
+
+      - name: Debug Git
+        run: |
+          pwd
+          git status
 
       - name: Run script
         env:
