@@ -134,5 +134,12 @@
       "total_lessons": 29,
       "has_errors": false
     }
+  },
+  "Cambridge Literacy Ladder Foundation": {
+    "10793": {
+      "last_lesson": 0,
+      "total_lessons": 66,
+      "has_errors": true
+    }
   }
 }
