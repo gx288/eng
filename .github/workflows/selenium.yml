@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Cần để push
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,12 +36,13 @@ jobs:
         run: python main.py
 
       - name: Commit and push changes
+        if: always()  # Run even if job fails
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           git add processed.json class_info_log.txt
           git commit -m "Update processed and logs" || echo "No changes to commit"
-          git push
+          git push || echo "Push failed, likely no changes or already up-to-date"
 
       - name: Upload logs
         if: always()
