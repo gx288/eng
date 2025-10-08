@@ -92,5 +92,12 @@
       "total_lessons": 8,
       "has_errors": false
     }
+  },
+  "Reading Skills 2": {
+    "11018": {
+      "last_lesson": 0,
+      "total_lessons": 31,
+      "has_errors": false
+    }
   }
 }
