@@ -1440,3 +1440,656 @@ Unit 6 - Lesson 1 (page 33, 34, 35, 36): https://drive.google.com/drive/folders/
 [2025-10-08 05:34:03] DEBUG: credentials.json content length = 2272
 [2025-10-08 05:34:03] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
 [2025-10-08 05:34:03] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 11: Invalid credentials.json format
+[2025-10-08 05:42:21] Bắt đầu course: Reading Skills 1
+[2025-10-08 05:42:21] Process Class ID 11260 (thứ 1/3) cho course Reading Skills 1
+[2025-10-08 05:42:21] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 05:42:34] Đang nhập username: 40183HN
+[2025-10-08 05:42:34] DEBUG: current_id = '40183HN'
+[2025-10-08 05:42:34] DEBUG: Username field value = '40183HN'
+[2025-10-08 05:42:34] Đang nhập password...
+[2025-10-08 05:42:34] DEBUG: password = '1234567'
+[2025-10-08 05:42:34] Nhấn nút đăng nhập...
+[2025-10-08 05:42:50] Đăng nhập thành công (không thấy thông báo lỗi)
+[2025-10-08 05:42:53] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11260 (Class ID 11260)
+[2025-10-08 05:42:58] Lấy được class code: CG-R1-2502 (Class ID 11260)
+[2025-10-08 05:42:58] Lấy được course name: Reading Skills 1 (Class ID 11260)
+[2025-10-08 05:42:58] Resume Class ID 11260 from lesson index 0
+[2025-10-08 05:42:58] Đã lưu processed.json
+[2025-10-08 05:42:58] Processing lesson 1 (index 0) for class ID 11260
+[2025-10-08 05:43:01] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1-7uHFrrGtsmXCf7UdMwUSNuzj6xc9rmulaCvDibMnpU/edit?tab=t.0
+[2025-10-08 05:43:03] DEBUG: Popup opened for lesson 1
+[2025-10-08 05:43:04] Homework content for lesson 1: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 1 - Lesson 1 (page 1, 2): https://drive.google.com/drive/folders/1B4l6BtNW-LoUdHbvIHb0YJL5PTmdrAak?usp=sharing
+[2025-10-08 05:43:06] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:06] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:06] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 1: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:08] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:08] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:08] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 1: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:10] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:10] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:10] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 1: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:10] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 1: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:10] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 1
+[2025-10-08 05:43:10] Processing lesson 2 (index 1) for class ID 11260
+[2025-10-08 05:43:12] Lấy được report link cho lesson 2: https://docs.google.com/document/d/1sx9-3d9TrNuLPEh0Sn6htQgq2W_xw_ACw_tZ9YDyWGI/edit?usp=sharing
+[2025-10-08 05:43:14] DEBUG: Popup opened for lesson 2
+[2025-10-08 05:43:14] Homework content for lesson 2: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 1 - Lesson 2 (page 3, 4, 5): https://drive.google.com/drive/folders/1rFYQC6xEj5iXrv1iUhWCKJmpvDFNJ97C?usp=sharing
+[2025-10-08 05:43:16] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:16] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:16] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 2: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:18] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:18] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:18] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 2: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:20] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:20] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:20] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 2: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:20] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 2: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:20] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 2
+[2025-10-08 05:43:20] Processing lesson 3 (index 2) for class ID 11260
+[2025-10-08 05:43:23] Lấy được report link cho lesson 3: https://docs.google.com/document/d/1gOhOyhXklYpusckcoNmqO7EEvgqo64lqGvpqSIebOAU/edit?usp=sharing
+[2025-10-08 05:43:25] DEBUG: Popup opened for lesson 3
+[2025-10-08 05:43:26] Homework content for lesson 3: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 2 - Lesson 1 (page 6, 7, 8, 9): https://drive.google.com/drive/folders/1JkaKT-WNh6JxNn1-HzEqUgc2tS9z43ib?usp=sharing
+[2025-10-08 05:43:28] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:28] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:28] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 3: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:30] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:30] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:30] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 3: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:32] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:32] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:32] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 3: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:32] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 3: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:32] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 3
+[2025-10-08 05:43:32] Processing lesson 4 (index 3) for class ID 11260
+[2025-10-08 05:43:35] Lấy được report link cho lesson 4: https://docs.google.com/document/d/1YB3oZHFx6DwLBckwaf9jW5FTHdYaxbM4Zz9HSxuZfJQ/edit?tab=t.0
+[2025-10-08 05:43:36] DEBUG: Popup opened for lesson 4
+[2025-10-08 05:43:36] Homework content for lesson 4: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:43:38] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:38] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:38] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 4: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:40] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:40] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:40] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 4: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:42] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:42] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:42] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 4: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:42] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 4: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:42] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 4
+[2025-10-08 05:43:42] Processing lesson 5 (index 4) for class ID 11260
+[2025-10-08 05:43:44] Lấy được report link cho lesson 5: https://docs.google.com/document/d/1QBHTE0Sj6zv_9BuAVIa80IjhlChonGbCSBGsBROx0Mg/edit?usp=sharing
+[2025-10-08 05:43:46] DEBUG: Popup opened for lesson 5
+[2025-10-08 05:43:46] Homework content for lesson 5: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 2 - Lesson 2 (page 10, 11, 12): https://drive.google.com/drive/folders/1FsZGh1yrYuy_Ao10PzKImlqZVle2Itmz?usp=sharing
+[2025-10-08 05:43:48] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:48] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:48] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 5: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:50] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:50] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:50] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 5: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:52] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:52] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:52] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 5: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:52] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 5: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:52] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 5
+[2025-10-08 05:43:52] Processing lesson 6 (index 5) for class ID 11260
+[2025-10-08 05:43:54] Lấy được report link cho lesson 6: https://docs.google.com/document/d/1Kh-FOkpdPL08_0yJydn6zRy6h5gwrzKbKaR4d4l04Q8/edit?usp=sharing
+[2025-10-08 05:43:56] DEBUG: Popup opened for lesson 6
+[2025-10-08 05:43:56] Homework content for lesson 6: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:43:58] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:43:58] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:43:58] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 6: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:00] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:00] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:00] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 6: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:02] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:02] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:02] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 6: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:02] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 6: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:02] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 6
+[2025-10-08 05:44:02] Processing lesson 7 (index 6) for class ID 11260
+[2025-10-08 05:44:04] Lấy được report link cho lesson 7: https://docs.google.com/document/d/132XvaC96yYr-SJY6GIUTTcWg7C3j3svfOa1EiX_mzak/edit?usp=sharing
+[2025-10-08 05:44:06] DEBUG: Popup opened for lesson 7
+[2025-10-08 05:44:06] Homework content for lesson 7: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 3 - Lesson 2 (page 16, 17, 18, 19): https://drive.google.com/drive/folders/1w1Aat2MdPj6axLwdPryYBUEY9DgU5-pl?usp=sharing
+[2025-10-08 05:44:08] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:08] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:08] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 7: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:10] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:10] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:10] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 7: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:12] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:12] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:12] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 7: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:12] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 7: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:12] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 7
+[2025-10-08 05:44:12] Processing lesson 8 (index 7) for class ID 11260
+[2025-10-08 05:44:14] Lấy được report link cho lesson 8: https://docs.google.com/document/d/1YKatc49XmRegg0-pgkkKiPbmHyi7BLkF-Y5-kDfXnuY/edit?usp=sharing
+[2025-10-08 05:44:16] DEBUG: Popup opened for lesson 8
+[2025-10-08 05:44:16] Homework content for lesson 8: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:44:18] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:18] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:18] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 8: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:20] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:20] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:20] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 8: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:22] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:22] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:22] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 8: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:22] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 8: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:22] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 8
+[2025-10-08 05:44:22] Processing lesson 9 (index 8) for class ID 11260
+[2025-10-08 05:44:24] Lấy được report link cho lesson 9: https://docs.google.com/document/d/1EcCFmSDnZkU4QbsBLi4N77iRpGQXo2qmoLGcLQpYyFU/edit?usp=sharing
+[2025-10-08 05:44:26] DEBUG: Popup opened for lesson 9
+[2025-10-08 05:44:26] Homework content for lesson 9: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 4- Lesson 2 (page 23, 24, 25, 26): https://drive.google.com/drive/folders/1g_miQVLGvXUV6MDLha-yA2M215Ct5NmT?usp=sharing
+[2025-10-08 05:44:28] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:28] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:28] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 9: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:30] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:30] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:30] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 9: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:32] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:32] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:32] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 9: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:32] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 9: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:32] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 9
+[2025-10-08 05:44:32] Processing lesson 10 (index 9) for class ID 11260
+[2025-10-08 05:44:35] Lấy được report link cho lesson 10: https://docs.google.com/document/d/1dPMZ4emyPpEuq9GDOm2SJPZKBYa9UXb6G0hWEetfLDM/edit?usp=sharing
+[2025-10-08 05:44:36] DEBUG: Popup opened for lesson 10
+[2025-10-08 05:44:36] Homework content for lesson 10: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:44:39] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:39] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:39] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 10: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:41] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:41] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:41] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 10: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:43] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:43] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:43] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 10: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:43] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 10: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:43] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 10
+[2025-10-08 05:44:43] Processing lesson 11 (index 10) for class ID 11260
+[2025-10-08 05:44:45] Lấy được report link cho lesson 11: https://docs.google.com/document/d/1zc_wFxt4-2Vq2WLvDTy2q3fDjQFJalB9D-14XM6KrnI/edit?usp=sharing
+[2025-10-08 05:44:47] DEBUG: Popup opened for lesson 11
+[2025-10-08 05:44:47] Homework content for lesson 11: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 5 - Lesson 2 (page 30, 31, 32): https://drive.google.com/drive/folders/1R83MQbJ7c2RJ0BLznACuzajSS2VPZqW9?usp=sharing
+[2025-10-08 05:44:49] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:49] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:49] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 11: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:51] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:51] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:51] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 11: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:53] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:53] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:53] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 11: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:53] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 11: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:53] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 11
+[2025-10-08 05:44:53] Processing lesson 12 (index 11) for class ID 11260
+[2025-10-08 05:44:56] Lấy được report link cho lesson 12: https://docs.google.com/document/d/1Ly4a6e-YOwARJs8wZaUnuvAnOYitA8IlPRb_NYXHBw8/edit?usp=sharing
+[2025-10-08 05:44:57] DEBUG: Popup opened for lesson 12
+[2025-10-08 05:44:57] Homework content for lesson 12: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:44:59] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:44:59] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:44:59] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 12: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:01] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:01] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:01] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 12: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:03] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:03] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:03] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 12: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:03] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 12: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:03] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 12
+[2025-10-08 05:45:03] Processing lesson 13 (index 12) for class ID 11260
+[2025-10-08 05:45:06] Lấy được report link cho lesson 13: https://docs.google.com/document/d/1Vb3rosNAXOmcLz8l5jxEKpZAg-_tQlo6AJy6Zl21qDw/edit?usp=sharing
+[2025-10-08 05:45:07] DEBUG: Popup opened for lesson 13
+[2025-10-08 05:45:07] Homework content for lesson 13: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 6 - Lesson 2 (page 37, 38, 39, 40): https://drive.google.com/drive/folders/1xeeIWXhZM-kfQmMPAmMrFS3Gm61U3sAd?usp=sharing
+[2025-10-08 05:45:09] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:09] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:09] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 13: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:11] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:11] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:11] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 13: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:13] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:13] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:13] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 13: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:13] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 13: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:13] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 13
+[2025-10-08 05:45:13] Processing lesson 14 (index 13) for class ID 11260
+[2025-10-08 05:45:16] Lấy được report link cho lesson 14: https://docs.google.com/document/d/1mFXmJcXZmAyNCa6oIbNMu5Tv9zXL47AalCUyhFWqAjY/edit?usp=sharing
+[2025-10-08 05:45:17] DEBUG: Popup opened for lesson 14
+[2025-10-08 05:45:17] Homework content for lesson 14: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:45:19] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:19] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:19] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 14: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:21] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:21] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:21] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 14: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:23] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:23] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:23] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 14: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:23] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 14: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:23] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 14
+[2025-10-08 05:45:23] Processing lesson 15 (index 14) for class ID 11260
+[2025-10-08 05:45:26] Lấy được report link cho lesson 15: https://docs.google.com/document/d/1MA5oDHqFpdQaGj4hQ5fTiBLuuNxXZOX3UvYLTJk8oFE/edit?usp=sharing
+[2025-10-08 05:45:28] DEBUG: Popup opened for lesson 15
+[2025-10-08 05:45:28] Homework content for lesson 15: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 7 - Lesson 2 (page 44, 45 , 46, 47, 48): https://drive.google.com/drive/folders/1z0OZjGPEvUQSgk03KKBAOS4moX_YkaRS?usp=sharing
+[2025-10-08 05:45:30] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:30] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:30] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 15: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:32] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:32] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:32] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 15: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:34] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:34] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:34] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 15: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:34] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 15: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:34] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 15
+[2025-10-08 05:45:34] Processing lesson 16 (index 15) for class ID 11260
+[2025-10-08 05:45:37] Lấy được report link cho lesson 16: https://docs.google.com/document/d/1lz3kQGCBJjI3FP24DG6w8_Lj_aNthDVt5b_E5YxoHzE/edit?usp=sharing
+[2025-10-08 05:45:38] DEBUG: Popup opened for lesson 16
+[2025-10-08 05:45:38] Homework content for lesson 16: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:45:40] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:40] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:40] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 16: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:42] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:42] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:42] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 16: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:44] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:44] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:44] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 16: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:44] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 16: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:44] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 16
+[2025-10-08 05:45:44] Processing lesson 17 (index 16) for class ID 11260
+[2025-10-08 05:45:46] Lấy được report link cho lesson 17: https://docs.google.com/document/d/1MfucZgjxHh0Cd6rbFGcAtfXRvqQOYoP4j3AWi5CMPE8/edit?tab=t.0
+[2025-10-08 05:45:48] DEBUG: Popup opened for lesson 17
+[2025-10-08 05:45:48] Homework content for lesson 17: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 8 - Lesson 2 (page 52, 53, 54, 55): https://drive.google.com/drive/folders/1BgSJ66K-BeTx665vwZ7E5Ai1E8fcCVFG?usp=sharing
+[2025-10-08 05:45:50] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:50] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:50] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 17: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:52] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:52] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:52] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 17: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:54] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:45:54] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:54] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 17: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:54] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 17: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:45:54] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 17
+[2025-10-08 05:45:54] Processing lesson 18 (index 17) for class ID 11260
+[2025-10-08 05:45:57] Lấy được report link cho lesson 18: https://docs.google.com/document/d/1fHvXgdHj3HTVNx7-c93WbZzOOpPWRFP_Yrzcyj9jY3k/edit?usp=sharing
+[2025-10-08 05:45:59] DEBUG: Popup opened for lesson 18
+[2025-10-08 05:45:59] Homework content for lesson 18: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:46:01] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:01] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:01] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 18: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:03] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:03] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:03] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 18: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:05] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:05] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:05] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 18: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:05] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 18: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:05] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 18
+[2025-10-08 05:46:05] Processing lesson 19 (index 18) for class ID 11260
+[2025-10-08 05:46:05] Lấy được report link cho lesson 19: https://docs.google.com/document/d/1j2zDNii_-IebkH95q046mTS0QZqY10YQzEV_fkDrBQE/edit?usp=sharing
+[2025-10-08 05:46:05] Invalid report link for lesson 19: HTTP 410
+[2025-10-08 05:46:06] DEBUG: Popup opened for lesson 19
+[2025-10-08 05:46:07] Homework content for lesson 19: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 9 - Lesson 2 (page 59, 60, 61, 62): https://drive.google.com/drive/folders/1X47lq6nKvDvyZ18YPFdR7hHqTheoeXVm?usp=drive_link
+[2025-10-08 05:46:09] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:09] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:09] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 19: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:11] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:11] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:11] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 19: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:13] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:13] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:13] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 19: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:13] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 19: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:13] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 19
+[2025-10-08 05:46:13] Processing lesson 20 (index 19) for class ID 11260
+[2025-10-08 05:46:16] Lấy được report link cho lesson 20: https://docs.google.com/document/d/1qzzXwOBfud9Pz50vGWDpLPPQMFskyR8YvjMhI3dfH18/edit?usp=sharing
+[2025-10-08 05:46:17] DEBUG: Popup opened for lesson 20
+[2025-10-08 05:46:17] Homework content for lesson 20: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:46:19] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:19] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:19] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 20: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:21] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:21] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:21] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 20: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:23] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:23] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:23] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 20: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:23] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 20: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:23] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 20
+[2025-10-08 05:46:23] Processing lesson 21 (index 20) for class ID 11260
+[2025-10-08 05:46:26] Lấy được report link cho lesson 21: https://docs.google.com/document/d/1axQ8jjEr5WZAdDJqiM_tXpbIC5umBBCMWasQ-CJPsNU/edit?usp=sharing
+[2025-10-08 05:46:27] DEBUG: Popup opened for lesson 21
+[2025-10-08 05:46:28] Homework content for lesson 21: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 10 - Lesson 2 (page 65, 66, 67, 68): https://drive.google.com/drive/folders/1RAQcQ6-oy4O9cAJl4bs8keB_Kkl5wtnr?usp=sharing
+[2025-10-08 05:46:30] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:30] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:30] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 21: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:32] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:32] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:32] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 21: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:34] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:34] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:34] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 21: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:34] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 21: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:34] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 21
+[2025-10-08 05:46:34] Processing lesson 22 (index 21) for class ID 11260
+[2025-10-08 05:46:36] Lấy được report link cho lesson 22: https://docs.google.com/document/d/1_xUnRT-lGqchM8MCxnZClBTuqOkKR93cvyPD80xI5U4/edit?usp=sharing
+[2025-10-08 05:46:38] DEBUG: Popup opened for lesson 22
+[2025-10-08 05:46:38] Homework content for lesson 22: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:46:40] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:40] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:40] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 22: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:42] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:42] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:42] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 22: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:44] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:44] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:44] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 22: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:44] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 22: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:44] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 22
+[2025-10-08 05:46:44] Processing lesson 23 (index 22) for class ID 11260
+[2025-10-08 05:46:47] Lấy được report link cho lesson 23: https://docs.google.com/document/d/1mzVMkDpX2fMHxOCpnqt8jELJfN4luibMZ-6N0aPA4T4/edit?usp=sharing
+[2025-10-08 05:46:48] DEBUG: Popup opened for lesson 23
+[2025-10-08 05:46:49] Homework content for lesson 23: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 11 - Lesson 2 (page 71, 72, 73, 74): https://drive.google.com/drive/folders/18aNeepqgmlvGG4uzou1dVrxNzARBEH_C?usp=sharing
+[2025-10-08 05:46:51] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:51] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:51] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 23: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:53] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:53] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:53] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 23: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:55] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:46:55] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:55] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 23: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:55] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 23: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:46:55] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 23
+[2025-10-08 05:46:55] Processing lesson 24 (index 23) for class ID 11260
+[2025-10-08 05:46:57] Lấy được report link cho lesson 24: https://docs.google.com/document/d/1yVibJvBIYddonKf-xOT-OKD2Mx5YiTulGK9sSodWGgg/edit?usp=sharing
+[2025-10-08 05:46:59] DEBUG: Popup opened for lesson 24
+[2025-10-08 05:46:59] Homework content for lesson 24: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:47:01] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:01] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:01] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 24: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:03] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:03] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:03] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 24: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:05] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:05] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:05] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 24: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:05] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 24: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:05] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 24
+[2025-10-08 05:47:05] Processing lesson 25 (index 24) for class ID 11260
+[2025-10-08 05:47:07] Lấy được report link cho lesson 25: https://docs.google.com/document/d/1ZKbHLa-5agiXHDQP3xb-XO8nR-KC-W0O4hL1eroRwuQ/edit?usp=sharing
+[2025-10-08 05:47:09] DEBUG: Popup opened for lesson 25
+[2025-10-08 05:47:10] Homework content for lesson 25: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 12 - Lesson 2 (page 77, 78, 79): https://drive.google.com/drive/folders/194QB0xKaGcjakg4R3xqT3SSojLDHa2-f?usp=sharing
+[2025-10-08 05:47:12] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:12] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:12] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 25: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:14] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:14] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:14] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 25: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:16] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:16] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:16] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 25: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:16] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 25: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:16] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 25
+[2025-10-08 05:47:16] Processing lesson 26 (index 25) for class ID 11260
+[2025-10-08 05:47:18] Lấy được report link cho lesson 26: https://docs.google.com/document/d/1eO4CPuZApPSi2FwFj2izsOSidGJSOJSxh0ogchhhXpc/edit?usp=sharing
+[2025-10-08 05:47:20] DEBUG: Popup opened for lesson 26
+[2025-10-08 05:47:20] Homework content for lesson 26: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:47:22] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:22] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:22] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 26: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:24] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:24] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:24] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 26: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:26] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:26] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:26] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 26: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:26] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 26: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:26] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 26
+[2025-10-08 05:47:26] Processing lesson 27 (index 26) for class ID 11260
+[2025-10-08 05:47:28] Lấy được report link cho lesson 27: https://docs.google.com/document/d/1kPUZfynNaXtT37bZty1vvwEJxOArLuNPugNAgqMnG1Y/edit?usp=sharing
+[2025-10-08 05:47:30] DEBUG: Popup opened for lesson 27
+[2025-10-08 05:47:30] Homework content for lesson 27: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 13 - Lesson 2 (page 83, 84, 85, 86): https://drive.google.com/drive/folders/1ClUlm8HO1k4hAlAWSvWhq4aY-scXIveN?usp=sharing
+[2025-10-08 05:47:32] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:32] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:32] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 27: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:34] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:34] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:34] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 27: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:36] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:36] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:36] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 27: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:36] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 27: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:36] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 27
+[2025-10-08 05:47:36] Processing lesson 28 (index 27) for class ID 11260
+[2025-10-08 05:47:39] Lấy được report link cho lesson 28: https://docs.google.com/document/d/1ejHA8XRfpSPuCI2y-QT_UjDK7b_jynhR6UiGAlj1FJk/edit?usp=sharing
+[2025-10-08 05:47:40] DEBUG: Popup opened for lesson 28
+[2025-10-08 05:47:40] Homework content for lesson 28: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:47:43] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:43] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:43] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 28: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:45] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:45] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:45] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 28: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:47] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:47] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:47] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 28: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:47] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 28: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:47] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 28
+[2025-10-08 05:47:47] Processing lesson 29 (index 28) for class ID 11260
+[2025-10-08 05:47:49] Lấy được report link cho lesson 29: https://docs.google.com/document/d/1hzoWsJxrmPcYT6yTe98NlFNX56JZhB76y8jcZvXiaWg/edit?usp=sharing
+[2025-10-08 05:47:51] DEBUG: Popup opened for lesson 29
+[2025-10-08 05:47:51] Homework content for lesson 29: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 14 - Lesson 2 (page 91, 92, 93, 94): https://drive.google.com/drive/folders/1YFjFSfH6wJD3MyGZ8ZcAzBETDmLoD_iM?usp=sharing
+[2025-10-08 05:47:53] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:53] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:53] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 29: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:55] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:55] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:55] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 29: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:57] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:47:57] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:57] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 29: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:57] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 29: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:47:57] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 29
+[2025-10-08 05:47:57] Processing lesson 30 (index 29) for class ID 11260
+[2025-10-08 05:48:00] Lấy được report link cho lesson 30: https://docs.google.com/document/d/1xHfoEJQvfJeHO6SWqeHNYUQj-N7g-FPilbdpFgA7cGI/edit?usp=sharing
+[2025-10-08 05:48:02] DEBUG: Popup opened for lesson 30
+[2025-10-08 05:48:02] Homework content for lesson 30: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:48:04] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:04] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:04] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 30: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:06] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:06] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:06] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 30: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:08] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:08] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:09] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 30: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:09] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 30: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:09] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 30
+[2025-10-08 05:48:09] Processing lesson 31 (index 30) for class ID 11260
+[2025-10-08 05:48:11] Lấy được report link cho lesson 31: https://docs.google.com/document/d/1jMxpQ130q-7EHS3nXobD6zK5OUUHt-BnHV2ysatwTCU/edit?usp=sharing
+[2025-10-08 05:48:12] DEBUG: Popup opened for lesson 31
+[2025-10-08 05:48:13] Homework content for lesson 31: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 15 - Lesson 2 (page 98, 99, 100): https://drive.google.com/drive/folders/1N1M9DkTrPrH1OZUtTfo7o3fi4aFcm-p5?usp=sharing
+[2025-10-08 05:48:15] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:15] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:15] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 31: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:17] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:17] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:17] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 31: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:19] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:19] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:19] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 31: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:19] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 31: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:19] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 31
+[2025-10-08 05:48:19] Processing lesson 32 (index 31) for class ID 11260
+[2025-10-08 05:48:21] Lấy được report link cho lesson 32: https://docs.google.com/document/d/1ti7428fXlfrEng7vE-VsO7GnuG8AeKRENTdOCjY1mXc/edit?usp=sharing
+[2025-10-08 05:48:23] DEBUG: Popup opened for lesson 32
+[2025-10-08 05:48:23] Homework content for lesson 32: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:48:25] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:25] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:25] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 32: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:27] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:27] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:27] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 32: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:29] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:29] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:29] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 32: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:29] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 32: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:29] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 32
+[2025-10-08 05:48:29] Processing lesson 33 (index 32) for class ID 11260
+[2025-10-08 05:48:31] Lấy được report link cho lesson 33: https://docs.google.com/document/d/1WjwQbL1rURs60MFa1MzEkK8ubZvDOdDb-8FufiOwO-8/edit?usp=sharing
+[2025-10-08 05:48:32] DEBUG: Popup opened for lesson 33
+[2025-10-08 05:48:32] Homework content for lesson 33: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 16 - Lesson 2 (page 105, 106, 107, 108): https://drive.google.com/drive/folders/15_5uebMv6Zn8OvZh9eDR685dqESRbths?usp=sharing
+[2025-10-08 05:48:34] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:34] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:34] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 33: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:36] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:36] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:36] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 33: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:38] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:38] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:38] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 33: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:38] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 33: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:38] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 33
+[2025-10-08 05:48:38] Processing lesson 34 (index 33) for class ID 11260
+[2025-10-08 05:48:41] Lấy được report link cho lesson 34: https://docs.google.com/document/d/1JqjH3XdxIV999vjyVk78ac0w93WjdMmvkS44Ce20ONs/edit?usp=sharing
+[2025-10-08 05:48:42] DEBUG: Popup opened for lesson 34
+[2025-10-08 05:48:42] Homework content for lesson 34: Homework Header: Homework: CG-R1-2502, 17:45 - 19:15
+
+[2025-10-08 05:48:44] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:44] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:44] Thử 1/3 cập nhật Google Sheet cho Class ID 11260, Lesson 34: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:46] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:46] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:46] Thử 2/3 cập nhật Google Sheet cho Class ID 11260, Lesson 34: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:48] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:48:48] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:48] Thử 3/3 cập nhật Google Sheet cho Class ID 11260, Lesson 34: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:48] Lỗi khi cập nhật Google Sheet cho Class ID 11260, Lesson 34: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:48:48] Skip commit/push due to Google Sheet update failure for Class ID 11260, Lesson 34
+[2025-10-08 05:48:48] Hoàn thành Class ID 11260 cho course Reading Skills 1
+[2025-10-08 05:48:48] Has errors Class ID 11260, thử class tiếp theo
+[2025-10-08 05:48:48] Process Class ID 10997 (thứ 2/3) cho course Reading Skills 1
+[2025-10-08 05:48:48] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 05:48:53] Đang nhập username: 40183HN
+[2025-10-08 05:48:53] DEBUG: current_id = '40183HN'
+[2025-10-08 05:48:53] DEBUG: Username field value = '40183HN'
+[2025-10-08 05:48:53] Đang nhập password...
+[2025-10-08 05:48:53] DEBUG: password = '1234567'
+[2025-10-08 05:48:53] Nhấn nút đăng nhập...
+[2025-10-08 05:49:09] Đăng nhập thành công (không thấy thông báo lỗi)
+[2025-10-08 05:49:11] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10997 (Class ID 10997)
+[2025-10-08 05:49:16] Lấy được class code: TC-R1-2502 (Class ID 10997)
+[2025-10-08 05:49:16] Lấy được course name: Reading Skills 1 (Class ID 10997)
+[2025-10-08 05:49:16] Resume Class ID 10997 from lesson index 0
+[2025-10-08 05:49:16] Đã lưu processed.json
+[2025-10-08 05:49:16] Processing lesson 1 (index 0) for class ID 10997
+[2025-10-08 05:49:20] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1xVPBR6Mq7jIfy2xIT6mcjfr5StgS45J9eggPg_dtQQU/edit?usp=sharing
+[2025-10-08 05:49:21] DEBUG: Popup opened for lesson 1
+[2025-10-08 05:49:22] Homework content for lesson 1: Homework Header: Homework: TC-R1-2502, 19:30 - 21:00
+Links:
+Unit 1 - Lesson 1 (page 1, 2): https://drive.google.com/drive/folders/1B4l6BtNW-LoUdHbvIHb0YJL5PTmdrAak?usp=sharing
+[2025-10-08 05:49:24] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:24] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:24] Thử 1/3 cập nhật Google Sheet cho Class ID 10997, Lesson 1: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:26] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:26] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:26] Thử 2/3 cập nhật Google Sheet cho Class ID 10997, Lesson 1: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:28] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:28] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:28] Thử 3/3 cập nhật Google Sheet cho Class ID 10997, Lesson 1: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:28] Lỗi khi cập nhật Google Sheet cho Class ID 10997, Lesson 1: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:28] Skip commit/push due to Google Sheet update failure for Class ID 10997, Lesson 1
+[2025-10-08 05:49:28] Processing lesson 2 (index 1) for class ID 10997
+[2025-10-08 05:49:31] Lấy được report link cho lesson 2: https://docs.google.com/document/d/1tIGodjeL0TzMEWLytAv0e_yZFDfA2CHR/edit#heading=h.ttsudigdojxc
+[2025-10-08 05:49:33] DEBUG: Popup opened for lesson 2
+[2025-10-08 05:49:33] Homework content for lesson 2: Homework Header: Homework: TC-R1-2502, 19:30 - 21:00
+Links:
+Unit 1 - Lesson 2 (page 3, 4, 5): https://drive.google.com/drive/folders/1rFYQC6xEj5iXrv1iUhWCKJmpvDFNJ97C?usp=sharing
+[2025-10-08 05:49:35] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:35] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:35] Thử 1/3 cập nhật Google Sheet cho Class ID 10997, Lesson 2: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:37] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:37] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:37] Thử 2/3 cập nhật Google Sheet cho Class ID 10997, Lesson 2: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:39] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:39] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:39] Thử 3/3 cập nhật Google Sheet cho Class ID 10997, Lesson 2: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:39] Lỗi khi cập nhật Google Sheet cho Class ID 10997, Lesson 2: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:39] Skip commit/push due to Google Sheet update failure for Class ID 10997, Lesson 2
+[2025-10-08 05:49:39] Processing lesson 3 (index 2) for class ID 10997
+[2025-10-08 05:49:42] Lấy được report link cho lesson 3: https://docs.google.com/document/d/1Dy4lvWi9DwDnUOj4NZ40blDPtGmebaiC5v-bWDpevb8/edit?usp=sharing
+[2025-10-08 05:49:44] DEBUG: Popup opened for lesson 3
+[2025-10-08 05:49:44] Homework content for lesson 3: Homework Header: Homework: TC-R1-2502, 19:30 - 21:00
+Links:
+Unit 2 - Lesson 1 (page 6, 7, 8, 9): https://drive.google.com/drive/folders/1JkaKT-WNh6JxNn1-HzEqUgc2tS9z43ib?usp=sharing
+[2025-10-08 05:49:47] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:47] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:47] Thử 1/3 cập nhật Google Sheet cho Class ID 10997, Lesson 3: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:49] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:49] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:49] Thử 2/3 cập nhật Google Sheet cho Class ID 10997, Lesson 3: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:51] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:51] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:51] Thử 3/3 cập nhật Google Sheet cho Class ID 10997, Lesson 3: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:51] Lỗi khi cập nhật Google Sheet cho Class ID 10997, Lesson 3: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:51] Skip commit/push due to Google Sheet update failure for Class ID 10997, Lesson 3
+[2025-10-08 05:49:51] Processing lesson 4 (index 3) for class ID 10997
+[2025-10-08 05:49:54] Lấy được report link cho lesson 4: https://docs.google.com/document/d/1aR1SoRNMdyrdJ1oPYKPHbmixlH6kJyth/edit?usp=sharing&ouid=116903466680771622181&rtpof=true&sd=true
+[2025-10-08 05:49:55] DEBUG: Popup opened for lesson 4
+[2025-10-08 05:49:55] Homework content for lesson 4: Homework Header: Homework: TC-R1-2502, 19:30 - 21:00
+
+[2025-10-08 05:49:57] DEBUG: credentials.json content length = 2272
+[2025-10-08 05:49:57] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 05:49:57] Thử 1/3 cập nhật Google Sheet cho Class ID 10997, Lesson 4: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
