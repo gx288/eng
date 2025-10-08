@@ -178,8 +178,8 @@ def check_reports():
         if report_count > last_report_count:
             log_message(f"New reports detected (current: {report_count}, last: {last_report_count})")
             timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-            body = f"Hùng ơi, có {report_count} report cho lớp học CEC!: {CLASS_ID}"
-            send_notification("Có Report CEC mới", body)
+            body = f"Làm quiz đi nhé"
+            send_notification("Ê, có Report mới lớp của Huy đó.", body)
             update_google_sheet(CLASS_ID, report_count, timestamp)
             save_processed(report_count)
 
