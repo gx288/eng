@@ -27,7 +27,7 @@ jobs:
           sudo apt-get install -y google-chrome-stable
 
       - name: Write credentials
-        run: echo "${{ secrets.CREDENTIALS_JSON }}" > credentials.json
+        run: echo "${{ secrets.GOOGLE_CREDENTIALS }}" > credentials.json
 
       - name: Run script
         env:
