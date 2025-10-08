@@ -1,5 +1,4 @@
 import pandas as pd
-from datetime import datetime
 import json
 import subprocess
 from selenium import webdriver
@@ -15,22 +14,20 @@ from oauth2client.service_account import ServiceAccountCredentials
 import requests
 from urllib.parse import urlparse
 from webdriver_manager.chrome import ChromeDriverManager
-import binascii
 
 # Configuration
 CSV_FILE = "id.csv"
 PROCESSED_FILE = "processed.json"
 CREDENTIALS_FILE = "credentials.json"
 SHEET_ID = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
-SHEET_NAME = "Trang tính3"  # Removed extra space
+SHEET_NAME = "Trang tính3"
 SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 def log_message(message):
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-    formatted_message = f"[{timestamp}] {message}"
-    print(formatted_message)
+    print(f"[{timestamp}] {message}")
     with open("class_info_log.txt", "a", encoding="utf-8") as f:
-        f.write(f"{formatted_message}\n")
+        f.write(f"[{timestamp}] {message}\n")
 
 def check_doc_accessibility(url):
     try:
@@ -38,25 +35,10 @@ def check_doc_accessibility(url):
             doc_id = urlparse(url).path.split('/d/')[1].split('/')[0]
             export_url = f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
             response = requests.head(export_url, allow_redirects=True, timeout=10)
-            if response.status_code == 200:
-                return True, export_url
-            elif response.status_code in (401, 403):
-                return False, "Requires authentication"
-            elif response.status_code == 404:
-                return False, "Deleted or not found"
-            else:
-                return False, f"HTTP {response.status_code}"
+            return response.status_code == 200, export_url if response.status_code == 200 else f"HTTP {response.status_code}"
         elif "drive.google.com/drive/folders" in url:
-            folder_id = urlparse(url).path.split('/folders/')[1].split('?')[0]
             response = requests.head(url, allow_redirects=True, timeout=10)
-            if response.status_code == 200:
-                return True, url
-            elif response.status_code in (401, 403):
-                return False, "Requires authentication"
-            elif response.status_code == 404:
-                return False, "Deleted or not found"
-            else:
-                return False, f"HTTP {response.status_code}"
+            return response.status_code == 200, url if response.status_code == 200 else f"HTTP {response.status_code}"
         return False, "Not a supported Google URL"
     except Exception as e:
         return False, str(e)
@@ -69,87 +51,50 @@ def login(driver):
         username_field = WebDriverWait(driver, 30).until(
             EC.visibility_of_element_located((By.ID, "input-14"))
         )
-        log_message(f"Đang nhập username: {current_id}")
-        log_message(f"DEBUG: current_id = '{current_id}'")
         driver.execute_script("arguments[0].value = '';", username_field)
         username_field.send_keys(current_id)
-        log_message(f"DEBUG: Username field value = '{username_field.get_attribute('value')}'")
 
         password_field = WebDriverWait(driver, 30).until(
             EC.visibility_of_element_located((By.ID, "input-18"))
         )
-        log_message("Đang nhập password...")
-        log_message(f"DEBUG: password = '{password}'")
         driver.execute_script("arguments[0].value = '';", password_field)
         password_field.send_keys(password)
 
         login_button = WebDriverWait(driver, 30).until(
             EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))
         )
-        log_message("Nhấn nút đăng nhập...")
         login_button.click()
         time.sleep(2)
 
-        try:
-            error_message = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'The account or password you enter is not correct!')]"))
-            )
-            log_message(f"Lỗi đăng nhập: {error_message.text}")
-            log_message(f"Username used: {current_id}, Password used: {password}")
-            raise Exception("Login failed: The account or password you enter is not correct!")
-        except:
-            if "login" in driver.current_url:
-                log_message("Lỗi đăng nhập: Vẫn ở trang login sau khi thử đăng nhập")
-                log_message(f"Username used: {current_id}, Password used: {password}")
-                raise Exception("Login failed: Still on login page")
-            log_message("Đăng nhập thành công (không thấy thông báo lỗi)")
+        if "login" in driver.current_url:
+            log_message("Lỗi đăng nhập: Vẫn ở trang login")
+            raise Exception("Login failed")
+        log_message("Đăng nhập thành công")
     except Exception as e:
-        log_message(f"Lỗi khi đăng nhập: {str(e)}")
+        log_message(f"Lỗi đăng nhập: {str(e)}")
         raise
 
 def update_google_sheet(row_data, class_id, lesson_number):
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            with open(CREDENTIALS_FILE, 'r', encoding='utf-8') as f:
-                creds_content = f.read()
-                log_message(f"DEBUG: credentials.json content length = {len(creds_content)}")
-                try:
-                    creds_json = json.loads(creds_content)
-                    log_message("DEBUG: credentials.json is valid JSON")
-                    log_message(f"DEBUG: credentials.json keys = {list(creds_json.keys())}")
-                    log_message(f"DEBUG: client_email = {creds_json.get('client_email', 'N/A')}")
-                    hex_dump = binascii.hexlify(creds_content[:50].encode('utf-8')).decode('utf-8')
-                    log_message(f"DEBUG: credentials.json hex dump (first 50 bytes) = {hex_dump}")
-                except json.JSONDecodeError as e:
-                    log_message(f"DEBUG: Invalid credentials.json: {str(e)}")
-                    log_message(f"DEBUG: credentials.json snippet = {creds_content[:100].replace('\n', ' ')}...")
-                    raise Exception(f"Invalid credentials.json format: {str(e)}")
-
             creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
             client = gspread.authorize(creds)
             sheet = client.open_by_key(SHEET_ID)
-            try:
-                worksheet = sheet.worksheet(SHEET_NAME)
-            except gspread.exceptions.WorksheetNotFound as e:
-                log_message(f"WorksheetNotFound: Không tìm thấy worksheet '{SHEET_NAME}'")
-                worksheets = sheet.worksheets()
-                log_message(f"Available worksheets: {[ws.title for ws in worksheets]}")
-                raise Exception(f"Worksheet '{SHEET_NAME}' not found")
-            
+            worksheet = sheet.worksheet(SHEET_NAME)
             existing_data = worksheet.get_all_values()
             unique_id = f"{class_id}:{lesson_number}"
             for row in existing_data:
                 if len(row) >= 4 and f"{row[0]}:{row[3]}" == unique_id:
-                    log_message(f"Skip append: Lesson {lesson_number} of Class ID {class_id} already exists in Sheet")
+                    log_message(f"Lesson {lesson_number} of Class ID {class_id} already exists in Sheet")
                     return True
             worksheet.append_row(row_data)
-            log_message(f"Đã cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}")
+            log_message(f"Updated Google Sheet for Class ID {class_id}, Lesson {lesson_number}")
             return True
         except Exception as e:
-            log_message(f"Thử {attempt+1}/{max_retries} cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
+            log_message(f"Attempt {attempt+1}/{max_retries} failed to update Google Sheet for Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
             if attempt == max_retries - 1:
-                log_message(f"Lỗi khi cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
+                log_message(f"Error updating Google Sheet for Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
                 return False
             time.sleep(3)
     return False
@@ -158,84 +103,46 @@ def save_processed(processed):
     try:
         with open(PROCESSED_FILE, 'w', encoding='utf-8') as f:
             json.dump(processed, f, indent=2)
-        log_message(f"Đã lưu processed.json")
+        log_message(f"Saved processed.json")
     except Exception as e:
-        log_message(f"Lỗi khi lưu processed.json: {str(e)}")
+        log_message(f"Error saving processed.json: {str(e)}")
 
 def is_git_repository():
     try:
-        result = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, capture_output=True, text=True)
-        log_message("DEBUG: Git repository detected")
-        log_message(f"DEBUG: Git status = {subprocess.run(['git', 'status', '--short'], capture_output=True, text=True).stdout.strip()}")
+        subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, capture_output=True, text=True)
         return True
-    except Exception as e:
-        log_message(f"DEBUG: Not a Git repository: {str(e)}")
+    except:
         return False
 
 def process_class_id(driver, class_id, course_name, processed):
-    os.chdir(os.getenv("GITHUB_WORKSPACE", "."))
-    log_message(f"DEBUG: Working directory set to {os.getcwd()}")
-    invalid = False
-    has_errors = False
     try:
         url = f"https://apps.cec.com.vn/student-calendar/class-detail?classID={class_id}"
         driver.get(url)
-        log_message(f"Đang truy cập trang: {url} (Class ID {class_id})")
+        log_message(f"Processing Class ID {class_id} for course {course_name}")
         time.sleep(5)
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-        # Extract class_code
-        max_retries = 3
-        for attempt in range(max_retries):
-            try:
-                class_code_element = WebDriverWait(driver, 40).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, "h2.d-flex div"))
-                )
-                class_code = class_code_element.text.strip()
-                log_message(f"Lấy được class code: {class_code} (Class ID {class_id})")
-                break
-            except Exception as e:
-                log_message(f"Thử {attempt+1}/{max_retries} lấy class code cho class ID {class_id}: {str(e)}")
-                if attempt == max_retries - 1:
-                    log_message(f"Lỗi khi lấy class code cho class ID {class_id}: {str(e)}")
-                    class_code = "Error"
-                    invalid = True
-                    has_errors = True
-                time.sleep(2)
+        class_code_element = WebDriverWait(driver, 40).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "h2.d-flex div"))
+        )
+        class_code = class_code_element.text.strip()
 
-        # Extract course_name
-        for attempt in range(max_retries):
-            try:
-                course_name_element = WebDriverWait(driver, 40).until(
-                    EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'list-info')]//div[contains(text(), 'Course name')]/following-sibling::div"))
-                )
-                extracted_course_name = course_name_element.text.strip()
-                log_message(f"Lấy được course name: {extracted_course_name} (Class ID {class_id})")
-                if extracted_course_name != course_name:
-                    log_message(f"Course name mismatch for class ID {class_id}: expected {course_name}, got {extracted_course_name}")
-                    invalid = True
-                    has_errors = True
-                break
-            except Exception as e:
-                log_message(f"Thử {attempt+1}/{max_retries} lấy course name cho class ID {class_id}: {str(e)}")
-                if attempt == max_retries - 1:
-                    log_message(f"Lỗi khi lấy course name cho class ID {class_id}: {str(e)}")
-                    invalid = True
-                    has_errors = True
-                time.sleep(2)
-
-        if invalid:
-            return has_errors
+        course_name_element = WebDriverWait(driver, 40).until(
+            EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'list-info')]//div[contains(text(), 'Course name')]/following-sibling::div"))
+        )
+        extracted_course_name = course_name_element.text.strip()
+        if extracted_course_name != course_name:
+            log_message(f"Course name mismatch for Class ID {class_id}: expected {course_name}, got {extracted_course_name}")
+            return True
 
         class_progress = processed.get(course_name, {}).get(class_id, {})
         start_lesson_index = class_progress.get('last_lesson', -1) + 1
-        log_message(f"Resume Class ID {class_id} from lesson index {start_lesson_index}")
-
         lesson_rows = WebDriverWait(driver, 20).until(EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr")))
         total_lessons = len(lesson_rows)
-        processed.setdefault(course_name, {})[class_id] = {'last_lesson': start_lesson_index - 1, 'total_lessons': total_lessons, 'has_errors': has_errors}
+        processed.setdefault(course_name, {})[class_id] = {'last_lesson': start_lesson_index - 1, 'total_lessons': total_lessons, 'has_errors': False}
         save_processed(processed)
 
+        has_errors = False
         for lesson_index in range(start_lesson_index, total_lessons):
             lesson_has_error = False
             retry_count = 0
@@ -245,7 +152,7 @@ def process_class_id(driver, class_id, course_name, processed):
                     lesson_rows = WebDriverWait(driver, 20).until(EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr")))
                     row = lesson_rows[lesson_index]
                     lesson_number = row.find_element(By.XPATH, "./td[4]").text.strip()
-                    log_message(f"Processing lesson {lesson_number} (index {lesson_index}) for class ID {class_id}")
+                    log_message(f"Processing lesson {lesson_number} for Class ID {class_id}")
 
                     report_link = "No report available"
                     try:
@@ -257,7 +164,6 @@ def process_class_id(driver, class_id, course_name, processed):
                         new_window = [window for window in driver.window_handles if window != original_window][0]
                         driver.switch_to.window(new_window)
                         report_link = driver.current_url
-                        log_message(f"Lấy được report link cho lesson {lesson_number}: {report_link}")
                         if "docs.google.com/document" in report_link:
                             is_accessible, result = check_doc_accessibility(report_link)
                             if not is_accessible:
@@ -267,7 +173,7 @@ def process_class_id(driver, class_id, course_name, processed):
                         driver.close()
                         driver.switch_to.window(original_window)
                     except Exception as e:
-                        log_message(f"Lỗi report link lesson {lesson_number}: {str(e)}")
+                        log_message(f"Error getting report link for lesson {lesson_number}: {str(e)}")
                         lesson_has_error = True
                         has_errors = True
 
@@ -279,7 +185,6 @@ def process_class_id(driver, class_id, course_name, processed):
                             try:
                                 driver.execute_script("arguments[0].click();", homework_button)
                                 popup = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".v-dialog--active")))
-                                log_message(f"DEBUG: Popup opened for lesson {lesson_number}")
                                 header = popup.find_element(By.CSS_SELECTOR, ".v-toolbar__title").text.strip()
                                 text_actions = [elem.text.strip() for elem in popup.find_elements(By.CSS_SELECTOR, ".text-action")]
                                 link_actions = popup.find_elements(By.CSS_SELECTOR, ".link-action")
@@ -292,20 +197,13 @@ def process_class_id(driver, class_id, course_name, processed):
                                             lesson_has_error = True
                                             has_errors = True
                                     else:
-                                        try:
-                                            response = requests.head(href, allow_redirects=True, timeout=10)
-                                            if response.status_code != 200:
-                                                log_message(f"Invalid homework link for lesson {lesson_number}: HTTP {response.status_code}")
-                                                lesson_has_error = True
-                                                has_errors = True
-                                        except Exception as e:
-                                            log_message(f"Error checking homework link for lesson {lesson_number}: {str(e)}")
+                                        response = requests.head(href, allow_redirects=True, timeout=10)
+                                        if response.status_code != 200:
+                                            log_message(f"Invalid homework link for lesson {lesson_number}: HTTP {response.status_code}")
                                             lesson_has_error = True
                                             has_errors = True
-
                                 homework_content = f"Homework Header: {header}\n" + ("Text:\n" + "\n".join(text_actions) + "\n" if text_actions else "") + ("Links:\n" + "\n".join(homework_links) if homework_links else "")
-                                log_message(f"Homework content for lesson {lesson_number}: {homework_content}")
-
+                                log_message(f"Got homework for lesson {lesson_number}: {homework_content}")
                                 try:
                                     popup.find_element(By.XPATH, ".//button[.//span[contains(text(), 'Cancel')]]").click()
                                 except:
@@ -313,42 +211,36 @@ def process_class_id(driver, class_id, course_name, processed):
                                 time.sleep(2)
                                 break
                             except Exception as e:
-                                log_message(f"Thử {attempt+1}/3 mở homework popup lesson {lesson_number}: {str(e)}")
                                 if attempt == 2:
-                                    log_message(f"Lỗi homework lesson {lesson_number}: Failed to open popup after 3 attempts")
+                                    log_message(f"Error opening homework popup for lesson {lesson_number}: {str(e)}")
                                     lesson_has_error = True
                                     has_errors = True
                                 time.sleep(2)
                     except Exception as e:
-                        log_message(f"Lỗi homework lesson {lesson_number}: {str(e)}")
+                        log_message(f"Error getting homework for lesson {lesson_number}: {str(e)}")
                         lesson_has_error = True
                         has_errors = True
 
                     row_data = [str(class_id), class_code, course_name, lesson_number, report_link, homework_content, "OK" if not lesson_has_error else "Has Errors"]
                     processed[course_name][class_id]['last_lesson'] = lesson_index
                     processed[course_name][class_id]['has_errors'] = has_errors
-                    save_processed(processed)  # Save even if Google Sheet fails
+                    save_processed(processed)
 
-                    if update_google_sheet(row_data, class_id, lesson_number):
-                        if is_git_repository():
-                            try:
-                                subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
-                                subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
-                                subprocess.run(["git", "add", PROCESSED_FILE], check=True)
-                                subprocess.run(["git", "commit", "-m", f"Update processed.json for Class ID {class_id}, Lesson {lesson_number}"], check=True)
-                                subprocess.run(["git", "push"], check=True)
-                                log_message(f"Pushed processed.json for Class ID {class_id}, Lesson {lesson_number}")
-                            except Exception as e:
-                                log_message(f"Lỗi khi commit/push processed.json cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
-                        else:
-                            log_message("Không phải Git repository, bỏ qua commit/push")
-                    else:
-                        log_message(f"Skip commit/push due to Google Sheet update failure for Class ID {class_id}, Lesson {lesson_number}")
+                    if update_google_sheet(row_data, class_id, lesson_number) and is_git_repository():
+                        try:
+                            subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
+                            subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
+                            subprocess.run(["git", "add", PROCESSED_FILE], check=True)
+                            subprocess.run(["git", "commit", "-m", f"Update processed.json for Class ID {class_id}, Lesson {lesson_number}"], check=True)
+                            subprocess.run(["git", "push"], check=True)
+                            log_message(f"Pushed processed.json for Class ID {class_id}, Lesson {lesson_number}")
+                        except Exception as e:
+                            log_message(f"Error committing/pushing processed.json for Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
 
+                    break
                 except StaleElementReferenceException:
                     retry_count += 1
                     log_message(f"Stale element in lesson {lesson_number}, retry {retry_count}/{max_retries}")
-                    time.sleep(2)
                     if retry_count == max_retries:
                         log_message(f"Failed lesson {lesson_number} after {max_retries} retries")
                         lesson_has_error = True
@@ -358,11 +250,11 @@ def process_class_id(driver, class_id, course_name, processed):
                         save_processed(processed)
                         break
 
-        log_message(f"Hoàn thành Class ID {class_id} cho course {course_name}")
+        log_message(f"Completed Class ID {class_id} for course {course_name}")
         return has_errors
 
     except Exception as e:
-        log_message(f"Lỗi chung Class ID {class_id}: {str(e)}")
+        log_message(f"Error processing Class ID {class_id}: {str(e)}")
         return True
 
 def main():
@@ -370,7 +262,7 @@ def main():
         df = pd.read_csv(CSV_FILE)
         df['Start date'] = pd.to_datetime(df['Start date'], dayfirst=True, errors='coerce')
     except Exception as e:
-        log_message(f"Lỗi đọc CSV: {str(e)}")
+        log_message(f"Error reading CSV: {str(e)}")
         return
 
     processed = {}
@@ -379,33 +271,17 @@ def main():
             with open(PROCESSED_FILE, 'r', encoding='utf-8') as f:
                 processed = json.load(f)
         except Exception as e:
-            log_message(f"Lỗi đọc processed.json: {str(e)}")
+            log_message(f"Error reading processed.json: {str(e)}")
 
     if 'GOOGLE_CREDENTIALS' in os.environ:
         try:
-            creds_content = os.environ['GOOGLE_CREDENTIALS'].strip()
-            log_message(f"DEBUG: GOOGLE_CREDENTIALS length = {len(creds_content)}")
-            creds_content = creds_content.encode('utf-8').decode('utf-8-sig')
-            hex_dump = binascii.hexlify(creds_content[:50].encode('utf-8')).decode('utf-8')
-            log_message(f"DEBUG: GOOGLE_CREDENTIALS hex dump (first 50 bytes) = {hex_dump}")
-            creds_json = json.loads(creds_content)
-            log_message("DEBUG: GOOGLE_CREDENTIALS is valid JSON")
-            log_message(f"DEBUG: client_email = {creds_json.get('client_email', 'N/A')}")
+            creds_content = os.environ['GOOGLE_CREDENTIALS'].strip().encode('utf-8').decode('utf-8-sig')
             with open(CREDENTIALS_FILE, 'w', encoding='utf-8') as f:
-                json.dump(creds_json, f, indent=2, ensure_ascii=False)
-            log_message(f"DEBUG: Wrote credentials.json from GOOGLE_CREDENTIALS")
-            with open(CREDENTIALS_FILE, 'r', encoding='utf-8') as f:
-                file_content = f.read()
-                log_message(f"DEBUG: credentials.json content = {file_content[:100].replace('\n', ' ')}...")
-        except json.JSONDecodeError as e:
-            log_message(f"DEBUG: Invalid GOOGLE_CREDENTIALS JSON: {str(e)}")
-            log_message(f"DEBUG: GOOGLE_CREDENTIALS snippet = {creds_content[:100].replace('\n', ' ')}...")
-            return
+                json.dump(json.loads(creds_content), f, indent=2, ensure_ascii=False)
         except Exception as e:
-            log_message(f"DEBUG: Error writing credentials.json: {str(e)}")
+            log_message(f"Error writing credentials.json: {str(e)}")
             return
 
-    # Initialize WebDriver
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -414,11 +290,9 @@ def main():
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0")
     options.add_argument("--disable-autofill")
     driver = webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
-    
-    try:
-        # Login once
-        login(driver)
 
+    try:
+        login(driver)
         course_names = df['Course name'].unique()
         max_classes_per_run = 50
         classes_processed = 0
@@ -427,7 +301,7 @@ def main():
         # First pass: Process one class ID per course_name
         for course_name in course_names:
             if classes_processed >= max_classes_per_run:
-                log_message(f"Đạt giới hạn {max_classes_per_run} classes/run, dừng lại")
+                log_message(f"Reached limit of {max_classes_per_run} classes/run, stopping")
                 break
             course_progress = processed.get(course_name, {})
             course_group = df[df['Course name'] == course_name]
@@ -438,52 +312,44 @@ def main():
                 log_message(f"No class IDs found for course {course_name}")
                 continue
 
-            class_id = class_ids[0]  # Process first class ID
+            class_id = class_ids[0]
             if class_id in course_progress and course_progress[class_id].get('last_lesson', -1) + 1 >= course_progress[class_id].get('total_lessons', 0):
-                log_message(f"Class ID {class_id} đã hoàn thành cho course {course_name}, bỏ qua")
+                log_message(f"Class ID {class_id} already completed for course {course_name}, skipping")
                 continue
 
-            log_message(f"First pass: Process Class ID {class_id} cho course {course_name}")
             has_errors = process_class_id(driver, class_id, course_name, processed)
             classes_processed += 1
             processed_courses.add(course_name)
-            if not has_errors:
-                log_message(f"Success Class ID {class_id} cho course {course_name}")
-            else:
-                log_message(f"Has errors Class ID {class_id} cho course {course_name}")
+            log_message(f"{'Success' if not has_errors else 'Has errors'} for Class ID {class_id} in course {course_name}")
 
-        # Second pass: Process remaining class IDs for courses already processed
+        # Second pass: Process remaining class IDs
         for course_name in course_names:
             if classes_processed >= max_classes_per_run:
-                log_message(f"Đạt giới hạn {max_classes_per_run} classes/run, dừng lại")
+                log_message(f"Reached limit of {max_classes_per_run} classes/run, stopping")
                 break
             if course_name not in processed_courses:
-                continue  # Skip courses not processed in first pass
+                continue
             course_progress = processed.get(course_name, {})
             course_group = df[df['Course name'] == course_name]
             sorted_group = course_group.sort_values(by=['Start date', 'Rate'], ascending=[False, False])
             class_ids = sorted_group['Class ID'].unique().tolist()
             max_class_ids = min(3, len(class_ids))
 
-            for i in range(1, max_class_ids):  # Start from second class ID
+            for i in range(1, max_class_ids):
                 if classes_processed >= max_classes_per_run:
-                    log_message(f"Đạt giới hạn {max_classes_per_run} classes/run, dừng lại")
+                    log_message(f"Reached limit of {max_classes_per_run} classes/run, stopping")
                     break
                 class_id = class_ids[i]
                 if class_id in course_progress and course_progress[class_id].get('last_lesson', -1) + 1 >= course_progress[class_id].get('total_lessons', 0):
-                    log_message(f"Class ID {class_id} đã hoàn thành cho course {course_name}, bỏ qua")
+                    log_message(f"Class ID {class_id} already completed for course {course_name}, skipping")
                     continue
 
-                log_message(f"Second pass: Process Class ID {class_id} (thứ {i+1}/{max_class_ids}) cho course {course_name}")
                 has_errors = process_class_id(driver, class_id, course_name, processed)
                 classes_processed += 1
-                if not has_errors:
-                    log_message(f"Success Class ID {class_id} cho course {course_name}")
-                else:
-                    log_message(f"Has errors Class ID {class_id} cho course {course_name}")
+                log_message(f"{'Success' if not has_errors else 'Has errors'} for Class ID {class_id} in course {course_name}")
 
         save_processed(processed)
-        log_message("Hoàn thành run")
+        log_message("Run completed")
 
     finally:
         driver.quit()
