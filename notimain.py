@@ -9,8 +9,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-import schedule
-import threading
 import subprocess
 
 # Configuration
@@ -130,7 +128,7 @@ def is_git_repository():
         return False
 
 def check_reports():
-    log_message("Starting report check for Class ID {CLASS_ID}")
+    log_message(f"Starting report check for Class ID {CLASS_ID}")
     processed = {}
     if os.path.exists(PROCESSED_FILE):
         try:
@@ -205,32 +203,7 @@ def check_reports():
         log_message("Closing WebDriver")
         driver.quit()
 
-def run_schedule():
-    log_message("Starting schedule loop")
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
-
-def main():
-    log_message("Starting main script")
-    if 'GOOGLE_CREDENTIALS' in os.environ:
-        try:
-            log_message("Writing Google credentials to credentials.json")
-            creds_content = os.environ['GOOGLE_CREDENTIALS'].strip().encode('utf-8').decode('utf-8-sig')
-            with open(CREDENTIALS_FILE, 'w', encoding='utf-8') as f:
-                json.dump(json.loads(creds_content), f, indent=2, ensure_ascii=False)
-            log_message("Credentials written successfully")
-        except Exception as e:
-            log_message(f"Error writing credentials.json: {str(e)}")
-            return
-
-    log_message("Scheduling hourly report check")
-    schedule.every(1).hours.do(check_reports)
-    threading.Thread(target=run_schedule, daemon=True).start()
-
-    log_message("Entering main loop")
-    while True:
-        time.sleep(60)
-
 if __name__ == "__main__":
-    main()
+    log_message("Starting script")
+    check_reports()
+    log_message("Script completed")
