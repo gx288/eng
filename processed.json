@@ -29,5 +29,12 @@
       "total_lessons": 14,
       "has_errors": true
     }
+  },
+  "Summer Smart 4": {
+    "11209": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": false
+    }
   }
 }
