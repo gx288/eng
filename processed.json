@@ -1,4 +1,256 @@
 {
-  "class_id": "11005",
-  "report_count": 48
+  "Reading Skills 1": {
+    "11260": {
+      "last_lesson": 0,
+      "total_lessons": 34,
+      "has_errors": false
+    },
+    "10997": {
+      "last_lesson": -1,
+      "total_lessons": 34,
+      "has_errors": false
+    },
+    "11260": {
+      "last_lesson": 33,
+      "total_lessons": 34,
+      "has_errors": true
+    }
+  },
+  "Summer Kindy 4": {
+    "11236": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": false
+    },
+    "11236": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": false
+    }
+  },
+  "Summer Smart 3": {
+    "11217": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": true
+    },
+    "11217": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": true
+    }
+  },
+  "Summer Smart 4": {
+    "11209": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": false
+    },
+    "11209": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": false
+    }
+  },
+  "Summer Smart 2": {
+    "11191": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": true
+    },
+    "11191": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": true
+    }
+  },
+  "Summer Kindy 3": {
+    "11190": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": true
+    },
+    "11190": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": true
+    }
+  },
+  "Summer Smart 1": {
+    "11184": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": false
+    },
+    "11184": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": false
+    }
+  },
+  "Summer Smart 7": {
+    "11174": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": false
+    },
+    "11174": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": false
+    }
+  },
+  "Summer Smart 5": {
+    "11167": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": false
+    },
+    "11167": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": false
+    }
+  },
+  "Summer Smart 6": {
+    "11143": {
+      "last_lesson": 0,
+      "total_lessons": 14,
+      "has_errors": false
+    },
+    "11143": {
+      "last_lesson": 13,
+      "total_lessons": 14,
+      "has_errors": false
+    }
+  },
+  "Reader's Wonderland 3.2": {
+    "11064": {
+      "last_lesson": 0,
+      "total_lessons": 8,
+      "has_errors": false
+    },
+    "11064": {
+      "last_lesson": 7,
+      "total_lessons": 8,
+      "has_errors": false
+    }
+  },
+  "Reader's Wonderland 3.1": {
+    "11053": {
+      "last_lesson": 0,
+      "total_lessons": 8,
+      "has_errors": false
+    },
+    "11053": {
+      "last_lesson": 7,
+      "total_lessons": 8,
+      "has_errors": false
+    }
+  },
+  "Reading Skills 2": {
+    "11018": {
+      "last_lesson": 0,
+      "total_lessons": 31,
+      "has_errors": false
+    },
+    "11018": {
+      "last_lesson": 30,
+      "total_lessons": 31,
+      "has_errors": true
+    }
+  },
+  "Cambridge Literacy Ladder 1": {
+    "11006": {
+      "last_lesson": 0,
+      "total_lessons": 29,
+      "has_errors": false
+    },
+    "11006": {
+      "last_lesson": 28,
+      "total_lessons": 29,
+      "has_errors": true
+    }
+  },
+  "Discover 2": {
+    "10973": {
+      "last_lesson": 0,
+      "total_lessons": 39,
+      "has_errors": false
+    },
+    "10973": {
+      "last_lesson": 38,
+      "total_lessons": 39,
+      "has_errors": true
+    }
+  },
+  "Reader's Wonderland 2.3": {
+    "10954": {
+      "last_lesson": 0,
+      "total_lessons": 8,
+      "has_errors": true
+    },
+    "10954": {
+      "last_lesson": 7,
+      "total_lessons": 8,
+      "has_errors": true
+    }
+  },
+  "Kindergarten 4": {
+    "10857": {
+      "last_lesson": 0,
+      "total_lessons": 41,
+      "has_errors": false
+    },
+    "10857": {
+      "last_lesson": 40,
+      "total_lessons": 41,
+      "has_errors": true
+    }
+  },
+  "Discover 1": {
+    "10794": {
+      "last_lesson": 0,
+      "total_lessons": 29,
+      "has_errors": false
+    },
+    "10794": {
+      "last_lesson": 28,
+      "total_lessons": 29,
+      "has_errors": true
+    }
+  },
+  "Cambridge Literacy Ladder Foundation": {
+    "10793": {
+      "last_lesson": 0,
+      "total_lessons": 66,
+      "has_errors": true
+    },
+    "10793": {
+      "last_lesson": 65,
+      "total_lessons": 66,
+      "has_errors": true
+    }
+  },
+  "Outing Think & Write": {
+    "10756": {
+      "last_lesson": 0,
+      "total_lessons": 1,
+      "has_errors": false
+    }
+  },
+  "English Smart 2 - Look 2": {
+    "10660": {
+      "last_lesson": 0,
+      "total_lessons": 31,
+      "has_errors": false
+    }
+  },
+  "Discover 5": {
+    "10739": {
+      "last_lesson": 0,
+      "total_lessons": 48,
+      "has_errors": false
+    }
+  }
 }
