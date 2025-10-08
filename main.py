@@ -64,7 +64,7 @@ def login(driver):
             EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))
         )
         login_button.click()
-        time.sleep(2)
+        time.sleep(5)
 
         if "login" in driver.current_url:
             log_message("Lỗi đăng nhập: Vẫn ở trang login")
