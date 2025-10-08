@@ -166,7 +166,7 @@ def process_class_id(class_id, course_name, processed):
     driver = None
     try:
         options = webdriver.ChromeOptions()
-        # options.add_argument("--headless")  # Comment out for local debug
+        options.add_argument("--headless")  # Comment out for local debug
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
