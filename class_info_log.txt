@@ -4841,3 +4841,7 @@ Links:
 Unit 1 - Lesson 1 (page 1, 2): https://drive.google.com/drive/folders/1B4l6BtNW-LoUdHbvIHb0YJL5PTmdrAak?usp=sharing
 [2025-10-08 07:33:15] Lỗi đăng nhập: Vẫn ở trang login
 [2025-10-08 07:33:15] Lỗi đăng nhập: Login failed
+[2025-10-08 08:42:31] Starting main script
+[2025-10-08 08:42:31] Scheduling hourly report check
+[2025-10-08 08:42:31] Entering main loop
+[2025-10-08 08:42:31] Starting schedule loop
