@@ -22,7 +22,7 @@ CSV_FILE = "id.csv"
 PROCESSED_FILE = "processed.json"
 CREDENTIALS_FILE = "credentials.json"
 SHEET_ID = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
-SHEET_NAME = "Trang tính3"
+SHEET_NAME = " Trang tính3"
 SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 def log_message(message):
@@ -337,8 +337,7 @@ def process_class_id(driver, class_id, course_name, processed):
                     else:
                         log_message(f"Skip commit/push due to Google Sheet update failure for Class ID {class_id}, Lesson {lesson_number}")
 
-                    return has_errors  # Stop after one lesson for this class ID in the first pass
-
+                    break
                 except StaleElementReferenceException:
                     retry_count += 1
                     log_message(f"Stale element in lesson {lesson_number}, retry {retry_count}/{max_retries}")
@@ -350,7 +349,7 @@ def process_class_id(driver, class_id, course_name, processed):
                         processed[course_name][class_id]['last_lesson'] = lesson_index
                         processed[course_name][class_id]['has_errors'] = has_errors
                         save_processed(processed)
-                        return has_errors
+                        break
 
         log_message(f"Hoàn thành Class ID {class_id} cho course {course_name}")
         return has_errors
@@ -416,6 +415,9 @@ def main():
         course_names = df['Course name'].unique()
         max_classes_per_run = 50
         classes_processed = 0
+
+        # Group by course_name and class_id
+        grouped = df.groupby(['Course name', 'Class ID'])
 
         # First pass: Process one class ID per course_name
         for course_name in course_names:
