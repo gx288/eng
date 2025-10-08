@@ -22,7 +22,7 @@ CSV_FILE = "id.csv"
 PROCESSED_FILE = "processed.json"
 CREDENTIALS_FILE = "credentials.json"
 SHEET_ID = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
-SHEET_NAME = " Trang tính3"
+SHEET_NAME = "Trang tính3"  # Removed extra space
 SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 def log_message(message):
@@ -128,14 +128,22 @@ def update_google_sheet(row_data, class_id, lesson_number):
 
             creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
             client = gspread.authorize(creds)
-            sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
-            existing_data = sheet.get_all_values()
+            sheet = client.open_by_key(SHEET_ID)
+            try:
+                worksheet = sheet.worksheet(SHEET_NAME)
+            except gspread.exceptions.WorksheetNotFound as e:
+                log_message(f"WorksheetNotFound: Không tìm thấy worksheet '{SHEET_NAME}'")
+                worksheets = sheet.worksheets()
+                log_message(f"Available worksheets: {[ws.title for ws in worksheets]}")
+                raise Exception(f"Worksheet '{SHEET_NAME}' not found")
+            
+            existing_data = worksheet.get_all_values()
             unique_id = f"{class_id}:{lesson_number}"
             for row in existing_data:
                 if len(row) >= 4 and f"{row[0]}:{row[3]}" == unique_id:
                     log_message(f"Skip append: Lesson {lesson_number} of Class ID {class_id} already exists in Sheet")
                     return True
-            sheet.append_row(row_data)
+            worksheet.append_row(row_data)
             log_message(f"Đã cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}")
             return True
         except Exception as e:
@@ -337,7 +345,6 @@ def process_class_id(driver, class_id, course_name, processed):
                     else:
                         log_message(f"Skip commit/push due to Google Sheet update failure for Class ID {class_id}, Lesson {lesson_number}")
 
-                    break
                 except StaleElementReferenceException:
                     retry_count += 1
                     log_message(f"Stale element in lesson {lesson_number}, retry {retry_count}/{max_retries}")
@@ -400,7 +407,7 @@ def main():
 
     # Initialize WebDriver
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless")  # Comment out for local debug
+    options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
@@ -415,9 +422,7 @@ def main():
         course_names = df['Course name'].unique()
         max_classes_per_run = 50
         classes_processed = 0
-
-        # Group by course_name and class_id
-        grouped = df.groupby(['Course name', 'Class ID'])
+        processed_courses = set()
 
         # First pass: Process one class ID per course_name
         for course_name in course_names:
@@ -441,16 +446,19 @@ def main():
             log_message(f"First pass: Process Class ID {class_id} cho course {course_name}")
             has_errors = process_class_id(driver, class_id, course_name, processed)
             classes_processed += 1
+            processed_courses.add(course_name)
             if not has_errors:
                 log_message(f"Success Class ID {class_id} cho course {course_name}")
             else:
                 log_message(f"Has errors Class ID {class_id} cho course {course_name}")
 
-        # Second pass: Process remaining class IDs
+        # Second pass: Process remaining class IDs for courses already processed
         for course_name in course_names:
             if classes_processed >= max_classes_per_run:
                 log_message(f"Đạt giới hạn {max_classes_per_run} classes/run, dừng lại")
                 break
+            if course_name not in processed_courses:
+                continue  # Skip courses not processed in first pass
             course_progress = processed.get(course_name, {})
             course_group = df[df['Course name'] == course_name]
             sorted_group = course_group.sort_values(by=['Start date', 'Rate'], ascending=[False, False])
