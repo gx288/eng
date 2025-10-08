@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import datetime
 import json
-import shutil
+import subprocess
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -76,9 +76,8 @@ def login(driver):
         )
         log_message("Nhấn nút đăng nhập...")
         login_button.click()
-        time.sleep(1)
+        time.sleep(5)
 
-        # Check for login error
         try:
             error_message = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'The account or password you enter is not correct!')]"))
@@ -97,22 +96,38 @@ def login(driver):
         raise
 
 def update_google_sheet(row_data, class_id, lesson_number):
-    try:
-        creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
-        client = gspread.authorize(creds)
-        sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
-        existing_data = sheet.get_all_values()
-        unique_id = f"{class_id}:{lesson_number}"
-        for row in existing_data:
-            if len(row) >= 4 and f"{row[0]}:{row[3]}" == unique_id:
-                log_message(f"Skip append: Lesson {lesson_number} of Class ID {class_id} already exists in Sheet")
-                return True
-        sheet.append_row(row_data)
-        log_message(f"Đã cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}")
-        return True
-    except Exception as e:
-        log_message(f"Lỗi khi cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
-        return False
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            with open(CREDENTIALS_FILE, 'r') as f:
+                creds_content = f.read()
+                log_message(f"DEBUG: credentials.json content length = {len(creds_content)}")
+                try:
+                    json.loads(creds_content)  # Validate JSON
+                    log_message("DEBUG: credentials.json is valid JSON")
+                except json.JSONDecodeError as e:
+                    log_message(f"DEBUG: Invalid credentials.json: {str(e)}")
+                    raise Exception("Invalid credentials.json format")
+            
+            creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
+            client = gspread.authorize(creds)
+            sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
+            existing_data = sheet.get_all_values()
+            unique_id = f"{class_id}:{lesson_number}"
+            for row in existing_data:
+                if len(row) >= 4 and f"{row[0]}:{row[3]}" == unique_id:
+                    log_message(f"Skip append: Lesson {lesson_number} of Class ID {class_id} already exists in Sheet")
+                    return True
+            sheet.append_row(row_data)
+            log_message(f"Đã cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}")
+            return True
+        except Exception as e:
+            log_message(f"Thử {attempt+1}/{max_retries} cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
+            if attempt == max_retries - 1:
+                log_message(f"Lỗi khi cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
+                return False
+            time.sleep(2)
+    return False
 
 def save_processed(processed):
     try:
@@ -124,9 +139,10 @@ def save_processed(processed):
 
 def is_git_repository():
     try:
-        subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, capture_output=True)
+        subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, capture_output=True, text=True)
         return True
-    except:
+    except Exception as e:
+        log_message(f"DEBUG: Not a Git repository: {str(e)}")
         return False
 
 def process_class_id(class_id, course_name, processed):
@@ -135,7 +151,7 @@ def process_class_id(class_id, course_name, processed):
     driver = None
     try:
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")  # Comment out for local debug
+        # options.add_argument("--headless")  # Comment out for local debug
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
@@ -240,55 +256,68 @@ def process_class_id(class_id, course_name, processed):
                     try:
                         homework_button = row.find_element(By.XPATH, ".//i[@data-v-50ef298c and contains(@class, 'isax-book-square')]")
                         driver.execute_script("arguments[0].scrollIntoView(true);", homework_button)
-                        driver.execute_script("arguments[0].click();", homework_button)
-                        time.sleep(2)
-                        popup = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".v-dialog--active")))
-                        header = popup.find_element(By.CSS_SELECTOR, ".v-toolbar__title").text.strip()
-                        text_actions = [elem.text.strip() for elem in popup.find_elements(By.CSS_SELECTOR, ".text-action")]
-                        link_actions = popup.find_elements(By.CSS_SELECTOR, ".link-action")
-                        homework_links = [f"{link.text.strip()}: {link.get_attribute('href')}" for link in link_actions]
-                        for href in [l.split(': ')[1] for l in homework_links if 'docs.google.com' not in l and 'drive.google.com' not in l]:
+                        for attempt in range(3):
                             try:
-                                response = requests.head(href, allow_redirects=True, timeout=10)
-                                if response.status_code != 200:
+                                driver.execute_script("arguments[0].click();", homework_button)
+                                popup = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".v-dialog--active")))
+                                log_message(f"DEBUG: Popup opened for lesson {lesson_number}")
+                                header = popup.find_element(By.CSS_SELECTOR, ".v-toolbar__title").text.strip()
+                                text_actions = [elem.text.strip() for elem in popup.find_elements(By.CSS_SELECTOR, ".text-action")]
+                                link_actions = popup.find_elements(By.CSS_SELECTOR, ".link-action")
+                                homework_links = [f"{link.text.strip()}: {link.get_attribute('href')}" for link in link_actions]
+                                for href in [l.split(': ')[1] for l in homework_links if 'docs.google.com' not in l and 'drive.google.com' not in l]:
+                                    try:
+                                        response = requests.head(href, allow_redirects=True, timeout=10)
+                                        if response.status_code != 200:
+                                            log_message(f"Invalid homework link for lesson {lesson_number}: HTTP {response.status_code}")
+                                            lesson_has_error = True
+                                            has_errors = True
+                                    except Exception as e:
+                                        log_message(f"Error checking homework link for lesson {lesson_number}: {str(e)}")
+                                        lesson_has_error = True
+                                        has_errors = True
+
+                                homework_content = f"Homework Header: {header}\n" + ("Text:\n" + "\n".join(text_actions) + "\n" if text_actions else "") + ("Links:\n" + "\n".join(homework_links) if homework_links else "")
+                                log_message(f"Homework content for lesson {lesson_number}: {homework_content}")
+
+                                try:
+                                    popup.find_element(By.XPATH, ".//button[.//span[contains(text(), 'Cancel')]]").click()
+                                except:
+                                    driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
+                                time.sleep(2)
+                                break
+                            except Exception as e:
+                                log_message(f"Thử {attempt+1}/3 mở homework popup lesson {lesson_number}: {str(e)}")
+                                if attempt == 2:
+                                    log_message(f"Lỗi homework lesson {lesson_number}: Failed to open popup after 3 attempts")
                                     lesson_has_error = True
                                     has_errors = True
-                            except:
-                                lesson_has_error = True
-                                has_errors = True
-
-                        homework_content = f"Homework Header: {header}\n" + ("Text:\n" + "\n".join(text_actions) + "\n" if text_actions else "") + ("Links:\n" + "\n".join(homework_links) if homework_links else "")
-
-                        try:
-                            popup.find_element(By.XPATH, ".//button[.//span[contains(text(), 'Cancel')]]").click()
-                        except:
-                            driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
-                        time.sleep(2)
+                                time.sleep(2)
                     except Exception as e:
                         log_message(f"Lỗi homework lesson {lesson_number}: {str(e)}")
                         lesson_has_error = True
                         has_errors = True
 
                     row_data = [str(class_id), class_code, course_name, lesson_number, report_link, homework_content, "OK" if not lesson_has_error else "Has Errors"]
-                    update_google_sheet(row_data, class_id, lesson_number)
+                    if update_google_sheet(row_data, class_id, lesson_number):
+                        processed[course_name][class_id]['last_lesson'] = lesson_index
+                        processed[course_name][class_id]['has_errors'] = has_errors
+                        save_processed(processed)
 
-                    processed[course_name][class_id]['last_lesson'] = lesson_index
-                    processed[course_name][class_id]['has_errors'] = has_errors
-                    save_processed(processed)
-
-                    if is_git_repository():
-                        try:
-                            import subprocess
-                            subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"])
-                            subprocess.run(["git", "config", "--global", "user.email", "action@github.com"])
-                            subprocess.run(["git", "add", PROCESSED_FILE])
-                            subprocess.run(["git", "commit", "-m", f"Update processed.json for Class ID {class_id}, Lesson {lesson_number}"])
-                            subprocess.run(["git", "push"])
-                            log_message(f"Pushed processed.json for Class ID {class_id}, Lesson {lesson_number}")
-                        except Exception as e:
-                            log_message(f"Lỗi khi commit/push processed.json cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
+                        if is_git_repository():
+                            try:
+                                subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
+                                subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
+                                subprocess.run(["git", "add", PROCESSED_FILE], check=True)
+                                subprocess.run(["git", "commit", "-m", f"Update processed.json for Class ID {class_id}, Lesson {lesson_number}"], check=True)
+                                subprocess.run(["git", "push"], check=True)
+                                log_message(f"Pushed processed.json for Class ID {class_id}, Lesson {lesson_number}")
+                            except Exception as e:
+                                log_message(f"Lỗi khi commit/push processed.json cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
+                        else:
+                            log_message("Không phải Git repository, bỏ qua commit/push")
                     else:
-                        log_message("Không phải Git repository, bỏ qua commit/push")
+                        log_message(f"Skip commit/push due to Google Sheet update failure for Class ID {class_id}, Lesson {lesson_number}")
 
                     break
                 except StaleElementReferenceException:
@@ -368,6 +397,10 @@ def main():
 
 if __name__ == "__main__":
     if 'CREDENTIALS_JSON' in os.environ:
-        with open(CREDENTIALS_FILE, 'w') as f:
-            f.write(os.environ['CREDENTIALS_JSON'])
+        try:
+            with open(CREDENTIALS_FILE, 'w') as f:
+                f.write(os.environ['CREDENTIALS_JSON'])
+            log_message(f"DEBUG: Wrote credentials.json from environment variable")
+        except Exception as e:
+            log_message(f"DEBUG: Error writing credentials.json: {str(e)}")
     main()
