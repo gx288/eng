@@ -45,7 +45,18 @@ def check_doc_accessibility(url):
                 return False, "Deleted or not found"
             else:
                 return False, f"HTTP {response.status_code}"
-        return False, "Not a Google Docs URL"
+        elif "drive.google.com/drive/folders" in url:
+            folder_id = urlparse(url).path.split('/folders/')[1].split('?')[0]
+            response = requests.head(url, allow_redirects=True, timeout=10)
+            if response.status_code == 200:
+                return True, url
+            elif response.status_code in (401, 403):
+                return False, "Requires authentication"
+            elif response.status_code == 404:
+                return False, "Deleted or not found"
+            else:
+                return False, f"HTTP {response.status_code}"
+        return False, "Not a supported Google URL"
     except Exception as e:
         return False, str(e)
 
@@ -103,12 +114,13 @@ def update_google_sheet(row_data, class_id, lesson_number):
                 creds_content = f.read()
                 log_message(f"DEBUG: credentials.json content length = {len(creds_content)}")
                 try:
-                    json.loads(creds_content)  # Validate JSON
+                    creds_json = json.loads(creds_content)
                     log_message("DEBUG: credentials.json is valid JSON")
+                    log_message(f"DEBUG: credentials.json keys = {list(creds_json.keys())}")
                 except json.JSONDecodeError as e:
                     log_message(f"DEBUG: Invalid credentials.json: {str(e)}")
-                    raise Exception("Invalid credentials.json format")
-            
+                    raise Exception(f"Invalid credentials.json format: {str(e)}")
+
             creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
             client = gspread.authorize(creds)
             sheet = client.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
@@ -140,18 +152,21 @@ def save_processed(processed):
 def is_git_repository():
     try:
         subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, capture_output=True, text=True)
+        log_message("DEBUG: Git repository detected")
         return True
     except Exception as e:
         log_message(f"DEBUG: Not a Git repository: {str(e)}")
         return False
 
 def process_class_id(class_id, course_name, processed):
+    os.chdir(os.getenv("GITHUB_WORKSPACE", "."))
+    log_message(f"DEBUG: Working directory set to {os.getcwd()}")
     invalid = False
     has_errors = False
     driver = None
     try:
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")  # Comment out for local debug
+        # options.add_argument("--headless")  # Comment out for local debug
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
@@ -265,17 +280,24 @@ def process_class_id(class_id, course_name, processed):
                                 text_actions = [elem.text.strip() for elem in popup.find_elements(By.CSS_SELECTOR, ".text-action")]
                                 link_actions = popup.find_elements(By.CSS_SELECTOR, ".link-action")
                                 homework_links = [f"{link.text.strip()}: {link.get_attribute('href')}" for link in link_actions]
-                                for href in [l.split(': ')[1] for l in homework_links if 'docs.google.com' not in l and 'drive.google.com' not in l]:
-                                    try:
-                                        response = requests.head(href, allow_redirects=True, timeout=10)
-                                        if response.status_code != 200:
-                                            log_message(f"Invalid homework link for lesson {lesson_number}: HTTP {response.status_code}")
+                                for href in [l.split(': ')[1] for l in homework_links]:
+                                    if 'docs.google.com' in href or 'drive.google.com' in href:
+                                        is_accessible, result = check_doc_accessibility(href)
+                                        if not is_accessible:
+                                            log_message(f"Invalid homework link for lesson {lesson_number}: {result}")
                                             lesson_has_error = True
                                             has_errors = True
-                                    except Exception as e:
-                                        log_message(f"Error checking homework link for lesson {lesson_number}: {str(e)}")
-                                        lesson_has_error = True
-                                        has_errors = True
+                                    else:
+                                        try:
+                                            response = requests.head(href, allow_redirects=True, timeout=10)
+                                            if response.status_code != 200:
+                                                log_message(f"Invalid homework link for lesson {lesson_number}: HTTP {response.status_code}")
+                                                lesson_has_error = True
+                                                has_errors = True
+                                        except Exception as e:
+                                            log_message(f"Error checking homework link for lesson {lesson_number}: {str(e)}")
+                                            lesson_has_error = True
+                                            has_errors = True
 
                                 homework_content = f"Homework Header: {header}\n" + ("Text:\n" + "\n".join(text_actions) + "\n" if text_actions else "") + ("Links:\n" + "\n".join(homework_links) if homework_links else "")
                                 log_message(f"Homework content for lesson {lesson_number}: {homework_content}")
@@ -356,6 +378,21 @@ def main():
         except Exception as e:
             log_message(f"Lỗi đọc processed: {str(e)}")
 
+    if 'GOOGLE_CREDENTIALS' in os.environ:
+        try:
+            creds_content = os.environ['GOOGLE_CREDENTIALS'].strip()
+            log_message(f"DEBUG: GOOGLE_CREDENTIALS length = {len(creds_content)}")
+            json.loads(creds_content)  # Validate JSON
+            with open(CREDENTIALS_FILE, 'w') as f:
+                f.write(creds_content)
+            log_message(f"DEBUG: Wrote credentials.json from GOOGLE_CREDENTIALS")
+        except json.JSONDecodeError as e:
+            log_message(f"DEBUG: Invalid GOOGLE_CREDENTIALS JSON: {str(e)}")
+            return
+        except Exception as e:
+            log_message(f"DEBUG: Error writing credentials.json: {str(e)}")
+            return
+
     course_names = df['Course name'].unique()
     max_classes_per_run = 50
     classes_processed = 0
@@ -396,11 +433,4 @@ def main():
     log_message("Hoàn thành run")
 
 if __name__ == "__main__":
-    if 'CREDENTIALS_JSON' in os.environ:
-        try:
-            with open(CREDENTIALS_FILE, 'w') as f:
-                f.write(os.environ['CREDENTIALS_JSON'])
-            log_message(f"DEBUG: Wrote credentials.json from environment variable")
-        except Exception as e:
-            log_message(f"DEBUG: Error writing credentials.json: {str(e)}")
     main()
