@@ -1,7 +1,7 @@
 {
   "Reading Skills 1": {
     "11260": {
-      "last_lesson": 0,
+      "last_lesson": 10,
       "total_lessons": 34,
       "has_errors": false
     },
@@ -11,7 +11,7 @@
       "has_errors": false
     },
     "11260": {
-      "last_lesson": 10,
+      "last_lesson": 0,
       "total_lessons": 34,
       "has_errors": false
     }
