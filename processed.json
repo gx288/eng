@@ -141,5 +141,12 @@
       "total_lessons": 66,
       "has_errors": true
     }
+  },
+  "Outing Think & Write": {
+    "10756": {
+      "last_lesson": 0,
+      "total_lessons": 1,
+      "has_errors": false
+    }
   }
 }
