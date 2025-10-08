@@ -2093,3 +2093,1300 @@ Unit 2 - Lesson 1 (page 6, 7, 8, 9): https://drive.google.com/drive/folders/1Jka
 [2025-10-08 05:49:57] DEBUG: credentials.json content length = 2272
 [2025-10-08 05:49:57] DEBUG: Invalid credentials.json: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
 [2025-10-08 05:49:57] Thử 1/3 cập nhật Google Sheet cho Class ID 10997, Lesson 4: Invalid credentials.json format: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+[2025-10-08 06:47:23] Bắt đầu course: Reading Skills 1
+[2025-10-08 06:47:23] Process Class ID 11260 (thứ 1/3) cho course Reading Skills 1
+[2025-10-08 06:47:23] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:27] Lỗi chung Class ID 11260: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x56011c498fba <unknown>
+#1 0x56011bf1d6d0 <unknown>
+#2 0x56011bf58475 <unknown>
+#3 0x56011bf54368 <unknown>
+#4 0x56011bfa3280 <unknown>
+#5 0x56011bfa2946 <unknown>
+#6 0x56011bf94c03 <unknown>
+#7 0x56011bf617a8 <unknown>
+#8 0x56011bf62421 <unknown>
+#9 0x56011c45db28 <unknown>
+#10 0x56011c46187f <unknown>
+#11 0x56011c445c49 <unknown>
+#12 0x56011c462405 <unknown>
+#13 0x56011c42b4ff <unknown>
+#14 0x56011c486258 <unknown>
+#15 0x56011c486432 <unknown>
+#16 0x56011c497fa3 <unknown>
+#17 0x7f0f3929caa4 <unknown>
+#18 0x7f0f39329c6c <unknown>
+
+[2025-10-08 06:47:27] Has errors Class ID 11260, thử class tiếp theo
+[2025-10-08 06:47:27] Process Class ID 10997 (thứ 2/3) cho course Reading Skills 1
+[2025-10-08 06:47:27] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:27] Lỗi chung Class ID 10997: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x555dd012afba <unknown>
+#1 0x555dcfbaf6d0 <unknown>
+#2 0x555dcfbea475 <unknown>
+#3 0x555dcfbe6368 <unknown>
+#4 0x555dcfc35280 <unknown>
+#5 0x555dcfc34946 <unknown>
+#6 0x555dcfc26c03 <unknown>
+#7 0x555dcfbf37a8 <unknown>
+#8 0x555dcfbf4421 <unknown>
+#9 0x555dd00efb28 <unknown>
+#10 0x555dd00f387f <unknown>
+#11 0x555dd00d7c49 <unknown>
+#12 0x555dd00f4405 <unknown>
+#13 0x555dd00bd4ff <unknown>
+#14 0x555dd0118258 <unknown>
+#15 0x555dd0118432 <unknown>
+#16 0x555dd0129fa3 <unknown>
+#17 0x7f92c269caa4 <unknown>
+#18 0x7f92c2729c6c <unknown>
+
+[2025-10-08 06:47:27] Has errors Class ID 10997, thử class tiếp theo
+[2025-10-08 06:47:27] Process Class ID 10996 (thứ 3/3) cho course Reading Skills 1
+[2025-10-08 06:47:27] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:28] Lỗi chung Class ID 10996: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x564c60284fba <unknown>
+#1 0x564c5fd096d0 <unknown>
+#2 0x564c5fd44475 <unknown>
+#3 0x564c5fd40368 <unknown>
+#4 0x564c5fd8f280 <unknown>
+#5 0x564c5fd8e946 <unknown>
+#6 0x564c5fd80c03 <unknown>
+#7 0x564c5fd4d7a8 <unknown>
+#8 0x564c5fd4e421 <unknown>
+#9 0x564c60249b28 <unknown>
+#10 0x564c6024d87f <unknown>
+#11 0x564c60231c49 <unknown>
+#12 0x564c6024e405 <unknown>
+#13 0x564c602174ff <unknown>
+#14 0x564c60272258 <unknown>
+#15 0x564c60272432 <unknown>
+#16 0x564c60283fa3 <unknown>
+#17 0x7f781709caa4 <unknown>
+#18 0x7f7817129c6c <unknown>
+
+[2025-10-08 06:47:28] Has errors Class ID 10996, thử class tiếp theo
+[2025-10-08 06:47:28] Bắt đầu course: Summer Kindy 4
+[2025-10-08 06:47:28] Process Class ID 11236 (thứ 1/3) cho course Summer Kindy 4
+[2025-10-08 06:47:28] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:28] Lỗi chung Class ID 11236: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55c4eabcbfba <unknown>
+#1 0x55c4ea6506d0 <unknown>
+#2 0x55c4ea68b475 <unknown>
+#3 0x55c4ea687368 <unknown>
+#4 0x55c4ea6d6280 <unknown>
+#5 0x55c4ea6d5946 <unknown>
+#6 0x55c4ea6c7c03 <unknown>
+#7 0x55c4ea6947a8 <unknown>
+#8 0x55c4ea695421 <unknown>
+#9 0x55c4eab90b28 <unknown>
+#10 0x55c4eab9487f <unknown>
+#11 0x55c4eab78c49 <unknown>
+#12 0x55c4eab95405 <unknown>
+#13 0x55c4eab5e4ff <unknown>
+#14 0x55c4eabb9258 <unknown>
+#15 0x55c4eabb9432 <unknown>
+#16 0x55c4eabcafa3 <unknown>
+#17 0x7f892709caa4 <unknown>
+#18 0x7f8927129c6c <unknown>
+
+[2025-10-08 06:47:28] Has errors Class ID 11236, thử class tiếp theo
+[2025-10-08 06:47:28] Process Class ID 11235 (thứ 2/3) cho course Summer Kindy 4
+[2025-10-08 06:47:28] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:28] Lỗi chung Class ID 11235: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x556ff22fffba <unknown>
+#1 0x556ff1d846d0 <unknown>
+#2 0x556ff1dbf475 <unknown>
+#3 0x556ff1dbb368 <unknown>
+#4 0x556ff1e0a280 <unknown>
+#5 0x556ff1e09946 <unknown>
+#6 0x556ff1dfbc03 <unknown>
+#7 0x556ff1dc87a8 <unknown>
+#8 0x556ff1dc9421 <unknown>
+#9 0x556ff22c4b28 <unknown>
+#10 0x556ff22c887f <unknown>
+#11 0x556ff22acc49 <unknown>
+#12 0x556ff22c9405 <unknown>
+#13 0x556ff22924ff <unknown>
+#14 0x556ff22ed258 <unknown>
+#15 0x556ff22ed432 <unknown>
+#16 0x556ff22fefa3 <unknown>
+#17 0x7f18f069caa4 <unknown>
+#18 0x7f18f0729c6c <unknown>
+
+[2025-10-08 06:47:28] Has errors Class ID 11235, thử class tiếp theo
+[2025-10-08 06:47:28] Process Class ID 11204 (thứ 3/3) cho course Summer Kindy 4
+[2025-10-08 06:47:28] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:29] Lỗi chung Class ID 11204: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55baef718fba <unknown>
+#1 0x55baef19d6d0 <unknown>
+#2 0x55baef1d8475 <unknown>
+#3 0x55baef1d4368 <unknown>
+#4 0x55baef223280 <unknown>
+#5 0x55baef222946 <unknown>
+#6 0x55baef214c03 <unknown>
+#7 0x55baef1e17a8 <unknown>
+#8 0x55baef1e2421 <unknown>
+#9 0x55baef6ddb28 <unknown>
+#10 0x55baef6e187f <unknown>
+#11 0x55baef6c5c49 <unknown>
+#12 0x55baef6e2405 <unknown>
+#13 0x55baef6ab4ff <unknown>
+#14 0x55baef706258 <unknown>
+#15 0x55baef706432 <unknown>
+#16 0x55baef717fa3 <unknown>
+#17 0x7fe31c29caa4 <unknown>
+#18 0x7fe31c329c6c <unknown>
+
+[2025-10-08 06:47:29] Has errors Class ID 11204, thử class tiếp theo
+[2025-10-08 06:47:29] Bắt đầu course: Summer Smart 3
+[2025-10-08 06:47:29] Process Class ID 11217 (thứ 1/3) cho course Summer Smart 3
+[2025-10-08 06:47:29] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:29] Lỗi chung Class ID 11217: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55ffbc987fba <unknown>
+#1 0x55ffbc40c6d0 <unknown>
+#2 0x55ffbc447475 <unknown>
+#3 0x55ffbc443368 <unknown>
+#4 0x55ffbc492280 <unknown>
+#5 0x55ffbc491946 <unknown>
+#6 0x55ffbc483c03 <unknown>
+#7 0x55ffbc4507a8 <unknown>
+#8 0x55ffbc451421 <unknown>
+#9 0x55ffbc94cb28 <unknown>
+#10 0x55ffbc95087f <unknown>
+#11 0x55ffbc934c49 <unknown>
+#12 0x55ffbc951405 <unknown>
+#13 0x55ffbc91a4ff <unknown>
+#14 0x55ffbc975258 <unknown>
+#15 0x55ffbc975432 <unknown>
+#16 0x55ffbc986fa3 <unknown>
+#17 0x7f52dfc9caa4 <unknown>
+#18 0x7f52dfd29c6c <unknown>
+
+[2025-10-08 06:47:29] Has errors Class ID 11217, thử class tiếp theo
+[2025-10-08 06:47:29] Process Class ID 11170 (thứ 2/3) cho course Summer Smart 3
+[2025-10-08 06:47:29] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:29] Lỗi chung Class ID 11170: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55d59a5fefba <unknown>
+#1 0x55d59a0836d0 <unknown>
+#2 0x55d59a0be475 <unknown>
+#3 0x55d59a0ba368 <unknown>
+#4 0x55d59a109280 <unknown>
+#5 0x55d59a108946 <unknown>
+#6 0x55d59a0fac03 <unknown>
+#7 0x55d59a0c77a8 <unknown>
+#8 0x55d59a0c8421 <unknown>
+#9 0x55d59a5c3b28 <unknown>
+#10 0x55d59a5c787f <unknown>
+#11 0x55d59a5abc49 <unknown>
+#12 0x55d59a5c8405 <unknown>
+#13 0x55d59a5914ff <unknown>
+#14 0x55d59a5ec258 <unknown>
+#15 0x55d59a5ec432 <unknown>
+#16 0x55d59a5fdfa3 <unknown>
+#17 0x7fc452e9caa4 <unknown>
+#18 0x7fc452f29c6c <unknown>
+
+[2025-10-08 06:47:29] Has errors Class ID 11170, thử class tiếp theo
+[2025-10-08 06:47:29] Process Class ID 11152 (thứ 3/3) cho course Summer Smart 3
+[2025-10-08 06:47:29] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:30] Lỗi chung Class ID 11152: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x561b65471fba <unknown>
+#1 0x561b64ef66d0 <unknown>
+#2 0x561b64f31475 <unknown>
+#3 0x561b64f2d368 <unknown>
+#4 0x561b64f7c280 <unknown>
+#5 0x561b64f7b946 <unknown>
+#6 0x561b64f6dc03 <unknown>
+#7 0x561b64f3a7a8 <unknown>
+#8 0x561b64f3b421 <unknown>
+#9 0x561b65436b28 <unknown>
+#10 0x561b6543a87f <unknown>
+#11 0x561b6541ec49 <unknown>
+#12 0x561b6543b405 <unknown>
+#13 0x561b654044ff <unknown>
+#14 0x561b6545f258 <unknown>
+#15 0x561b6545f432 <unknown>
+#16 0x561b65470fa3 <unknown>
+#17 0x7f02a0e9caa4 <unknown>
+#18 0x7f02a0f29c6c <unknown>
+
+[2025-10-08 06:47:30] Has errors Class ID 11152, thử class tiếp theo
+[2025-10-08 06:47:30] Bắt đầu course: Summer Smart 4
+[2025-10-08 06:47:30] Process Class ID 11209 (thứ 1/3) cho course Summer Smart 4
+[2025-10-08 06:47:30] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:30] Lỗi chung Class ID 11209: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x556d0cc6cfba <unknown>
+#1 0x556d0c6f16d0 <unknown>
+#2 0x556d0c72c475 <unknown>
+#3 0x556d0c728368 <unknown>
+#4 0x556d0c777280 <unknown>
+#5 0x556d0c776946 <unknown>
+#6 0x556d0c768c03 <unknown>
+#7 0x556d0c7357a8 <unknown>
+#8 0x556d0c736421 <unknown>
+#9 0x556d0cc31b28 <unknown>
+#10 0x556d0cc3587f <unknown>
+#11 0x556d0cc19c49 <unknown>
+#12 0x556d0cc36405 <unknown>
+#13 0x556d0cbff4ff <unknown>
+#14 0x556d0cc5a258 <unknown>
+#15 0x556d0cc5a432 <unknown>
+#16 0x556d0cc6bfa3 <unknown>
+#17 0x7f958a29caa4 <unknown>
+#18 0x7f958a329c6c <unknown>
+
+[2025-10-08 06:47:30] Has errors Class ID 11209, thử class tiếp theo
+[2025-10-08 06:47:30] Process Class ID 11180 (thứ 2/3) cho course Summer Smart 4
+[2025-10-08 06:47:30] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:30] Lỗi chung Class ID 11180: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5620dfa69fba <unknown>
+#1 0x5620df4ee6d0 <unknown>
+#2 0x5620df529475 <unknown>
+#3 0x5620df525368 <unknown>
+#4 0x5620df574280 <unknown>
+#5 0x5620df573946 <unknown>
+#6 0x5620df565c03 <unknown>
+#7 0x5620df5327a8 <unknown>
+#8 0x5620df533421 <unknown>
+#9 0x5620dfa2eb28 <unknown>
+#10 0x5620dfa3287f <unknown>
+#11 0x5620dfa16c49 <unknown>
+#12 0x5620dfa33405 <unknown>
+#13 0x5620df9fc4ff <unknown>
+#14 0x5620dfa57258 <unknown>
+#15 0x5620dfa57432 <unknown>
+#16 0x5620dfa68fa3 <unknown>
+#17 0x7f3830a9caa4 <unknown>
+#18 0x7f3830b29c6c <unknown>
+
+[2025-10-08 06:47:30] Has errors Class ID 11180, thử class tiếp theo
+[2025-10-08 06:47:30] Process Class ID 11171 (thứ 3/3) cho course Summer Smart 4
+[2025-10-08 06:47:30] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:30] Lỗi chung Class ID 11171: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x56011e127fba <unknown>
+#1 0x56011dbac6d0 <unknown>
+#2 0x56011dbe7475 <unknown>
+#3 0x56011dbe3368 <unknown>
+#4 0x56011dc32280 <unknown>
+#5 0x56011dc31946 <unknown>
+#6 0x56011dc23c03 <unknown>
+#7 0x56011dbf07a8 <unknown>
+#8 0x56011dbf1421 <unknown>
+#9 0x56011e0ecb28 <unknown>
+#10 0x56011e0f087f <unknown>
+#11 0x56011e0d4c49 <unknown>
+#12 0x56011e0f1405 <unknown>
+#13 0x56011e0ba4ff <unknown>
+#14 0x56011e115258 <unknown>
+#15 0x56011e115432 <unknown>
+#16 0x56011e126fa3 <unknown>
+#17 0x7f90fd09caa4 <unknown>
+#18 0x7f90fd129c6c <unknown>
+
+[2025-10-08 06:47:30] Has errors Class ID 11171, thử class tiếp theo
+[2025-10-08 06:47:30] Bắt đầu course: Summer Smart 2
+[2025-10-08 06:47:30] Process Class ID 11191 (thứ 1/3) cho course Summer Smart 2
+[2025-10-08 06:47:30] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:31] Lỗi chung Class ID 11191: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55bd94f6bfba <unknown>
+#1 0x55bd949f06d0 <unknown>
+#2 0x55bd94a2b475 <unknown>
+#3 0x55bd94a27368 <unknown>
+#4 0x55bd94a76280 <unknown>
+#5 0x55bd94a75946 <unknown>
+#6 0x55bd94a67c03 <unknown>
+#7 0x55bd94a347a8 <unknown>
+#8 0x55bd94a35421 <unknown>
+#9 0x55bd94f30b28 <unknown>
+#10 0x55bd94f3487f <unknown>
+#11 0x55bd94f18c49 <unknown>
+#12 0x55bd94f35405 <unknown>
+#13 0x55bd94efe4ff <unknown>
+#14 0x55bd94f59258 <unknown>
+#15 0x55bd94f59432 <unknown>
+#16 0x55bd94f6afa3 <unknown>
+#17 0x7f30c8c9caa4 <unknown>
+#18 0x7f30c8d29c6c <unknown>
+
+[2025-10-08 06:47:31] Has errors Class ID 11191, thử class tiếp theo
+[2025-10-08 06:47:31] Process Class ID 11178 (thứ 2/3) cho course Summer Smart 2
+[2025-10-08 06:47:31] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:31] Lỗi chung Class ID 11178: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5646aa4d5fba <unknown>
+#1 0x5646a9f5a6d0 <unknown>
+#2 0x5646a9f95475 <unknown>
+#3 0x5646a9f91368 <unknown>
+#4 0x5646a9fe0280 <unknown>
+#5 0x5646a9fdf946 <unknown>
+#6 0x5646a9fd1c03 <unknown>
+#7 0x5646a9f9e7a8 <unknown>
+#8 0x5646a9f9f421 <unknown>
+#9 0x5646aa49ab28 <unknown>
+#10 0x5646aa49e87f <unknown>
+#11 0x5646aa482c49 <unknown>
+#12 0x5646aa49f405 <unknown>
+#13 0x5646aa4684ff <unknown>
+#14 0x5646aa4c3258 <unknown>
+#15 0x5646aa4c3432 <unknown>
+#16 0x5646aa4d4fa3 <unknown>
+#17 0x7f2c9809caa4 <unknown>
+#18 0x7f2c98129c6c <unknown>
+
+[2025-10-08 06:47:31] Has errors Class ID 11178, thử class tiếp theo
+[2025-10-08 06:47:31] Process Class ID 11165 (thứ 3/3) cho course Summer Smart 2
+[2025-10-08 06:47:31] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:31] Lỗi chung Class ID 11165: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x556644c89fba <unknown>
+#1 0x55664470e6d0 <unknown>
+#2 0x556644749475 <unknown>
+#3 0x556644745368 <unknown>
+#4 0x556644794280 <unknown>
+#5 0x556644793946 <unknown>
+#6 0x556644785c03 <unknown>
+#7 0x5566447527a8 <unknown>
+#8 0x556644753421 <unknown>
+#9 0x556644c4eb28 <unknown>
+#10 0x556644c5287f <unknown>
+#11 0x556644c36c49 <unknown>
+#12 0x556644c53405 <unknown>
+#13 0x556644c1c4ff <unknown>
+#14 0x556644c77258 <unknown>
+#15 0x556644c77432 <unknown>
+#16 0x556644c88fa3 <unknown>
+#17 0x7f573aa9caa4 <unknown>
+#18 0x7f573ab29c6c <unknown>
+
+[2025-10-08 06:47:31] Has errors Class ID 11165, thử class tiếp theo
+[2025-10-08 06:47:31] Bắt đầu course: Summer Kindy 3
+[2025-10-08 06:47:31] Process Class ID 11190 (thứ 1/3) cho course Summer Kindy 3
+[2025-10-08 06:47:31] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:32] Lỗi chung Class ID 11190: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x562ed21aefba <unknown>
+#1 0x562ed1c336d0 <unknown>
+#2 0x562ed1c6e475 <unknown>
+#3 0x562ed1c6a368 <unknown>
+#4 0x562ed1cb9280 <unknown>
+#5 0x562ed1cb8946 <unknown>
+#6 0x562ed1caac03 <unknown>
+#7 0x562ed1c777a8 <unknown>
+#8 0x562ed1c78421 <unknown>
+#9 0x562ed2173b28 <unknown>
+#10 0x562ed217787f <unknown>
+#11 0x562ed215bc49 <unknown>
+#12 0x562ed2178405 <unknown>
+#13 0x562ed21414ff <unknown>
+#14 0x562ed219c258 <unknown>
+#15 0x562ed219c432 <unknown>
+#16 0x562ed21adfa3 <unknown>
+#17 0x7fe874a9caa4 <unknown>
+#18 0x7fe874b29c6c <unknown>
+
+[2025-10-08 06:47:32] Has errors Class ID 11190, thử class tiếp theo
+[2025-10-08 06:47:32] Process Class ID 11183 (thứ 2/3) cho course Summer Kindy 3
+[2025-10-08 06:47:32] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:32] Lỗi chung Class ID 11183: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x555b7edd9fba <unknown>
+#1 0x555b7e85e6d0 <unknown>
+#2 0x555b7e899475 <unknown>
+#3 0x555b7e895368 <unknown>
+#4 0x555b7e8e4280 <unknown>
+#5 0x555b7e8e3946 <unknown>
+#6 0x555b7e8d5c03 <unknown>
+#7 0x555b7e8a27a8 <unknown>
+#8 0x555b7e8a3421 <unknown>
+#9 0x555b7ed9eb28 <unknown>
+#10 0x555b7eda287f <unknown>
+#11 0x555b7ed86c49 <unknown>
+#12 0x555b7eda3405 <unknown>
+#13 0x555b7ed6c4ff <unknown>
+#14 0x555b7edc7258 <unknown>
+#15 0x555b7edc7432 <unknown>
+#16 0x555b7edd8fa3 <unknown>
+#17 0x7ffb19c9caa4 <unknown>
+#18 0x7ffb19d29c6c <unknown>
+
+[2025-10-08 06:47:32] Has errors Class ID 11183, thử class tiếp theo
+[2025-10-08 06:47:32] Process Class ID 11163 (thứ 3/3) cho course Summer Kindy 3
+[2025-10-08 06:47:32] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:32] Lỗi chung Class ID 11163: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55fc9e3f0fba <unknown>
+#1 0x55fc9de756d0 <unknown>
+#2 0x55fc9deb0475 <unknown>
+#3 0x55fc9deac368 <unknown>
+#4 0x55fc9defb280 <unknown>
+#5 0x55fc9defa946 <unknown>
+#6 0x55fc9deecc03 <unknown>
+#7 0x55fc9deb97a8 <unknown>
+#8 0x55fc9deba421 <unknown>
+#9 0x55fc9e3b5b28 <unknown>
+#10 0x55fc9e3b987f <unknown>
+#11 0x55fc9e39dc49 <unknown>
+#12 0x55fc9e3ba405 <unknown>
+#13 0x55fc9e3834ff <unknown>
+#14 0x55fc9e3de258 <unknown>
+#15 0x55fc9e3de432 <unknown>
+#16 0x55fc9e3effa3 <unknown>
+#17 0x7f2a83e9caa4 <unknown>
+#18 0x7f2a83f29c6c <unknown>
+
+[2025-10-08 06:47:32] Has errors Class ID 11163, thử class tiếp theo
+[2025-10-08 06:47:32] Bắt đầu course: Summer Smart 1
+[2025-10-08 06:47:32] Process Class ID 11184 (thứ 1/3) cho course Summer Smart 1
+[2025-10-08 06:47:32] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:33] Lỗi chung Class ID 11184: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5615b2785fba <unknown>
+#1 0x5615b220a6d0 <unknown>
+#2 0x5615b2245475 <unknown>
+#3 0x5615b2241368 <unknown>
+#4 0x5615b2290280 <unknown>
+#5 0x5615b228f946 <unknown>
+#6 0x5615b2281c03 <unknown>
+#7 0x5615b224e7a8 <unknown>
+#8 0x5615b224f421 <unknown>
+#9 0x5615b274ab28 <unknown>
+#10 0x5615b274e87f <unknown>
+#11 0x5615b2732c49 <unknown>
+#12 0x5615b274f405 <unknown>
+#13 0x5615b27184ff <unknown>
+#14 0x5615b2773258 <unknown>
+#15 0x5615b2773432 <unknown>
+#16 0x5615b2784fa3 <unknown>
+#17 0x7fe14f69caa4 <unknown>
+#18 0x7fe14f729c6c <unknown>
+
+[2025-10-08 06:47:33] Has errors Class ID 11184, thử class tiếp theo
+[2025-10-08 06:47:33] Process Class ID 11164 (thứ 2/3) cho course Summer Smart 1
+[2025-10-08 06:47:33] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:33] Lỗi chung Class ID 11164: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55b938219fba <unknown>
+#1 0x55b937c9e6d0 <unknown>
+#2 0x55b937cd9475 <unknown>
+#3 0x55b937cd5368 <unknown>
+#4 0x55b937d24280 <unknown>
+#5 0x55b937d23946 <unknown>
+#6 0x55b937d15c03 <unknown>
+#7 0x55b937ce27a8 <unknown>
+#8 0x55b937ce3421 <unknown>
+#9 0x55b9381deb28 <unknown>
+#10 0x55b9381e287f <unknown>
+#11 0x55b9381c6c49 <unknown>
+#12 0x55b9381e3405 <unknown>
+#13 0x55b9381ac4ff <unknown>
+#14 0x55b938207258 <unknown>
+#15 0x55b938207432 <unknown>
+#16 0x55b938218fa3 <unknown>
+#17 0x7f82b269caa4 <unknown>
+#18 0x7f82b2729c6c <unknown>
+
+[2025-10-08 06:47:33] Has errors Class ID 11164, thử class tiếp theo
+[2025-10-08 06:47:33] Process Class ID 11150 (thứ 3/3) cho course Summer Smart 1
+[2025-10-08 06:47:33] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:33] Lỗi chung Class ID 11150: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x560b3acd5fba <unknown>
+#1 0x560b3a75a6d0 <unknown>
+#2 0x560b3a795475 <unknown>
+#3 0x560b3a791368 <unknown>
+#4 0x560b3a7e0280 <unknown>
+#5 0x560b3a7df946 <unknown>
+#6 0x560b3a7d1c03 <unknown>
+#7 0x560b3a79e7a8 <unknown>
+#8 0x560b3a79f421 <unknown>
+#9 0x560b3ac9ab28 <unknown>
+#10 0x560b3ac9e87f <unknown>
+#11 0x560b3ac82c49 <unknown>
+#12 0x560b3ac9f405 <unknown>
+#13 0x560b3ac684ff <unknown>
+#14 0x560b3acc3258 <unknown>
+#15 0x560b3acc3432 <unknown>
+#16 0x560b3acd4fa3 <unknown>
+#17 0x7f79dae9caa4 <unknown>
+#18 0x7f79daf29c6c <unknown>
+
+[2025-10-08 06:47:33] Has errors Class ID 11150, thử class tiếp theo
+[2025-10-08 06:47:33] Bắt đầu course: Summer Smart 7
+[2025-10-08 06:47:33] Process Class ID 11174 (thứ 1/2) cho course Summer Smart 7
+[2025-10-08 06:47:33] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:34] Lỗi chung Class ID 11174: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55980752cfba <unknown>
+#1 0x559806fb16d0 <unknown>
+#2 0x559806fec475 <unknown>
+#3 0x559806fe8368 <unknown>
+#4 0x559807037280 <unknown>
+#5 0x559807036946 <unknown>
+#6 0x559807028c03 <unknown>
+#7 0x559806ff57a8 <unknown>
+#8 0x559806ff6421 <unknown>
+#9 0x5598074f1b28 <unknown>
+#10 0x5598074f587f <unknown>
+#11 0x5598074d9c49 <unknown>
+#12 0x5598074f6405 <unknown>
+#13 0x5598074bf4ff <unknown>
+#14 0x55980751a258 <unknown>
+#15 0x55980751a432 <unknown>
+#16 0x55980752bfa3 <unknown>
+#17 0x7f0a1d49caa4 <unknown>
+#18 0x7f0a1d529c6c <unknown>
+
+[2025-10-08 06:47:34] Has errors Class ID 11174, thử class tiếp theo
+[2025-10-08 06:47:34] Process Class ID 11154 (thứ 2/2) cho course Summer Smart 7
+[2025-10-08 06:47:34] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:34] Lỗi chung Class ID 11154: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x562f21964fba <unknown>
+#1 0x562f213e96d0 <unknown>
+#2 0x562f21424475 <unknown>
+#3 0x562f21420368 <unknown>
+#4 0x562f2146f280 <unknown>
+#5 0x562f2146e946 <unknown>
+#6 0x562f21460c03 <unknown>
+#7 0x562f2142d7a8 <unknown>
+#8 0x562f2142e421 <unknown>
+#9 0x562f21929b28 <unknown>
+#10 0x562f2192d87f <unknown>
+#11 0x562f21911c49 <unknown>
+#12 0x562f2192e405 <unknown>
+#13 0x562f218f74ff <unknown>
+#14 0x562f21952258 <unknown>
+#15 0x562f21952432 <unknown>
+#16 0x562f21963fa3 <unknown>
+#17 0x7f88baa9caa4 <unknown>
+#18 0x7f88bab29c6c <unknown>
+
+[2025-10-08 06:47:34] Has errors Class ID 11154, thử class tiếp theo
+[2025-10-08 06:47:34] Bắt đầu course: Summer Smart 5
+[2025-10-08 06:47:34] Process Class ID 11167 (thứ 1/2) cho course Summer Smart 5
+[2025-10-08 06:47:34] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:34] Lỗi chung Class ID 11167: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5650c9720fba <unknown>
+#1 0x5650c91a56d0 <unknown>
+#2 0x5650c91e0475 <unknown>
+#3 0x5650c91dc368 <unknown>
+#4 0x5650c922b280 <unknown>
+#5 0x5650c922a946 <unknown>
+#6 0x5650c921cc03 <unknown>
+#7 0x5650c91e97a8 <unknown>
+#8 0x5650c91ea421 <unknown>
+#9 0x5650c96e5b28 <unknown>
+#10 0x5650c96e987f <unknown>
+#11 0x5650c96cdc49 <unknown>
+#12 0x5650c96ea405 <unknown>
+#13 0x5650c96b34ff <unknown>
+#14 0x5650c970e258 <unknown>
+#15 0x5650c970e432 <unknown>
+#16 0x5650c971ffa3 <unknown>
+#17 0x7f5643a9caa4 <unknown>
+#18 0x7f5643b29c6c <unknown>
+
+[2025-10-08 06:47:34] Has errors Class ID 11167, thử class tiếp theo
+[2025-10-08 06:47:34] Process Class ID 11160 (thứ 2/2) cho course Summer Smart 5
+[2025-10-08 06:47:34] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:35] Lỗi chung Class ID 11160: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x562742431fba <unknown>
+#1 0x562741eb66d0 <unknown>
+#2 0x562741ef1475 <unknown>
+#3 0x562741eed368 <unknown>
+#4 0x562741f3c280 <unknown>
+#5 0x562741f3b946 <unknown>
+#6 0x562741f2dc03 <unknown>
+#7 0x562741efa7a8 <unknown>
+#8 0x562741efb421 <unknown>
+#9 0x5627423f6b28 <unknown>
+#10 0x5627423fa87f <unknown>
+#11 0x5627423dec49 <unknown>
+#12 0x5627423fb405 <unknown>
+#13 0x5627423c44ff <unknown>
+#14 0x56274241f258 <unknown>
+#15 0x56274241f432 <unknown>
+#16 0x562742430fa3 <unknown>
+#17 0x7f8ce409caa4 <unknown>
+#18 0x7f8ce4129c6c <unknown>
+
+[2025-10-08 06:47:35] Has errors Class ID 11160, thử class tiếp theo
+[2025-10-08 06:47:35] Bắt đầu course: Summer Smart 6
+[2025-10-08 06:47:35] Process Class ID 11143 (thứ 1/2) cho course Summer Smart 6
+[2025-10-08 06:47:35] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:35] Lỗi chung Class ID 11143: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55868d74efba <unknown>
+#1 0x55868d1d36d0 <unknown>
+#2 0x55868d20e475 <unknown>
+#3 0x55868d20a368 <unknown>
+#4 0x55868d259280 <unknown>
+#5 0x55868d258946 <unknown>
+#6 0x55868d24ac03 <unknown>
+#7 0x55868d2177a8 <unknown>
+#8 0x55868d218421 <unknown>
+#9 0x55868d713b28 <unknown>
+#10 0x55868d71787f <unknown>
+#11 0x55868d6fbc49 <unknown>
+#12 0x55868d718405 <unknown>
+#13 0x55868d6e14ff <unknown>
+#14 0x55868d73c258 <unknown>
+#15 0x55868d73c432 <unknown>
+#16 0x55868d74dfa3 <unknown>
+#17 0x7f4f4629caa4 <unknown>
+#18 0x7f4f46329c6c <unknown>
+
+[2025-10-08 06:47:35] Has errors Class ID 11143, thử class tiếp theo
+[2025-10-08 06:47:35] Process Class ID 11125 (thứ 2/2) cho course Summer Smart 6
+[2025-10-08 06:47:35] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:35] Lỗi chung Class ID 11125: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55bf4e60ffba <unknown>
+#1 0x55bf4e0946d0 <unknown>
+#2 0x55bf4e0cf475 <unknown>
+#3 0x55bf4e0cb368 <unknown>
+#4 0x55bf4e11a280 <unknown>
+#5 0x55bf4e119946 <unknown>
+#6 0x55bf4e10bc03 <unknown>
+#7 0x55bf4e0d87a8 <unknown>
+#8 0x55bf4e0d9421 <unknown>
+#9 0x55bf4e5d4b28 <unknown>
+#10 0x55bf4e5d887f <unknown>
+#11 0x55bf4e5bcc49 <unknown>
+#12 0x55bf4e5d9405 <unknown>
+#13 0x55bf4e5a24ff <unknown>
+#14 0x55bf4e5fd258 <unknown>
+#15 0x55bf4e5fd432 <unknown>
+#16 0x55bf4e60efa3 <unknown>
+#17 0x7f560389caa4 <unknown>
+#18 0x7f5603929c6c <unknown>
+
+[2025-10-08 06:47:35] Has errors Class ID 11125, thử class tiếp theo
+[2025-10-08 06:47:35] Bắt đầu course: Reader's Wonderland 3.2
+[2025-10-08 06:47:35] Process Class ID 11064 (thứ 1/1) cho course Reader's Wonderland 3.2
+[2025-10-08 06:47:35] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:36] Lỗi chung Class ID 11064: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x563b9c903fba <unknown>
+#1 0x563b9c3886d0 <unknown>
+#2 0x563b9c3c3475 <unknown>
+#3 0x563b9c3bf368 <unknown>
+#4 0x563b9c40e280 <unknown>
+#5 0x563b9c40d946 <unknown>
+#6 0x563b9c3ffc03 <unknown>
+#7 0x563b9c3cc7a8 <unknown>
+#8 0x563b9c3cd421 <unknown>
+#9 0x563b9c8c8b28 <unknown>
+#10 0x563b9c8cc87f <unknown>
+#11 0x563b9c8b0c49 <unknown>
+#12 0x563b9c8cd405 <unknown>
+#13 0x563b9c8964ff <unknown>
+#14 0x563b9c8f1258 <unknown>
+#15 0x563b9c8f1432 <unknown>
+#16 0x563b9c902fa3 <unknown>
+#17 0x7f951cc9caa4 <unknown>
+#18 0x7f951cd29c6c <unknown>
+
+[2025-10-08 06:47:36] Has errors Class ID 11064, thử class tiếp theo
+[2025-10-08 06:47:36] Bắt đầu course: Reader's Wonderland 3.1
+[2025-10-08 06:47:36] Process Class ID 11053 (thứ 1/2) cho course Reader's Wonderland 3.1
+[2025-10-08 06:47:36] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:36] Lỗi chung Class ID 11053: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55588b867fba <unknown>
+#1 0x55588b2ec6d0 <unknown>
+#2 0x55588b327475 <unknown>
+#3 0x55588b323368 <unknown>
+#4 0x55588b372280 <unknown>
+#5 0x55588b371946 <unknown>
+#6 0x55588b363c03 <unknown>
+#7 0x55588b3307a8 <unknown>
+#8 0x55588b331421 <unknown>
+#9 0x55588b82cb28 <unknown>
+#10 0x55588b83087f <unknown>
+#11 0x55588b814c49 <unknown>
+#12 0x55588b831405 <unknown>
+#13 0x55588b7fa4ff <unknown>
+#14 0x55588b855258 <unknown>
+#15 0x55588b855432 <unknown>
+#16 0x55588b866fa3 <unknown>
+#17 0x7f34eaa9caa4 <unknown>
+#18 0x7f34eab29c6c <unknown>
+
+[2025-10-08 06:47:36] Has errors Class ID 11053, thử class tiếp theo
+[2025-10-08 06:47:36] Process Class ID 10804 (thứ 2/2) cho course Reader's Wonderland 3.1
+[2025-10-08 06:47:36] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:36] Lỗi chung Class ID 10804: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x556e9e833fba <unknown>
+#1 0x556e9e2b86d0 <unknown>
+#2 0x556e9e2f3475 <unknown>
+#3 0x556e9e2ef368 <unknown>
+#4 0x556e9e33e280 <unknown>
+#5 0x556e9e33d946 <unknown>
+#6 0x556e9e32fc03 <unknown>
+#7 0x556e9e2fc7a8 <unknown>
+#8 0x556e9e2fd421 <unknown>
+#9 0x556e9e7f8b28 <unknown>
+#10 0x556e9e7fc87f <unknown>
+#11 0x556e9e7e0c49 <unknown>
+#12 0x556e9e7fd405 <unknown>
+#13 0x556e9e7c64ff <unknown>
+#14 0x556e9e821258 <unknown>
+#15 0x556e9e821432 <unknown>
+#16 0x556e9e832fa3 <unknown>
+#17 0x7f9b4609caa4 <unknown>
+#18 0x7f9b46129c6c <unknown>
+
+[2025-10-08 06:47:36] Has errors Class ID 10804, thử class tiếp theo
+[2025-10-08 06:47:36] Bắt đầu course: Reading Skills 2
+[2025-10-08 06:47:36] Process Class ID 11018 (thứ 1/3) cho course Reading Skills 2
+[2025-10-08 06:47:36] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:37] Lỗi chung Class ID 11018: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5617c39dbfba <unknown>
+#1 0x5617c34606d0 <unknown>
+#2 0x5617c349b475 <unknown>
+#3 0x5617c3497368 <unknown>
+#4 0x5617c34e6280 <unknown>
+#5 0x5617c34e5946 <unknown>
+#6 0x5617c34d7c03 <unknown>
+#7 0x5617c34a47a8 <unknown>
+#8 0x5617c34a5421 <unknown>
+#9 0x5617c39a0b28 <unknown>
+#10 0x5617c39a487f <unknown>
+#11 0x5617c3988c49 <unknown>
+#12 0x5617c39a5405 <unknown>
+#13 0x5617c396e4ff <unknown>
+#14 0x5617c39c9258 <unknown>
+#15 0x5617c39c9432 <unknown>
+#16 0x5617c39dafa3 <unknown>
+#17 0x7f253d09caa4 <unknown>
+#18 0x7f253d129c6c <unknown>
+
+[2025-10-08 06:47:37] Has errors Class ID 11018, thử class tiếp theo
+[2025-10-08 06:47:37] Process Class ID 10765 (thứ 2/3) cho course Reading Skills 2
+[2025-10-08 06:47:37] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:37] Lỗi chung Class ID 10765: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5646651bbfba <unknown>
+#1 0x564664c406d0 <unknown>
+#2 0x564664c7b475 <unknown>
+#3 0x564664c77368 <unknown>
+#4 0x564664cc6280 <unknown>
+#5 0x564664cc5946 <unknown>
+#6 0x564664cb7c03 <unknown>
+#7 0x564664c847a8 <unknown>
+#8 0x564664c85421 <unknown>
+#9 0x564665180b28 <unknown>
+#10 0x56466518487f <unknown>
+#11 0x564665168c49 <unknown>
+#12 0x564665185405 <unknown>
+#13 0x56466514e4ff <unknown>
+#14 0x5646651a9258 <unknown>
+#15 0x5646651a9432 <unknown>
+#16 0x5646651bafa3 <unknown>
+#17 0x7f73af69caa4 <unknown>
+#18 0x7f73af729c6c <unknown>
+
+[2025-10-08 06:47:37] Has errors Class ID 10765, thử class tiếp theo
+[2025-10-08 06:47:37] Process Class ID 10638 (thứ 3/3) cho course Reading Skills 2
+[2025-10-08 06:47:37] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:37] Lỗi chung Class ID 10638: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5558e8022fba <unknown>
+#1 0x5558e7aa76d0 <unknown>
+#2 0x5558e7ae2475 <unknown>
+#3 0x5558e7ade368 <unknown>
+#4 0x5558e7b2d280 <unknown>
+#5 0x5558e7b2c946 <unknown>
+#6 0x5558e7b1ec03 <unknown>
+#7 0x5558e7aeb7a8 <unknown>
+#8 0x5558e7aec421 <unknown>
+#9 0x5558e7fe7b28 <unknown>
+#10 0x5558e7feb87f <unknown>
+#11 0x5558e7fcfc49 <unknown>
+#12 0x5558e7fec405 <unknown>
+#13 0x5558e7fb54ff <unknown>
+#14 0x5558e8010258 <unknown>
+#15 0x5558e8010432 <unknown>
+#16 0x5558e8021fa3 <unknown>
+#17 0x7f99ec49caa4 <unknown>
+#18 0x7f99ec529c6c <unknown>
+
+[2025-10-08 06:47:37] Has errors Class ID 10638, thử class tiếp theo
+[2025-10-08 06:47:37] Bắt đầu course: Cambridge Literacy Ladder 1
+[2025-10-08 06:47:37] Process Class ID 11006 (thứ 1/3) cho course Cambridge Literacy Ladder 1
+[2025-10-08 06:47:37] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:38] Lỗi chung Class ID 11006: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x563b768bbfba <unknown>
+#1 0x563b763406d0 <unknown>
+#2 0x563b7637b475 <unknown>
+#3 0x563b76377368 <unknown>
+#4 0x563b763c6280 <unknown>
+#5 0x563b763c5946 <unknown>
+#6 0x563b763b7c03 <unknown>
+#7 0x563b763847a8 <unknown>
+#8 0x563b76385421 <unknown>
+#9 0x563b76880b28 <unknown>
+#10 0x563b7688487f <unknown>
+#11 0x563b76868c49 <unknown>
+#12 0x563b76885405 <unknown>
+#13 0x563b7684e4ff <unknown>
+#14 0x563b768a9258 <unknown>
+#15 0x563b768a9432 <unknown>
+#16 0x563b768bafa3 <unknown>
+#17 0x7f51d229caa4 <unknown>
+#18 0x7f51d2329c6c <unknown>
+
+[2025-10-08 06:47:38] Has errors Class ID 11006, thử class tiếp theo
+[2025-10-08 06:47:38] Process Class ID 10629 (thứ 2/3) cho course Cambridge Literacy Ladder 1
+[2025-10-08 06:47:38] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:38] Lỗi chung Class ID 10629: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55648ed50fba <unknown>
+#1 0x55648e7d56d0 <unknown>
+#2 0x55648e810475 <unknown>
+#3 0x55648e80c368 <unknown>
+#4 0x55648e85b280 <unknown>
+#5 0x55648e85a946 <unknown>
+#6 0x55648e84cc03 <unknown>
+#7 0x55648e8197a8 <unknown>
+#8 0x55648e81a421 <unknown>
+#9 0x55648ed15b28 <unknown>
+#10 0x55648ed1987f <unknown>
+#11 0x55648ecfdc49 <unknown>
+#12 0x55648ed1a405 <unknown>
+#13 0x55648ece34ff <unknown>
+#14 0x55648ed3e258 <unknown>
+#15 0x55648ed3e432 <unknown>
+#16 0x55648ed4ffa3 <unknown>
+#17 0x7fab5ba9caa4 <unknown>
+#18 0x7fab5bb29c6c <unknown>
+
+[2025-10-08 06:47:38] Has errors Class ID 10629, thử class tiếp theo
+[2025-10-08 06:47:38] Process Class ID 10719 (thứ 3/3) cho course Cambridge Literacy Ladder 1
+[2025-10-08 06:47:38] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:38] Lỗi chung Class ID 10719: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55f63a0bcfba <unknown>
+#1 0x55f639b416d0 <unknown>
+#2 0x55f639b7c475 <unknown>
+#3 0x55f639b78368 <unknown>
+#4 0x55f639bc7280 <unknown>
+#5 0x55f639bc6946 <unknown>
+#6 0x55f639bb8c03 <unknown>
+#7 0x55f639b857a8 <unknown>
+#8 0x55f639b86421 <unknown>
+#9 0x55f63a081b28 <unknown>
+#10 0x55f63a08587f <unknown>
+#11 0x55f63a069c49 <unknown>
+#12 0x55f63a086405 <unknown>
+#13 0x55f63a04f4ff <unknown>
+#14 0x55f63a0aa258 <unknown>
+#15 0x55f63a0aa432 <unknown>
+#16 0x55f63a0bbfa3 <unknown>
+#17 0x7fc7e3a9caa4 <unknown>
+#18 0x7fc7e3b29c6c <unknown>
+
+[2025-10-08 06:47:38] Has errors Class ID 10719, thử class tiếp theo
+[2025-10-08 06:47:38] Bắt đầu course: Discover 2
+[2025-10-08 06:47:38] Process Class ID 10973 (thứ 1/3) cho course Discover 2
+[2025-10-08 06:47:38] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:39] Lỗi chung Class ID 10973: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x555775326fba <unknown>
+#1 0x555774dab6d0 <unknown>
+#2 0x555774de6475 <unknown>
+#3 0x555774de2368 <unknown>
+#4 0x555774e31280 <unknown>
+#5 0x555774e30946 <unknown>
+#6 0x555774e22c03 <unknown>
+#7 0x555774def7a8 <unknown>
+#8 0x555774df0421 <unknown>
+#9 0x5557752ebb28 <unknown>
+#10 0x5557752ef87f <unknown>
+#11 0x5557752d3c49 <unknown>
+#12 0x5557752f0405 <unknown>
+#13 0x5557752b94ff <unknown>
+#14 0x555775314258 <unknown>
+#15 0x555775314432 <unknown>
+#16 0x555775325fa3 <unknown>
+#17 0x7fd11dc9caa4 <unknown>
+#18 0x7fd11dd29c6c <unknown>
+
+[2025-10-08 06:47:39] Has errors Class ID 10973, thử class tiếp theo
+[2025-10-08 06:47:39] Process Class ID 10188 (thứ 2/3) cho course Discover 2
+[2025-10-08 06:47:39] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:39] Lỗi chung Class ID 10188: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x560ba9025fba <unknown>
+#1 0x560ba8aaa6d0 <unknown>
+#2 0x560ba8ae5475 <unknown>
+#3 0x560ba8ae1368 <unknown>
+#4 0x560ba8b30280 <unknown>
+#5 0x560ba8b2f946 <unknown>
+#6 0x560ba8b21c03 <unknown>
+#7 0x560ba8aee7a8 <unknown>
+#8 0x560ba8aef421 <unknown>
+#9 0x560ba8feab28 <unknown>
+#10 0x560ba8fee87f <unknown>
+#11 0x560ba8fd2c49 <unknown>
+#12 0x560ba8fef405 <unknown>
+#13 0x560ba8fb84ff <unknown>
+#14 0x560ba9013258 <unknown>
+#15 0x560ba9013432 <unknown>
+#16 0x560ba9024fa3 <unknown>
+#17 0x7fc58869caa4 <unknown>
+#18 0x7fc588729c6c <unknown>
+
+[2025-10-08 06:47:39] Has errors Class ID 10188, thử class tiếp theo
+[2025-10-08 06:47:39] Process Class ID 10118 (thứ 3/3) cho course Discover 2
+[2025-10-08 06:47:39] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:39] Lỗi chung Class ID 10118: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55d902a33fba <unknown>
+#1 0x55d9024b86d0 <unknown>
+#2 0x55d9024f3475 <unknown>
+#3 0x55d9024ef368 <unknown>
+#4 0x55d90253e280 <unknown>
+#5 0x55d90253d946 <unknown>
+#6 0x55d90252fc03 <unknown>
+#7 0x55d9024fc7a8 <unknown>
+#8 0x55d9024fd421 <unknown>
+#9 0x55d9029f8b28 <unknown>
+#10 0x55d9029fc87f <unknown>
+#11 0x55d9029e0c49 <unknown>
+#12 0x55d9029fd405 <unknown>
+#13 0x55d9029c64ff <unknown>
+#14 0x55d902a21258 <unknown>
+#15 0x55d902a21432 <unknown>
+#16 0x55d902a32fa3 <unknown>
+#17 0x7fb34249caa4 <unknown>
+#18 0x7fb342529c6c <unknown>
+
+[2025-10-08 06:47:39] Has errors Class ID 10118, thử class tiếp theo
+[2025-10-08 06:47:39] Bắt đầu course: Reader's Wonderland 2.3
+[2025-10-08 06:47:39] Process Class ID 10954 (thứ 1/3) cho course Reader's Wonderland 2.3
+[2025-10-08 06:47:39] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:40] Lỗi chung Class ID 10954: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55f15f9cffba <unknown>
+#1 0x55f15f4546d0 <unknown>
+#2 0x55f15f48f475 <unknown>
+#3 0x55f15f48b368 <unknown>
+#4 0x55f15f4da280 <unknown>
+#5 0x55f15f4d9946 <unknown>
+#6 0x55f15f4cbc03 <unknown>
+#7 0x55f15f4987a8 <unknown>
+#8 0x55f15f499421 <unknown>
+#9 0x55f15f994b28 <unknown>
+#10 0x55f15f99887f <unknown>
+#11 0x55f15f97cc49 <unknown>
+#12 0x55f15f999405 <unknown>
+#13 0x55f15f9624ff <unknown>
+#14 0x55f15f9bd258 <unknown>
+#15 0x55f15f9bd432 <unknown>
+#16 0x55f15f9cefa3 <unknown>
+#17 0x7f092f89caa4 <unknown>
+#18 0x7f092f929c6c <unknown>
+
+[2025-10-08 06:47:40] Has errors Class ID 10954, thử class tiếp theo
+[2025-10-08 06:47:40] Process Class ID 10745 (thứ 2/3) cho course Reader's Wonderland 2.3
+[2025-10-08 06:47:40] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:40] Lỗi chung Class ID 10745: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55d9e3049fba <unknown>
+#1 0x55d9e2ace6d0 <unknown>
+#2 0x55d9e2b09475 <unknown>
+#3 0x55d9e2b05368 <unknown>
+#4 0x55d9e2b54280 <unknown>
+#5 0x55d9e2b53946 <unknown>
+#6 0x55d9e2b45c03 <unknown>
+#7 0x55d9e2b127a8 <unknown>
+#8 0x55d9e2b13421 <unknown>
+#9 0x55d9e300eb28 <unknown>
+#10 0x55d9e301287f <unknown>
+#11 0x55d9e2ff6c49 <unknown>
+#12 0x55d9e3013405 <unknown>
+#13 0x55d9e2fdc4ff <unknown>
+#14 0x55d9e3037258 <unknown>
+#15 0x55d9e3037432 <unknown>
+#16 0x55d9e3048fa3 <unknown>
+#17 0x7ff038c9caa4 <unknown>
+#18 0x7ff038d29c6c <unknown>
+
+[2025-10-08 06:47:40] Has errors Class ID 10745, thử class tiếp theo
+[2025-10-08 06:47:40] Process Class ID 10408 (thứ 3/3) cho course Reader's Wonderland 2.3
+[2025-10-08 06:47:40] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:40] Lỗi chung Class ID 10408: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55bfb575efba <unknown>
+#1 0x55bfb51e36d0 <unknown>
+#2 0x55bfb521e475 <unknown>
+#3 0x55bfb521a368 <unknown>
+#4 0x55bfb5269280 <unknown>
+#5 0x55bfb5268946 <unknown>
+#6 0x55bfb525ac03 <unknown>
+#7 0x55bfb52277a8 <unknown>
+#8 0x55bfb5228421 <unknown>
+#9 0x55bfb5723b28 <unknown>
+#10 0x55bfb572787f <unknown>
+#11 0x55bfb570bc49 <unknown>
+#12 0x55bfb5728405 <unknown>
+#13 0x55bfb56f14ff <unknown>
+#14 0x55bfb574c258 <unknown>
+#15 0x55bfb574c432 <unknown>
+#16 0x55bfb575dfa3 <unknown>
+#17 0x7fa85b49caa4 <unknown>
+#18 0x7fa85b529c6c <unknown>
+
+[2025-10-08 06:47:40] Has errors Class ID 10408, thử class tiếp theo
+[2025-10-08 06:47:40] Bắt đầu course: Kindergarten 4
+[2025-10-08 06:47:40] Process Class ID 10857 (thứ 1/3) cho course Kindergarten 4
+[2025-10-08 06:47:40] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:41] Lỗi chung Class ID 10857: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55edb1ecffba <unknown>
+#1 0x55edb19546d0 <unknown>
+#2 0x55edb198f475 <unknown>
+#3 0x55edb198b368 <unknown>
+#4 0x55edb19da280 <unknown>
+#5 0x55edb19d9946 <unknown>
+#6 0x55edb19cbc03 <unknown>
+#7 0x55edb19987a8 <unknown>
+#8 0x55edb1999421 <unknown>
+#9 0x55edb1e94b28 <unknown>
+#10 0x55edb1e9887f <unknown>
+#11 0x55edb1e7cc49 <unknown>
+#12 0x55edb1e99405 <unknown>
+#13 0x55edb1e624ff <unknown>
+#14 0x55edb1ebd258 <unknown>
+#15 0x55edb1ebd432 <unknown>
+#16 0x55edb1ecefa3 <unknown>
+#17 0x7efcc689caa4 <unknown>
+#18 0x7efcc6929c6c <unknown>
+
+[2025-10-08 06:47:41] Has errors Class ID 10857, thử class tiếp theo
+[2025-10-08 06:47:41] Process Class ID 10889 (thứ 2/3) cho course Kindergarten 4
+[2025-10-08 06:47:41] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:41] Lỗi chung Class ID 10889: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5571dcb0cfba <unknown>
+#1 0x5571dc5916d0 <unknown>
+#2 0x5571dc5cc475 <unknown>
+#3 0x5571dc5c8368 <unknown>
+#4 0x5571dc617280 <unknown>
+#5 0x5571dc616946 <unknown>
+#6 0x5571dc608c03 <unknown>
+#7 0x5571dc5d57a8 <unknown>
+#8 0x5571dc5d6421 <unknown>
+#9 0x5571dcad1b28 <unknown>
+#10 0x5571dcad587f <unknown>
+#11 0x5571dcab9c49 <unknown>
+#12 0x5571dcad6405 <unknown>
+#13 0x5571dca9f4ff <unknown>
+#14 0x5571dcafa258 <unknown>
+#15 0x5571dcafa432 <unknown>
+#16 0x5571dcb0bfa3 <unknown>
+#17 0x7f4e1a89caa4 <unknown>
+#18 0x7f4e1a929c6c <unknown>
+
+[2025-10-08 06:47:41] Has errors Class ID 10889, thử class tiếp theo
+[2025-10-08 06:47:41] Process Class ID 10879 (thứ 3/3) cho course Kindergarten 4
+[2025-10-08 06:47:41] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:41] Lỗi chung Class ID 10879: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55f571a19fba <unknown>
+#1 0x55f57149e6d0 <unknown>
+#2 0x55f5714d9475 <unknown>
+#3 0x55f5714d5368 <unknown>
+#4 0x55f571524280 <unknown>
+#5 0x55f571523946 <unknown>
+#6 0x55f571515c03 <unknown>
+#7 0x55f5714e27a8 <unknown>
+#8 0x55f5714e3421 <unknown>
+#9 0x55f5719deb28 <unknown>
+#10 0x55f5719e287f <unknown>
+#11 0x55f5719c6c49 <unknown>
+#12 0x55f5719e3405 <unknown>
+#13 0x55f5719ac4ff <unknown>
+#14 0x55f571a07258 <unknown>
+#15 0x55f571a07432 <unknown>
+#16 0x55f571a18fa3 <unknown>
+#17 0x7f3b72e9caa4 <unknown>
+#18 0x7f3b72f29c6c <unknown>
+
+[2025-10-08 06:47:41] Has errors Class ID 10879, thử class tiếp theo
+[2025-10-08 06:47:41] Bắt đầu course: Discover 1
+[2025-10-08 06:47:41] Process Class ID 10794 (thứ 1/3) cho course Discover 1
+[2025-10-08 06:47:41] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:42] Lỗi chung Class ID 10794: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55c960d41fba <unknown>
+#1 0x55c9607c66d0 <unknown>
+#2 0x55c960801475 <unknown>
+#3 0x55c9607fd368 <unknown>
+#4 0x55c96084c280 <unknown>
+#5 0x55c96084b946 <unknown>
+#6 0x55c96083dc03 <unknown>
+#7 0x55c96080a7a8 <unknown>
+#8 0x55c96080b421 <unknown>
+#9 0x55c960d06b28 <unknown>
+#10 0x55c960d0a87f <unknown>
+#11 0x55c960ceec49 <unknown>
+#12 0x55c960d0b405 <unknown>
+#13 0x55c960cd44ff <unknown>
+#14 0x55c960d2f258 <unknown>
+#15 0x55c960d2f432 <unknown>
+#16 0x55c960d40fa3 <unknown>
+#17 0x7f6de029caa4 <unknown>
+#18 0x7f6de0329c6c <unknown>
+
+[2025-10-08 06:47:42] Has errors Class ID 10794, thử class tiếp theo
+[2025-10-08 06:47:42] Process Class ID 10153 (thứ 2/3) cho course Discover 1
+[2025-10-08 06:47:42] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:42] Lỗi chung Class ID 10153: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x556e17ad4fba <unknown>
+#1 0x556e175596d0 <unknown>
+#2 0x556e17594475 <unknown>
+#3 0x556e17590368 <unknown>
+#4 0x556e175df280 <unknown>
+#5 0x556e175de946 <unknown>
+#6 0x556e175d0c03 <unknown>
+#7 0x556e1759d7a8 <unknown>
+#8 0x556e1759e421 <unknown>
+#9 0x556e17a99b28 <unknown>
+#10 0x556e17a9d87f <unknown>
+#11 0x556e17a81c49 <unknown>
+#12 0x556e17a9e405 <unknown>
+#13 0x556e17a674ff <unknown>
+#14 0x556e17ac2258 <unknown>
+#15 0x556e17ac2432 <unknown>
+#16 0x556e17ad3fa3 <unknown>
+#17 0x7efc6969caa4 <unknown>
+#18 0x7efc69729c6c <unknown>
+
+[2025-10-08 06:47:42] Has errors Class ID 10153, thử class tiếp theo
+[2025-10-08 06:47:42] Process Class ID 9961 (thứ 3/3) cho course Discover 1
+[2025-10-08 06:47:42] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:42] Lỗi chung Class ID 9961: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5577dd0d2fba <unknown>
+#1 0x5577dcb576d0 <unknown>
+#2 0x5577dcb92475 <unknown>
+#3 0x5577dcb8e368 <unknown>
+#4 0x5577dcbdd280 <unknown>
+#5 0x5577dcbdc946 <unknown>
+#6 0x5577dcbcec03 <unknown>
+#7 0x5577dcb9b7a8 <unknown>
+#8 0x5577dcb9c421 <unknown>
+#9 0x5577dd097b28 <unknown>
+#10 0x5577dd09b87f <unknown>
+#11 0x5577dd07fc49 <unknown>
+#12 0x5577dd09c405 <unknown>
+#13 0x5577dd0654ff <unknown>
+#14 0x5577dd0c0258 <unknown>
+#15 0x5577dd0c0432 <unknown>
+#16 0x5577dd0d1fa3 <unknown>
+#17 0x7f1361c9caa4 <unknown>
+#18 0x7f1361d29c6c <unknown>
+
+[2025-10-08 06:47:42] Has errors Class ID 9961, thử class tiếp theo
+[2025-10-08 06:47:42] Bắt đầu course: Cambridge Literacy Ladder Foundation
+[2025-10-08 06:47:42] Process Class ID 10793 (thứ 1/3) cho course Cambridge Literacy Ladder Foundation
+[2025-10-08 06:47:42] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:43] Lỗi chung Class ID 10793: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55d1310e4fba <unknown>
+#1 0x55d130b696d0 <unknown>
+#2 0x55d130ba4475 <unknown>
+#3 0x55d130ba0368 <unknown>
+#4 0x55d130bef280 <unknown>
+#5 0x55d130bee946 <unknown>
+#6 0x55d130be0c03 <unknown>
+#7 0x55d130bad7a8 <unknown>
+#8 0x55d130bae421 <unknown>
+#9 0x55d1310a9b28 <unknown>
+#10 0x55d1310ad87f <unknown>
+#11 0x55d131091c49 <unknown>
+#12 0x55d1310ae405 <unknown>
+#13 0x55d1310774ff <unknown>
+#14 0x55d1310d2258 <unknown>
+#15 0x55d1310d2432 <unknown>
+#16 0x55d1310e3fa3 <unknown>
+#17 0x7f2e84c9caa4 <unknown>
+#18 0x7f2e84d29c6c <unknown>
+
+[2025-10-08 06:47:43] Has errors Class ID 10793, thử class tiếp theo
+[2025-10-08 06:47:43] Process Class ID 10736 (thứ 2/3) cho course Cambridge Literacy Ladder Foundation
+[2025-10-08 06:47:43] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:43] Lỗi chung Class ID 10736: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x555e84a15fba <unknown>
+#1 0x555e8449a6d0 <unknown>
+#2 0x555e844d5475 <unknown>
+#3 0x555e844d1368 <unknown>
+#4 0x555e84520280 <unknown>
+#5 0x555e8451f946 <unknown>
+#6 0x555e84511c03 <unknown>
+#7 0x555e844de7a8 <unknown>
+#8 0x555e844df421 <unknown>
+#9 0x555e849dab28 <unknown>
+#10 0x555e849de87f <unknown>
+#11 0x555e849c2c49 <unknown>
+#12 0x555e849df405 <unknown>
+#13 0x555e849a84ff <unknown>
+#14 0x555e84a03258 <unknown>
+#15 0x555e84a03432 <unknown>
+#16 0x555e84a14fa3 <unknown>
+#17 0x7f8b7aa9caa4 <unknown>
+#18 0x7f8b7ab29c6c <unknown>
+
+[2025-10-08 06:47:43] Has errors Class ID 10736, thử class tiếp theo
+[2025-10-08 06:47:43] Process Class ID 10260 (thứ 3/3) cho course Cambridge Literacy Ladder Foundation
+[2025-10-08 06:47:43] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:47:43] Lỗi chung Class ID 10260: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x55960e559fba <unknown>
+#1 0x55960dfde6d0 <unknown>
+#2 0x55960e019475 <unknown>
+#3 0x55960e015368 <unknown>
+#4 0x55960e064280 <unknown>
+#5 0x55960e063946 <unknown>
+#6 0x55960e055c03 <unknown>
+#7 0x55960e0227a8 <unknown>
+#8 0x55960e023421 <unknown>
+#9 0x55960e51eb28 <unknown>
+#10 0x55960e52287f <unknown>
+#11 0x55960e506c49 <unknown>
+#12 0x55960e523405 <unknown>
+#13 0x55960e4ec4ff <unknown>
+#14 0x55960e547258 <unknown>
+#15 0x55960e547432 <unknown>
+#16 0x55960e558fa3 <unknown>
+#17 0x7f5a6be9caa4 <unknown>
+#18 0x7f5a6bf29c6c <unknown>
+
+[2025-10-08 06:47:43] Has errors Class ID 10260, thử class tiếp theo
+[2025-10-08 06:47:43] Đạt giới hạn 50 classes/run, dừng lại
+[2025-10-08 06:47:43] Đã lưu processed.json
+[2025-10-08 06:47:43] Hoàn thành run
