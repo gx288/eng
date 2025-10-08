@@ -2,8 +2,8 @@ name: Scrape Classes
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Hàng ngày
-  workflow_dispatch:
+    - cron: '0 0 * * *'  # Hàng ngày lúc 00:00 UTC
+  workflow_dispatch:  # Cho phép trigger manual
 
 jobs:
   scrape:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # Cần để push
+          token: ${{ secrets.GITHUB_TOKEN }}  # Cần để push processed.json và logs
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,17 +31,17 @@ jobs:
 
       - name: Run script
         env:
-          USERNAME: ${{ secrets.USERNAME }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-        run: python main.py
+          CEC_USERNAME: ${{ secrets.CEC_USERNAME }}
+          CEC_PASSWORD: ${{ secrets.CEC_PASSWORD }}
+        run: python -u main.py  # Thêm -u để unbuffer output
 
       - name: Commit and push changes
-        if: always()  # Run even if job fails
+        if: always()  # Chạy kể cả khi job fail
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           git add processed.json class_info_log.txt
-          git commit -m "Update processed and logs" || echo "No changes to commit"
+          git commit -m "Update processed.json and logs" || echo "No changes to commit"
           git push || echo "Push failed, likely no changes or already up-to-date"
 
       - name: Upload logs
