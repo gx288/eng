@@ -3390,3 +3390,637 @@ Stacktrace:
 [2025-10-08 06:47:43] Đạt giới hạn 50 classes/run, dừng lại
 [2025-10-08 06:47:43] Đã lưu processed.json
 [2025-10-08 06:47:43] Hoàn thành run
+[2025-10-08 06:56:30] DEBUG: GOOGLE_CREDENTIALS length = 2365
+[2025-10-08 06:56:30] DEBUG: GOOGLE_CREDENTIALS hex dump (first 50 bytes) = 7b0a202020202274797065223a2022736572766963655f6163636f756e74222c0a202020202270726f6a6563745f6964223a
+[2025-10-08 06:56:30] DEBUG: GOOGLE_CREDENTIALS is valid JSON
+[2025-10-08 06:56:30] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:56:30] DEBUG: Wrote credentials.json from GOOGLE_CREDENTIALS
+[2025-10-08 06:56:30] DEBUG: credentials.json content = {   "type": "service_account",   "project_id": "random04",   "private_key_id": "550a86bd253e8e828350...
+[2025-10-08 06:56:47] Đang nhập username: 40183HN
+[2025-10-08 06:56:47] DEBUG: current_id = '40183HN'
+[2025-10-08 06:56:48] DEBUG: Username field value = '40183HN'
+[2025-10-08 06:56:48] Đang nhập password...
+[2025-10-08 06:56:48] DEBUG: password = '1234567'
+[2025-10-08 06:56:48] Nhấn nút đăng nhập...
+[2025-10-08 06:57:00] Đăng nhập thành công (không thấy thông báo lỗi)
+[2025-10-08 06:57:00] First pass: Process Class ID 11260 cho course Reading Skills 1
+[2025-10-08 06:57:00] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:57:04] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11260 (Class ID 11260)
+[2025-10-08 06:57:09] Lấy được class code: CG-R1-2502 (Class ID 11260)
+[2025-10-08 06:57:09] Lấy được course name: Reading Skills 1 (Class ID 11260)
+[2025-10-08 06:57:09] Resume Class ID 11260 from lesson index 0
+[2025-10-08 06:57:09] Đã lưu processed.json
+[2025-10-08 06:57:09] Processing lesson 1 (index 0) for class ID 11260
+[2025-10-08 06:57:13] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1-7uHFrrGtsmXCf7UdMwUSNuzj6xc9rmulaCvDibMnpU/edit?tab=t.0
+[2025-10-08 06:57:15] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:57:15] Homework content for lesson 1: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-08 06:57:17] Đã lưu processed.json
+[2025-10-08 06:57:17] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:57:17] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:57:17] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:57:17] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:57:17] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:57:18] Skip append: Lesson 1 of Class ID 11260 already exists in Sheet
+[2025-10-08 06:57:18] DEBUG: Git repository detected
+[2025-10-08 06:57:18] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:57:18] Pushed processed.json for Class ID 11260, Lesson 1
+[2025-10-08 06:57:18] Success Class ID 11260 cho course Reading Skills 1
+[2025-10-08 06:57:18] First pass: Process Class ID 11236 cho course Summer Kindy 4
+[2025-10-08 06:57:18] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:57:21] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11236 (Class ID 11236)
+[2025-10-08 06:57:26] Lấy được class code: VI-SK4-2502 (Class ID 11236)
+[2025-10-08 06:57:26] Lấy được course name: Summer Kindy 4 (Class ID 11236)
+[2025-10-08 06:57:26] Resume Class ID 11236 from lesson index 0
+[2025-10-08 06:57:26] Đã lưu processed.json
+[2025-10-08 06:57:26] Processing lesson 1 (index 0) for class ID 11236
+[2025-10-08 06:57:30] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1K6Net8mUHGM4rXQnlo7Fev77hY971Eu-febwn2WbJog/edit?usp=sharing
+[2025-10-08 06:57:31] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:57:31] Homework content for lesson 1: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-08 06:57:34] Đã lưu processed.json
+[2025-10-08 06:57:34] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:57:34] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:57:34] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:57:34] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:57:34] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:57:35] Skip append: Lesson 1 of Class ID 11236 already exists in Sheet
+[2025-10-08 06:57:35] DEBUG: Git repository detected
+[2025-10-08 06:57:35] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:57:35] Pushed processed.json for Class ID 11236, Lesson 1
+[2025-10-08 06:57:35] Success Class ID 11236 cho course Summer Kindy 4
+[2025-10-08 06:57:35] First pass: Process Class ID 11217 cho course Summer Smart 3
+[2025-10-08 06:57:35] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:57:36] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11217 (Class ID 11217)
+[2025-10-08 06:57:41] Lấy được class code: LD-SS3-2501 (Class ID 11217)
+[2025-10-08 06:57:41] Lấy được course name: Summer Smart 3 (Class ID 11217)
+[2025-10-08 06:57:41] Resume Class ID 11217 from lesson index 0
+[2025-10-08 06:57:41] Đã lưu processed.json
+[2025-10-08 06:57:41] Processing lesson 1 (index 0) for class ID 11217
+[2025-10-08 06:57:51] Lỗi report link lesson 1: Message: 
+
+[2025-10-08 06:57:51] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:57:51] Homework content for lesson 1: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-08 06:57:54] Đã lưu processed.json
+[2025-10-08 06:57:54] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:57:54] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:57:54] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:57:54] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:57:54] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:57:55] Skip append: Lesson 1 of Class ID 11217 already exists in Sheet
+[2025-10-08 06:57:55] DEBUG: Git repository detected
+[2025-10-08 06:57:55] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:57:55] Pushed processed.json for Class ID 11217, Lesson 1
+[2025-10-08 06:57:55] Has errors Class ID 11217 cho course Summer Smart 3
+[2025-10-08 06:57:55] First pass: Process Class ID 11209 cho course Summer Smart 4
+[2025-10-08 06:57:55] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:57:56] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11209 (Class ID 11209)
+[2025-10-08 06:58:01] Lấy được class code: HP-SS4-2502 (Class ID 11209)
+[2025-10-08 06:58:02] Lấy được course name: Summer Smart 4 (Class ID 11209)
+[2025-10-08 06:58:02] Resume Class ID 11209 from lesson index 0
+[2025-10-08 06:58:02] Đã lưu processed.json
+[2025-10-08 06:58:02] Processing lesson 1 (index 0) for class ID 11209
+[2025-10-08 06:58:03] Lấy được report link cho lesson 1: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1ZLiQqmx4XwyGIbklAIU9AdQVEYT4YOze%2Fedit&dsh=S135873057%3A1759906682932434&followup=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1ZLiQqmx4XwyGIbklAIU9AdQVEYT4YOze%2Fedit&ifkv=AfYwgwWifUX5O91BghvhhXe9MKcCE7T0L5M-q_mR4sOLdYtifjnF0nSXFPcUWSOGGFFFPevJL86B7g&ltmpl=docs&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin
+[2025-10-08 06:58:03] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:58:03] Homework content for lesson 1: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-08 06:58:05] Đã lưu processed.json
+[2025-10-08 06:58:05] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:58:05] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:58:05] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:58:05] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:58:05] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:58:07] Skip append: Lesson 1 of Class ID 11209 already exists in Sheet
+[2025-10-08 06:58:07] DEBUG: Git repository detected
+[2025-10-08 06:58:07] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:58:07] Pushed processed.json for Class ID 11209, Lesson 1
+[2025-10-08 06:58:07] Success Class ID 11209 cho course Summer Smart 4
+[2025-10-08 06:58:07] First pass: Process Class ID 11191 cho course Summer Smart 2
+[2025-10-08 06:58:07] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:58:08] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11191 (Class ID 11191)
+[2025-10-08 06:58:13] Lấy được class code: NG-SS2-2501 (Class ID 11191)
+[2025-10-08 06:58:13] Lấy được course name: Summer Smart 2 (Class ID 11191)
+[2025-10-08 06:58:13] Resume Class ID 11191 from lesson index 0
+[2025-10-08 06:58:13] Đã lưu processed.json
+[2025-10-08 06:58:13] Processing lesson 1 (index 0) for class ID 11191
+[2025-10-08 06:58:23] Lỗi report link lesson 1: Message: 
+
+[2025-10-08 06:58:23] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:58:23] Homework content for lesson 1: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-08 06:58:25] Đã lưu processed.json
+[2025-10-08 06:58:25] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:58:25] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:58:25] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:58:25] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:58:25] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:58:26] Skip append: Lesson 1 of Class ID 11191 already exists in Sheet
+[2025-10-08 06:58:26] DEBUG: Git repository detected
+[2025-10-08 06:58:26] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:58:27] Pushed processed.json for Class ID 11191, Lesson 1
+[2025-10-08 06:58:27] Has errors Class ID 11191 cho course Summer Smart 2
+[2025-10-08 06:58:27] First pass: Process Class ID 11190 cho course Summer Kindy 3
+[2025-10-08 06:58:27] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:58:28] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11190 (Class ID 11190)
+[2025-10-08 06:58:33] Lấy được class code: NG-SK3-2501 (Class ID 11190)
+[2025-10-08 06:58:33] Lấy được course name: Summer Kindy 3 (Class ID 11190)
+[2025-10-08 06:58:33] Resume Class ID 11190 from lesson index 0
+[2025-10-08 06:58:33] Đã lưu processed.json
+[2025-10-08 06:58:33] Processing lesson 1 (index 0) for class ID 11190
+[2025-10-08 06:58:43] Lỗi report link lesson 1: Message: 
+
+[2025-10-08 06:58:43] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:58:43] Homework content for lesson 1: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-08 06:58:45] Đã lưu processed.json
+[2025-10-08 06:58:45] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:58:45] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:58:45] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:58:45] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:58:45] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:58:46] Skip append: Lesson 1 of Class ID 11190 already exists in Sheet
+[2025-10-08 06:58:46] DEBUG: Git repository detected
+[2025-10-08 06:58:46] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:58:47] Pushed processed.json for Class ID 11190, Lesson 1
+[2025-10-08 06:58:47] Has errors Class ID 11190 cho course Summer Kindy 3
+[2025-10-08 06:58:47] First pass: Process Class ID 11184 cho course Summer Smart 1
+[2025-10-08 06:58:47] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:58:48] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11184 (Class ID 11184)
+[2025-10-08 06:58:53] Lấy được class code: LD-SS1-2501 (Class ID 11184)
+[2025-10-08 06:58:53] Lấy được course name: Summer Smart 1 (Class ID 11184)
+[2025-10-08 06:58:53] Resume Class ID 11184 from lesson index 0
+[2025-10-08 06:58:53] Đã lưu processed.json
+[2025-10-08 06:58:53] Processing lesson 1 (index 0) for class ID 11184
+[2025-10-08 06:58:55] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1107k2JTN7g0YslwawCjRgwVzX8f9XRfi/edit?usp=sharing&ouid=102081927053563883360&rtpof=true&sd=true
+[2025-10-08 06:58:56] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:58:56] Homework content for lesson 1: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-08 06:58:58] Đã lưu processed.json
+[2025-10-08 06:58:58] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:58:58] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:58:58] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:58:58] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:58:58] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:58:59] Skip append: Lesson 1 of Class ID 11184 already exists in Sheet
+[2025-10-08 06:58:59] DEBUG: Git repository detected
+[2025-10-08 06:58:59] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:59:00] Pushed processed.json for Class ID 11184, Lesson 1
+[2025-10-08 06:59:00] Success Class ID 11184 cho course Summer Smart 1
+[2025-10-08 06:59:00] First pass: Process Class ID 11174 cho course Summer Smart 7
+[2025-10-08 06:59:00] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:59:00] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11174 (Class ID 11174)
+[2025-10-08 06:59:05] Lấy được class code: ML-SS7-2501 (Class ID 11174)
+[2025-10-08 06:59:06] Lấy được course name: Summer Smart 7 (Class ID 11174)
+[2025-10-08 06:59:06] Resume Class ID 11174 from lesson index 0
+[2025-10-08 06:59:06] Đã lưu processed.json
+[2025-10-08 06:59:06] Processing lesson 1 (index 0) for class ID 11174
+[2025-10-08 06:59:08] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1KR-tTghQu9b-QqneQ40NAZE29mbsdZRZrAq7zDh1JT4/edit?tab=t.0
+[2025-10-08 06:59:10] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:59:10] Homework content for lesson 1: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-08 06:59:12] Đã lưu processed.json
+[2025-10-08 06:59:12] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:59:12] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:59:12] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:59:12] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:59:12] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:59:13] Skip append: Lesson 1 of Class ID 11174 already exists in Sheet
+[2025-10-08 06:59:13] DEBUG: Git repository detected
+[2025-10-08 06:59:13] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:59:13] Pushed processed.json for Class ID 11174, Lesson 1
+[2025-10-08 06:59:13] Success Class ID 11174 cho course Summer Smart 7
+[2025-10-08 06:59:13] First pass: Process Class ID 11167 cho course Summer Smart 5
+[2025-10-08 06:59:13] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:59:14] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11167 (Class ID 11167)
+[2025-10-08 06:59:19] Lấy được class code: LG-SS5-2501 (Class ID 11167)
+[2025-10-08 06:59:19] Lấy được course name: Summer Smart 5 (Class ID 11167)
+[2025-10-08 06:59:19] Resume Class ID 11167 from lesson index 0
+[2025-10-08 06:59:19] Đã lưu processed.json
+[2025-10-08 06:59:19] Processing lesson 1 (index 0) for class ID 11167
+[2025-10-08 06:59:21] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1N98n6liS1s1Brc2GxQ-Yd23cxerLvq4o/edit
+[2025-10-08 06:59:23] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:59:23] Homework content for lesson 1: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-08 06:59:25] Đã lưu processed.json
+[2025-10-08 06:59:25] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:59:25] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:59:25] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:59:25] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:59:25] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:59:26] Skip append: Lesson 1 of Class ID 11167 already exists in Sheet
+[2025-10-08 06:59:26] DEBUG: Git repository detected
+[2025-10-08 06:59:26] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:59:27] Pushed processed.json for Class ID 11167, Lesson 1
+[2025-10-08 06:59:27] Success Class ID 11167 cho course Summer Smart 5
+[2025-10-08 06:59:27] First pass: Process Class ID 11143 cho course Summer Smart 6
+[2025-10-08 06:59:27] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:59:27] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11143 (Class ID 11143)
+[2025-10-08 06:59:32] Lấy được class code: VQ1-SS6-2501 (Class ID 11143)
+[2025-10-08 06:59:32] Lấy được course name: Summer Smart 6 (Class ID 11143)
+[2025-10-08 06:59:32] Resume Class ID 11143 from lesson index 0
+[2025-10-08 06:59:32] Đã lưu processed.json
+[2025-10-08 06:59:32] Processing lesson 1 (index 0) for class ID 11143
+[2025-10-08 06:59:35] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1Xqz5oViZlbTTsmqeg__GA92us_1ELpa_/edit
+[2025-10-08 06:59:36] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:59:36] Homework content for lesson 1: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-08 06:59:38] Đã lưu processed.json
+[2025-10-08 06:59:38] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:59:38] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:59:38] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:59:38] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:59:38] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:59:39] Skip append: Lesson 1 of Class ID 11143 already exists in Sheet
+[2025-10-08 06:59:39] DEBUG: Git repository detected
+[2025-10-08 06:59:39] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:59:40] Pushed processed.json for Class ID 11143, Lesson 1
+[2025-10-08 06:59:40] Success Class ID 11143 cho course Summer Smart 6
+[2025-10-08 06:59:40] First pass: Process Class ID 11064 cho course Reader's Wonderland 3.2
+[2025-10-08 06:59:40] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:59:41] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11064 (Class ID 11064)
+[2025-10-08 06:59:46] Lấy được class code: ML-RW3.2-2501 (Class ID 11064)
+[2025-10-08 06:59:46] Lấy được course name: Reader's Wonderland 3.2 (Class ID 11064)
+[2025-10-08 06:59:46] Resume Class ID 11064 from lesson index 0
+[2025-10-08 06:59:46] Đã lưu processed.json
+[2025-10-08 06:59:46] Processing lesson 1 (index 0) for class ID 11064
+[2025-10-08 06:59:49] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1neMI4vjSjyGe9e9tUi8BNvTbPKBFlm-tVMBuIGCEfWM/edit?usp=sharing
+[2025-10-08 06:59:51] DEBUG: Popup opened for lesson 1
+[2025-10-08 06:59:52] Homework content for lesson 1: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+Links:
+RW 3.2 Lesson 1 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/13FdIuVTB--nfwAvZGEf14dXnuj32kbU9?usp=drive_link
+[2025-10-08 06:59:54] Đã lưu processed.json
+[2025-10-08 06:59:54] DEBUG: credentials.json content length = 2343
+[2025-10-08 06:59:54] DEBUG: credentials.json is valid JSON
+[2025-10-08 06:59:54] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 06:59:54] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 06:59:54] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 06:59:55] Đã cập nhật Google Sheet cho Class ID 11064, Lesson 1
+[2025-10-08 06:59:55] DEBUG: Git repository detected
+[2025-10-08 06:59:55] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 06:59:55] Pushed processed.json for Class ID 11064, Lesson 1
+[2025-10-08 06:59:55] Success Class ID 11064 cho course Reader's Wonderland 3.2
+[2025-10-08 06:59:55] First pass: Process Class ID 11053 cho course Reader's Wonderland 3.1
+[2025-10-08 06:59:55] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 06:59:56] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11053 (Class ID 11053)
+[2025-10-08 07:00:01] Lấy được class code: LD-RW3.1-2501 (Class ID 11053)
+[2025-10-08 07:00:01] Lấy được course name: Reader's Wonderland 3.1 (Class ID 11053)
+[2025-10-08 07:00:01] Resume Class ID 11053 from lesson index 0
+[2025-10-08 07:00:01] Đã lưu processed.json
+[2025-10-08 07:00:01] Processing lesson 1 (index 0) for class ID 11053
+[2025-10-08 07:00:02] Lấy được report link cho lesson 1: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F191_bM4aPLZXFbM4Uw61D6dEZO77D3TSiqaiErFL1YLA%2Fedit%3Ftab%3Dt.0&dsh=S1845549618%3A1759906802387705&followup=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F191_bM4aPLZXFbM4Uw61D6dEZO77D3TSiqaiErFL1YLA%2Fedit%3Ftab%3Dt.0&ifkv=AfYwgwUEwHK7traLD7YmHZtdvEsgIgxlQ5vuy-D95H5SbiDFq0Yh7gv7wnF_nt6aSXUHybkeZi7Qfg&ltmpl=docs&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin
+[2025-10-08 07:00:03] DEBUG: Popup opened for lesson 1
+[2025-10-08 07:00:03] Homework content for lesson 1: Homework Header: Homework: LD-RW3.1-2501, 08:30 - 11:30
+Links:
+RW 3.1 Lesson 1 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/1BzrZhQVy3SXbjYmg_1pyqVLDFPoFkYZu?usp=drive_link
+[2025-10-08 07:00:05] Đã lưu processed.json
+[2025-10-08 07:00:05] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:00:05] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:00:05] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:00:05] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:00:05] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:00:07] Đã cập nhật Google Sheet cho Class ID 11053, Lesson 1
+[2025-10-08 07:00:07] DEBUG: Git repository detected
+[2025-10-08 07:00:07] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:00:07] Pushed processed.json for Class ID 11053, Lesson 1
+[2025-10-08 07:00:07] Success Class ID 11053 cho course Reader's Wonderland 3.1
+[2025-10-08 07:00:07] First pass: Process Class ID 11018 cho course Reading Skills 2
+[2025-10-08 07:00:07] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:00:08] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11018 (Class ID 11018)
+[2025-10-08 07:00:13] Lấy được class code: LD-R2-2502 (Class ID 11018)
+[2025-10-08 07:00:13] Lấy được course name: Reading Skills 2 (Class ID 11018)
+[2025-10-08 07:00:13] Resume Class ID 11018 from lesson index 0
+[2025-10-08 07:00:13] Đã lưu processed.json
+[2025-10-08 07:00:13] Processing lesson 22 (index 0) for class ID 11018
+[2025-10-08 07:00:15] Lấy được report link cho lesson 22: https://docs.google.com/document/d/1URi0Ag5T3Ftk8FNxQ5t_v4ZY95gXT3S-/edit?usp=sharing&ouid=102081927053563883360&rtpof=true&sd=true
+[2025-10-08 07:00:17] DEBUG: Popup opened for lesson 22
+[2025-10-08 07:00:19] Homework content for lesson 22: Homework Header: Homework: LD-R2-2502, 17:45 - 19:15
+Links:
+The tiny seed - Lesson 1 (page 75, 76): https://drive.google.com/drive/folders/1lky2AgSCtQEkqJ7QfeyyqROm-RPk_QXc?usp=sharing
+: https://apps.cec.com.vn/student-calendar/Chu%E1%BA%A9n%20b%E1%BB%8B%20bu%E1%BB%95i%20h%E1%BB%8Dc%20ti%E1%BA%BFp%20theo:%20Qu%C3%BD%20PHHS%20vui%20l%C3%B2ng%20nh%E1%BA%AFc%20con%20mang%20s%C3%A1ch%20truy%E1%BB%87n%20'The%20tiny%20seed'%20%C4%91%E1%BA%BFn%20l%E1%BB%9Bp%20v%C3%A0o%20bu%E1%BB%95i%20h%E1%BB%8Dc%20ti%E1%BA%BFp%20theo.
+[2025-10-08 07:00:21] Đã lưu processed.json
+[2025-10-08 07:00:21] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:00:21] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:00:21] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:00:21] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:00:21] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:00:22] Đã cập nhật Google Sheet cho Class ID 11018, Lesson 22
+[2025-10-08 07:00:22] DEBUG: Git repository detected
+[2025-10-08 07:00:22] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:00:23] Pushed processed.json for Class ID 11018, Lesson 22
+[2025-10-08 07:00:23] Success Class ID 11018 cho course Reading Skills 2
+[2025-10-08 07:00:23] First pass: Process Class ID 11006 cho course Cambridge Literacy Ladder 1
+[2025-10-08 07:00:23] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:00:23] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=11006 (Class ID 11006)
+[2025-10-08 07:00:28] Lấy được class code: LD-C1-2502 (Class ID 11006)
+[2025-10-08 07:00:28] Lấy được course name: Cambridge Literacy Ladder 1 (Class ID 11006)
+[2025-10-08 07:00:28] Resume Class ID 11006 from lesson index 0
+[2025-10-08 07:00:28] Đã lưu processed.json
+[2025-10-08 07:00:28] Processing lesson 38 (index 0) for class ID 11006
+[2025-10-08 07:00:31] Lấy được report link cho lesson 38: https://docs.google.com/document/d/1HlCGqD62Ngky5byWB0Wd0ReL-6UTaAjODfdz2YiXLKo/edit?usp=sharing
+[2025-10-08 07:00:32] DEBUG: Popup opened for lesson 38
+[2025-10-08 07:00:34] Homework content for lesson 38: Homework Header: Homework: LD-C1-2502, 17:45 - 19:15
+Text:
+- Handwriting Lesson 38
+- Khan Academy (Chi tiết vui lòng truy cập theo đường link)
+- Quizlet Lesson 38 (Chi tiết vui lòng truy cập theo đường link)
+Links:
+CLL 1 Lesson 38 Homework: https://drive.google.com/drive/folders/1KrpT8t4gQpHq9lqRSO6XSBN3g4Yb80Ye?usp=sharing
+: https://apps.cec.com.vn/student-calendar/Chu%E1%BA%A9n%20b%E1%BB%8B%20bu%E1%BB%95i%20h%E1%BB%8Dc%20ti%E1%BA%BFp%20theo:%20Qu%C3%BD%20PHHS%20vui%20l%C3%B2ng%20nh%E1%BA%AFc%20con%20mang%20s%C3%A1ch%20truy%E1%BB%87n%20Rhino%20Readers%20cu%E1%BB%91n%20'Len%20and%20Ren'%20%C4%91%E1%BA%BFn%20l%E1%BB%9Bp%20v%C3%A0o%20bu%E1%BB%95i%20h%E1%BB%8Dc%20ti%E1%BA%BFp%20theo.
+[2025-10-08 07:00:36] Đã lưu processed.json
+[2025-10-08 07:00:36] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:00:36] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:00:36] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:00:36] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:00:36] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:00:38] Đã cập nhật Google Sheet cho Class ID 11006, Lesson 38
+[2025-10-08 07:00:38] DEBUG: Git repository detected
+[2025-10-08 07:00:38] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:00:38] Pushed processed.json for Class ID 11006, Lesson 38
+[2025-10-08 07:00:38] Success Class ID 11006 cho course Cambridge Literacy Ladder 1
+[2025-10-08 07:00:38] First pass: Process Class ID 10973 cho course Discover 2
+[2025-10-08 07:00:38] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:00:39] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10973 (Class ID 10973)
+[2025-10-08 07:00:44] Lấy được class code: CG-D2-2501 (Class ID 10973)
+[2025-10-08 07:00:44] Lấy được course name: Discover 2 (Class ID 10973)
+[2025-10-08 07:00:44] Resume Class ID 10973 from lesson index 0
+[2025-10-08 07:00:44] Đã lưu processed.json
+[2025-10-08 07:00:44] Processing lesson 74 (index 0) for class ID 10973
+[2025-10-08 07:00:46] Lấy được report link cho lesson 74: https://docs.google.com/document/d/1uB6mutiM6rNbD6Zyh0zQMVMwhy7uler8xuKMJtPokXg/edit?usp=sharing
+[2025-10-08 07:00:47] DEBUG: Popup opened for lesson 74
+[2025-10-08 07:00:48] Homework content for lesson 74: Homework Header: Homework: CG-D2-2501, 19:30 - 21:00
+Text:
+- Extra exercises book Unit 13 - Lesson 1
+- Workbook Pages 110-111
+- Grammar book Pages 62-63
+- Oxford Read & Discover - Sunny and Rainy Pages 20-23
+Links:
+Homework assignments: https://drive.google.com/drive/folders/1zUUNi9MC210844ENXKsSObpBiA0ZjK-F
+[2025-10-08 07:00:50] Đã lưu processed.json
+[2025-10-08 07:00:50] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:00:50] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:00:50] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:00:50] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:00:50] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:00:51] Đã cập nhật Google Sheet cho Class ID 10973, Lesson 74
+[2025-10-08 07:00:51] DEBUG: Git repository detected
+[2025-10-08 07:00:51] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:00:51] Pushed processed.json for Class ID 10973, Lesson 74
+[2025-10-08 07:00:51] Success Class ID 10973 cho course Discover 2
+[2025-10-08 07:00:51] First pass: Process Class ID 10954 cho course Reader's Wonderland 2.3
+[2025-10-08 07:00:51] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:00:52] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10954 (Class ID 10954)
+[2025-10-08 07:00:57] Lấy được class code: ML-RW2.3-2501 (Class ID 10954)
+[2025-10-08 07:00:57] Lấy được course name: Reader's Wonderland 2.3 (Class ID 10954)
+[2025-10-08 07:00:57] Resume Class ID 10954 from lesson index 0
+[2025-10-08 07:00:57] Đã lưu processed.json
+[2025-10-08 07:00:57] Processing lesson 1 (index 0) for class ID 10954
+[2025-10-08 07:00:58] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1hC-UXh9FNTIyEPv_mbMjsyBNK2XwJ5G3wShYixglj-E/edit?usp=sharing
+[2025-10-08 07:00:58] Invalid report link for lesson 1: HTTP 410
+[2025-10-08 07:00:59] DEBUG: Popup opened for lesson 1
+[2025-10-08 07:00:59] Homework content for lesson 1: Homework Header: Homework: ML-RW2.3-2501, 15:00 - 18:00
+Links:
+RW 2.3 Lesson 1 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/1Xe8iau_FZ-ZiF1FobPMFDDCwZ5M9fw9S
+[2025-10-08 07:01:01] Đã lưu processed.json
+[2025-10-08 07:01:01] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:01:01] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:01:01] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:01:01] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:01:01] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:01:02] Đã cập nhật Google Sheet cho Class ID 10954, Lesson 1
+[2025-10-08 07:01:02] DEBUG: Git repository detected
+[2025-10-08 07:01:02] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:01:03] Pushed processed.json for Class ID 10954, Lesson 1
+[2025-10-08 07:01:03] Has errors Class ID 10954 cho course Reader's Wonderland 2.3
+[2025-10-08 07:01:03] First pass: Process Class ID 10857 cho course Kindergarten 4
+[2025-10-08 07:01:03] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:01:03] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10857 (Class ID 10857)
+[2025-10-08 07:01:08] Lấy được class code: ML-K4-2502 (Class ID 10857)
+[2025-10-08 07:01:08] Lấy được course name: Kindergarten 4 (Class ID 10857)
+[2025-10-08 07:01:08] Resume Class ID 10857 from lesson index 0
+[2025-10-08 07:01:08] Đã lưu processed.json
+[2025-10-08 07:01:08] Processing lesson 1 (index 0) for class ID 10857
+[2025-10-08 07:01:11] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1E0_8WP4t69mMXLAGPac7u6Jni0ehMFKUJrFdR4Cb-ww/edit?usp=sharing
+[2025-10-08 07:01:13] DEBUG: Popup opened for lesson 1
+[2025-10-08 07:01:13] Homework content for lesson 1: Homework Header: Homework: ML-K4-2502, 17:45 - 19:15
+Text:
+- Student book 4: Lesson 1 trang 1-2
+- Handwriting book 4: ate blends trang 1-6
+Links:
+OPEN HERE (Mở BTVN tại đây): https://drive.google.com/drive/folders/1T9U1N-bZfN04MGEtdzbsTUKgAtbj9Vsk
+[2025-10-08 07:01:15] Đã lưu processed.json
+[2025-10-08 07:01:15] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:01:15] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:01:15] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:01:15] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:01:15] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:01:16] Đã cập nhật Google Sheet cho Class ID 10857, Lesson 1
+[2025-10-08 07:01:16] DEBUG: Git repository detected
+[2025-10-08 07:01:16] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:01:17] Pushed processed.json for Class ID 10857, Lesson 1
+[2025-10-08 07:01:17] Success Class ID 10857 cho course Kindergarten 4
+[2025-10-08 07:01:17] First pass: Process Class ID 10794 cho course Discover 1
+[2025-10-08 07:01:17] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:01:18] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10794 (Class ID 10794)
+[2025-10-08 07:01:23] Lấy được class code: CG-D1-2502 (Class ID 10794)
+[2025-10-08 07:01:23] Lấy được course name: Discover 1 (Class ID 10794)
+[2025-10-08 07:01:23] Resume Class ID 10794 from lesson index 0
+[2025-10-08 07:01:23] Đã lưu processed.json
+[2025-10-08 07:01:23] Processing lesson 52 (index 0) for class ID 10794
+[2025-10-08 07:01:25] Lấy được report link cho lesson 52: https://docs.google.com/document/d/1a1ceIuF4K_N7U2YB012pkXL9iNhzFaBgGtkG3Vw6Llo/edit?usp=drive_link
+[2025-10-08 07:01:26] DEBUG: Popup opened for lesson 52
+[2025-10-08 07:01:26] Homework content for lesson 52: Homework Header: Homework: CG-D1-2502, 17:45 - 19:15
+
+[2025-10-08 07:01:28] Đã lưu processed.json
+[2025-10-08 07:01:28] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:01:28] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:01:28] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:01:28] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:01:28] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:01:30] Đã cập nhật Google Sheet cho Class ID 10794, Lesson 52
+[2025-10-08 07:01:30] DEBUG: Git repository detected
+[2025-10-08 07:01:30] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:01:30] Pushed processed.json for Class ID 10794, Lesson 52
+[2025-10-08 07:01:30] Success Class ID 10794 cho course Discover 1
+[2025-10-08 07:01:30] First pass: Process Class ID 10793 cho course Cambridge Literacy Ladder Foundation
+[2025-10-08 07:01:30] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:01:32] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10793 (Class ID 10793)
+[2025-10-08 07:01:37] Lấy được class code: TC-CF-2501 (Class ID 10793)
+[2025-10-08 07:01:37] Lấy được course name: Cambridge Literacy Ladder Foundation (Class ID 10793)
+[2025-10-08 07:01:37] Resume Class ID 10793 from lesson index 0
+[2025-10-08 07:01:37] Đã lưu processed.json
+[2025-10-08 07:01:37] Processing lesson 1 (index 0) for class ID 10793
+[2025-10-08 07:01:40] Lấy được report link cho lesson 1: https://docs.google.com/document/d/11VkePWAIb0IE_XOBzjhY1DxX1tc5GOlT5BzJxrOXhm8/edit?usp=sharing
+[2025-10-08 07:01:41] DEBUG: Popup opened for lesson 1
+[2025-10-08 07:01:42] Invalid homework link for lesson 1: HTTP 403
+[2025-10-08 07:01:42] Invalid homework link for lesson 1: HTTP 403
+[2025-10-08 07:01:42] Homework content for lesson 1: Homework Header: Homework: TC-CF-2501, 19:30 - 21:00
+Text:
+- Student book 1 - Lesson 1 (page 1, 2)
+- Handwriting book 1 - ABCD (page 1, 2)
+
+Links:
+OPEN HERE (MỞ BTVN TẠI ĐÂY): https://drive.google.com/drive/folders/1_oCQGz1092v0JKIfZKLeKMwQHOxJCob_
+- Animals 1: https://quizlet.com/_3zlb0t
+- Letter A, B, C, D: https://quizlet.com/_3zlupv
+[2025-10-08 07:01:44] Đã lưu processed.json
+[2025-10-08 07:01:44] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:01:44] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:01:44] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:01:44] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:01:44] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:01:46] Đã cập nhật Google Sheet cho Class ID 10793, Lesson 1
+[2025-10-08 07:01:46] DEBUG: Git repository detected
+[2025-10-08 07:01:46] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:01:46] Pushed processed.json for Class ID 10793, Lesson 1
+[2025-10-08 07:01:46] Has errors Class ID 10793 cho course Cambridge Literacy Ladder Foundation
+[2025-10-08 07:01:46] First pass: Process Class ID 10756 cho course Outing Think & Write
+[2025-10-08 07:01:46] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:01:48] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10756 (Class ID 10756)
+[2025-10-08 07:01:53] Lấy được class code: ML-OT-2501 (Class ID 10756)
+[2025-10-08 07:01:53] Lấy được course name: Outing Think & Write (Class ID 10756)
+[2025-10-08 07:01:53] Resume Class ID 10756 from lesson index 0
+[2025-10-08 07:01:53] Đã lưu processed.json
+[2025-10-08 07:01:53] Processing lesson 1 (index 0) for class ID 10756
+[2025-10-08 07:01:55] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1hBOuVUE1pK0k8Qi2NurnRgsXMgiaLgGHMFTeTlh0uVM/edit?tab=t.0
+[2025-10-08 07:01:57] DEBUG: Popup opened for lesson 1
+[2025-10-08 07:01:57] Homework content for lesson 1: Homework Header: Homework: ML-OT-2501, 14:30 - 17:30
+
+[2025-10-08 07:01:59] Đã lưu processed.json
+[2025-10-08 07:01:59] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:01:59] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:01:59] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:01:59] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:01:59] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:02:00] Đã cập nhật Google Sheet cho Class ID 10756, Lesson 1
+[2025-10-08 07:02:00] DEBUG: Git repository detected
+[2025-10-08 07:02:00] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:02:01] Pushed processed.json for Class ID 10756, Lesson 1
+[2025-10-08 07:02:01] Success Class ID 10756 cho course Outing Think & Write
+[2025-10-08 07:02:01] First pass: Process Class ID 10660 cho course English Smart 2 - Look 2
+[2025-10-08 07:02:01] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:02:01] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10660 (Class ID 10660)
+[2025-10-08 07:02:07] Lấy được class code: CG-E2L-2502 (Class ID 10660)
+[2025-10-08 07:02:07] Lấy được course name: English Smart 2 - Look 2 (Class ID 10660)
+[2025-10-08 07:02:07] Resume Class ID 10660 from lesson index 0
+[2025-10-08 07:02:07] Đã lưu processed.json
+[2025-10-08 07:02:07] Processing lesson 1 (index 0) for class ID 10660
+[2025-10-08 07:02:09] Lấy được report link cho lesson 1: https://docs.google.com/document/d/1tCxSKRz-YkXnTNPmMhRDrh_fCfZgo_9RfK5mznWPOu0/edit?usp=sharing
+[2025-10-08 07:02:10] DEBUG: Popup opened for lesson 1
+[2025-10-08 07:02:11] Homework content for lesson 1: Homework Header: Homework: CG-E2L-2502, 17:45 - 19:15
+Text:
+- WB page: 4,5
+- Extra exercises Look and Remember: Lesson 1
+Links:
+OPEN HERE (MỞ BTVN TẠI ĐÂY): https://drive.google.com/drive/folders/1vRxxihKXhI6BddTBCoE4FjY9w7-W_KxK
+[2025-10-08 07:02:13] Đã lưu processed.json
+[2025-10-08 07:02:13] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:02:13] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:02:13] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:02:13] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:02:13] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:02:14] Đã cập nhật Google Sheet cho Class ID 10660, Lesson 1
+[2025-10-08 07:02:14] DEBUG: Git repository detected
+[2025-10-08 07:02:14] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:02:15] Pushed processed.json for Class ID 10660, Lesson 1
+[2025-10-08 07:02:15] Success Class ID 10660 cho course English Smart 2 - Look 2
+[2025-10-08 07:02:15] First pass: Process Class ID 10739 cho course Discover 5
+[2025-10-08 07:02:15] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:02:15] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10739 (Class ID 10739)
+[2025-10-08 07:02:20] Lấy được class code: VQ2-D5-2501 (Class ID 10739)
+[2025-10-08 07:02:20] Lấy được course name: Discover 5 (Class ID 10739)
+[2025-10-08 07:02:20] Resume Class ID 10739 from lesson index 0
+[2025-10-08 07:02:20] Đã lưu processed.json
+[2025-10-08 07:02:20] Processing lesson 1 (index 0) for class ID 10739
+[2025-10-08 07:02:23] Lấy được report link cho lesson 1: https://docs.google.com/document/d/11ItOMcFd3xRx03v4u7j-n0bmo_O0hQ37CEgew4DokaU/edit?tab=t.0
+[2025-10-08 07:02:25] DEBUG: Popup opened for lesson 1
+[2025-10-08 07:02:25] Homework content for lesson 1: Homework Header: Homework: VQ2-D5-2501, 19:30 - 21:00
+Text:
+- Extra exercises book Unit 1 - Lesson 1
++ Part 1, 2, 3, 4 (go to page 2-5)
++ Part 6 (go to page 5)
++ Part 10 (go to page 7)
+- Workbook Pages 2-3
+- Oxford Read & Discover - Animal life cycles Pages 36-37
+Links:
+Homework assignments: https://drive.google.com/drive/folders/13IRbUkPG8s_W4odh6E9uVOWlPqVU7l6V
+[2025-10-08 07:02:27] Đã lưu processed.json
+[2025-10-08 07:02:27] DEBUG: credentials.json content length = 2343
+[2025-10-08 07:02:27] DEBUG: credentials.json is valid JSON
+[2025-10-08 07:02:27] DEBUG: credentials.json keys = ['type', 'project_id', 'private_key_id', 'private_key', 'client_email', 'client_id', 'auth_uri', 'token_uri', 'auth_provider_x509_cert_url', 'client_x509_cert_url', 'universe_domain']
+[2025-10-08 07:02:27] DEBUG: client_email = sheet-updater@random04.iam.gserviceaccount.com
+[2025-10-08 07:02:27] DEBUG: credentials.json hex dump (first 50 bytes) = 7b0a20202274797065223a2022736572766963655f6163636f756e74222c0a20202270726f6a6563745f6964223a20227261
+[2025-10-08 07:02:29] Đã cập nhật Google Sheet cho Class ID 10739, Lesson 1
+[2025-10-08 07:02:29] DEBUG: Git repository detected
+[2025-10-08 07:02:29] DEBUG: Git status = M class_info_log.txt
+ M processed.json
+?? credentials.json
+?? temp_credentials.json
+[2025-10-08 07:02:29] Pushed processed.json for Class ID 10739, Lesson 1
+[2025-10-08 07:02:29] Success Class ID 10739 cho course Discover 5
+[2025-10-08 07:02:29] First pass: Process Class ID 10730 cho course English Smart 5.1 - Look 4
+[2025-10-08 07:02:29] DEBUG: Working directory set to /home/runner/work/eng/eng
+[2025-10-08 07:02:30] Đang truy cập trang: https://apps.cec.com.vn/student-calendar/class-detail?classID=10730 (Class ID 10730)
