@@ -119,7 +119,6 @@ def update_google_sheet(row_data, class_id, lesson_number):
                     log_message("DEBUG: credentials.json is valid JSON")
                     log_message(f"DEBUG: credentials.json keys = {list(creds_json.keys())}")
                     log_message(f"DEBUG: client_email = {creds_json.get('client_email', 'N/A')}")
-                    # Log hex dump of first 50 bytes to detect BOM or hidden chars
                     hex_dump = binascii.hexlify(creds_content[:50].encode('utf-8')).decode('utf-8')
                     log_message(f"DEBUG: credentials.json hex dump (first 50 bytes) = {hex_dump}")
                 except json.JSONDecodeError as e:
@@ -165,22 +164,12 @@ def is_git_repository():
         log_message(f"DEBUG: Not a Git repository: {str(e)}")
         return False
 
-def process_class_id(class_id, course_name, processed):
+def process_class_id(driver, class_id, course_name, processed):
     os.chdir(os.getenv("GITHUB_WORKSPACE", "."))
     log_message(f"DEBUG: Working directory set to {os.getcwd()}")
     invalid = False
     has_errors = False
-    driver = None
     try:
-        options = webdriver.ChromeOptions()
-        options.add_argument("--headless")  # Comment out for local debug
-        options.add_argument("--disable-gpu")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0")
-        options.add_argument("--disable-autofill")
-        driver = webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
-        login(driver)
         url = f"https://apps.cec.com.vn/student-calendar/class-detail?classID={class_id}"
         driver.get(url)
         log_message(f"Đang truy cập trang: {url} (Class ID {class_id})")
@@ -348,7 +337,8 @@ def process_class_id(class_id, course_name, processed):
                     else:
                         log_message(f"Skip commit/push due to Google Sheet update failure for Class ID {class_id}, Lesson {lesson_number}")
 
-                    break
+                    return has_errors  # Stop after one lesson for this class ID in the first pass
+
                 except StaleElementReferenceException:
                     retry_count += 1
                     log_message(f"Stale element in lesson {lesson_number}, retry {retry_count}/{max_retries}")
@@ -360,7 +350,7 @@ def process_class_id(class_id, course_name, processed):
                         processed[course_name][class_id]['last_lesson'] = lesson_index
                         processed[course_name][class_id]['has_errors'] = has_errors
                         save_processed(processed)
-                        break
+                        return has_errors
 
         log_message(f"Hoàn thành Class ID {class_id} cho course {course_name}")
         return has_errors
@@ -368,14 +358,11 @@ def process_class_id(class_id, course_name, processed):
     except Exception as e:
         log_message(f"Lỗi chung Class ID {class_id}: {str(e)}")
         return True
-    finally:
-        if driver:
-            driver.quit()
 
 def main():
     try:
         df = pd.read_csv(CSV_FILE)
-        df['Start date'] = pd.to_datetime(df['Start date'], dayfirst=True)
+        df['Start date'] = pd.to_datetime(df['Start date'], dayfirst=True, errors='coerce')
     except Exception as e:
         log_message(f"Lỗi đọc CSV: {str(e)}")
         return
@@ -386,26 +373,21 @@ def main():
             with open(PROCESSED_FILE, 'r', encoding='utf-8') as f:
                 processed = json.load(f)
         except Exception as e:
-            log_message(f"Lỗi đọc processed: {str(e)}")
+            log_message(f"Lỗi đọc processed.json: {str(e)}")
 
     if 'GOOGLE_CREDENTIALS' in os.environ:
         try:
             creds_content = os.environ['GOOGLE_CREDENTIALS'].strip()
             log_message(f"DEBUG: GOOGLE_CREDENTIALS length = {len(creds_content)}")
-            # Remove BOM if present
             creds_content = creds_content.encode('utf-8').decode('utf-8-sig')
-            # Log hex dump to detect hidden chars
             hex_dump = binascii.hexlify(creds_content[:50].encode('utf-8')).decode('utf-8')
             log_message(f"DEBUG: GOOGLE_CREDENTIALS hex dump (first 50 bytes) = {hex_dump}")
             creds_json = json.loads(creds_content)
             log_message("DEBUG: GOOGLE_CREDENTIALS is valid JSON")
-            log_message(f"DEBUG: GOOGLE_CREDENTIALS keys = {list(creds_json.keys())}")
             log_message(f"DEBUG: client_email = {creds_json.get('client_email', 'N/A')}")
-            # Write credentials.json using Python to ensure UTF-8 and no BOM
             with open(CREDENTIALS_FILE, 'w', encoding='utf-8') as f:
                 json.dump(creds_json, f, indent=2, ensure_ascii=False)
             log_message(f"DEBUG: Wrote credentials.json from GOOGLE_CREDENTIALS")
-            # Log file content for debug
             with open(CREDENTIALS_FILE, 'r', encoding='utf-8') as f:
                 file_content = f.read()
                 log_message(f"DEBUG: credentials.json content = {file_content[:100].replace('\n', ' ')}...")
@@ -417,44 +399,84 @@ def main():
             log_message(f"DEBUG: Error writing credentials.json: {str(e)}")
             return
 
-    course_names = df['Course name'].unique()
-    max_classes_per_run = 50
-    classes_processed = 0
+    # Initialize WebDriver
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")  # Comment out for local debug
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0")
+    options.add_argument("--disable-autofill")
+    driver = webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
+    
+    try:
+        # Login once
+        login(driver)
 
-    for course_name in course_names:
-        if classes_processed >= max_classes_per_run:
-            log_message(f"Đạt giới hạn {max_classes_per_run} classes/run, dừng lại")
-            break
-        course_progress = processed.get(course_name, {})
-        if any(class_prog.get('last_lesson', -1) + 1 >= class_prog.get('total_lessons', 0) for class_prog in course_progress.values()):
-            log_message(f"Course {course_name} đã hoàn thành ít nhất 1 class")
-            continue
+        course_names = df['Course name'].unique()
+        max_classes_per_run = 50
+        classes_processed = 0
 
-        log_message(f"Bắt đầu course: {course_name}")
-        course_group = df[df['Course name'] == course_name]
-        sorted_group = course_group.sort_values(by=['Start date', 'Rate'], ascending=[False, False])
-        class_ids = sorted_group['Class ID'].tolist()
-        max_class_ids = min(3, len(class_ids))
-        course_has_success = False
+        # First pass: Process one class ID per course_name
+        for course_name in course_names:
+            if classes_processed >= max_classes_per_run:
+                log_message(f"Đạt giới hạn {max_classes_per_run} classes/run, dừng lại")
+                break
+            course_progress = processed.get(course_name, {})
+            course_group = df[df['Course name'] == course_name]
+            sorted_group = course_group.sort_values(by=['Start date', 'Rate'], ascending=[False, False])
+            class_ids = sorted_group['Class ID'].unique().tolist()
 
-        for i in range(max_class_ids):
-            class_id = class_ids[i]
-            if class_id in course_progress and course_progress[class_id].get('last_lesson', -1) + 1 >= course_progress[class_id].get('total_lessons', 0):
-                log_message(f"Class ID {class_id} đã hoàn thành cho course {course_name}")
+            if not class_ids:
+                log_message(f"No class IDs found for course {course_name}")
                 continue
 
-            log_message(f"Process Class ID {class_id} (thứ {i+1}/{max_class_ids}) cho course {course_name}")
-            has_errors = process_class_id(class_id, course_name, processed)
-            if not has_errors:
-                course_has_success = True
-                log_message(f"Success Class ID {class_id} cho course {course_name}")
-                break
-            else:
-                log_message(f"Has errors Class ID {class_id}, thử class tiếp theo")
-            classes_processed += 1
+            class_id = class_ids[0]  # Process first class ID
+            if class_id in course_progress and course_progress[class_id].get('last_lesson', -1) + 1 >= course_progress[class_id].get('total_lessons', 0):
+                log_message(f"Class ID {class_id} đã hoàn thành cho course {course_name}, bỏ qua")
+                continue
 
-    save_processed(processed)
-    log_message("Hoàn thành run")
+            log_message(f"First pass: Process Class ID {class_id} cho course {course_name}")
+            has_errors = process_class_id(driver, class_id, course_name, processed)
+            classes_processed += 1
+            if not has_errors:
+                log_message(f"Success Class ID {class_id} cho course {course_name}")
+            else:
+                log_message(f"Has errors Class ID {class_id} cho course {course_name}")
+
+        # Second pass: Process remaining class IDs
+        for course_name in course_names:
+            if classes_processed >= max_classes_per_run:
+                log_message(f"Đạt giới hạn {max_classes_per_run} classes/run, dừng lại")
+                break
+            course_progress = processed.get(course_name, {})
+            course_group = df[df['Course name'] == course_name]
+            sorted_group = course_group.sort_values(by=['Start date', 'Rate'], ascending=[False, False])
+            class_ids = sorted_group['Class ID'].unique().tolist()
+            max_class_ids = min(3, len(class_ids))
+
+            for i in range(1, max_class_ids):  # Start from second class ID
+                if classes_processed >= max_classes_per_run:
+                    log_message(f"Đạt giới hạn {max_classes_per_run} classes/run, dừng lại")
+                    break
+                class_id = class_ids[i]
+                if class_id in course_progress and course_progress[class_id].get('last_lesson', -1) + 1 >= course_progress[class_id].get('total_lessons', 0):
+                    log_message(f"Class ID {class_id} đã hoàn thành cho course {course_name}, bỏ qua")
+                    continue
+
+                log_message(f"Second pass: Process Class ID {class_id} (thứ {i+1}/{max_class_ids}) cho course {course_name}")
+                has_errors = process_class_id(driver, class_id, course_name, processed)
+                classes_processed += 1
+                if not has_errors:
+                    log_message(f"Success Class ID {class_id} cho course {course_name}")
+                else:
+                    log_message(f"Has errors Class ID {class_id} cho course {course_name}")
+
+        save_processed(processed)
+        log_message("Hoàn thành run")
+
+    finally:
+        driver.quit()
 
 if __name__ == "__main__":
     main()
