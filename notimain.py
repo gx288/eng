@@ -26,11 +26,12 @@ LOG_FILE = "class_info_log.txt"
 
 def log_message(message):
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-    print(f"[{timestamp}] {message}")
+    print(f"[{timestamp}] {message}")  # In log ra màn hình
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"[{timestamp}] {message}\n")
 
 def send_notification(subject, body):
+    log_message("Preparing to send Telegram notification")
     if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
         log_message("Missing Telegram credentials, skipping notification")
         return
@@ -41,6 +42,7 @@ def send_notification(subject, body):
         "parse_mode": "HTML"
     }
     try:
+        log_message(f"Sending Telegram message: {body}")
         response = requests.post(url, json=payload, timeout=10)
         if response.status_code == 200:
             log_message("Telegram notification sent successfully")
@@ -50,6 +52,7 @@ def send_notification(subject, body):
         log_message(f"Error sending Telegram notification: {str(e)}")
 
 def login(driver):
+    log_message("Navigating to login page: https://apps.cec.com.vn/login")
     driver.get("https://apps.cec.com.vn/login")
     current_id = os.getenv("NEW_CEC_USER")
     password = os.getenv("NEW_CEC_PASS")
@@ -57,36 +60,37 @@ def login(driver):
         log_message("Missing NEW_CEC_USER or NEW_CEC_PASS")
         raise Exception("Missing credentials")
     try:
+        log_message(f"Entering username: {current_id}")
         username_field = WebDriverWait(driver, 30).until(
             EC.visibility_of_element_located((By.ID, "input-14"))
         )
-        log_message(f"Đang nhập username: {current_id}")
         driver.execute_script("arguments[0].value = '';", username_field)
         username_field.send_keys(current_id)
 
+        log_message("Entering password")
         password_field = WebDriverWait(driver, 30).until(
             EC.visibility_of_element_located((By.ID, "input-18"))
         )
-        log_message("Đang nhập password...")
         driver.execute_script("arguments[0].value = '';", password_field)
         password_field.send_keys(password)
 
+        log_message("Clicking login button")
         login_button = WebDriverWait(driver, 30).until(
             EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))
         )
-        log_message("Nhấn nút đăng nhập...")
         login_button.click()
         time.sleep(5)
 
         if "login" in driver.current_url:
-            log_message("Lỗi đăng nhập: Vẫn ở trang login")
+            log_message("Login failed: Still on login page")
             raise Exception("Login failed")
-        log_message("Đăng nhập thành công")
+        log_message("Login successful")
     except Exception as e:
-        log_message(f"Lỗi đăng nhập: {str(e)}")
+        log_message(f"Login error: {str(e)}")
         raise
 
 def update_google_sheet(class_id, report_count, timestamp):
+    log_message(f"Updating Google Sheet with Class ID {class_id}, {report_count} reports")
     max_retries = 3
     for attempt in range(max_retries):
         try:
@@ -96,7 +100,7 @@ def update_google_sheet(class_id, report_count, timestamp):
             worksheet = sheet.worksheet(SHEET_NAME)
             row_data = [str(class_id), str(report_count), timestamp]
             worksheet.append_row(row_data)
-            log_message(f"Updated Google Sheet for Class ID {class_id} with {report_count} reports at {timestamp}")
+            log_message(f"Updated Google Sheet successfully: Class ID {class_id}, {report_count} reports at {timestamp}")
             return True
         except Exception as e:
             log_message(f"Attempt {attempt+1}/{max_retries} failed to update Google Sheet: {str(e)}")
@@ -107,35 +111,42 @@ def update_google_sheet(class_id, report_count, timestamp):
     return False
 
 def save_processed(report_count):
+    log_message(f"Saving processed data to {PROCESSED_FILE}")
     processed = {"class_id": CLASS_ID, "report_count": report_count}
     try:
         with open(PROCESSED_FILE, 'w', encoding='utf-8') as f:
             json.dump(processed, f, indent=2)
-        log_message(f"Saved {PROCESSED_FILE}")
+        log_message(f"Saved {PROCESSED_FILE} successfully")
     except Exception as e:
         log_message(f"Error saving {PROCESSED_FILE}: {str(e)}")
 
 def is_git_repository():
     try:
         subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, capture_output=True, text=True)
+        log_message("Git repository detected")
         return True
-    except:
+    except Exception as e:
+        log_message(f"Not a git repository: {str(e)}")
         return False
 
 def check_reports():
+    log_message("Starting report check for Class ID {CLASS_ID}")
     processed = {}
     if os.path.exists(PROCESSED_FILE):
         try:
             with open(PROCESSED_FILE, 'r', encoding='utf-8') as f:
                 processed = json.load(f)
+            log_message(f"Loaded {PROCESSED_FILE}: {processed}")
         except Exception as e:
             log_message(f"Error reading {PROCESSED_FILE}: {str(e)}")
 
     if 'GOOGLE_CREDENTIALS' in os.environ:
         try:
+            log_message("Writing Google credentials to credentials.json")
             creds_content = os.environ['GOOGLE_CREDENTIALS'].strip().encode('utf-8').decode('utf-8-sig')
             with open(CREDENTIALS_FILE, 'w', encoding='utf-8') as f:
                 json.dump(json.loads(creds_content), f, indent=2, ensure_ascii=False)
+            log_message("Credentials written successfully")
         except Exception as e:
             log_message(f"Error writing credentials.json: {str(e)}")
             return
@@ -146,15 +157,19 @@ def check_reports():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0")
+    log_message("Initializing Chrome WebDriver")
     driver = webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
 
     try:
         login(driver)
+        log_message(f"Navigating to class detail page: https://apps.cec.com.vn/student-calendar/class-detail?classID={CLASS_ID}")
         driver.get(f"https://apps.cec.com.vn/student-calendar/class-detail?classID={CLASS_ID}")
-        log_message(f"Checking reports for Class ID {CLASS_ID}")
+        log_message("Waiting for page to load")
         time.sleep(5)
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        log_message("Scrolled to bottom of page")
 
+        log_message("Counting report elements")
         report_elements = WebDriverWait(driver, 20).until(
             EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr//i[@data-v-50ef298c and contains(@class, 'isax-card-edit')]"))
         )
@@ -163,6 +178,7 @@ def check_reports():
 
         last_report_count = processed.get("report_count", 0)
         if report_count > last_report_count:
+            log_message(f"New reports detected (current: {report_count}, last: {last_report_count})")
             timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
             body = f"Hùng ơi, có {report_count} report cho lớp học CEC!\nClass ID: {CLASS_ID}"
             send_notification("New CEC Report Count", body)
@@ -170,13 +186,14 @@ def check_reports():
             save_processed(report_count)
 
             if is_git_repository():
+                log_message("Committing and pushing changes to GitHub")
                 try:
                     subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
                     subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
                     subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE], check=True)
                     subprocess.run(["git", "commit", "-m", f"Update {PROCESSED_FILE} and {LOG_FILE} for Class ID {CLASS_ID}"], check=True)
                     subprocess.run(["git", "push"], check=True)
-                    log_message(f"Pushed {PROCESSED_FILE} and {LOG_FILE}")
+                    log_message(f"Pushed {PROCESSED_FILE} and {LOG_FILE} successfully")
                 except Exception as e:
                     log_message(f"Error committing/pushing: {str(e)}")
         else:
@@ -185,27 +202,33 @@ def check_reports():
     except Exception as e:
         log_message(f"Error checking reports: {str(e)}")
     finally:
+        log_message("Closing WebDriver")
         driver.quit()
 
 def run_schedule():
+    log_message("Starting schedule loop")
     while True:
         schedule.run_pending()
         time.sleep(60)
 
 def main():
+    log_message("Starting main script")
     if 'GOOGLE_CREDENTIALS' in os.environ:
         try:
+            log_message("Writing Google credentials to credentials.json")
             creds_content = os.environ['GOOGLE_CREDENTIALS'].strip().encode('utf-8').decode('utf-8-sig')
             with open(CREDENTIALS_FILE, 'w', encoding='utf-8') as f:
                 json.dump(json.loads(creds_content), f, indent=2, ensure_ascii=False)
+            log_message("Credentials written successfully")
         except Exception as e:
             log_message(f"Error writing credentials.json: {str(e)}")
             return
 
+    log_message("Scheduling hourly report check")
     schedule.every(1).hours.do(check_reports)
     threading.Thread(target=run_schedule, daemon=True).start()
 
-    # Keep the script running
+    log_message("Entering main loop")
     while True:
         time.sleep(60)
 
