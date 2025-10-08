@@ -113,5 +113,12 @@
       "total_lessons": 39,
       "has_errors": false
     }
+  },
+  "Reader's Wonderland 2.3": {
+    "10954": {
+      "last_lesson": 0,
+      "total_lessons": 8,
+      "has_errors": true
+    }
   }
 }
