@@ -19,6 +19,7 @@ SHEET_NAME = "Report"
 SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+TELEGRAM_CHAT_ID_2 = os.getenv("TELEGRAM_CHAT_ID_2")  # Thêm chat_id thứ hai
 CLASS_ID = "11005"
 LOG_FILE = "class_info_log2.txt"
 
@@ -30,24 +31,30 @@ def log_message(message):
 
 def send_notification(subject, body):
     log_message("Preparing to send Telegram notification")
-    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        log_message("Missing Telegram credentials, skipping notification")
+    if not TELEGRAM_BOT_TOKEN:
+        log_message("Missing TELEGRAM_BOT_TOKEN, skipping notification")
         return
-    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": f"<b>{subject}</b>\n\n{body}",
-        "parse_mode": "HTML"
-    }
-    try:
-        log_message(f"Sending Telegram message: {body}")
-        response = requests.post(url, json=payload, timeout=10)
-        if response.status_code == 200:
-            log_message("Telegram notification sent successfully")
-        else:
-            log_message(f"Telegram send failed: {response.text}")
-    except Exception as e:
-        log_message(f"Error sending Telegram notification: {str(e)}")
+    
+    chat_ids = [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]  # Danh sách chat_id
+    for chat_id in chat_ids:
+        if not chat_id:
+            log_message(f"Missing chat_id, skipping notification for one recipient")
+            continue
+        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        payload = {
+            "chat_id": chat_id,
+            "text": f"<b>{subject}</b>\n\n{body}",
+            "parse_mode": "HTML"
+        }
+        try:
+            log_message(f"Sending Telegram message to chat_id {chat_id}: {body}")
+            response = requests.post(url, json=payload, timeout=10)
+            if response.status_code == 200:
+                log_message(f"Telegram notification sent successfully to chat_id {chat_id}")
+            else:
+                log_message(f"Telegram send failed for chat_id {chat_id}: {response.text}")
+        except Exception as e:
+            log_message(f"Error sending Telegram notification to chat_id {chat_id}: {str(e)}")
 
 def login(driver):
     log_message("Navigating to login page: https://apps.cec.com.vn/login")
