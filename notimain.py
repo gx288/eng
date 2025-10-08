@@ -12,7 +12,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import subprocess
 
 # Configuration
-PROCESSED_FILE = "processed.json"
+PROCESSED_FILE = "processed2.json"
 CREDENTIALS_FILE = "credentials.json"
 SHEET_ID = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
 SHEET_NAME = "Report"
@@ -20,7 +20,7 @@ SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/a
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 CLASS_ID = "11005"
-LOG_FILE = "class_info_log.txt"
+LOG_FILE = "class_info_log2.txt"
 
 def log_message(message):
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
