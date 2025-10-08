@@ -15,6 +15,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 import requests
 from urllib.parse import urlparse
 from webdriver_manager.chrome import ChromeDriverManager
+import binascii
 
 # Configuration
 CSV_FILE = "id.csv"
@@ -110,15 +111,20 @@ def update_google_sheet(row_data, class_id, lesson_number):
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            with open(CREDENTIALS_FILE, 'r') as f:
+            with open(CREDENTIALS_FILE, 'r', encoding='utf-8') as f:
                 creds_content = f.read()
                 log_message(f"DEBUG: credentials.json content length = {len(creds_content)}")
                 try:
                     creds_json = json.loads(creds_content)
                     log_message("DEBUG: credentials.json is valid JSON")
                     log_message(f"DEBUG: credentials.json keys = {list(creds_json.keys())}")
+                    log_message(f"DEBUG: client_email = {creds_json.get('client_email', 'N/A')}")
+                    # Log hex dump of first 50 bytes to detect BOM or hidden chars
+                    hex_dump = binascii.hexlify(creds_content[:50].encode('utf-8')).decode('utf-8')
+                    log_message(f"DEBUG: credentials.json hex dump (first 50 bytes) = {hex_dump}")
                 except json.JSONDecodeError as e:
                     log_message(f"DEBUG: Invalid credentials.json: {str(e)}")
+                    log_message(f"DEBUG: credentials.json snippet = {creds_content[:100].replace('\n', ' ')}...")
                     raise Exception(f"Invalid credentials.json format: {str(e)}")
 
             creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
@@ -138,12 +144,12 @@ def update_google_sheet(row_data, class_id, lesson_number):
             if attempt == max_retries - 1:
                 log_message(f"Lỗi khi cập nhật Google Sheet cho Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
                 return False
-            time.sleep(2)
+            time.sleep(3)
     return False
 
 def save_processed(processed):
     try:
-        with open(PROCESSED_FILE, 'w') as f:
+        with open(PROCESSED_FILE, 'w', encoding='utf-8') as f:
             json.dump(processed, f, indent=2)
         log_message(f"Đã lưu processed.json")
     except Exception as e:
@@ -151,8 +157,9 @@ def save_processed(processed):
 
 def is_git_repository():
     try:
-        subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, capture_output=True, text=True)
+        result = subprocess.run(["git", "rev-parse", "--is-inside-work-tree"], check=True, capture_output=True, text=True)
         log_message("DEBUG: Git repository detected")
+        log_message(f"DEBUG: Git status = {subprocess.run(['git', 'status', '--short'], capture_output=True, text=True).stdout.strip()}")
         return True
     except Exception as e:
         log_message(f"DEBUG: Not a Git repository: {str(e)}")
@@ -166,7 +173,7 @@ def process_class_id(class_id, course_name, processed):
     driver = None
     try:
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")  # Comment out for local debug
+        # options.add_argument("--headless")  # Comment out for local debug
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
@@ -274,7 +281,7 @@ def process_class_id(class_id, course_name, processed):
                         for attempt in range(3):
                             try:
                                 driver.execute_script("arguments[0].click();", homework_button)
-                                popup = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".v-dialog--active")))
+                                popup = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".v-dialog--active")))
                                 log_message(f"DEBUG: Popup opened for lesson {lesson_number}")
                                 header = popup.find_element(By.CSS_SELECTOR, ".v-toolbar__title").text.strip()
                                 text_actions = [elem.text.strip() for elem in popup.find_elements(By.CSS_SELECTOR, ".text-action")]
@@ -321,11 +328,11 @@ def process_class_id(class_id, course_name, processed):
                         has_errors = True
 
                     row_data = [str(class_id), class_code, course_name, lesson_number, report_link, homework_content, "OK" if not lesson_has_error else "Has Errors"]
-                    if update_google_sheet(row_data, class_id, lesson_number):
-                        processed[course_name][class_id]['last_lesson'] = lesson_index
-                        processed[course_name][class_id]['has_errors'] = has_errors
-                        save_processed(processed)
+                    processed[course_name][class_id]['last_lesson'] = lesson_index
+                    processed[course_name][class_id]['has_errors'] = has_errors
+                    save_processed(processed)  # Save even if Google Sheet fails
 
+                    if update_google_sheet(row_data, class_id, lesson_number):
                         if is_git_repository():
                             try:
                                 subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
@@ -350,6 +357,9 @@ def process_class_id(class_id, course_name, processed):
                         log_message(f"Failed lesson {lesson_number} after {max_retries} retries")
                         lesson_has_error = True
                         has_errors = True
+                        processed[course_name][class_id]['last_lesson'] = lesson_index
+                        processed[course_name][class_id]['has_errors'] = has_errors
+                        save_processed(processed)
                         break
 
         log_message(f"Hoàn thành Class ID {class_id} cho course {course_name}")
@@ -373,7 +383,7 @@ def main():
     processed = {}
     if os.path.exists(PROCESSED_FILE):
         try:
-            with open(PROCESSED_FILE, 'r') as f:
+            with open(PROCESSED_FILE, 'r', encoding='utf-8') as f:
                 processed = json.load(f)
         except Exception as e:
             log_message(f"Lỗi đọc processed: {str(e)}")
@@ -382,12 +392,26 @@ def main():
         try:
             creds_content = os.environ['GOOGLE_CREDENTIALS'].strip()
             log_message(f"DEBUG: GOOGLE_CREDENTIALS length = {len(creds_content)}")
-            json.loads(creds_content)  # Validate JSON
-            with open(CREDENTIALS_FILE, 'w') as f:
-                f.write(creds_content)
+            # Remove BOM if present
+            creds_content = creds_content.encode('utf-8').decode('utf-8-sig')
+            # Log hex dump to detect hidden chars
+            hex_dump = binascii.hexlify(creds_content[:50].encode('utf-8')).decode('utf-8')
+            log_message(f"DEBUG: GOOGLE_CREDENTIALS hex dump (first 50 bytes) = {hex_dump}")
+            creds_json = json.loads(creds_content)
+            log_message("DEBUG: GOOGLE_CREDENTIALS is valid JSON")
+            log_message(f"DEBUG: GOOGLE_CREDENTIALS keys = {list(creds_json.keys())}")
+            log_message(f"DEBUG: client_email = {creds_json.get('client_email', 'N/A')}")
+            # Write credentials.json using Python to ensure UTF-8 and no BOM
+            with open(CREDENTIALS_FILE, 'w', encoding='utf-8') as f:
+                json.dump(creds_json, f, indent=2, ensure_ascii=False)
             log_message(f"DEBUG: Wrote credentials.json from GOOGLE_CREDENTIALS")
+            # Log file content for debug
+            with open(CREDENTIALS_FILE, 'r', encoding='utf-8') as f:
+                file_content = f.read()
+                log_message(f"DEBUG: credentials.json content = {file_content[:100].replace('\n', ' ')}...")
         except json.JSONDecodeError as e:
             log_message(f"DEBUG: Invalid GOOGLE_CREDENTIALS JSON: {str(e)}")
+            log_message(f"DEBUG: GOOGLE_CREDENTIALS snippet = {creds_content[:100].replace('\n', ' ')}...")
             return
         except Exception as e:
             log_message(f"DEBUG: Error writing credentials.json: {str(e)}")
