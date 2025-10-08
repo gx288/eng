@@ -30,17 +30,7 @@ jobs:
       - name: Debug credentials
         run: |
           echo "${{ secrets.GOOGLE_CREDENTIALS }}" | jq . || echo "Invalid JSON in GOOGLE_CREDENTIALS"
-          echo "${{ secrets.GOOGLE_CREDENTIALS }}" > temp_credentials.json
-          echo "Content of temp_credentials.json:"
-          cat temp_credentials.json
-          echo "Hex dump of temp_credentials.json:"
-          xxd -l 50 temp_credentials.json
-          # Write credentials.json using Python to avoid echo issues
-          python -c "import json; import os; content = os.environ['GOOGLE_CREDENTIALS'].encode('utf-8').decode('utf-8-sig').strip(); json.dump(json.loads(content), open('credentials.json', 'w', encoding='utf-8'), indent=2, ensure_ascii=False)"
-          echo "Content of credentials.json:"
-          cat credentials.json
-          echo "Hex dump of credentials.json:"
-          xxd -l 50 credentials.json
+          echo "${{ secrets.GOOGLE_CREDENTIALS }}" > credentials.json
 
       - name: Debug Git
         run: |
