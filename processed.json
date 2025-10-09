@@ -302,5 +302,12 @@
       "total_lessons": 68,
       "has_errors": true
     }
+  },
+  "English Smart 7.2": {
+    "10626": {
+      "last_lesson": 0,
+      "total_lessons": 60,
+      "has_errors": false
+    }
   }
 }
