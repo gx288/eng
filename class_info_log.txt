@@ -13416,3 +13416,1133 @@ OPEN HERE (MỞ BTVN TẠI ĐÂY): https://drive.google.com/drive/folders/1SvByt
 [2025-10-09 02:46:22] Reached limit of 50 classes/run, stopping
 [2025-10-09 02:46:22] Saved processed.json
 [2025-10-09 02:46:22] Run completed
+[2025-10-09 05:03:16] Đăng nhập thành công
+[2025-10-09 05:03:19] Processing Class ID 11260 for course Reading Skills 1
+[2025-10-09 05:03:24] Saved processed.json
+[2025-10-09 05:03:24] Processing lesson 1 for Class ID 11260
+[2025-10-09 05:03:30] Got homework for lesson 1: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 1 - Lesson 1 (page 1, 2): https://drive.google.com/drive/folders/1B4l6BtNW-LoUdHbvIHb0YJL5PTmdrAak?usp=sharing
+[2025-10-09 05:03:32] Saved processed.json
+[2025-10-09 05:03:34] Lesson 1 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:03:34] Pushed processed.json for Class ID 11260, Lesson 1
+[2025-10-09 05:03:34] Processing lesson 2 for Class ID 11260
+[2025-10-09 05:03:39] Got homework for lesson 2: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 1 - Lesson 2 (page 3, 4, 5): https://drive.google.com/drive/folders/1rFYQC6xEj5iXrv1iUhWCKJmpvDFNJ97C?usp=sharing
+[2025-10-09 05:03:41] Saved processed.json
+[2025-10-09 05:03:43] Lesson 2 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:03:43] Pushed processed.json for Class ID 11260, Lesson 2
+[2025-10-09 05:03:43] Processing lesson 3 for Class ID 11260
+[2025-10-09 05:03:48] Got homework for lesson 3: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 2 - Lesson 1 (page 6, 7, 8, 9): https://drive.google.com/drive/folders/1JkaKT-WNh6JxNn1-HzEqUgc2tS9z43ib?usp=sharing
+[2025-10-09 05:03:51] Saved processed.json
+[2025-10-09 05:03:51] Lesson 3 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:03:52] Pushed processed.json for Class ID 11260, Lesson 3
+[2025-10-09 05:03:52] Processing lesson 4 for Class ID 11260
+[2025-10-09 05:03:56] Got homework for lesson 4: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 2 - Lesson 2 (page 10, 11, 12): https://drive.google.com/drive/folders/1FsZGh1yrYuy_Ao10PzKImlqZVle2Itmz?usp=sharing
+[2025-10-09 05:03:58] Saved processed.json
+[2025-10-09 05:04:00] Lesson 4 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:04:00] Pushed processed.json for Class ID 11260, Lesson 4
+[2025-10-09 05:04:00] Processing lesson 5 for Class ID 11260
+[2025-10-09 05:04:04] Got homework for lesson 5: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 3 - Lesson 1 (page 13, 14, 15): https://drive.google.com/drive/folders/1qrtVJzsFOW0ZVfkSAroapXnP1Svav9Hs?usp=sharing
+[2025-10-09 05:04:07] Saved processed.json
+[2025-10-09 05:04:07] Lesson 5 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:04:08] Pushed processed.json for Class ID 11260, Lesson 5
+[2025-10-09 05:04:08] Processing lesson 6 for Class ID 11260
+[2025-10-09 05:04:14] Got homework for lesson 6: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 3 - Lesson 2 (page 16, 17, 18, 19): https://drive.google.com/drive/folders/1w1Aat2MdPj6axLwdPryYBUEY9DgU5-pl?usp=sharing
+[2025-10-09 05:04:16] Saved processed.json
+[2025-10-09 05:04:18] Lesson 6 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:04:18] Pushed processed.json for Class ID 11260, Lesson 6
+[2025-10-09 05:04:18] Processing lesson 7 for Class ID 11260
+[2025-10-09 05:04:23] Got homework for lesson 7: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 4 - Lesson 1 (page 20, 21, 22): https://drive.google.com/drive/folders/1tLh6hnVMFsyy07TF0OPqbMCeVZPi5Kv5?usp=sharing
+[2025-10-09 05:04:25] Saved processed.json
+[2025-10-09 05:04:26] Lesson 7 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:04:26] Pushed processed.json for Class ID 11260, Lesson 7
+[2025-10-09 05:04:26] Processing lesson 8 for Class ID 11260
+[2025-10-09 05:04:31] Got homework for lesson 8: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:04:33] Saved processed.json
+[2025-10-09 05:04:34] Lesson 8 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:04:34] Pushed processed.json for Class ID 11260, Lesson 8
+[2025-10-09 05:04:34] Processing lesson 9 for Class ID 11260
+[2025-10-09 05:04:40] Got homework for lesson 9: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 4- Lesson 2 (page 23, 24, 25, 26): https://drive.google.com/drive/folders/1g_miQVLGvXUV6MDLha-yA2M215Ct5NmT?usp=sharing
+Unit 5 - Lesson 1 (page 27, 28 ,29): https://drive.google.com/drive/folders/1nIn7aG0YpR4Z-7Pkhk-zD9v60dp3h4jz?usp=sharing
+[2025-10-09 05:04:42] Saved processed.json
+[2025-10-09 05:04:43] Lesson 9 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:04:44] Pushed processed.json for Class ID 11260, Lesson 9
+[2025-10-09 05:04:44] Processing lesson 10 for Class ID 11260
+[2025-10-09 05:04:49] Got homework for lesson 10: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 5 - Lesson 2 (page 30, 31, 32): https://drive.google.com/drive/folders/1R83MQbJ7c2RJ0BLznACuzajSS2VPZqW9?usp=sharing
+[2025-10-09 05:04:51] Saved processed.json
+[2025-10-09 05:04:52] Lesson 10 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:04:53] Pushed processed.json for Class ID 11260, Lesson 10
+[2025-10-09 05:04:53] Processing lesson 11 for Class ID 11260
+[2025-10-09 05:04:58] Got homework for lesson 11: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 6 - Lesson 1 (page 33, 34, 35, 36): https://drive.google.com/drive/folders/1tOxhjWtHiHW7WE8EG0NtM6NoI8ZuVLLg?usp=sharing
+[2025-10-09 05:05:00] Saved processed.json
+[2025-10-09 05:05:01] Lesson 11 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:05:01] Pushed processed.json for Class ID 11260, Lesson 11
+[2025-10-09 05:05:01] Processing lesson 12 for Class ID 11260
+[2025-10-09 05:05:06] Got homework for lesson 12: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 6 - Lesson 2 (page 37, 38, 39, 40): https://drive.google.com/drive/folders/1xeeIWXhZM-kfQmMPAmMrFS3Gm61U3sAd?usp=sharing
+[2025-10-09 05:05:08] Saved processed.json
+[2025-10-09 05:05:09] Lesson 12 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:05:10] Pushed processed.json for Class ID 11260, Lesson 12
+[2025-10-09 05:05:10] Processing lesson 13 for Class ID 11260
+[2025-10-09 05:05:14] Got homework for lesson 13: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:05:16] Saved processed.json
+[2025-10-09 05:05:17] Lesson 13 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:05:18] Pushed processed.json for Class ID 11260, Lesson 13
+[2025-10-09 05:05:18] Processing lesson 14 for Class ID 11260
+[2025-10-09 05:05:23] Got homework for lesson 14: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 7 - Lesson 1 (page 41, 42, 43): https://drive.google.com/drive/folders/1Qu_YRpNsL6RNWox-EXRiBNmn_aSVoyDW?usp=sharing
+Unit 7 - Lesson 2 (page 44, 45 , 46, 47, 48): https://drive.google.com/drive/folders/1z0OZjGPEvUQSgk03KKBAOS4moX_YkaRS?usp=sharing
+[2025-10-09 05:05:25] Saved processed.json
+[2025-10-09 05:05:26] Lesson 14 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:05:27] Pushed processed.json for Class ID 11260, Lesson 14
+[2025-10-09 05:05:27] Processing lesson 15 for Class ID 11260
+[2025-10-09 05:05:32] Got homework for lesson 15: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 8 - Lesson 1 (page 49, 50, 51): https://drive.google.com/drive/folders/1xSb9ST6vot1ZOWrDSksoTX3yQ6TOlSTK?usp=sharing
+[2025-10-09 05:05:34] Saved processed.json
+[2025-10-09 05:05:35] Lesson 15 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:05:36] Pushed processed.json for Class ID 11260, Lesson 15
+[2025-10-09 05:05:36] Processing lesson 16 for Class ID 11260
+[2025-10-09 05:05:40] Got homework for lesson 16: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:05:42] Saved processed.json
+[2025-10-09 05:05:42] Lesson 16 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:05:43] Pushed processed.json for Class ID 11260, Lesson 16
+[2025-10-09 05:05:43] Processing lesson 17 for Class ID 11260
+[2025-10-09 05:05:49] Got homework for lesson 17: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 8 - Lesson 2 (page 52, 53, 54, 55): https://drive.google.com/drive/folders/1BgSJ66K-BeTx665vwZ7E5Ai1E8fcCVFG?usp=sharing
+Unit 9 - Lesson 1 (page 56, 57, 58): https://drive.google.com/drive/folders/1-mTQCmjeW1S6JO0hm6fO85PUPjpsl5UB?usp=sharing
+[2025-10-09 05:05:51] Saved processed.json
+[2025-10-09 05:05:52] Lesson 17 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:05:52] Pushed processed.json for Class ID 11260, Lesson 17
+[2025-10-09 05:05:52] Processing lesson 18 for Class ID 11260
+[2025-10-09 05:05:56] Got homework for lesson 18: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:05:58] Saved processed.json
+[2025-10-09 05:05:59] Lesson 18 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:06:00] Pushed processed.json for Class ID 11260, Lesson 18
+[2025-10-09 05:06:00] Processing lesson 19 for Class ID 11260
+[2025-10-09 05:06:01] Invalid report link for lesson 19: HTTP 410
+[2025-10-09 05:06:02] Got homework for lesson 19: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 9 - Lesson 2 (page 59, 60, 61, 62): https://drive.google.com/drive/folders/1X47lq6nKvDvyZ18YPFdR7hHqTheoeXVm?usp=drive_link
+[2025-10-09 05:06:04] Saved processed.json
+[2025-10-09 05:06:05] Lesson 19 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:06:06] Pushed processed.json for Class ID 11260, Lesson 19
+[2025-10-09 05:06:06] Processing lesson 20 for Class ID 11260
+[2025-10-09 05:06:10] Got homework for lesson 20: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 10 - Lesson 2 (page 65, 66, 67, 68): https://drive.google.com/drive/folders/1RAQcQ6-oy4O9cAJl4bs8keB_Kkl5wtnr?usp=sharing
+[2025-10-09 05:06:12] Saved processed.json
+[2025-10-09 05:06:13] Lesson 20 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:06:14] Pushed processed.json for Class ID 11260, Lesson 20
+[2025-10-09 05:06:14] Processing lesson 21 for Class ID 11260
+[2025-10-09 05:06:19] Got homework for lesson 21: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 11 - Lesson 1 (page 69, 70): https://drive.google.com/drive/folders/1qLVqMa82HpbTpjUTBrQZOfUR9Y2tVUXq?usp=sharing
+[2025-10-09 05:06:21] Saved processed.json
+[2025-10-09 05:06:22] Lesson 21 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:06:22] Pushed processed.json for Class ID 11260, Lesson 21
+[2025-10-09 05:06:22] Processing lesson 22 for Class ID 11260
+[2025-10-09 05:06:28] Got homework for lesson 22: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 11 - Lesson 2 (page 71, 72, 73, 74): https://drive.google.com/drive/folders/18aNeepqgmlvGG4uzou1dVrxNzARBEH_C?usp=sharing
+[2025-10-09 05:06:30] Saved processed.json
+[2025-10-09 05:06:31] Lesson 22 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:06:32] Pushed processed.json for Class ID 11260, Lesson 22
+[2025-10-09 05:06:32] Processing lesson 23 for Class ID 11260
+[2025-10-09 05:06:36] Got homework for lesson 23: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:06:38] Saved processed.json
+[2025-10-09 05:06:39] Lesson 23 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:06:40] Pushed processed.json for Class ID 11260, Lesson 23
+[2025-10-09 05:06:40] Processing lesson 24 for Class ID 11260
+[2025-10-09 05:06:45] Got homework for lesson 24: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 12 - Lesson 1 (page 75, 76): https://drive.google.com/drive/folders/1mpWcc5mGKUooWd0hF5KZFEmFOqdMrFQ-?usp=sharing
+Unit 12 - Lesson 2 (page 77, 78, 79): https://drive.google.com/drive/folders/194QB0xKaGcjakg4R3xqT3SSojLDHa2-f?usp=sharing
+[2025-10-09 05:06:47] Saved processed.json
+[2025-10-09 05:06:48] Lesson 24 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:06:49] Pushed processed.json for Class ID 11260, Lesson 24
+[2025-10-09 05:06:49] Processing lesson 25 for Class ID 11260
+[2025-10-09 05:06:53] Got homework for lesson 25: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:06:55] Saved processed.json
+[2025-10-09 05:06:56] Lesson 25 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:06:56] Pushed processed.json for Class ID 11260, Lesson 25
+[2025-10-09 05:06:56] Processing lesson 26 for Class ID 11260
+[2025-10-09 05:07:02] Got homework for lesson 26: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 13 - Lesson 1 (page 80, 81, 82): https://drive.google.com/drive/folders/1Tui_rOM9eXFjd26mf-4nw9Q88us5ZwHO?usp=sharing
+Unit 13 - Lesson 2 (page 83, 84, 85, 86): https://drive.google.com/drive/folders/1ClUlm8HO1k4hAlAWSvWhq4aY-scXIveN?usp=sharing
+[2025-10-09 05:07:04] Saved processed.json
+[2025-10-09 05:07:05] Lesson 26 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:07:06] Pushed processed.json for Class ID 11260, Lesson 26
+[2025-10-09 05:07:06] Processing lesson 27 for Class ID 11260
+[2025-10-09 05:07:11] Got homework for lesson 27: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 14 - Lesson 1 (page 87, 88, 89, 90): https://drive.google.com/drive/folders/1GgKNwgvOffLnVE6Dgb2nCz6W0q-D81Mj
+[2025-10-09 05:07:13] Saved processed.json
+[2025-10-09 05:07:14] Lesson 27 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:07:15] Pushed processed.json for Class ID 11260, Lesson 27
+[2025-10-09 05:07:15] Processing lesson 28 for Class ID 11260
+[2025-10-09 05:07:19] Got homework for lesson 28: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 14 - Lesson 2 (page 91, 92, 93, 94): https://drive.google.com/drive/folders/1YFjFSfH6wJD3MyGZ8ZcAzBETDmLoD_iM?usp=sharing
+[2025-10-09 05:07:22] Saved processed.json
+[2025-10-09 05:07:22] Lesson 28 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:07:23] Pushed processed.json for Class ID 11260, Lesson 28
+[2025-10-09 05:07:23] Processing lesson 29 for Class ID 11260
+[2025-10-09 05:07:27] Got homework for lesson 29: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:07:29] Saved processed.json
+[2025-10-09 05:07:30] Lesson 29 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:07:31] Pushed processed.json for Class ID 11260, Lesson 29
+[2025-10-09 05:07:31] Processing lesson 30 for Class ID 11260
+[2025-10-09 05:07:36] Got homework for lesson 30: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 15 - Lesson 1 (page 95, 96, 97): https://drive.google.com/drive/folders/1CDlyI9UHWOLFz33UKmF9thHEawhGIBV4?usp=sharing
+Unit 15 - Lesson 2 (page 98, 99, 100): https://drive.google.com/drive/folders/1N1M9DkTrPrH1OZUtTfo7o3fi4aFcm-p5?usp=sharing
+[2025-10-09 05:07:38] Saved processed.json
+[2025-10-09 05:07:39] Lesson 30 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:07:39] Pushed processed.json for Class ID 11260, Lesson 30
+[2025-10-09 05:07:39] Processing lesson 31 for Class ID 11260
+[2025-10-09 05:07:43] Got homework for lesson 31: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:07:45] Saved processed.json
+[2025-10-09 05:07:47] Lesson 31 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:07:47] Pushed processed.json for Class ID 11260, Lesson 31
+[2025-10-09 05:07:47] Processing lesson 32 for Class ID 11260
+[2025-10-09 05:07:53] Got homework for lesson 32: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+Links:
+Unit 16 - Lesson 1 (page 101, 102, 103, 104): https://drive.google.com/drive/folders/13_ZI3n73QEhRFNZ1z5qmGMZ8liv_LPIU?usp=sharing
+Unit 16 - Lesson 2 (page 105, 106, 107, 108): https://drive.google.com/drive/folders/15_5uebMv6Zn8OvZh9eDR685dqESRbths?usp=sharing
+[2025-10-09 05:07:55] Saved processed.json
+[2025-10-09 05:07:56] Lesson 32 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:07:56] Pushed processed.json for Class ID 11260, Lesson 32
+[2025-10-09 05:07:56] Processing lesson 33 for Class ID 11260
+[2025-10-09 05:07:59] Got homework for lesson 33: Homework Header: Homework: CG-R1-2502, 19:30 - 21:00
+
+[2025-10-09 05:08:02] Saved processed.json
+[2025-10-09 05:08:03] Lesson 33 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:08:03] Pushed processed.json for Class ID 11260, Lesson 33
+[2025-10-09 05:08:03] Processing lesson 34 for Class ID 11260
+[2025-10-09 05:08:07] Got homework for lesson 34: Homework Header: Homework: CG-R1-2502, 17:45 - 19:15
+
+[2025-10-09 05:08:09] Saved processed.json
+[2025-10-09 05:08:10] Lesson 34 of Class ID 11260 already exists in Sheet
+[2025-10-09 05:08:10] Pushed processed.json for Class ID 11260, Lesson 34
+[2025-10-09 05:08:10] Completed Class ID 11260 for course Reading Skills 1
+[2025-10-09 05:08:10] Has errors for Class ID 11260 in course Reading Skills 1
+[2025-10-09 05:08:11] Processing Class ID 11236 for course Summer Kindy 4
+[2025-10-09 05:08:16] Saved processed.json
+[2025-10-09 05:08:16] Processing lesson 1 for Class ID 11236
+[2025-10-09 05:08:20] Got homework for lesson 1: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:08:22] Saved processed.json
+[2025-10-09 05:08:23] Lesson 1 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:08:24] Pushed processed.json for Class ID 11236, Lesson 1
+[2025-10-09 05:08:24] Processing lesson 2 for Class ID 11236
+[2025-10-09 05:08:28] Got homework for lesson 2: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:08:30] Saved processed.json
+[2025-10-09 05:08:30] Lesson 2 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:08:31] Pushed processed.json for Class ID 11236, Lesson 2
+[2025-10-09 05:08:31] Processing lesson 3 for Class ID 11236
+[2025-10-09 05:08:35] Got homework for lesson 3: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:08:37] Saved processed.json
+[2025-10-09 05:08:37] Lesson 3 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:08:38] Pushed processed.json for Class ID 11236, Lesson 3
+[2025-10-09 05:08:38] Processing lesson 4 for Class ID 11236
+[2025-10-09 05:08:42] Got homework for lesson 4: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:08:44] Saved processed.json
+[2025-10-09 05:08:45] Lesson 4 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:08:46] Pushed processed.json for Class ID 11236, Lesson 4
+[2025-10-09 05:08:46] Processing lesson 5 for Class ID 11236
+[2025-10-09 05:08:52] Got homework for lesson 5: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:08:54] Saved processed.json
+[2025-10-09 05:08:54] Lesson 5 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:08:55] Pushed processed.json for Class ID 11236, Lesson 5
+[2025-10-09 05:08:55] Processing lesson 6 for Class ID 11236
+[2025-10-09 05:08:58] Got homework for lesson 6: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:00] Saved processed.json
+[2025-10-09 05:09:00] Lesson 6 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:01] Pushed processed.json for Class ID 11236, Lesson 6
+[2025-10-09 05:09:01] Processing lesson 7 for Class ID 11236
+[2025-10-09 05:09:03] Got homework for lesson 7: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:05] Saved processed.json
+[2025-10-09 05:09:06] Lesson 7 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:07] Pushed processed.json for Class ID 11236, Lesson 7
+[2025-10-09 05:09:07] Processing lesson 8 for Class ID 11236
+[2025-10-09 05:09:09] Got homework for lesson 8: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:11] Saved processed.json
+[2025-10-09 05:09:12] Lesson 8 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:13] Pushed processed.json for Class ID 11236, Lesson 8
+[2025-10-09 05:09:13] Processing lesson 9 for Class ID 11236
+[2025-10-09 05:09:15] Got homework for lesson 9: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:17] Saved processed.json
+[2025-10-09 05:09:17] Lesson 9 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:18] Pushed processed.json for Class ID 11236, Lesson 9
+[2025-10-09 05:09:18] Processing lesson 10 for Class ID 11236
+[2025-10-09 05:09:21] Got homework for lesson 10: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:23] Saved processed.json
+[2025-10-09 05:09:23] Lesson 10 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:24] Pushed processed.json for Class ID 11236, Lesson 10
+[2025-10-09 05:09:24] Processing lesson 11 for Class ID 11236
+[2025-10-09 05:09:26] Got homework for lesson 11: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:28] Saved processed.json
+[2025-10-09 05:09:29] Lesson 11 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:30] Pushed processed.json for Class ID 11236, Lesson 11
+[2025-10-09 05:09:30] Processing lesson 12 for Class ID 11236
+[2025-10-09 05:09:32] Got homework for lesson 12: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:34] Saved processed.json
+[2025-10-09 05:09:35] Lesson 12 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:35] Pushed processed.json for Class ID 11236, Lesson 12
+[2025-10-09 05:09:36] Processing lesson 13 for Class ID 11236
+[2025-10-09 05:09:38] Got homework for lesson 13: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:40] Saved processed.json
+[2025-10-09 05:09:40] Lesson 13 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:41] Pushed processed.json for Class ID 11236, Lesson 13
+[2025-10-09 05:09:41] Processing lesson 14 for Class ID 11236
+[2025-10-09 05:09:43] Got homework for lesson 14: Homework Header: Homework: VI-SK4-2502, 08:30 - 16:30
+
+[2025-10-09 05:09:45] Saved processed.json
+[2025-10-09 05:09:46] Lesson 14 of Class ID 11236 already exists in Sheet
+[2025-10-09 05:09:47] Pushed processed.json for Class ID 11236, Lesson 14
+[2025-10-09 05:09:47] Completed Class ID 11236 for course Summer Kindy 4
+[2025-10-09 05:09:47] Success for Class ID 11236 in course Summer Kindy 4
+[2025-10-09 05:09:48] Processing Class ID 11217 for course Summer Smart 3
+[2025-10-09 05:09:53] Saved processed.json
+[2025-10-09 05:09:53] Processing lesson 1 for Class ID 11217
+[2025-10-09 05:10:03] Error getting report link for lesson 1: Message: 
+
+[2025-10-09 05:10:04] Got homework for lesson 1: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:10:06] Saved processed.json
+[2025-10-09 05:10:07] Lesson 1 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:10:07] Pushed processed.json for Class ID 11217, Lesson 1
+[2025-10-09 05:10:07] Processing lesson 2 for Class ID 11217
+[2025-10-09 05:10:17] Error getting report link for lesson 2: Message: 
+
+[2025-10-09 05:10:18] Got homework for lesson 2: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:10:20] Saved processed.json
+[2025-10-09 05:10:21] Lesson 2 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:10:21] Pushed processed.json for Class ID 11217, Lesson 2
+[2025-10-09 05:10:21] Processing lesson 3 for Class ID 11217
+[2025-10-09 05:10:32] Error getting report link for lesson 3: Message: 
+
+[2025-10-09 05:10:32] Got homework for lesson 3: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:10:34] Saved processed.json
+[2025-10-09 05:10:35] Lesson 3 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:10:36] Pushed processed.json for Class ID 11217, Lesson 3
+[2025-10-09 05:10:36] Processing lesson 4 for Class ID 11217
+[2025-10-09 05:10:46] Error getting report link for lesson 4: Message: 
+
+[2025-10-09 05:10:46] Got homework for lesson 4: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:10:49] Saved processed.json
+[2025-10-09 05:10:50] Lesson 4 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:10:50] Pushed processed.json for Class ID 11217, Lesson 4
+[2025-10-09 05:10:50] Processing lesson 5 for Class ID 11217
+[2025-10-09 05:11:00] Error getting report link for lesson 5: Message: 
+
+[2025-10-09 05:11:01] Got homework for lesson 5: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:11:03] Saved processed.json
+[2025-10-09 05:11:04] Lesson 5 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:11:04] Pushed processed.json for Class ID 11217, Lesson 5
+[2025-10-09 05:11:04] Processing lesson 6 for Class ID 11217
+[2025-10-09 05:11:14] Error getting report link for lesson 6: Message: 
+
+[2025-10-09 05:11:15] Got homework for lesson 6: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:11:17] Saved processed.json
+[2025-10-09 05:11:18] Lesson 6 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:11:19] Pushed processed.json for Class ID 11217, Lesson 6
+[2025-10-09 05:11:19] Processing lesson 7 for Class ID 11217
+[2025-10-09 05:11:29] Error getting report link for lesson 7: Message: 
+
+[2025-10-09 05:11:29] Got homework for lesson 7: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:11:31] Saved processed.json
+[2025-10-09 05:11:32] Lesson 7 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:11:33] Pushed processed.json for Class ID 11217, Lesson 7
+[2025-10-09 05:11:33] Processing lesson 8 for Class ID 11217
+[2025-10-09 05:11:43] Error getting report link for lesson 8: Message: 
+
+[2025-10-09 05:11:43] Got homework for lesson 8: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:11:45] Saved processed.json
+[2025-10-09 05:11:46] Lesson 8 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:11:47] Pushed processed.json for Class ID 11217, Lesson 8
+[2025-10-09 05:11:47] Processing lesson 9 for Class ID 11217
+[2025-10-09 05:11:57] Error getting report link for lesson 9: Message: 
+
+[2025-10-09 05:11:57] Got homework for lesson 9: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:12:00] Saved processed.json
+[2025-10-09 05:12:00] Lesson 9 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:12:01] Pushed processed.json for Class ID 11217, Lesson 9
+[2025-10-09 05:12:01] Processing lesson 10 for Class ID 11217
+[2025-10-09 05:12:11] Error getting report link for lesson 10: Message: 
+
+[2025-10-09 05:12:12] Got homework for lesson 10: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:12:14] Saved processed.json
+[2025-10-09 05:12:15] Lesson 10 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:12:15] Pushed processed.json for Class ID 11217, Lesson 10
+[2025-10-09 05:12:15] Processing lesson 11 for Class ID 11217
+[2025-10-09 05:12:25] Error getting report link for lesson 11: Message: 
+
+[2025-10-09 05:12:26] Got homework for lesson 11: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:12:28] Saved processed.json
+[2025-10-09 05:12:29] Lesson 11 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:12:29] Pushed processed.json for Class ID 11217, Lesson 11
+[2025-10-09 05:12:29] Processing lesson 12 for Class ID 11217
+[2025-10-09 05:12:39] Error getting report link for lesson 12: Message: 
+
+[2025-10-09 05:12:40] Got homework for lesson 12: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:12:42] Saved processed.json
+[2025-10-09 05:12:43] Lesson 12 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:12:43] Pushed processed.json for Class ID 11217, Lesson 12
+[2025-10-09 05:12:43] Processing lesson 13 for Class ID 11217
+[2025-10-09 05:12:46] Got homework for lesson 13: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:12:48] Saved processed.json
+[2025-10-09 05:12:48] Lesson 13 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:12:49] Pushed processed.json for Class ID 11217, Lesson 13
+[2025-10-09 05:12:49] Processing lesson 14 for Class ID 11217
+[2025-10-09 05:12:53] Got homework for lesson 14: Homework Header: Homework: LD-SS3-2501, 08:00 - 16:00
+
+[2025-10-09 05:12:55] Saved processed.json
+[2025-10-09 05:12:56] Lesson 14 of Class ID 11217 already exists in Sheet
+[2025-10-09 05:12:56] Pushed processed.json for Class ID 11217, Lesson 14
+[2025-10-09 05:12:56] Completed Class ID 11217 for course Summer Smart 3
+[2025-10-09 05:12:56] Has errors for Class ID 11217 in course Summer Smart 3
+[2025-10-09 05:12:57] Processing Class ID 11209 for course Summer Smart 4
+[2025-10-09 05:13:02] Saved processed.json
+[2025-10-09 05:13:02] Processing lesson 1 for Class ID 11209
+[2025-10-09 05:13:05] Got homework for lesson 1: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:07] Saved processed.json
+[2025-10-09 05:13:08] Lesson 1 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:09] Pushed processed.json for Class ID 11209, Lesson 1
+[2025-10-09 05:13:09] Processing lesson 2 for Class ID 11209
+[2025-10-09 05:13:11] Got homework for lesson 2: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:13] Saved processed.json
+[2025-10-09 05:13:14] Lesson 2 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:15] Pushed processed.json for Class ID 11209, Lesson 2
+[2025-10-09 05:13:15] Processing lesson 3 for Class ID 11209
+[2025-10-09 05:13:17] Got homework for lesson 3: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:19] Saved processed.json
+[2025-10-09 05:13:19] Lesson 3 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:20] Pushed processed.json for Class ID 11209, Lesson 3
+[2025-10-09 05:13:20] Processing lesson 4 for Class ID 11209
+[2025-10-09 05:13:22] Got homework for lesson 4: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:24] Saved processed.json
+[2025-10-09 05:13:25] Lesson 4 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:25] Pushed processed.json for Class ID 11209, Lesson 4
+[2025-10-09 05:13:25] Processing lesson 5 for Class ID 11209
+[2025-10-09 05:13:28] Got homework for lesson 5: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:30] Saved processed.json
+[2025-10-09 05:13:31] Lesson 5 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:31] Pushed processed.json for Class ID 11209, Lesson 5
+[2025-10-09 05:13:31] Processing lesson 6 for Class ID 11209
+[2025-10-09 05:13:33] Got homework for lesson 6: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:36] Saved processed.json
+[2025-10-09 05:13:36] Lesson 6 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:37] Pushed processed.json for Class ID 11209, Lesson 6
+[2025-10-09 05:13:37] Processing lesson 7 for Class ID 11209
+[2025-10-09 05:13:39] Got homework for lesson 7: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:41] Saved processed.json
+[2025-10-09 05:13:42] Lesson 7 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:42] Pushed processed.json for Class ID 11209, Lesson 7
+[2025-10-09 05:13:42] Processing lesson 8 for Class ID 11209
+[2025-10-09 05:13:44] Got homework for lesson 8: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:46] Saved processed.json
+[2025-10-09 05:13:47] Lesson 8 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:48] Pushed processed.json for Class ID 11209, Lesson 8
+[2025-10-09 05:13:48] Processing lesson 9 for Class ID 11209
+[2025-10-09 05:13:49] Got homework for lesson 9: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:51] Saved processed.json
+[2025-10-09 05:13:52] Lesson 9 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:53] Pushed processed.json for Class ID 11209, Lesson 9
+[2025-10-09 05:13:53] Processing lesson 10 for Class ID 11209
+[2025-10-09 05:13:54] Got homework for lesson 10: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:13:56] Saved processed.json
+[2025-10-09 05:13:57] Lesson 10 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:13:58] Pushed processed.json for Class ID 11209, Lesson 10
+[2025-10-09 05:13:58] Processing lesson 11 for Class ID 11209
+[2025-10-09 05:13:59] Got homework for lesson 11: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:14:02] Saved processed.json
+[2025-10-09 05:14:02] Lesson 11 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:14:03] Pushed processed.json for Class ID 11209, Lesson 11
+[2025-10-09 05:14:03] Processing lesson 12 for Class ID 11209
+[2025-10-09 05:14:05] Got homework for lesson 12: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:14:07] Saved processed.json
+[2025-10-09 05:14:08] Lesson 12 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:14:08] Pushed processed.json for Class ID 11209, Lesson 12
+[2025-10-09 05:14:08] Processing lesson 13 for Class ID 11209
+[2025-10-09 05:14:10] Got homework for lesson 13: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:14:13] Saved processed.json
+[2025-10-09 05:14:13] Lesson 13 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:14:14] Pushed processed.json for Class ID 11209, Lesson 13
+[2025-10-09 05:14:14] Processing lesson 14 for Class ID 11209
+[2025-10-09 05:14:16] Got homework for lesson 14: Homework Header: Homework: HP-SS4-2502, 08:00 - 16:00
+
+[2025-10-09 05:14:18] Saved processed.json
+[2025-10-09 05:14:18] Lesson 14 of Class ID 11209 already exists in Sheet
+[2025-10-09 05:14:19] Pushed processed.json for Class ID 11209, Lesson 14
+[2025-10-09 05:14:19] Completed Class ID 11209 for course Summer Smart 4
+[2025-10-09 05:14:19] Success for Class ID 11209 in course Summer Smart 4
+[2025-10-09 05:14:20] Processing Class ID 11191 for course Summer Smart 2
+[2025-10-09 05:14:25] Saved processed.json
+[2025-10-09 05:14:25] Processing lesson 1 for Class ID 11191
+[2025-10-09 05:14:35] Error getting report link for lesson 1: Message: 
+
+[2025-10-09 05:14:36] Got homework for lesson 1: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:14:38] Saved processed.json
+[2025-10-09 05:14:39] Lesson 1 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:14:39] Pushed processed.json for Class ID 11191, Lesson 1
+[2025-10-09 05:14:39] Processing lesson 2 for Class ID 11191
+[2025-10-09 05:14:49] Error getting report link for lesson 2: Message: 
+
+[2025-10-09 05:14:50] Got homework for lesson 2: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:14:52] Saved processed.json
+[2025-10-09 05:14:53] Lesson 2 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:14:53] Pushed processed.json for Class ID 11191, Lesson 2
+[2025-10-09 05:14:53] Processing lesson 3 for Class ID 11191
+[2025-10-09 05:15:03] Error getting report link for lesson 3: Message: 
+
+[2025-10-09 05:15:04] Got homework for lesson 3: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:15:06] Saved processed.json
+[2025-10-09 05:15:07] Lesson 3 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:15:07] Pushed processed.json for Class ID 11191, Lesson 3
+[2025-10-09 05:15:07] Processing lesson 4 for Class ID 11191
+[2025-10-09 05:15:17] Error getting report link for lesson 4: Message: 
+
+[2025-10-09 05:15:18] Got homework for lesson 4: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:15:20] Saved processed.json
+[2025-10-09 05:15:21] Lesson 4 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:15:22] Pushed processed.json for Class ID 11191, Lesson 4
+[2025-10-09 05:15:22] Processing lesson 5 for Class ID 11191
+[2025-10-09 05:15:32] Error getting report link for lesson 5: Message: 
+
+[2025-10-09 05:15:32] Got homework for lesson 5: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:15:34] Saved processed.json
+[2025-10-09 05:15:35] Lesson 5 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:15:36] Pushed processed.json for Class ID 11191, Lesson 5
+[2025-10-09 05:15:36] Processing lesson 6 for Class ID 11191
+[2025-10-09 05:15:46] Error getting report link for lesson 6: Message: 
+
+[2025-10-09 05:15:47] Got homework for lesson 6: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:15:49] Saved processed.json
+[2025-10-09 05:15:49] Lesson 6 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:15:50] Pushed processed.json for Class ID 11191, Lesson 6
+[2025-10-09 05:15:50] Processing lesson 7 for Class ID 11191
+[2025-10-09 05:16:00] Error getting report link for lesson 7: Message: 
+
+[2025-10-09 05:16:01] Got homework for lesson 7: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:16:03] Saved processed.json
+[2025-10-09 05:16:04] Lesson 7 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:16:04] Pushed processed.json for Class ID 11191, Lesson 7
+[2025-10-09 05:16:04] Processing lesson 8 for Class ID 11191
+[2025-10-09 05:16:14] Error getting report link for lesson 8: Message: 
+
+[2025-10-09 05:16:15] Got homework for lesson 8: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:16:17] Saved processed.json
+[2025-10-09 05:16:18] Lesson 8 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:16:18] Pushed processed.json for Class ID 11191, Lesson 8
+[2025-10-09 05:16:18] Processing lesson 9 for Class ID 11191
+[2025-10-09 05:16:22] Got homework for lesson 9: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:16:24] Saved processed.json
+[2025-10-09 05:16:25] Lesson 9 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:16:25] Pushed processed.json for Class ID 11191, Lesson 9
+[2025-10-09 05:16:25] Processing lesson 10 for Class ID 11191
+[2025-10-09 05:16:28] Got homework for lesson 10: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:16:30] Saved processed.json
+[2025-10-09 05:16:30] Lesson 10 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:16:31] Pushed processed.json for Class ID 11191, Lesson 10
+[2025-10-09 05:16:31] Processing lesson 11 for Class ID 11191
+[2025-10-09 05:16:33] Got homework for lesson 11: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:16:35] Saved processed.json
+[2025-10-09 05:16:36] Lesson 11 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:16:37] Pushed processed.json for Class ID 11191, Lesson 11
+[2025-10-09 05:16:37] Processing lesson 12 for Class ID 11191
+[2025-10-09 05:16:39] Got homework for lesson 12: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:16:41] Saved processed.json
+[2025-10-09 05:16:42] Lesson 12 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:16:42] Pushed processed.json for Class ID 11191, Lesson 12
+[2025-10-09 05:16:42] Processing lesson 13 for Class ID 11191
+[2025-10-09 05:16:44] Got homework for lesson 13: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:16:46] Saved processed.json
+[2025-10-09 05:16:47] Lesson 13 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:16:48] Pushed processed.json for Class ID 11191, Lesson 13
+[2025-10-09 05:16:48] Processing lesson 14 for Class ID 11191
+[2025-10-09 05:16:51] Got homework for lesson 14: Homework Header: Homework: NG-SS2-2501, 08:00 - 16:00
+
+[2025-10-09 05:16:53] Saved processed.json
+[2025-10-09 05:16:53] Lesson 14 of Class ID 11191 already exists in Sheet
+[2025-10-09 05:16:54] Pushed processed.json for Class ID 11191, Lesson 14
+[2025-10-09 05:16:54] Completed Class ID 11191 for course Summer Smart 2
+[2025-10-09 05:16:54] Has errors for Class ID 11191 in course Summer Smart 2
+[2025-10-09 05:16:55] Processing Class ID 11190 for course Summer Kindy 3
+[2025-10-09 05:17:00] Saved processed.json
+[2025-10-09 05:17:00] Processing lesson 1 for Class ID 11190
+[2025-10-09 05:17:10] Error getting report link for lesson 1: Message: 
+
+[2025-10-09 05:17:11] Got homework for lesson 1: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:17:13] Saved processed.json
+[2025-10-09 05:17:17] Lesson 1 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:17:18] Pushed processed.json for Class ID 11190, Lesson 1
+[2025-10-09 05:17:18] Processing lesson 2 for Class ID 11190
+[2025-10-09 05:17:22] Got homework for lesson 2: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:17:25] Saved processed.json
+[2025-10-09 05:17:25] Lesson 2 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:17:26] Pushed processed.json for Class ID 11190, Lesson 2
+[2025-10-09 05:17:26] Processing lesson 3 for Class ID 11190
+[2025-10-09 05:17:30] Got homework for lesson 3: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:17:32] Saved processed.json
+[2025-10-09 05:17:33] Lesson 3 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:17:33] Pushed processed.json for Class ID 11190, Lesson 3
+[2025-10-09 05:17:33] Processing lesson 4 for Class ID 11190
+[2025-10-09 05:17:37] Got homework for lesson 4: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:17:39] Saved processed.json
+[2025-10-09 05:17:40] Lesson 4 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:17:41] Pushed processed.json for Class ID 11190, Lesson 4
+[2025-10-09 05:17:41] Processing lesson 5 for Class ID 11190
+[2025-10-09 05:17:44] Got homework for lesson 5: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:17:46] Saved processed.json
+[2025-10-09 05:17:47] Lesson 5 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:17:48] Pushed processed.json for Class ID 11190, Lesson 5
+[2025-10-09 05:17:48] Processing lesson 6 for Class ID 11190
+[2025-10-09 05:17:53] Got homework for lesson 6: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:17:55] Saved processed.json
+[2025-10-09 05:17:56] Lesson 6 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:17:57] Pushed processed.json for Class ID 11190, Lesson 6
+[2025-10-09 05:17:57] Processing lesson 7 for Class ID 11190
+[2025-10-09 05:18:02] Got homework for lesson 7: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:18:04] Saved processed.json
+[2025-10-09 05:18:04] Lesson 7 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:18:05] Pushed processed.json for Class ID 11190, Lesson 7
+[2025-10-09 05:18:05] Processing lesson 8 for Class ID 11190
+[2025-10-09 05:18:09] Got homework for lesson 8: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:18:11] Saved processed.json
+[2025-10-09 05:18:12] Lesson 8 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:18:13] Pushed processed.json for Class ID 11190, Lesson 8
+[2025-10-09 05:18:13] Processing lesson 9 for Class ID 11190
+[2025-10-09 05:18:17] Got homework for lesson 9: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:18:19] Saved processed.json
+[2025-10-09 05:18:20] Lesson 9 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:18:21] Pushed processed.json for Class ID 11190, Lesson 9
+[2025-10-09 05:18:21] Processing lesson 10 for Class ID 11190
+[2025-10-09 05:18:24] Got homework for lesson 10: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:18:26] Saved processed.json
+[2025-10-09 05:18:27] Lesson 10 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:18:28] Pushed processed.json for Class ID 11190, Lesson 10
+[2025-10-09 05:18:28] Processing lesson 11 for Class ID 11190
+[2025-10-09 05:18:32] Got homework for lesson 11: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:18:34] Saved processed.json
+[2025-10-09 05:18:35] Lesson 11 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:18:35] Pushed processed.json for Class ID 11190, Lesson 11
+[2025-10-09 05:18:35] Processing lesson 12 for Class ID 11190
+[2025-10-09 05:18:44] Got homework for lesson 12: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:18:46] Saved processed.json
+[2025-10-09 05:18:47] Lesson 12 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:18:48] Pushed processed.json for Class ID 11190, Lesson 12
+[2025-10-09 05:18:48] Processing lesson 13 for Class ID 11190
+[2025-10-09 05:18:52] Got homework for lesson 13: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:18:54] Saved processed.json
+[2025-10-09 05:18:55] Lesson 13 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:18:55] Pushed processed.json for Class ID 11190, Lesson 13
+[2025-10-09 05:18:55] Processing lesson 14 for Class ID 11190
+[2025-10-09 05:18:59] Got homework for lesson 14: Homework Header: Homework: NG-SK3-2501, 08:00 - 16:00
+
+[2025-10-09 05:19:01] Saved processed.json
+[2025-10-09 05:19:02] Lesson 14 of Class ID 11190 already exists in Sheet
+[2025-10-09 05:19:03] Pushed processed.json for Class ID 11190, Lesson 14
+[2025-10-09 05:19:03] Completed Class ID 11190 for course Summer Kindy 3
+[2025-10-09 05:19:03] Has errors for Class ID 11190 in course Summer Kindy 3
+[2025-10-09 05:19:04] Processing Class ID 11184 for course Summer Smart 1
+[2025-10-09 05:19:09] Saved processed.json
+[2025-10-09 05:19:09] Processing lesson 1 for Class ID 11184
+[2025-10-09 05:19:12] Got homework for lesson 1: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:19:15] Saved processed.json
+[2025-10-09 05:19:15] Lesson 1 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:19:16] Pushed processed.json for Class ID 11184, Lesson 1
+[2025-10-09 05:19:16] Processing lesson 2 for Class ID 11184
+[2025-10-09 05:19:20] Got homework for lesson 2: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:19:22] Saved processed.json
+[2025-10-09 05:19:23] Lesson 2 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:19:23] Pushed processed.json for Class ID 11184, Lesson 2
+[2025-10-09 05:19:23] Processing lesson 3 for Class ID 11184
+[2025-10-09 05:19:27] Got homework for lesson 3: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:19:29] Saved processed.json
+[2025-10-09 05:19:30] Lesson 3 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:19:31] Pushed processed.json for Class ID 11184, Lesson 3
+[2025-10-09 05:19:31] Processing lesson 4 for Class ID 11184
+[2025-10-09 05:19:35] Got homework for lesson 4: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:19:37] Saved processed.json
+[2025-10-09 05:19:37] Lesson 4 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:19:38] Pushed processed.json for Class ID 11184, Lesson 4
+[2025-10-09 05:19:38] Processing lesson 5 for Class ID 11184
+[2025-10-09 05:19:42] Got homework for lesson 5: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:19:44] Saved processed.json
+[2025-10-09 05:19:45] Lesson 5 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:19:45] Pushed processed.json for Class ID 11184, Lesson 5
+[2025-10-09 05:19:45] Processing lesson 6 for Class ID 11184
+[2025-10-09 05:19:50] Got homework for lesson 6: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:19:52] Saved processed.json
+[2025-10-09 05:19:53] Lesson 6 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:19:53] Pushed processed.json for Class ID 11184, Lesson 6
+[2025-10-09 05:19:53] Processing lesson 7 for Class ID 11184
+[2025-10-09 05:19:58] Got homework for lesson 7: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:20:00] Saved processed.json
+[2025-10-09 05:20:01] Lesson 7 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:20:01] Pushed processed.json for Class ID 11184, Lesson 7
+[2025-10-09 05:20:01] Processing lesson 8 for Class ID 11184
+[2025-10-09 05:20:06] Got homework for lesson 8: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:20:08] Saved processed.json
+[2025-10-09 05:20:08] Lesson 8 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:20:09] Pushed processed.json for Class ID 11184, Lesson 8
+[2025-10-09 05:20:09] Processing lesson 9 for Class ID 11184
+[2025-10-09 05:20:13] Got homework for lesson 9: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:20:15] Saved processed.json
+[2025-10-09 05:20:16] Lesson 9 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:20:17] Pushed processed.json for Class ID 11184, Lesson 9
+[2025-10-09 05:20:17] Processing lesson 10 for Class ID 11184
+[2025-10-09 05:20:21] Got homework for lesson 10: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:20:23] Saved processed.json
+[2025-10-09 05:20:24] Lesson 10 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:20:24] Pushed processed.json for Class ID 11184, Lesson 10
+[2025-10-09 05:20:24] Processing lesson 11 for Class ID 11184
+[2025-10-09 05:20:29] Got homework for lesson 11: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:20:31] Saved processed.json
+[2025-10-09 05:20:32] Lesson 11 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:20:32] Pushed processed.json for Class ID 11184, Lesson 11
+[2025-10-09 05:20:32] Processing lesson 12 for Class ID 11184
+[2025-10-09 05:20:36] Got homework for lesson 12: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:20:39] Saved processed.json
+[2025-10-09 05:20:39] Lesson 12 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:20:40] Pushed processed.json for Class ID 11184, Lesson 12
+[2025-10-09 05:20:40] Processing lesson 13 for Class ID 11184
+[2025-10-09 05:20:43] Got homework for lesson 13: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:20:46] Saved processed.json
+[2025-10-09 05:20:46] Lesson 13 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:20:47] Pushed processed.json for Class ID 11184, Lesson 13
+[2025-10-09 05:20:47] Processing lesson 14 for Class ID 11184
+[2025-10-09 05:20:49] Got homework for lesson 14: Homework Header: Homework: LD-SS1-2501, 08:00 - 16:00
+
+[2025-10-09 05:20:51] Saved processed.json
+[2025-10-09 05:20:51] Lesson 14 of Class ID 11184 already exists in Sheet
+[2025-10-09 05:20:52] Pushed processed.json for Class ID 11184, Lesson 14
+[2025-10-09 05:20:52] Completed Class ID 11184 for course Summer Smart 1
+[2025-10-09 05:20:52] Success for Class ID 11184 in course Summer Smart 1
+[2025-10-09 05:20:53] Processing Class ID 11174 for course Summer Smart 7
+[2025-10-09 05:20:58] Saved processed.json
+[2025-10-09 05:20:58] Processing lesson 1 for Class ID 11174
+[2025-10-09 05:21:03] Got homework for lesson 1: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:21:05] Saved processed.json
+[2025-10-09 05:21:05] Lesson 1 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:21:06] Pushed processed.json for Class ID 11174, Lesson 1
+[2025-10-09 05:21:06] Processing lesson 2 for Class ID 11174
+[2025-10-09 05:21:10] Got homework for lesson 2: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:21:12] Saved processed.json
+[2025-10-09 05:21:13] Lesson 2 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:21:14] Pushed processed.json for Class ID 11174, Lesson 2
+[2025-10-09 05:21:14] Processing lesson 3 for Class ID 11174
+[2025-10-09 05:21:19] Got homework for lesson 3: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:21:21] Saved processed.json
+[2025-10-09 05:21:22] Lesson 3 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:21:22] Pushed processed.json for Class ID 11174, Lesson 3
+[2025-10-09 05:21:22] Processing lesson 4 for Class ID 11174
+[2025-10-09 05:21:27] Got homework for lesson 4: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:21:29] Saved processed.json
+[2025-10-09 05:21:29] Lesson 4 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:21:30] Pushed processed.json for Class ID 11174, Lesson 4
+[2025-10-09 05:21:30] Processing lesson 5 for Class ID 11174
+[2025-10-09 05:21:35] Got homework for lesson 5: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:21:37] Saved processed.json
+[2025-10-09 05:21:38] Lesson 5 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:21:39] Pushed processed.json for Class ID 11174, Lesson 5
+[2025-10-09 05:21:39] Processing lesson 6 for Class ID 11174
+[2025-10-09 05:21:44] Got homework for lesson 6: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:21:46] Saved processed.json
+[2025-10-09 05:21:47] Lesson 6 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:21:47] Pushed processed.json for Class ID 11174, Lesson 6
+[2025-10-09 05:21:47] Processing lesson 7 for Class ID 11174
+[2025-10-09 05:21:51] Got homework for lesson 7: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:21:53] Saved processed.json
+[2025-10-09 05:21:54] Lesson 7 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:21:55] Pushed processed.json for Class ID 11174, Lesson 7
+[2025-10-09 05:21:55] Processing lesson 8 for Class ID 11174
+[2025-10-09 05:21:59] Got homework for lesson 8: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:22:01] Saved processed.json
+[2025-10-09 05:22:02] Lesson 8 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:22:03] Pushed processed.json for Class ID 11174, Lesson 8
+[2025-10-09 05:22:03] Processing lesson 9 for Class ID 11174
+[2025-10-09 05:22:07] Got homework for lesson 9: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:22:09] Saved processed.json
+[2025-10-09 05:22:10] Lesson 9 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:22:11] Pushed processed.json for Class ID 11174, Lesson 9
+[2025-10-09 05:22:11] Processing lesson 10 for Class ID 11174
+[2025-10-09 05:22:15] Got homework for lesson 10: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:22:17] Saved processed.json
+[2025-10-09 05:22:18] Lesson 10 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:22:18] Pushed processed.json for Class ID 11174, Lesson 10
+[2025-10-09 05:22:18] Processing lesson 11 for Class ID 11174
+[2025-10-09 05:22:22] Got homework for lesson 11: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:22:24] Saved processed.json
+[2025-10-09 05:22:25] Lesson 11 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:22:26] Pushed processed.json for Class ID 11174, Lesson 11
+[2025-10-09 05:22:26] Processing lesson 12 for Class ID 11174
+[2025-10-09 05:22:31] Got homework for lesson 12: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:22:33] Saved processed.json
+[2025-10-09 05:22:33] Lesson 12 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:22:34] Pushed processed.json for Class ID 11174, Lesson 12
+[2025-10-09 05:22:34] Processing lesson 13 for Class ID 11174
+[2025-10-09 05:22:38] Got homework for lesson 13: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:22:40] Saved processed.json
+[2025-10-09 05:22:41] Lesson 13 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:22:42] Pushed processed.json for Class ID 11174, Lesson 13
+[2025-10-09 05:22:42] Processing lesson 14 for Class ID 11174
+[2025-10-09 05:22:45] Got homework for lesson 14: Homework Header: Homework: ML-SS7-2501, 08:00 - 16:00
+
+[2025-10-09 05:22:47] Saved processed.json
+[2025-10-09 05:22:48] Lesson 14 of Class ID 11174 already exists in Sheet
+[2025-10-09 05:22:49] Pushed processed.json for Class ID 11174, Lesson 14
+[2025-10-09 05:22:49] Completed Class ID 11174 for course Summer Smart 7
+[2025-10-09 05:22:49] Success for Class ID 11174 in course Summer Smart 7
+[2025-10-09 05:22:50] Processing Class ID 11167 for course Summer Smart 5
+[2025-10-09 05:22:55] Saved processed.json
+[2025-10-09 05:22:55] Processing lesson 1 for Class ID 11167
+[2025-10-09 05:22:59] Got homework for lesson 1: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:01] Saved processed.json
+[2025-10-09 05:23:01] Lesson 1 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:23:02] Pushed processed.json for Class ID 11167, Lesson 1
+[2025-10-09 05:23:02] Processing lesson 2 for Class ID 11167
+[2025-10-09 05:23:06] Got homework for lesson 2: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:08] Saved processed.json
+[2025-10-09 05:23:09] Lesson 2 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:23:10] Pushed processed.json for Class ID 11167, Lesson 2
+[2025-10-09 05:23:10] Processing lesson 3 for Class ID 11167
+[2025-10-09 05:23:13] Got homework for lesson 3: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:15] Saved processed.json
+[2025-10-09 05:23:16] Lesson 3 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:23:17] Pushed processed.json for Class ID 11167, Lesson 3
+[2025-10-09 05:23:17] Processing lesson 4 for Class ID 11167
+[2025-10-09 05:23:20] Got homework for lesson 4: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:22] Saved processed.json
+[2025-10-09 05:23:23] Lesson 4 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:23:24] Pushed processed.json for Class ID 11167, Lesson 4
+[2025-10-09 05:23:24] Processing lesson 5 for Class ID 11167
+[2025-10-09 05:23:28] Got homework for lesson 5: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:30] Saved processed.json
+[2025-10-09 05:23:31] Lesson 5 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:23:31] Pushed processed.json for Class ID 11167, Lesson 5
+[2025-10-09 05:23:31] Processing lesson 6 for Class ID 11167
+[2025-10-09 05:23:35] Got homework for lesson 6: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:37] Saved processed.json
+[2025-10-09 05:23:38] Lesson 6 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:23:39] Pushed processed.json for Class ID 11167, Lesson 6
+[2025-10-09 05:23:39] Processing lesson 7 for Class ID 11167
+[2025-10-09 05:23:42] Got homework for lesson 7: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:44] Saved processed.json
+[2025-10-09 05:23:45] Lesson 7 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:23:46] Pushed processed.json for Class ID 11167, Lesson 7
+[2025-10-09 05:23:46] Processing lesson 8 for Class ID 11167
+[2025-10-09 05:23:50] Got homework for lesson 8: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:52] Saved processed.json
+[2025-10-09 05:23:52] Lesson 8 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:23:53] Pushed processed.json for Class ID 11167, Lesson 8
+[2025-10-09 05:23:53] Processing lesson 9 for Class ID 11167
+[2025-10-09 05:23:56] Got homework for lesson 9: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:23:58] Saved processed.json
+[2025-10-09 05:23:59] Lesson 9 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:24:00] Pushed processed.json for Class ID 11167, Lesson 9
+[2025-10-09 05:24:00] Processing lesson 10 for Class ID 11167
+[2025-10-09 05:24:04] Got homework for lesson 10: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:24:06] Saved processed.json
+[2025-10-09 05:24:07] Lesson 10 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:24:08] Pushed processed.json for Class ID 11167, Lesson 10
+[2025-10-09 05:24:08] Processing lesson 11 for Class ID 11167
+[2025-10-09 05:24:11] Got homework for lesson 11: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:24:13] Saved processed.json
+[2025-10-09 05:24:14] Lesson 11 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:24:15] Pushed processed.json for Class ID 11167, Lesson 11
+[2025-10-09 05:24:15] Processing lesson 12 for Class ID 11167
+[2025-10-09 05:24:18] Got homework for lesson 12: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:24:20] Saved processed.json
+[2025-10-09 05:24:21] Lesson 12 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:24:21] Pushed processed.json for Class ID 11167, Lesson 12
+[2025-10-09 05:24:21] Processing lesson 13 for Class ID 11167
+[2025-10-09 05:24:25] Got homework for lesson 13: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:24:27] Saved processed.json
+[2025-10-09 05:24:28] Lesson 13 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:24:29] Pushed processed.json for Class ID 11167, Lesson 13
+[2025-10-09 05:24:29] Processing lesson 14 for Class ID 11167
+[2025-10-09 05:24:32] Got homework for lesson 14: Homework Header: Homework: LG-SS5-2501, 08:00 - 16:00
+
+[2025-10-09 05:24:34] Saved processed.json
+[2025-10-09 05:24:35] Lesson 14 of Class ID 11167 already exists in Sheet
+[2025-10-09 05:24:35] Pushed processed.json for Class ID 11167, Lesson 14
+[2025-10-09 05:24:35] Completed Class ID 11167 for course Summer Smart 5
+[2025-10-09 05:24:35] Success for Class ID 11167 in course Summer Smart 5
+[2025-10-09 05:24:37] Processing Class ID 11143 for course Summer Smart 6
+[2025-10-09 05:24:42] Saved processed.json
+[2025-10-09 05:24:42] Processing lesson 1 for Class ID 11143
+[2025-10-09 05:24:46] Got homework for lesson 1: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:24:48] Saved processed.json
+[2025-10-09 05:24:49] Lesson 1 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:24:50] Pushed processed.json for Class ID 11143, Lesson 1
+[2025-10-09 05:24:50] Processing lesson 2 for Class ID 11143
+[2025-10-09 05:24:55] Got homework for lesson 2: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:24:57] Saved processed.json
+[2025-10-09 05:24:58] Lesson 2 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:24:58] Pushed processed.json for Class ID 11143, Lesson 2
+[2025-10-09 05:24:58] Processing lesson 3 for Class ID 11143
+[2025-10-09 05:25:00] Got homework for lesson 3: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:02] Saved processed.json
+[2025-10-09 05:25:03] Lesson 3 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:04] Pushed processed.json for Class ID 11143, Lesson 3
+[2025-10-09 05:25:04] Processing lesson 4 for Class ID 11143
+[2025-10-09 05:25:06] Got homework for lesson 4: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:08] Saved processed.json
+[2025-10-09 05:25:09] Lesson 4 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:09] Pushed processed.json for Class ID 11143, Lesson 4
+[2025-10-09 05:25:09] Processing lesson 5 for Class ID 11143
+[2025-10-09 05:25:14] Got homework for lesson 5: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:16] Saved processed.json
+[2025-10-09 05:25:17] Lesson 5 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:17] Pushed processed.json for Class ID 11143, Lesson 5
+[2025-10-09 05:25:18] Processing lesson 6 for Class ID 11143
+[2025-10-09 05:25:23] Got homework for lesson 6: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:25] Saved processed.json
+[2025-10-09 05:25:25] Lesson 6 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:26] Pushed processed.json for Class ID 11143, Lesson 6
+[2025-10-09 05:25:26] Processing lesson 7 for Class ID 11143
+[2025-10-09 05:25:31] Got homework for lesson 7: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:33] Saved processed.json
+[2025-10-09 05:25:33] Lesson 7 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:34] Pushed processed.json for Class ID 11143, Lesson 7
+[2025-10-09 05:25:34] Processing lesson 8 for Class ID 11143
+[2025-10-09 05:25:36] Got homework for lesson 8: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:38] Saved processed.json
+[2025-10-09 05:25:39] Lesson 8 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:40] Pushed processed.json for Class ID 11143, Lesson 8
+[2025-10-09 05:25:40] Processing lesson 9 for Class ID 11143
+[2025-10-09 05:25:42] Got homework for lesson 9: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:44] Saved processed.json
+[2025-10-09 05:25:45] Lesson 9 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:46] Pushed processed.json for Class ID 11143, Lesson 9
+[2025-10-09 05:25:46] Processing lesson 10 for Class ID 11143
+[2025-10-09 05:25:48] Got homework for lesson 10: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:50] Saved processed.json
+[2025-10-09 05:25:51] Lesson 10 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:51] Pushed processed.json for Class ID 11143, Lesson 10
+[2025-10-09 05:25:51] Processing lesson 11 for Class ID 11143
+[2025-10-09 05:25:54] Got homework for lesson 11: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:25:56] Saved processed.json
+[2025-10-09 05:25:57] Lesson 11 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:25:57] Pushed processed.json for Class ID 11143, Lesson 11
+[2025-10-09 05:25:57] Processing lesson 12 for Class ID 11143
+[2025-10-09 05:25:59] Got homework for lesson 12: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:26:02] Saved processed.json
+[2025-10-09 05:26:02] Lesson 12 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:26:03] Pushed processed.json for Class ID 11143, Lesson 12
+[2025-10-09 05:26:03] Processing lesson 13 for Class ID 11143
+[2025-10-09 05:26:07] Got homework for lesson 13: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:26:10] Saved processed.json
+[2025-10-09 05:26:10] Lesson 13 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:26:11] Pushed processed.json for Class ID 11143, Lesson 13
+[2025-10-09 05:26:11] Processing lesson 14 for Class ID 11143
+[2025-10-09 05:26:15] Got homework for lesson 14: Homework Header: Homework: VQ1-SS6-2501, 08:00 - 16:00
+
+[2025-10-09 05:26:17] Saved processed.json
+[2025-10-09 05:26:17] Lesson 14 of Class ID 11143 already exists in Sheet
+[2025-10-09 05:26:18] Pushed processed.json for Class ID 11143, Lesson 14
+[2025-10-09 05:26:18] Completed Class ID 11143 for course Summer Smart 6
+[2025-10-09 05:26:18] Success for Class ID 11143 in course Summer Smart 6
+[2025-10-09 05:26:19] Processing Class ID 11064 for course Reader's Wonderland 3.2
+[2025-10-09 05:26:24] Saved processed.json
+[2025-10-09 05:26:24] Processing lesson 1 for Class ID 11064
+[2025-10-09 05:26:30] Got homework for lesson 1: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+Links:
+RW 3.2 Lesson 1 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/13FdIuVTB--nfwAvZGEf14dXnuj32kbU9?usp=drive_link
+[2025-10-09 05:26:32] Saved processed.json
+[2025-10-09 05:26:33] Lesson 1 of Class ID 11064 already exists in Sheet
+[2025-10-09 05:26:33] Pushed processed.json for Class ID 11064, Lesson 1
+[2025-10-09 05:26:33] Processing lesson 2 for Class ID 11064
+[2025-10-09 05:26:39] Got homework for lesson 2: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+Links:
+RW 3.2 Lesson 2 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/1BKy5qAF9w4yEquipTM2JtQDbEWdN9O5t?usp=drive_link
+[2025-10-09 05:26:41] Saved processed.json
+[2025-10-09 05:26:42] Lesson 2 of Class ID 11064 already exists in Sheet
+[2025-10-09 05:26:43] Pushed processed.json for Class ID 11064, Lesson 2
+[2025-10-09 05:26:43] Processing lesson 3 for Class ID 11064
+[2025-10-09 05:26:49] Got homework for lesson 3: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+Links:
+RW 3.2 Lesson 3 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/1AJ_75DphowsJFnN_RpF6_Xh4ySspLQYC?usp=drive_link
+[2025-10-09 05:26:51] Saved processed.json
+[2025-10-09 05:26:52] Lesson 3 of Class ID 11064 already exists in Sheet
+[2025-10-09 05:26:53] Pushed processed.json for Class ID 11064, Lesson 3
+[2025-10-09 05:26:53] Processing lesson 4 for Class ID 11064
+[2025-10-09 05:26:58] Got homework for lesson 4: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+Links:
+RW 3.2 Lesson 4 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/1RQOI28D6u-UqRYHks1o-YxyLCQUjNrFt?usp=drive_link
+[2025-10-09 05:27:00] Saved processed.json
+[2025-10-09 05:27:01] Lesson 4 of Class ID 11064 already exists in Sheet
+[2025-10-09 05:27:02] Pushed processed.json for Class ID 11064, Lesson 4
+[2025-10-09 05:27:02] Processing lesson 5 for Class ID 11064
+[2025-10-09 05:27:09] Got homework for lesson 5: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+Links:
+RW 3.2 Lesson 5 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/18r7oCTFmdSxVyLfjWadNDrpvU3ceEbI0?usp=drive_link
+[2025-10-09 05:27:11] Saved processed.json
+[2025-10-09 05:27:12] Lesson 5 of Class ID 11064 already exists in Sheet
+[2025-10-09 05:27:12] Pushed processed.json for Class ID 11064, Lesson 5
+[2025-10-09 05:27:12] Processing lesson 6 for Class ID 11064
+[2025-10-09 05:27:18] Got homework for lesson 6: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+Links:
+RW 3.2 Lesson 6 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/1-WJDVB-W5AJY7n0jw3GyUKqzBpPYv3G8?usp=drive_link
+[2025-10-09 05:27:20] Saved processed.json
+[2025-10-09 05:27:21] Lesson 6 of Class ID 11064 already exists in Sheet
+[2025-10-09 05:27:22] Pushed processed.json for Class ID 11064, Lesson 6
+[2025-10-09 05:27:22] Processing lesson 7 for Class ID 11064
+[2025-10-09 05:27:29] Got homework for lesson 7: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+Links:
+RW 3.2 Lesson 7 OPEN HERE (Mở bài tập về nhà tại đây): https://drive.google.com/drive/folders/1MD0YXan5tAq2XxkzVkN0SmB6UZlBv99o?usp=drive_link
+[2025-10-09 05:27:31] Saved processed.json
+[2025-10-09 05:27:31] Lesson 7 of Class ID 11064 already exists in Sheet
+[2025-10-09 05:27:32] Pushed processed.json for Class ID 11064, Lesson 7
+[2025-10-09 05:27:32] Processing lesson 8 for Class ID 11064
+[2025-10-09 05:27:37] Got homework for lesson 8: Homework Header: Homework: ML-RW3.2-2501, 14:30 - 17:30
+
+[2025-10-09 05:27:39] Saved processed.json
