@@ -168,13 +168,13 @@ def check_reports():
         login(driver)
         log_message("Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview")
         driver.get("https://apps.cec.com.vn/student-calendar/overview")
-        time.sleep(5)
+        time.sleep(7)  # Tăng thời gian chờ để đảm bảo trang tải hoàn toàn
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         log_message("Scrolled to bottom of page")
 
         # Tìm tất cả các ngày có lớp
         log_message("Finding all class events")
-        class_events = WebDriverWait(driver, 20).until(
+        class_events = WebDriverWait(driver, 30).until(
             EC.presence_of_all_elements_located((By.XPATH, "//div[contains(@class, 'v-event') and @data-date]"))
         )
         log_message(f"Found {len(class_events)} class events")
@@ -184,11 +184,21 @@ def check_reports():
         latest_class = None
         for event in class_events:
             date_str = event.get_attribute("data-date")
-            class_name = event.find_element(By.CLASS_NAME, "v-event-summary").text
-            event_date = datetime.strptime(date_str, "%Y-%m-%d")
-            if event_date < TODAY and (latest_date is None or event_date > latest_date):
-                latest_date = event_date
-                latest_class = {"date": date_str, "class_name": class_name}
+            try:
+                # Kiểm tra sự tồn tại của v-event-summary
+                summary_element = WebDriverWait(driver, 5).until(
+                    EC.presence_of_element_located((By.XPATH, f"//div[@data-date='{date_str}' and contains(@class, 'v-event')]//span[contains(@class, 'v-event-summary')]"))
+                )
+                summary_text = summary_element.text
+                # Trích xuất tên lớp, loại bỏ thời gian (ví dụ: "5:45 PM VQ2-K2-2501" -> "VQ2-K2-2501")
+                class_name = summary_text.split(" ", 2)[-1] if " " in summary_text else summary_text
+                event_date = datetime.strptime(date_str, "%Y-%m-%d")
+                if event_date < TODAY and (latest_date is None or event_date > latest_date):
+                    latest_date = event_date
+                    latest_class = {"date": date_str, "class_name": class_name}
+            except Exception as e:
+                log_message(f"Error processing event for date {date_str}: {str(e)}")
+                continue
 
         if not latest_date:
             log_message("No classes found before today")
@@ -207,7 +217,7 @@ def check_reports():
         log_message(f"Clicking on event for {latest_class['date']}")
         event_element = driver.find_element(By.XPATH, f"//div[@data-date='{latest_class['date']}' and contains(@class, 'v-event')]")
         driver.execute_script("arguments[0].click();", event_element)
-        time.sleep(2)
+        time.sleep(3)  # Tăng thời gian chờ để popup hiển thị
 
         # Kiểm tra popup và nút Báo cáo bài học
         log_message("Checking report button in popup")
@@ -215,7 +225,7 @@ def check_reports():
             EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
         )
         report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
-        is_enabled = "disabled" not in report_button.get_attribute("class") and report_button.is_enabled()
+        is_enabled = "v-btn--disabled" not in report_button.get_attribute("class") and report_button.is_enabled()
 
         if is_enabled:
             log_message("Report button is enabled, clicking to get report URL")
@@ -265,8 +275,3 @@ def check_reports():
     finally:
         log_message("Closing WebDriver")
         driver.quit()
-
-if __name__ == "__main__":
-    log_message("Starting script")
-    check_reports()
-    log_message("Script completed")
