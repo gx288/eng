@@ -284,9 +284,9 @@
   },
   "English Smart 6.2": {
     "10680": {
-      "last_lesson": 19,
+      "last_lesson": 20,
       "total_lessons": 66,
-      "has_errors": false
+      "has_errors": true
     }
   }
 }
