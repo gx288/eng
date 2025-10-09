@@ -20,7 +20,7 @@ SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/a
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 TELEGRAM_CHAT_ID_2 = os.getenv("TELEGRAM_CHAT_ID_2")  # Thêm chat_id thứ hai
-CLASS_ID = "11005"
+CLASS_ID = "11680"
 LOG_FILE = "class_info_log2.txt"
 
 def log_message(message):
