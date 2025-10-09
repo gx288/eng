@@ -134,7 +134,11 @@ def sync_processed_with_sheet(processed, sheet_data):
             continue
         class_id = row[0]
         course_name = row[2]
-        lesson_number = int(row[3])
+        try:
+            lesson_number = int(row[3])
+        except ValueError:
+            log_message(f"Invalid lesson number in Google Sheet for Class ID {class_id}: {row[3]}")
+            continue
         if course_name not in processed:
             processed[course_name] = {}
         if class_id not in processed[course_name]:
@@ -143,7 +147,6 @@ def sync_processed_with_sheet(processed, sheet_data):
             processed[course_name][class_id].get('last_lesson', -1),
             lesson_number - 1
         )
-        # Assume if in sheet, no error for that lesson
         processed[course_name][class_id]['has_errors'] = False
     save_processed(processed)
 
@@ -286,6 +289,8 @@ def process_class_id(driver, class_id, course_name, processed, sheet_data):
         return has_errors
     except Exception as e:
         log_message(f"Error processing Class ID {class_id}: {str(e)}")
+        processed[course_name][class_id]['has_errors'] = True
+        save_processed(processed)
         return True
 
 def main():
@@ -302,16 +307,23 @@ def main():
                 processed = json.load(f)
         except Exception as e:
             log_message(f"Error reading processed.json: {str(e)}")
-    sheet_data = get_google_sheet_data()
-    sync_processed_with_sheet(processed, sheet_data)
     if 'GOOGLE_CREDENTIALS' in os.environ:
         try:
             creds_content = os.environ['GOOGLE_CREDENTIALS'].strip().encode('utf-8').decode('utf-8-sig')
             with open(CREDENTIALS_FILE, 'w', encoding='utf-8') as f:
                 json.dump(json.loads(creds_content), f, indent=2, ensure_ascii=False)
+            log_message("Successfully wrote credentials.json from GOOGLE_CREDENTIALS")
         except Exception as e:
             log_message(f"Error writing credentials.json: {str(e)}")
             return
+    else:
+        log_message("GOOGLE_CREDENTIALS environment variable not set")
+        return
+    sheet_data = get_google_sheet_data()
+    if not sheet_data:
+        log_message("Failed to retrieve Google Sheet data, proceeding with processed.json only")
+    else:
+        sync_processed_with_sheet(processed, sheet_data)
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -335,7 +347,7 @@ def main():
                 continue
             for class_id in class_ids:
                 if classes_processed >= max_classes_per_run:
-                    log_message(f"Reached limit of {max_classes_per_run} classes this run, stopping")
+                    log_message(f"Reached limit of {max_classes_per_run} classes processed this run, stopping")
                     break
                 class_progress = course_progress.get(class_id, {'last_lesson': -1, 'total_lessons': 0})
                 if class_progress['last_lesson'] + 1 >= class_progress['total_lessons']:
