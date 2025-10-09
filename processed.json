@@ -288,5 +288,12 @@
       "total_lessons": 66,
       "has_errors": true
     }
+  },
+  "English Smart 6.1": {
+    "10637": {
+      "last_lesson": 0,
+      "total_lessons": 64,
+      "has_errors": false
+    }
   }
 }
