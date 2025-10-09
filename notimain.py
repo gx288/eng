@@ -168,7 +168,7 @@ def check_reports():
         login(driver)
         log_message("Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview")
         driver.get("https://apps.cec.com.vn/student-calendar/overview")
-        time.sleep(7)  # Tăng thời gian chờ để đảm bảo trang tải hoàn toàn
+        time.sleep(7)  # Đợi trang tải đầy đủ
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         log_message("Scrolled to bottom of page")
 
@@ -181,49 +181,49 @@ def check_reports():
 
         # Tìm ngày gần nhất trước TODAY
         latest_date = None
-        latest_class = None
+        latest_event = None
         for event in class_events:
             date_str = event.get_attribute("data-date")
             try:
-                # Kiểm tra sự tồn tại của v-event-summary
-                summary_element = WebDriverWait(driver, 5).until(
-                    EC.presence_of_element_located((By.XPATH, f"//div[@data-date='{date_str}' and contains(@class, 'v-event')]//span[contains(@class, 'v-event-summary')]"))
-                )
-                summary_text = summary_element.text
-                # Trích xuất tên lớp, loại bỏ thời gian (ví dụ: "5:45 PM VQ2-K2-2501" -> "VQ2-K2-2501")
-                class_name = summary_text.split(" ", 2)[-1] if " " in summary_text else summary_text
                 event_date = datetime.strptime(date_str, "%Y-%m-%d")
                 if event_date < TODAY and (latest_date is None or event_date > latest_date):
                     latest_date = event_date
-                    latest_class = {"date": date_str, "class_name": class_name}
+                    latest_event = event
             except Exception as e:
-                log_message(f"Error processing event for date {date_str}: {str(e)}")
+                log_message(f"Error parsing date {date_str}: {str(e)}")
                 continue
 
         if not latest_date:
             log_message("No classes found before today")
             return
 
-        log_message(f"Latest class before today: {latest_class['date']} - {latest_class['class_name']}")
-
-        # Kiểm tra xem đã xử lý ngày này chưa
-        if (processed.get("date") == latest_class["date"] and
-                processed.get("class_name") == latest_class["class_name"] and
-                processed.get("report_url")):
-            log_message(f"Class on {latest_class['date']} already processed with report URL: {processed['report_url']}")
-            return
+        date_str = latest_date.strftime("%Y-%m-%d")
+        log_message(f"Latest class date before today: {date_str}")
 
         # Click vào ngày để mở popup
-        log_message(f"Clicking on event for {latest_class['date']}")
-        event_element = driver.find_element(By.XPATH, f"//div[@data-date='{latest_class['date']}' and contains(@class, 'v-event')]")
-        driver.execute_script("arguments[0].click();", event_element)
-        time.sleep(3)  # Tăng thời gian chờ để popup hiển thị
+        log_message(f"Clicking on event for {date_str}")
+        driver.execute_script("arguments[0].click();", latest_event)
+        time.sleep(3)  # Đợi popup hiển thị
 
-        # Kiểm tra popup và nút Báo cáo bài học
-        log_message("Checking report button in popup")
+        # Kiểm tra popup và lấy thông tin lớp
+        log_message("Checking popup for class information")
         popup = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
         )
+        title_element = popup.find_element(By.CLASS_NAME, "v-toolbar__title")
+        title_text = title_element.text.strip()  # Ví dụ: "08/10/2025 : VQ2-K2-2501"
+        class_name = title_text.split(" : ")[-1] if " : " in title_text else "Unknown"
+        log_message(f"Class name from popup: {class_name}")
+
+        # Kiểm tra xem đã xử lý ngày này và lớp này chưa
+        if (processed.get("date") == date_str and
+                processed.get("class_name") == class_name and
+                processed.get("report_url")):
+            log_message(f"Class {class_name} on {date_str} already processed with report URL: {processed['report_url']}")
+            return
+
+        # Kiểm tra nút Báo cáo bài học
+        log_message("Checking report button in popup")
         report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
         is_enabled = "v-btn--disabled" not in report_button.get_attribute("class") and report_button.is_enabled()
 
@@ -243,14 +243,14 @@ def check_reports():
 
             # Gửi thông báo Telegram
             timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-            body = f"Báo cáo bài học mới cho lớp {latest_class['class_name']} ngày {latest_class['date']}\nLink: {report_url}"
+            body = f"Báo cáo bài học mới cho lớp {class_name} ngày {date_str}\nLink: {report_url}"
             send_notification("Có Báo cáo bài học mới!", body)
 
             # Cập nhật Google Sheet
-            update_google_sheet(latest_class["date"], latest_class["class_name"], report_url, timestamp)
+            update_google_sheet(date_str, class_name, report_url, timestamp)
 
             # Lưu trạng thái
-            save_processed(latest_class["date"], latest_class["class_name"], report_url)
+            save_processed(date_str, class_name, report_url)
 
             # Đẩy lên GitHub
             if is_git_repository():
@@ -259,7 +259,7 @@ def check_reports():
                     subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
                     subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
                     subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE], check=True)
-                    subprocess.run(["git", "commit", "-m", f"Update {PROCESSED_FILE} and {LOG_FILE} for {latest_class['date']}"], check=True)
+                    subprocess.run(["git", "commit", "-m", f"Update {PROCESSED_FILE} and {LOG_FILE} for {date_str}"], check=True)
                     subprocess.run(["git", "push"], check=True)
                     log_message(f"Pushed {PROCESSED_FILE} and {LOG_FILE} successfully")
                 except Exception as e:
@@ -275,3 +275,8 @@ def check_reports():
     finally:
         log_message("Closing WebDriver")
         driver.quit()
+
+if __name__ == "__main__":
+    log_message("Starting script")
+    check_reports()
+    log_message("Script completed")
