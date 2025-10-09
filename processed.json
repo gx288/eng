@@ -295,5 +295,12 @@
       "total_lessons": 64,
       "has_errors": true
     }
+  },
+  "Kindergarten 3": {
+    "10654": {
+      "last_lesson": 0,
+      "total_lessons": 68,
+      "has_errors": true
+    }
   }
 }
