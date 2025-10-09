@@ -277,9 +277,9 @@
   },
   "Discover 4": {
     "10723": {
-      "last_lesson": 31,
+      "last_lesson": 32,
       "total_lessons": 38,
-      "has_errors": false
+      "has_errors": true
     }
   }
 }
