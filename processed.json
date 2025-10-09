@@ -3,11 +3,16 @@
     "11260": {
       "last_lesson": 33,
       "total_lessons": 34,
-      "has_errors": true
+      "has_errors": false
     },
     "10997": {
-      "last_lesson": -1,
+      "last_lesson": 33,
       "total_lessons": 34,
+      "has_errors": false
+    },
+    "10996": {
+      "last_lesson": 33,
+      "total_lessons": 0,
       "has_errors": false
     }
   },
@@ -16,13 +21,33 @@
       "last_lesson": 13,
       "total_lessons": 14,
       "has_errors": false
+    },
+    "11235": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11204": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Summer Smart 3": {
     "11217": {
       "last_lesson": 13,
       "total_lessons": 14,
-      "has_errors": true
+      "has_errors": false
+    },
+    "11170": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11152": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Summer Smart 4": {
@@ -30,20 +55,30 @@
       "last_lesson": 13,
       "total_lessons": 14,
       "has_errors": false
+    },
+    "11180": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11171": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Summer Smart 2": {
     "11191": {
       "last_lesson": 13,
       "total_lessons": 14,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Summer Kindy 3": {
     "11190": {
       "last_lesson": 13,
       "total_lessons": 14,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Summer Smart 1": {
@@ -90,51 +125,51 @@
   },
   "Reading Skills 2": {
     "11018": {
-      "last_lesson": 30,
+      "last_lesson": 51,
       "total_lessons": 31,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Cambridge Literacy Ladder 1": {
     "11006": {
-      "last_lesson": 28,
+      "last_lesson": 65,
       "total_lessons": 29,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Discover 2": {
     "10973": {
-      "last_lesson": 38,
+      "last_lesson": 111,
       "total_lessons": 39,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Reader's Wonderland 2.3": {
     "10954": {
       "last_lesson": 7,
       "total_lessons": 8,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Kindergarten 4": {
     "10857": {
       "last_lesson": 40,
       "total_lessons": 41,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Discover 1": {
     "10794": {
-      "last_lesson": 28,
+      "last_lesson": 78,
       "total_lessons": 29,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Cambridge Literacy Ladder Foundation": {
     "10793": {
       "last_lesson": 65,
       "total_lessons": 66,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Outing Think & Write": {
@@ -148,56 +183,154 @@
     "10660": {
       "last_lesson": 30,
       "total_lessons": 31,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Discover 5": {
     "10739": {
       "last_lesson": 47,
       "total_lessons": 48,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "English Smart 5.1 - Look 4": {
     "10730": {
       "last_lesson": 24,
       "total_lessons": 25,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Discover 4": {
     "10723": {
       "last_lesson": 37,
       "total_lessons": 38,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "English Smart 6.2": {
     "10680": {
       "last_lesson": 65,
       "total_lessons": 66,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "English Smart 6.1": {
     "10637": {
       "last_lesson": 63,
       "total_lessons": 64,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "Kindergarten 3": {
     "10654": {
       "last_lesson": 67,
       "total_lessons": 68,
-      "has_errors": true
+      "has_errors": false
     }
   },
   "English Smart 7.2": {
     "10626": {
       "last_lesson": 59,
       "total_lessons": 60,
-      "has_errors": true
+      "has_errors": false
+    }
+  },
+  "English Smart 1 - Look 1": {
+    "10640": {
+      "last_lesson": 71,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Cambridge Literacy Ladder 2": {
+    "10542": {
+      "last_lesson": 66,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Kindergarten 1": {
+    "10538": {
+      "last_lesson": 18,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Reader's Wonderland 2.2": {
+    "10411": {
+      "last_lesson": 7,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Reader's Wonderland 2.1": {
+    "10407": {
+      "last_lesson": 7,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "English Smart 3 - Look 3": {
+    "10368": {
+      "last_lesson": 78,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Discover 3": {
+    "10250": {
+      "last_lesson": 81,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Reader's Wonderland 1.2": {
+    "10220": {
+      "last_lesson": 7,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Basic Grammar 4.1": {
+    "10194": {
+      "last_lesson": 39,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "English Smart 5.2 - Look 5": {
+    "10168": {
+      "last_lesson": 79,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "English Smart 7.1": {
+    "10149": {
+      "last_lesson": 61,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Kindergarten 2": {
+    "10117": {
+      "last_lesson": 26,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Reader's Wonderland 1.3": {
+    "10111": {
+      "last_lesson": 7,
+      "total_lessons": 0,
+      "has_errors": false
+    }
+  },
+  "Reader's Wonderland 1.1": {
+    "10094": {
+      "last_lesson": 7,
+      "total_lessons": 0,
+      "has_errors": false
     }
   }
 }

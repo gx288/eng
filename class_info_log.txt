@@ -14793,3 +14793,247 @@ RW 3.2 Lesson 7 OPEN HERE (Mở bài tập về nhà tại đây): https://drive
 [2025-10-09 06:38:25] Class ID 10049 already completed for course Reader's Wonderland 1.1, skipping
 [2025-10-09 06:38:25] Saved processed.json
 [2025-10-09 06:38:25] Run completed
+[2025-10-09 06:43:16] Successfully wrote credentials.json from GOOGLE_CREDENTIALS
+[2025-10-09 06:43:17] Saved processed.json
+[2025-10-09 06:43:34] Đăng nhập thành công
+[2025-10-09 06:43:34] Class ID 11260 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10997 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10996 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10717 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10788 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10740 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10729 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10668 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10712 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10508 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10398 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10500 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10239 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10156 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10192 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 10092 already completed for course Reading Skills 1, skipping
+[2025-10-09 06:43:34] Class ID 11236 already completed for course Summer Kindy 4, skipping
+[2025-10-09 06:43:34] Class ID 11235 already completed for course Summer Kindy 4, skipping
+[2025-10-09 06:43:34] Class ID 11204 already completed for course Summer Kindy 4, skipping
+[2025-10-09 06:43:34] Class ID 11140 already completed for course Summer Kindy 4, skipping
+[2025-10-09 06:43:34] Class ID 11217 already completed for course Summer Smart 3, skipping
+[2025-10-09 06:43:34] Class ID 11170 already completed for course Summer Smart 3, skipping
+[2025-10-09 06:43:34] Class ID 11152 already completed for course Summer Smart 3, skipping
+[2025-10-09 06:43:34] Class ID 11128 already completed for course Summer Smart 3, skipping
+[2025-10-09 06:43:34] Class ID 11124 already completed for course Summer Smart 3, skipping
+[2025-10-09 06:43:34] Class ID 11114 already completed for course Summer Smart 3, skipping
+[2025-10-09 06:43:34] Class ID 11209 already completed for course Summer Smart 4, skipping
+[2025-10-09 06:43:34] Class ID 11180 already completed for course Summer Smart 4, skipping
+[2025-10-09 06:43:34] Class ID 11171 already completed for course Summer Smart 4, skipping
+[2025-10-09 06:43:34] Class ID 11142 already completed for course Summer Smart 4, skipping
+[2025-10-09 06:43:34] Class ID 11137 already completed for course Summer Smart 4, skipping
+[2025-10-09 06:43:34] Class ID 11191 already completed for course Summer Smart 2, skipping
+[2025-10-09 06:43:34] Class ID 11178 already completed for course Summer Smart 2, skipping
+[2025-10-09 06:43:34] Class ID 11165 already completed for course Summer Smart 2, skipping
+[2025-10-09 06:43:34] Class ID 11159 already completed for course Summer Smart 2, skipping
+[2025-10-09 06:43:34] Class ID 11190 already completed for course Summer Kindy 3, skipping
+[2025-10-09 06:43:34] Class ID 11183 already completed for course Summer Kindy 3, skipping
+[2025-10-09 06:43:34] Class ID 11163 already completed for course Summer Kindy 3, skipping
+[2025-10-09 06:43:34] Class ID 11158 already completed for course Summer Kindy 3, skipping
+[2025-10-09 06:43:34] Class ID 11184 already completed for course Summer Smart 1, skipping
+[2025-10-09 06:43:34] Class ID 11164 already completed for course Summer Smart 1, skipping
+[2025-10-09 06:43:34] Class ID 11150 already completed for course Summer Smart 1, skipping
+[2025-10-09 06:43:34] Class ID 11123 already completed for course Summer Smart 1, skipping
+[2025-10-09 06:43:34] Class ID 11174 already completed for course Summer Smart 7, skipping
+[2025-10-09 06:43:34] Class ID 11154 already completed for course Summer Smart 7, skipping
+[2025-10-09 06:43:34] Class ID 11167 already completed for course Summer Smart 5, skipping
+[2025-10-09 06:43:34] Class ID 11160 already completed for course Summer Smart 5, skipping
+[2025-10-09 06:43:34] Class ID 11143 already completed for course Summer Smart 6, skipping
+[2025-10-09 06:43:34] Class ID 11125 already completed for course Summer Smart 6, skipping
+[2025-10-09 06:43:34] Class ID 11064 already completed for course Reader's Wonderland 3.2, skipping
+[2025-10-09 06:43:34] Class ID 11053 already completed for course Reader's Wonderland 3.1, skipping
+[2025-10-09 06:43:34] Class ID 10804 already completed for course Reader's Wonderland 3.1, skipping
+[2025-10-09 06:43:34] Class ID 11018 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10765 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10638 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10678 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10643 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10548 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10372 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10226 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10298 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10179 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10258 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 10129 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 9989 already completed for course Reading Skills 2, skipping
+[2025-10-09 06:43:34] Class ID 11006 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10629 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10719 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10628 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10576 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10557 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10523 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10385 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10369 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10434 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10280 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10506 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10394 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10370 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10300 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10294 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10242 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10186 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10087 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10032 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 9968 already completed for course Cambridge Literacy Ladder 1, skipping
+[2025-10-09 06:43:34] Class ID 10973 already completed for course Discover 2, skipping
+[2025-10-09 06:43:34] Class ID 10188 already completed for course Discover 2, skipping
+[2025-10-09 06:43:34] Class ID 10118 already completed for course Discover 2, skipping
+[2025-10-09 06:43:34] Class ID 10091 already completed for course Discover 2, skipping
+[2025-10-09 06:43:34] Class ID 10954 already completed for course Reader's Wonderland 2.3, skipping
+[2025-10-09 06:43:34] Class ID 10745 already completed for course Reader's Wonderland 2.3, skipping
+[2025-10-09 06:43:34] Class ID 10408 already completed for course Reader's Wonderland 2.3, skipping
+[2025-10-09 06:43:34] Class ID 10857 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10889 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10879 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10389 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10379 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10544 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10236 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10162 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10184 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10238 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10046 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10048 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10009 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 9977 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 9952 already completed for course Kindergarten 4, skipping
+[2025-10-09 06:43:34] Class ID 10794 already completed for course Discover 1, skipping
+[2025-10-09 06:43:34] Class ID 10153 already completed for course Discover 1, skipping
+[2025-10-09 06:43:34] Class ID 9961 already completed for course Discover 1, skipping
+[2025-10-09 06:43:34] Class ID 10025 already completed for course Discover 1, skipping
+[2025-10-09 06:43:34] Class ID 10793 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10736 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10260 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10604 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10502 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10338 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10241 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10172 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10170 already completed for course Cambridge Literacy Ladder Foundation, skipping
+[2025-10-09 06:43:34] Class ID 10756 already completed for course Outing Think & Write, skipping
+[2025-10-09 06:43:34] Class ID 10660 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10750 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10396 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10388 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10380 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10148 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10183 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10140 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10200 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10056 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 9995 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10030 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10044 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 9987 already completed for course English Smart 2 - Look 2, skipping
+[2025-10-09 06:43:34] Class ID 10739 already completed for course Discover 5, skipping
+[2025-10-09 06:43:34] Class ID 9981 already completed for course Discover 5, skipping
+[2025-10-09 06:43:34] Class ID 10730 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10614 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10373 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10233 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10251 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10259 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10145 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10157 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10176 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10034 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10019 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10018 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 9951 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10093 already completed for course English Smart 5.1 - Look 4, skipping
+[2025-10-09 06:43:34] Class ID 10723 already completed for course Discover 4, skipping
+[2025-10-09 06:43:34] Class ID 10026 already completed for course Discover 4, skipping
+[2025-10-09 06:43:34] Class ID 10059 already completed for course Discover 4, skipping
+[2025-10-09 06:43:34] Class ID 10680 already completed for course English Smart 6.2, skipping
+[2025-10-09 06:43:34] Class ID 10533 already completed for course English Smart 6.2, skipping
+[2025-10-09 06:43:34] Class ID 10637 already completed for course English Smart 6.1, skipping
+[2025-10-09 06:43:34] Class ID 10650 already completed for course English Smart 6.1, skipping
+[2025-10-09 06:43:34] Class ID 10655 already completed for course English Smart 6.1, skipping
+[2025-10-09 06:43:34] Class ID 10530 already completed for course English Smart 6.1, skipping
+[2025-10-09 06:43:34] Class ID 10133 already completed for course English Smart 6.1, skipping
+[2025-10-09 06:43:34] Class ID 10101 already completed for course English Smart 6.1, skipping
+[2025-10-09 06:43:34] Class ID 10654 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10571 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10374 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10397 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10386 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10409 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10291 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10290 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10240 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10155 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10257 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10158 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10147 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10163 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 9993 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 9991 already completed for course Kindergarten 3, skipping
+[2025-10-09 06:43:34] Class ID 10640 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10521 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10456 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10227 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10316 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10335 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10159 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10161 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10187 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10096 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10080 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10088 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 9966 already completed for course English Smart 1 - Look 1, skipping
+[2025-10-09 06:43:34] Class ID 10626 already completed for course English Smart 7.2, skipping
+[2025-10-09 06:43:34] Class ID 10404 already completed for course English Smart 7.2, skipping
+[2025-10-09 06:43:34] Class ID 10487 already completed for course English Smart 7.2, skipping
+[2025-10-09 06:43:34] Class ID 10542 already completed for course Cambridge Literacy Ladder 2, skipping
+[2025-10-09 06:43:34] Class ID 10539 already completed for course Cambridge Literacy Ladder 2, skipping
+[2025-10-09 06:43:34] Class ID 10538 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10449 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10252 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10281 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10197 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10124 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10078 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10020 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10084 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10045 already completed for course Kindergarten 1, skipping
+[2025-10-09 06:43:34] Class ID 10411 already completed for course Reader's Wonderland 2.2, skipping
+[2025-10-09 06:43:34] Class ID 10345 already completed for course Reader's Wonderland 2.2, skipping
+[2025-10-09 06:43:34] Class ID 10407 already completed for course Reader's Wonderland 2.1, skipping
+[2025-10-09 06:43:34] Class ID 10267 already completed for course Reader's Wonderland 2.1, skipping
+[2025-10-09 06:43:34] Class ID 10302 already completed for course Reader's Wonderland 2.1, skipping
+[2025-10-09 06:43:34] Class ID 10063 already completed for course Reader's Wonderland 2.1, skipping
+[2025-10-09 06:43:34] Class ID 10051 already completed for course Reader's Wonderland 2.1, skipping
+[2025-10-09 06:43:34] Class ID 10368 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 10405 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 10237 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 10167 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 10144 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 9988 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 10120 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 10055 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 9980 already completed for course English Smart 3 - Look 3, skipping
+[2025-10-09 06:43:34] Class ID 10250 already completed for course Discover 3, skipping
+[2025-10-09 06:43:34] Class ID 10121 already completed for course Discover 3, skipping
+[2025-10-09 06:43:34] Class ID 10220 already completed for course Reader's Wonderland 1.2, skipping
+[2025-10-09 06:43:34] Class ID 10194 already completed for course Basic Grammar 4.1, skipping
+[2025-10-09 06:43:34] Class ID 10168 already completed for course English Smart 5.2 - Look 5, skipping
+[2025-10-09 06:43:34] Class ID 10149 already completed for course English Smart 7.1, skipping
+[2025-10-09 06:43:34] Class ID 10136 already completed for course English Smart 7.1, skipping
+[2025-10-09 06:43:34] Class ID 10164 already completed for course English Smart 7.1, skipping
+[2025-10-09 06:43:34] Class ID 10031 already completed for course English Smart 7.1, skipping
+[2025-10-09 06:43:34] Class ID 10010 already completed for course English Smart 7.1, skipping
+[2025-10-09 06:43:34] Class ID 10117 already completed for course Kindergarten 2, skipping
+[2025-10-09 06:43:34] Class ID 10077 already completed for course Kindergarten 2, skipping
+[2025-10-09 06:43:34] Class ID 10062 already completed for course Kindergarten 2, skipping
+[2025-10-09 06:43:34] Class ID 10111 already completed for course Reader's Wonderland 1.3, skipping
+[2025-10-09 06:43:34] Class ID 10094 already completed for course Reader's Wonderland 1.1, skipping
+[2025-10-09 06:43:34] Class ID 10049 already completed for course Reader's Wonderland 1.1, skipping
+[2025-10-09 06:43:34] Saved processed.json
+[2025-10-09 06:43:34] Run completed
