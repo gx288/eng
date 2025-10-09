@@ -270,9 +270,9 @@
   },
   "English Smart 5.1 - Look 4": {
     "10730": {
-      "last_lesson": 11,
+      "last_lesson": 12,
       "total_lessons": 25,
-      "has_errors": false
+      "has_errors": true
     }
   }
 }
