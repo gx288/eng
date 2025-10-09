@@ -243,3 +243,36 @@
 [2025-10-09 07:46:34] Saved processed2.json successfully
 [2025-10-09 07:46:34] Git repository detected
 [2025-10-09 07:46:34] Committing and pushing changes to GitHub
+[2025-10-09 15:56:11] Starting script
+[2025-10-09 15:56:11] Starting report check for calendar overview
+[2025-10-09 15:56:11] Loaded processed2.json: {'class_id': '11680', 'report_count': 4}
+[2025-10-09 15:56:11] Initializing Chrome WebDriver
+[2025-10-09 15:56:19] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-09 15:56:24] Entering username: 61655HN
+[2025-10-09 15:56:24] Entering password
+[2025-10-09 15:56:24] Clicking login button
+[2025-10-09 15:56:29] Login successful
+[2025-10-09 15:56:29] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2025-10-09 15:56:37] Scrolled to bottom of page
+[2025-10-09 15:56:37] Finding all class events
+[2025-10-09 15:56:37] Found 20 class events
+[2025-10-09 15:56:37] Latest class date before today: 2025-10-08
+[2025-10-09 15:56:37] Clicking on event for 2025-10-08
+[2025-10-09 15:56:40] Checking popup for class information
+[2025-10-09 15:56:40] Class name from popup: VQ2-K2-2501
+[2025-10-09 15:56:40] Checking report button in popup
+[2025-10-09 15:56:40] Report button is enabled, clicking to get report URL
+[2025-10-09 15:56:45] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1BDxZnEV4jcYv_rUdAlkZHyPoBd9F27aj/export?format=pdf
+[2025-10-09 15:56:45] Preparing to send Telegram notification
+[2025-10-09 15:56:45] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-08
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1BDxZnEV4jcYv_rUdAlkZHyPoBd9F27aj/export?format=pdf
+[2025-10-09 15:56:46] Telegram notification sent successfully to chat_id 1900957785
+[2025-10-09 15:56:46] Sending Telegram message to chat_id 1924741087: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-08
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1BDxZnEV4jcYv_rUdAlkZHyPoBd9F27aj/export?format=pdf
+[2025-10-09 15:56:46] Telegram notification sent successfully to chat_id 1924741087
+[2025-10-09 15:56:46] Updating Google Sheet with Date 2025-10-08, Class VQ2-K2-2501, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1BDxZnEV4jcYv_rUdAlkZHyPoBd9F27aj/export?format=pdf
+[2025-10-09 15:56:48] Updated Google Sheet successfully: 2025-10-08, VQ2-K2-2501, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1BDxZnEV4jcYv_rUdAlkZHyPoBd9F27aj/export?format=pdf at 2025-10-09 15:56:45
+[2025-10-09 15:56:48] Saving processed data to processed2.json
+[2025-10-09 15:56:48] Saved processed2.json successfully
+[2025-10-09 15:56:48] Git repository detected
+[2025-10-09 15:56:48] Committing and pushing changes to GitHub
