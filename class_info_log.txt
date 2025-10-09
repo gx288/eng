@@ -15037,3 +15037,4 @@ RW 3.2 Lesson 7 OPEN HERE (Mở bài tập về nhà tại đây): https://drive
 [2025-10-09 06:43:34] Class ID 10049 already completed for course Reader's Wonderland 1.1, skipping
 [2025-10-09 06:43:34] Saved processed.json
 [2025-10-09 06:43:34] Run completed
+[2025-10-09 06:50:48] Error: 'Lessons' column not found in id.csv
