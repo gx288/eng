@@ -263,9 +263,9 @@
       "has_errors": false
     },
     "10739": {
-      "last_lesson": 46,
+      "last_lesson": 47,
       "total_lessons": 48,
-      "has_errors": false
+      "has_errors": true
     }
   }
 }
