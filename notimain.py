@@ -10,7 +10,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import subprocess
-from datetime import datetime, timedelta
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # Configuration
 PROCESSED_FILE = "processed2.json"
@@ -22,7 +23,8 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 TELEGRAM_CHAT_ID_2 = os.getenv("TELEGRAM_CHAT_ID_2")
 LOG_FILE = "class_info_log2.txt"
-TODAY = datetime(2025, 10, 9)  # Ngày hiện tại: 09/10/2025
+# Lấy ngày hiện tại theo GMT+7
+TODAY = datetime.now(tz=ZoneInfo("Asia/Ho_Chi_Minh")).replace(hour=0, minute=0, second=0, microsecond=0)
 
 def log_message(message):
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
@@ -185,7 +187,7 @@ def check_reports():
         for event in class_events:
             date_str = event.get_attribute("data-date")
             try:
-                event_date = datetime.strptime(date_str, "%Y-%m-%d")
+                event_date = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=ZoneInfo("Asia/Ho_Chi_Minh"))
                 if event_date < TODAY and (latest_date is None or event_date > latest_date):
                     latest_date = event_date
                     latest_event = event
