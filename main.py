@@ -129,6 +129,7 @@ def is_git_repository():
         return False
 
 def sync_processed_with_sheet(processed, sheet_data):
+    processed_lessons = set()
     for row in sheet_data:
         if len(row) < 4:
             continue
@@ -139,6 +140,7 @@ def sync_processed_with_sheet(processed, sheet_data):
         except ValueError:
             log_message(f"Invalid lesson number in Google Sheet for Class ID {class_id}: {row[3]}")
             continue
+        processed_lessons.add(f"{class_id}:{lesson_number}")
         if course_name not in processed:
             processed[course_name] = {}
         if class_id not in processed[course_name]:
@@ -149,8 +151,9 @@ def sync_processed_with_sheet(processed, sheet_data):
         )
         processed[course_name][class_id]['has_errors'] = False
     save_processed(processed)
+    return processed_lessons
 
-def process_class_id(driver, class_id, course_name, processed, sheet_data):
+def process_class_id(driver, class_id, course_name, processed, sheet_data, processed_lessons, csv_total_lessons):
     try:
         url = f"https://apps.cec.com.vn/student-calendar/class-detail?classID={class_id}"
         driver.get(url)
@@ -174,13 +177,19 @@ def process_class_id(driver, class_id, course_name, processed, sheet_data):
         total_lessons = len(lesson_rows)
         if total_lessons != total_lessons_prev:
             log_message(f"Total lessons updated for Class ID {class_id}: {total_lessons_prev} -> {total_lessons}")
-        start_lesson_index = class_progress.get('last_lesson', -1) + 1
-        processed.setdefault(course_name, {})[class_id] = {'last_lesson': start_lesson_index - 1, 'total_lessons': total_lessons, 'has_errors': False}
+        if total_lessons_prev == 0 and csv_total_lessons > 0:
+            log_message(f"Using total lessons from id.csv for Class ID {class_id}: {csv_total_lessons}")
+            total_lessons = max(total_lessons, csv_total_lessons)
+        processed.setdefault(course_name, {})[class_id] = {
+            'last_lesson': class_progress.get('last_lesson', -1),
+            'total_lessons': total_lessons,
+            'has_errors': class_progress.get('has_errors', False)
+        }
         save_processed(processed)
         has_errors = False
-        for lesson_index in range(start_lesson_index, total_lessons):
+        for lesson_index in range(class_progress.get('last_lesson', -1) + 1, total_lessons):
             unique_id = f"{class_id}:{lesson_index + 1}"  # lesson_number is 1-indexed
-            if any(len(r) >= 4 and f"{r[0]}:{r[3]}" == unique_id for r in sheet_data):
+            if unique_id in processed_lessons:
                 log_message(f"Skipping lesson {lesson_index + 1} for Class ID {class_id} - already in Sheet")
                 processed[course_name][class_id]['last_lesson'] = lesson_index
                 save_processed(processed)
@@ -273,6 +282,7 @@ def process_class_id(driver, class_id, course_name, processed, sheet_data):
                             log_message(f"Pushed processed.json for Class ID {class_id}, Lesson {lesson_number}")
                         except Exception as e:
                             log_message(f"Error committing/pushing processed.json for Class ID {class_id}, Lesson {lesson_number}: {str(e)}")
+                    processed_lessons.add(unique_id)
                     break
                 except StaleElementReferenceException:
                     retry_count += 1
@@ -297,6 +307,9 @@ def main():
     try:
         df = pd.read_csv(CSV_FILE)
         df['Start date'] = pd.to_datetime(df['Start date'], dayfirst=True, errors='coerce')
+        if 'Lessons' not in df.columns:
+            log_message("Error: 'Lessons' column not found in id.csv")
+            return
     except Exception as e:
         log_message(f"Error reading CSV: {str(e)}")
         return
@@ -320,10 +333,9 @@ def main():
         log_message("GOOGLE_CREDENTIALS environment variable not set")
         return
     sheet_data = get_google_sheet_data()
+    processed_lessons = sync_processed_with_sheet(processed, sheet_data) if sheet_data else set()
     if not sheet_data:
         log_message("Failed to retrieve Google Sheet data, proceeding with processed.json only")
-    else:
-        sync_processed_with_sheet(processed, sheet_data)
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -350,10 +362,19 @@ def main():
                     log_message(f"Reached limit of {max_classes_per_run} classes processed this run, stopping")
                     break
                 class_progress = course_progress.get(class_id, {'last_lesson': -1, 'total_lessons': 0})
-                if class_progress['last_lesson'] + 1 >= class_progress['total_lessons']:
-                    log_message(f"Class ID {class_id} already completed for course {course_name}, skipping")
+                csv_total_lessons = int(df[df['Class ID'] == class_id]['Lessons'].iloc[0]) if not df[df['Class ID'] == class_id].empty else 0
+                log_message(f"Class ID {class_id}: CSV lessons={csv_total_lessons}, Processed last_lesson={class_progress['last_lesson']}, total_lessons={class_progress['total_lessons']}")
+                # Check if all lessons are in Google Sheet
+                all_lessons_processed = True
+                if csv_total_lessons > 0:
+                    for lesson in range(1, csv_total_lessons + 1):
+                        if f"{class_id}:{lesson}" not in processed_lessons:
+                            all_lessons_processed = False
+                            break
+                if all_lessons_processed and class_progress.get('total_lessons', 0) <= csv_total_lessons:
+                    log_message(f"Class ID {class_id} fully processed in Google Sheet, skipping")
                     continue
-                has_errors = process_class_id(driver, class_id, course_name, processed, sheet_data)
+                has_errors = process_class_id(driver, class_id, course_name, processed, sheet_data, processed_lessons, csv_total_lessons)
                 classes_processed += 1
                 log_message(f"{'Success' if not has_errors else 'Has errors'} for Class ID {class_id} in course {course_name}")
         save_processed(processed)
