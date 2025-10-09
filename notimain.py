@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import subprocess
+from datetime import datetime, timedelta
 
 # Configuration
 PROCESSED_FILE = "processed2.json"
@@ -19,23 +20,21 @@ SHEET_NAME = "Report"
 SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
-TELEGRAM_CHAT_ID_2 = os.getenv("TELEGRAM_CHAT_ID_2")  # Thêm chat_id thứ hai
-CLASS_ID = "11680"
+TELEGRAM_CHAT_ID_2 = os.getenv("TELEGRAM_CHAT_ID_2")
 LOG_FILE = "class_info_log2.txt"
+TODAY = datetime(2025, 10, 9)  # Ngày hiện tại: 09/10/2025
 
 def log_message(message):
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-    print(f"[{timestamp}] {message}")  # In log ra màn hình
+    print(f"[{timestamp}] {message}")
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"[{timestamp}] {message}\n")
 
-def send_notification(subject, body):
+def send_notification(subject, body, chat_ids=[TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]):
     log_message("Preparing to send Telegram notification")
     if not TELEGRAM_BOT_TOKEN:
         log_message("Missing TELEGRAM_BOT_TOKEN, skipping notification")
         return
-    
-    chat_ids = [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]  # Danh sách chat_id
     for chat_id in chat_ids:
         if not chat_id:
             log_message(f"Missing chat_id, skipping notification for one recipient")
@@ -94,8 +93,8 @@ def login(driver):
         log_message(f"Login error: {str(e)}")
         raise
 
-def update_google_sheet(class_id, report_count, timestamp):
-    log_message(f"Updating Google Sheet with Class ID {class_id}, {report_count} reports")
+def update_google_sheet(date, class_name, report_url, timestamp):
+    log_message(f"Updating Google Sheet with Date {date}, Class {class_name}, URL {report_url}")
     max_retries = 3
     for attempt in range(max_retries):
         try:
@@ -103,9 +102,9 @@ def update_google_sheet(class_id, report_count, timestamp):
             client = gspread.authorize(creds)
             sheet = client.open_by_key(SHEET_ID)
             worksheet = sheet.worksheet(SHEET_NAME)
-            row_data = [str(class_id), str(report_count), timestamp]
+            row_data = [date, class_name, report_url, timestamp]
             worksheet.append_row(row_data)
-            log_message(f"Updated Google Sheet successfully: Class ID {class_id}, {report_count} reports at {timestamp}")
+            log_message(f"Updated Google Sheet successfully: {date}, {class_name}, {report_url} at {timestamp}")
             return True
         except Exception as e:
             log_message(f"Attempt {attempt+1}/{max_retries} failed to update Google Sheet: {str(e)}")
@@ -115,9 +114,9 @@ def update_google_sheet(class_id, report_count, timestamp):
             time.sleep(3)
     return False
 
-def save_processed(report_count):
+def save_processed(date, class_name, report_url):
     log_message(f"Saving processed data to {PROCESSED_FILE}")
-    processed = {"class_id": CLASS_ID, "report_count": report_count}
+    processed = {"date": date, "class_name": class_name, "report_url": report_url}
     try:
         with open(PROCESSED_FILE, 'w', encoding='utf-8') as f:
             json.dump(processed, f, indent=2)
@@ -135,7 +134,7 @@ def is_git_repository():
         return False
 
 def check_reports():
-    log_message(f"Starting report check for Class ID {CLASS_ID}")
+    log_message("Starting report check for calendar overview")
     processed = {}
     if os.path.exists(PROCESSED_FILE):
         try:
@@ -167,43 +166,100 @@ def check_reports():
 
     try:
         login(driver)
-        log_message(f"Navigating to class detail page: https://apps.cec.com.vn/student-calendar/class-detail?classID={CLASS_ID}")
-        driver.get(f"https://apps.cec.com.vn/student-calendar/class-detail?classID={CLASS_ID}")
-        log_message("Waiting for page to load")
+        log_message("Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview")
+        driver.get("https://apps.cec.com.vn/student-calendar/overview")
         time.sleep(5)
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         log_message("Scrolled to bottom of page")
 
-        log_message("Counting report elements")
-        report_elements = WebDriverWait(driver, 20).until(
-            EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr//i[@data-v-50ef298c and contains(@class, 'isax-card-edit')]"))
+        # Tìm tất cả các ngày có lớp
+        log_message("Finding all class events")
+        class_events = WebDriverWait(driver, 20).until(
+            EC.presence_of_all_elements_located((By.XPATH, "//div[contains(@class, 'v-event') and @data-date]"))
         )
-        report_count = len(report_elements)
-        log_message(f"Found {report_count} reports for Class ID {CLASS_ID}")
+        log_message(f"Found {len(class_events)} class events")
 
-        last_report_count = processed.get("report_count", 0)
-        if report_count > last_report_count:
-            log_message(f"New reports detected (current: {report_count}, last: {last_report_count})")
+        # Tìm ngày gần nhất trước TODAY
+        latest_date = None
+        latest_class = None
+        for event in class_events:
+            date_str = event.get_attribute("data-date")
+            class_name = event.find_element(By.CLASS_NAME, "v-event-summary").text
+            event_date = datetime.strptime(date_str, "%Y-%m-%d")
+            if event_date < TODAY and (latest_date is None or event_date > latest_date):
+                latest_date = event_date
+                latest_class = {"date": date_str, "class_name": class_name}
+
+        if not latest_date:
+            log_message("No classes found before today")
+            return
+
+        log_message(f"Latest class before today: {latest_class['date']} - {latest_class['class_name']}")
+
+        # Kiểm tra xem đã xử lý ngày này chưa
+        if (processed.get("date") == latest_class["date"] and
+                processed.get("class_name") == latest_class["class_name"] and
+                processed.get("report_url")):
+            log_message(f"Class on {latest_class['date']} already processed with report URL: {processed['report_url']}")
+            return
+
+        # Click vào ngày để mở popup
+        log_message(f"Clicking on event for {latest_class['date']}")
+        event_element = driver.find_element(By.XPATH, f"//div[@data-date='{latest_class['date']}' and contains(@class, 'v-event')]")
+        driver.execute_script("arguments[0].click();", event_element)
+        time.sleep(2)
+
+        # Kiểm tra popup và nút Báo cáo bài học
+        log_message("Checking report button in popup")
+        popup = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
+        )
+        report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
+        is_enabled = "disabled" not in report_button.get_attribute("class") and report_button.is_enabled()
+
+        if is_enabled:
+            log_message("Report button is enabled, clicking to get report URL")
+            original_window = driver.current_window_handle
+            report_button.click()
+            time.sleep(3)
+
+            # Chuyển sang tab mới (nếu có)
+            for window_handle in driver.window_handles:
+                if window_handle != original_window:
+                    driver.switch_to.window(window_handle)
+                    break
+            report_url = driver.current_url
+            log_message(f"Report URL: {report_url}")
+
+            # Gửi thông báo Telegram
             timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-            body = f"Làm quiz đi nhé"
-            send_notification("Ê, có Report mới lớp của Huy đó.", body)
-            update_google_sheet(CLASS_ID, report_count, timestamp)
-            save_processed(report_count)
+            body = f"Báo cáo bài học mới cho lớp {latest_class['class_name']} ngày {latest_class['date']}\nLink: {report_url}"
+            send_notification("Có Báo cáo bài học mới!", body)
 
+            # Cập nhật Google Sheet
+            update_google_sheet(latest_class["date"], latest_class["class_name"], report_url, timestamp)
+
+            # Lưu trạng thái
+            save_processed(latest_class["date"], latest_class["class_name"], report_url)
+
+            # Đẩy lên GitHub
             if is_git_repository():
                 log_message("Committing and pushing changes to GitHub")
                 try:
                     subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
                     subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
                     subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE], check=True)
-                    subprocess.run(["git", "commit", "-m", f"Update {PROCESSED_FILE} and {LOG_FILE} for Class ID {CLASS_ID}"], check=True)
+                    subprocess.run(["git", "commit", "-m", f"Update {PROCESSED_FILE} and {LOG_FILE} for {latest_class['date']}"], check=True)
                     subprocess.run(["git", "push"], check=True)
                     log_message(f"Pushed {PROCESSED_FILE} and {LOG_FILE} successfully")
                 except Exception as e:
                     log_message(f"Error committing/pushing: {str(e)}")
-        else:
-            log_message(f"No new reports (current: {report_count}, last: {last_report_count})")
 
+            # Đóng tab mới và quay lại tab gốc
+            driver.close()
+            driver.switch_to.window(original_window)
+        else:
+            log_message("Report button is disabled")
     except Exception as e:
         log_message(f"Error checking reports: {str(e)}")
     finally:
