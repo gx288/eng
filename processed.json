@@ -274,5 +274,12 @@
       "total_lessons": 25,
       "has_errors": true
     }
+  },
+  "Discover 4": {
+    "10723": {
+      "last_lesson": 0,
+      "total_lessons": 38,
+      "has_errors": false
+    }
   }
 }
