@@ -153,7 +153,7 @@ def sync_processed_with_sheet(processed, sheet_data):
     save_processed(processed)
     return processed_lessons
 
-def process_class_id(driver, class_id, course_name, processed, sheet_data, processed_lessons, csv_total_lessons):
+def process_class_id(driver, class_id, course_name, processed, sheet_data, processed_lessons, csv_total_sessions):
     try:
         url = f"https://apps.cec.com.vn/student-calendar/class-detail?classID={class_id}"
         driver.get(url)
@@ -177,9 +177,9 @@ def process_class_id(driver, class_id, course_name, processed, sheet_data, proce
         total_lessons = len(lesson_rows)
         if total_lessons != total_lessons_prev:
             log_message(f"Total lessons updated for Class ID {class_id}: {total_lessons_prev} -> {total_lessons}")
-        if total_lessons_prev == 0 and csv_total_lessons > 0:
-            log_message(f"Using total lessons from id.csv for Class ID {class_id}: {csv_total_lessons}")
-            total_lessons = max(total_lessons, csv_total_lessons)
+        if total_lessons_prev == 0 and csv_total_sessions > 0:
+            log_message(f"Using total sessions from id.csv for Class ID {class_id}: {csv_total_sessions}")
+            total_lessons = max(total_lessons, csv_total_sessions)
         processed.setdefault(course_name, {})[class_id] = {
             'last_lesson': class_progress.get('last_lesson', -1),
             'total_lessons': total_lessons,
@@ -307,8 +307,8 @@ def main():
     try:
         df = pd.read_csv(CSV_FILE)
         df['Start date'] = pd.to_datetime(df['Start date'], dayfirst=True, errors='coerce')
-        if 'Lessons' not in df.columns:
-            log_message("Error: 'Lessons' column not found in id.csv")
+        if 'Total Sessions' not in df.columns:
+            log_message("Error: 'Total Sessions' column not found in id.csv")
             return
     except Exception as e:
         log_message(f"Error reading CSV: {str(e)}")
@@ -362,19 +362,19 @@ def main():
                     log_message(f"Reached limit of {max_classes_per_run} classes processed this run, stopping")
                     break
                 class_progress = course_progress.get(class_id, {'last_lesson': -1, 'total_lessons': 0})
-                csv_total_lessons = int(df[df['Class ID'] == class_id]['Lessons'].iloc[0]) if not df[df['Class ID'] == class_id].empty else 0
-                log_message(f"Class ID {class_id}: CSV lessons={csv_total_lessons}, Processed last_lesson={class_progress['last_lesson']}, total_lessons={class_progress['total_lessons']}")
+                csv_total_sessions = int(df[df['Class ID'] == class_id]['Total Sessions'].iloc[0]) if not df[df['Class ID'] == class_id].empty else 0
+                log_message(f"Class ID {class_id}: CSV Total Sessions={csv_total_sessions}, Processed last_lesson={class_progress['last_lesson']}, total_lessons={class_progress['total_lessons']}, Lessons in Sheet={[f'{class_id}:{i}' for i in range(1, csv_total_sessions + 1) if f'{class_id}:{i}' in processed_lessons]}")
                 # Check if all lessons are in Google Sheet
-                all_lessons_processed = True
-                if csv_total_lessons > 0:
-                    for lesson in range(1, csv_total_lessons + 1):
+                all_lessons_processed = csv_total_sessions > 0
+                if csv_total_sessions > 0:
+                    for lesson in range(1, csv_total_sessions + 1):
                         if f"{class_id}:{lesson}" not in processed_lessons:
                             all_lessons_processed = False
                             break
-                if all_lessons_processed and class_progress.get('total_lessons', 0) <= csv_total_lessons:
+                if all_lessons_processed:
                     log_message(f"Class ID {class_id} fully processed in Google Sheet, skipping")
                     continue
-                has_errors = process_class_id(driver, class_id, course_name, processed, sheet_data, processed_lessons, csv_total_lessons)
+                has_errors = process_class_id(driver, class_id, course_name, processed, sheet_data, processed_lessons, csv_total_sessions)
                 classes_processed += 1
                 log_message(f"{'Success' if not has_errors else 'Has errors'} for Class ID {class_id} in course {course_name}")
         save_processed(processed)
