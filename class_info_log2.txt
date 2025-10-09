@@ -217,3 +217,29 @@
 [2025-10-08 11:25:01] Saved processed2.json successfully
 [2025-10-08 11:25:01] Git repository detected
 [2025-10-08 11:25:01] Committing and pushing changes to GitHub
+[2025-10-09 07:46:06] Starting script
+[2025-10-09 07:46:06] Starting report check for Class ID 11005
+[2025-10-09 07:46:06] Loaded processed2.json: {'class_id': '11005', 'report_count': 47}
+[2025-10-09 07:46:06] Initializing Chrome WebDriver
+[2025-10-09 07:46:13] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-09 07:46:17] Entering username: 61655HN
+[2025-10-09 07:46:17] Entering password
+[2025-10-09 07:46:17] Clicking login button
+[2025-10-09 07:46:23] Login successful
+[2025-10-09 07:46:23] Navigating to class detail page: https://apps.cec.com.vn/student-calendar/class-detail?classID=11005
+[2025-10-09 07:46:27] Waiting for page to load
+[2025-10-09 07:46:32] Scrolled to bottom of page
+[2025-10-09 07:46:32] Counting report elements
+[2025-10-09 07:46:32] Found 48 reports for Class ID 11005
+[2025-10-09 07:46:32] New reports detected (current: 48, last: 47)
+[2025-10-09 07:46:32] Preparing to send Telegram notification
+[2025-10-09 07:46:32] Sending Telegram message to chat_id 1900957785: Làm quiz đi nhé
+[2025-10-09 07:46:33] Telegram notification sent successfully to chat_id 1900957785
+[2025-10-09 07:46:33] Sending Telegram message to chat_id 1924741087: Làm quiz đi nhé
+[2025-10-09 07:46:33] Telegram notification sent successfully to chat_id 1924741087
+[2025-10-09 07:46:33] Updating Google Sheet with Class ID 11005, 48 reports
+[2025-10-09 07:46:34] Updated Google Sheet successfully: Class ID 11005, 48 reports at 2025-10-09 07:46:32
+[2025-10-09 07:46:34] Saving processed data to processed2.json
+[2025-10-09 07:46:34] Saved processed2.json successfully
+[2025-10-09 07:46:34] Git repository detected
+[2025-10-09 07:46:34] Committing and pushing changes to GitHub
