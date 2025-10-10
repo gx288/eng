@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'processed2.json'
+      - 'retry_trigger.json'
   workflow_dispatch:
     inputs:
       manual_trigger:
@@ -11,6 +12,8 @@ on:
         required: false
         default: 'true'
         type: boolean
+  schedule:
+    - cron: '*/5 * * * *'  # Chạy mỗi 5 phút
 
 jobs:
   process:
@@ -33,6 +36,17 @@ jobs:
             exit 1
           fi
 
+      - name: Check retry_trigger.json
+        id: check_retry
+        run: |
+          if [ -f "retry_trigger.json" ]; then
+            echo "retry_needed=true" >> $GITHUB_OUTPUT
+            echo "Retry trigger found. Proceeding..."
+          else
+            echo "retry_needed=false" >> $GITHUB_OUTPUT
+            echo "No retry trigger found."
+          fi
+
       - name: Set up Python
         if: steps.check_file.outputs.file_exists == 'true'
         uses: actions/setup-python@v5
@@ -45,7 +59,7 @@ jobs:
           pip install requests google-generativeai pdfplumber python-telegram-bot==20.7
 
       - name: Run Python script
-        if: steps.check_file.outputs.file_exists == 'true'
+        if: steps.check_file.outputs.file_exists == 'true' && (github.event_name != 'schedule' || steps.check_retry.outputs.retry_needed == 'true')
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -58,7 +72,7 @@ jobs:
         if: steps.check_file.outputs.file_exists == 'true'
         id: changes
         run: |
-          git add Report/* vocab_total.json 2>/dev/null || echo "no_new_files=true" >> $GITHUB_OUTPUT
+          git add Report/* vocab_total.json retry_trigger.json 2>/dev/null || echo "no_new_files=true" >> $GITHUB_OUTPUT
           git diff --staged --quiet || echo "has_changes=true" >> $GITHUB_OUTPUT
           echo "changes_detected=true" >> $GITHUB_OUTPUT
 
@@ -67,9 +81,21 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add Report/* vocab_total.json || true
+          git add Report/* vocab_total.json retry_trigger.json || true
           git commit -m "🤖 Auto-update: Processed report from processed2.json (manual: ${{ github.event_name == 'workflow_dispatch' }})"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove retry_trigger.json if successful
+        if: steps.check_file.outputs.file_exists == 'true' && steps.changes.outputs.has_changes == 'true'
+        run: |
+          if [ -f "retry_trigger.json" ]; then
+            rm retry_trigger.json
+            git add retry_trigger.json
+            git commit -m "🤖 Removed retry_trigger.json after successful run"
+            git push
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -80,6 +106,7 @@ jobs:
           echo "Trigger type: ${{ github.event_name }}"
           echo "Manual trigger: ${{ github.event_name == 'workflow_dispatch' }}"
           echo "File exists: ${{ steps.check_file.outputs.file_exists }}"
+          echo "Retry needed: ${{ steps.check_retry.outputs.retry_needed }}"
           echo "Changes detected: ${{ steps.changes.outputs.has_changes }}"
           if [ "${{ steps.check_file.outputs.file_exists }}" = "false" ]; then
             echo "❌ Failed: processed2.json not found"
