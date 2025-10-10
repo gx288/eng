@@ -12,8 +12,6 @@ on:
         required: false
         default: 'true'
         type: boolean
-  schedule:
-    - cron: '*/5 * * * *'  # Chạy mỗi 5 phút
 
 jobs:
   process:
