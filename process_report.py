@@ -18,9 +18,9 @@ def get_available_model():
         models = genai.list_models()
         available_models = [model.name for model in models if 'generateContent' in model.supported_generation_methods]
         print("Available models:", available_models)
-        # Ưu tiên gemini-1.5-flash-latest, nếu không thì gemini-pro, hoặc model đầu tiên
+        # Ưu tiên gemini-2.5-flash, nếu không thì gemini-pro, hoặc model đầu tiên
         for model in available_models:
-            if 'gemini-1.5-flash' in model:
+            if 'gemini-2.5-flash' in model:
                 return model
             if 'gemini-pro' in model:
                 return model
@@ -83,9 +83,12 @@ if not pdf_text:
     print("No text extracted from PDF. Exiting.")
     exit(1)
 
+# In độ dài pdf_text để debug
+print(f"Extracted PDF text length: {len(pdf_text)} characters")
+
 # Prompt cho Gemini API để extract đúng cấu trúc JSON
 system_prompt = """
-You are an extractor that always outputs in strict JSON format. Do not add any extra text outside the JSON.
+You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return empty values as specified.
 Extract from the given text:
 {
   "new_vocabulary": [],  // List of new English words/phrases (unique, lowercase, no duplicates)
@@ -105,13 +108,20 @@ if not model_name:
 
 print(f"Using model: {model_name}")
 
-try:
-    model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
-    response = model.generate_content(pdf_text)
-    extracted_data = json.loads(response.text)  # Giả sử output là JSON sạch
-except Exception as e:
-    print(f"Failed to process with Gemini API: {e}")
-    exit(1)
+# Thử gọi API với retry
+max_retries = 3
+for attempt in range(max_retries):
+    try:
+        model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
+        response = model.generate_content(pdf_text)
+        print(f"API response text: {response.text}")  # Debug output
+        extracted_data = json.loads(response.text)
+        break
+    except Exception as e:
+        print(f"Attempt {attempt + 1}/{max_retries} failed: {e}")
+        if attempt == max_retries - 1:
+            print("Failed to process with Gemini API after retries. Exiting.")
+            exit(1)
 
 # Quản lý từ vựng tổng (file vocab_total.json)
 vocab_file = 'vocab_total.json'
