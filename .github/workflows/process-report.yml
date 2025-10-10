@@ -1,9 +1,19 @@
 name: Process Report on JSON Change
 
+# Trigger tự động khi processed2.json thay đổi
 on:
   push:
     paths:
       - 'processed2.json'  # Chỉ trigger khi file này thay đổi
+
+# Trigger thủ công (workflow_dispatch)
+  workflow_dispatch:
+    inputs:
+      manual_trigger:
+        description: 'Manual trigger for processing report'
+        required: false
+        default: 'true'
+        type: boolean
 
 jobs:
   process:
@@ -11,26 +21,72 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Để git có thể detect changes
+
+      - name: Check if processed2.json exists
+        id: check_file
+        run: |
+          if [ -f "processed2.json" ]; then
+            echo "file_exists=true" >> $GITHUB_OUTPUT
+            echo "File processed2.json exists. Proceeding..."
+          else
+            echo "file_exists=false" >> $GITHUB_OUTPUT
+            echo "❌ processed2.json not found! Please ensure the file exists."
+            exit 1
+          fi
 
       - name: Set up Python
+        if: steps.check_file.outputs.file_exists == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install dependencies
+        if: steps.check_file.outputs.file_exists == 'true'
         run: |
           pip install requests google-generativeai pdfplumber
 
       - name: Run Python script
+        if: steps.check_file.outputs.file_exists == 'true'
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}  # Lấy từ Secrets
-        run: python process_report.py  # Giả sử script tên process_report.py
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          echo "Starting report processing..."
+          python process_report.py
+        continue-on-error: false
+
+      - name: Check if changes were made
+        if: steps.check_file.outputs.file_exists == 'true'
+        id: changes
+        run: |
+          git add Report/* vocab_total.json 2>/dev/null || echo "no_new_files=true" >> $GITHUB_OUTPUT
+          git diff --staged --quiet || echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "changes_detected=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
+        if: steps.check_file.outputs.file_exists == 'true' && steps.changes.outputs.has_changes == 'true'
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add Report/*
-          git add vocab_total.json  # File từ vựng tổng
-          git commit -m "Update report and vocab from processed2.json change" || echo "No changes to commit"
+          git add Report/* vocab_total.json || true
+          git commit -m "🤖 Auto-update: Processed report from processed2.json (manual: ${{ github.event_name == 'workflow_dispatch' }})"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "=== Workflow Summary ==="
+          echo "Trigger type: ${{ github.event_name }}"
+          echo "Manual trigger: ${{ github.event_name == 'workflow_dispatch' }}"
+          echo "File exists: ${{ steps.check_file.outputs.file_exists }}"
+          echo "Changes detected: ${{ steps.changes.outputs.has_changes }}"
+          if [ "${{ steps.check_file.outputs.file_exists }}" = "false" ]; then
+            echo "❌ Failed: processed2.json not found"
+          elif [ "${{ steps.changes.outputs.has_changes }}" = "true" ]; then
+            echo "✅ Successfully processed and committed changes"
+          else
+            echo "ℹ️ No new changes to commit"
+          fi
