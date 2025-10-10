@@ -303,10 +303,6 @@ async def send_report_to_telegram():
         
         comments_text = f"*NHẬN XÉT VỀ MINH HUY*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
         await send_telegram_message(bot, TELEGRAM_CHAT_ID, comments_text)
-        
-        links_text = "*LINKS LIÊN QUAN*\n" + "\n".join(f"• {link}" for link in result_data['links'])
-        if result_data['links']:
-            await send_telegram_message(bot, TELEGRAM_CHAT_ID, links_text)
     except Exception as e:
         print(f"Failed to send all Telegram messages: {e}")
         with open('retry_trigger.json', 'w', encoding='utf-8') as f:
