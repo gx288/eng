@@ -22,15 +22,22 @@ genai.configure(api_key=API_KEY)
 
 # Hàm escape ký tự cho MarkdownV2
 def escape_markdown_v2(text):
-    special_chars = r'[_*[]()~`>#+=|{}.!-]'
-    return re.sub(special_chars, r'\\\g<0>', text)
+    special_chars = r'([_*[\](){}~`>#+=|.!-])'
+    return re.sub(special_chars, r'\\\g<1>', text)
 
 # Hàm gửi tin nhắn Telegram bất đồng bộ
 async def send_telegram_message(bot, chat_id, text):
     try:
         text = escape_markdown_v2(text)
-        await bot.send_message(chat_id=chat_id, text=text, parse_mode='MarkdownV2')
-        await asyncio.sleep(0.5)
+        if len(text) > 4096:
+            print(f"Message too long ({len(text)} characters), splitting...")
+            parts = [text[i:i+4000] for i in range(0, len(text), 4000)]
+            for part in parts:
+                await bot.send_message(chat_id=chat_id, text=part, parse_mode='MarkdownV2')
+                await asyncio.sleep(0.5)
+        else:
+            await bot.send_message(chat_id=chat_id, text=text, parse_mode='MarkdownV2')
+            await asyncio.sleep(0.5)
     except Exception as e:
         print(f"Failed to send Telegram message: {e}")
         raise
@@ -64,7 +71,6 @@ def is_valid_response(extracted_data, expected_links):
         return False
     if not re.match(r'^\d{4}-\d{2}-\d{2}$', extracted_data['report_date']):
         return False
-    # Kiểm tra xem links có chứa ít nhất tất cả expected_links từ pdfplumber
     if not all(link in extracted_data['links'] for link in expected_links):
         return False
     return True
@@ -189,7 +195,6 @@ for script_attempt in range(max_script_retries):
             extracted_data = json.loads(cleaned_text)
             extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
             extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date))
-            # Điền nghĩa mặc định cho từ thiếu
             for word in extracted_data['new_vocabulary']:
                 if not extracted_data['new_vocabulary'][word]:
                     extracted_data['new_vocabulary'][word] = {
@@ -210,7 +215,6 @@ for script_attempt in range(max_script_retries):
         break
     elif script_attempt == max_script_retries - 1:
         print("Failed to get valid API response after all script retries.")
-        # Lưu trạng thái để chạy lại
         with open('retry_trigger.json', 'w', encoding='utf-8') as f:
             json.dump({"retry_needed": True, "last_attempt": script_attempt + 1}, f)
         print("Saved retry_trigger.json to schedule retry.")
@@ -305,7 +309,6 @@ async def send_report_to_telegram():
             await send_telegram_message(bot, TELEGRAM_CHAT_ID, links_text)
     except Exception as e:
         print(f"Failed to send all Telegram messages: {e}")
-        # Lưu trạng thái để chạy lại
         with open('retry_trigger.json', 'w', encoding='utf-8') as f:
             json.dump({"retry_needed": True, "last_attempt": "telegram_failed"}, f)
         print("Saved retry_trigger.json to schedule retry.")
