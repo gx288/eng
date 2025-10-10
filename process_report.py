@@ -12,6 +12,23 @@ if not API_KEY:
 
 genai.configure(api_key=API_KEY)
 
+# Kiểm tra danh sách model khả dụng
+def get_available_model():
+    try:
+        models = genai.list_models()
+        available_models = [model.name for model in models if 'generateContent' in model.supported_generation_methods]
+        print("Available models:", available_models)
+        # Ưu tiên gemini-1.5-flash-latest, nếu không thì gemini-pro, hoặc model đầu tiên
+        for model in available_models:
+            if 'gemini-1.5-flash' in model:
+                return model
+            if 'gemini-pro' in model:
+                return model
+        return available_models[0] if available_models else None
+    except Exception as e:
+        print(f"Failed to list models: {e}")
+        return None
+
 # Đọc processed2.json
 with open('processed2.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
@@ -80,8 +97,16 @@ Extract from the given text:
 If a field has no information, use empty list [] or empty string "".
 """
 
+# Chọn model
+model_name = get_available_model()
+if not model_name:
+    print("No suitable model found. Exiting.")
+    exit(1)
+
+print(f"Using model: {model_name}")
+
 try:
-    model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=system_prompt)
+    model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
     response = model.generate_content(pdf_text)
     extracted_data = json.loads(response.text)  # Giả sử output là JSON sạch
 except Exception as e:
