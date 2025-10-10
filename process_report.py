@@ -65,15 +65,22 @@ except requests.RequestException as e:
     print(f"Failed to download PDF: {e}")
     exit(1)
 
-# Extract text từ PDF
+# Extract text và links từ PDF
 pdf_text = ''
+pdf_links = []
 try:
     with pdfplumber.open(pdf_path) as pdf:
         for page in pdf.pages:
+            # Extract text
             text = page.extract_text()
             pdf_text += text or ''
+            # Extract hyperlinks từ annotations
+            if page.annots:
+                for annot in page.annots:
+                    if 'uri' in annot:
+                        pdf_links.append(annot['uri'])
 except Exception as e:
-    print(f"Failed to extract text from PDF: {e}")
+    print(f"Failed to extract text or links from PDF: {e}")
     os.remove(pdf_path)
     exit(1)
 
@@ -83,21 +90,26 @@ if not pdf_text:
     print("No text extracted from PDF. Exiting.")
     exit(1)
 
-# In độ dài pdf_text để debug
 print(f"Extracted PDF text length: {len(pdf_text)} characters")
+print(f"Extracted PDF links: {pdf_links}")
 
 # Prompt cho Gemini API để extract đúng cấu trúc JSON
 system_prompt = """
 You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return empty values as specified.
 Extract from the given text:
 {
-  "new_vocabulary": [],  // List of new English words/phrases (unique, lowercase, no duplicates)
-  "sentence_structures": [],  // List of full English sentences from the content
+  "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese or short explanation)
+  "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple)
   "report_date": "",  // Report date in YYYY-MM-DD (if not found, empty string)
   "lesson_title": "",  // Lesson title (if not found, empty string)
-  "homework": ""  // Homework description (if not found, empty string)
+  "homework": "",  // Homework description with any associated links (if not found, empty string)
+  "links": [],  // List of all URLs found in the content (e.g., homework links, YouTube videos)
+  "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, empty string)
 }
-If a field has no information, use empty list [] or empty string "".
+If a field has no information, use empty dictionary {}, empty list [], or empty string "".
+For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}).
+For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}).
+Include all URLs (e.g., YouTube, homework links) in the links field.
 """
 
 # Chọn model
@@ -114,8 +126,10 @@ for attempt in range(max_retries):
     try:
         model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
         response = model.generate_content(pdf_text)
-        print(f"API response text: {response.text}")  # Debug output
+        print(f"API response text: {response.text}")
         extracted_data = json.loads(response.text)
+        # Gộp links từ pdfplumber vào extracted_data['links']
+        extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
         break
     except Exception as e:
         print(f"Attempt {attempt + 1}/{max_retries} failed: {e}")
@@ -133,9 +147,13 @@ else:
 
 # Thêm từ mới (so sánh lowercase để tránh duplicate)
 new_vocab = extracted_data['new_vocabulary']
-new_vocab_lower = [v.lower() for v in new_vocab]
-total_vocab_lower = [v.lower() for v in total_vocab]
-added_vocab = [v for v in new_vocab if v.lower() not in total_vocab_lower]
+new_vocab_lower = {k.lower(): v for k, v in new_vocab.items()}
+total_vocab_lower = {item['word'].lower(): item['meaning'] for item in total_vocab}
+added_vocab = [
+    {"word": k, "meaning": v}
+    for k, v in new_vocab.items()
+    if k.lower() not in total_vocab_lower
+]
 total_vocab.extend(added_vocab)
 
 # Lưu vocab_total.json
