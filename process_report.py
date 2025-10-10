@@ -20,13 +20,20 @@ if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
 
 genai.configure(api_key=API_KEY)
 
+# Hàm escape ký tự cho MarkdownV2
+def escape_markdown_v2(text):
+    special_chars = r'[_*[]()~`>#+=|{}.!-]'
+    return re.sub(special_chars, r'\\\g<0>', text)
+
 # Hàm gửi tin nhắn Telegram bất đồng bộ
 async def send_telegram_message(bot, chat_id, text):
     try:
+        text = escape_markdown_v2(text)
         await bot.send_message(chat_id=chat_id, text=text, parse_mode='MarkdownV2')
         await asyncio.sleep(0.5)
     except Exception as e:
         print(f"Failed to send Telegram message: {e}")
+        raise
 
 # Kiểm tra danh sách model khả dụng
 def get_available_model(attempt=0):
@@ -34,7 +41,6 @@ def get_available_model(attempt=0):
         models = genai.list_models()
         available_models = [model.name for model in models if 'generateContent' in model.supported_generation_methods]
         print("Available models:", available_models)
-        # Ưu tiên gemini-2.5-flash, nếu không thì gemini-2.5-pro, rồi gemini-pro
         for model in available_models:
             if attempt == 0 and 'gemini-2.5-flash' in model:
                 return model
@@ -48,7 +54,7 @@ def get_available_model(attempt=0):
         return None
 
 # Kiểm tra API response có đầy đủ không
-def is_valid_response(extracted_data):
+def is_valid_response(extracted_data, expected_links):
     required_fields = ['new_vocabulary', 'sentence_structures', 'report_date', 'lesson_title', 'homework', 'links', 'student_comments_minh_huy']
     if not all(field in extracted_data for field in required_fields):
         return False
@@ -56,8 +62,10 @@ def is_valid_response(extracted_data):
         return False
     if not extracted_data['sentence_structures']:
         return False
-    # Kiểm tra report_date định dạng YYYY-MM-DD
     if not re.match(r'^\d{4}-\d{2}-\d{2}$', extracted_data['report_date']):
+        return False
+    # Kiểm tra xem links có chứa ít nhất tất cả expected_links từ pdfplumber
+    if not all(link in extracted_data['links'] for link in expected_links):
         return False
     return True
 
@@ -151,7 +159,7 @@ Extract from the given text:
   "links": [],  // List of all URLs found in the content (e.g., homework links, YouTube videos)
   "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, empty string)
 }
-For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning.
+For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning. For missing meanings, use a default dictionary (e.g., "pot": "cái nồi").
 For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}).
 Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
 Use date from input JSON if report_date is not found in text.
@@ -160,6 +168,7 @@ Use date from input JSON if report_date is not found in text.
 # Lặp lại script tối đa 3 lần
 max_script_retries = 3
 extracted_data = None
+success = False
 for script_attempt in range(max_script_retries):
     print(f"Script attempt {script_attempt + 1}/{max_script_retries}")
     
@@ -179,25 +188,33 @@ for script_attempt in range(max_script_retries):
             print(f"API response text (attempt {api_attempt + 1}): {cleaned_text}")
             extracted_data = json.loads(cleaned_text)
             extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
-            # Sửa report_date
             extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date))
-            if is_valid_response(extracted_data):
+            # Điền nghĩa mặc định cho từ thiếu
+            for word in extracted_data['new_vocabulary']:
+                if not extracted_data['new_vocabulary'][word]:
+                    extracted_data['new_vocabulary'][word] = {
+                        "pot": "cái nồi"
+                    }.get(word, "nghĩa không xác định")
+            if is_valid_response(extracted_data, pdf_links):
+                success = True
                 break
             else:
-                print(f"API response invalid (attempt {api_attempt + 1}): missing fields or empty meanings")
+                print(f"API response invalid (attempt {api_attempt + 1}): missing fields, empty meanings, or incomplete links")
         except Exception as e:
             print(f"API attempt {api_attempt + 1}/{max_api_retries} failed: {e}")
         if api_attempt == max_api_retries - 1 and not extracted_data:
             print("Failed to process with Gemini API after retries.")
             continue
     
-    if extracted_data and is_valid_response(extracted_data):
+    if success:
         break
     elif script_attempt == max_script_retries - 1:
-        print("Failed to get valid API response after all script retries. Using last response.")
-        if not extracted_data:
-            print("No valid response obtained. Exiting.")
-            exit(1)
+        print("Failed to get valid API response after all script retries.")
+        # Lưu trạng thái để chạy lại
+        with open('retry_trigger.json', 'w', encoding='utf-8') as f:
+            json.dump({"retry_needed": True, "last_attempt": script_attempt + 1}, f)
+        print("Saved retry_trigger.json to schedule retry.")
+        exit(1)
 
 # Quản lý từ vựng tổng
 vocab_file = 'vocab_total.json'
@@ -254,37 +271,44 @@ print(f"Processed and saved: {result_filename}")
 # Gửi tin nhắn Telegram
 async def send_report_to_telegram():
     bot = Bot(token=TELEGRAM_BOT_TOKEN)
-    
-    general_info = (
-        f"*BÁO CÁO BÀI HỌC*\n"
-        f"📅 *Ngày*: {result_data['report_date']}\n"
-        f"📚 *Tiêu đề*: {result_data['lesson_title']}\n"
-        f"🏫 *Lớp*: {result_data['class_name']}"
-    )
-    await send_telegram_message(bot, TELEGRAM_CHAT_ID, general_info)
-    
-    vocab_text = "*TỪ VỰNG MỚI*\n" + "\n".join(
-        f"• `{k}`: {v}" for k, v in result_data['new_vocabulary'].items()
-    )
-    if result_data['new_vocabulary']:
-        await send_telegram_message(bot, TELEGRAM_CHAT_ID, vocab_text)
-    
-    sentence_text = "*CẤU TRÚC CÂU*\n" + "\n".join(
-        f"• *{k}*: {v if isinstance(v, str) else ', '.join(v)}"
-        for k, v in result_data['sentence_structures'].items()
-    )
-    if result_data['sentence_structures']:
-        await send_telegram_message(bot, TELEGRAM_CHAT_ID, sentence_text)
-    
-    homework_text = f"*BÀI TẬP VỀ NHÀ*\n{result_data['homework']}"
-    if result_data['homework']:
-        await send_telegram_message(bot, TELEGRAM_CHAT_ID, homework_text)
-    
-    comments_text = f"*NHẬN XÉT VỀ MINH HUY*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
-    await send_telegram_message(bot, TELEGRAM_CHAT_ID, comments_text)
-    
-    links_text = "*LINKS LIÊN QUAN*\n" + "\n".join(f"• {link}" for link in result_data['links'])
-    if result_data['links']:
-        await send_telegram_message(bot, TELEGRAM_CHAT_ID, links_text)
+    try:
+        general_info = (
+            f"*BÁO CÁO BÀI HỌC*\n"
+            f"📅 *Ngày*: {result_data['report_date']}\n"
+            f"📚 *Tiêu đề*: {result_data['lesson_title']}\n"
+            f"🏫 *Lớp*: {result_data['class_name']}"
+        )
+        await send_telegram_message(bot, TELEGRAM_CHAT_ID, general_info)
+        
+        vocab_text = "*TỪ VỰNG MỚI*\n" + "\n".join(
+            f"• `{k}`: {v}" for k, v in result_data['new_vocabulary'].items()
+        )
+        if result_data['new_vocabulary']:
+            await send_telegram_message(bot, TELEGRAM_CHAT_ID, vocab_text)
+        
+        sentence_text = "*CẤU TRÚC CÂU*\n" + "\n".join(
+            f"• *{k}*: {v if isinstance(v, str) else ', '.join(v)}"
+            for k, v in result_data['sentence_structures'].items()
+        )
+        if result_data['sentence_structures']:
+            await send_telegram_message(bot, TELEGRAM_CHAT_ID, sentence_text)
+        
+        homework_text = f"*BÀI TẬP VỀ NHÀ*\n{result_data['homework']}"
+        if result_data['homework']:
+            await send_telegram_message(bot, TELEGRAM_CHAT_ID, homework_text)
+        
+        comments_text = f"*NHẬN XÉT VỀ MINH HUY*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
+        await send_telegram_message(bot, TELEGRAM_CHAT_ID, comments_text)
+        
+        links_text = "*LINKS LIÊN QUAN*\n" + "\n".join(f"• {link}" for link in result_data['links'])
+        if result_data['links']:
+            await send_telegram_message(bot, TELEGRAM_CHAT_ID, links_text)
+    except Exception as e:
+        print(f"Failed to send all Telegram messages: {e}")
+        # Lưu trạng thái để chạy lại
+        with open('retry_trigger.json', 'w', encoding='utf-8') as f:
+            json.dump({"retry_needed": True, "last_attempt": "telegram_failed"}, f)
+        print("Saved retry_trigger.json to schedule retry.")
+        exit(1)
 
 asyncio.run(send_report_to_telegram())
