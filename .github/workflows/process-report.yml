@@ -1,4 +1,4 @@
-name: Process Report on JSON Change
+name: Lay thong tin chi tiet Report
 
 on:
   push:
