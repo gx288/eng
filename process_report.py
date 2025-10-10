@@ -69,6 +69,10 @@ def is_valid_response(extracted_data, expected_links):
         return False
     if not extracted_data['sentence_structures']:
         return False
+    # Kiểm tra sentence_structures không chứa null hoặc giá trị không hợp lệ
+    for value in extracted_data['sentence_structures'].values():
+        if value is None or (not isinstance(value, (str, list)) or (isinstance(value, list) and any(not isinstance(v, str) for v in value))):
+            return False
     if not re.match(r'^\d{4}-\d{2}-\d{2}$', extracted_data['report_date']):
         return False
     if not all(link in extracted_data['links'] for link in expected_links):
@@ -158,7 +162,7 @@ You are an AI extractor that **must** output in strict JSON format with no extra
 Extract from the given text:
 {
   "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese, must not be empty)
-  "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple)
+  "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple, no null values)
   "report_date": "",  // Report date in YYYY-MM-DD (if not found, use date from input JSON)
   "lesson_title": "",  // Lesson title (if not found, empty string)
   "homework": "",  // Homework description with any associated links (if not found, empty string)
@@ -166,7 +170,7 @@ Extract from the given text:
   "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, empty string)
 }
 For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning. For missing meanings, use a default dictionary (e.g., "pot": "cái nồi").
-For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}).
+For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). Do not include null values.
 Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
 Use date from input JSON if report_date is not found in text.
 """
@@ -195,16 +199,22 @@ for script_attempt in range(max_script_retries):
             extracted_data = json.loads(cleaned_text)
             extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
             extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date))
+            # Điền nghĩa mặc định cho từ vựng thiếu
             for word in extracted_data['new_vocabulary']:
                 if not extracted_data['new_vocabulary'][word]:
                     extracted_data['new_vocabulary'][word] = {
                         "pot": "cái nồi"
                     }.get(word, "nghĩa không xác định")
+            # Loại bỏ null trong sentence_structures
+            extracted_data['sentence_structures'] = {
+                k: v for k, v in extracted_data['sentence_structures'].items()
+                if v is not None and (isinstance(v, str) or (isinstance(v, list) and all(isinstance(x, str) for x in v)))
+            }
             if is_valid_response(extracted_data, pdf_links):
                 success = True
                 break
             else:
-                print(f"API response invalid (attempt {api_attempt + 1}): missing fields, empty meanings, or incomplete links")
+                print(f"API response invalid (attempt {api_attempt + 1}): missing fields, empty meanings, null values, or incomplete links")
         except Exception as e:
             print(f"API attempt {api_attempt + 1}/{max_api_retries} failed: {e}")
         if api_attempt == max_api_retries - 1 and not extracted_data:
@@ -293,6 +303,7 @@ async def send_report_to_telegram():
         sentence_text = "*CẤU TRÚC CÂU*\n" + "\n".join(
             f"• *{k}*: {v if isinstance(v, str) else ', '.join(v)}"
             for k, v in result_data['sentence_structures'].items()
+            if v is not None
         )
         if result_data['sentence_structures']:
             await send_telegram_message(bot, TELEGRAM_CHAT_ID, sentence_text)
