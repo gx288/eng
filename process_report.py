@@ -29,6 +29,19 @@ def get_available_model():
         print(f"Failed to list models: {e}")
         return None
 
+# Kiểm tra API response có đầy đủ không
+def is_valid_response(extracted_data):
+    required_fields = ['new_vocabulary', 'sentence_structures', 'report_date', 'lesson_title', 'homework', 'links', 'student_comments_minh_huy']
+    if not all(field in extracted_data for field in required_fields):
+        return False
+    # Kiểm tra new_vocabulary: không có từ nào thiếu nghĩa
+    if not extracted_data['new_vocabulary'] or any(not meaning for meaning in extracted_data['new_vocabulary'].values()):
+        return False
+    # Kiểm tra sentence_structures: không rỗng
+    if not extracted_data['sentence_structures']:
+        return False
+    return True
+
 # Đọc processed2.json
 with open('processed2.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
@@ -98,7 +111,7 @@ system_prompt = """
 You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return empty values as specified.
 Extract from the given text:
 {
-  "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese or short explanation)
+  "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese, must not be empty)
   "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple)
   "report_date": "",  // Report date in YYYY-MM-DD (if not found, empty string)
   "lesson_title": "",  // Lesson title (if not found, empty string)
@@ -106,10 +119,9 @@ Extract from the given text:
   "links": [],  // List of all URLs found in the content (e.g., homework links, YouTube videos)
   "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, empty string)
 }
-If a field has no information, use empty dictionary {}, empty list [], or empty string "".
-For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}).
+For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning.
 For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}).
-Include all URLs (e.g., YouTube, homework links) in the links field.
+Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
 """
 
 # Chọn model
@@ -120,39 +132,68 @@ if not model_name:
 
 print(f"Using model: {model_name}")
 
-# Thử gọi API với retry
-max_retries = 3
-for attempt in range(max_retries):
-    try:
-        model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
-        response = model.generate_content(pdf_text)
-        print(f"API response text: {response.text}")
-        extracted_data = json.loads(response.text)
-        # Gộp links từ pdfplumber vào extracted_data['links']
-        extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
-        break
-    except Exception as e:
-        print(f"Attempt {attempt + 1}/{max_retries} failed: {e}")
-        if attempt == max_retries - 1:
+# Lặp lại toàn bộ script tối đa 3 lần
+max_script_retries = 3
+for script_attempt in range(max_script_retries):
+    print(f"Script attempt {script_attempt + 1}/{max_script_retries}")
+    
+    # Thử gọi API với retry nội bộ
+    max_api_retries = 3
+    extracted_data = None
+    for api_attempt in range(max_api_retries):
+        try:
+            model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
+            response = model.generate_content(pdf_text)
+            print(f"API response text (attempt {api_attempt + 1}): {response.text}")
+            extracted_data = json.loads(response.text)
+            # Gộp links từ pdfplumber vào extracted_data['links']
+            extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
+            if is_valid_response(extracted_data):
+                break
+            else:
+                print(f"API response invalid (attempt {api_attempt + 1}): missing fields or empty meanings")
+        except Exception as e:
+            print(f"API attempt {api_attempt + 1}/{max_api_retries} failed: {e}")
+        if api_attempt == max_api_retries - 1 and not extracted_data:
             print("Failed to process with Gemini API after retries. Exiting.")
+            exit(1)
+    
+    if extracted_data and is_valid_response(extracted_data):
+        break
+    elif script_attempt == max_script_retries - 1:
+        print("Failed to get valid API response after all script retries. Using last response.")
+        if not extracted_data:
+            print("No valid response obtained. Exiting.")
             exit(1)
 
 # Quản lý từ vựng tổng (file vocab_total.json)
 vocab_file = 'vocab_total.json'
 if os.path.exists(vocab_file):
-    with open(vocab_file, 'r', encoding='utf-8') as f:
-        total_vocab = json.load(f).get('vocabulary', [])
+    try:
+        with open(vocab_file, 'r', encoding='utf-8') as f:
+            vocab_data = json.load(f)
+            # Kiểm tra định dạng vocab_total.json
+            if isinstance(vocab_data, dict) and 'vocabulary' in vocab_data:
+                total_vocab = vocab_data['vocabulary']
+            elif isinstance(vocab_data, list) and all(isinstance(item, str) for item in vocab_data):
+                # Chuyển từ danh sách chuỗi sang danh sách dictionary với meaning rỗng
+                total_vocab = [{"word": word, "meaning": ""} for word in vocab_data]
+            else:
+                total_vocab = []
+    except Exception as e:
+        print(f"Error reading vocab_total.json: {e}. Starting with empty vocab.")
+        total_vocab = []
 else:
     total_vocab = []
 
 # Thêm từ mới (so sánh lowercase để tránh duplicate)
 new_vocab = extracted_data['new_vocabulary']
 new_vocab_lower = {k.lower(): v for k, v in new_vocab.items()}
-total_vocab_lower = {item['word'].lower(): item['meaning'] for item in total_vocab}
+total_vocab_lower = {item['word'].lower(): item['meaning'] for item in total_vocab if isinstance(item, dict)}
 added_vocab = [
     {"word": k, "meaning": v}
     for k, v in new_vocab.items()
-    if k.lower() not in total_vocab_lower
+    if k.lower() not in total_vocab_lower or total_vocab_lower.get(k.lower(), '') == ''
 ]
 total_vocab.extend(added_vocab)
 
