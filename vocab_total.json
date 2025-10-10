@@ -11,6 +11,50 @@
         "dog",
         "hog",
         "mop",
-        "pot"
+        "pot",
+        {
+            "word": "pen",
+            "meaning": "bút mực"
+        },
+        {
+            "word": "pencil",
+            "meaning": "bút chì"
+        },
+        {
+            "word": "book",
+            "meaning": "sách"
+        },
+        {
+            "word": "ruler",
+            "meaning": "thước kẻ"
+        },
+        {
+            "word": "crayons",
+            "meaning": "sáp màu"
+        },
+        {
+            "word": "chair",
+            "meaning": "ghế"
+        },
+        {
+            "word": "paper",
+            "meaning": "giấy"
+        },
+        {
+            "word": "scissors",
+            "meaning": "kéo"
+        },
+        {
+            "word": "dog",
+            "meaning": "chó"
+        },
+        {
+            "word": "hog",
+            "meaning": "lợn rừng"
+        },
+        {
+            "word": "mop",
+            "meaning": "chổi lau nhà"
+        }
     ]
 }
