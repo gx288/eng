@@ -1,12 +1,9 @@
 name: Process Report on JSON Change
 
-# Trigger tự động khi processed2.json thay đổi
 on:
   push:
     paths:
-      - 'processed2.json'  # Chỉ trigger khi file này thay đổi
-
-# Trigger thủ công (workflow_dispatch)
+      - 'processed2.json'
   workflow_dispatch:
     inputs:
       manual_trigger:
@@ -22,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Để git có thể detect changes
+          fetch-depth: 0
 
       - name: Check if processed2.json exists
         id: check_file
@@ -32,7 +29,7 @@ jobs:
             echo "File processed2.json exists. Proceeding..."
           else
             echo "file_exists=false" >> $GITHUB_OUTPUT
-            echo "❌ processed2.json not found! Please ensure the file exists."
+            echo "❌ processed2.json not found!"
             exit 1
           fi
 
@@ -45,16 +42,17 @@ jobs:
       - name: Install dependencies
         if: steps.check_file.outputs.file_exists == 'true'
         run: |
-          pip install requests google-generativeai pdfplumber
+          pip install requests google-generativeai pdfplumber python-telegram-bot==20.7
 
       - name: Run Python script
         if: steps.check_file.outputs.file_exists == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           echo "Starting report processing..."
           python process_report.py
-        continue-on-error: false
 
       - name: Check if changes were made
         if: steps.check_file.outputs.file_exists == 'true'
