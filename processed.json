@@ -66,8 +66,8 @@
       "has_errors": false
     },
     "10156": {
-      "last_lesson": 33,
-      "total_lessons": 0,
+      "last_lesson": 34,
+      "total_lessons": 35,
       "has_errors": false
     },
     "10192": {
@@ -78,26 +78,6 @@
     "10092": {
       "last_lesson": 33,
       "total_lessons": 0,
-      "has_errors": false
-    },
-    "10717": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10788": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10668": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10156": {
-      "last_lesson": 34,
-      "total_lessons": 35,
       "has_errors": false
     }
   },
@@ -140,18 +120,18 @@
       "has_errors": false
     },
     "11128": {
-      "last_lesson": 10,
-      "total_lessons": 0,
-      "has_errors": false
-    },
-    "11128": {
       "last_lesson": 13,
       "total_lessons": 14,
       "has_errors": false
     },
     "11124": {
-      "last_lesson": 3,
+      "last_lesson": 13,
       "total_lessons": 14,
+      "has_errors": false
+    },
+    "11114": {
+      "last_lesson": 13,
+      "total_lessons": 0,
       "has_errors": false
     }
   },
@@ -170,12 +150,37 @@
       "last_lesson": 13,
       "total_lessons": 0,
       "has_errors": false
+    },
+    "11142": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11137": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Summer Smart 2": {
     "11191": {
       "last_lesson": 13,
       "total_lessons": 14,
+      "has_errors": false
+    },
+    "11178": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11165": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11159": {
+      "last_lesson": 13,
+      "total_lessons": 0,
       "has_errors": false
     }
   },
@@ -184,12 +189,42 @@
       "last_lesson": 13,
       "total_lessons": 14,
       "has_errors": false
+    },
+    "11183": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11163": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11158": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Summer Smart 1": {
     "11184": {
       "last_lesson": 13,
       "total_lessons": 14,
+      "has_errors": false
+    },
+    "11164": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11150": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11123": {
+      "last_lesson": 13,
+      "total_lessons": 0,
       "has_errors": false
     }
   },
@@ -198,6 +233,11 @@
       "last_lesson": 13,
       "total_lessons": 14,
       "has_errors": false
+    },
+    "11154": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Summer Smart 5": {
@@ -205,12 +245,22 @@
       "last_lesson": 13,
       "total_lessons": 14,
       "has_errors": false
+    },
+    "11160": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Summer Smart 6": {
     "11143": {
       "last_lesson": 13,
       "total_lessons": 14,
+      "has_errors": false
+    },
+    "11125": {
+      "last_lesson": 13,
+      "total_lessons": 0,
       "has_errors": false
     }
   },
@@ -226,6 +276,11 @@
       "last_lesson": 7,
       "total_lessons": 8,
       "has_errors": false
+    },
+    "10804": {
+      "last_lesson": 7,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Reading Skills 2": {
@@ -233,12 +288,87 @@
       "last_lesson": 51,
       "total_lessons": 31,
       "has_errors": false
+    },
+    "10765": {
+      "last_lesson": 38,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10638": {
+      "last_lesson": 51,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10678": {
+      "last_lesson": 51,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10643": {
+      "last_lesson": 51,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10548": {
+      "last_lesson": 51,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10372": {
+      "last_lesson": 49,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10226": {
+      "last_lesson": 51,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10298": {
+      "last_lesson": 46,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Cambridge Literacy Ladder 1": {
     "11006": {
       "last_lesson": 65,
       "total_lessons": 29,
+      "has_errors": false
+    },
+    "10576": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10557": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10523": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10385": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10369": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10434": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10280": {
+      "last_lesson": 61,
+      "total_lessons": 0,
       "has_errors": false
     }
   },
@@ -422,6 +552,11 @@
       "last_lesson": 26,
       "total_lessons": 0,
       "has_errors": false
+    },
+    "11680": {
+      "last_lesson": 0,
+      "total_lessons": 70,
+      "has_errors": true
     }
   },
   "Reader's Wonderland 1.3": {
