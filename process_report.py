@@ -3,6 +3,7 @@ import os
 import requests
 import pdfplumber
 import google.generativeai as genai
+from urllib.parse import parse_qs, urlparse
 
 # Lấy API key từ environment (GitHub Secrets)
 API_KEY = os.getenv('GEMINI_API_KEY')
@@ -21,43 +22,71 @@ report_url = data.get('report_url', '')
 
 if not report_url:
     print("No report_url found in JSON. Exiting.")
-    exit(0)
+    exit(1)
 
-# Tải PDF từ URL (lưu tạm)
+# Xử lý Google Docs viewer URL
+parsed_url = urlparse(report_url)
+query_params = parse_qs(parsed_url.query)
+direct_pdf_url = query_params.get('url', [None])[0]
+
+if not direct_pdf_url:
+    print("Could not extract direct PDF URL from Google Docs viewer. Exiting.")
+    exit(1)
+
+# Tải PDF từ URL trực tiếp
 pdf_path = 'temp_report.pdf'
-response = requests.get(report_url)
-with open(pdf_path, 'wb') as f:
-    f.write(response.content)
+try:
+    response = requests.get(direct_pdf_url, timeout=10)
+    response.raise_for_status()  # Kiểm tra lỗi HTTP
+    content_type = response.headers.get('content-type', '')
+    if 'application/pdf' not in content_type:
+        print(f"Downloaded file is not a PDF (Content-Type: {content_type}). Exiting.")
+        exit(1)
+    with open(pdf_path, 'wb') as f:
+        f.write(response.content)
+except requests.RequestException as e:
+    print(f"Failed to download PDF: {e}")
+    exit(1)
 
 # Extract text từ PDF
 pdf_text = ''
-with pdfplumber.open(pdf_path) as pdf:
-    for page in pdf.pages:
-        pdf_text += page.extract_text() or ''
+try:
+    with pdfplumber.open(pdf_path) as pdf:
+        for page in pdf.pages:
+            text = page.extract_text()
+            pdf_text += text or ''
+except Exception as e:
+    print(f"Failed to extract text from PDF: {e}")
+    os.remove(pdf_path)
+    exit(1)
 
 os.remove(pdf_path)  # Xóa file tạm
 
 if not pdf_text:
     print("No text extracted from PDF. Exiting.")
-    exit(0)
+    exit(1)
 
 # Prompt cho Gemini API để extract đúng cấu trúc JSON
 system_prompt = """
 You are an extractor that always outputs in strict JSON format. Do not add any extra text outside the JSON.
 Extract from the given text:
 {
-  "new_vocabulary": []  // List of new English words/phrases (unique, lowercase, no duplicates)
-  "sentence_structures": []  // List of full English sentences from the content
-  "report_date": ""  // Report date in YYYY-MM-DD (if not found, empty string)
-  "lesson_title": ""  // Lesson title (if not found, empty string)
+  "new_vocabulary": [],  // List of new English words/phrases (unique, lowercase, no duplicates)
+  "sentence_structures": [],  // List of full English sentences from the content
+  "report_date": "",  // Report date in YYYY-MM-DD (if not found, empty string)
+  "lesson_title": "",  // Lesson title (if not found, empty string)
   "homework": ""  // Homework description (if not found, empty string)
 }
 If a field has no information, use empty list [] or empty string "".
 """
 
-model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=system_prompt)
-response = model.generate_content(pdf_text)
-extracted_data = json.loads(response.text)  # Giả sử output là JSON sạch
+try:
+    model = genai.GenerativeModel('gemini-1.5-flash', system_instruction=system_prompt)
+    response = model.generate_content(pdf_text)
+    extracted_data = json.loads(response.text)  # Giả sử output là JSON sạch
+except Exception as e:
+    print(f"Failed to process with Gemini API: {e}")
+    exit(1)
 
 # Quản lý từ vựng tổng (file vocab_total.json)
 vocab_file = 'vocab_total.json'
