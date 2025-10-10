@@ -18,12 +18,12 @@
     "10717": {
       "last_lesson": 34,
       "total_lessons": 35,
-      "has_errors": true
+      "has_errors": false
     },
     "10788": {
       "last_lesson": 34,
       "total_lessons": 35,
-      "has_errors": true
+      "has_errors": false
     },
     "10740": {
       "last_lesson": 33,
@@ -33,12 +33,12 @@
     "10729": {
       "last_lesson": 33,
       "total_lessons": 34,
-      "has_errors": true
+      "has_errors": false
     },
     "10668": {
       "last_lesson": 34,
       "total_lessons": 35,
-      "has_errors": true
+      "has_errors": false
     },
     "10712": {
       "last_lesson": 33,
@@ -48,17 +48,42 @@
     "10508": {
       "last_lesson": 33,
       "total_lessons": 34,
-      "has_errors": true
+      "has_errors": false
     },
     "10398": {
       "last_lesson": 33,
       "total_lessons": 34,
-      "has_errors": true
+      "has_errors": false
     },
     "10500": {
-      "last_lesson": 6,
+      "last_lesson": 33,
       "total_lessons": 34,
-      "has_errors": true
+      "has_errors": false
+    },
+    "10239": {
+      "last_lesson": 33,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10156": {
+      "last_lesson": 33,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10192": {
+      "last_lesson": 33,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10092": {
+      "last_lesson": 33,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10717": {
+      "last_lesson": 34,
+      "total_lessons": 35,
+      "has_errors": false
     }
   },
   "Summer Kindy 4": {
@@ -73,6 +98,11 @@
       "has_errors": false
     },
     "11204": {
+      "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11140": {
       "last_lesson": 13,
       "total_lessons": 0,
       "has_errors": false
@@ -91,6 +121,11 @@
     },
     "11152": {
       "last_lesson": 13,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "11128": {
+      "last_lesson": 10,
       "total_lessons": 0,
       "has_errors": false
     }
