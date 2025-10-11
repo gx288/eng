@@ -288,20 +288,20 @@ async def send_report_to_telegram():
     bot = Bot(token=TELEGRAM_BOT_TOKEN)
     try:
         general_info = (
-            f"*BÁO CÁO BÀI HỌC*\n"
+            f"*BÁO CÁO BÀI HỌC - {result_data['report_date']}*\n"
             f"📅 *Ngày*: {result_data['report_date']}\n"
             f"📚 *Tiêu đề*: {result_data['lesson_title']}\n"
             f"🏫 *Lớp*: {result_data['class_name']}"
         )
         await send_telegram_message(bot, TELEGRAM_CHAT_ID, general_info)
         
-        vocab_text = "*TỪ VỰNG MỚI*\n" + "\n".join(
+        vocab_text = f"*TỪ VỰNG MỚI - {result_data['report_date']}*\n" + "\n".join(
             f"• `{k}`: {v}" for k, v in result_data['new_vocabulary'].items()
         )
         if result_data['new_vocabulary']:
             await send_telegram_message(bot, TELEGRAM_CHAT_ID, vocab_text)
         
-        sentence_text = "*CẤU TRÚC CÂU*\n" + "\n".join(
+        sentence_text = f"*CẤU TRÚC CÂU - {result_data['report_date']}*\n" + "\n".join(
             f"• *{k}*: {v if isinstance(v, str) else ', '.join(v)}"
             for k, v in result_data['sentence_structures'].items()
             if v is not None
@@ -309,11 +309,11 @@ async def send_report_to_telegram():
         if result_data['sentence_structures']:
             await send_telegram_message(bot, TELEGRAM_CHAT_ID, sentence_text)
         
-        homework_text = f"*BÀI TẬP VỀ NHÀ*\n{result_data['homework']}"
+        homework_text = f"*BÀI TẬP VỀ NHÀ - {result_data['report_date']}*\n{result_data['homework']}"
         if result_data['homework'] and result_data['homework'] != "cannot find info":
             await send_telegram_message(bot, TELEGRAM_CHAT_ID, homework_text)
         
-        comments_text = f"*NHẬN XÉT VỀ MINH HUY*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
+        comments_text = f"*NHẬN XÉT VỀ MINH HUY - {result_data['report_date']}*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
         if result_data['student_comments_minh_huy'] and result_data['student_comments_minh_huy'] != "cannot find info":
             await send_telegram_message(bot, TELEGRAM_CHAT_ID, comments_text)
     except Exception as e:
