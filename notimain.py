@@ -130,7 +130,7 @@ def update_google_sheet(date, class_name, report_url, timestamp):
     return False
 
 # Update ReportContent sheet
-def update_report_content_sheet(extracted_data, class_name, date_str, timestamp):
+def update_report_content_sheet(extracted_data, class_name, date_str, lesson_title):
     log_message(f"Updating Google Sheet '{REPORT_CONTENT_SHEET}' with extracted data")
     max_retries = 3
     for attempt in range(max_retries):
@@ -141,49 +141,51 @@ def update_report_content_sheet(extracted_data, class_name, date_str, timestamp)
             worksheet = sheet.worksheet(REPORT_CONTENT_SHEET)
             
             # Add separator row
-            separator_row = ["----------", "", "", "", "", "", "", "", ""]
+            separator_row = ["----------", "", "", "", "", ""]
             worksheet.append_row(separator_row)
             log_message("Added separator row to ReportContent sheet")
             
             # Add class info row
-            class_info_row = [f"Class: {class_name}, Date: {date_str}", "", "", "", "", "", "", "", ""]
+            class_info_row = [f"Class: {class_name}, Date: {date_str}, Lesson: {lesson_title}", "", "", "", "", ""]
             worksheet.append_row(class_info_row)
-            log_message(f"Added class info row to '{REPORT_CONTENT_SHEET}': Class: {class_name}, Date: {date_str}")
+            log_message(f"Added class info row to '{REPORT_CONTENT_SHEET}': Class: {class_name}, Date: {date_str}, Lesson: {lesson_title}")
             
-            # Format data for first row
-            sentence_structures_csv = ",".join([f"{k}:{v if isinstance(v, str) else '; '.join(v)}" for k, v in extracted_data['sentence_structures'].items() if v])
-            links_csv = ",".join(extracted_data['links'])
+            # Prepare data rows
+            vocab_list = [(k, v) for k, v in extracted_data['new_vocabulary'].items()]
+            sentence_list = [(k, v if isinstance(v, str) else '; '.join(v)) for k, v in extracted_data['sentence_structures'].items() if v]
+            link_list = extracted_data['links']
+            
+            # Determine the maximum number of rows needed
+            max_rows = max(len(vocab_list), len(sentence_list), len(link_list))
             
             # First row with full data
             first_row = [
-                extracted_data['report_date'],
-                class_name,
-                extracted_data['lesson_title'],
-                "",  # New Vocabulary will be filled in subsequent rows
-                sentence_structures_csv,
-                extracted_data['homework'],
-                links_csv,
+                vocab_list[0][0] if vocab_list else "",
+                vocab_list[0][1] if vocab_list else "",
+                f"{sentence_list[0][0]}:{sentence_list[0][1]}" if sentence_list else "",
+                link_list[0] if link_list else "",
                 extracted_data['student_comments_minh_huy'] or "Không có nhận xét",
-                timestamp
+                extracted_data['report_date']
             ]
-            
-            # Add vocabulary rows
-            vocab_rows = []
-            if extracted_data['new_vocabulary']:
-                first_word, first_meaning = next(iter(extracted_data['new_vocabulary'].items()))
-                first_row[3] = f"{first_word}:{first_meaning}"  # Put first vocab in first row
-                vocab_rows = [
-                    ["", "", "", f"{k}:{v}", "", "", "", "", ""]
-                    for k, v in list(extracted_data['new_vocabulary'].items())[1:]
-                ]
-            
-            # Append rows
             worksheet.append_row(first_row)
             log_message(f"Added first row to '{REPORT_CONTENT_SHEET}': {extracted_data['report_date']}, {class_name}")
             
-            if vocab_rows:
-                worksheet.append_rows(vocab_rows)
-                log_message(f"Added {len(vocab_rows)} additional vocabulary rows to '{REPORT_CONTENT_SHEET}'")
+            # Additional rows for remaining data
+            additional_rows = []
+            for i in range(1, max_rows):
+                row = [
+                    vocab_list[i][0] if i < len(vocab_list) else "",
+                    vocab_list[i][1] if i < len(vocab_list) else "",
+                    f"{sentence_list[i][0]}:{sentence_list[i][1]}" if i < len(sentence_list) else "",
+                    link_list[i] if i < len(link_list) else "",
+                    "",  # Student comments only in first row
+                    ""   # Report date only in first row
+                ]
+                additional_rows.append(row)
+            
+            if additional_rows:
+                worksheet.append_rows(additional_rows)
+                log_message(f"Added {len(additional_rows)} additional rows to '{REPORT_CONTENT_SHEET}'")
             
             return True
         except Exception as e:
@@ -322,9 +324,14 @@ def get_available_model(attempt=0):
 
 # Fix invalid report date
 def fix_report_date(date_str, fallback_date):
-    if date_str.startswith('20225'):
-        return '2025' + date_str[5:]
-    return date_str or fallback_date
+    try:
+        # Parse the date string and ensure it's in GMT+7
+        parsed_date = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=ZoneInfo("Asia/Ho_Chi_Minh"))
+        return parsed_date.strftime("%Y-%m-%d")
+    except (ValueError, TypeError):
+        # Use fallback date and ensure GMT+7
+        parsed_fallback = datetime.strptime(fallback_date, "%Y-%m-%d").replace(tzinfo=ZoneInfo("Asia/Ho_Chi_Minh"))
+        return parsed_fallback.strftime("%Y-%m-%d")
 
 # Fix invalid JSON
 def fix_invalid_json(text):
@@ -601,7 +608,7 @@ def process_report():
                         }
 
             # Update ReportContent sheet
-            update_report_content_sheet(extracted_data, class_name, date_str, timestamp)
+            update_report_content_sheet(extracted_data, class_name, date_str, extracted_data['lesson_title'])
 
             log_message("Processing total vocabulary")
             if os.path.exists(VOCAB_FILE):
