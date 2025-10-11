@@ -4,3 +4,4 @@ webdriver-manager
 gspread
 oauth2client
 requests
+pdfplumber
