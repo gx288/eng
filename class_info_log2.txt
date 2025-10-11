@@ -309,3 +309,36 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1BDx
 [2025-10-09 16:05:28] Saved processed2.json successfully
 [2025-10-09 16:05:28] Git repository detected
 [2025-10-09 16:05:28] Committing and pushing changes to GitHub
+[2025-10-11 13:24:04] Starting script
+[2025-10-11 13:24:04] Starting report check for calendar overview
+[2025-10-11 13:24:04] Loaded processed2.json: {'date': '2025-10-08', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1BDxZnEV4jcYv_rUdAlkZHyPoBd9F27aj/export?format=pdf'}
+[2025-10-11 13:24:04] Initializing Chrome WebDriver
+[2025-10-11 13:24:13] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-11 13:24:18] Entering username: 61655HN
+[2025-10-11 13:24:19] Entering password
+[2025-10-11 13:24:19] Clicking login button
+[2025-10-11 13:24:24] Login successful
+[2025-10-11 13:24:24] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2025-10-11 13:24:33] Scrolled to bottom of page
+[2025-10-11 13:24:33] Finding all class events
+[2025-10-11 13:24:33] Found 20 class events
+[2025-10-11 13:24:33] Latest class date before today: 2025-10-10
+[2025-10-11 13:24:33] Clicking on event for 2025-10-10
+[2025-10-11 13:24:36] Checking popup for class information
+[2025-10-11 13:24:36] Class name from popup: VQ2-K2-2501
+[2025-10-11 13:24:36] Checking report button in popup
+[2025-10-11 13:24:36] Report button is enabled, clicking to get report URL
+[2025-10-11 13:24:39] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pF75uhDmtQAtxFd6QpDMs8DLfknfqxf1/export?format=pdf
+[2025-10-11 13:24:39] Preparing to send Telegram notification
+[2025-10-11 13:24:39] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-10
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pF75uhDmtQAtxFd6QpDMs8DLfknfqxf1/export?format=pdf
+[2025-10-11 13:24:40] Telegram notification sent successfully to chat_id 1900957785
+[2025-10-11 13:24:40] Sending Telegram message to chat_id g: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-10
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pF75uhDmtQAtxFd6QpDMs8DLfknfqxf1/export?format=pdf
+[2025-10-11 13:24:40] Telegram send failed for chat_id g: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[2025-10-11 13:24:40] Updating Google Sheet with Date 2025-10-10, Class VQ2-K2-2501, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pF75uhDmtQAtxFd6QpDMs8DLfknfqxf1/export?format=pdf
+[2025-10-11 13:24:42] Updated Google Sheet successfully: 2025-10-10, VQ2-K2-2501, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pF75uhDmtQAtxFd6QpDMs8DLfknfqxf1/export?format=pdf at 2025-10-11 13:24:39
+[2025-10-11 13:24:42] Saving processed data to processed2.json
+[2025-10-11 13:24:42] Saved processed2.json successfully
+[2025-10-11 13:24:42] Git repository detected
+[2025-10-11 13:24:42] Committing and pushing changes to GitHub
