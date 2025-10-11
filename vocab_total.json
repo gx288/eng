@@ -1,17 +1,5 @@
 {
     "vocabulary": [
-        "pen",
-        "pencil",
-        "book",
-        "ruler",
-        "crayons",
-        "chair",
-        "paper",
-        "scissors",
-        "dog",
-        "hog",
-        "mop",
-        "pot",
         {
             "word": "pen",
             "meaning": "bút mực"
