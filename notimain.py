@@ -140,28 +140,30 @@ def update_report_content_sheet(extracted_data, class_name, date_str, lesson_tit
             sheet = client.open_by_key(SHEET_ID)
             worksheet = sheet.worksheet(REPORT_CONTENT_SHEET)
             
+            # Get current timestamp for Check Time (GMT+7)
+            check_time = datetime.now(tz=ZoneInfo("Asia/Ho_Chi_Minh")).strftime("%Y-%m-%d %H:%M:%S")
+            
             # Prepare data lists
             vocab_list = [(k, v) for k, v in extracted_data['new_vocabulary'].items()]
             sentence_list = [(k, v if isinstance(v, str) else '; '.join(v)) for k, v in extracted_data['sentence_structures'].items() if v]
             link_list = extracted_data['links']
             comments = extracted_data['student_comments_minh_huy'] or 'Không có nhận xét'
-            report_date = extracted_data['report_date']
             
             # Create rows for insertion
             rows = [
-                ["----------", "", ""],
-                [f"Class: {class_name}, Date: {date_str}, Lesson: {lesson_title}", "", ""]
+                ["----------", "", "", "", ""],
+                [f"Class: {class_name}", "", f"Date: {date_str}", "", f"Lesson: {lesson_title}"]
             ]
             
             # Add links row if there are links
             if link_list:
-                rows.append([f"Links: {'; '.join(link_list)}", "", ""])
+                rows.append([f"Links: {'; '.join(link_list)}", "", "", "", ""])
             
-            # Add report date row
-            rows.append([f"Report Date: {report_date}", "", ""])
+            # Add check time row
+            rows.append([f"Check Time: {check_time}", "", "", "", ""])
             
             # Add comments row
-            rows.append([f"Comments about Minh Huy: {comments}", "", ""])
+            rows.append([f"Comments about Minh Huy: {comments}", "", "", "", ""])
             
             # Add vocabulary and sentence structure rows
             num_rows = max(len(vocab_list), len(sentence_list), 1)  # Ensure at least one row
@@ -169,7 +171,9 @@ def update_report_content_sheet(extracted_data, class_name, date_str, lesson_tit
                 row = [
                     vocab_list[i][0] if i < len(vocab_list) else "",  # Word
                     vocab_list[i][1] if i < len(vocab_list) else "",  # Meaning
-                    f"{sentence_list[i][0]}:{sentence_list[i][1]}" if i < len(sentence_list) else ""  # Sentence structure
+                    f"{sentence_list[i][0]}:{sentence_list[i][1]}" if i < len(sentence_list) else "",  # Sentence structure
+                    "",  # Empty column D
+                    ""   # Empty column E
                 ]
                 rows.append(row)
             
