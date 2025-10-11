@@ -150,42 +150,31 @@ def update_report_content_sheet(extracted_data, class_name, date_str, lesson_tit
             worksheet.append_row(class_info_row)
             log_message(f"Added class info row to '{REPORT_CONTENT_SHEET}': Class: {class_name}, Date: {date_str}, Lesson: {lesson_title}")
             
-            # Prepare data rows
+            # Prepare data lists
             vocab_list = [(k, v) for k, v in extracted_data['new_vocabulary'].items()]
             sentence_list = [(k, v if isinstance(v, str) else '; '.join(v)) for k, v in extracted_data['sentence_structures'].items() if v]
             link_list = extracted_data['links']
             
-            # Determine the maximum number of rows needed
-            max_rows = max(len(vocab_list), len(sentence_list), len(link_list))
+            # Number of rows needed (max of lists lengths)
+            num_rows = max(len(vocab_list), len(sentence_list), len(link_list), 1)  # Ensure at least one row
             
-            # First row with full data
-            first_row = [
-                vocab_list[0][0] if vocab_list else "",
-                vocab_list[0][1] if vocab_list else "",
-                f"{sentence_list[0][0]}:{sentence_list[0][1]}" if sentence_list else "",
-                link_list[0] if link_list else "",
-                extracted_data['student_comments_minh_huy'] or "Không có nhận xét",
-                extracted_data['report_date']
-            ]
-            worksheet.append_row(first_row)
-            log_message(f"Added first row to '{REPORT_CONTENT_SHEET}': {extracted_data['report_date']}, {class_name}")
-            
-            # Additional rows for remaining data
-            additional_rows = []
-            for i in range(1, max_rows):
+            # Generate rows
+            rows = []
+            for i in range(num_rows):
                 row = [
-                    vocab_list[i][0] if i < len(vocab_list) else "",
-                    vocab_list[i][1] if i < len(vocab_list) else "",
-                    f"{sentence_list[i][0]}:{sentence_list[i][1]}" if i < len(sentence_list) else "",
-                    link_list[i] if i < len(link_list) else "",
-                    "",  # Student comments only in first row
-                    ""   # Report date only in first row
+                    vocab_list[i][0] if i < len(vocab_list) else "",  # Word
+                    vocab_list[i][1] if i < len(vocab_list) else "",  # Meaning
+                    f"{sentence_list[i][0]}:{sentence_list[i][1]}" if i < len(sentence_list) else "",  # Sentence structure
+                    link_list[i] if i < len(link_list) else "",  # Link
+                    extracted_data['student_comments_minh_huy'] if i == 0 else "",  # Student comments (only first row)
+                    extracted_data['report_date'] if i == 0 else ""  # Report date (only first row)
                 ]
-                additional_rows.append(row)
+                rows.append(row)
             
-            if additional_rows:
-                worksheet.append_rows(additional_rows)
-                log_message(f"Added {len(additional_rows)} additional rows to '{REPORT_CONTENT_SHEET}'")
+            # Append all rows
+            if rows:
+                worksheet.append_rows(rows)
+                log_message(f"Added {len(rows)} rows to '{REPORT_CONTENT_SHEET}'")
             
             return True
         except Exception as e:
@@ -325,11 +314,9 @@ def get_available_model(attempt=0):
 # Fix invalid report date
 def fix_report_date(date_str, fallback_date):
     try:
-        # Parse the date string and ensure it's in GMT+7
         parsed_date = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=ZoneInfo("Asia/Ho_Chi_Minh"))
         return parsed_date.strftime("%Y-%m-%d")
     except (ValueError, TypeError):
-        # Use fallback date and ensure GMT+7
         parsed_fallback = datetime.strptime(fallback_date, "%Y-%m-%d").replace(tzinfo=ZoneInfo("Asia/Ho_Chi_Minh"))
         return parsed_fallback.strftime("%Y-%m-%d")
 
@@ -487,7 +474,7 @@ def process_report():
             # Segment B: Process the report PDF
             log_message("Starting PDF processing for report analysis")
             if not API_KEY:
-                log_message("Missing GEMINI_API_KEY, skipping PDF processing. Please set GEMINI_API_KEY in environment variables (e.g., in GitHub Secrets or local environment).")
+                log_message("Missing GEMINI_API_KEY, skipping PDF processing. Please set GEMINI_API_KEY in environment variables.")
                 return
 
             genai.configure(api_key=API_KEY)
@@ -555,7 +542,7 @@ def process_report():
               "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, "cannot find info")
             }
             For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning. For missing meanings, use a default dictionary (e.g., "pot": "cái nồi").
-            For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). If no sentence structures found, return {}.
+            For sentence_structures, map questions to answers (e.g., {"What is this?": "It's a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). If no sentence structures found, return {}.
             Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
             Use date from input JSON if report_date is not found in text.
             Ensure the output is a valid JSON object with all required fields.
@@ -656,6 +643,7 @@ def process_report():
             result_data = {
                 **extracted_data,
                 'class_name': class_name,
+                'report_url': report_url,
                 'total_vocabulary': total_vocab
             }
 
