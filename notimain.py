@@ -162,14 +162,18 @@ async def send_detailed_telegram_message(bot, chat_id, result_data):
             f"📚 *Tiêu đề*: {result_data['lesson_title']}\n"
             f"🏫 *Lớp*: {result_data['class_name']}"
         )
+        log_message(f"Sending general info message to chat_id {chat_id}: {general_info[:100]}...")
         await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(general_info), parse_mode='MarkdownV2')
+        log_message(f"Sent general info message to chat_id {chat_id}")
         await asyncio.sleep(0.5)
 
         vocab_text = f"*TỪ VỰNG MỚI - {result_data['report_date']}*\n" + "\n".join(
             f"• `{k}`: {v}" for k, v in result_data['new_vocabulary'].items()
         )
         if result_data['new_vocabulary']:
+            log_message(f"Sending vocabulary message to chat_id {chat_id}: {vocab_text[:100]}...")
             await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(vocab_text), parse_mode='MarkdownV2')
+            log_message(f"Sent vocabulary message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
         sentence_text = f"*CẤU TRÚC CÂU - {result_data['report_date']}*\n" + "\n".join(
@@ -178,20 +182,26 @@ async def send_detailed_telegram_message(bot, chat_id, result_data):
             if v is not None
         )
         if result_data['sentence_structures']:
+            log_message(f"Sending sentence structures message to chat_id {chat_id}: {sentence_text[:100]}...")
             await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(sentence_text), parse_mode='MarkdownV2')
+            log_message(f"Sent sentence structures message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
         homework_text = f"*BÀI TẬP VỀ NHÀ - {result_data['report_date']}*\n{result_data['homework']}"
         if result_data['homework'] and result_data['homework'] != "cannot find info":
+            log_message(f"Sending homework message to chat_id {chat_id}: {homework_text[:100]}...")
             await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(homework_text), parse_mode='MarkdownV2')
+            log_message(f"Sent homework message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
         comments_text = f"*NHẬN XÉT VỀ MINH HUY - {result_data['report_date']}*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
         if result_data['student_comments_minh_huy'] and result_data['student_comments_minh_huy'] != "cannot find info":
+            log_message(f"Sending comments message to chat_id {chat_id}: {comments_text[:100]}...")
             await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(comments_text), parse_mode='MarkdownV2')
+            log_message(f"Sent comments message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
     except Exception as e:
-        log_message(f"Failed to send detailed Telegram messages: {str(e)}")
+        log_message(f"Failed to send detailed Telegram messages to chat_id {chat_id}: {str(e)}")
         raise
 
 # Get available Gemini model
@@ -370,11 +380,13 @@ def process_report():
             driver.switch_to.window(original_window)
 
             # Segment B: Process the report PDF
+            log_message("Starting PDF processing for report analysis")
             if not API_KEY:
                 log_message("GEMINI_API_KEY not set in environment, skipping PDF processing")
                 return
 
             genai.configure(api_key=API_KEY)
+            log_message(f"Extracting direct PDF URL from {report_url}")
             parsed_url = urlparse(report_url)
             query_params = parse_qs(parsed_url.query)
             direct_pdf_url = query_params.get('url', [None])[0]
@@ -384,6 +396,7 @@ def process_report():
                 return
 
             pdf_path = 'temp_report.pdf'
+            log_message(f"Downloading PDF from {direct_pdf_url}")
             try:
                 response = requests.get(direct_pdf_url, timeout=10)
                 response.raise_for_status()
@@ -393,12 +406,14 @@ def process_report():
                     return
                 with open(pdf_path, 'wb') as f:
                     f.write(response.content)
+                log_message(f"Successfully downloaded PDF to {pdf_path}")
             except requests.RequestException as e:
                 log_message(f"Failed to download PDF: {str(e)}")
                 return
 
             pdf_text = ''
             pdf_links = []
+            log_message("Extracting text and links from PDF")
             try:
                 with pdfplumber.open(pdf_path) as pdf:
                     for page in pdf.pages:
@@ -408,6 +423,7 @@ def process_report():
                             for annot in page.annots:
                                 if 'uri' in annot:
                                     pdf_links.append(annot['uri'])
+                log_message(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
             except Exception as e:
                 log_message(f"Failed to extract text or links from PDF: {str(e)}")
                 os.remove(pdf_path)
@@ -415,13 +431,11 @@ def process_report():
             finally:
                 if os.path.exists(pdf_path):
                     os.remove(pdf_path)
+                    log_message(f"Deleted temporary PDF file: {pdf_path}")
 
             if not pdf_text:
                 log_message("No text extracted from PDF")
                 return
-
-            log_message(f"Extracted PDF text length: {len(pdf_text)} characters")
-            log_message(f"Extracted PDF links: {pdf_links}")
 
             system_prompt = """
             You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return "cannot find info" for strings or {} or [] for objects/arrays.
@@ -457,7 +471,7 @@ def process_report():
                     response = model.generate_content(pdf_text)
                     cleaned_text = clean_response_text(response.text)
                     cleaned_text = fix_invalid_json(cleaned_text)
-                    log_message(f"API response text (attempt {attempt + 1}): {cleaned_text}")
+                    log_message(f"Received API response (attempt {attempt + 1}): {cleaned_text[:100]}...")
                     extracted_data = json.loads(cleaned_text)
                     extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
                     extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date_str), date_str)
@@ -472,6 +486,7 @@ def process_report():
                     }
                     if best_response is None or len(extracted_data.get('new_vocabulary', {})) > len(best_response.get('new_vocabulary', {})):
                         best_response = extracted_data
+                    log_message(f"API attempt {attempt + 1} successful")
                     break
                 except Exception as e:
                     log_message(f"API attempt {attempt + 1}/{max_attempts} failed: {str(e)}")
@@ -487,7 +502,7 @@ def process_report():
                             "student_comments_minh_huy": "cannot find info"
                         }
 
-            # Manage total vocabulary
+            log_message("Processing total vocabulary")
             if os.path.exists(VOCAB_FILE):
                 try:
                     with open(VOCAB_FILE, 'r', encoding='utf-8') as f:
@@ -498,10 +513,12 @@ def process_report():
                             total_vocab = [{"word": word, "meaning": ""} for word in vocab_data]
                         else:
                             total_vocab = []
+                    log_message(f"Loaded existing vocabulary from {VOCAB_FILE}: {len(total_vocab)} entries")
                 except Exception as e:
                     log_message(f"Error reading {VOCAB_FILE}: {str(e)}. Starting with empty vocab.")
                     total_vocab = []
             else:
+                log_message(f"{VOCAB_FILE} does not exist. Starting with empty vocab.")
                 total_vocab = []
 
             new_vocab = extracted_data['new_vocabulary']
@@ -513,10 +530,14 @@ def process_report():
                 if k.lower() not in total_vocab_lower or total_vocab_lower.get(k.lower(), '') == ''
             ]
             total_vocab.extend(added_vocab)
+            log_message(f"Added {len(added_vocab)} new vocabulary entries. Total vocabulary: {len(total_vocab)}")
 
+            log_message(f"Saving updated vocabulary to {VOCAB_FILE}")
             with open(VOCAB_FILE, 'w', encoding='utf-8') as f:
                 json.dump({'vocabulary': total_vocab}, f, ensure_ascii=False, indent=4)
+            log_message(f"Successfully saved {VOCAB_FILE}")
 
+            log_message("Creating Report directory if not exists")
             os.makedirs('Report', exist_ok=True)
             title = extracted_data['lesson_title'].replace(' ', '_') if extracted_data['lesson_title'] else 'unknown'
             result_filename = f"Report/{date_str}_{title}.json"
@@ -527,18 +548,33 @@ def process_report():
                 'total_vocabulary': total_vocab
             }
 
+            log_message(f"Saving result to {result_filename}")
             with open(result_filename, 'w', encoding='utf-8') as f:
                 json.dump(result_data, f, ensure_ascii=False, indent=4)
-
-            log_message(f"Processed and saved: {result_filename}")
+            log_message(f"Successfully saved: {result_filename}")
 
             async def send_report_to_telegram():
+                log_message("Initializing Telegram Bot for detailed messages")
                 bot = Bot(token=TELEGRAM_BOT_TOKEN)
                 for chat_id in [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]:
                     if chat_id:
+                        log_message(f"Sending detailed Telegram messages to chat_id {chat_id}")
                         await send_detailed_telegram_message(bot, chat_id, result_data)
+                        log_message(f"Completed sending detailed messages to chat_id {chat_id}")
 
+            log_message("Starting detailed Telegram notifications")
             asyncio.run(send_report_to_telegram())
+            log_message("Completed detailed Telegram notifications")
+
+            if is_git_repository():
+                log_message("Committing and pushing Report and vocab files to GitHub")
+                try:
+                    subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE, VOCAB_FILE, "Report/*"], check=True)
+                    subprocess.run(["git", "commit", "-m", f"Update report and vocab for {date_str}"], check=True)
+                    subprocess.run(["git", "push"], check=True)
+                    log_message(f"Pushed {PROCESSED_FILE}, {LOG_FILE}, {VOCAB_FILE}, and Report/* successfully")
+                except Exception as e:
+                    log_message(f"Error committing/pushing Report and vocab files: {str(e)}")
 
         else:
             log_message("Report button is disabled")
