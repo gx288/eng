@@ -25551,3 +25551,7 @@ Stacktrace:
 [2025-10-11 09:21:23] Reached limit of 50 classes processed this run, stopping
 [2025-10-11 09:21:23] Saved processed.json
 [2025-10-11 09:21:23] Run completed
+[2025-10-11 10:25:19] Successfully wrote credentials.json from GOOGLE_CREDENTIALS
+[2025-10-11 10:25:21] Saved processed.json
+[2025-10-11 10:25:39] Lỗi đăng nhập: Vẫn ở trang login
+[2025-10-11 10:25:39] Lỗi đăng nhập: Login failed
