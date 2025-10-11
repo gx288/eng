@@ -79,26 +79,6 @@
       "last_lesson": 33,
       "total_lessons": 0,
       "has_errors": false
-    },
-    "10717": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10788": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10668": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10156": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
     }
   },
   "Summer Kindy 4": {
@@ -368,21 +348,6 @@
       "last_lesson": 51,
       "total_lessons": 52,
       "has_errors": false
-    },
-    "11018": {
-      "last_lesson": 30,
-      "total_lessons": 31,
-      "has_errors": false
-    },
-    "10372": {
-      "last_lesson": 50,
-      "total_lessons": 51,
-      "has_errors": true
-    },
-    "10258": {
-      "last_lesson": 52,
-      "total_lessons": 53,
-      "has_errors": false
     }
   },
   "Cambridge Literacy Ladder 1": {
@@ -490,11 +455,6 @@
       "last_lesson": 65,
       "total_lessons": 0,
       "has_errors": false
-    },
-    "11006": {
-      "last_lesson": 24,
-      "total_lessons": 29,
-      "has_errors": true
     }
   },
   "Discover 2": {
@@ -724,6 +684,26 @@
       "last_lesson": 68,
       "total_lessons": 69,
       "has_errors": false
+    },
+    "9995": {
+      "last_lesson": 71,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10030": {
+      "last_lesson": 71,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10044": {
+      "last_lesson": 71,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "9987": {
+      "last_lesson": 71,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Discover 5": {
@@ -737,6 +717,11 @@
     "10730": {
       "last_lesson": 24,
       "total_lessons": 25,
+      "has_errors": false
+    },
+    "10614": {
+      "last_lesson": 79,
+      "total_lessons": 0,
       "has_errors": false
     }
   },
