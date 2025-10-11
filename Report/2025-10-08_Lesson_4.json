@@ -7,28 +7,36 @@
         "crayons": "sáp màu",
         "chair": "ghế",
         "paper": "giấy",
-        "scissors": "kéo",
-        "dog": "chó",
+        "scissors": "cái kéo",
+        "dog": "con chó",
         "hog": "lợn rừng",
-        "mop": "chổi lau nhà"
+        "mop": "chổi lau nhà",
+        "pot": "cái nồi"
     },
     "sentence_structures": {
-        "How old are you?": "I'm... years old.",
-        "What is this?": "It's a + [danh từ đếm được số ít]",
-        "What are they?": "They are + [danh từ số nhiều]."
+        "How old are you?": "I’m… years old.",
+        "What is this?": [
+            "It’s a…",
+            "It’s a + [danh từ đếm được số ít]",
+            "It’s a chair."
+        ],
+        "What are they?": [
+            "They are + [danh từ số nhiều].",
+            "They are scissors."
+        ]
     },
     "report_date": "2025-10-08",
     "lesson_title": "Lesson 4",
-    "homework": "Student book 2: Lesson 4 - trang 7, 8\nHandwriting book 2: Short vowel o - trang 7, 8\n4. KG2_HOMEWORK_LESSON 4 (PHHS vui lòng truy cập link để xem chi tiết)",
+    "homework": "Hoàn thành các bài tập sau đây: - Student book 2: Lesson 4 - trang 7, 8 - Handwriting book 2: Short vowel o - trang 7, 8 - 4. KG2_HOMEWORK_LESSON 4 (PHHS vui lòng truy cập link để xem chi tiết)",
     "links": [
-        "http://xn--boquizlet-01a.com/vn/241182961/classroom-tu-vung-chu-de-lop-hoc-flash-cards/?funnelUUID=d6b5b28b-ca4d-464d-b822-6df6ac484145",
-        "https://quizlet.com/vn/957998847/kg2_l4_short-vowel-o-flash-cards/?i=5lxnmh&x=1jqt",
-        "https://drive.google.com/drive/folders/1KbQPu7jgtU1CfAPPP236kO2nFgJa9dAd",
         "https://drive.google.com/drive/folders/1zEzlIXUftuKgsvPs8DQYktwp5EwJgX5H?usp=sharing",
-        "https://youtu.be/41cJ0mqWses?si=OR3TsrlyDEk_IeEO",
         "https://m.youtube.com/watch?v=pML85kP-8JY",
+        "https://quizlet.com/vn/241182961/classroom-tu-vung-chu-de-lop-hoc-flash-cards/?i=5g095j&x=1jqt",
+        "https://drive.google.com/drive/folders/1X---OS2tt4T0J8rrFJ78cAH0lQqQooD5?usp=sharing",
+        "https://youtu.be/41cJ0mqWses?si=OR3TsrlyDEk_IeEO",
+        "https://drive.google.com/drive/folders/1KbQPu7jgtU1CfAPPP236kO2nFgJa9dAd",
         "https://www.youtube.com/watch?v=g7kK989HiRQ",
-        "https://drive.google.com/drive/folders/1X---OS2tt4T0J8rrFJ78cAH0lQqQooD5?usp=sharing"
+        "https://quizlet.com/vn/957998847/kg2_l4_short-vowel-o-flash-cards/?i=5lxnmh&x=1jqt"
     ],
     "student_comments_minh_huy": "Con ngồi học ngay ngắn, theo dõi bài giảng và tham gia tích cực trong các hoạt động chung. Con có chủ động luyện nói, luyện phát âm đồng thanh cùng lớp khi GV yêu cầu. Con đã nắm được cách nói về tuổi của mình, trả lời được đủ câu khi GV hỏi con về màu sắc đi kèm với đồ vật. Về từ vựng, con nhận biết được tương đối tốt ngữ nghĩa đa số từ vựng thuộc chủ đề Classroom (Lớp học), chỉ ra được từ qua hình ảnh. Về ngữ âm, con phát âm được tròn tiếng, rõ từ chứa âm short vowel ‘o’ (nguyên âm ngắn ‘o’). Con tiếp tục ôn tập thêm nghĩa của từ để nhận biết được tốt và bật âm cuối của từ nhé.",
     "class_name": "VQ2-K2-2501",
@@ -88,6 +96,98 @@
         {
             "word": "mop",
             "meaning": "chổi lau nhà"
+        },
+        {
+            "word": "sister",
+            "meaning": "Chị/ em gái"
+        },
+        {
+            "word": "family",
+            "meaning": "gia đình"
+        },
+        {
+            "word": "grandmother",
+            "meaning": "bà"
+        },
+        {
+            "word": "parents",
+            "meaning": "bố mẹ"
+        },
+        {
+            "word": "mother",
+            "meaning": "mẹ"
+        },
+        {
+            "word": "father",
+            "meaning": "bố"
+        },
+        {
+            "word": "grandfather",
+            "meaning": "ông"
+        },
+        {
+            "word": "brother",
+            "meaning": "Anh/em trai"
+        },
+        {
+            "word": "crayon",
+            "meaning": "bút màu"
+        },
+        {
+            "word": "computer",
+            "meaning": "máy tính"
+        },
+        {
+            "word": "bun",
+            "meaning": "Bánh tròn nhỏ"
+        },
+        {
+            "word": "run",
+            "meaning": "Chạy"
+        },
+        {
+            "word": "sun",
+            "meaning": "Mặt trời"
+        },
+        {
+            "word": "mug",
+            "meaning": "Cốc có quai"
+        },
+        {
+            "word": "bug",
+            "meaning": "Con bọ"
+        },
+        {
+            "word": "hug",
+            "meaning": "Ôm"
+        },
+        {
+            "word": "rug",
+            "meaning": "Tấm thảm"
+        },
+        {
+            "word": "tub",
+            "meaning": "Bồn tắm"
+        },
+        {
+            "word": "dad",
+            "meaning": "Bố"
+        },
+        {
+            "word": "mom",
+            "meaning": "Mẹ"
+        },
+        {
+            "word": "grandma",
+            "meaning": "Bà"
+        },
+        {
+            "word": "grandpa",
+            "meaning": "Ông"
+        },
+        {
+            "word": "pot",
+            "meaning": "cái nồi"
         }
     ]
 }
