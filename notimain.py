@@ -140,41 +140,42 @@ def update_report_content_sheet(extracted_data, class_name, date_str, lesson_tit
             sheet = client.open_by_key(SHEET_ID)
             worksheet = sheet.worksheet(REPORT_CONTENT_SHEET)
             
-            # Add separator row
-            separator_row = ["----------", "", "", "", "", ""]
-            worksheet.append_row(separator_row)
-            log_message("Added separator row to ReportContent sheet")
-            
-            # Add class info row
-            class_info_row = [f"Class: {class_name}, Date: {date_str}, Lesson: {lesson_title}", "", "", "", "", ""]
-            worksheet.append_row(class_info_row)
-            log_message(f"Added class info row to '{REPORT_CONTENT_SHEET}': Class: {class_name}, Date: {date_str}, Lesson: {lesson_title}")
-            
             # Prepare data lists
             vocab_list = [(k, v) for k, v in extracted_data['new_vocabulary'].items()]
             sentence_list = [(k, v if isinstance(v, str) else '; '.join(v)) for k, v in extracted_data['sentence_structures'].items() if v]
             link_list = extracted_data['links']
+            comments = extracted_data['student_comments_minh_huy'] or 'Không có nhận xét'
+            report_date = extracted_data['report_date']
             
-            # Number of rows needed (max of lists lengths)
-            num_rows = max(len(vocab_list), len(sentence_list), len(link_list), 1)  # Ensure at least one row
+            # Create rows for insertion
+            rows = [
+                ["----------", "", ""],
+                [f"Class: {class_name}, Date: {date_str}, Lesson: {lesson_title}", "", ""]
+            ]
             
-            # Generate rows
-            rows = []
+            # Add links row if there are links
+            if link_list:
+                rows.append([f"Links: {'; '.join(link_list)}", "", ""])
+            
+            # Add report date row
+            rows.append([f"Report Date: {report_date}", "", ""])
+            
+            # Add comments row
+            rows.append([f"Comments about Minh Huy: {comments}", "", ""])
+            
+            # Add vocabulary and sentence structure rows
+            num_rows = max(len(vocab_list), len(sentence_list), 1)  # Ensure at least one row
             for i in range(num_rows):
                 row = [
                     vocab_list[i][0] if i < len(vocab_list) else "",  # Word
                     vocab_list[i][1] if i < len(vocab_list) else "",  # Meaning
-                    f"{sentence_list[i][0]}:{sentence_list[i][1]}" if i < len(sentence_list) else "",  # Sentence structure
-                    link_list[i] if i < len(link_list) else "",  # Link
-                    extracted_data['student_comments_minh_huy'] if i == 0 else "",  # Student comments (only first row)
-                    extracted_data['report_date'] if i == 0 else ""  # Report date (only first row)
+                    f"{sentence_list[i][0]}:{sentence_list[i][1]}" if i < len(sentence_list) else ""  # Sentence structure
                 ]
                 rows.append(row)
             
-            # Append all rows
-            if rows:
-                worksheet.append_rows(rows)
-                log_message(f"Added {len(rows)} rows to '{REPORT_CONTENT_SHEET}'")
+            # Insert rows right after the header (row 1)
+            worksheet.insert_rows(rows, row=2)
+            log_message(f"Inserted {len(rows)} rows to '{REPORT_CONTENT_SHEET}' after header")
             
             return True
         except Exception as e:
