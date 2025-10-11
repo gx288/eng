@@ -1163,3 +1163,18 @@ Buổi học hôm nay con tích cực tham gia lớp học và chăm chỉ đọ
 [2025-10-11 22:19:53] Error checking reports: Login failed
 [2025-10-11 22:19:53] Closing WebDriver
 [2025-10-11 22:19:53] Script completed
+[2025-10-11 23:19:36] Starting script
+[2025-10-11 23:19:36] Starting report check for calendar overview
+[2025-10-11 23:19:36] Loaded processed2.json: {'date': '2025-10-10', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pF75uhDmtQAtxFd6QpDMs8DLfknfqxf1/export?format=pdf'}
+[2025-10-11 23:19:36] Writing Google credentials to credentials.json
+[2025-10-11 23:19:36] Credentials written successfully
+[2025-10-11 23:19:36] Initializing Chrome WebDriver
+[2025-10-11 23:19:53] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-11 23:19:58] Entering username: 61655HN
+[2025-10-11 23:19:58] Entering password
+[2025-10-11 23:19:58] Clicking login button
+[2025-10-11 23:20:04] Login failed: Still on login page
+[2025-10-11 23:20:04] Login error: Login failed
+[2025-10-11 23:20:04] Error checking reports: Login failed
+[2025-10-11 23:20:04] Closing WebDriver
+[2025-10-11 23:20:04] Script completed
