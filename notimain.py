@@ -24,6 +24,8 @@ PROCESSED_FILE = "processed2.json"
 CREDENTIALS_FILE = "credentials.json"
 SHEET_ID = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
 SHEET_NAME = "Report"
+REPORT_CONTENT_SHEET = "ReportContent"
+VOCAB_SHEET = "vocab"
 SCOPES = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
@@ -44,7 +46,7 @@ def log_message(message):
 def send_basic_notification(subject, body, chat_ids=[TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]):
     log_message("Preparing to send basic Telegram notification")
     if not TELEGRAM_BOT_TOKEN:
-        log_message("Missing TELEGRAM_BOT_TOKEN, skipping notification")
+        log_message("Missing TELEGRAM_BOT_TOKEN, skipping notification. Please set TELEGRAM_BOT_TOKEN in environment variables.")
         return
     for chat_id in chat_ids:
         if not chat_id:
@@ -73,7 +75,7 @@ def login(driver):
     current_id = os.getenv("NEW_CEC_USER")
     password = os.getenv("NEW_CEC_PASS")
     if not current_id or not password:
-        log_message("Missing NEW_CEC_USER or NEW_CEC_PASS")
+        log_message("Missing NEW_CEC_USER or NEW_CEC_PASS. Please set these environment variables.")
         raise Exception("Missing credentials")
     try:
         log_message(f"Entering username: {current_id}")
@@ -105,9 +107,9 @@ def login(driver):
         log_message(f"Login error: {str(e)}")
         raise
 
-# Update Google Sheet
+# Update Google Sheet (Report sheet)
 def update_google_sheet(date, class_name, report_url, timestamp):
-    log_message(f"Updating Google Sheet with Date {date}, Class {class_name}, URL {report_url}")
+    log_message(f"Updating Google Sheet '{SHEET_NAME}' with Date {date}, Class {class_name}, URL {report_url}")
     max_retries = 3
     for attempt in range(max_retries):
         try:
@@ -117,12 +119,91 @@ def update_google_sheet(date, class_name, report_url, timestamp):
             worksheet = sheet.worksheet(SHEET_NAME)
             row_data = [date, class_name, report_url, timestamp]
             worksheet.append_row(row_data)
-            log_message(f"Updated Google Sheet successfully: {date}, {class_name}, {report_url} at {timestamp}")
+            log_message(f"Updated Google Sheet '{SHEET_NAME}' successfully: {date}, {class_name}, {report_url} at {timestamp}")
             return True
         except Exception as e:
-            log_message(f"Attempt {attempt+1}/{max_retries} failed to update Google Sheet: {str(e)}")
+            log_message(f"Attempt {attempt+1}/{max_retries} failed to update Google Sheet '{SHEET_NAME}': {str(e)}")
             if attempt == max_retries - 1:
-                log_message(f"Error updating Google Sheet: {str(e)}")
+                log_message(f"Error updating Google Sheet '{SHEET_NAME}': {str(e)}")
+                return False
+            time.sleep(3)
+    return False
+
+# Update ReportContent sheet
+def update_report_content_sheet(extracted_data, class_name, date_str, timestamp):
+    log_message(f"Updating Google Sheet '{REPORT_CONTENT_SHEET}' with extracted data")
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
+            client = gspread.authorize(creds)
+            sheet = client.open_by_key(SHEET_ID)
+            worksheet = sheet.worksheet(REPORT_CONTENT_SHEET)
+            
+            # Add separator row
+            separator_row = ["----------", "", "", "", "", "", "", "", ""]
+            worksheet.append_row(separator_row)
+            log_message("Added separator row to ReportContent sheet")
+            
+            # Add class info row
+            class_info_row = [f"Class: {class_name}, Date: {date_str}", "", "", "", "", "", "", "", ""]
+            worksheet.append_row(class_info_row)
+            log_message(f"Added class info row to '{REPORT_CONTENT_SHEET}': Class: {class_name}, Date: {date_str}")
+            
+            # Format data for CSV
+            new_vocabulary_csv = ",".join([f"{k}:{v}" for k, v in extracted_data['new_vocabulary'].items()])
+            sentence_structures_csv = ",".join([f"{k}:{v if isinstance(v, str) else '; '.join(v)}" for k, v in extracted_data['sentence_structures'].items() if v])
+            links_csv = ",".join(extracted_data['links'])
+            
+            row_data = [
+                extracted_data['report_date'],
+                class_name,
+                extracted_data['lesson_title'],
+                new_vocabulary_csv,
+                sentence_structures_csv,
+                extracted_data['homework'],
+                links_csv,
+                extracted_data['student_comments_minh_huy'] or "Không có nhận xét",
+                timestamp
+            ]
+            worksheet.append_row(row_data)
+            log_message(f"Updated Google Sheet '{REPORT_CONTENT_SHEET}' successfully: {extracted_data['report_date']}, {class_name}")
+            return True
+        except Exception as e:
+            log_message(f"Attempt {attempt+1}/{max_retries} failed to update Google Sheet '{REPORT_CONTENT_SHEET}': {str(e)}")
+            if attempt == max_retries - 1:
+                log_message(f"Error updating Google Sheet '{REPORT_CONTENT_SHEET}': {str(e)}")
+                return False
+            time.sleep(3)
+    return False
+
+# Update vocab sheet
+def update_vocab_sheet(total_vocab):
+    log_message(f"Updating Google Sheet '{VOCAB_SHEET}' with total vocabulary")
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPES)
+            client = gspread.authorize(creds)
+            sheet = client.open_by_key(SHEET_ID)
+            worksheet = sheet.worksheet(VOCAB_SHEET)
+            
+            # Clear existing content
+            worksheet.clear()
+            
+            # Add header
+            worksheet.append_row(["Word", "Meaning"])
+            
+            # Add vocabulary data
+            vocab_rows = [[item['word'], item['meaning']] for item in total_vocab if isinstance(item, dict)]
+            if vocab_rows:
+                worksheet.append_rows(vocab_rows)
+            log_message(f"Updated Google Sheet '{VOCAB_SHEET}' successfully with {len(vocab_rows)} vocabulary entries")
+            return True
+        except Exception as e:
+            log_message(f"Attempt {attempt+1}/{max_retries} failed to update Google Sheet '{VOCAB_SHEET}': {str(e)}")
+            if attempt == max_retries - 1:
+                log_message(f"Error updating Google Sheet '{VOCAB_SHEET}': {str(e)}")
                 return False
             time.sleep(3)
     return False
@@ -158,17 +239,17 @@ async def send_detailed_telegram_message(bot, chat_id, result_data):
     try:
         general_info = (
             f"*BÁO CÁO BÀI HỌC - {result_data['report_date']}*\n"
-            f"📅 *Ngày*: {result_data['report_date']}\n"
-            f"📚 *Tiêu đề*: {result_data['lesson_title']}\n"
-            f"🏫 *Lớp*: {result_data['class_name']}"
+            f"📅: {result_data['report_date']}\n"
+            f"📚: {result_data['lesson_title']}\n"
+            f"🏫: {result_data['class_name']}"
         )
         log_message(f"Sending general info message to chat_id {chat_id}: {general_info[:100]}...")
         await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(general_info), parse_mode='MarkdownV2')
         log_message(f"Sent general info message to chat_id {chat_id}")
         await asyncio.sleep(0.5)
 
-        vocab_text = f"*TỪ VỰNG MỚI - {result_data['report_date']}*\n" + "\n".join(
-            f"• `{k}`: {v}" for k, v in result_data['new_vocabulary'].items()
+        vocab_text = f"TỪ VỰNG MỚI - {result_data['report_date']}\n" + "\n".join(
+            f"{k}: {v}" for k, v in result_data['new_vocabulary'].items()
         )
         if result_data['new_vocabulary']:
             log_message(f"Sending vocabulary message to chat_id {chat_id}: {vocab_text[:100]}...")
@@ -176,7 +257,7 @@ async def send_detailed_telegram_message(bot, chat_id, result_data):
             log_message(f"Sent vocabulary message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
-        sentence_text = f"*CẤU TRÚC CÂU - {result_data['report_date']}*\n" + "\n".join(
+        sentence_text = f"CẤU TRÚC CÂU - {result_data['report_date']}\n" + "\n".join(
             f"• *{k}*: {v if isinstance(v, str) else ', '.join(v)}"
             for k, v in result_data['sentence_structures'].items()
             if v is not None
@@ -187,14 +268,14 @@ async def send_detailed_telegram_message(bot, chat_id, result_data):
             log_message(f"Sent sentence structures message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
-        homework_text = f"*BÀI TẬP VỀ NHÀ - {result_data['report_date']}*\n{result_data['homework']}"
+        homework_text = f"BÀI TẬP VỀ NHÀ - {result_data['report_date']}\n{result_data['homework']}"
         if result_data['homework'] and result_data['homework'] != "cannot find info":
             log_message(f"Sending homework message to chat_id {chat_id}: {homework_text[:100]}...")
             await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(homework_text), parse_mode='MarkdownV2')
             log_message(f"Sent homework message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
-        comments_text = f"*NHẬN XÉT VỀ MINH HUY - {result_data['report_date']}*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
+        comments_text = f"NHẬN XÉT VỀ MINH HUY - {result_data['report_date']}\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
         if result_data['student_comments_minh_huy'] and result_data['student_comments_minh_huy'] != "cannot find info":
             log_message(f"Sending comments message to chat_id {chat_id}: {comments_text[:100]}...")
             await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(comments_text), parse_mode='MarkdownV2')
@@ -382,7 +463,7 @@ def process_report():
             # Segment B: Process the report PDF
             log_message("Starting PDF processing for report analysis")
             if not API_KEY:
-                log_message("GEMINI_API_KEY not set in environment, skipping PDF processing")
+                log_message("Missing GEMINI_API_KEY, skipping PDF processing. Please set GEMINI_API_KEY in environment variables (e.g., in GitHub Secrets or local environment).")
                 return
 
             genai.configure(api_key=API_KEY)
@@ -502,6 +583,9 @@ def process_report():
                             "student_comments_minh_huy": "cannot find info"
                         }
 
+            # Update ReportContent sheet
+            update_report_content_sheet(extracted_data, class_name, date_str, timestamp)
+
             log_message("Processing total vocabulary")
             if os.path.exists(VOCAB_FILE):
                 try:
@@ -537,6 +621,9 @@ def process_report():
                 json.dump({'vocabulary': total_vocab}, f, ensure_ascii=False, indent=4)
             log_message(f"Successfully saved {VOCAB_FILE}")
 
+            # Update vocab sheet (overwrite)
+            update_vocab_sheet(total_vocab)
+
             log_message("Creating Report directory if not exists")
             os.makedirs('Report', exist_ok=True)
             title = extracted_data['lesson_title'].replace(' ', '_') if extracted_data['lesson_title'] else 'unknown'
@@ -569,6 +656,8 @@ def process_report():
             if is_git_repository():
                 log_message("Committing and pushing Report and vocab files to GitHub")
                 try:
+                    subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
+                    subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
                     subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE, VOCAB_FILE, "Report/*"], check=True)
                     subprocess.run(["git", "commit", "-m", f"Update report and vocab for {date_str}"], check=True)
                     subprocess.run(["git", "push"], check=True)
