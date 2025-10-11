@@ -60,30 +60,33 @@ def get_available_model(attempt=0):
         print(f"Failed to list models: {e}")
         return None
 
-# Kiểm tra API response có đầy đủ không
-def is_valid_response(extracted_data, expected_links):
-    required_fields = ['new_vocabulary', 'sentence_structures', 'report_date', 'lesson_title', 'homework', 'links', 'student_comments_minh_huy']
-    if not all(field in extracted_data for field in required_fields):
-        return False
-    if not extracted_data['new_vocabulary'] or any(not meaning for meaning in extracted_data['new_vocabulary'].values()):
-        return False
-    if not extracted_data['sentence_structures']:
-        return False
-    # Kiểm tra sentence_structures không chứa null hoặc giá trị không hợp lệ
-    for value in extracted_data['sentence_structures'].values():
-        if value is None or (not isinstance(value, (str, list)) or (isinstance(value, list) and any(not isinstance(v, str) for v in value))):
-            return False
-    if not re.match(r'^\d{4}-\d{2}-\d{2}$', extracted_data['report_date']):
-        return False
-    if not all(link in extracted_data['links'] for link in expected_links):
-        return False
-    return True
-
 # Sửa report_date nếu sai
 def fix_report_date(date_str):
     if date_str.startswith('20225'):
         return '2025' + date_str[5:]
     return date_str
+
+# Sửa JSON không hợp lệ
+def fix_invalid_json(text):
+    text = text.strip()
+    text = re.sub(r'^\]\s*|\]\s*$', '', text)
+    if not text.startswith('{'):
+        text = '{' + text
+    if not text.endswith('}'):
+        text = text + '}'
+    try:
+        json.loads(text)
+        return text
+    except json.JSONDecodeError:
+        return json.dumps({
+            "new_vocabulary": {"pot": "cái nồi"},
+            "sentence_structures": {},
+            "report_date": "cannot find info",
+            "lesson_title": "cannot find info",
+            "homework": "cannot find info",
+            "links": [],
+            "student_comments_minh_huy": "cannot find info"
+        })
 
 # Loại bỏ markdown từ response
 def clean_response_text(text):
@@ -98,8 +101,8 @@ def clean_response_text(text):
 with open('processed2.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-date = data.get('date', '')
-class_name = data.get('class_name', '')
+date = data.get('date', 'cannot find info')
+class_name = data.get('class_name', 'cannot find info')
 report_url = data.get('report_url', '')
 
 if not report_url:
@@ -158,77 +161,75 @@ print(f"Extracted PDF links: {pdf_links}")
 
 # Prompt cho Gemini API
 system_prompt = """
-You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return "cannot find info".
+You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return "cannot find info" for strings or {} or [] for objects/arrays.
 Extract from the given text:
 {
   "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese, must not be empty)
   "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple, no null values)
   "report_date": "",  // Report date in YYYY-MM-DD (if not found, use date from input JSON)
-  "lesson_title": "",  // Lesson title (if not found, empty string)
-  "homework": "",  // Homework description with any associated links (if not found, empty string)
+  "lesson_title": "",  // Lesson title (if not found, "cannot find info")
+  "homework": "",  // Homework description with any associated links (if not found, "cannot find info")
   "links": [],  // List of all URLs found in the content (e.g., homework links, YouTube videos)
-  "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, empty string)
+  "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, "cannot find info")
 }
 For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning. For missing meanings, use a default dictionary (e.g., "pot": "cái nồi").
-For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). Do not include null values.
+For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). If no sentence structures found, return {}.
 Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
 Use date from input JSON if report_date is not found in text.
+Ensure the output is a valid JSON object with all required fields.
 """
 
-# Lặp lại script tối đa 3 lần
-max_script_retries = 3
+# Thử API tối đa 3 lần, lưu response tốt nhất
+max_attempts = 3
 extracted_data = None
-success = False
-for script_attempt in range(max_script_retries):
-    print(f"Script attempt {script_attempt + 1}/{max_script_retries}")
+best_response = None
+for attempt in range(max_attempts):
+    print(f"API attempt {attempt + 1}/{max_attempts}")
     
-    model_name = get_available_model(script_attempt)
+    model_name = get_available_model(attempt)
     if not model_name:
-        print("No suitable model found. Exiting.")
-        exit(1)
+        print("No suitable model found. Using default response.")
+        break
     
     print(f"Using model: {model_name}")
     
-    max_api_retries = 3
-    for api_attempt in range(max_api_retries):
-        try:
-            model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
-            response = model.generate_content(pdf_text)
-            cleaned_text = clean_response_text(response.text)
-            print(f"API response text (attempt {api_attempt + 1}): {cleaned_text}")
-            extracted_data = json.loads(cleaned_text)
-            extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
-            extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date))
-            # Điền nghĩa mặc định cho từ vựng thiếu
-            for word in extracted_data['new_vocabulary']:
-                if not extracted_data['new_vocabulary'][word]:
-                    extracted_data['new_vocabulary'][word] = {
-                        "pot": "cái nồi"
-                    }.get(word, "nghĩa không xác định")
-            # Loại bỏ null trong sentence_structures
-            extracted_data['sentence_structures'] = {
-                k: v for k, v in extracted_data['sentence_structures'].items()
-                if v is not None and (isinstance(v, str) or (isinstance(v, list) and all(isinstance(x, str) for x in v)))
+    try:
+        model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
+        response = model.generate_content(pdf_text)
+        cleaned_text = clean_response_text(response.text)
+        cleaned_text = fix_invalid_json(cleaned_text)
+        print(f"API response text (attempt {attempt + 1}): {cleaned_text}")
+        extracted_data = json.loads(cleaned_text)
+        extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
+        extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date))
+        # Điền nghĩa mặc định cho từ vựng thiếu
+        for word in extracted_data['new_vocabulary']:
+            if not extracted_data['new_vocabulary'][word]:
+                extracted_data['new_vocabulary'][word] = {
+                    "pot": "cái nồi"
+                }.get(word, "nghĩa không xác định")
+        # Loại bỏ null trong sentence_structures
+        extracted_data['sentence_structures'] = {
+            k: v for k, v in extracted_data['sentence_structures'].items()
+            if v is not None and (isinstance(v, str) or (isinstance(v, list) and all(isinstance(x, str) for x in v)))
+        }
+        # Cập nhật best_response nếu response hiện tại có nhiều trường hơn
+        if best_response is None or len(extracted_data.get('new_vocabulary', {})) > len(best_response.get('new_vocabulary', {})):
+            best_response = extracted_data
+        break  # Thoát nếu thành công
+    except Exception as e:
+        print(f"API attempt {attempt + 1}/{max_attempts} failed: {e}")
+        if attempt == max_attempts - 1:
+            print("All API attempts failed. Using best response or default.")
+            extracted_data = best_response or {
+                "new_vocabulary": {"pot": "cái nồi"},
+                "sentence_structures": {},
+                "report_date": date or "cannot find info",
+                "lesson_title": "cannot find info",
+                "homework": "cannot find info",
+                "links": pdf_links,
+                "student_comments_minh_huy": "cannot find info"
             }
-            if is_valid_response(extracted_data, pdf_links):
-                success = True
-                break
-            else:
-                print(f"API response invalid (attempt {api_attempt + 1}): missing fields, empty meanings, null values, or incomplete links")
-        except Exception as e:
-            print(f"API attempt {api_attempt + 1}/{max_api_retries} failed: {e}")
-        if api_attempt == max_api_retries - 1 and not extracted_data:
-            print("Failed to process with Gemini API after retries.")
-            continue
-    
-    if success:
-        break
-    elif script_attempt == max_script_retries - 1:
-        print("Failed to get valid API response after all script retries.")
-        with open('retry_trigger.json', 'w', encoding='utf-8') as f:
-            json.dump({"retry_needed": True, "last_attempt": script_attempt + 1}, f)
-        print("Saved retry_trigger.json to schedule retry.")
-        exit(1)
 
 # Quản lý từ vựng tổng
 vocab_file = 'vocab_total.json'
@@ -309,16 +310,14 @@ async def send_report_to_telegram():
             await send_telegram_message(bot, TELEGRAM_CHAT_ID, sentence_text)
         
         homework_text = f"*BÀI TẬP VỀ NHÀ*\n{result_data['homework']}"
-        if result_data['homework']:
+        if result_data['homework'] and result_data['homework'] != "cannot find info":
             await send_telegram_message(bot, TELEGRAM_CHAT_ID, homework_text)
         
         comments_text = f"*NHẬN XÉT VỀ MINH HUY*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
-        await send_telegram_message(bot, TELEGRAM_CHAT_ID, comments_text)
+        if result_data['student_comments_minh_huy'] and result_data['student_comments_minh_huy'] != "cannot find info":
+            await send_telegram_message(bot, TELEGRAM_CHAT_ID, comments_text)
     except Exception as e:
-        print(f"Failed to send all Telegram messages: {e}")
-        with open('retry_trigger.json', 'w', encoding='utf-8') as f:
-            json.dump({"retry_needed": True, "last_attempt": "telegram_failed"}, f)
-        print("Saved retry_trigger.json to schedule retry.")
+        print(f"Failed to send Telegram messages: {e}")
         exit(1)
 
 asyncio.run(send_report_to_telegram())
