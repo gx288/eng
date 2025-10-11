@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - 'processed2.json'
+  workflow_run:
+    workflows: ["Kiem tra co report moi"]  # Trigger sau khi Workflow A hoàn thành
+    types:
+      - completed
   workflow_dispatch:
     inputs:
       manual_trigger:
@@ -19,7 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2  # Lấy 2 commit để kiểm tra thay đổi
 
       - name: Check if processed2.json exists
         id: check_file
@@ -33,19 +37,33 @@ jobs:
             exit 1
           fi
 
-      - name: Set up Python
+      - name: Check if processed2.json changed
+        id: check_changes
         if: steps.check_file.outputs.file_exists == 'true'
+        run: |
+          git diff HEAD^ HEAD -- processed2.json > diff.txt
+          if [ -s diff.txt ]; then
+            echo "file_changed=true" >> $GITHUB_OUTPUT
+            echo "processed2.json has changed. Proceeding..."
+          else
+            echo "file_changed=false" >> $GITHUB_OUTPUT
+            echo "processed2.json has not changed. Skipping processing."
+          fi
+          cat diff.txt
+
+      - name: Set up Python
+        if: steps.check_file.outputs.file_exists == 'true' && steps.check_changes.outputs.file_changed == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install dependencies
-        if: steps.check_file.outputs.file_exists == 'true'
+        if: steps.check_file.outputs.file_exists == 'true' && steps.check_changes.outputs.file_changed == 'true'
         run: |
           pip install requests google-generativeai pdfplumber python-telegram-bot==20.7
 
       - name: Run Python script
-        if: steps.check_file.outputs.file_exists == 'true'
+        if: steps.check_file.outputs.file_exists == 'true' && steps.check_changes.outputs.file_changed == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -55,7 +73,7 @@ jobs:
           python process_report.py
 
       - name: Check if changes were made
-        if: steps.check_file.outputs.file_exists == 'true'
+        if: steps.check_file.outputs.file_exists == 'true' && steps.check_changes.outputs.file_changed == 'true'
         id: changes
         run: |
           git add Report/* vocab_total.json 2>/dev/null || echo "no_new_files=true" >> $GITHUB_OUTPUT
@@ -63,7 +81,7 @@ jobs:
           echo "changes_detected=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
-        if: steps.check_file.outputs.file_exists == 'true' && steps.changes.outputs.has_changes == 'true'
+        if: steps.check_file.outputs.file_exists == 'true' && steps.check_changes.outputs.file_changed == 'true' && steps.changes.outputs.has_changes == 'true'
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
@@ -80,9 +98,12 @@ jobs:
           echo "Trigger type: ${{ github.event_name }}"
           echo "Manual trigger: ${{ github.event_name == 'workflow_dispatch' }}"
           echo "File exists: ${{ steps.check_file.outputs.file_exists }}"
+          echo "File changed: ${{ steps.check_changes.outputs.file_changed }}"
           echo "Changes detected: ${{ steps.changes.outputs.has_changes }}"
           if [ "${{ steps.check_file.outputs.file_exists }}" = "false" ]; then
             echo "❌ Failed: processed2.json not found"
+          elif [ "${{ steps.check_changes.outputs.file_changed }}" = "false" ]; then
+            echo "ℹ️ Skipped: processed2.json has not changed"
           elif [ "${{ steps.changes.outputs.has_changes }}" = "true" ]; then
             echo "✅ Successfully processed and committed changes"
           else
