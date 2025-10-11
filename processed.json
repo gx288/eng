@@ -79,26 +79,6 @@
       "last_lesson": 33,
       "total_lessons": 0,
       "has_errors": false
-    },
-    "10717": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10788": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10668": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
-    },
-    "10156": {
-      "last_lesson": 34,
-      "total_lessons": 35,
-      "has_errors": false
     }
   },
   "Summer Kindy 4": {
@@ -368,16 +348,6 @@
       "last_lesson": 51,
       "total_lessons": 52,
       "has_errors": false
-    },
-    "11018": {
-      "last_lesson": 30,
-      "total_lessons": 31,
-      "has_errors": false
-    },
-    "10372": {
-      "last_lesson": 50,
-      "total_lessons": 51,
-      "has_errors": true
     }
   },
   "Cambridge Literacy Ladder 1": {
@@ -387,18 +357,18 @@
       "has_errors": false
     },
     "10576": {
-      "last_lesson": 65,
-      "total_lessons": 0,
+      "last_lesson": 67,
+      "total_lessons": 68,
       "has_errors": false
     },
     "10557": {
-      "last_lesson": 65,
-      "total_lessons": 0,
+      "last_lesson": 66,
+      "total_lessons": 67,
       "has_errors": false
     },
     "10523": {
-      "last_lesson": 65,
-      "total_lessons": 0,
+      "last_lesson": 66,
+      "total_lessons": 67,
       "has_errors": false
     },
     "10385": {
@@ -412,13 +382,13 @@
       "has_errors": false
     },
     "10434": {
-      "last_lesson": 65,
-      "total_lessons": 0,
+      "last_lesson": 67,
+      "total_lessons": 68,
       "has_errors": false
     },
     "10280": {
-      "last_lesson": 65,
-      "total_lessons": 0,
+      "last_lesson": 66,
+      "total_lessons": 67,
       "has_errors": false
     },
     "10629": {
@@ -438,7 +408,7 @@
     },
     "10506": {
       "last_lesson": 65,
-      "total_lessons": 0,
+      "total_lessons": 56,
       "has_errors": false
     },
     "10394": {
@@ -447,8 +417,8 @@
       "has_errors": false
     },
     "10370": {
-      "last_lesson": 65,
-      "total_lessons": 0,
+      "last_lesson": 66,
+      "total_lessons": 67,
       "has_errors": false
     },
     "10300": {
@@ -457,13 +427,13 @@
       "has_errors": false
     },
     "10294": {
-      "last_lesson": 65,
-      "total_lessons": 0,
+      "last_lesson": 66,
+      "total_lessons": 67,
       "has_errors": false
     },
     "10242": {
-      "last_lesson": 65,
-      "total_lessons": 0,
+      "last_lesson": 66,
+      "total_lessons": 67,
       "has_errors": false
     },
     "10186": {
@@ -485,56 +455,6 @@
       "last_lesson": 65,
       "total_lessons": 0,
       "has_errors": false
-    },
-    "11006": {
-      "last_lesson": 28,
-      "total_lessons": 29,
-      "has_errors": true
-    },
-    "10576": {
-      "last_lesson": 67,
-      "total_lessons": 68,
-      "has_errors": false
-    },
-    "10557": {
-      "last_lesson": 66,
-      "total_lessons": 67,
-      "has_errors": false
-    },
-    "10523": {
-      "last_lesson": 66,
-      "total_lessons": 67,
-      "has_errors": false
-    },
-    "10434": {
-      "last_lesson": 67,
-      "total_lessons": 68,
-      "has_errors": false
-    },
-    "10280": {
-      "last_lesson": 66,
-      "total_lessons": 67,
-      "has_errors": false
-    },
-    "10506": {
-      "last_lesson": 55,
-      "total_lessons": 56,
-      "has_errors": false
-    },
-    "10370": {
-      "last_lesson": 66,
-      "total_lessons": 67,
-      "has_errors": false
-    },
-    "10294": {
-      "last_lesson": 66,
-      "total_lessons": 67,
-      "has_errors": false
-    },
-    "10242": {
-      "last_lesson": 66,
-      "total_lessons": 67,
-      "has_errors": false
     }
   },
   "Discover 2": {
@@ -552,11 +472,6 @@
       "last_lesson": 86,
       "total_lessons": 0,
       "has_errors": false
-    },
-    "10973": {
-      "last_lesson": 38,
-      "total_lessons": 39,
-      "has_errors": true
     }
   },
   "Reader's Wonderland 2.3": {
@@ -583,8 +498,8 @@
       "has_errors": false
     },
     "10889": {
-      "last_lesson": 37,
-      "total_lessons": 0,
+      "last_lesson": 38,
+      "total_lessons": 39,
       "has_errors": false
     },
     "10879": {
@@ -593,8 +508,8 @@
       "has_errors": false
     },
     "10389": {
-      "last_lesson": 73,
-      "total_lessons": 0,
+      "last_lesson": 75,
+      "total_lessons": 76,
       "has_errors": false
     },
     "10379": {
@@ -604,48 +519,13 @@
     },
     "10544": {
       "last_lesson": 73,
-      "total_lessons": 0,
+      "total_lessons": 6,
       "has_errors": false
     },
     "10162": {
       "last_lesson": 73,
       "total_lessons": 0,
       "has_errors": false
-    },
-    "10184": {
-      "last_lesson": 73,
-      "total_lessons": 0,
-      "has_errors": false
-    },
-    "10238": {
-      "last_lesson": 73,
-      "total_lessons": 0,
-      "has_errors": false
-    },
-    "10046": {
-      "last_lesson": 73,
-      "total_lessons": 0,
-      "has_errors": false
-    },
-    "10857": {
-      "last_lesson": 40,
-      "total_lessons": 41,
-      "has_errors": true
-    },
-    "10889": {
-      "last_lesson": 38,
-      "total_lessons": 39,
-      "has_errors": true
-    },
-    "10389": {
-      "last_lesson": 75,
-      "total_lessons": 76,
-      "has_errors": false
-    },
-    "10544": {
-      "last_lesson": 5,
-      "total_lessons": 6,
-      "has_errors": true
     },
     "10184": {
       "last_lesson": 74,
@@ -665,17 +545,22 @@
     "10048": {
       "last_lesson": 68,
       "total_lessons": 69,
-      "has_errors": true
+      "has_errors": false
     },
     "10009": {
       "last_lesson": 73,
       "total_lessons": 74,
-      "has_errors": true
+      "has_errors": false
     },
     "9977": {
-      "last_lesson": 61,
+      "last_lesson": 73,
       "total_lessons": 74,
-      "has_errors": true
+      "has_errors": false
+    },
+    "9952": {
+      "last_lesson": 73,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Discover 1": {
@@ -690,6 +575,46 @@
       "last_lesson": 65,
       "total_lessons": 66,
       "has_errors": false
+    },
+    "10736": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10260": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10604": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10502": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10338": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10241": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10172": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10170": {
+      "last_lesson": 65,
+      "total_lessons": 0,
+      "has_errors": false
     }
   },
   "Outing Think & Write": {
@@ -703,6 +628,26 @@
     "10660": {
       "last_lesson": 30,
       "total_lessons": 31,
+      "has_errors": false
+    },
+    "10750": {
+      "last_lesson": 69,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10396": {
+      "last_lesson": 71,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10388": {
+      "last_lesson": 71,
+      "total_lessons": 0,
+      "has_errors": false
+    },
+    "10380": {
+      "last_lesson": 71,
+      "total_lessons": 0,
       "has_errors": false
     }
   },
