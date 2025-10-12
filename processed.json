@@ -564,9 +564,9 @@
       "has_errors": false
     },
     "10973": {
-      "last_lesson": 2,
+      "last_lesson": 3,
       "total_lessons": 39,
-      "has_errors": false
+      "has_errors": true
     }
   },
   "Reader's Wonderland 2.3": {
