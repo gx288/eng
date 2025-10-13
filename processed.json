@@ -492,9 +492,9 @@
       "has_errors": false
     },
     "11006": {
-      "last_lesson": 12,
+      "last_lesson": 13,
       "total_lessons": 29,
-      "has_errors": false
+      "has_errors": true
     }
   },
   "Discover 2": {
