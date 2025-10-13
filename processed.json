@@ -968,6 +968,11 @@
       "last_lesson": 81,
       "total_lessons": 82,
       "has_errors": false
+    },
+    "10730": {
+      "last_lesson": 24,
+      "total_lessons": 25,
+      "has_errors": true
     }
   },
   "Discover 4": {
