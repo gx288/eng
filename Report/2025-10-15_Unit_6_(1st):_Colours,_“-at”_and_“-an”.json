@@ -1,5 +1,47 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "red": "màu đỏ",
+        "yellow": "màu vàng",
+        "blue": "màu xanh biển",
+        "green": "màu xanh lá",
+        "orange": "màu cam",
+        "pink": "màu hồng",
+        "white": "màu trắng",
+        "black": "màu đen",
+        "has": "có",
+        "help": "giúp đỡ",
+        "funny": "hài hước",
+        "here": "tại đây",
+        "go": "đi",
+        "i": "tôi",
+        "fan": "cái quạt",
+        "bat": "con dơi",
+        "can": "cái lon",
+        "hat": "cái mũ",
+        "rat": "con chuột",
+        "pan": "cái chảo",
+        "cat": "con mèo",
+        "tap": "đập",
+        "pat": "vỗ nhẹ",
+        "pal": "bạn bè"
+    },
+    "sentence_structures": {},
+    "report_date": "2025-10-15",
+    "lesson_title": "Unit 6 (1st): Colours, “-at” and “-an”",
+    "homework": "Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang sách):\n- Student book 2: Lesson 6 - trang 11\n- Handwriting book 2: At and An - trang 11 và 12\n- 1.1 KG2_HOMEWORK_LESSON 6 (1st)",
+    "links": [
+        "https://www.youtube.com/watch?v=7XZlWXF_LRk",
+        "https://quizlet.com/vn/958006067/kg2_l6_at-and-an-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://quizlet.com/vn/241183740/colors-tu-vung-chu-de-mau-sac-flash-cards/?funnelUUID=9eb675b7-346a-4b9c-ba87-230045c4a3cf",
+        "https://www.youtube.com/watch?v=1jv0Gx_q_OU",
+        "https://drive.google.com/drive/folders/1JnFF0MeJg0p0s4xnFe541wk5AZyUyRcn",
+        "https://youtu.be/gghDRJVxFxU",
+        "https://www.starfall.com/h/ltr-sv-a/zac-and-cat/?mg=m"
+    ],
+    "student_comments_minh_huy": "Buổi học hôm nay, con ngồi học ngay ngắn và đã tiến bộ hơn trong việc hạn chế làm việc riêng. Phần từ vựng, con ghi nhớ được các từ vựng chỉ màu sắc ở mức cơ bản (red, blue, yellow,...Phần ngữ âm con đã nhận biết và nắm được các từ đuôi “at” và “an”, con thực hiện bài tập liên quan nhanh chóng.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
