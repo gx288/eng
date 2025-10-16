@@ -886,8 +886,13 @@
       "has_errors": true
     },
     "10750": {
-      "last_lesson": 13,
+      "last_lesson": 57,
       "total_lessons": 58,
+      "has_errors": false
+    },
+    "10388": {
+      "last_lesson": 72,
+      "total_lessons": 73,
       "has_errors": false
     }
   },
