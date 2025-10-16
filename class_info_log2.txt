@@ -3193,3 +3193,6 @@ Buổi học hôm nay, con ngồi học ngay ngắn và đã tiến bộ hơn tr
 [2025-10-16 17:22:04] Completed detailed Telegram notifications
 [2025-10-16 17:22:04] Git repository detected
 [2025-10-16 17:22:04] Committing and pushing Report and vocab files to GitHub
+[2025-10-16 17:22:05] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2025-10-16 17:22:05] Closing WebDriver
+[2025-10-16 17:22:05] Script completed
