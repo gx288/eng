@@ -1,34 +1,36 @@
 name: Extract Lessons
 
 on:
-  workflow_dispatch:  # Thêm dòng này để chạy thủ công
-  push:
-    paths:
-      - 'config.json'
-      - 'extract_lessons.py'
+ workflow_dispatch:
+ push:
+   paths:
+     - 'report.py'
 
 jobs:
-  extract:
-    runs-on: ubuntu-latest
-    env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-      NEW_CEC_USER: ${{ secrets.NEW_CEC_USER }}
-      NEW_CEC_PASS: ${{ secrets.NEW_CEC_PASS }}
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-      - name: Install dependencies
-        run: pip install python-dotenv google-api-python-client google-generativeai selenium webdriver-manager
-      - name: Run script
-        run: python -u extract_lessons.py
-      - name: Commit JSON output
-        run: |
-          git config user.name "GitHub Action"
-          git config user.email "action@github.com"
-          git add Class/*
-          git commit -m "Update extracted class JSONs" || echo "No changes"
-          git push
+ extract:
+   runs-on: ubuntu-latest
+   env:
+     NEW_CEC_USER: ${{ secrets.NEW_CEC_USER }}
+     NEW_CEC_PASS: ${{ secrets.NEW_CEC_PASS }}
+     GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+     GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+     TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+     TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+     TELEGRAM_CHAT_ID_2: ${{ secrets.TELEGRAM_CHAT_ID_2 }}
+   steps:
+     - uses: actions/checkout@v3
+     - name: Set up Python
+       uses: actions/setup-python@v4
+       with:
+         python-version: '3.9'
+     - name: Install dependencies
+       run: pip install python-dotenv requests selenium webdriver-manager gspread oauth2client pdfplumber google-generativeai python-telegram-bot
+     - name: Run script
+       run: python -u report_simple.py
+     - name: Commit JSON output
+       run: |
+         git config user.name "GitHub Action"
+         git config user.email "action@github.com"
+         git add processed2.json vocab_total.json Report/* class_info_log2.txt
+         git commit -m "Update report and vocab JSONs" || echo "No changes"
+         git push
