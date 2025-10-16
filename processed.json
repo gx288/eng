@@ -879,6 +879,11 @@
       "last_lesson": 71,
       "total_lessons": 0,
       "has_errors": false
+    },
+    "10660": {
+      "last_lesson": 30,
+      "total_lessons": 31,
+      "has_errors": true
     }
   },
   "Discover 5": {
