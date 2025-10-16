@@ -1010,9 +1010,9 @@
       "has_errors": false
     },
     "10019": {
-      "last_lesson": 0,
+      "last_lesson": 1,
       "total_lessons": 23,
-      "has_errors": false
+      "has_errors": true
     }
   },
   "Discover 4": {
