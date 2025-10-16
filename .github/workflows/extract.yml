@@ -1,0 +1,36 @@
+name: Extract Lessons
+
+on:
+  push:
+    paths:
+      - 'class/**'  # Trigger khi thay đổi file links
+      - 'config.json'
+      - 'extract_lessons.py'
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install python-dotenv google-api-python-client google-generativeai
+      - name: Load secrets
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+        run: |
+          echo "GEMINI_API_KEY=$GEMINI_API_KEY" >> .env
+          echo "GOOGLE_CREDENTIALS_JSON=$GOOGLE_CREDENTIALS_JSON" >> .env
+      - name: Run script
+        run: python extract_lessons.py
+      - name: Commit JSON output
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add getAIdata/*
+          git commit -m "Update extracted class JSONs" || echo "No changes"
+          git push
