@@ -9,6 +9,11 @@ on:
 jobs:
   extract:
     runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+      NEW_CEC_USER: ${{ secrets.NEW_CEC_USER }}
+      NEW_CEC_PASS: ${{ secrets.NEW_CEC_PASS }}
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
@@ -17,17 +22,6 @@ jobs:
           python-version: '3.9'
       - name: Install dependencies
         run: pip install python-dotenv google-api-python-client google-generativeai selenium webdriver-manager
-      - name: Load secrets
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-          NEW_CEC_USER: ${{ secrets.NEW_CEC_USER }}
-          NEW_CEC_PASS: ${{ secrets.NEW_CEC_PASS }}
-        run: |
-          echo "GEMINI_API_KEY=$GEMINI_API_KEY" >> .env
-          echo "GOOGLE_CREDENTIALS=$GOOGLE_CREDENTIALS" >> .env
-          echo "NEW_CEC_USER=$NEW_CEC_USER" >> .env
-          echo "NEW_CEC_PASS=$NEW_CEC_PASS" >> .env
       - name: Run script
         run: python extract_lessons.py
       - name: Commit JSON output
