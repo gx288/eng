@@ -3036,3 +3036,23 @@ Buổi học hôm nay con tích cực tham gia lớp học và chăm chỉ đọ
 [2025-10-16 13:35:14] Report button is disabled
 [2025-10-16 13:35:14] Closing WebDriver
 [2025-10-16 13:35:14] Script completed
+[2025-10-16 14:24:35] Starting script
+[2025-10-16 14:24:35] Starting report check for calendar overview
+[2025-10-16 14:24:35] Loaded processed2.json: {'date': '2025-10-10', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pF75uhDmtQAtxFd6QpDMs8DLfknfqxf1/export?format=pdf'}
+[2025-10-16 14:24:35] Writing Google credentials to credentials.json
+[2025-10-16 14:24:35] Credentials written successfully
+[2025-10-16 14:24:35] Initializing Chrome WebDriver
+[2025-10-16 14:24:41] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-16 14:24:46] Entering username: 61655HN
+[2025-10-16 14:24:47] Entering password
+[2025-10-16 14:24:47] Clicking login button
+[2025-10-16 14:24:52] Login successful
+[2025-10-16 14:24:52] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2025-10-16 14:25:00] Scrolled to bottom of page
+[2025-10-16 14:25:00] Found 20 class events
+[2025-10-16 14:25:00] Latest class date before today: 2025-10-15
+[2025-10-16 14:25:03] Class name from popup: VQ2-K2-2501
+[2025-10-16 14:25:03] Report button is enabled, clicking to get report URL
+[2025-10-16 14:33:06] Error checking reports: HTTPConnectionPool(host='localhost', port=56527): Max retries exceeded with url: /session/d081b35b406eee0daa44ba4d0b763472/url (Caused by ReadTimeoutError("HTTPConnectionPool(host='localhost', port=56527): Read timed out. (read timeout=120)"))
+[2025-10-16 14:33:06] Closing WebDriver
+[2025-10-16 14:41:17] Script completed
