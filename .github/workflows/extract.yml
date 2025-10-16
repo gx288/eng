@@ -3,7 +3,7 @@ name: Extract Lessons
 on:
   push:
     paths:
-      - 'class/**'  # Trigger khi thay đổi file links
+      - 'Class/**'
       - 'config.json'
       - 'extract_lessons.py'
 
@@ -17,14 +17,18 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install dependencies
-        run: pip install python-dotenv google-api-python-client google-generativeai
+        run: pip install python-dotenv google-api-python-client google-generativeai selenium webdriver-manager
       - name: Load secrets
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          CEC_USERNAME: ${{ secrets.CEC_USERNAME }}
+          CEC_PASSWORD: ${{ secrets.CEC_PASSWORD }}
         run: |
           echo "GEMINI_API_KEY=$GEMINI_API_KEY" >> .env
           echo "GOOGLE_CREDENTIALS_JSON=$GOOGLE_CREDENTIALS_JSON" >> .env
+          echo "CEC_USERNAME=$CEC_USERNAME" >> .env
+          echo "CEC_PASSWORD=$CEC_PASSWORD" >> .env
       - name: Run script
         run: python extract_lessons.py
       - name: Commit JSON output
