@@ -983,6 +983,11 @@
       "last_lesson": 22,
       "total_lessons": 23,
       "has_errors": false
+    },
+    "10730": {
+      "last_lesson": 24,
+      "total_lessons": 25,
+      "has_errors": true
     }
   },
   "Discover 4": {
