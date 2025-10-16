@@ -3091,3 +3091,34 @@ Buổi học hôm nay con tích cực tham gia lớp học và chăm chỉ đọ
 [2025-10-16 16:39:02] Error checking reports: HTTPConnectionPool(host='localhost', port=42357): Max retries exceeded with url: /session/e6a6a77f1e0fa4d0f3ec9a291fa5aa76/url (Caused by ReadTimeoutError("HTTPConnectionPool(host='localhost', port=42357): Read timed out. (read timeout=120)"))
 [2025-10-16 16:39:02] Closing WebDriver
 [2025-10-16 16:47:12] Script completed
+[2025-10-16 17:20:57] Starting script
+[2025-10-16 17:20:57] Starting report check for calendar overview
+[2025-10-16 17:20:57] Loaded processed2.json: {'date': '2025-10-10', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pF75uhDmtQAtxFd6QpDMs8DLfknfqxf1/export?format=pdf'}
+[2025-10-16 17:20:57] Writing Google credentials to credentials.json
+[2025-10-16 17:20:57] Credentials written successfully
+[2025-10-16 17:20:57] Initializing Chrome WebDriver
+[2025-10-16 17:21:07] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-16 17:21:12] Entering username: 61655HN
+[2025-10-16 17:21:12] Entering password
+[2025-10-16 17:21:12] Clicking login button
+[2025-10-16 17:21:17] Login successful
+[2025-10-16 17:21:17] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2025-10-16 17:21:26] Scrolled to bottom of page
+[2025-10-16 17:21:26] Found 20 class events
+[2025-10-16 17:21:27] Latest class date before today: 2025-10-15
+[2025-10-16 17:21:30] Class name from popup: VQ2-K2-2501
+[2025-10-16 17:21:30] Report button is enabled, clicking to get report URL
+[2025-10-16 17:21:33] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-16 17:21:33] Preparing to send basic Telegram notification
+[2025-10-16 17:21:33] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-15
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-16 17:21:34] Telegram notification sent successfully to chat_id 1900957785
+[2025-10-16 17:21:34] Sending Telegram message to chat_id 1924741087: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-15
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-16 17:21:35] Telegram notification sent successfully to chat_id 1924741087
+[2025-10-16 17:21:35] Updating Google Sheet 'Report' with Date 2025-10-15, Class VQ2-K2-2501, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-16 17:21:37] Updated Google Sheet 'Report' successfully: 2025-10-15, VQ2-K2-2501, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf at 2025-10-16 17:21:33
+[2025-10-16 17:21:37] Saving processed data to processed2.json
+[2025-10-16 17:21:37] Saved processed2.json successfully
+[2025-10-16 17:21:37] Git repository detected
+[2025-10-16 17:21:37] Committing and pushing changes to GitHub
