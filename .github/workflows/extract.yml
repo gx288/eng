@@ -1,6 +1,7 @@
 name: Extract Lessons
 
 on:
+  workflow_dispatch:  # Thêm dòng này để chạy thủ công
   push:
     paths:
       - 'config.json'
