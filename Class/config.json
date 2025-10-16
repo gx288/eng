@@ -1,0 +1,21 @@
+{
+  "google_docs": {
+    "credentials_file": ".credentials.json"
+  },
+  "gemini_api": {
+    "api_key": ""
+  },
+  "cec_auth": {
+    "username": "",
+    "password": ""
+  },
+  "output": {
+    "dir": "./Class",
+    "all_classes_file": "./Class/all_classes.json"
+  },
+  "class_info": [
+    {
+      "class_id": "12345"
+    }
+  ]
+}
