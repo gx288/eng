@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pip install python-dotenv google-api-python-client google-generativeai selenium webdriver-manager
       - name: Run script
-        run: python extract_lessons.py
+        run: python -u extract_lessons.py
       - name: Commit JSON output
         run: |
           git config user.name "GitHub Action"
