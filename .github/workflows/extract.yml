@@ -3,7 +3,6 @@ name: Extract Lessons
 on:
   push:
     paths:
-      - 'Class/**'
       - 'config.json'
       - 'extract_lessons.py'
 
@@ -21,20 +20,20 @@ jobs:
       - name: Load secrets
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-          CEC_USERNAME: ${{ secrets.CEC_USERNAME }}
-          CEC_PASSWORD: ${{ secrets.CEC_PASSWORD }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          NEW_CEC_USER: ${{ secrets.NEW_CEC_USER }}
+          NEW_CEC_PASS: ${{ secrets.NEW_CEC_PASS }}
         run: |
           echo "GEMINI_API_KEY=$GEMINI_API_KEY" >> .env
-          echo "GOOGLE_CREDENTIALS_JSON=$GOOGLE_CREDENTIALS_JSON" >> .env
-          echo "CEC_USERNAME=$CEC_USERNAME" >> .env
-          echo "CEC_PASSWORD=$CEC_PASSWORD" >> .env
+          echo "GOOGLE_CREDENTIALS=$GOOGLE_CREDENTIALS" >> .env
+          echo "NEW_CEC_USER=$NEW_CEC_USER" >> .env
+          echo "NEW_CEC_PASS=$NEW_CEC_PASS" >> .env
       - name: Run script
         run: python extract_lessons.py
       - name: Commit JSON output
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git add getAIdata/*
+          git add Class/*
           git commit -m "Update extracted class JSONs" || echo "No changes"
           git push
