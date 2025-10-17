@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests pdfplumber google-generativeai
       - name: Run script
-        run: python -u extract_report.py
+        run: python -u extract_lessons.py
       - name: Commit JSON output
         run: |
           git config user.name "GitHub Action"
