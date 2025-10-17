@@ -836,9 +836,9 @@
       "has_errors": false
     },
     "10750": {
-      "last_lesson": 0,
+      "last_lesson": 1,
       "total_lessons": 58,
-      "has_errors": false
+      "has_errors": true
     }
   },
   "Discover 5": {
