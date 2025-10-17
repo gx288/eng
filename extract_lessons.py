@@ -63,7 +63,7 @@ def clean_json_response(text):
         text = text[3:-3].strip()
     try:
         parsed_json = json.loads(text)
-        logger.info("Successfully parsed JSON response")
+        logger.info("Parsed JSON response")
         return parsed_json
     except json.JSONDecodeError as e:
         logger.error(f"Invalid JSON response: {str(e)}")
@@ -91,13 +91,17 @@ def get_gemini_model(attempt=0):
     try:
         models = genai.list_models()
         available_models = [model.name for model in models if 'generateContent' in model.supported_generation_methods]
-        for model in available_models:
-            if attempt == 0 and 'gemini-2.5-flash' in model:
-                return model
-            if attempt == 1 and 'gemini-2.5-pro' in model:
-                return model
-            if attempt == 2 and 'gemini-pro' in model:
-                return model
+        model_priority = [
+            'gemini-2.5-flash',
+            'gemini-2.0-flash-lite',
+            'gemini-2.5-pro',
+            'gemini-pro'
+        ]
+        for priority in model_priority[attempt:]:
+            for model in available_models:
+                if priority in model:
+                    logger.info(f"Selected model: {model}")
+                    return model
         return available_models[0] if available_models else None
     except Exception as e:
         logger.error(f"Failed to list models: {str(e)}")
@@ -105,27 +109,25 @@ def get_gemini_model(attempt=0):
 
 # Clean Google Docs URL and convert to PDF export URL
 def clean_google_docs_url(url):
-    logger.info(f"Processing Google Docs URL: {url}")
+    logger.info(f"Processing URL: {url}")
     match = re.match(r"https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)(?:/edit.*|$|/?\?.*|$)", url)
     if not match:
         logger.error(f"Invalid Google Docs URL format: {url}")
         return None
     doc_id = match.group(1)
-    logger.info(f"Extracted document ID: {doc_id}")
     pdf_url = f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
-    logger.info(f"Generated PDF export URL: {pdf_url}")
+    logger.info(f"PDF export URL: {pdf_url}")
     return pdf_url
 
 # Process a single report link
 def process_report_link(report_url):
-    logger.info(f"Starting processing for report URL: {report_url}")
+    logger.info(f"Processing report: {report_url}")
     
     # Clean and convert URL to PDF export
     direct_pdf_url = clean_google_docs_url(report_url)
     if not direct_pdf_url:
-        logger.error("Failed to generate PDF URL, skipping processing")
+        logger.error("Failed to generate PDF URL, skipping")
         return None
-    logger.info(f"PDF export URL: {direct_pdf_url}")
 
     # Download PDF from direct URL
     pdf_path = 'temp_report.pdf'
@@ -139,9 +141,9 @@ def process_report_link(report_url):
             return None
         with open(pdf_path, 'wb') as f:
             f.write(response.content)
-        logger.info(f"Successfully downloaded PDF to {pdf_path}")
+        logger.info(f"Downloaded PDF to {pdf_path}")
     except requests.RequestException as e:
-        logger.error(f"Failed to download PDF from {direct_pdf_url}: {str(e)}")
+        logger.error(f"Failed to download PDF: {str(e)}")
         return None
 
     # Extract text and links from PDF
@@ -159,19 +161,19 @@ def process_report_link(report_url):
                             if 'uri' in annot:
                                 pdf_links.append(annot['uri'])
                 except Exception as e:
-                    logger.error(f"Failed to process page {i + 1} in PDF: {str(e)}")
+                    logger.error(f"Failed to process page {i + 1}: {str(e)}")
                     continue
         logger.info(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
     except Exception as e:
-        logger.error(f"Failed to open or process PDF: {str(e)}")
+        logger.error(f"Failed to process PDF: {str(e)}")
         return None
     finally:
         if os.path.exists(pdf_path):
             try:
                 os.remove(pdf_path)
-                logger.info(f"Deleted temporary PDF file: {pdf_path}")
+                logger.info(f"Deleted PDF file: {pdf_path}")
             except Exception as e:
-                logger.error(f"Failed to delete temporary PDF file: {str(e)}")
+                logger.error(f"Failed to delete PDF file: {str(e)}")
 
     if not pdf_text:
         logger.error("No text extracted from PDF")
@@ -186,7 +188,6 @@ def process_report_link(report_url):
         if not model_name:
             logger.error("No suitable model found")
             continue
-        logger.info(f"Using model: {model_name}")
         try:
             model = genai.GenerativeModel(model_name, system_instruction=SYSTEM_PROMPT)
             response = model.generate_content(pdf_text)
@@ -199,11 +200,14 @@ def process_report_link(report_url):
             break
         except Exception as e:
             if '429' in str(e):
-                retry_delay = 40 + random.uniform(0, 5)  # Base delay + jitter
+                if attempt < max_attempts - 1:
+                    logger.warning(f"Quota exceeded for {model_name}, trying next model")
+                    continue
+                retry_delay = 40 + random.uniform(0, 5)
                 logger.warning(f"Quota exceeded, retrying in {retry_delay:.2f} seconds")
                 time.sleep(retry_delay)
             else:
-                logger.error(f"API attempt {attempt + 1}/{max_attempts} failed: {str(e)}")
+                logger.error(f"API attempt {attempt + 1} failed: {str(e)}")
             if attempt == max_attempts - 1:
                 logger.error("All API attempts failed, using default response")
                 extracted_data = {
@@ -246,7 +250,7 @@ def main():
         return
     with open(LINK_FILE, 'r', encoding='utf-8') as f:
         report_urls = [line.strip() for line in f if line.strip()]
-    logger.info(f"Found {len(report_urls)} report URLs")
+    logger.info(f"Found {len(report_urls)} URLs")
 
     # Load existing homework data
     homework_data = []
@@ -262,15 +266,15 @@ def main():
     processed_urls = {entry.get('report_url') for entry in homework_data}
     for report_url in report_urls:
         if report_url in processed_urls:
-            logger.info(f"Skipping already processed URL: {report_url}")
+            logger.info(f"Skipping processed URL: {report_url}")
             continue
         logger.info(f"Processing URL: {report_url}")
         data = process_report_link(report_url)
         if data:
             homework_data.append(data)
-            logger.info(f"Processed and added report: {report_url}")
+            logger.info(f"Processed report: {report_url}")
         else:
-            logger.warning(f"Failed to process report: {report_url}, continuing with next URL")
+            logger.warning(f"Failed to process report: {report_url}, continuing")
 
     # Save to homework.json
     try:
