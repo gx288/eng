@@ -1,53 +1,34 @@
 import json
 import os
-from dotenv import load_dotenv
-from googleapiclient.discovery import build
-from google.oauth2.service_account import Credentials
+import requests
+import pdfplumber
 import google.generativeai as genai
+from urllib.parse import parse_qs, urlparse
+from datetime import datetime
+from zoneinfo import ZoneInfo
+import logging
 import re
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-import time
-from webdriver_manager.chrome import ChromeDriverManager
 
-# Load .env và config
-load_dotenv()
-with open("config.json", "r") as f:
-    config = json.load(f)
+# Configuration
+LOG_FILE = "class_info_log.txt"
+HOMEWORK_FILE = "homework.json"
+LINK_FILE = "link.txt"
+API_KEY = os.getenv("GEMINI_API_KEY")
+TODAY = datetime.now(tz=ZoneInfo("Asia/Ho_Chi_Minh")).strftime("%Y-%m-%d")
 
-# Load secrets
-gemini_api_key = os.getenv("GEMINI_API_KEY")
-credentials_json = os.getenv("GOOGLE_CREDENTIALS")
-cec_username = os.getenv("NEW_CEC_USER")
-cec_password = os.getenv("NEW_CEC_PASS")
+# Logging setup
+logging.basicConfig(
+    level=logging.INFO,
+    format='[%(asctime)s] %(levelname)s: %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_FILE, encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
-if not all([gemini_api_key, credentials_json, cec_username, cec_password]):
-    raise ValueError("Missing required environment variables")
-
-credentials_info = json.loads(credentials_json)
-credentials = Credentials.from_service_account_info(credentials_info)
-
-# Setup Google Docs API
-docs_service = build("docs", "v1", credentials=credentials)
-
-# Setup Gemini API
-genai.configure(api_key=gemini_api_key)
-
-# Setup Selenium
-options = webdriver.ChromeOptions()
-options.add_argument("--headless")
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0")
-options.add_argument("--disable-autofill")
-driver = webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
-
-# Prompt cho Gemini
-PROMPT = """
+# System prompt for Gemini API
+SYSTEM_PROMPT = """
 Extract structured data from the provided text (from a Google Docs lesson plan). Ignore the "Comments" section entirely to avoid storing personal student information. Output a JSON object with the following fields:
 - class_name: String, e.g., "Kindergarten 1 - KG1R".
 - lesson_unit: String, e.g., "Unit 33 (1st)".
@@ -68,198 +49,207 @@ Extract structured data from the provided text (from a Google Docs lesson plan).
 For hyperlinks, extract URLs and their associated text (e.g., video titles) from the provided text. Ensure all text is preserved accurately, including Vietnamese translations. Return only the JSON output, no additional text.
 """
 
-def log_message(message):
-    timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-    print(f"[{timestamp}] {message}")
-    with open("extract_lessons_log.txt", "a", encoding="utf-8") as f:
-        f.write(f"[{timestamp}] {message}\n")
-
-def login_cec(driver):
-    driver.get("https://apps.cec.com.vn/login")
+# Clean and validate JSON response
+def clean_json_response(text):
+    text = text.strip()
+    if text.startswith('```json') and text.endswith('```'):
+        text = text[7:-3].strip()
+    elif text.startswith('```') and text.endswith('```'):
+        text = text[3:-3].strip()
     try:
-        username_field = WebDriverWait(driver, 30).until(
-            EC.visibility_of_element_located((By.ID, "input-14"))
-        )
-        driver.execute_script("arguments[0].value = '';", username_field)
-        username_field.send_keys(cec_username)
-        password_field = WebDriverWait(driver, 30).until(
-            EC.visibility_of_element_located((By.ID, "input-18"))
-        )
-        driver.execute_script("arguments[0].value = '';", password_field)
-        password_field.send_keys(cec_password)
-        login_button = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']"))
-        )
-        login_button.click()
-        time.sleep(5)
-        if "login" in driver.current_url:
-            log_message("Lỗi đăng nhập: Vẫn ở trang login")
-            raise Exception("Login failed")
-        log_message("Đăng nhập thành công vào CEC")
-    except Exception as e:
-        log_message(f"Lỗi đăng nhập CEC: {str(e)}")
-        raise
-
-def extract_text_from_doc(doc_id):
-    try:
-        doc = docs_service.documents().get(documentId=doc_id).execute()
-        content = doc.get("body").get("content")
-        text = []
-        links = []
-        for element in content:
-            if "paragraph" in element:
-                for elem in element["paragraph"]["elements"]:
-                    if "textRun" in elem:
-                        text_content = elem["textRun"]["content"]
-                        text.append(text_content)
-                        if "textStyle" in elem["textRun"] and "link" in elem["textRun"]["textStyle"]:
-                            url = elem["textRun"]["textStyle"]["link"].get("url", "")
-                            links.append({"context": text_content.strip(), "url": url})
-        full_text = "".join(text)
-        return full_text, links
-    except Exception as e:
-        log_message(f"Error extracting Google Doc {doc_id}: {str(e)}")
-        return None, []
-
-def parse_doc_id(url):
-    if url and url.startswith("https://docs.google.com"):
-        match = re.search(r'/d/([a-zA-Z0-9_-]+)', url)
-        return match.group(1) if match else None
-    return None
-
-def process_doc_to_json(doc_id, class_name, lesson_number):
-    if not doc_id:
-        return None
-    text, links = extract_text_from_doc(doc_id)
-    if not text:
-        return None
-    model = genai.GenerativeModel("gemini-1.5-pro")
-    response = model.generate_content([PROMPT, text])
-    try:
-        json_data = json.loads(response.text)
-        json_data["lesson_number"] = lesson_number
-        json_data["class_name"] = class_name
-        if "links_all" not in json_data:
-            json_data["links_all"] = []
-        for link in links:
-            link_type = "youtube" if "youtube.com" in link["url"] else "quizlet" if "quizlet.com" in link["url"] else "other"
-            json_data["links_all"].append({
-                "context": link["context"],
-                "url": link["url"],
-                "type": link_type
-            })
-        return json_data
-    except Exception as e:
-        log_message(f"Error parsing JSON for doc {doc_id}: {str(e)}")
-        return None
-
-def process_class(class_info):
-    class_id = class_info["class_id"]
-    
-    # Selenium: Lấy report_link, homework_content và class_name
-    driver.get(f"https://apps.cec.com.vn/student-calendar/class-detail?classID={class_id}")
-    log_message(f"Processing Class ID {class_id}")
-    time.sleep(5)
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    
-    try:
-        class_code_element = WebDriverWait(driver, 40).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "h2.d-flex div"))
-        )
-        class_name = class_code_element.text.strip()
-        
-        lesson_rows = WebDriverWait(driver, 20).until(
-            EC.presence_of_all_elements_located((By.XPATH, "//tbody/tr"))
-        )
-        
-        class_data = {
-            "class_name": class_name,
-            "class_id": class_id,
-            "lessons": []
+        return json.loads(text)
+    except json.JSONDecodeError:
+        logger.error("Invalid JSON response, returning default")
+        return {
+            "class_name": "cannot find info",
+            "lesson_unit": "cannot find info",
+            "lesson_date": TODAY,
+            "learning_objectives": {
+                "vocabulary_review": {"theme": "", "words": [], "count": 0},
+                "vocabulary_new": {"theme": "", "words": [], "count": 0},
+                "pronunciation": {"sound": "", "words": [], "count": 0},
+                "phonics": ""
+            },
+            "warm_up": {"description": "", "videos": []},
+            "homework_check": "cannot find info",
+            "running_content": {"theme": "", "review_vocabulary": {"link": "", "words": [], "structure": "", "examples": [], "activities": ""}},
+            "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
+            "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
+            "homework": [],
+            "links_all": []
         }
-        
-        for lesson_index, row in enumerate(lesson_rows):
-            try:
-                lesson_number = row.find_element(By.XPATH, "./td[4]").text.strip()
-                report_link = "No report available"
-                doc_id = None
-                try:
-                    report_button = row.find_element(By.XPATH, ".//i[@data-v-50ef298c and contains(@class, 'isax-card-edit')]")
-                    driver.execute_script("arguments[0].scrollIntoView(true);", report_button)
-                    original_window = driver.current_window_handle
-                    driver.execute_script("arguments[0].click();", report_button)
-                    WebDriverWait(driver, 10).until(EC.number_of_windows_to_be(2))
-                    new_window = [window for window in driver.window_handles if window != original_window][0]
-                    driver.switch_to.window(new_window)
-                    report_link = driver.current_url
-                    doc_id = parse_doc_id(report_link)
-                    driver.close()
-                    driver.switch_to.window(original_window)
-                except:
-                    log_message(f"No report link for lesson {lesson_number} in Class ID {class_id}")
-                
-                homework_content = "No homework available"
-                try:
-                    homework_button = row.find_element(By.XPATH, ".//i[@data-v-50ef298c and contains(@class, 'isax-book-square')]")
-                    driver.execute_script("arguments[0].scrollIntoView(true);", homework_button)
-                    driver.execute_script("arguments[0].click();", homework_button)
-                    popup = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".v-dialog--active")))
-                    header = popup.find_element(By.CSS_SELECTOR, ".v-toolbar__title").text.strip()
-                    text_actions = [elem.text.strip() for elem in popup.find_elements(By.CSS_SELECTOR, ".text-action")]
-                    link_actions = popup.find_elements(By.CSS_SELECTOR, ".link-action")
-                    homework_links = [f"{link.text.strip()}: {link.get_attribute('href')}" for link in link_actions]
-                    homework_content = f"Homework Header: {header}\n" + ("Text:\n" + "\n".join(text_actions) + "\n" if text_actions else "") + ("Links:\n" + "\n".join(homework_links) if homework_links else "")
-                    try:
-                        popup.find_element(By.XPATH, ".//button[.//span[contains(text(), 'Cancel')]]").click()
-                    except:
-                        driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
-                    time.sleep(2)
-                except:
-                    log_message(f"No homework content for lesson {lesson_number} in Class ID {class_id}")
-                
-                # Process Google Doc
-                json_data = process_doc_to_json(doc_id, class_name, lesson_number)
-                if json_data:
-                    json_data["report_link"] = report_link
-                    json_data["homework_content"] = homework_content
-                    class_data["lessons"].append(json_data)
-                else:
-                    log_message(f"Failed to process doc {doc_id} for lesson {lesson_number}")
-            
-            except Exception as e:
-                log_message(f"Error processing lesson {lesson_index + 1} for Class ID {class_id}: {str(e)}")
-                continue
-        
-        # Lưu JSON cho lớp
-        os.makedirs(config["output"]["dir"], exist_ok=True)
-        output_path = os.path.join(config["output"]["dir"], f"{class_id}.json")
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(class_data, f, ensure_ascii=False, indent=4)
-        log_message(f"Saved {class_id}.json")
-        
-        return class_data
-    
+
+# Get available Gemini model
+def get_gemini_model(attempt=0):
+    try:
+        models = genai.list_models()
+        available_models = [model.name for model in models if 'generateContent' in model.supported_generation_methods]
+        logger.info(f"Available models: {available_models}")
+        for model in available_models:
+            if attempt == 0 and 'gemini-2.5-flash' in model:
+                return model
+            if attempt == 1 and 'gemini-2.5-pro' in model:
+                return model
+            if attempt == 2 and 'gemini-pro' in model:
+                return model
+        return available_models[0] if available_models else None
     except Exception as e:
-        log_message(f"Error processing Class ID {class_id}: {str(e)}")
+        logger.error(f"Failed to list models: {str(e)}")
         return None
 
-def main():
-    try:
-        login_cec(driver)
-        all_classes = []
-        for class_info in config["class_info"]:
-            class_data = process_class(class_info)
-            if class_data:
-                all_classes.append(class_data)
-        
-        # Lưu tổng hợp
-        all_classes_path = config["output"]["all_classes_file"]
-        with open(all_classes_path, "w", encoding="utf-8") as f:
-            json.dump(all_classes, f, ensure_ascii=False, indent=4)
-        log_message(f"Saved all classes to {all_classes_path}")
+# Process a single report link
+def process_report_link(report_url):
+    logger.info(f"Processing report URL: {report_url}")
     
+    # Try to extract direct PDF URL from query parameters
+    parsed_url = urlparse(report_url)
+    query_params = parse_qs(parsed_url.query)
+    direct_pdf_url = query_params.get('url', [None])[0]
+    
+    # If no direct PDF URL, try converting Google Docs URL to PDF export
+    if not direct_pdf_url:
+        match = re.match(r"https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)/", report_url)
+        if match:
+            doc_id = match.group(1)
+            direct_pdf_url = f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
+            logger.info(f"Converted to PDF export URL: {direct_pdf_url}")
+        else:
+            logger.error(f"Invalid Google Docs URL format: {report_url}")
+            return None
+
+    # Download PDF
+    pdf_path = 'temp_report.pdf'
+    logger.info(f"Downloading PDF from {direct_pdf_url}")
+    try:
+        response = requests.get(direct_pdf_url, timeout=10)
+        response.raise_for_status()
+        content_type = response.headers.get('content-type', '')
+        if 'application/pdf' not in content_type:
+            logger.error(f"Downloaded file is not a PDF (Content-Type: {content_type})")
+            return None
+        with open(pdf_path, 'wb') as f:
+            f.write(response.content)
+        logger.info(f"Successfully downloaded PDF to {pdf_path}")
+    except requests.RequestException as e:
+        logger.error(f"Failed to download PDF: {str(e)}")
+        return None
+
+    # Extract text and links from PDF
+    pdf_text = ''
+    pdf_links = []
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages:
+                text = page.extract_text()
+                pdf_text += text or ''
+                if page.annots:
+                    for annot in page.annots:
+                        if 'uri' in annot:
+                            pdf_links.append(annot['uri'])
+        logger.info(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
+    except Exception as e:
+        logger.error(f"Failed to extract text or links from PDF: {str(e)}")
+        return None
     finally:
-        driver.quit()
+        if os.path.exists(pdf_path):
+            os.remove(pdf_path)
+            logger.info(f"Deleted temporary PDF file: {pdf_path}")
+
+    if not pdf_text:
+        logger.error("No text extracted from PDF")
+        return None
+
+    # Call Gemini API
+    max_attempts = 3
+    extracted_data = None
+    for attempt in range(max_attempts):
+        logger.info(f"Gemini API attempt {attempt + 1}/{max_attempts}")
+        model_name = get_gemini_model(attempt)
+        if not model_name:
+            logger.error("No suitable model found")
+            continue
+        logger.info(f"Using model: {model_name}")
+        try:
+            model = genai.GenerativeModel(model_name, system_instruction=SYSTEM_PROMPT)
+            response = model.generate_content(pdf_text)
+            cleaned_text = clean_json_response(response.text)
+            extracted_data = json.loads(cleaned_text)
+            extracted_data['links_all'] = list(set(extracted_data.get('links_all', []) + [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]))
+            logger.info(f"API attempt {attempt + 1} successful")
+            break
+        except Exception as e:
+            logger.error(f"API attempt {attempt + 1}/{max_attempts} failed: {str(e)}")
+            if attempt == max_attempts - 1:
+                logger.error("All API attempts failed, using default response")
+                extracted_data = {
+                    "class_name": "cannot find info",
+                    "lesson_unit": "cannot find info",
+                    "lesson_date": TODAY,
+                    "learning_objectives": {
+                        "vocabulary_review": {"theme": "", "words": [], "count": 0},
+                        "vocabulary_new": {"theme": "", "words": [], "count": 0},
+                        "pronunciation": {"sound": "", "words": [], "count": 0},
+                        "phonics": ""
+                    },
+                    "warm_up": {"description": "", "videos": []},
+                    "homework_check": "cannot find info",
+                    "running_content": {"theme": "", "review_vocabulary": {"link": "", "words": [], "structure": "", "examples": [], "activities": ""}},
+                    "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
+                    "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
+                    "homework": [],
+                    "links_all": [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]
+                }
+
+    extracted_data['report_url'] = report_url
+    return extracted_data
+
+# Main function
+def main():
+    logger.info("Starting report extraction")
+    if not API_KEY:
+        logger.error("Missing GEMINI_API_KEY, aborting")
+        return
+
+    genai.configure(api_key=API_KEY)
+
+    # Read links from link.txt
+    if not os.path.exists(LINK_FILE):
+        logger.error(f"{LINK_FILE} does not exist")
+        return
+    with open(LINK_FILE, 'r', encoding='utf-8') as f:
+        report_urls = [line.strip() for line in f if line.strip()]
+    logger.info(f"Found {len(report_urls)} report URLs in {LINK_FILE}")
+
+    # Load existing homework data
+    homework_data = []
+    if os.path.exists(HOMEWORK_FILE):
+        try:
+            with open(HOMEWORK_FILE, 'r', encoding='utf-8') as f:
+                homework_data = json.load(f)
+            logger.info(f"Loaded existing {HOMEWORK_FILE}: {len(homework_data)} entries")
+        except Exception as e:
+            logger.error(f"Error reading {HOMEWORK_FILE}: {str(e)}")
+
+    # Process each report URL
+    processed_urls = {entry.get('report_url') for entry in homework_data}
+    for report_url in report_urls:
+        if report_url in processed_urls:
+            logger.info(f"Skipping already processed URL: {report_url}")
+            continue
+        data = process_report_link(report_url)
+        if data:
+            homework_data.append(data)
+            logger.info(f"Processed report: {report_url}")
+
+    # Save to homework.json
+    try:
+        with open(HOMEWORK_FILE, 'w', encoding='utf-8') as f:
+            json.dump(homework_data, f, ensure_ascii=False, indent=4)
+        logger.info(f"Successfully saved {HOMEWORK_FILE} with {len(homework_data)} entries")
+    except Exception as e:
+        logger.error(f"Error saving {HOMEWORK_FILE}: {str(e)}")
 
 if __name__ == "__main__":
+    logger.info("Starting script")
     main()
+    logger.info("Script completed")
