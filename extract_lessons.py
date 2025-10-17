@@ -17,7 +17,7 @@ TODAY = datetime.now(tz=ZoneInfo("Asia/Ho_Chi_Minh")).strftime("%Y-%m-%d")
 
 # Logging setup
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format='[%(asctime)s] %(levelname)s: %(message)s',
     handlers=[
         logging.FileHandler(LOG_FILE, encoding='utf-8'),
@@ -50,15 +50,22 @@ For hyperlinks, extract URLs and their associated text (e.g., video titles) from
 
 # Clean and validate JSON response
 def clean_json_response(text):
+    logger.debug("Cleaning JSON response")
     text = text.strip()
+    logger.debug(f"Raw response text: {text[:100]}...")  # Log first 100 chars for brevity
     if text.startswith('```json') and text.endswith('```'):
         text = text[7:-3].strip()
+        logger.debug("Stripped ```json``` markers")
     elif text.startswith('```') and text.endswith('```'):
         text = text[3:-3].strip()
+        logger.debug("Stripped ``` markers")
     try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        logger.error("Invalid JSON response, returning default")
+        parsed_json = json.loads(text)
+        logger.info("Successfully parsed JSON response")
+        return parsed_json
+    except json.JSONDecodeError as e:
+        logger.error(f"Invalid JSON response: {str(e)}")
+        logger.debug(f"Failed JSON content: {text[:200]}...")  # Log first 200 chars
         return {
             "class_name": "cannot find info",
             "lesson_unit": "cannot find info",
@@ -80,49 +87,63 @@ def clean_json_response(text):
 
 # Get available Gemini model
 def get_gemini_model(attempt=0):
+    logger.debug(f"Fetching Gemini model, attempt {attempt + 1}")
     try:
         models = genai.list_models()
         available_models = [model.name for model in models if 'generateContent' in model.supported_generation_methods]
         logger.info(f"Available models: {available_models}")
         for model in available_models:
             if attempt == 0 and 'gemini-2.5-flash' in model:
+                logger.debug(f"Selected model: {model}")
                 return model
             if attempt == 1 and 'gemini-2.5-pro' in model:
+                logger.debug(f"Selected model: {model}")
                 return model
             if attempt == 2 and 'gemini-pro' in model:
+                logger.debug(f"Selected model: {model}")
                 return model
-        return available_models[0] if available_models else None
+        selected_model = available_models[0] if available_models else None
+        logger.info(f"Selected default model: {selected_model}")
+        return selected_model
     except Exception as e:
         logger.error(f"Failed to list models: {str(e)}")
         return None
 
 # Clean Google Docs URL and convert to PDF export URL
 def clean_google_docs_url(url):
-    # Extract document ID using regex
-    match = re.match(r"https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)/", url)
+    logger.debug(f"Processing Google Docs URL: {url}")
+    # Updated regex to handle various URL formats
+    match = re.match(r"https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)(?:/edit.*|$|/?\?.*|$)", url)
     if not match:
         logger.error(f"Invalid Google Docs URL format: {url}")
+        logger.debug(f"Regex pattern used: https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)(?:/edit.*|$|/?\?.*|$)")
+        logger.debug("Regex match failed")
         return None
     doc_id = match.group(1)
-    # Construct clean PDF export URL
-    return f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
+    logger.info(f"Extracted document ID: {doc_id}")
+    pdf_url = f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
+    logger.info(f"Generated PDF export URL: {pdf_url}")
+    return pdf_url
 
 # Process a single report link
 def process_report_link(report_url):
-    logger.info(f"Processing report URL: {report_url}")
+    logger.info(f"Starting processing for report URL: {report_url}")
     
     # Clean and convert URL to PDF export
     direct_pdf_url = clean_google_docs_url(report_url)
     if not direct_pdf_url:
+        logger.error("Failed to generate PDF URL, aborting processing")
         return None
+    logger.debug(f"PDF export URL: {direct_pdf_url}")
 
     # Download PDF from direct URL
     pdf_path = 'temp_report.pdf'
-    logger.info(f"Downloading PDF from {direct_pdf_url}")
+    logger.debug(f"Attempting to download PDF to {pdf_path}")
     try:
         response = requests.get(direct_pdf_url, timeout=10)
         response.raise_for_status()
         content_type = response.headers.get('content-type', '')
+        logger.debug(f"Response content-type: {content_type}")
         if 'application/pdf' not in content_type:
             logger.error(f"Downloaded file is not a PDF (Content-Type: {content_type})")
             return None
@@ -130,21 +151,24 @@ def process_report_link(report_url):
             f.write(response.content)
         logger.info(f"Successfully downloaded PDF to {pdf_path}")
     except requests.RequestException as e:
-        logger.error(f"Failed to download PDF: {str(e)}")
+        logger.error(f"Failed to download PDF from {direct_pdf_url}: {str(e)}")
         return None
 
     # Extract text and links from PDF
     pdf_text = ''
     pdf_links = []
+    logger.debug("Extracting text and links from PDF")
     try:
         with pdfplumber.open(pdf_path) as pdf:
             for page in pdf.pages:
                 text = page.extract_text()
                 pdf_text += text or ''
+                logger.debug(f"Extracted text from page: {text[:100] if text else 'None'}...")
                 if page.annots:
                     for annot in page.annots:
                         if 'uri' in annot:
                             pdf_links.append(annot['uri'])
+                            logger.debug(f"Found PDF link: {annot['uri']}")
         logger.info(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
     except Exception as e:
         logger.error(f"Failed to extract text or links from PDF: {str(e)}")
@@ -161,6 +185,7 @@ def process_report_link(report_url):
     # Call Gemini API
     max_attempts = 3
     extracted_data = None
+    logger.debug(f"Starting Gemini API calls, max attempts: {max_attempts}")
     for attempt in range(max_attempts):
         logger.info(f"Gemini API attempt {attempt + 1}/{max_attempts}")
         model_name = get_gemini_model(attempt)
@@ -171,10 +196,13 @@ def process_report_link(report_url):
         try:
             model = genai.GenerativeModel(model_name, system_instruction=SYSTEM_PROMPT)
             response = model.generate_content(pdf_text)
+            logger.debug(f"Gemini API response: {response.text[:100]}...")
             cleaned_text = clean_json_response(response.text)
             extracted_data = json.loads(cleaned_text)
             extracted_data['links_all'] = list(set(extracted_data.get('links_all', []) + [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]))
-            logger.info(f"API attempt {attempt + 1} successful")
+            extracted_data['report_url'] = report_url
+            extracted_data['pdf_export_url'] = direct_pdf_url
+            logger.info(f"API attempt {attempt + 1} successful, extracted data: {json.dumps(extracted_data, ensure_ascii=False)[:200]}...")
             break
         except Exception as e:
             logger.error(f"API attempt {attempt + 1}/{max_attempts} failed: {str(e)}")
@@ -196,20 +224,24 @@ def process_report_link(report_url):
                     "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
                     "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
                     "homework": [],
-                    "links_all": [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]
+                    "links_all": [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links],
+                    "report_url": report_url,
+                    "pdf_export_url": direct_pdf_url
                 }
 
-    extracted_data['report_url'] = report_url
+    logger.info(f"Completed processing for {report_url}")
     return extracted_data
 
 # Main function
 def main():
     logger.info("Starting report extraction")
+    logger.debug(f"Current timestamp: {TODAY}")
     if not API_KEY:
         logger.error("Missing GEMINI_API_KEY, aborting")
         return
 
     genai.configure(api_key=API_KEY)
+    logger.debug("Configured Gemini API with provided API key")
 
     # Read links from link.txt
     if not os.path.exists(LINK_FILE):
@@ -218,6 +250,7 @@ def main():
     with open(LINK_FILE, 'r', encoding='utf-8') as f:
         report_urls = [line.strip() for line in f if line.strip()]
     logger.info(f"Found {len(report_urls)} report URLs in {LINK_FILE}")
+    logger.debug(f"Report URLs: {report_urls}")
 
     # Load existing homework data
     homework_data = []
@@ -226,19 +259,23 @@ def main():
             with open(HOMEWORK_FILE, 'r', encoding='utf-8') as f:
                 homework_data = json.load(f)
             logger.info(f"Loaded existing {HOMEWORK_FILE}: {len(homework_data)} entries")
+            logger.debug(f"Existing homework data: {json.dumps(homework_data, ensure_ascii=False)[:200]}...")
         except Exception as e:
             logger.error(f"Error reading {HOMEWORK_FILE}: {str(e)}")
 
     # Process each report URL
     processed_urls = {entry.get('report_url') for entry in homework_data}
+    logger.debug(f"Processed URLs: {processed_urls}")
     for report_url in report_urls:
         if report_url in processed_urls:
             logger.info(f"Skipping already processed URL: {report_url}")
             continue
+        logger.debug(f"Processing new URL: {report_url}")
         data = process_report_link(report_url)
         if data:
             homework_data.append(data)
-            logger.info(f"Processed report: {report_url}")
+            logger.info(f"Processed and added report: {report_url}")
+            logger.debug(f"Added data: {json.dumps(data, ensure_ascii=False)[:200]}...")
 
     # Save to homework.json
     try:
@@ -249,6 +286,6 @@ def main():
         logger.error(f"Error saving {HOMEWORK_FILE}: {str(e)}")
 
 if __name__ == "__main__":
-    logger.info("Starting script")
+    logger.debug("Initializing script")
     main()
-    logger.info("Script completed")
+    logger.debug("Script terminated")
