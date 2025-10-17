@@ -26,6 +26,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Filter out verbose pdfplumber logs
+logging.getLogger('pdfplumber').setLevel(logging.WARNING)
+
 # System prompt for Gemini API
 SYSTEM_PROMPT = """
 Extract structured data from the provided text (from a Google Docs lesson plan). Ignore the "Comments" section entirely to avoid storing personal student information. Output a JSON object with the following fields:
@@ -52,7 +55,7 @@ For hyperlinks, extract URLs and their associated text (e.g., video titles) from
 def clean_json_response(text):
     logger.debug("Cleaning JSON response")
     text = text.strip()
-    logger.debug(f"Raw response text: {text[:100]}...")  # Log first 100 chars for brevity
+    logger.debug(f"Raw response text: {text[:100]}...")
     if text.startswith('```json') and text.endswith('```'):
         text = text[7:-3].strip()
         logger.debug("Stripped ```json``` markers")
@@ -65,7 +68,7 @@ def clean_json_response(text):
         return parsed_json
     except json.JSONDecodeError as e:
         logger.error(f"Invalid JSON response: {str(e)}")
-        logger.debug(f"Failed JSON content: {text[:200]}...")  # Log first 200 chars
+        logger.debug(f"Failed JSON content: {text[:200]}...")
         return {
             "class_name": "cannot find info",
             "lesson_unit": "cannot find info",
@@ -112,7 +115,6 @@ def get_gemini_model(attempt=0):
 # Clean Google Docs URL and convert to PDF export URL
 def clean_google_docs_url(url):
     logger.debug(f"Processing Google Docs URL: {url}")
-    # Updated regex to handle various URL formats
     match = re.match(r"https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)(?:/edit.*|$|/?\?.*|$)", url)
     if not match:
         logger.error(f"Invalid Google Docs URL format: {url}")
@@ -132,9 +134,9 @@ def process_report_link(report_url):
     # Clean and convert URL to PDF export
     direct_pdf_url = clean_google_docs_url(report_url)
     if not direct_pdf_url:
-        logger.error("Failed to generate PDF URL, aborting processing")
+        logger.error("Failed to generate PDF URL, skipping processing")
         return None
-    logger.debug(f"PDF export URL: {direct_pdf_url}")
+    logger.info(f"PDF export URL generated: {direct_pdf_url}")
 
     # Download PDF from direct URL
     pdf_path = 'temp_report.pdf'
@@ -161,22 +163,29 @@ def process_report_link(report_url):
     try:
         with pdfplumber.open(pdf_path) as pdf:
             for page in pdf.pages:
-                text = page.extract_text()
-                pdf_text += text or ''
-                logger.debug(f"Extracted text from page: {text[:100] if text else 'None'}...")
-                if page.annots:
-                    for annot in page.annots:
-                        if 'uri' in annot:
-                            pdf_links.append(annot['uri'])
-                            logger.debug(f"Found PDF link: {annot['uri']}")
+                try:
+                    text = page.extract_text()
+                    pdf_text += text or ''
+                    logger.debug(f"Extracted text from page: {text[:100] if text else 'None'}...")
+                    if page.annots:
+                        for annot in page.annots:
+                            if 'uri' in annot:
+                                pdf_links.append(annot['uri'])
+                                logger.debug(f"Found PDF link: {annot['uri']}")
+                except Exception as e:
+                    logger.error(f"Failed to process page in PDF: {str(e)}")
+                    continue
         logger.info(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
     except Exception as e:
-        logger.error(f"Failed to extract text or links from PDF: {str(e)}")
+        logger.error(f"Failed to open or process PDF: {str(e)}")
         return None
     finally:
         if os.path.exists(pdf_path):
-            os.remove(pdf_path)
-            logger.info(f"Deleted temporary PDF file: {pdf_path}")
+            try:
+                os.remove(pdf_path)
+                logger.info(f"Deleted temporary PDF file: {pdf_path}")
+            except Exception as e:
+                logger.error(f"Failed to delete temporary PDF file: {str(e)}")
 
     if not pdf_text:
         logger.error("No text extracted from PDF")
@@ -276,6 +285,8 @@ def main():
             homework_data.append(data)
             logger.info(f"Processed and added report: {report_url}")
             logger.debug(f"Added data: {json.dumps(data, ensure_ascii=False)[:200]}...")
+        else:
+            logger.warning(f"Failed to process report: {report_url}, continuing with next URL")
 
     # Save to homework.json
     try:
