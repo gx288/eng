@@ -483,20 +483,37 @@ def process_report():
             original_window = driver.current_window_handle
             max_window_retries = 3
             report_url = None
-
+        
             for attempt in range(max_window_retries):
                 try:
                     if not check_webdriver(driver):
+                        log_message("WebDriver unresponsive before clicking report button, restarting")
                         driver = restart_webdriver(driver, options)
+                        # Re-navigate to calendar page and re-open popup
+                        driver.get("https://apps.cec.com.vn/student-calendar/overview")
+                        time.sleep(7)
+                        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                        driver.execute_script("arguments[0].click();", latest_event)
+                        time.sleep(3)
+                        popup = WebDriverWait(driver, 10).until(
+                            EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
+                        )
+                        report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
+        
+                    log_message(f"Attempt {attempt + 1}/{max_window_retries} to click report button")
                     report_button.click()
-                    WebDriverWait(driver, 10).until(
-                        EC.number_of_windows_to_be(len(driver.window_handles))
+        
+                    # Wait for new window to open
+                    WebDriverWait(driver, 15).until(
+                        lambda d: len(d.window_handles) > len([original_window])
                     )
                     for window_handle in driver.window_handles:
                         if window_handle != original_window:
                             driver.switch_to.window(window_handle)
                             break
-                    WebDriverWait(driver, 30).until(
+        
+                    # Wait for the new window to load
+                    WebDriverWait(driver, 60).until(
                         EC.url_contains("docs.google.com")
                     )
                     report_url = driver.current_url
@@ -507,13 +524,25 @@ def process_report():
                     if attempt == max_window_retries - 1:
                         log_message("Max retries reached for window switch")
                         raise Exception(f"Failed to retrieve report URL after {max_window_retries} attempts: {str(e)}")
-                    time.sleep(3)
-
+                    # Restart WebDriver if unresponsive
+                    if "connection refused" in str(e).lower() or "timeout" in str(e).lower():
+                        driver = restart_webdriver(driver, options)
+                        # Re-navigate to calendar page
+                        driver.get("https://apps.cec.com.vn/student-calendar/overview")
+                        time.sleep(7)
+                        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                        driver.execute_script("arguments[0].click();", latest_event)
+                        time.sleep(3)
+                        popup = WebDriverWait(driver, 10).until(
+                            EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
+                        )
+                        report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
+                    time.sleep(5)  # Wait longer before retrying
+        
             if report_url:
                 timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
                 body = f"Báo cáo bài học mới cho lớp {class_name} ngày {date_str}\nLink: {report_url}"
                 send_basic_notification("Có Báo cáo bài học mới!", body)
-
                 update_google_sheet(date_str, class_name, report_url, timestamp)
                 save_processed(date_str, class_name, report_url)
 
