@@ -901,9 +901,14 @@
       "has_errors": true
     },
     "10200": {
-      "last_lesson": 19,
+      "last_lesson": 51,
       "total_lessons": 52,
       "has_errors": false
+    },
+    "10056": {
+      "last_lesson": 67,
+      "total_lessons": 69,
+      "has_errors": true
     }
   },
   "Discover 5": {
