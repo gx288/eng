@@ -370,9 +370,14 @@
       "has_errors": false
     },
     "11018": {
-      "last_lesson": 20,
+      "last_lesson": 30,
       "total_lessons": 31,
       "has_errors": false
+    },
+    "10372": {
+      "last_lesson": 50,
+      "total_lessons": 51,
+      "has_errors": true
     }
   },
   "Cambridge Literacy Ladder 1": {
