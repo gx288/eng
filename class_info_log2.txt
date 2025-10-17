@@ -3390,3 +3390,37 @@ Stacktrace:
 [2025-10-17 01:21:20] Error checking reports: Failed to retrieve report URL after 3 attempts: HTTPConnectionPool(host='localhost', port=59929): Max retries exceeded with url: /session/9910e332e3243dd4f57f17c9cad411cb/element/f.67EB11AEE1BCCB0A9D0F956E945FE78D.d.814AA05C33C72809EA53BD7B3834D8FA.e.62/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2aac7bbf10>: Failed to establish a new connection: [Errno 111] Connection refused'))
 [2025-10-17 01:21:20] Closing WebDriver
 [2025-10-17 01:21:21] Script completed
+[2025-10-17 01:47:13] Starting script
+[2025-10-17 01:47:13] Starting report check for calendar overview
+[2025-10-17 01:47:14] Loaded processed2.json: {'date': '2025-10-10', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf'}
+[2025-10-17 01:47:14] Writing Google credentials to credentials.json
+[2025-10-17 01:47:14] Credentials written successfully
+[2025-10-17 01:47:14] Initializing Chrome WebDriver
+[2025-10-17 01:47:21] WebDriver session ID: ed0f1ac6d951b398c665145dff40f431
+[2025-10-17 01:47:21] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-17 01:47:27] Login attempt 1/3
+[2025-10-17 01:47:27] Entering password
+[2025-10-17 01:47:27] Clicking login button
+[2025-10-17 01:47:30] Login successful
+[2025-10-17 01:47:30] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2025-10-17 01:47:39] Scrolled to bottom of page
+[2025-10-17 01:47:39] Found 20 class events
+[2025-10-17 01:47:39] Latest class date before today: 2025-10-15
+[2025-10-17 01:47:42] Class name from popup: VQ2-K2-2501
+[2025-10-17 01:47:42] Report button is enabled, clicking to get report URL
+[2025-10-17 01:48:13] Window switch attempt 1/3 failed: Message: 
+
+[2025-10-17 01:48:16] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 01:48:16] Preparing to send basic Telegram notification
+[2025-10-17 01:48:16] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-15
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 01:48:16] Telegram notification sent successfully to chat_id 1900957785
+[2025-10-17 01:48:16] Sending Telegram message to chat_id e: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-15
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 01:48:17] Telegram send failed for chat_id e: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[2025-10-17 01:48:17] Updating Google Sheet 'Report' with Date 2025-10-15, Class VQ2-K2-2501, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 01:48:19] Updated Google Sheet 'Report' successfully: 2025-10-15, VQ2-K2-2501, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf at 2025-10-17 01:48:16
+[2025-10-17 01:48:19] Saving processed data to processed2.json
+[2025-10-17 01:48:19] Saved processed2.json successfully
+[2025-10-17 01:48:19] Git repository detected
+[2025-10-17 01:48:19] Committing and pushing changes to GitHub
