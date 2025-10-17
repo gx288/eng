@@ -3,14 +3,13 @@ import os
 import requests
 import pdfplumber
 import google.generativeai as genai
-from urllib.parse import parse_qs, urlparse
+import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import logging
-import re
 
 # Configuration
-LOG_FILE = "class_info_log.txt"
+LOG_FILE = "class_info_log3.txt"
 HOMEWORK_FILE = "homework.json"
 LINK_FILE = "link.txt"
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -97,27 +96,27 @@ def get_gemini_model(attempt=0):
         logger.error(f"Failed to list models: {str(e)}")
         return None
 
+# Clean Google Docs URL and convert to PDF export URL
+def clean_google_docs_url(url):
+    # Extract document ID using regex
+    match = re.match(r"https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)/", url)
+    if not match:
+        logger.error(f"Invalid Google Docs URL format: {url}")
+        return None
+    doc_id = match.group(1)
+    # Construct clean PDF export URL
+    return f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
+
 # Process a single report link
 def process_report_link(report_url):
     logger.info(f"Processing report URL: {report_url}")
     
-    # Try to extract direct PDF URL from query parameters
-    parsed_url = urlparse(report_url)
-    query_params = parse_qs(parsed_url.query)
-    direct_pdf_url = query_params.get('url', [None])[0]
-    
-    # If no direct PDF URL, try converting Google Docs URL to PDF export
+    # Clean and convert URL to PDF export
+    direct_pdf_url = clean_google_docs_url(report_url)
     if not direct_pdf_url:
-        match = re.match(r"https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)/", report_url)
-        if match:
-            doc_id = match.group(1)
-            direct_pdf_url = f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
-            logger.info(f"Converted to PDF export URL: {direct_pdf_url}")
-        else:
-            logger.error(f"Invalid Google Docs URL format: {report_url}")
-            return None
+        return None
 
-    # Download PDF
+    # Download PDF from direct URL
     pdf_path = 'temp_report.pdf'
     logger.info(f"Downloading PDF from {direct_pdf_url}")
     try:
