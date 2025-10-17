@@ -3482,3 +3482,36 @@ Buổi học hôm nay, con ngồi học ngay ngắn và đã tiến bộ hơn tr
 [2025-10-17 01:48:45] Error checking reports: Chat not found
 [2025-10-17 01:48:45] Closing WebDriver
 [2025-10-17 01:48:45] Script completed
+[2025-10-17 02:05:01] Starting script
+[2025-10-17 02:05:01] Starting report check for calendar overview
+[2025-10-17 02:05:01] Loaded processed2.json: {'date': '2025-10-10', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf'}
+[2025-10-17 02:05:01] Writing Google credentials to credentials.json
+[2025-10-17 02:05:01] Credentials written successfully
+[2025-10-17 02:05:01] Initializing Chrome WebDriver
+[2025-10-17 02:05:12] WebDriver session ID: 93dd1161bff91c72d21b538f1c651cf5
+[2025-10-17 02:05:12] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-17 02:05:18] Login attempt 1/3
+[2025-10-17 02:05:18] Entering password
+[2025-10-17 02:05:19] Clicking login button
+[2025-10-17 02:05:22] Login successful
+[2025-10-17 02:05:22] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2025-10-17 02:05:31] Scrolled to bottom of page
+[2025-10-17 02:05:31] Found 20 class events
+[2025-10-17 02:05:31] Latest class date before today: 2025-10-15
+[2025-10-17 02:05:34] Class name from popup: VQ2-K2-2501
+[2025-10-17 02:05:34] Report button is enabled, clicking to get report URL
+[2025-10-17 02:05:34] Attempt 1/3 to click report button
+[2025-10-17 02:05:37] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 02:05:37] Preparing to send basic Telegram notification
+[2025-10-17 02:05:37] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-15
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 02:05:37] Telegram notification sent successfully to chat_id 1900957785
+[2025-10-17 02:05:37] Sending Telegram message to chat_id e: Báo cáo bài học mới cho lớp VQ2-K2-2501 ngày 2025-10-15
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 02:05:38] Telegram send failed for chat_id e: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[2025-10-17 02:05:38] Updating Google Sheet 'Report' with Date 2025-10-15, Class VQ2-K2-2501, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 02:05:40] Updated Google Sheet 'Report' successfully: 2025-10-15, VQ2-K2-2501, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf at 2025-10-17 02:05:37
+[2025-10-17 02:05:40] Saving processed data to processed2.json
+[2025-10-17 02:05:40] Saved processed2.json successfully
+[2025-10-17 02:05:40] Git repository detected
+[2025-10-17 02:05:40] Committing and pushing changes to GitHub
