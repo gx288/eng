@@ -1,13 +1,13 @@
 name: Extract Lessons
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
   pull_request:
     branches:
       - main
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   extract:
@@ -15,10 +15,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # Updated to v4 for consistency
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5  # Updated to v5 for latest Python setup
       with:
         python-version: '3.x'
 
@@ -33,7 +33,7 @@ jobs:
       run: python -u extract_lessons.py
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4  # Updated to v4
       with:
         name: extract-output
         path: |
@@ -46,7 +46,7 @@ jobs:
         git config user.name "GitHub Action"
         git config user.email "action@github.com"
         git add homework.json class_info_log3.txt
-        git commit -m "Update homework.json and log"
+        git commit -m "Update homework.json and log" || echo "No changes to commit"
         git pull --rebase
         git push
       continue-on-error: true  # Continue even if push fails
