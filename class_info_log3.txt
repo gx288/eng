@@ -526,3 +526,634 @@
 [2025-10-17 16:47:17,660] INFO: Output files saved locally: /home/runner/work/eng/eng/homework.json and /home/runner/work/eng/eng/class_info_log3.txt
 [2025-10-17 16:47:17,660] INFO: If running in GitHub Actions, download 'homework.json' and 'class_info_log3.txt' from the workflow artifacts at https://github.com/gx288/eng/actions
 [2025-10-17 16:47:17,661] INFO: Script terminated
+[2025-10-17 17:13:46,885] INFO: Initializing script
+[2025-10-17 17:13:46,885] INFO: Starting report extraction
+[2025-10-17 17:13:46,885] INFO: Configured Gemini API
+[2025-10-17 17:13:46,886] INFO: Found 32 URLs
+[2025-10-17 17:13:46,886] INFO: Processing URL: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2025-10-17 17:13:46,886] INFO: Processing report: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2025-10-17 17:13:46,886] INFO: Processing URL: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2025-10-17 17:13:46,886] INFO: PDF export URL: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/export?format=pdf
+[2025-10-17 17:13:46,886] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:13:48,142] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:13:48,142] INFO: Extracting text and links from PDF
+[2025-10-17 17:13:48,313] ERROR: Failed to process page 1: 'y1'
+[2025-10-17 17:13:48,395] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:13:48,569] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:13:48,902] INFO: Extracted 8024 characters and 0 links from PDF
+[2025-10-17 17:13:48,903] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:13:48,903] INFO: Gemini API attempt 1/3
+[2025-10-17 17:13:49,076] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:14:37,201] INFO: Processing API response
+[2025-10-17 17:14:37,201] INFO: Parsed JSON string response
+[2025-10-17 17:14:37,201] INFO: API attempt 1 successful
+[2025-10-17 17:14:37,201] INFO: Completed processing for https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2025-10-17 17:14:37,201] INFO: Processed report: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2025-10-17 17:14:37,201] INFO: Processing URL: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:14:37,201] INFO: Processing report: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:14:37,201] INFO: Processing URL: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:14:37,201] INFO: PDF export URL: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/export?format=pdf
+[2025-10-17 17:14:37,201] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:14:38,610] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:14:38,610] INFO: Extracting text and links from PDF
+[2025-10-17 17:14:38,713] ERROR: Failed to process page 1: 'y1'
+[2025-10-17 17:14:38,796] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:14:38,967] ERROR: Failed to process page 3: 'y1'
+[2025-10-17 17:14:39,303] INFO: Extracted 7534 characters and 0 links from PDF
+[2025-10-17 17:14:39,303] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:14:39,303] INFO: Gemini API attempt 1/3
+[2025-10-17 17:14:39,421] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:15:31,191] INFO: Processing API response
+[2025-10-17 17:15:31,192] INFO: Parsed JSON string response
+[2025-10-17 17:15:31,192] INFO: API attempt 1 successful
+[2025-10-17 17:15:31,192] INFO: Completed processing for https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:15:31,192] INFO: Processed report: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:15:31,192] INFO: Processing URL: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:15:31,192] INFO: Processing report: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:15:31,192] INFO: Processing URL: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:15:31,192] INFO: PDF export URL: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/export?format=pdf
+[2025-10-17 17:15:31,192] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:15:32,449] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:15:32,449] INFO: Extracting text and links from PDF
+[2025-10-17 17:15:32,584] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:15:32,721] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:15:32,859] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:15:33,309] INFO: Extracted 9716 characters and 0 links from PDF
+[2025-10-17 17:15:33,309] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:15:33,309] INFO: Gemini API attempt 1/3
+[2025-10-17 17:15:33,428] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:16:07,471] INFO: Processing API response
+[2025-10-17 17:16:07,472] INFO: Parsed JSON string response
+[2025-10-17 17:16:07,472] INFO: API attempt 1 successful
+[2025-10-17 17:16:07,472] INFO: Completed processing for https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:16:07,472] INFO: Processed report: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:16:07,472] INFO: Processing URL: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:16:07,472] INFO: Processing report: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:16:07,472] INFO: Processing URL: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:16:07,472] INFO: PDF export URL: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/export?format=pdf
+[2025-10-17 17:16:07,472] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:16:08,799] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:16:08,799] INFO: Extracting text and links from PDF
+[2025-10-17 17:16:08,895] ERROR: Failed to process page 1: 'y1'
+[2025-10-17 17:16:09,014] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:16:09,391] INFO: Extracted 6659 characters and 0 links from PDF
+[2025-10-17 17:16:09,391] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:16:09,391] INFO: Gemini API attempt 1/3
+[2025-10-17 17:16:09,646] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:17:00,290] INFO: Processing API response
+[2025-10-17 17:17:00,290] INFO: Parsed JSON string response
+[2025-10-17 17:17:00,290] INFO: API attempt 1 successful
+[2025-10-17 17:17:00,291] INFO: Completed processing for https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:17:00,291] INFO: Processed report: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:17:00,291] INFO: Processing URL: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:17:00,291] INFO: Processing report: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:17:00,291] INFO: Processing URL: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:17:00,291] INFO: PDF export URL: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/export?format=pdf
+[2025-10-17 17:17:00,291] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:17:01,477] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:17:01,477] INFO: Extracting text and links from PDF
+[2025-10-17 17:17:01,599] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:17:01,689] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:17:01,826] ERROR: Failed to process page 4: 'y0'
+[2025-10-17 17:17:02,289] INFO: Extracted 9403 characters and 0 links from PDF
+[2025-10-17 17:17:02,290] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:17:02,290] INFO: Gemini API attempt 1/3
+[2025-10-17 17:17:02,406] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:17:55,196] INFO: Processing API response
+[2025-10-17 17:17:55,197] INFO: Parsed JSON string response
+[2025-10-17 17:17:55,197] INFO: API attempt 1 successful
+[2025-10-17 17:17:55,197] INFO: Completed processing for https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:17:55,197] INFO: Processed report: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:17:55,197] INFO: Processing URL: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:17:55,197] INFO: Processing report: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:17:55,197] INFO: Processing URL: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:17:55,197] INFO: PDF export URL: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/export?format=pdf
+[2025-10-17 17:17:55,197] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:17:56,433] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:17:56,433] INFO: Extracting text and links from PDF
+[2025-10-17 17:17:56,519] ERROR: Failed to process page 1: 'y1'
+[2025-10-17 17:17:56,554] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:17:56,637] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:17:56,838] ERROR: Failed to process page 4: 'y1'
+[2025-10-17 17:17:57,104] INFO: Extracted 7294 characters and 0 links from PDF
+[2025-10-17 17:17:57,105] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:17:57,105] INFO: Gemini API attempt 1/3
+[2025-10-17 17:17:57,356] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:18:50,886] INFO: Processing API response
+[2025-10-17 17:18:50,887] INFO: Parsed JSON string response
+[2025-10-17 17:18:50,887] INFO: API attempt 1 successful
+[2025-10-17 17:18:50,887] INFO: Completed processing for https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:18:50,887] INFO: Processed report: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:18:50,887] INFO: Processing URL: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:18:50,887] INFO: Processing report: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:18:50,887] INFO: Processing URL: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:18:50,887] INFO: PDF export URL: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/export?format=pdf
+[2025-10-17 17:18:50,887] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:18:52,292] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:18:52,292] INFO: Extracting text and links from PDF
+[2025-10-17 17:18:52,421] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:18:52,581] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:18:52,681] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:18:53,086] INFO: Extracted 8267 characters and 0 links from PDF
+[2025-10-17 17:18:53,086] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:18:53,087] INFO: Gemini API attempt 1/3
+[2025-10-17 17:18:53,203] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:19:29,481] INFO: Processing API response
+[2025-10-17 17:19:29,481] INFO: Parsed JSON string response
+[2025-10-17 17:19:29,481] INFO: API attempt 1 successful
+[2025-10-17 17:19:29,481] INFO: Completed processing for https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:19:29,481] INFO: Processed report: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:19:29,481] INFO: Processing URL: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:19:29,481] INFO: Processing report: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:19:29,482] INFO: Processing URL: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:19:29,482] INFO: PDF export URL: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/export?format=pdf
+[2025-10-17 17:19:29,482] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:19:30,694] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:19:30,694] INFO: Extracting text and links from PDF
+[2025-10-17 17:19:30,799] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:19:30,878] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:19:31,029] ERROR: Failed to process page 3: 'y1'
+[2025-10-17 17:19:31,376] INFO: Extracted 7725 characters and 0 links from PDF
+[2025-10-17 17:19:31,376] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:19:31,376] INFO: Gemini API attempt 1/3
+[2025-10-17 17:19:31,492] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:20:24,248] INFO: Processing API response
+[2025-10-17 17:20:24,248] INFO: Parsed JSON string response
+[2025-10-17 17:20:24,248] INFO: API attempt 1 successful
+[2025-10-17 17:20:24,248] INFO: Completed processing for https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:20:24,249] INFO: Processed report: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:20:24,249] INFO: Processing URL: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2025-10-17 17:20:24,249] INFO: Processing report: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2025-10-17 17:20:24,249] INFO: Processing URL: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2025-10-17 17:20:24,249] INFO: PDF export URL: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/export?format=pdf
+[2025-10-17 17:20:24,249] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:20:25,511] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:20:25,511] INFO: Extracting text and links from PDF
+[2025-10-17 17:20:25,632] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:20:25,772] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:20:26,237] INFO: Extracted 8246 characters and 0 links from PDF
+[2025-10-17 17:20:26,238] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:20:26,238] INFO: Gemini API attempt 1/3
+[2025-10-17 17:20:26,357] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:21:10,573] INFO: Processing API response
+[2025-10-17 17:21:10,573] INFO: Parsed JSON string response
+[2025-10-17 17:21:10,573] INFO: API attempt 1 successful
+[2025-10-17 17:21:10,573] INFO: Completed processing for https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2025-10-17 17:21:10,573] INFO: Processed report: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2025-10-17 17:21:10,573] INFO: Processing URL: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:21:10,573] INFO: Processing report: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:21:10,573] INFO: Processing URL: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:21:10,573] INFO: PDF export URL: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/export?format=pdf
+[2025-10-17 17:21:10,573] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:21:11,638] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:21:11,638] INFO: Extracting text and links from PDF
+[2025-10-17 17:21:11,746] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:21:11,825] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:21:11,974] ERROR: Failed to process page 3: 'y1'
+[2025-10-17 17:21:12,277] INFO: Extracted 7266 characters and 0 links from PDF
+[2025-10-17 17:21:12,278] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:21:12,278] INFO: Gemini API attempt 1/3
+[2025-10-17 17:21:12,393] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:22:01,047] INFO: Processing API response
+[2025-10-17 17:22:01,048] INFO: Parsed JSON string response
+[2025-10-17 17:22:01,048] INFO: API attempt 1 successful
+[2025-10-17 17:22:01,048] INFO: Completed processing for https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:22:01,048] INFO: Processed report: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:22:01,048] INFO: Processing URL: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:22:01,048] INFO: Processing report: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:22:01,048] INFO: Processing URL: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:22:01,048] INFO: PDF export URL: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/export?format=pdf
+[2025-10-17 17:22:01,048] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:22:02,273] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:22:02,273] INFO: Extracting text and links from PDF
+[2025-10-17 17:22:02,401] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:22:02,484] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:22:02,564] ERROR: Failed to process page 3: 'y1'
+[2025-10-17 17:22:03,063] INFO: Extracted 8033 characters and 0 links from PDF
+[2025-10-17 17:22:03,063] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:22:03,063] INFO: Gemini API attempt 1/3
+[2025-10-17 17:22:03,197] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:22:52,100] INFO: Processing API response
+[2025-10-17 17:22:52,101] INFO: Parsed JSON string response
+[2025-10-17 17:22:52,101] INFO: API attempt 1 successful
+[2025-10-17 17:22:52,101] INFO: Completed processing for https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:22:52,101] INFO: Processed report: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2025-10-17 17:22:52,101] INFO: Processing URL: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:22:52,101] INFO: Processing report: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:22:52,101] INFO: Processing URL: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:22:52,101] INFO: PDF export URL: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/export?format=pdf
+[2025-10-17 17:22:52,101] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:22:53,198] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:22:53,198] INFO: Extracting text and links from PDF
+[2025-10-17 17:22:53,310] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:22:53,390] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:22:53,753] INFO: Extracted 6134 characters and 0 links from PDF
+[2025-10-17 17:22:53,753] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:22:53,753] INFO: Gemini API attempt 1/3
+[2025-10-17 17:22:53,877] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:23:30,149] INFO: Processing API response
+[2025-10-17 17:23:30,150] INFO: Parsed JSON string response
+[2025-10-17 17:23:30,150] INFO: API attempt 1 successful
+[2025-10-17 17:23:30,150] INFO: Completed processing for https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:23:30,150] INFO: Processed report: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:23:30,150] INFO: Processing URL: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2025-10-17 17:23:30,150] INFO: Processing report: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2025-10-17 17:23:30,150] INFO: Processing URL: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2025-10-17 17:23:30,150] INFO: PDF export URL: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/export?format=pdf
+[2025-10-17 17:23:30,150] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:23:31,907] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:23:31,907] INFO: Extracting text and links from PDF
+[2025-10-17 17:23:32,013] ERROR: Failed to process page 1: 'y1'
+[2025-10-17 17:23:32,075] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:23:32,138] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:23:32,212] ERROR: Failed to process page 4: 'y0'
+[2025-10-17 17:23:32,630] INFO: Extracted 7845 characters and 0 links from PDF
+[2025-10-17 17:23:32,631] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:23:32,631] INFO: Gemini API attempt 1/3
+[2025-10-17 17:23:32,746] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:24:15,536] INFO: Processing API response
+[2025-10-17 17:24:15,536] INFO: Parsed JSON string response
+[2025-10-17 17:24:15,536] INFO: API attempt 1 successful
+[2025-10-17 17:24:15,536] INFO: Completed processing for https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2025-10-17 17:24:15,536] INFO: Processed report: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2025-10-17 17:24:15,536] INFO: Processing URL: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2025-10-17 17:24:15,536] INFO: Processing report: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2025-10-17 17:24:15,536] INFO: Processing URL: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2025-10-17 17:24:15,536] INFO: PDF export URL: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/export?format=pdf
+[2025-10-17 17:24:15,536] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:24:16,461] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:24:16,461] INFO: Extracting text and links from PDF
+[2025-10-17 17:24:16,571] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:24:16,625] ERROR: Failed to process page 2: 'y1'
+[2025-10-17 17:24:16,625] INFO: Extracted 1543 characters and 0 links from PDF
+[2025-10-17 17:24:16,626] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:24:16,626] INFO: Gemini API attempt 1/3
+[2025-10-17 17:24:16,748] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:24:54,392] INFO: Processing API response
+[2025-10-17 17:24:54,392] INFO: Parsed JSON string response
+[2025-10-17 17:24:54,392] INFO: API attempt 1 successful
+[2025-10-17 17:24:54,392] INFO: Completed processing for https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2025-10-17 17:24:54,392] INFO: Processed report: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2025-10-17 17:24:54,392] INFO: Processing URL: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:24:54,392] INFO: Processing report: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:24:54,392] INFO: Processing URL: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:24:54,393] INFO: PDF export URL: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/export?format=pdf
+[2025-10-17 17:24:54,393] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:24:55,691] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:24:55,691] INFO: Extracting text and links from PDF
+[2025-10-17 17:24:55,796] ERROR: Failed to process page 1: 'y1'
+[2025-10-17 17:24:55,857] ERROR: Failed to process page 2: 'y1'
+[2025-10-17 17:24:56,014] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:24:56,428] INFO: Extracted 8438 characters and 0 links from PDF
+[2025-10-17 17:24:56,428] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:24:56,428] INFO: Gemini API attempt 1/3
+[2025-10-17 17:24:56,678] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:25:36,962] INFO: Processing API response
+[2025-10-17 17:25:36,962] INFO: Parsed JSON string response
+[2025-10-17 17:25:36,962] INFO: API attempt 1 successful
+[2025-10-17 17:25:36,962] INFO: Completed processing for https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:25:36,962] INFO: Processed report: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:25:36,962] INFO: Processing URL: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2025-10-17 17:25:36,962] INFO: Processing report: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2025-10-17 17:25:36,962] INFO: Processing URL: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2025-10-17 17:25:36,962] INFO: PDF export URL: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/export?format=pdf
+[2025-10-17 17:25:36,962] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:25:38,193] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:25:38,194] INFO: Extracting text and links from PDF
+[2025-10-17 17:25:38,316] ERROR: Failed to process page 1: 'y1'
+[2025-10-17 17:25:38,363] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:25:38,494] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:25:39,053] INFO: Extracted 8933 characters and 0 links from PDF
+[2025-10-17 17:25:39,054] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:25:39,054] INFO: Gemini API attempt 1/3
+[2025-10-17 17:25:39,305] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:26:14,836] INFO: Processing API response
+[2025-10-17 17:26:14,837] INFO: Parsed JSON string response
+[2025-10-17 17:26:14,837] INFO: API attempt 1 successful
+[2025-10-17 17:26:14,837] INFO: Completed processing for https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2025-10-17 17:26:14,837] INFO: Processed report: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2025-10-17 17:26:14,837] INFO: Processing URL: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:26:14,837] INFO: Processing report: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:26:14,837] INFO: Processing URL: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:26:14,837] INFO: PDF export URL: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/export?format=pdf
+[2025-10-17 17:26:14,837] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:26:16,254] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:26:16,254] INFO: Extracting text and links from PDF
+[2025-10-17 17:26:16,380] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:26:16,421] ERROR: Failed to process page 2: 'y1'
+[2025-10-17 17:26:16,536] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:26:16,956] INFO: Extracted 8031 characters and 0 links from PDF
+[2025-10-17 17:26:16,957] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:26:16,957] INFO: Gemini API attempt 1/3
+[2025-10-17 17:26:17,209] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:27:37,625] INFO: Processing API response
+[2025-10-17 17:27:37,625] INFO: Parsed JSON string response
+[2025-10-17 17:27:37,625] INFO: API attempt 1 successful
+[2025-10-17 17:27:37,626] INFO: Completed processing for https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:27:37,626] INFO: Processed report: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:27:37,626] INFO: Processing URL: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2025-10-17 17:27:37,626] INFO: Processing report: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2025-10-17 17:27:37,626] INFO: Processing URL: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2025-10-17 17:27:37,626] INFO: PDF export URL: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/export?format=pdf
+[2025-10-17 17:27:37,626] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:27:38,896] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:27:38,896] INFO: Extracting text and links from PDF
+[2025-10-17 17:27:39,033] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:27:39,152] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:27:39,590] INFO: Extracted 8077 characters and 0 links from PDF
+[2025-10-17 17:27:39,591] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:27:39,591] INFO: Gemini API attempt 1/3
+[2025-10-17 17:27:39,841] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:28:35,636] INFO: Processing API response
+[2025-10-17 17:28:35,636] INFO: Parsed JSON string response
+[2025-10-17 17:28:35,636] INFO: API attempt 1 successful
+[2025-10-17 17:28:35,636] INFO: Completed processing for https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2025-10-17 17:28:35,636] INFO: Processed report: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2025-10-17 17:28:35,636] INFO: Processing URL: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:28:35,636] INFO: Processing report: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:28:35,636] INFO: Processing URL: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:28:35,637] INFO: PDF export URL: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/export?format=pdf
+[2025-10-17 17:28:35,637] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:28:36,947] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:28:36,947] INFO: Extracting text and links from PDF
+[2025-10-17 17:28:37,074] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:28:37,179] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:28:37,553] INFO: Extracted 7002 characters and 0 links from PDF
+[2025-10-17 17:28:37,553] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:28:37,553] INFO: Gemini API attempt 1/3
+[2025-10-17 17:28:37,808] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:29:32,121] INFO: Processing API response
+[2025-10-17 17:29:32,122] INFO: Parsed JSON string response
+[2025-10-17 17:29:32,122] INFO: API attempt 1 successful
+[2025-10-17 17:29:32,122] INFO: Completed processing for https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:29:32,122] INFO: Processed report: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:29:32,122] INFO: Processing URL: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2025-10-17 17:29:32,122] INFO: Processing report: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2025-10-17 17:29:32,122] INFO: Processing URL: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2025-10-17 17:29:32,122] INFO: PDF export URL: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/export?format=pdf
+[2025-10-17 17:29:32,122] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:29:33,426] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:29:33,426] INFO: Extracting text and links from PDF
+[2025-10-17 17:29:33,550] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:29:33,631] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:29:33,800] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:29:34,193] INFO: Extracted 7519 characters and 0 links from PDF
+[2025-10-17 17:29:34,193] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:29:34,193] INFO: Gemini API attempt 1/3
+[2025-10-17 17:29:34,442] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:30:28,878] INFO: Processing API response
+[2025-10-17 17:30:28,879] INFO: Parsed JSON string response
+[2025-10-17 17:30:28,879] INFO: API attempt 1 successful
+[2025-10-17 17:30:28,879] INFO: Completed processing for https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2025-10-17 17:30:28,879] INFO: Processed report: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2025-10-17 17:30:28,879] INFO: Processing URL: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2025-10-17 17:30:28,879] INFO: Processing report: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2025-10-17 17:30:28,879] INFO: Processing URL: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2025-10-17 17:30:28,879] INFO: PDF export URL: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/export?format=pdf
+[2025-10-17 17:30:28,879] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:30:30,392] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:30:30,392] INFO: Extracting text and links from PDF
+[2025-10-17 17:30:30,509] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:30:30,559] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:30:30,681] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:30:30,987] INFO: Extracted 6682 characters and 0 links from PDF
+[2025-10-17 17:30:30,988] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:30:30,988] INFO: Gemini API attempt 1/3
+[2025-10-17 17:30:31,247] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:31:22,606] INFO: Processing API response
+[2025-10-17 17:31:22,607] INFO: Parsed JSON string response
+[2025-10-17 17:31:22,607] INFO: API attempt 1 successful
+[2025-10-17 17:31:22,607] INFO: Completed processing for https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2025-10-17 17:31:22,607] INFO: Processed report: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2025-10-17 17:31:22,607] INFO: Processing URL: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true
+[2025-10-17 17:31:22,607] INFO: Processing report: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true
+[2025-10-17 17:31:22,607] INFO: Processing URL: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true
+[2025-10-17 17:31:22,607] INFO: PDF export URL: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/export?format=pdf
+[2025-10-17 17:31:22,607] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:31:23,862] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:31:23,862] INFO: Extracting text and links from PDF
+[2025-10-17 17:31:23,992] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:31:24,068] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:31:24,139] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:31:24,286] ERROR: Failed to process page 4: 'y1'
+[2025-10-17 17:31:24,745] INFO: Extracted 10078 characters and 0 links from PDF
+[2025-10-17 17:31:24,745] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:31:24,746] INFO: Gemini API attempt 1/3
+[2025-10-17 17:31:24,994] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:32:22,912] INFO: Processing API response
+[2025-10-17 17:32:22,913] INFO: Parsed JSON string response
+[2025-10-17 17:32:22,913] INFO: API attempt 1 successful
+[2025-10-17 17:32:22,913] INFO: Completed processing for https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true
+[2025-10-17 17:32:22,913] INFO: Processed report: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true
+[2025-10-17 17:32:22,913] INFO: Processing URL: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:32:22,913] INFO: Processing report: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:32:22,913] INFO: Processing URL: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:32:22,913] INFO: PDF export URL: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/export?format=pdf
+[2025-10-17 17:32:22,913] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:32:24,106] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:32:24,106] INFO: Extracting text and links from PDF
+[2025-10-17 17:32:24,231] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:32:24,310] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:32:24,698] INFO: Extracted 6853 characters and 0 links from PDF
+[2025-10-17 17:32:24,698] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:32:24,698] INFO: Gemini API attempt 1/3
+[2025-10-17 17:32:24,952] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:33:07,984] INFO: Processing API response
+[2025-10-17 17:33:07,984] INFO: Parsed JSON string response
+[2025-10-17 17:33:07,984] INFO: API attempt 1 successful
+[2025-10-17 17:33:07,984] INFO: Completed processing for https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:33:07,984] INFO: Processed report: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:33:07,984] INFO: Processing URL: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:33:07,984] INFO: Processing report: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:33:07,984] INFO: Processing URL: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:33:07,984] INFO: PDF export URL: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/export?format=pdf
+[2025-10-17 17:33:07,984] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:33:09,339] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:33:09,339] INFO: Extracting text and links from PDF
+[2025-10-17 17:33:09,362] WARNING: Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2025-10-17 17:33:09,465] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:33:09,533] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:33:09,645] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:33:09,825] ERROR: Failed to process page 4: 'y0'
+[2025-10-17 17:33:10,278] INFO: Extracted 9695 characters and 0 links from PDF
+[2025-10-17 17:33:10,278] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:33:10,278] INFO: Gemini API attempt 1/3
+[2025-10-17 17:33:10,531] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:34:02,300] INFO: Processing API response
+[2025-10-17 17:34:02,300] INFO: Parsed JSON string response
+[2025-10-17 17:34:02,300] INFO: API attempt 1 successful
+[2025-10-17 17:34:02,300] INFO: Completed processing for https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:34:02,301] INFO: Processed report: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:34:02,301] INFO: Processing URL: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:34:02,301] INFO: Processing report: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:34:02,301] INFO: Processing URL: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:34:02,301] INFO: PDF export URL: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/export?format=pdf
+[2025-10-17 17:34:02,301] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:34:03,625] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:34:03,625] INFO: Extracting text and links from PDF
+[2025-10-17 17:34:03,741] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:34:03,812] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:34:03,954] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:34:04,240] INFO: Extracted 6989 characters and 0 links from PDF
+[2025-10-17 17:34:04,240] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:34:04,240] INFO: Gemini API attempt 1/3
+[2025-10-17 17:34:04,496] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:34:50,738] INFO: Processing API response
+[2025-10-17 17:34:50,738] INFO: Parsed JSON string response
+[2025-10-17 17:34:50,739] INFO: API attempt 1 successful
+[2025-10-17 17:34:50,739] INFO: Completed processing for https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:34:50,739] INFO: Processed report: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:34:50,739] INFO: Processing URL: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:34:50,739] INFO: Processing report: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:34:50,739] INFO: Processing URL: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:34:50,739] INFO: PDF export URL: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/export?format=pdf
+[2025-10-17 17:34:50,739] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:34:52,023] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:34:52,023] INFO: Extracting text and links from PDF
+[2025-10-17 17:34:52,045] WARNING: Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2025-10-17 17:34:52,138] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:34:52,207] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:34:52,282] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:34:52,426] ERROR: Failed to process page 4: 'y0'
+[2025-10-17 17:34:52,938] INFO: Extracted 10410 characters and 0 links from PDF
+[2025-10-17 17:34:52,939] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:34:52,939] INFO: Gemini API attempt 1/3
+[2025-10-17 17:34:53,195] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:35:31,155] INFO: Processing API response
+[2025-10-17 17:35:31,156] INFO: Parsed JSON string response
+[2025-10-17 17:35:31,156] INFO: API attempt 1 successful
+[2025-10-17 17:35:31,156] INFO: Completed processing for https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:35:31,156] INFO: Processed report: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:35:31,156] INFO: Processing URL: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:35:31,156] INFO: Processing report: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:35:31,156] INFO: Processing URL: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:35:31,156] INFO: PDF export URL: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/export?format=pdf
+[2025-10-17 17:35:31,156] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:35:32,471] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:35:32,471] INFO: Extracting text and links from PDF
+[2025-10-17 17:35:32,494] WARNING: Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2025-10-17 17:35:32,604] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:35:32,676] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:35:32,781] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:35:33,218] INFO: Extracted 8667 characters and 0 links from PDF
+[2025-10-17 17:35:33,219] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:35:33,219] INFO: Gemini API attempt 1/3
+[2025-10-17 17:35:33,470] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:36:07,264] INFO: Processing API response
+[2025-10-17 17:36:07,264] INFO: Parsed JSON string response
+[2025-10-17 17:36:07,265] INFO: API attempt 1 successful
+[2025-10-17 17:36:07,265] INFO: Completed processing for https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:36:07,265] INFO: Processed report: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:36:07,265] INFO: Processing URL: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:36:07,265] INFO: Processing report: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:36:07,265] INFO: Processing URL: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:36:07,265] INFO: PDF export URL: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/export?format=pdf
+[2025-10-17 17:36:07,265] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:36:09,170] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:36:09,171] INFO: Extracting text and links from PDF
+[2025-10-17 17:36:09,192] WARNING: Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2025-10-17 17:36:09,292] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:36:09,364] ERROR: Failed to process page 2: 'y1'
+[2025-10-17 17:36:09,444] ERROR: Failed to process page 3: 'y1'
+[2025-10-17 17:36:09,540] ERROR: Failed to process page 4: 'y1'
+[2025-10-17 17:36:09,826] ERROR: Failed to process page 5: 'y0'
+[2025-10-17 17:36:10,251] INFO: Extracted 11134 characters and 0 links from PDF
+[2025-10-17 17:36:10,252] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:36:10,252] INFO: Gemini API attempt 1/3
+[2025-10-17 17:36:10,375] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:37:11,195] INFO: Processing API response
+[2025-10-17 17:37:11,195] ERROR: Invalid JSON string response: Expecting ',' delimiter: line 76 column 24 (char 3808)
+[2025-10-17 17:37:11,195] INFO: API attempt 1 successful
+[2025-10-17 17:37:11,195] INFO: Completed processing for https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:37:11,195] INFO: Processed report: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2025-10-17 17:37:11,195] INFO: Processing URL: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:37:11,195] INFO: Processing report: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:37:11,195] INFO: Processing URL: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:37:11,195] INFO: PDF export URL: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/export?format=pdf
+[2025-10-17 17:37:11,195] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:37:13,067] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:37:13,068] INFO: Extracting text and links from PDF
+[2025-10-17 17:37:13,178] ERROR: Failed to process page 1: 'y1'
+[2025-10-17 17:37:13,237] ERROR: Failed to process page 2: 'y0'
+[2025-10-17 17:37:13,288] ERROR: Failed to process page 3: 'y0'
+[2025-10-17 17:37:13,852] INFO: Extracted 9006 characters and 0 links from PDF
+[2025-10-17 17:37:13,853] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:37:13,853] INFO: Gemini API attempt 1/3
+[2025-10-17 17:37:14,109] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:38:07,863] INFO: Processing API response
+[2025-10-17 17:38:07,863] INFO: Parsed JSON string response
+[2025-10-17 17:38:07,863] INFO: API attempt 1 successful
+[2025-10-17 17:38:07,864] INFO: Completed processing for https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:38:07,864] INFO: Processed report: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:38:07,864] INFO: Processing URL: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2025-10-17 17:38:07,864] INFO: Processing report: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2025-10-17 17:38:07,864] INFO: Processing URL: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2025-10-17 17:38:07,864] INFO: PDF export URL: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/export?format=pdf
+[2025-10-17 17:38:07,864] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:38:09,080] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:38:09,080] INFO: Extracting text and links from PDF
+[2025-10-17 17:38:09,105] WARNING: Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2025-10-17 17:38:09,197] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:38:09,265] ERROR: Failed to process page 2: 'y1'
+[2025-10-17 17:38:09,342] ERROR: Failed to process page 3: 'y1'
+[2025-10-17 17:38:09,406] ERROR: Failed to process page 4: 'y1'
+[2025-10-17 17:38:09,506] ERROR: Failed to process page 5: 'y0'
+[2025-10-17 17:38:10,040] INFO: Extracted 10931 characters and 0 links from PDF
+[2025-10-17 17:38:10,040] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:38:10,040] INFO: Gemini API attempt 1/3
+[2025-10-17 17:38:10,164] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:39:19,752] INFO: Processing API response
+[2025-10-17 17:39:19,752] INFO: Parsed JSON string response
+[2025-10-17 17:39:19,752] INFO: API attempt 1 successful
+[2025-10-17 17:39:19,752] INFO: Completed processing for https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2025-10-17 17:39:19,752] INFO: Processed report: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2025-10-17 17:39:19,752] INFO: Processing URL: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:39:19,752] INFO: Processing report: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:39:19,752] INFO: Processing URL: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:39:19,752] INFO: PDF export URL: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/export?format=pdf
+[2025-10-17 17:39:19,752] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:39:21,657] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:39:21,657] INFO: Extracting text and links from PDF
+[2025-10-17 17:39:21,683] WARNING: Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2025-10-17 17:39:21,772] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:39:21,845] ERROR: Failed to process page 3: 'y1'
+[2025-10-17 17:39:21,884] ERROR: Failed to process page 4: 'y1'
+[2025-10-17 17:39:21,928] ERROR: Failed to process page 5: 'y0'
+[2025-10-17 17:39:21,966] ERROR: Failed to process page 6: 'y0'
+[2025-10-17 17:39:22,037] ERROR: Failed to process page 8: 'y0'
+[2025-10-17 17:39:22,080] INFO: Extracted 3833 characters and 0 links from PDF
+[2025-10-17 17:39:22,081] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:39:22,081] INFO: Gemini API attempt 1/3
+[2025-10-17 17:39:22,331] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:40:13,232] INFO: Processing API response
+[2025-10-17 17:40:13,233] INFO: Parsed JSON string response
+[2025-10-17 17:40:13,233] INFO: API attempt 1 successful
+[2025-10-17 17:40:13,233] INFO: Completed processing for https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:40:13,233] INFO: Processed report: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2025-10-17 17:40:13,233] INFO: Processing URL: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2025-10-17 17:40:13,233] INFO: Processing report: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2025-10-17 17:40:13,233] INFO: Processing URL: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2025-10-17 17:40:13,233] INFO: PDF export URL: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/export?format=pdf
+[2025-10-17 17:40:13,233] INFO: Downloading PDF to temp_report.pdf
+[2025-10-17 17:40:15,044] INFO: Downloaded PDF to temp_report.pdf
+[2025-10-17 17:40:15,044] INFO: Extracting text and links from PDF
+[2025-10-17 17:40:15,070] WARNING: Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2025-10-17 17:40:15,154] ERROR: Failed to process page 1: 'y0'
+[2025-10-17 17:40:15,227] ERROR: Failed to process page 3: 'y1'
+[2025-10-17 17:40:15,395] ERROR: Failed to process page 4: 'y1'
+[2025-10-17 17:40:15,439] ERROR: Failed to process page 5: 'y0'
+[2025-10-17 17:40:15,477] ERROR: Failed to process page 6: 'y0'
+[2025-10-17 17:40:15,546] ERROR: Failed to process page 8: 'y0'
+[2025-10-17 17:40:15,590] INFO: Extracted 3815 characters and 0 links from PDF
+[2025-10-17 17:40:15,591] INFO: Deleted PDF file: temp_report.pdf
+[2025-10-17 17:40:15,591] INFO: Gemini API attempt 1/3
+[2025-10-17 17:40:15,862] INFO: Selected model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 17:41:22,823] INFO: Processing API response
+[2025-10-17 17:41:22,823] INFO: Parsed JSON string response
+[2025-10-17 17:41:22,823] INFO: API attempt 1 successful
+[2025-10-17 17:41:22,823] INFO: Completed processing for https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2025-10-17 17:41:22,823] INFO: Processed report: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2025-10-17 17:41:22,832] INFO: Saved homework2.json with 32 entries
+[2025-10-17 17:41:22,832] INFO: Output files saved locally: /home/runner/work/eng/eng/homework2.json and /home/runner/work/eng/eng/class_info_log3.txt
+[2025-10-17 17:41:22,832] INFO: If running in GitHub Actions, download 'homework.json' and 'class_info_log3.txt' from the workflow artifacts at https://github.com/gx288/eng/actions
+[2025-10-17 17:41:22,833] INFO: Script terminated
