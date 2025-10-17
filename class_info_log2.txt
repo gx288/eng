@@ -3633,3 +3633,93 @@ Buổi học hôm nay, con ngồi học ngay ngắn và đã tiến bộ hơn tr
 [2025-10-17 04:28:42] Class VQ2-K2-2501 on 2025-10-15 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
 [2025-10-17 04:28:42] Closing WebDriver
 [2025-10-17 04:28:42] Script completed
+[2025-10-17 05:22:19] Starting script
+[2025-10-17 05:22:19] Starting report check for calendar overview
+[2025-10-17 05:22:19] Loaded processed2.json: {'date': '2025-10-15', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf'}
+[2025-10-17 05:22:19] Writing Google credentials to credentials.json
+[2025-10-17 05:22:19] Credentials written successfully
+[2025-10-17 05:22:19] Initializing Chrome WebDriver
+[2025-10-17 05:22:29] WebDriver session ID: a59393349f4462f6b356082fe9304640
+[2025-10-17 05:22:29] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-17 05:22:33] Login attempt 1/3
+[2025-10-17 05:22:33] Entering password
+[2025-10-17 05:22:34] Clicking login button
+[2025-10-17 05:22:44] Login attempt 1/3 failed: Message: 
+
+[2025-10-17 05:22:44] No specific error message found on login page
+[2025-10-17 05:22:47] Login attempt 2/3
+[2025-10-17 05:23:17] Login attempt 2/3 failed: Message: 
+Stacktrace:
+#0 0x55a26d37567a <unknown>
+#1 0x55a26cdf4566 <unknown>
+#2 0x55a26ce4668d <unknown>
+#3 0x55a26ce46921 <unknown>
+#4 0x55a26ce94e94 <unknown>
+#5 0x55a26ce6c65d <unknown>
+#6 0x55a26ce92328 <unknown>
+#7 0x55a26ce6c403 <unknown>
+#8 0x55a26ce38b02 <unknown>
+#9 0x55a26ce397c1 <unknown>
+#10 0x55a26d339448 <unknown>
+#11 0x55a26d33d2af <unknown>
+#12 0x55a26d3208d9 <unknown>
+#13 0x55a26d33de55 <unknown>
+#14 0x55a26d30613f <unknown>
+#15 0x55a26d3624b8 <unknown>
+#16 0x55a26d362693 <unknown>
+#17 0x55a26d374613 <unknown>
+#18 0x7f76c429caa4 <unknown>
+#19 0x7f76c4329c6c <unknown>
+
+[2025-10-17 05:23:17] No specific error message found on login page
+[2025-10-17 05:23:20] Login attempt 3/3
+[2025-10-17 05:23:50] Login attempt 3/3 failed: Message: 
+Stacktrace:
+#0 0x55a26d37567a <unknown>
+#1 0x55a26cdf4566 <unknown>
+#2 0x55a26ce4668d <unknown>
+#3 0x55a26ce46921 <unknown>
+#4 0x55a26ce94e94 <unknown>
+#5 0x55a26ce6c65d <unknown>
+#6 0x55a26ce92328 <unknown>
+#7 0x55a26ce6c403 <unknown>
+#8 0x55a26ce38b02 <unknown>
+#9 0x55a26ce397c1 <unknown>
+#10 0x55a26d339448 <unknown>
+#11 0x55a26d33d2af <unknown>
+#12 0x55a26d3208d9 <unknown>
+#13 0x55a26d33de55 <unknown>
+#14 0x55a26d30613f <unknown>
+#15 0x55a26d3624b8 <unknown>
+#16 0x55a26d362693 <unknown>
+#17 0x55a26d374613 <unknown>
+#18 0x7f76c429caa4 <unknown>
+#19 0x7f76c4329c6c <unknown>
+
+[2025-10-17 05:23:50] No specific error message found on login page
+[2025-10-17 05:23:50] Max login retries reached
+[2025-10-17 05:23:50] Error checking reports: Login failed after 3 attempts: Message: 
+Stacktrace:
+#0 0x55a26d37567a <unknown>
+#1 0x55a26cdf4566 <unknown>
+#2 0x55a26ce4668d <unknown>
+#3 0x55a26ce46921 <unknown>
+#4 0x55a26ce94e94 <unknown>
+#5 0x55a26ce6c65d <unknown>
+#6 0x55a26ce92328 <unknown>
+#7 0x55a26ce6c403 <unknown>
+#8 0x55a26ce38b02 <unknown>
+#9 0x55a26ce397c1 <unknown>
+#10 0x55a26d339448 <unknown>
+#11 0x55a26d33d2af <unknown>
+#12 0x55a26d3208d9 <unknown>
+#13 0x55a26d33de55 <unknown>
+#14 0x55a26d30613f <unknown>
+#15 0x55a26d3624b8 <unknown>
+#16 0x55a26d362693 <unknown>
+#17 0x55a26d374613 <unknown>
+#18 0x7f76c429caa4 <unknown>
+#19 0x7f76c4329c6c <unknown>
+
+[2025-10-17 05:23:50] Closing WebDriver
+[2025-10-17 05:23:50] Script completed
