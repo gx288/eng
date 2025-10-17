@@ -12,7 +12,7 @@ import random
 
 # Configuration
 LOG_FILE = "class_info_log3.txt"
-HOMEWORK_FILE = "homework.json"
+HOMEWORK_FILE = "homework2.json"
 LINK_FILE = "link.txt"
 API_KEY = os.getenv("GEMINI_API_KEY")
 TODAY = datetime.now(tz=ZoneInfo("Asia/Ho_Chi_Minh")).strftime("%Y-%m-%d")
@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 # Suppress verbose pdfplumber logs
 logging.getLogger('pdfplumber').setLevel(logging.ERROR)
 
-# System prompt for Gemini API
+# Updated system prompt for Gemini API
 SYSTEM_PROMPT = """
 Extract structured data from the provided text (from a Google Docs lesson plan). Ignore the "Comments" section entirely to avoid storing personal student information. Output a JSON object with the following fields:
 - class_name: String, e.g., "Kindergarten 1 - KG1R".
@@ -51,7 +51,7 @@ Extract structured data from the provided text (from a Google Docs lesson plan).
 - homework: Array of Strings.
 - links_all: Array of {context: String, url: String, type: String ("youtube" for youtube.com, "quizlet" for quizlet.com, else "other")}.
 
-For hyperlinks, extract URLs and their associated text (e.g., video titles) from the provided text. Ensure all text is preserved accurately, including Vietnamese translations. Return only the JSON output, no additional text.
+For hyperlinks embedded in the text (e.g., in phonics, new_vocabulary, or homework sections), assign them to the appropriate field (e.g., phonics.link, new_vocabulary.link) based on their section context. For example, a Quizlet URL in the "Phonics" section should go to phonics.link, and URLs in "Homework" should be included in the homework array. Include all hyperlinks in links_all with specific context (e.g., "Phonics link", "Homework link") rather than generic "PDF link". If a section's text contains a hyperlink, include both the text and URL in the relevant field. Ensure all text, including Vietnamese translations, is preserved accurately. Return only the JSON output, no additional text.
 """
 
 # Clean and validate JSON response
@@ -136,6 +136,54 @@ def deduplicate_links(links):
             unique_links.append(link)
     return unique_links
 
+# Extract text and links with context from PDF
+def extract_text_and_links(pdf_path):
+    logger.info("Extracting text and links from PDF")
+    pdf_text = ''
+    pdf_links = []
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            for i, page in enumerate(pdf.pages[:MAX_PAGES]):
+                try:
+                    # Extract text
+                    text = page.extract_text()
+                    if text:
+                        pdf_text += text + '\n'
+                    # Extract words with hyperlinks
+                    if page.annots:
+                        for annot in page.annots:
+                            if 'uri' in annot:
+                                # Get the text block near the annotation
+                                x0, y0, x1, y1 = annot['x0'], annot['y0'], annot['x1'], annot['y1']
+                                nearby_words = page.extract_words(x_tolerance=5, y_tolerance=5)
+                                context = "PDF link"  # Default context
+                                for word in nearby_words:
+                                    if (abs(word['x0'] - x0) < 10 and abs(word['y0'] - y0) < 10) or \
+                                       (abs(word['x1'] - x1) < 10 and abs(word['y1'] - y1) < 10):
+                                        context = word['text']
+                                        break
+                                # Assign section-based context
+                                if 'phonics' in context.lower() or 'letter' in context.lower():
+                                    context = "Phonics link"
+                                elif 'homework' in context.lower():
+                                    context = "Homework link"
+                                elif 'vocabulary' in context.lower():
+                                    context = "Vocabulary link"
+                                pdf_links.append({
+                                    "context": context,
+                                    "url": annot['uri'],
+                                    "type": "youtube" if "youtube.com" in annot['uri'] else
+                                            "quizlet" if "quizlet.com" in annot['uri'] else "other"
+                                })
+                except Exception as e:
+                    logger.error(f"Failed to process page {i + 1}: {str(e)}")
+                    continue
+        logger.info(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
+        return pdf_text, pdf_links
+    except Exception as e:
+        logger.error(f"Failed to process PDF: {str(e)}")
+        return '', []
+
 # Process a single report link
 def process_report_link(report_url):
     logger.info(f"Processing report: {report_url}")
@@ -164,33 +212,13 @@ def process_report_link(report_url):
         return None
 
     # Extract text and links from PDF
-    pdf_text = ''
-    pdf_links = []
-    logger.info("Extracting text and links from PDF")
-    try:
-        with pdfplumber.open(pdf_path) as pdf:
-            for i, page in enumerate(pdf.pages[:MAX_PAGES]):
-                try:
-                    text = page.extract_text()
-                    pdf_text += text or ''
-                    if page.annots:
-                        for annot in page.annots:
-                            if 'uri' in annot:
-                                pdf_links.append(annot['uri'])
-                except Exception as e:
-                    logger.error(f"Failed to process page {i + 1}: {str(e)}")
-                    continue
-        logger.info(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
-    except Exception as e:
-        logger.error(f"Failed to process PDF: {str(e)}")
-        return None
-    finally:
-        if os.path.exists(pdf_path):
-            try:
-                os.remove(pdf_path)
-                logger.info(f"Deleted PDF file: {pdf_path}")
-            except Exception as e:
-                logger.error(f"Failed to delete PDF file: {str(e)}")
+    pdf_text, pdf_links = extract_text_and_links(pdf_path)
+    if os.path.exists(pdf_path):
+        try:
+            os.remove(pdf_path)
+            logger.info(f"Deleted PDF file: {pdf_path}")
+        except Exception as e:
+            logger.error(f"Failed to delete PDF file: {str(e)}")
 
     if not pdf_text:
         logger.error("No text extracted from PDF")
@@ -207,9 +235,11 @@ def process_report_link(report_url):
             continue
         try:
             model = genai.GenerativeModel(model_name, system_instruction=SYSTEM_PROMPT)
-            response = model.generate_content(pdf_text)
+            # Pass both text and links to the model for better context
+            input_content = f"Text:\n{pdf_text}\n\nHyperlinks:\n{json.dumps(pdf_links, indent=2)}"
+            response = model.generate_content(input_content)
             extracted_data = clean_json_response(response.text)
-            extracted_data['links_all'] = deduplicate_links(extracted_data.get('links_all', []) + [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links])
+            extracted_data['links_all'] = deduplicate_links(extracted_data.get('links_all', []) + pdf_links)
             extracted_data['report_url'] = report_url
             extracted_data['pdf_export_url'] = direct_pdf_url
             logger.info(f"API attempt {attempt + 1} successful")
@@ -242,7 +272,7 @@ def process_report_link(report_url):
                     "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
                     "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
                     "homework": [],
-                    "links_all": deduplicate_links([{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]),
+                    "links_all": deduplicate_links(pdf_links),
                     "report_url": report_url,
                     "pdf_export_url": direct_pdf_url
                 }
