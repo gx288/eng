@@ -3424,3 +3424,61 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE
 [2025-10-17 01:48:19] Saved processed2.json successfully
 [2025-10-17 01:48:19] Git repository detected
 [2025-10-17 01:48:19] Committing and pushing changes to GitHub
+[2025-10-17 01:48:20] Pushed processed2.json and class_info_log2.txt successfully
+[2025-10-17 01:48:20] Starting PDF processing for report analysis
+[2025-10-17 01:48:20] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 01:48:20] Downloading PDF from https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
+[2025-10-17 01:48:20] Successfully downloaded PDF to temp_report.pdf
+[2025-10-17 01:48:20] Extracting text and links from PDF
+[2025-10-17 01:48:21] Extracted 5373 characters and 7 links from PDF
+[2025-10-17 01:48:21] Deleted temporary PDF file: temp_report.pdf
+[2025-10-17 01:48:21] Gemini API attempt 1/3
+[2025-10-17 01:48:21] Available models: ['models/gemini-2.5-pro-preview-03-25', 'models/gemini-2.5-flash-preview-05-20', 'models/gemini-2.5-flash', 'models/gemini-2.5-flash-lite-preview-06-17', 'models/gemini-2.5-pro-preview-05-06', 'models/gemini-2.5-pro-preview-06-05', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash-exp', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-exp-image-generation', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.0-flash-preview-image-generation', 'models/gemini-2.0-flash-lite-preview-02-05', 'models/gemini-2.0-flash-lite-preview', 'models/gemini-2.0-pro-exp', 'models/gemini-2.0-pro-exp-02-05', 'models/gemini-exp-1206', 'models/gemini-2.0-flash-thinking-exp-01-21', 'models/gemini-2.0-flash-thinking-exp', 'models/gemini-2.0-flash-thinking-exp-1219', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/learnlm-2.0-flash-experimental', 'models/gemma-3-1b-it', 'models/gemma-3-4b-it', 'models/gemma-3-12b-it', 'models/gemma-3-27b-it', 'models/gemma-3n-e4b-it', 'models/gemma-3n-e2b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image-preview', 'models/gemini-2.5-flash-image', 'models/gemini-2.5-flash-preview-09-2025', 'models/gemini-2.5-flash-lite-preview-09-2025', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-2.5-computer-use-preview-10-2025']
+[2025-10-17 01:48:21] Using model: models/gemini-2.5-flash-preview-05-20
+[2025-10-17 01:48:38] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "red": "màu đỏ",
+    "yellow": "màu vàng",
+    "blue": "màu xanh biển",
+...
+[2025-10-17 01:48:38] API attempt 1 successful
+[2025-10-17 01:48:38] Updating Google Sheet 'ReportContent' with extracted data
+[2025-10-17 01:48:39] Inserted 29 rows to 'ReportContent' after header
+[2025-10-17 01:48:39] Processing total vocabulary
+[2025-10-17 01:48:39] Loaded existing vocabulary from vocab_total.json: 64 entries
+[2025-10-17 01:48:39] Added 0 new vocabulary entries. Total vocabulary: 64
+[2025-10-17 01:48:39] Saving updated vocabulary to vocab_total.json
+[2025-10-17 01:48:39] Successfully saved vocab_total.json
+[2025-10-17 01:48:39] Updating Google Sheet 'vocab' with total vocabulary
+[2025-10-17 01:48:41] Updated Google Sheet 'vocab' successfully with 64 vocabulary entries
+[2025-10-17 01:48:41] Creating Report directory if not exists
+[2025-10-17 01:48:41] Saving result to Report/2025-10-15_Unit_6_(1st):_Colours,_“-at”_and_“-an”.json
+[2025-10-17 01:48:41] Successfully saved: Report/2025-10-15_Unit_6_(1st):_Colours,_“-at”_and_“-an”.json
+[2025-10-17 01:48:41] Starting detailed Telegram notifications
+[2025-10-17 01:48:41] Initializing Telegram Bot for detailed messages
+[2025-10-17 01:48:41] Sending detailed Telegram messages to chat_id 1900957785
+[2025-10-17 01:48:41] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2025-10-15*
+📅 *Ngày*: 2025-10-15
+📚 *Tiêu đề*: Unit 6 (1st): Colours, “-at” and “-...
+[2025-10-17 01:48:42] Sent general info message to chat_id 1900957785
+[2025-10-17 01:48:42] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2025-10-15*
+• `red`: màu đỏ
+• `yellow`: màu vàng
+• `blue`: màu xanh biển
+• `green`: m...
+[2025-10-17 01:48:43] Sent vocabulary message to chat_id 1900957785
+[2025-10-17 01:48:43] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2025-10-15*
+Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang s...
+[2025-10-17 01:48:44] Sent homework message to chat_id 1900957785
+[2025-10-17 01:48:44] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2025-10-15*
+Buổi học hôm nay, con ngồi học ngay ngắn và đã tiến bộ hơn trong...
+[2025-10-17 01:48:45] Sent comments message to chat_id 1900957785
+[2025-10-17 01:48:45] Completed sending detailed messages to chat_id 1900957785
+[2025-10-17 01:48:45] Sending detailed Telegram messages to chat_id e
+[2025-10-17 01:48:45] Sending general info message to chat_id e: *BÁO CÁO BÀI HỌC - 2025-10-15*
+📅 *Ngày*: 2025-10-15
+📚 *Tiêu đề*: Unit 6 (1st): Colours, “-at” and “-...
+[2025-10-17 01:48:45] Failed to send detailed Telegram messages to chat_id e: Chat not found
+[2025-10-17 01:48:45] Error checking reports: Chat not found
+[2025-10-17 01:48:45] Closing WebDriver
+[2025-10-17 01:48:45] Script completed
