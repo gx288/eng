@@ -3306,3 +3306,87 @@ Buổi học hôm nay, con ngồi học ngay ngắn và đã tiến bộ hơn tr
 [2025-10-16 23:19:35] Class VQ2-K2-2501 on 2025-10-15 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf
 [2025-10-16 23:19:35] Closing WebDriver
 [2025-10-16 23:19:35] Script completed
+[2025-10-17 01:18:09] Starting script
+[2025-10-17 01:18:09] Starting report check for calendar overview
+[2025-10-17 01:18:09] Loaded processed2.json: {'date': '2025-10-10', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf'}
+[2025-10-17 01:18:09] Writing Google credentials to credentials.json
+[2025-10-17 01:18:09] Credentials written successfully
+[2025-10-17 01:18:09] Initializing Chrome WebDriver
+[2025-10-17 01:18:16] WebDriver session ID: 9910e332e3243dd4f57f17c9cad411cb
+[2025-10-17 01:18:16] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-17 01:18:20] Login attempt 1/3
+[2025-10-17 01:18:20] Entering password
+[2025-10-17 01:18:20] Clicking login button
+[2025-10-17 01:18:29] Login successful
+[2025-10-17 01:18:29] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2025-10-17 01:18:40] Scrolled to bottom of page
+[2025-10-17 01:18:40] Found 20 class events
+[2025-10-17 01:18:40] Latest class date before today: 2025-10-15
+[2025-10-17 01:18:44] Class name from popup: VQ2-K2-2501
+[2025-10-17 01:18:44] Report button is enabled, clicking to get report URL
+[2025-10-17 01:19:14] Window switch attempt 1/3 failed: Message: 
+
+[2025-10-17 01:20:17] Window switch attempt 2/3 failed: Message: timeout: Timed out receiving message from renderer: 60.000
+  (Session info: chrome=140.0.7339.207)
+Stacktrace:
+#0 0x55cf222acfba <unknown>
+#1 0x55cf21d316d0 <unknown>
+#2 0x55cf21d199ae <unknown>
+#3 0x55cf21d196b5 <unknown>
+#4 0x55cf21d1753b <unknown>
+#5 0x55cf21d17e8f <unknown>
+#6 0x55cf21d267f3 <unknown>
+#7 0x55cf21d3fc5b <unknown>
+#8 0x55cf21d4644b <unknown>
+#9 0x55cf21d185cd <unknown>
+#10 0x55cf21d3f988 <unknown>
+#11 0x55cf21dcea24 <unknown>
+#12 0x55cf21da8c03 <unknown>
+#13 0x55cf21d757a8 <unknown>
+#14 0x55cf21d76421 <unknown>
+#15 0x55cf22271b28 <unknown>
+#16 0x55cf2227587f <unknown>
+#17 0x55cf22259c49 <unknown>
+#18 0x55cf22276405 <unknown>
+#19 0x55cf2223f4ff <unknown>
+#20 0x55cf2229a258 <unknown>
+#21 0x55cf2229a432 <unknown>
+#22 0x55cf222abfa3 <unknown>
+#23 0x7fece389caa4 <unknown>
+#24 0x7fece3929c6c <unknown>
+
+[2025-10-17 01:21:20] WebDriver unresponsive: Message: timeout: Timed out receiving message from renderer: 60.000
+  (Session info: chrome=140.0.7339.207)
+Stacktrace:
+#0 0x55cf222acfba <unknown>
+#1 0x55cf21d316d0 <unknown>
+#2 0x55cf21d199ae <unknown>
+#3 0x55cf21d196b5 <unknown>
+#4 0x55cf21d1753b <unknown>
+#5 0x55cf21d17e8f <unknown>
+#6 0x55cf21d267f3 <unknown>
+#7 0x55cf21d3fc5b <unknown>
+#8 0x55cf21d4644b <unknown>
+#9 0x55cf21d185cd <unknown>
+#10 0x55cf21d3f988 <unknown>
+#11 0x55cf21dcea24 <unknown>
+#12 0x55cf21da8c03 <unknown>
+#13 0x55cf21d757a8 <unknown>
+#14 0x55cf21d76421 <unknown>
+#15 0x55cf22271b28 <unknown>
+#16 0x55cf2227587f <unknown>
+#17 0x55cf22259c49 <unknown>
+#18 0x55cf22276405 <unknown>
+#19 0x55cf2223f4ff <unknown>
+#20 0x55cf2229a258 <unknown>
+#21 0x55cf2229a432 <unknown>
+#22 0x55cf222abfa3 <unknown>
+#23 0x7fece389caa4 <unknown>
+#24 0x7fece3929c6c <unknown>
+
+[2025-10-17 01:21:20] Restarting WebDriver
+[2025-10-17 01:21:20] Window switch attempt 3/3 failed: HTTPConnectionPool(host='localhost', port=59929): Max retries exceeded with url: /session/9910e332e3243dd4f57f17c9cad411cb/element/f.67EB11AEE1BCCB0A9D0F956E945FE78D.d.814AA05C33C72809EA53BD7B3834D8FA.e.62/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2aac7bbf10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-10-17 01:21:20] Max retries reached for window switch
+[2025-10-17 01:21:20] Error checking reports: Failed to retrieve report URL after 3 attempts: HTTPConnectionPool(host='localhost', port=59929): Max retries exceeded with url: /session/9910e332e3243dd4f57f17c9cad411cb/element/f.67EB11AEE1BCCB0A9D0F956E945FE78D.d.814AA05C33C72809EA53BD7B3834D8FA.e.62/click (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f2aac7bbf10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-10-17 01:21:20] Closing WebDriver
+[2025-10-17 01:21:21] Script completed
