@@ -297,6 +297,8 @@ def main():
         with open(HOMEWORK_FILE, 'w', encoding='utf-8') as f:
             json.dump(homework_data, f, ensure_ascii=False, indent=4)
         logger.info(f"Saved {HOMEWORK_FILE} with {len(homework_data)} entries")
+        logger.info(f"Output files saved locally: {os.path.abspath(HOMEWORK_FILE)} and {os.path.abspath(LOG_FILE)}")
+        logger.info("If running in GitHub Actions, download 'homework.json' and 'class_info_log3.txt' from the workflow artifacts at https://github.com/gx288/eng/actions")
     except Exception as e:
         logger.error(f"Error saving {HOMEWORK_FILE}: {str(e)}")
 
