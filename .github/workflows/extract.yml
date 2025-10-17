@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'extract_report.py'
+      - 'extract_lessons.py'
 
 jobs:
   extract:
