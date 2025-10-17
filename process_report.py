@@ -3,51 +3,87 @@ import os
 import requests
 import pdfplumber
 import google.generativeai as genai
-from urllib.parse import parse_qs, urlparse
-from telegram import Bot
-import asyncio
 import re
+from datetime import datetime
+from zoneinfo import ZoneInfo
+import logging
 
-# Lấy API key và Telegram credentials từ environment (GitHub Secrets)
-API_KEY = os.getenv('GEMINI_API_KEY')
-TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
+# Configuration
+LOG_FILE = "class_info_log3.txt"
+HOMEWORK_FILE = "homework.json"
+LINK_FILE = "link.txt"
+API_KEY = os.getenv("GEMINI_API_KEY")
+TODAY = datetime.now(tz=ZoneInfo("Asia/Ho_Chi_Minh")).strftime("%Y-%m-%d")
 
-if not API_KEY:
-    raise ValueError("GEMINI_API_KEY not set in environment")
-if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-    raise ValueError("TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set in environment")
+# Logging setup
+logging.basicConfig(
+    level=logging.INFO,
+    format='[%(asctime)s] %(levelname)s: %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_FILE, encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
-genai.configure(api_key=API_KEY)
+# System prompt for Gemini API
+SYSTEM_PROMPT = """
+Extract structured data from the provided text (from a Google Docs lesson plan). Ignore the "Comments" section entirely to avoid storing personal student information. Output a JSON object with the following fields:
+- class_name: String, e.g., "Kindergarten 1 - KG1R".
+- lesson_unit: String, e.g., "Unit 33 (1st)".
+- lesson_date: String, format YYYY-MM-DD, e.g., "2025-06-24".
+- learning_objectives: Object with subfields:
+  - vocabulary_review: Object { theme: String, words: Array of {english: String, vietnamese: String}, count: Integer }.
+  - vocabulary_new: Object { theme: String, words: Array of {english: String, vietnamese: String}, count: Integer }.
+  - pronunciation: Object { sound: String, words: Array of {english: String, vietnamese: String}, count: Integer }.
+  - phonics: String, e.g., "Distinguish letter Z and letter sound /z/".
+- warm_up: Object { description: String, videos: Array of {title: String, url: String} }.
+- homework_check: String, summarize without mentioning specific student names.
+- running_content: Object { theme: String, review_vocabulary: { link: String, words: Array of {english: String, vietnamese: String}, structure: String, examples: Array of Strings, activities: String } }.
+- new_vocabulary: Object { theme: String, words: Array of {english: String, vietnamese: String}, link: String, activities: String }.
+- phonics: Object { letter: String, words: Array of {english: String, vietnamese: String}, link: String, activities: String, videos: Array of {title: String, url: String} }.
+- homework: Array of Strings.
+- links_all: Array of {context: String, url: String, type: String ("youtube" for youtube.com, "quizlet" for quizlet.com, else "other")}.
 
-# Hàm escape ký tự cho MarkdownV2
-def escape_markdown_v2(text):
-    special_chars = r'([_*[\](){}~`>#+=|.!-])'
-    return re.sub(special_chars, r'\\\g<1>', text)
+For hyperlinks, extract URLs and their associated text (e.g., video titles) from the provided text. Ensure all text is preserved accurately, including Vietnamese translations. Return only the JSON output, no additional text.
+"""
 
-# Hàm gửi tin nhắn Telegram bất đồng bộ
-async def send_telegram_message(bot, chat_id, text):
+# Clean and validate JSON response
+def clean_json_response(text):
+    text = text.strip()
+    if text.startswith('```json') and text.endswith('```'):
+        text = text[7:-3].strip()
+    elif text.startswith('```') and text.endswith('```'):
+        text = text[3:-3].strip()
     try:
-        text = escape_markdown_v2(text)
-        if len(text) > 4096:
-            print(f"Message too long ({len(text)} characters), splitting...")
-            parts = [text[i:i+4000] for i in range(0, len(text), 4000)]
-            for part in parts:
-                await bot.send_message(chat_id=chat_id, text=part, parse_mode='MarkdownV2')
-                await asyncio.sleep(0.5)
-        else:
-            await bot.send_message(chat_id=chat_id, text=text, parse_mode='MarkdownV2')
-            await asyncio.sleep(0.5)
-    except Exception as e:
-        print(f"Failed to send Telegram message: {e}")
-        raise
+        return json.loads(text)
+    except json.JSONDecodeError:
+        logger.error("Invalid JSON response, returning default")
+        return {
+            "class_name": "cannot find info",
+            "lesson_unit": "cannot find info",
+            "lesson_date": TODAY,
+            "learning_objectives": {
+                "vocabulary_review": {"theme": "", "words": [], "count": 0},
+                "vocabulary_new": {"theme": "", "words": [], "count": 0},
+                "pronunciation": {"sound": "", "words": [], "count": 0},
+                "phonics": ""
+            },
+            "warm_up": {"description": "", "videos": []},
+            "homework_check": "cannot find info",
+            "running_content": {"theme": "", "review_vocabulary": {"link": "", "words": [], "structure": "", "examples": [], "activities": ""}},
+            "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
+            "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
+            "homework": [],
+            "links_all": []
+        }
 
-# Kiểm tra danh sách model khả dụng
-def get_available_model(attempt=0):
+# Get available Gemini model
+def get_gemini_model(attempt=0):
     try:
         models = genai.list_models()
         available_models = [model.name for model in models if 'generateContent' in model.supported_generation_methods]
-        print("Available models:", available_models)
+        logger.info(f"Available models: {available_models}")
         for model in available_models:
             if attempt == 0 and 'gemini-2.5-flash' in model:
                 return model
@@ -57,267 +93,164 @@ def get_available_model(attempt=0):
                 return model
         return available_models[0] if available_models else None
     except Exception as e:
-        print(f"Failed to list models: {e}")
+        logger.error(f"Failed to list models: {str(e)}")
         return None
 
-# Sửa report_date nếu sai
-def fix_report_date(date_str):
-    if date_str.startswith('20225'):
-        return '2025' + date_str[5:]
-    return date_str
+# Clean Google Docs URL and convert to PDF export URL
+def clean_google_docs_url(url):
+    # Extract document ID using a more robust regex
+    match = re.match(r"https://docs\.google\.com/document/d/([a-zA-Z0-9_-]+)(?:/edit.*|$)", url)
+    if not match:
+        logger.error(f"Invalid Google Docs URL format: {url}")
+        return None
+    doc_id = match.group(1)
+    # Construct clean PDF export URL
+    pdf_url = f"https://docs.google.com/document/d/{doc_id}/export?format=pdf"
+    logger.info(f"Generated PDF URL: {pdf_url}")
+    return pdf_url
 
-# Sửa JSON không hợp lệ
-def fix_invalid_json(text):
-    text = text.strip()
-    text = re.sub(r'^\]\s*|\]\s*$', '', text)
-    if not text.startswith('{'):
-        text = '{' + text
-    if not text.endswith('}'):
-        text = text + '}'
-    try:
-        json.loads(text)
-        return text
-    except json.JSONDecodeError:
-        return json.dumps({
-            "new_vocabulary": {"pot": "cái nồi"},
-            "sentence_structures": {},
-            "report_date": "cannot find info",
-            "lesson_title": "cannot find info",
-            "homework": "cannot find info",
-            "links": [],
-            "student_comments_minh_huy": "cannot find info"
-        })
-
-# Loại bỏ markdown từ response
-def clean_response_text(text):
-    text = text.strip()
-    if text.startswith('```json') and text.endswith('```'):
-        text = text[7:-3].strip()
-    elif text.startswith('```') and text.endswith('```'):
-        text = text[3:-3].strip()
-    return text
-
-# Đọc processed2.json
-with open('processed2.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
-
-date = data.get('date', 'cannot find info')
-class_name = data.get('class_name', 'cannot find info')
-report_url = data.get('report_url', '')
-
-if not report_url:
-    print("No report_url found in JSON. Exiting.")
-    exit(1)
-
-# Xử lý Google Docs viewer URL
-parsed_url = urlparse(report_url)
-query_params = parse_qs(parsed_url.query)
-direct_pdf_url = query_params.get('url', [None])[0]
-
-if not direct_pdf_url:
-    print("Could not extract direct PDF URL from Google Docs viewer. Exiting.")
-    exit(1)
-
-# Tải PDF từ URL trực tiếp
-pdf_path = 'temp_report.pdf'
-try:
-    response = requests.get(direct_pdf_url, timeout=10)
-    response.raise_for_status()
-    content_type = response.headers.get('content-type', '')
-    if 'application/pdf' not in content_type:
-        print(f"Downloaded file is not a PDF (Content-Type: {content_type}). Exiting.")
-        exit(1)
-    with open(pdf_path, 'wb') as f:
-        f.write(response.content)
-except requests.RequestException as e:
-    print(f"Failed to download PDF: {e}")
-    exit(1)
-
-# Extract text và links từ PDF
-pdf_text = ''
-pdf_links = []
-try:
-    with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
-            text = page.extract_text()
-            pdf_text += text or ''
-            if page.annots:
-                for annot in page.annots:
-                    if 'uri' in annot:
-                        pdf_links.append(annot['uri'])
-except Exception as e:
-    print(f"Failed to extract text or links from PDF: {e}")
-    os.remove(pdf_path)
-    exit(1)
-
-os.remove(pdf_path)
-
-if not pdf_text:
-    print("No text extracted from PDF. Exiting.")
-    exit(1)
-
-print(f"Extracted PDF text length: {len(pdf_text)} characters")
-print(f"Extracted PDF links: {pdf_links}")
-
-# Prompt cho Gemini API
-system_prompt = """
-You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return "cannot find info" for strings or {} or [] for objects/arrays.
-Extract from the given text:
-{
-  "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese, must not be empty)
-  "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple, no null values)
-  "report_date": "",  // Report date in YYYY-MM-DD (if not found, use date from input JSON)
-  "lesson_title": "",  // Lesson title (if not found, "cannot find info")
-  "homework": "",  // Homework description with any associated links (if not found, "cannot find info")
-  "links": [],  // List of all URLs found in the content (e.g., homework links, YouTube videos)
-  "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, "cannot find info")
-}
-For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning. For missing meanings, use a default dictionary (e.g., "pot": "cái nồi").
-For sentence_structures, map questions to answers (e.g., {"What is this?": "It’s a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). If no sentence structures found, return {}.
-Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
-Use date from input JSON if report_date is not found in text.
-Ensure the output is a valid JSON object with all required fields.
-"""
-
-# Thử API tối đa 3 lần, lưu response tốt nhất
-max_attempts = 3
-extracted_data = None
-best_response = None
-for attempt in range(max_attempts):
-    print(f"API attempt {attempt + 1}/{max_attempts}")
+# Process a single report link
+def process_report_link(report_url):
+    logger.info(f"Processing report URL: {report_url}")
     
-    model_name = get_available_model(attempt)
-    if not model_name:
-        print("No suitable model found. Using default response.")
-        break
-    
-    print(f"Using model: {model_name}")
-    
+    # Clean and convert URL to PDF export
+    direct_pdf_url = clean_google_docs_url(report_url)
+    if not direct_pdf_url:
+        return None
+
+    # Download PDF from direct URL
+    pdf_path = 'temp_report.pdf'
+    logger.info(f"Downloading PDF from {direct_pdf_url}")
     try:
-        model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
-        response = model.generate_content(pdf_text)
-        cleaned_text = clean_response_text(response.text)
-        cleaned_text = fix_invalid_json(cleaned_text)
-        print(f"API response text (attempt {attempt + 1}): {cleaned_text}")
-        extracted_data = json.loads(cleaned_text)
-        extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
-        extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date))
-        # Điền nghĩa mặc định cho từ vựng thiếu
-        for word in extracted_data['new_vocabulary']:
-            if not extracted_data['new_vocabulary'][word]:
-                extracted_data['new_vocabulary'][word] = {
-                    "pot": "cái nồi"
-                }.get(word, "nghĩa không xác định")
-        # Loại bỏ null trong sentence_structures
-        extracted_data['sentence_structures'] = {
-            k: v for k, v in extracted_data['sentence_structures'].items()
-            if v is not None and (isinstance(v, str) or (isinstance(v, list) and all(isinstance(x, str) for x in v)))
-        }
-        # Cập nhật best_response nếu response hiện tại có nhiều trường hơn
-        if best_response is None or len(extracted_data.get('new_vocabulary', {})) > len(best_response.get('new_vocabulary', {})):
-            best_response = extracted_data
-        break  # Thoát nếu thành công
-    except Exception as e:
-        print(f"API attempt {attempt + 1}/{max_attempts} failed: {e}")
-        if attempt == max_attempts - 1:
-            print("All API attempts failed. Using best response or default.")
-            extracted_data = best_response or {
-                "new_vocabulary": {"pot": "cái nồi"},
-                "sentence_structures": {},
-                "report_date": date or "cannot find info",
-                "lesson_title": "cannot find info",
-                "homework": "cannot find info",
-                "links": pdf_links,
-                "student_comments_minh_huy": "cannot find info"
-            }
+        response = requests.get(direct_pdf_url, timeout=10)
+        response.raise_for_status()
+        content_type = response.headers.get('content-type', '')
+        if 'application/pdf' not in content_type:
+            logger.error(f"Downloaded file is not a PDF (Content-Type: {content_type})")
+            return None
+        with open(pdf_path, 'wb') as f:
+            f.write(response.content)
+        logger.info(f"Successfully downloaded PDF to {pdf_path}")
+    except requests.RequestException as e:
+        logger.error(f"Failed to download PDF from {direct_pdf_url}: {str(e)}")
+        return None
 
-# Quản lý từ vựng tổng
-vocab_file = 'vocab_total.json'
-if os.path.exists(vocab_file):
+    # Extract text and links from PDF
+    pdf_text = ''
+    pdf_links = []
     try:
-        with open(vocab_file, 'r', encoding='utf-8') as f:
-            vocab_data = json.load(f)
-            if isinstance(vocab_data, dict) and 'vocabulary' in vocab_data:
-                total_vocab = vocab_data['vocabulary']
-            elif isinstance(vocab_data, list) and all(isinstance(item, str) for item in vocab_data):
-                total_vocab = [{"word": word, "meaning": ""} for word in vocab_data]
-            else:
-                total_vocab = []
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages:
+                text = page.extract_text()
+                pdf_text += text or ''
+                if page.annots:
+                    for annot in page.annots:
+                        if 'uri' in annot:
+                            pdf_links.append(annot['uri'])
+        logger.info(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
     except Exception as e:
-        print(f"Error reading vocab_total.json: {e}. Starting with empty vocab.")
-        total_vocab = []
-else:
-    total_vocab = []
+        logger.error(f"Failed to extract text or links from PDF: {str(e)}")
+        return None
+    finally:
+        if os.path.exists(pdf_path):
+            os.remove(pdf_path)
+            logger.info(f"Deleted temporary PDF file: {pdf_path}")
 
-# Thêm từ mới
-new_vocab = extracted_data['new_vocabulary']
-new_vocab_lower = {k.lower(): v for k, v in new_vocab.items()}
-total_vocab_lower = {item['word'].lower(): item['meaning'] for item in total_vocab if isinstance(item, dict)}
-added_vocab = [
-    {"word": k, "meaning": v}
-    for k, v in new_vocab.items()
-    if k.lower() not in total_vocab_lower or total_vocab_lower.get(k.lower(), '') == ''
-]
-total_vocab.extend(added_vocab)
+    if not pdf_text:
+        logger.error("No text extracted from PDF")
+        return None
 
-# Lưu vocab_total.json
-with open(vocab_file, 'w', encoding='utf-8') as f:
-    json.dump({'vocabulary': total_vocab}, f, ensure_ascii=False, indent=4)
+    # Call Gemini API
+    max_attempts = 3
+    extracted_data = None
+    for attempt in range(max_attempts):
+        logger.info(f"Gemini API attempt {attempt + 1}/{max_attempts}")
+        model_name = get_gemini_model(attempt)
+        if not model_name:
+            logger.error("No suitable model found")
+            continue
+        logger.info(f"Using model: {model_name}")
+        try:
+            model = genai.GenerativeModel(model_name, system_instruction=SYSTEM_PROMPT)
+            response = model.generate_content(pdf_text)
+            cleaned_text = clean_json_response(response.text)
+            extracted_data = json.loads(cleaned_text)
+            extracted_data['links_all'] = list(set(extracted_data.get('links_all', []) + [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]))
+            logger.info(f"API attempt {attempt + 1} successful")
+            break
+        except Exception as e:
+            logger.error(f"API attempt {attempt + 1}/{max_attempts} failed: {str(e)}")
+            if attempt == max_attempts - 1:
+                logger.error("All API attempts failed, using default response")
+                extracted_data = {
+                    "class_name": "cannot find info",
+                    "lesson_unit": "cannot find info",
+                    "lesson_date": TODAY,
+                    "learning_objectives": {
+                        "vocabulary_review": {"theme": "", "words": [], "count": 0},
+                        "vocabulary_new": {"theme": "", "words": [], "count": 0},
+                        "pronunciation": {"sound": "", "words": [], "count": 0},
+                        "phonics": ""
+                    },
+                    "warm_up": {"description": "", "videos": []},
+                    "homework_check": "cannot find info",
+                    "running_content": {"theme": "", "review_vocabulary": {"link": "", "words": [], "structure": "", "examples": [], "activities": ""}},
+                    "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
+                    "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
+                    "homework": [],
+                    "links_all": [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]
+                }
 
-# Tạo thư mục Report
-os.makedirs('Report', exist_ok=True)
+    extracted_data['report_url'] = report_url
+    return extracted_data
 
-# Tên file kết quả
-title = extracted_data['lesson_title'].replace(' ', '_') if extracted_data['lesson_title'] else 'unknown'
-result_filename = f"Report/{date}_{title}.json"
+# Main function
+def main():
+    logger.info("Starting report extraction")
+    if not API_KEY:
+        logger.error("Missing GEMINI_API_KEY, aborting")
+        return
 
-# Lưu file kết quả
-result_data = {
-    **extracted_data,
-    'class_name': class_name,
-    'total_vocabulary': total_vocab
-}
+    genai.configure(api_key=API_KEY)
 
-with open(result_filename, 'w', encoding='utf-8') as f:
-    json.dump(result_data, f, ensure_ascii=False, indent=4)
+    # Read links from link.txt
+    if not os.path.exists(LINK_FILE):
+        logger.error(f"{LINK_FILE} does not exist")
+        return
+    with open(LINK_FILE, 'r', encoding='utf-8') as f:
+        report_urls = [line.strip() for line in f if line.strip()]
+    logger.info(f"Found {len(report_urls)} report URLs in {LINK_FILE}")
 
-print(f"Processed and saved: {result_filename}")
+    # Load existing homework data
+    homework_data = []
+    if os.path.exists(HOMEWORK_FILE):
+        try:
+            with open(HOMEWORK_FILE, 'r', encoding='utf-8') as f:
+                homework_data = json.load(f)
+            logger.info(f"Loaded existing {HOMEWORK_FILE}: {len(homework_data)} entries")
+        except Exception as e:
+            logger.error(f"Error reading {HOMEWORK_FILE}: {str(e)}")
 
-# Gửi tin nhắn Telegram
-async def send_report_to_telegram():
-    bot = Bot(token=TELEGRAM_BOT_TOKEN)
+    # Process each report URL
+    processed_urls = {entry.get('report_url') for entry in homework_data}
+    for report_url in report_urls:
+        if report_url in processed_urls:
+            logger.info(f"Skipping already processed URL: {report_url}")
+            continue
+        data = process_report_link(report_url)
+        if data:
+            homework_data.append(data)
+            logger.info(f"Processed report: {report_url}")
+
+    # Save to homework.json
     try:
-        general_info = (
-            f"*BÁO CÁO BÀI HỌC - {result_data['report_date']}*\n"
-            f"📅 *Ngày*: {result_data['report_date']}\n"
-            f"📚 *Tiêu đề*: {result_data['lesson_title']}\n"
-            f"🏫 *Lớp*: {result_data['class_name']}"
-        )
-        await send_telegram_message(bot, TELEGRAM_CHAT_ID, general_info)
-        
-        vocab_text = f"*TỪ VỰNG MỚI - {result_data['report_date']}*\n" + "\n".join(
-            f"• `{k}`: {v}" for k, v in result_data['new_vocabulary'].items()
-        )
-        if result_data['new_vocabulary']:
-            await send_telegram_message(bot, TELEGRAM_CHAT_ID, vocab_text)
-        
-        sentence_text = f"*CẤU TRÚC CÂU - {result_data['report_date']}*\n" + "\n".join(
-            f"• *{k}*: {v if isinstance(v, str) else ', '.join(v)}"
-            for k, v in result_data['sentence_structures'].items()
-            if v is not None
-        )
-        if result_data['sentence_structures']:
-            await send_telegram_message(bot, TELEGRAM_CHAT_ID, sentence_text)
-        
-        homework_text = f"*BÀI TẬP VỀ NHÀ - {result_data['report_date']}*\n{result_data['homework']}"
-        if result_data['homework'] and result_data['homework'] != "cannot find info":
-            await send_telegram_message(bot, TELEGRAM_CHAT_ID, homework_text)
-        
-        comments_text = f"*NHẬN XÉT VỀ MINH HUY - {result_data['report_date']}*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
-        if result_data['student_comments_minh_huy'] and result_data['student_comments_minh_huy'] != "cannot find info":
-            await send_telegram_message(bot, TELEGRAM_CHAT_ID, comments_text)
+        with open(HOMEWORK_FILE, 'w', encoding='utf-8') as f:
+            json.dump(homework_data, f, ensure_ascii=False, indent=4)
+        logger.info(f"Successfully saved {HOMEWORK_FILE} with {len(homework_data)} entries")
     except Exception as e:
-        print(f"Failed to send Telegram messages: {e}")
-        exit(1)
+        logger.error(f"Error saving {HOMEWORK_FILE}: {str(e)}")
 
-asyncio.run(send_report_to_telegram())
+if __name__ == "__main__":
+    logger.info("Starting script")
+    main()
+    logger.info("Script completed")
