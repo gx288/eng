@@ -126,6 +126,16 @@ def clean_google_docs_url(url):
     logger.info(f"PDF export URL: {pdf_url}")
     return pdf_url
 
+# Deduplicate links_all based on URL
+def deduplicate_links(links):
+    seen_urls = set()
+    unique_links = []
+    for link in links:
+        if link['url'] not in seen_urls:
+            seen_urls.add(link['url'])
+            unique_links.append(link)
+    return unique_links
+
 # Process a single report link
 def process_report_link(report_url):
     logger.info(f"Processing report: {report_url}")
@@ -199,7 +209,7 @@ def process_report_link(report_url):
             model = genai.GenerativeModel(model_name, system_instruction=SYSTEM_PROMPT)
             response = model.generate_content(pdf_text)
             extracted_data = clean_json_response(response.text)
-            extracted_data['links_all'] = list(set(extracted_data.get('links_all', []) + [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]))
+            extracted_data['links_all'] = deduplicate_links(extracted_data.get('links_all', []) + [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links])
             extracted_data['report_url'] = report_url
             extracted_data['pdf_export_url'] = direct_pdf_url
             logger.info(f"API attempt {attempt + 1} successful")
@@ -209,7 +219,7 @@ def process_report_link(report_url):
                 if attempt < max_attempts - 1:
                     logger.warning(f"Quota exceeded for {model_name}, trying next model")
                     continue
-                retry_delay = 40 + random.uniform(0, 5)
+                retry_delay = 60 + random.uniform(0, 5)
                 logger.warning(f"Quota exceeded, retrying in {retry_delay:.2f} seconds")
                 time.sleep(retry_delay)
             else:
@@ -232,7 +242,7 @@ def process_report_link(report_url):
                     "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
                     "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
                     "homework": [],
-                    "links_all": [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links],
+                    "links_all": deduplicate_links([{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]),
                     "report_url": report_url,
                     "pdf_export_url": direct_pdf_url
                 }
