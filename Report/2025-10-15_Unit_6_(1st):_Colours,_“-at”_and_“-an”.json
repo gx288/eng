@@ -9,18 +9,21 @@
         "white": "màu trắng",
         "black": "màu đen",
         "has": "có",
-        "help": "giúp đỡ",
+        "a": "một",
+        "the": "mạo từ xác định",
         "funny": "hài hước",
-        "here": "tại đây",
         "go": "đi",
+        "help": "giúp đỡ",
+        "here": "tại đây",
         "i": "tôi",
         "fan": "cái quạt",
         "can": "cái lon",
-        "bat": "con dơi",
-        "hat": "cái mũ",
-        "rat": "con chuột",
+        "ran": "đã chạy",
         "pan": "cái chảo",
         "cat": "con mèo",
+        "rat": "con chuột",
+        "bat": "con dơi",
+        "hat": "cái mũ",
         "tap": "đập",
         "pat": "vỗ nhẹ",
         "pal": "bạn bè"
@@ -30,13 +33,13 @@
     "lesson_title": "Unit 6 (1st): Colours, “-at” and “-an”",
     "homework": "Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang sách):\n- Student book 2: Lesson 6 - trang 11\n- Handwriting book 2: At and An - trang 11 và 12\n- 1.1 KG2_HOMEWORK_LESSON 6 (1st)",
     "links": [
-        "https://www.starfall.com/h/ltr-sv-a/zac-and-cat/?mg=m",
-        "https://quizlet.com/vn/958006067/kg2_l6_at-and-an-flash-cards/?i=5lxnmh&x=1jqt",
         "https://quizlet.com/vn/241183740/colors-tu-vung-chu-de-mau-sac-flash-cards/?funnelUUID=9eb675b7-346a-4b9c-ba87-230045c4a3cf",
-        "https://youtu.be/gghDRJVxFxU",
-        "https://www.youtube.com/watch?v=7XZlWXF_LRk",
+        "https://quizlet.com/vn/958006067/kg2_l6_at-and-an-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://www.youtube.com/watch?v=1jv0Gx_q_OU",
         "https://drive.google.com/drive/folders/1JnFF0MeJg0p0s4xnFe541wk5AZyUyRcn",
-        "https://www.youtube.com/watch?v=1jv0Gx_q_OU"
+        "https://www.starfall.com/h/ltr-sv-a/zac-and-cat/?mg=m",
+        "https://www.youtube.com/watch?v=7XZlWXF_LRk",
+        "https://youtu.be/gghDRJVxFxU"
     ],
     "student_comments_minh_huy": "Buổi học hôm nay, con ngồi học ngay ngắn và đã tiến bộ hơn trong việc hạn chế làm việc riêng. Phần từ vựng, con ghi nhớ được các từ vựng chỉ màu sắc ở mức cơ bản (red, blue, yellow,...Phần ngữ âm con đã nhận biết và nắm được các từ đuôi “at” và “an”, con thực hiện bài tập liên quan nhanh chóng.",
     "class_name": "VQ2-K2-2501",
@@ -297,6 +300,10 @@
         {
             "word": "pal",
             "meaning": "bạn bè"
+        },
+        {
+            "word": "ran",
+            "meaning": "đã chạy"
         }
     ]
 }
