@@ -55,36 +55,43 @@ For hyperlinks, extract URLs and their associated text (e.g., video titles) from
 """
 
 # Clean and validate JSON response
-def clean_json_response(text):
-    text = text.strip()
-    if text.startswith('```json') and text.endswith('```'):
-        text = text[7:-3].strip()
-    elif text.startswith('```') and text.endswith('```'):
-        text = text[3:-3].strip()
-    try:
-        parsed_json = json.loads(text)
-        logger.info("Parsed JSON response")
-        return parsed_json
-    except json.JSONDecodeError as e:
-        logger.error(f"Invalid JSON response: {str(e)}")
-        return {
-            "class_name": "cannot find info",
-            "lesson_unit": "cannot find info",
-            "lesson_date": TODAY,
-            "learning_objectives": {
-                "vocabulary_review": {"theme": "", "words": [], "count": 0},
-                "vocabulary_new": {"theme": "", "words": [], "count": 0},
-                "pronunciation": {"sound": "", "words": [], "count": 0},
-                "phonics": ""
-            },
-            "warm_up": {"description": "", "videos": []},
-            "homework_check": "cannot find info",
-            "running_content": {"theme": "", "review_vocabulary": {"link": "", "words": [], "structure": "", "examples": [], "activities": ""}},
-            "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
-            "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
-            "homework": [],
-            "links_all": []
-        }
+def clean_json_response(response_data):
+    logger.info("Processing API response")
+    if isinstance(response_data, dict):
+        logger.info("Response is already a dictionary")
+        return response_data
+    if isinstance(response_data, str):
+        text = response_data.strip()
+        if text.startswith('```json') and text.endswith('```'):
+            text = text[7:-3].strip()
+        elif text.startswith('```') and text.endswith('```'):
+            text = text[3:-3].strip()
+        try:
+            parsed_json = json.loads(text)
+            logger.info("Parsed JSON string response")
+            return parsed_json
+        except json.JSONDecodeError as e:
+            logger.error(f"Invalid JSON string response: {str(e)}")
+    else:
+        logger.error(f"Unexpected response type: {type(response_data)}")
+    return {
+        "class_name": "cannot find info",
+        "lesson_unit": "cannot find info",
+        "lesson_date": TODAY,
+        "learning_objectives": {
+            "vocabulary_review": {"theme": "", "words": [], "count": 0},
+            "vocabulary_new": {"theme": "", "words": [], "count": 0},
+            "pronunciation": {"sound": "", "words": [], "count": 0},
+            "phonics": ""
+        },
+        "warm_up": {"description": "", "videos": []},
+        "homework_check": "cannot find info",
+        "running_content": {"theme": "", "review_vocabulary": {"link": "", "words": [], "structure": "", "examples": [], "activities": ""}},
+        "new_vocabulary": {"theme": "", "words": [], "link": "", "activities": ""},
+        "phonics": {"letter": "", "words": [], "link": "", "activities": "", "videos": []},
+        "homework": [],
+        "links_all": []
+    }
 
 # Get available Gemini model
 def get_gemini_model(attempt=0):
@@ -191,8 +198,7 @@ def process_report_link(report_url):
         try:
             model = genai.GenerativeModel(model_name, system_instruction=SYSTEM_PROMPT)
             response = model.generate_content(pdf_text)
-            cleaned_text = clean_json_response(response.text)
-            extracted_data = json.loads(cleaned_text)
+            extracted_data = clean_json_response(response.text)
             extracted_data['links_all'] = list(set(extracted_data.get('links_all', []) + [{"context": "PDF link", "url": link, "type": "other"} for link in pdf_links]))
             extracted_data['report_url'] = report_url
             extracted_data['pdf_export_url'] = direct_pdf_url
