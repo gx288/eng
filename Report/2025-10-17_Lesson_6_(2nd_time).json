@@ -1,0 +1,298 @@
+{
+    "new_vocabulary": {
+        "red": "Màu đỏ",
+        "yellow": "Màu vàng",
+        "blue": "Màu xanh lam",
+        "green": "Màu xanh lục",
+        "orange": "Màu cam",
+        "pink": "Màu hồng",
+        "white": "Màu trắng",
+        "black": "Màu đen",
+        "cat": "Con mèo",
+        "rat": "Con chuột",
+        "bat": "Gậy đánh bóng",
+        "hat": "Cái mũ",
+        "can": "Cái lon",
+        "pan": "Cái chảo",
+        "ran": "Chạy",
+        "fan": "Cái quạt"
+    },
+    "sentence_structures": {},
+    "report_date": "2025-10-17",
+    "lesson_title": "Lesson 6 (2nd time)",
+    "homework": "Các con về nhà hoàn thành các bài tập sau: . Student book 2: Lesson 6 - trang 12. . Handwriting book 2: At and An - trang 13 - 14. Các con ôn tập qua các link sau: 1.2 KG2_HOMEWORK_LESSON 6 (2nd)",
+    "links": [
+        "https://quizlet.com/vn/241183740/colors-tu-vung-chu-de-mau-sac-flash-cards/?i=5g095j&x=1jqt",
+        "1.2 KG2_HOMEWORK_LESSON 6 (2nd)",
+        "https://drive.google.com/drive/folders/1aQfA5BxwtA0P0LQpGB0t-z7uVctHIcIG",
+        "https://youtu.be/BELlZKpi1Zs",
+        "https://www.youtube.com/watch?v=9mmF8zOlh_g",
+        "https://quizlet.com/vn/958006067/kg2_l6_at-and-an-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://www.youtube.com/watch?v=GFSA0_r0fII"
+    ],
+    "student_comments_minh_huy": "Trong buổi học ngày hôm nay, con có tinh thần tham gia lớp học tốt, phản xạ nhanh đối với các câu hỏi cũng như các yêu cầu của giáo viên. Tuy nhiên, đôi lúc con chưa thật sự tập trung vào bài học. Phần từ mới chủ đề màu sắc, con đã ghi nhớ rất tốt và có thể nhận biết các từ qua flashcards rất nhạy bén. Về phần ngữ âm, con đã nhận biết và ghi nhớ tốt cách phát âm âm at & an, ghép âm các từ vựng đi kèm tương đối thành thạo.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sAFl7T1u-9-E91HboHwckjqbMRww4B9B/export?format=pdf",
+    "total_vocabulary": [
+        {
+            "word": "pen",
+            "meaning": "bút mực"
+        },
+        {
+            "word": "pencil",
+            "meaning": "bút chì"
+        },
+        {
+            "word": "book",
+            "meaning": "sách"
+        },
+        {
+            "word": "ruler",
+            "meaning": "thước kẻ"
+        },
+        {
+            "word": "crayons",
+            "meaning": "sáp màu"
+        },
+        {
+            "word": "chair",
+            "meaning": "ghế"
+        },
+        {
+            "word": "paper",
+            "meaning": "giấy"
+        },
+        {
+            "word": "scissors",
+            "meaning": "kéo"
+        },
+        {
+            "word": "dog",
+            "meaning": "chó"
+        },
+        {
+            "word": "hog",
+            "meaning": "lợn rừng"
+        },
+        {
+            "word": "mop",
+            "meaning": "chổi lau nhà"
+        },
+        {
+            "word": "sister",
+            "meaning": "Chị/ em gái"
+        },
+        {
+            "word": "family",
+            "meaning": "gia đình"
+        },
+        {
+            "word": "grandmother",
+            "meaning": "bà"
+        },
+        {
+            "word": "parents",
+            "meaning": "bố mẹ"
+        },
+        {
+            "word": "mother",
+            "meaning": "mẹ"
+        },
+        {
+            "word": "father",
+            "meaning": "bố"
+        },
+        {
+            "word": "grandfather",
+            "meaning": "ông"
+        },
+        {
+            "word": "brother",
+            "meaning": "Anh/em trai"
+        },
+        {
+            "word": "crayon",
+            "meaning": "bút màu"
+        },
+        {
+            "word": "computer",
+            "meaning": "máy tính"
+        },
+        {
+            "word": "bun",
+            "meaning": "Bánh tròn nhỏ"
+        },
+        {
+            "word": "run",
+            "meaning": "Chạy"
+        },
+        {
+            "word": "sun",
+            "meaning": "Mặt trời"
+        },
+        {
+            "word": "mug",
+            "meaning": "Cốc có quai"
+        },
+        {
+            "word": "bug",
+            "meaning": "Con bọ"
+        },
+        {
+            "word": "hug",
+            "meaning": "Ôm"
+        },
+        {
+            "word": "rug",
+            "meaning": "Tấm thảm"
+        },
+        {
+            "word": "tub",
+            "meaning": "Bồn tắm"
+        },
+        {
+            "word": "dad",
+            "meaning": "Bố"
+        },
+        {
+            "word": "mom",
+            "meaning": "Mẹ"
+        },
+        {
+            "word": "grandma",
+            "meaning": "Bà"
+        },
+        {
+            "word": "grandpa",
+            "meaning": "Ông"
+        },
+        {
+            "word": "pot",
+            "meaning": "cái nồi"
+        },
+        {
+            "word": "is",
+            "meaning": "là"
+        },
+        {
+            "word": "a",
+            "meaning": "một"
+        },
+        {
+            "word": "in",
+            "meaning": "trong"
+        },
+        {
+            "word": "the",
+            "meaning": "mạo từ xác định"
+        },
+        {
+            "word": "gets",
+            "meaning": "nhận được"
+        },
+        {
+            "word": "has",
+            "meaning": "có"
+        },
+        {
+            "word": "and",
+            "meaning": "và"
+        },
+        {
+            "word": "red",
+            "meaning": "màu đỏ"
+        },
+        {
+            "word": "yellow",
+            "meaning": "màu vàng"
+        },
+        {
+            "word": "blue",
+            "meaning": "màu xanh biển"
+        },
+        {
+            "word": "green",
+            "meaning": "màu xanh lá"
+        },
+        {
+            "word": "orange",
+            "meaning": "màu cam"
+        },
+        {
+            "word": "pink",
+            "meaning": "màu hồng"
+        },
+        {
+            "word": "white",
+            "meaning": "màu trắng"
+        },
+        {
+            "word": "black",
+            "meaning": "màu đen"
+        },
+        {
+            "word": "help",
+            "meaning": "giúp đỡ"
+        },
+        {
+            "word": "funny",
+            "meaning": "hài hước"
+        },
+        {
+            "word": "here",
+            "meaning": "tại đây"
+        },
+        {
+            "word": "go",
+            "meaning": "đi"
+        },
+        {
+            "word": "i",
+            "meaning": "tôi"
+        },
+        {
+            "word": "fan",
+            "meaning": "cái quạt"
+        },
+        {
+            "word": "bat",
+            "meaning": "con dơi"
+        },
+        {
+            "word": "can",
+            "meaning": "cái lon"
+        },
+        {
+            "word": "hat",
+            "meaning": "cái mũ"
+        },
+        {
+            "word": "rat",
+            "meaning": "con chuột"
+        },
+        {
+            "word": "pan",
+            "meaning": "cái chảo"
+        },
+        {
+            "word": "cat",
+            "meaning": "con mèo"
+        },
+        {
+            "word": "tap",
+            "meaning": "đập"
+        },
+        {
+            "word": "pat",
+            "meaning": "vỗ nhẹ"
+        },
+        {
+            "word": "pal",
+            "meaning": "bạn bè"
+        },
+        {
+            "word": "ran",
+            "meaning": "đã chạy"
+        }
+    ]
+}
