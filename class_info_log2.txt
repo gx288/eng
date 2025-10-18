@@ -4295,3 +4295,44 @@ Stacktrace:
 
 [2025-10-18 07:19:42] Closing WebDriver
 [2025-10-18 07:19:42] Script completed
+[2025-10-18 08:27:50] Starting script
+[2025-10-18 08:27:50] Starting report check for calendar overview
+[2025-10-18 08:27:50] Loaded processed2.json: {'date': '2025-10-15', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1PPE1lQ5PEkQrct6jh-rCm7YI_GhfNxPC/export?format=pdf'}
+[2025-10-18 08:27:50] Writing Google credentials to credentials.json
+[2025-10-18 08:27:50] Credentials written successfully
+[2025-10-18 08:27:50] Initializing Chrome WebDriver
+[2025-10-18 08:27:58] WebDriver session ID: 53f4ecd040358b7d733da7befa52c2cd
+[2025-10-18 08:27:58] Navigating to login page: https://apps.cec.com.vn/login
+[2025-10-18 08:28:00] Error checking reports: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=141.0.7390.107)
+Stacktrace:
+#0 0x55ec1768c67a <unknown>
+#1 0x55ec1710b566 <unknown>
+#2 0x55ec17102470 <unknown>
+#3 0x55ec170f3926 <unknown>
+#4 0x55ec170f572b <unknown>
+#5 0x55ec170f3eb1 <unknown>
+#6 0x55ec170f3650 <unknown>
+#7 0x55ec170f3302 <unknown>
+#8 0x55ec170f1142 <unknown>
+#9 0x55ec170f192a <unknown>
+#10 0x55ec1710ea99 <unknown>
+#11 0x55ec171a9ee5 <unknown>
+#12 0x55ec17183632 <unknown>
+#13 0x55ec171a9328 <unknown>
+#14 0x55ec17183403 <unknown>
+#15 0x55ec1714fb02 <unknown>
+#16 0x55ec171507c1 <unknown>
+#17 0x55ec17650448 <unknown>
+#18 0x55ec176542af <unknown>
+#19 0x55ec176378d9 <unknown>
+#20 0x55ec17654e55 <unknown>
+#21 0x55ec1761d13f <unknown>
+#22 0x55ec176794b8 <unknown>
+#23 0x55ec17679693 <unknown>
+#24 0x55ec1768b613 <unknown>
+#25 0x7f3c3e09caa4 <unknown>
+#26 0x7f3c3e129c6c <unknown>
+
+[2025-10-18 08:28:00] Closing WebDriver
+[2025-10-18 08:28:00] Script completed
