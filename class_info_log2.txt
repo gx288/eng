@@ -4523,3 +4523,6 @@ Trong buổi học ngày hôm nay, con có tinh thần tham gia lớp học t...
 [2025-10-18 12:43:54] Completed detailed Telegram notifications
 [2025-10-18 12:43:54] Git repository detected
 [2025-10-18 12:43:54] Committing and pushing Report and vocab files to GitHub
+[2025-10-18 12:43:55] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2025-10-18 12:43:55] Closing WebDriver
+[2025-10-18 12:43:55] Script completed
