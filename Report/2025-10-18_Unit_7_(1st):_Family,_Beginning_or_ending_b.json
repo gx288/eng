@@ -1,5 +1,37 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "sister": "chị gái",
+        "family": "gia đình",
+        "grandmother": "bà ngoại",
+        "parents": "bố mẹ/phụ huynh",
+        "mother": "mẹ",
+        "father": "bố",
+        "grandfather": "ông ngoại",
+        "brother": "anh trai",
+        "can": "có thể",
+        "blue": "màu xanh",
+        "see": "nhìn",
+        "big": "to lớn",
+        "crab": "con cua",
+        "bath": "bồn tắm",
+        "ball": "quả bóng",
+        "sub": "phụ",
+        "bus": "xe buýt",
+        "bat": "con dơi"
+    },
+    "sentence_structures": {},
+    "report_date": "2025-10-18",
+    "lesson_title": "Unit 7 (1st): Family, Beginning or ending b",
+    "homework": "- Student book 2: Lesson 7 (trang 13)\n- Handwriting book 2: Beginning or ending b (trang 15 và 16)\n- 2.1 KG2_HOMEWORK_LESSON 7 (1st) (PHHS vui lòng truy cập để xem chi tiết)",
+    "links": [
+        "https://quizlet.com/vn/951157977/kg3_family-1-flash-cards/?i=6up3nb&x=1jqt",
+        "https://quizlet.com/vn/958008240/kg2_l7_beginning-or-ending-b-flash-cards/?i=6up3nb&x=1jqt",
+        "https://drive.google.com/drive/folders/1jL0WlNcOj3YeF8FxK16z7IAvOT6sMPi1"
+    ],
+    "student_comments_minh_huy": "Buổi học hôm nay Huy đã tập trung học, hạn chế làm việc riêng và có ý thức hơn trước. Con nhớ nhanh và phát âm tốt các từ chỉ số đếm như “thirty, sixty, one hundred”.Con cũng nói được các câu đơn giản như “This is my mom, this is my dad, this is my shark, see you again”. Con hoàn thành tốt và đầy đủ phần bài tập về nhà.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pkLTu_KZIsaTLAoDP69w2RN6uZVgFuoJCgXfVc2uniI/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
