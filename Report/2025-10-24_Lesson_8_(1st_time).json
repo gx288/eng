@@ -1,5 +1,46 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "clothes": "quần áo",
+        "family": "gia đình",
+        "hat": "cái mũ",
+        "trousers": "quần dài",
+        "shoes": "đôi giày",
+        "socks": "đôi tất",
+        "coat": "áo khoác",
+        "t-shirt": "áo phông",
+        "skirt": "chân váy",
+        "shorts": "quần đùi",
+        "mother(mom)": "mẹ",
+        "grandpa(grandfather)": "ông",
+        "father (dad)": "bố",
+        "grandma(grandmother)": "bà",
+        "brother": "anh, em trai",
+        "sister": "chị, em gái",
+        "aunt": "cô, dì, thím, bác gái",
+        "uncle": "chú, bác, cậu",
+        "cousin": "anh em họ",
+        "tub": "bồn tắm",
+        "bat": "con dơi",
+        "ten": "số mười",
+        "cat": "con mèo",
+        "top": "trên cùng"
+    },
+    "sentence_structures": {},
+    "report_date": "2025-10-24",
+    "lesson_title": "Lesson 8 (1st time)",
+    "homework": "Các bạn về nhà hoàn thành các bài tập sau:\n. Student book 2: Lesson 8 – trang 15\n. Handwriting book 2: Beginning and ending t – trang 19, 20\nCác con ôn tập bài học ở nhà theo đường link sau đây: 3.1 KG2_HOMEWORK_LESSON 8 (1st)",
+    "links": [
+        "https://youtu.be/GFSA0_r0fII",
+        "https://quizlet.com/vn/241183165/clothes-1-tu-vung-chu-de-quan-ao-1-flash-cards/?i=5g095j&x=1jqt",
+        "https://quizlet.com/vn/958019244/kg2_l8_beginning-or-ending-t-flash-cards/?new",
+        "https://quizlet.com/_3zlfxh",
+        "https://drive.google.com/drive/folders/1u8pBGo-lz3Gi96rYEwt3CJUcVu_ghAsk?usp=drive_link",
+        "https://youtu.be/YJyNoFkud6g"
+    ],
+    "student_comments_minh_huy": "Con khá hăng hái tham gia các hoạt động trên lớp, song con còn chưa thật sự nghiêm túc theo dõi bài học. Về phần ôn tập từ vựng chủ đề Gia đình, con phản xạ tốt được với các từ ‘father, mother’. Con đã chú ý tham gia tốt phần hoạt động của giáo viên. Phần ngữ âm, con phản xạ được với âm beginning và ending t cùng với các từ vựng đi kèm ‘ten, cat, hat, top’. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1RNj2CvfvL2zLApKO6n1elBRlGAtOfmDp/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"

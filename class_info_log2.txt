@@ -8318,3 +8318,78 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1RNj
 [2025-10-25 11:18:14] Saved processed2.json successfully
 [2025-10-25 11:18:14] Git repository detected
 [2025-10-25 11:18:14] Committing and pushing changes to GitHub
+[2025-10-25 11:18:14] Pushed processed2.json and class_info_log2.txt successfully
+[2025-10-25 11:18:15] Starting PDF processing for report analysis
+[2025-10-25 11:18:15] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1RNj2CvfvL2zLApKO6n1elBRlGAtOfmDp/export?format=pdf
+[2025-10-25 11:18:15] Downloading PDF from https://docs.google.com/document/d/1RNj2CvfvL2zLApKO6n1elBRlGAtOfmDp/export?format=pdf
+[2025-10-25 11:18:15] Successfully downloaded PDF to temp_report.pdf
+[2025-10-25 11:18:15] Extracting text and links from PDF
+[2025-10-25 11:18:16] Extracted 5856 characters and 7 links from PDF
+[2025-10-25 11:18:16] Deleted temporary PDF file: temp_report.pdf
+[2025-10-25 11:18:16] Gemini API attempt 1/3
+[2025-10-25 11:18:16] Available models: ['models/gemini-2.5-pro-preview-03-25', 'models/gemini-2.5-flash-preview-05-20', 'models/gemini-2.5-flash', 'models/gemini-2.5-flash-lite-preview-06-17', 'models/gemini-2.5-pro-preview-05-06', 'models/gemini-2.5-pro-preview-06-05', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash-exp', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-exp-image-generation', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.0-flash-preview-image-generation', 'models/gemini-2.0-flash-lite-preview-02-05', 'models/gemini-2.0-flash-lite-preview', 'models/gemini-2.0-pro-exp', 'models/gemini-2.0-pro-exp-02-05', 'models/gemini-exp-1206', 'models/gemini-2.0-flash-thinking-exp-01-21', 'models/gemini-2.0-flash-thinking-exp', 'models/gemini-2.0-flash-thinking-exp-1219', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/learnlm-2.0-flash-experimental', 'models/gemma-3-1b-it', 'models/gemma-3-4b-it', 'models/gemma-3-12b-it', 'models/gemma-3-27b-it', 'models/gemma-3n-e4b-it', 'models/gemma-3n-e2b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image-preview', 'models/gemini-2.5-flash-image', 'models/gemini-2.5-flash-preview-09-2025', 'models/gemini-2.5-flash-lite-preview-09-2025', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-2.5-computer-use-preview-10-2025']
+[2025-10-25 11:18:16] Using model: models/gemini-2.5-flash-preview-05-20
+[2025-10-25 11:18:27] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "clothes": "quần áo",
+    "family": "gia đình",
+    "hat": "cái mũ",
+   ...
+[2025-10-25 11:18:27] API attempt 1 successful
+[2025-10-25 11:18:27] Updating Google Sheet 'ReportContent' with extracted data
+[2025-10-25 11:18:27] Inserted 29 rows to 'ReportContent' after header
+[2025-10-25 11:18:27] Processing total vocabulary
+[2025-10-25 11:18:27] Loaded existing vocabulary from vocab_total.json: 72 entries
+[2025-10-25 11:18:27] Added 17 new vocabulary entries. Total vocabulary: 89
+[2025-10-25 11:18:27] Saving updated vocabulary to vocab_total.json
+[2025-10-25 11:18:27] Successfully saved vocab_total.json
+[2025-10-25 11:18:27] Updating Google Sheet 'vocab' with total vocabulary
+[2025-10-25 11:18:28] Updated Google Sheet 'vocab' successfully with 89 vocabulary entries
+[2025-10-25 11:18:28] Creating Report directory if not exists
+[2025-10-25 11:18:28] Saving result to Report/2025-10-24_Lesson_8_(1st_time).json
+[2025-10-25 11:18:28] Successfully saved: Report/2025-10-24_Lesson_8_(1st_time).json
+[2025-10-25 11:18:28] Starting detailed Telegram notifications
+[2025-10-25 11:18:28] Initializing Telegram Bot for detailed messages
+[2025-10-25 11:18:28] Sending detailed Telegram messages to chat_id 1900957785
+[2025-10-25 11:18:28] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2025-10-24*
+📅 *Ngày*: 2025-10-24
+📚 *Tiêu đề*: Lesson 8 (1st time)
+🏫 *Lớp*: VQ2-K2...
+[2025-10-25 11:18:29] Sent general info message to chat_id 1900957785
+[2025-10-25 11:18:29] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2025-10-24*
+• `clothes`: quần áo
+• `family`: gia đình
+• `hat`: cái mũ
+• `trousers`: q...
+[2025-10-25 11:18:30] Sent vocabulary message to chat_id 1900957785
+[2025-10-25 11:18:30] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2025-10-24*
+Các bạn về nhà hoàn thành các bài tập sau:
+. Student book 2: Lesson 8 ...
+[2025-10-25 11:18:31] Sent homework message to chat_id 1900957785
+[2025-10-25 11:18:31] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2025-10-24*
+Con khá hăng hái tham gia các hoạt động trên lớp, song con còn c...
+[2025-10-25 11:18:31] Sent comments message to chat_id 1900957785
+[2025-10-25 11:18:32] Completed sending detailed messages to chat_id 1900957785
+[2025-10-25 11:18:32] Sending detailed Telegram messages to chat_id 1924741087
+[2025-10-25 11:18:32] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2025-10-24*
+📅 *Ngày*: 2025-10-24
+📚 *Tiêu đề*: Lesson 8 (1st time)
+🏫 *Lớp*: VQ2-K2...
+[2025-10-25 11:18:32] Sent general info message to chat_id 1924741087
+[2025-10-25 11:18:33] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2025-10-24*
+• `clothes`: quần áo
+• `family`: gia đình
+• `hat`: cái mũ
+• `trousers`: q...
+[2025-10-25 11:18:33] Sent vocabulary message to chat_id 1924741087
+[2025-10-25 11:18:33] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2025-10-24*
+Các bạn về nhà hoàn thành các bài tập sau:
+. Student book 2: Lesson 8 ...
+[2025-10-25 11:18:34] Sent homework message to chat_id 1924741087
+[2025-10-25 11:18:34] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2025-10-24*
+Con khá hăng hái tham gia các hoạt động trên lớp, song con còn c...
+[2025-10-25 11:18:35] Sent comments message to chat_id 1924741087
+[2025-10-25 11:18:35] Completed sending detailed messages to chat_id 1924741087
+[2025-10-25 11:18:35] Completed detailed Telegram notifications
+[2025-10-25 11:18:35] Git repository detected
+[2025-10-25 11:18:35] Committing and pushing Report and vocab files to GitHub
