@@ -8393,3 +8393,6 @@ Con khá hăng hái tham gia các hoạt động trên lớp, song con còn c...
 [2025-10-25 11:18:35] Completed detailed Telegram notifications
 [2025-10-25 11:18:35] Git repository detected
 [2025-10-25 11:18:35] Committing and pushing Report and vocab files to GitHub
+[2025-10-25 11:18:36] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2025-10-25 11:18:36] Closing WebDriver
+[2025-10-25 11:18:36] Script completed
