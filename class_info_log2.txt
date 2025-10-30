@@ -10605,3 +10605,81 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wR6
 [2025-10-30 07:23:31] Saved processed2.json successfully
 [2025-10-30 07:23:31] Git repository detected
 [2025-10-30 07:23:31] Committing and pushing changes to GitHub
+[2025-10-30 07:23:32] Pushed processed2.json and class_info_log2.txt successfully
+[2025-10-30 07:23:32] Starting PDF processing for report analysis
+[2025-10-30 07:23:32] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wR6pv6dC-E-zPENichCZKc_zXjIhfLmQ/export?format=pdf
+[2025-10-30 07:23:32] Downloading PDF from https://docs.google.com/document/d/1wR6pv6dC-E-zPENichCZKc_zXjIhfLmQ/export?format=pdf
+[2025-10-30 07:23:33] Successfully downloaded PDF to temp_report.pdf
+[2025-10-30 07:23:33] Extracting text and links from PDF
+[2025-10-30 07:23:34] Extracted 7023 characters and 7 links from PDF
+[2025-10-30 07:23:34] Deleted temporary PDF file: temp_report.pdf
+[2025-10-30 07:23:34] Gemini API attempt 1/3
+[2025-10-30 07:23:34] Available models: ['models/gemini-2.5-pro-preview-03-25', 'models/gemini-2.5-flash-preview-05-20', 'models/gemini-2.5-flash', 'models/gemini-2.5-flash-lite-preview-06-17', 'models/gemini-2.5-pro-preview-05-06', 'models/gemini-2.5-pro-preview-06-05', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash-exp', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-exp-image-generation', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.0-flash-preview-image-generation', 'models/gemini-2.0-flash-lite-preview-02-05', 'models/gemini-2.0-flash-lite-preview', 'models/gemini-2.0-pro-exp', 'models/gemini-2.0-pro-exp-02-05', 'models/gemini-exp-1206', 'models/gemini-2.0-flash-thinking-exp-01-21', 'models/gemini-2.0-flash-thinking-exp', 'models/gemini-2.0-flash-thinking-exp-1219', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/learnlm-2.0-flash-experimental', 'models/gemma-3-1b-it', 'models/gemma-3-4b-it', 'models/gemma-3-12b-it', 'models/gemma-3-27b-it', 'models/gemma-3n-e4b-it', 'models/gemma-3n-e2b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image-preview', 'models/gemini-2.5-flash-image', 'models/gemini-2.5-flash-preview-09-2025', 'models/gemini-2.5-flash-lite-preview-09-2025', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-2.5-computer-use-preview-10-2025']
+[2025-10-30 07:23:34] Using model: models/gemini-2.5-flash-preview-05-20
+[2025-10-30 07:23:50] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "sister": "chị gái/ em gái",
+    "parents": "bố mẹ",
+    "family": "gia ...
+[2025-10-30 07:23:50] API attempt 1 successful
+[2025-10-30 07:23:50] Updating Google Sheet 'ReportContent' with extracted data
+[2025-10-30 07:23:51] Inserted 19 rows to 'ReportContent' after header
+[2025-10-30 07:23:51] Processing total vocabulary
+[2025-10-30 07:23:51] Loaded existing vocabulary from vocab_total.json: 89 entries
+[2025-10-30 07:23:51] Added 0 new vocabulary entries. Total vocabulary: 89
+[2025-10-30 07:23:51] Saving updated vocabulary to vocab_total.json
+[2025-10-30 07:23:51] Successfully saved vocab_total.json
+[2025-10-30 07:23:51] Updating Google Sheet 'vocab' with total vocabulary
+[2025-10-30 07:23:52] Updated Google Sheet 'vocab' successfully with 89 vocabulary entries
+[2025-10-30 07:23:52] Creating Report directory if not exists
+[2025-10-30 07:23:52] Saving result to Report/2025-10-29_Unit_8_(2nd)_–_Phonics_-_Beginning_or_ending_t.json
+[2025-10-30 07:23:52] Successfully saved: Report/2025-10-29_Unit_8_(2nd)_–_Phonics_-_Beginning_or_ending_t.json
+[2025-10-30 07:23:52] Starting detailed Telegram notifications
+[2025-10-30 07:23:52] Initializing Telegram Bot for detailed messages
+[2025-10-30 07:23:52] Sending detailed Telegram messages to chat_id 1900957785
+[2025-10-30 07:23:52] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2025-10-29*
+📅 *Ngày*: 2025-10-29
+📚 *Tiêu đề*: Unit 8 (2nd) – Phonics - Beginning ...
+[2025-10-30 07:23:53] Sent general info message to chat_id 1900957785
+[2025-10-30 07:23:53] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2025-10-29*
+• `sister`: chị gái/ em gái
+• `parents`: bố mẹ
+• `family`: gia đình
+• `mo...
+[2025-10-30 07:23:54] Sent vocabulary message to chat_id 1900957785
+[2025-10-30 07:23:54] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2025-10-29*
+• *My boots are...?*: Brown!
+• *A hat on my...?*: Head!...
+[2025-10-30 07:23:55] Sent sentence structures message to chat_id 1900957785
+[2025-10-30 07:23:55] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2025-10-29*
+Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang s...
+[2025-10-30 07:23:55] Sent homework message to chat_id 1900957785
+[2025-10-30 07:23:56] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2025-10-29*
+Con học ngoan, tập trung nghe giảng, tích cực tham gia vào các h...
+[2025-10-30 07:23:56] Sent comments message to chat_id 1900957785
+[2025-10-30 07:23:57] Completed sending detailed messages to chat_id 1900957785
+[2025-10-30 07:23:57] Sending detailed Telegram messages to chat_id 1924741087
+[2025-10-30 07:23:57] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2025-10-29*
+📅 *Ngày*: 2025-10-29
+📚 *Tiêu đề*: Unit 8 (2nd) – Phonics - Beginning ...
+[2025-10-30 07:23:57] Sent general info message to chat_id 1924741087
+[2025-10-30 07:23:58] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2025-10-29*
+• `sister`: chị gái/ em gái
+• `parents`: bố mẹ
+• `family`: gia đình
+• `mo...
+[2025-10-30 07:23:58] Sent vocabulary message to chat_id 1924741087
+[2025-10-30 07:23:58] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2025-10-29*
+• *My boots are...?*: Brown!
+• *A hat on my...?*: Head!...
+[2025-10-30 07:23:59] Sent sentence structures message to chat_id 1924741087
+[2025-10-30 07:23:59] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2025-10-29*
+Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang s...
+[2025-10-30 07:24:00] Sent homework message to chat_id 1924741087
+[2025-10-30 07:24:00] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2025-10-29*
+Con học ngoan, tập trung nghe giảng, tích cực tham gia vào các h...
+[2025-10-30 07:24:01] Sent comments message to chat_id 1924741087
+[2025-10-30 07:24:01] Completed sending detailed messages to chat_id 1924741087
+[2025-10-30 07:24:01] Completed detailed Telegram notifications
+[2025-10-30 07:24:01] Git repository detected
+[2025-10-30 07:24:01] Committing and pushing Report and vocab files to GitHub

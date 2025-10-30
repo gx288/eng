@@ -1,0 +1,395 @@
+{
+    "new_vocabulary": {
+        "sister": "chị gái/ em gái",
+        "parents": "bố mẹ",
+        "family": "gia đình",
+        "mother": "mẹ",
+        "grandmother": "bà",
+        "father": "bố",
+        "grandfather": "ông",
+        "brother": "anh trai, em trai",
+        "tub": "bồn tắm",
+        "bat": "con dơi",
+        "ten": "số 10",
+        "top": "con quay",
+        "cat": "con mèo",
+        "hat": "cái mũ"
+    },
+    "sentence_structures": {
+        "My boots are...?": "Brown!",
+        "A hat on my...?": "Head!"
+    },
+    "report_date": "2025-10-29",
+    "lesson_title": "Unit 8 (2nd) – Phonics - Beginning or ending t",
+    "homework": "Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang sách):\n- Student book 2: Lesson 8-trang 16\n- Handwriting book 2: Beginning or ending t - trang 21-22\n- 3.2 KG2_HOMEWORK_LESSON 8 (2nd) (PHHS vui lòng truy cập link để xem chi tiết)",
+    "links": [
+        "https://quizlet.com/vn/958019244/kg2_l8_beginning-or-ending-t-flash-cards/?new",
+        "https://www.youtube.com/watch?v=GFSA0_r0fII",
+        "https://drive.google.com/drive/folders/1Y1KUguVJ9ZPujd-VPlEuBP0DKIE2-uB9",
+        "https://www.youtube.com/watch?v=taoCF1cKZSY",
+        "https://www.youtube.com/watch?v=mjFcrv6Lfx8",
+        "https://quizlet.com/vn/241185509/family-tu-vung-chu-de-gia-dinh-flash-cards/",
+        "https://www.youtube.com/watch?v=wKvHe4N0xUM&list=PLjrGoNpSgYwJLR6Ud8upHZuXP_ngK3eDX&index=11"
+    ],
+    "student_comments_minh_huy": "Con học ngoan, tập trung nghe giảng, tích cực tham gia vào các hoạt động trên lớp cùng các bạn. Với phần từ vựng, con thể hiện rất tốt, con đánh vần được từ vựng thầy giáo hỏi, nắm được cách đọc và ý nghĩa của các từ vựng giáo viên giới thiệu, thực hành đoán từ qua ảnh chính xác. Phần ngữ âm về từ vựng bắt đầu hoặc kết thúc bằng âm /t/, con đã nhận biết và phát âm chính xác các từ vựng đi kèm ‘top, hat, tub’.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wR6pv6dC-E-zPENichCZKc_zXjIhfLmQ/export?format=pdf",
+    "total_vocabulary": [
+        {
+            "word": "pen",
+            "meaning": "bút mực"
+        },
+        {
+            "word": "pencil",
+            "meaning": "bút chì"
+        },
+        {
+            "word": "book",
+            "meaning": "sách"
+        },
+        {
+            "word": "ruler",
+            "meaning": "thước kẻ"
+        },
+        {
+            "word": "crayons",
+            "meaning": "sáp màu"
+        },
+        {
+            "word": "chair",
+            "meaning": "ghế"
+        },
+        {
+            "word": "paper",
+            "meaning": "giấy"
+        },
+        {
+            "word": "scissors",
+            "meaning": "kéo"
+        },
+        {
+            "word": "dog",
+            "meaning": "chó"
+        },
+        {
+            "word": "hog",
+            "meaning": "lợn rừng"
+        },
+        {
+            "word": "mop",
+            "meaning": "chổi lau nhà"
+        },
+        {
+            "word": "sister",
+            "meaning": "Chị/ em gái"
+        },
+        {
+            "word": "family",
+            "meaning": "gia đình"
+        },
+        {
+            "word": "grandmother",
+            "meaning": "bà"
+        },
+        {
+            "word": "parents",
+            "meaning": "bố mẹ"
+        },
+        {
+            "word": "mother",
+            "meaning": "mẹ"
+        },
+        {
+            "word": "father",
+            "meaning": "bố"
+        },
+        {
+            "word": "grandfather",
+            "meaning": "ông"
+        },
+        {
+            "word": "brother",
+            "meaning": "Anh/em trai"
+        },
+        {
+            "word": "crayon",
+            "meaning": "bút màu"
+        },
+        {
+            "word": "computer",
+            "meaning": "máy tính"
+        },
+        {
+            "word": "bun",
+            "meaning": "Bánh tròn nhỏ"
+        },
+        {
+            "word": "run",
+            "meaning": "Chạy"
+        },
+        {
+            "word": "sun",
+            "meaning": "Mặt trời"
+        },
+        {
+            "word": "mug",
+            "meaning": "Cốc có quai"
+        },
+        {
+            "word": "bug",
+            "meaning": "Con bọ"
+        },
+        {
+            "word": "hug",
+            "meaning": "Ôm"
+        },
+        {
+            "word": "rug",
+            "meaning": "Tấm thảm"
+        },
+        {
+            "word": "tub",
+            "meaning": "Bồn tắm"
+        },
+        {
+            "word": "dad",
+            "meaning": "Bố"
+        },
+        {
+            "word": "mom",
+            "meaning": "Mẹ"
+        },
+        {
+            "word": "grandma",
+            "meaning": "Bà"
+        },
+        {
+            "word": "grandpa",
+            "meaning": "Ông"
+        },
+        {
+            "word": "pot",
+            "meaning": "cái nồi"
+        },
+        {
+            "word": "is",
+            "meaning": "là"
+        },
+        {
+            "word": "a",
+            "meaning": "một"
+        },
+        {
+            "word": "in",
+            "meaning": "trong"
+        },
+        {
+            "word": "the",
+            "meaning": "mạo từ xác định"
+        },
+        {
+            "word": "gets",
+            "meaning": "nhận được"
+        },
+        {
+            "word": "has",
+            "meaning": "có"
+        },
+        {
+            "word": "and",
+            "meaning": "và"
+        },
+        {
+            "word": "red",
+            "meaning": "màu đỏ"
+        },
+        {
+            "word": "yellow",
+            "meaning": "màu vàng"
+        },
+        {
+            "word": "blue",
+            "meaning": "màu xanh biển"
+        },
+        {
+            "word": "green",
+            "meaning": "màu xanh lá"
+        },
+        {
+            "word": "orange",
+            "meaning": "màu cam"
+        },
+        {
+            "word": "pink",
+            "meaning": "màu hồng"
+        },
+        {
+            "word": "white",
+            "meaning": "màu trắng"
+        },
+        {
+            "word": "black",
+            "meaning": "màu đen"
+        },
+        {
+            "word": "help",
+            "meaning": "giúp đỡ"
+        },
+        {
+            "word": "funny",
+            "meaning": "hài hước"
+        },
+        {
+            "word": "here",
+            "meaning": "tại đây"
+        },
+        {
+            "word": "go",
+            "meaning": "đi"
+        },
+        {
+            "word": "i",
+            "meaning": "tôi"
+        },
+        {
+            "word": "fan",
+            "meaning": "cái quạt"
+        },
+        {
+            "word": "bat",
+            "meaning": "con dơi"
+        },
+        {
+            "word": "can",
+            "meaning": "cái lon"
+        },
+        {
+            "word": "hat",
+            "meaning": "cái mũ"
+        },
+        {
+            "word": "rat",
+            "meaning": "con chuột"
+        },
+        {
+            "word": "pan",
+            "meaning": "cái chảo"
+        },
+        {
+            "word": "cat",
+            "meaning": "con mèo"
+        },
+        {
+            "word": "tap",
+            "meaning": "đập"
+        },
+        {
+            "word": "pat",
+            "meaning": "vỗ nhẹ"
+        },
+        {
+            "word": "pal",
+            "meaning": "bạn bè"
+        },
+        {
+            "word": "ran",
+            "meaning": "đã chạy"
+        },
+        {
+            "word": "see",
+            "meaning": "nhìn"
+        },
+        {
+            "word": "big",
+            "meaning": "to lớn"
+        },
+        {
+            "word": "crab",
+            "meaning": "con cua"
+        },
+        {
+            "word": "bath",
+            "meaning": "bồn tắm"
+        },
+        {
+            "word": "ball",
+            "meaning": "quả bóng"
+        },
+        {
+            "word": "sub",
+            "meaning": "phụ"
+        },
+        {
+            "word": "bus",
+            "meaning": "xe buýt"
+        },
+        {
+            "word": "clothes",
+            "meaning": "quần áo"
+        },
+        {
+            "word": "trousers",
+            "meaning": "quần dài"
+        },
+        {
+            "word": "shoes",
+            "meaning": "đôi giày"
+        },
+        {
+            "word": "socks",
+            "meaning": "đôi tất"
+        },
+        {
+            "word": "coat",
+            "meaning": "áo khoác"
+        },
+        {
+            "word": "t-shirt",
+            "meaning": "áo phông"
+        },
+        {
+            "word": "skirt",
+            "meaning": "chân váy"
+        },
+        {
+            "word": "shorts",
+            "meaning": "quần đùi"
+        },
+        {
+            "word": "mother(mom)",
+            "meaning": "mẹ"
+        },
+        {
+            "word": "grandpa(grandfather)",
+            "meaning": "ông"
+        },
+        {
+            "word": "father (dad)",
+            "meaning": "bố"
+        },
+        {
+            "word": "grandma(grandmother)",
+            "meaning": "bà"
+        },
+        {
+            "word": "aunt",
+            "meaning": "cô, dì, thím, bác gái"
+        },
+        {
+            "word": "uncle",
+            "meaning": "chú, bác, cậu"
+        },
+        {
+            "word": "cousin",
+            "meaning": "anh em họ"
+        },
+        {
+            "word": "ten",
+            "meaning": "số mười"
+        },
+        {
+            "word": "top",
+            "meaning": "trên cùng"
+        }
+    ]
+}
