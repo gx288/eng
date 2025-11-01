@@ -1,5 +1,40 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "triangle": "hình tam giác",
+        "star": "hình ngôi sao",
+        "oval": "hình bầu dục",
+        "rectangle": "hình chữ nhật",
+        "diamond": "hình kim cương/ hình thoi",
+        "heart": "hình trái tim",
+        "circle": "hình tròn",
+        "square": "hình vuông",
+        "the": "mạo từ xác định",
+        "in": "trong, ở trong",
+        "black": "màu đen",
+        "three": "số ba",
+        "he": "anh ấy, ông ấy, cậu ấy",
+        "net": "lưới",
+        "nap": "giấc ngủ ngắn",
+        "nut": "hạt",
+        "van": "xe tải nhỏ",
+        "man": "đàn ông",
+        "pen": "bút mực"
+    },
+    "sentence_structures": {},
+    "report_date": "2025-10-31",
+    "lesson_title": "Lesson 12 (1st time)",
+    "homework": "Các con về nhà hoàn thành bài tập sau: . Student book 2: Lesson 9 – trang 17 . Handwriting book 2: Beginning or Ending n – trang 23, 24 Các con ôn tập bài học ở nhà theo đường link sau đây: 4.1 KG2_HOMEWORK_LESSON 9 (1st)",
+    "links": [
+        "https://www.youtube.com/watch?v=36n93jvjkDs",
+        "https://quizlet.com/_3zljlf",
+        "https://www.youtube.com/watch?v=GFSA0_r0fII",
+        "https://quizlet.com/vn/958487167/kg2_l9_beginning-or-ending-n-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://drive.google.com/drive/folders/1p4xogg_St18YH6j1XrSzBUv1I-EGa9Tf?usp=drive_link%20"
+    ],
+    "student_comments_minh_huy": "Buổi học hôm nay con học ngoan, chăm chú nghe giảng. Con đã có ý thức tham gia đầy đủ vào các hoạt động trong lớp, đồng thời con rất tự tin và năng động trong việc tương tác với giáo viên. Phần từ mới chủ đề Hình khối, con đã phản xạ được với các flashcard của từ ‘oval, star’, các từ ‘triangle, rectangle, heart, square’ con cần ôn tập thêm. Phần ngữ âm, con đã nhận biết và phát âm khá tốt các từ có beginning or ending n, con tiếp tục phát huy. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1x7u6-zrAfjxtNzK_l5NGA-xh_rRoDR_T/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
