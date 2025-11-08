@@ -15520,3 +15520,6 @@ Con có thái độ học tập tốt, luôn chú ý lắng nghe và chủ độ
 [2025-11-08 11:19:07] Completed detailed Telegram notifications
 [2025-11-08 11:19:07] Git repository detected
 [2025-11-08 11:19:07] Committing and pushing Report and vocab files to GitHub
+[2025-11-08 11:19:08] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2025-11-08 11:19:08] Closing WebDriver
+[2025-11-08 11:19:08] Script completed
