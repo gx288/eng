@@ -1,5 +1,73 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "pencil": "bút chì",
+        "paper": "giấy",
+        "ruler": "cái thước kẻ",
+        "book": "quyển sách",
+        "crayon": "bút màu",
+        "chair": "cái ghế",
+        "scissors": "cây kéo",
+        "computer": "cái máy tính",
+        "helicopter": "máy bay trực thăng",
+        "airplane": "máy bay",
+        "car": "xe ô tô",
+        "boat": "thuyền",
+        "bicycle": "xe đạp",
+        "bus": "xe buýt",
+        "train": "tàu hỏa",
+        "motorbike": "xe máy",
+        "pet": "thú cưng",
+        "hen": "gà mái",
+        "wet": "ẩm ướt",
+        "ten": "số 10",
+        "jet": "máy bay",
+        "pen": "cái bút",
+        "vet": "bác sĩ thú y",
+        "help": "giúp đỡ",
+        "go": "đi",
+        "can": "có thể",
+        "get": "lấy",
+        "and": "và",
+        "look": "nhìn"
+    },
+    "sentence_structures": {
+        "What is it?": [
+            "It’s + a/an + tên đồ dùng trong lớp học.",
+            "It’s a book. (Đây là một quyển sách.)",
+            "It is a/an + từ vựng chỉ phương tiện giao thông.",
+            "It is a train. (Đây là tàu hỏa.)"
+        ],
+        "What is it? (Đây là cái gì?)": "It’s a book. (Đây là một quyển sách.)",
+        "What is it? (Đây là hình gì?)": [
+            "It is a/an + từ vựng chỉ phương tiện giao thông. (Đây là hình …)",
+            "It is a train. (Đây là tàu hỏa.)"
+        ]
+    },
+    "report_date": "2025-11-12",
+    "lesson_title": "Lesson 10 (2nd) – Et and en",
+    "homework": "Các con về nhà hoàn thành bài tập sau: 5.2 KG2_HOMEWORK_LESSON 10 (2nd) - Handwriting book 2: Et and en - trang 29-30 - Student Book 2: Lesson 10 - trang 20",
+    "links": [
+        "https://quizlet.com/_3zlkcp",
+        "https://youtu.be/GFSA0_r0fII",
+        "https://youtu.be/UKNiCMrd3nU",
+        "https://www.youtube.com/watch?v=dsR0h50BiFQ",
+        "https://youtu.be/2c68qD_NExQ",
+        "https://quizlet.com/_3zldyp",
+        "https://www.starfall.com/h/ltr-sv-e/peg-helps-zac/?mg=m",
+        "https://youtu.be/x41BQj7LkZA",
+        "https://youtu.be/dus6e6iLQHw",
+        "https://quizlet.com/_58227v",
+        "https://youtu.be/g7kK989HiRQ",
+        "https://youtu.be/vVkIN2Xw2HY",
+        "https://youtu.be/yeaDV8Xt5OI",
+        "https://www.youtube.com/watch?v=vYFPbXb_G3U",
+        "https://drive.google.com/drive/folders/1pgJy0psm6EFFzRAa3XuTAQlx1rt_pgPu",
+        "https://www.youtube.com/watch?v=36n93jvjkDs"
+    ],
+    "student_comments_minh_huy": "Con có thái độ học tập tốt, luôn chú ý lắng nghe và chủ động giơ tay phát biểu. Con đã tham gia sôi nổi vào các hoạt động trên lớp cùng giáo viên và các bạn. Phần ôn tập từ vựng chủ đề đồ dùng lớp học con đã đưa ra được câu trả lời 'It's a book and a computer’. Về phần từ mới chủ đề phương tiện giao thông, con đã ghi nhớ được cách phát âm và hình ảnh của hầu hết các từ vựng, phát âm của con khá ổn 'It's a boat. Phần ngữ âm, con đã nhận biết tốt cách phát âm những từ chứa âm et và en trong các từ ‘pen, hen, ten, vet’ và áp dụng vào làm bài tập trên lớp chính xác, tuy nhiên con cần luyện tập thêm cách phát âm các từ ‘jet, wet, pet’ nhé.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/19RJCX2aDQtzd6fWIHudP3DfhBOFm2juAa_nEWgV8Fk4/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
