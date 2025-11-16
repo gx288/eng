@@ -232686,3 +232686,7 @@ Stacktrace:
 [2025-11-16 02:18:57] Class ID 10692 fully processed in Google Sheet, skipping
 [2025-11-16 02:18:57] Saved processed.json
 [2025-11-16 02:18:57] Run completed
+[2025-11-16 05:27:34] Successfully wrote credentials.json from GOOGLE_CREDENTIALS
+[2025-11-16 05:27:37] Saved processed.json
+[2025-11-16 05:27:56] Lỗi đăng nhập: Vẫn ở trang login
+[2025-11-16 05:27:56] Lỗi đăng nhập: Login failed
