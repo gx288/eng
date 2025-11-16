@@ -19541,3 +19541,29 @@ Trong buổi học ngày hôm nay, con có tinh thần tham gia lớp học t...
 [2025-11-16 11:18:31] Class VQ2-K2-2501 on 2025-11-14 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GeaRdcf-ggewDmxcxEJLclK5uQpRg8dE/export?format=pdf
 [2025-11-16 11:18:31] Closing WebDriver
 [2025-11-16 11:18:31] Script completed
+[2025-11-16 12:43:28] Starting script
+[2025-11-16 12:43:28] Starting report check for calendar overview
+[2025-11-16 12:43:28] Loaded processed2.json: {'date': '2025-11-14', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GeaRdcf-ggewDmxcxEJLclK5uQpRg8dE/export?format=pdf'}
+[2025-11-16 12:43:28] Writing Google credentials to credentials.json
+[2025-11-16 12:43:29] Credentials written successfully
+[2025-11-16 12:43:29] Initializing Chrome WebDriver
+[2025-11-16 12:43:39] WebDriver session ID: 70c590238931a7b37265808d996a9cf0
+[2025-11-16 12:43:39] Navigating to login page: https://apps.cec.com.vn/login
+[2025-11-16 12:43:44] Login attempt 1/3
+[2025-11-16 12:43:44] Entering password
+[2025-11-16 12:43:44] Clicking login button
+[2025-11-16 12:43:54] Login attempt 1/3 failed: Message: 
+
+[2025-11-16 12:43:54] No specific error message found on login page
+[2025-11-16 12:43:57] Login attempt 2/3
+[2025-11-16 12:43:57] Entering password
+[2025-11-16 12:43:58] Clicking login button
+[2025-11-16 12:44:01] Login successful
+[2025-11-16 12:44:01] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2025-11-16 12:44:10] Scrolled to bottom of page
+[2025-11-16 12:44:10] Found 24 class events
+[2025-11-16 12:44:10] Latest class date before today: 2025-11-14
+[2025-11-16 12:44:13] Class name from popup: VQ2-K2-2501
+[2025-11-16 12:44:13] Class VQ2-K2-2501 on 2025-11-14 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GeaRdcf-ggewDmxcxEJLclK5uQpRg8dE/export?format=pdf
+[2025-11-16 12:44:13] Closing WebDriver
+[2025-11-16 12:44:13] Script completed
