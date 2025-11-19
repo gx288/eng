@@ -20739,3 +20739,41 @@ Trong buổi học ngày hôm nay, con có tinh thần tham gia lớp học t...
 [2025-11-19 05:26:04] Class VQ2-K2-2501 on 2025-11-14 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GeaRdcf-ggewDmxcxEJLclK5uQpRg8dE/export?format=pdf
 [2025-11-19 05:26:04] Closing WebDriver
 [2025-11-19 05:26:04] Script completed
+[2025-11-19 06:36:07] Starting script
+[2025-11-19 06:36:07] Starting report check for calendar overview
+[2025-11-19 06:36:07] Loaded processed2.json: {'date': '2025-11-14', 'class_name': 'VQ2-K2-2501', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GeaRdcf-ggewDmxcxEJLclK5uQpRg8dE/export?format=pdf'}
+[2025-11-19 06:36:07] Writing Google credentials to credentials.json
+[2025-11-19 06:36:07] Credentials written successfully
+[2025-11-19 06:36:07] Initializing Chrome WebDriver
+[2025-11-19 06:36:14] WebDriver session ID: d048904fec49e0b0358dc1842e941e08
+[2025-11-19 06:36:14] Navigating to login page: https://apps.cec.com.vn/login
+[2025-11-19 06:37:14] Error checking reports: Message: timeout: Timed out receiving message from renderer: 56.802
+  (Session info: chrome=142.0.7444.162)
+Stacktrace:
+#0 0x564710a924ca <unknown>
+#1 0x5647104e0e4b <unknown>
+#2 0x5647104c8e14 <unknown>
+#3 0x5647104c8af7 <unknown>
+#4 0x5647104c68ff <unknown>
+#5 0x5647104c727f <unknown>
+#6 0x5647104d5cb3 <unknown>
+#7 0x5647104ef5f1 <unknown>
+#8 0x5647104f5dfb <unknown>
+#9 0x5647104c79bd <unknown>
+#10 0x5647104ef399 <unknown>
+#11 0x564710580169 <unknown>
+#12 0x564710525c2a <unknown>
+#13 0x564710526931 <unknown>
+#14 0x564710a58cf9 <unknown>
+#15 0x564710a5bcdc <unknown>
+#16 0x564710a41f79 <unknown>
+#17 0x564710a5c8b5 <unknown>
+#18 0x564710a299c3 <unknown>
+#19 0x564710a7f228 <unknown>
+#20 0x564710a7f403 <unknown>
+#21 0x564710a91463 <unknown>
+#22 0x7f2d0e49caa4 <unknown>
+#23 0x7f2d0e529c6c <unknown>
+
+[2025-11-19 06:37:14] Closing WebDriver
+[2025-11-19 06:37:14] Script completed
