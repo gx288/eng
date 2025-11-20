@@ -1,5 +1,47 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "sister": "chị gái",
+        "brother": "anh trai",
+        "mother": "mẹ",
+        "father": "bố",
+        "parents": "bố và mẹ",
+        "grandmother": "bà",
+        "grandfather": "ông",
+        "waterfall": "thác nước",
+        "cave": "hang động",
+        "mud": "bùn đất",
+        "bridge": "cây cầu",
+        "sand": "cát",
+        "volcano": "núi lửa",
+        "hill": "ngọn đồi",
+        "path": "con đường",
+        "tub": "bồn tắm",
+        "cab": "xe taxi",
+        "sub": "tàu ngầm",
+        "ham": "thịt nguội",
+        "jam": "mứt",
+        "drum": "cái trống",
+        "red": "màu đỏ",
+        "you": "bạn/các bạn",
+        "up": "lên",
+        "like": "thích",
+        "she": "cô ấy/chị ấy/bà ấy"
+    },
+    "sentence_structures": {},
+    "report_date": "2025-11-19",
+    "lesson_title": "Unit 11 (2nd)",
+    "homework": "Các con về nhà hoàn thành các bài tập sau:\n. Student book 2: Lesson 16 - trang 22.\n. Handwriting book 2: Ending b or m - trang 33, 34\nCác con ôn tập qua các link sau: 1.2 KG2_HOMEWORK_LESSON 11 (2nd)",
+    "links": [
+        "https://quizlet.com/vn/241185509/family-tu-vung-chu-de-gia-dinh-flash-cards/?i=5g095j&x=1jqt",
+        "https://drive.google.com/drive/folders/1wo_WQrkRDPoimIFdhOpShUiIxIMo4Sxl",
+        "https://quizlet.com/vn/958490673/kg2_l11_ending-b-and-m-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://www.youtube.com/watch?v=GFSA0_r0fII",
+        "https://quizlet.com/vn/897388169/nature-2-tu-vung-chu-de-thien-nhien-2-flash-cards/?new"
+    ],
+    "student_comments_minh_huy": "Trong buổi học ngày hôm nay, con có tinh thần tham gia lớp học tốt, phản xạ nhanh đối với các câu hỏi cũng như các yêu cầu của giáo viên. Con đã tập trung vào học hơn, chú ý hơn vào bài giảng của thầy, con tiếp tục phát huy nhé. Phần từ mới chủ đề Thiên nhiên, con đã ghi nhớ rất tốt và có thể nhận biết các từ qua flashcards rất nhạy bén. Về phần ngữ âm, con đã nhận biết và ghi nhớ tốt cách phát âm ending b or m, ghép âm các từ vựng đi kèm tương đối thành thạo và có sự tiến bộ trong phát âm khi con hôm nay có thể phát âm to và khá tự nhiên.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1xeZTuU0IQF5qwUWfRJGZwENdRwGykf1R/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
