@@ -232929,3 +232929,7 @@ Stacktrace:
 [2025-11-23 10:28:08] Saved processed.json
 [2025-11-23 10:28:26] Lỗi đăng nhập: Vẫn ở trang login
 [2025-11-23 10:28:26] Lỗi đăng nhập: Login failed
+[2025-11-23 15:25:40] Successfully wrote credentials.json from GOOGLE_CREDENTIALS
+[2025-11-23 15:25:42] Saved processed.json
+[2025-11-23 15:26:05] Lỗi đăng nhập: Vẫn ở trang login
+[2025-11-23 15:26:05] Lỗi đăng nhập: Login failed
