@@ -24897,3 +24897,6 @@ Con đã tham gia lớp học với tinh thần tương đối tốt, chăm chú
 [2025-11-27 09:28:57] Completed detailed Telegram notifications
 [2025-11-27 09:28:57] Git repository detected
 [2025-11-27 09:28:57] Committing and pushing Report and vocab files to GitHub
+[2025-11-27 09:28:57] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2025-11-27 09:28:57] Closing WebDriver
+[2025-11-27 09:28:58] Script completed
