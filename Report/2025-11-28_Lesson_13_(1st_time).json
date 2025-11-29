@@ -1,5 +1,48 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "head": "đầu",
+        "eyes": "mắt",
+        "shoulders": "vai",
+        "ears": "tai",
+        "knees": "đầu gối",
+        "mouth": "miệng",
+        "toes": "ngón chân",
+        "nose": "mũi",
+        "dog": "con chó",
+        "hand": "bàn tay",
+        "duck": "con vịt",
+        "sad": "Buồn bã",
+        "desk": "cái bàn",
+        "bed": "cái giường"
+    },
+    "sentence_structures": {
+        "What is this?": [
+            "It is a head.",
+            "It's a hand.",
+            "It's a mouth."
+        ],
+        "What are they?": [
+            "They are toes.",
+            "They are arms.",
+            "They are fingers."
+        ]
+    },
+    "report_date": "2025-11-28",
+    "lesson_title": "Lesson 13 (1st time)",
+    "homework": "Student book 2: Lesson 13 - page 25; Handwriting book 2: Beginning or ending d - page 39, 40; 3.1 KG2_HOMEWORK_LESSON 13 (1st ) (PHHS vui lòng truy cập link để xem chi tiết)",
+    "links": [
+        "https://youtu.be/0TgLtF3PMOc",
+        "https://drive.google.com/drive/folders/1-JWEqGI__RcZ-vV3XfGqeH0_Yjx2yNdO",
+        "https://quizlet.com/vn/958497468/kg2_l13_beginning-or-ending-d-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://youtu.be/dsR0h50BiFQ",
+        "https://youtu.be/WX8HmogNyCY",
+        "https://quizlet.com/_3zlczn",
+        "https://youtu.be/GFSA0_r0fII"
+    ],
+    "student_comments_minh_huy": "Con học ngoan, tập trung, tham gia đầy đủ trong các hoạt động trên lớp, tích cực phát biểu bài và tương tác cùng thầy. Song đôi lúc con vẫn còn chưa thật sự tập trung trong lớp. Phần ôn tập, con đã ghi nhớ khá tốt cách đọc số đếm 1-100 và phản xạ nhanh. Phần từ mới chỉ các bộ phận cơ thể, con ghi nhớ được tương đối tốt và được nói được theo cấu trúc con được học. Về phần ngữ âm, con đã ghi nhớ tốt cách phát âm beginning or ending d, các từ vựng đi kèm con đã nắm được và phát âm nhanh và chính xác.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1UVNQrfzT7NjMN2Wgwiku-wMu8kamU3g5/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
