@@ -233158,3 +233158,26 @@ Stacktrace:
 [2025-11-30 05:29:40] Class ID 10692 fully processed in Google Sheet, skipping
 [2025-11-30 05:29:40] Saved processed.json
 [2025-11-30 05:29:40] Run completed
+[2025-11-30 10:28:24] Successfully wrote credentials.json from GOOGLE_CREDENTIALS
+[2025-11-30 10:28:26] Saved processed.json
+[2025-11-30 10:30:03] Lỗi đăng nhập: Message: 
+Stacktrace:
+#0 0x55d1069354ca <unknown>
+#1 0x55d106383e4b <unknown>
+#2 0x55d1063d6814 <unknown>
+#3 0x55d1063d6a51 <unknown>
+#4 0x55d106425a44 <unknown>
+#5 0x55d106422df7 <unknown>
+#6 0x55d1063c8c2a <unknown>
+#7 0x55d1063c9931 <unknown>
+#8 0x55d1068fbcf9 <unknown>
+#9 0x55d1068fecdc <unknown>
+#10 0x55d1068e4f79 <unknown>
+#11 0x55d1068ff8b5 <unknown>
+#12 0x55d1068cc9c3 <unknown>
+#13 0x55d106922228 <unknown>
+#14 0x55d106922403 <unknown>
+#15 0x55d106934463 <unknown>
+#16 0x7f59a9e9caa4 <unknown>
+#17 0x7f59a9f29c6c <unknown>
+
