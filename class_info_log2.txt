@@ -32199,3 +32199,6 @@ Hôm nay con ngồi học chưa ngoan, còn chưa tập trung vẫn phải thầ
 [2025-12-11 14:28:11] Completed detailed Telegram notifications
 [2025-12-11 14:28:11] Git repository detected
 [2025-12-11 14:28:11] Committing and pushing Report and vocab files to GitHub
+[2025-12-11 14:28:11] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2025-12-11 14:28:11] Closing WebDriver
+[2025-12-11 14:28:12] Script completed
