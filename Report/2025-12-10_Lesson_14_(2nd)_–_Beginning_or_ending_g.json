@@ -1,5 +1,61 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "hat": "cái mũ",
+        "shoes": "đôi giày",
+        "coat": "áo khoác",
+        "skirt": "chân váy",
+        "trousers": "quần dài",
+        "socks": "đôi tất",
+        "t-shirt": "áo phông",
+        "shorts": "quần đùi",
+        "cry": "khóc",
+        "watch": "xem",
+        "swim": "bơi",
+        "play": "chơi",
+        "sing": "hát",
+        "laugh": "cười",
+        "dance": "nhảy, múa",
+        "count": "đếm",
+        "they": "họ, chúng",
+        "this": "này, đây",
+        "are": "thì, là, ở",
+        "to": "đến, tới",
+        "two": "hai",
+        "gum": "kẹo cao su",
+        "rug": "thảm lau chân",
+        "gas": "dầu xăng",
+        "ladybug": "con bọ rùa",
+        "gun": "súng",
+        "pig": "con lợn"
+    },
+    "sentence_structures": {
+        "What is it?": "It’s + a/an + …",
+        "What can you do?": "I can …",
+        "What is this?": "This is + a/an +từ vựng chỉ quần áo."
+    },
+    "report_date": "2025-12-10",
+    "lesson_title": "Lesson 14 (2nd) – Beginning or ending g",
+    "homework": "Các con về nhà hoàn thành bài tập sau:\n4.2 KG2_HOMEWORK_LESSON 14 (2nd)\n- Handwriting book 2: Beginning or ending g (Page 45 - 46)\n- Student Book 2: Lesson 14 (Page 28)",
+    "links": [
+        "https://youtu.be/z175ktSygYI",
+        "https://quizlet.com/_3zle4d?x=1jqt&i=4boo8n",
+        "https://youtu.be/GFSA0_r0fII",
+        "https://quizlet.com/_3zlomz",
+        "https://drive.google.com/drive/folders/1nvzSEJuF-NWKex1C-L9wuHu1GiUgvVK4",
+        "https://youtu.be/Z0x95qiDKeg",
+        "https://youtu.be/gzgYTO3LGkY",
+        "https://youtu.be/rffHLoniWzQ",
+        "https://youtu.be/taoCF1cKZSY",
+        "https://quizlet.com/vn/958498675/kg2_l14_beginning-or-ending-g-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://youtu.be/7MKmbyfhkkE",
+        "https://youtu.be/W8T5iG0U__U",
+        "https://youtu.be/QnzKmFVq6SU",
+        "https://youtu.be/-jBfb33_KHU"
+    ],
+    "student_comments_minh_huy": "Hôm nay con ngồi học chưa ngoan, còn chưa tập trung vẫn phải thầy giáo nhắc nhở nhiều. Con vẫn tham gia các hoạt động trong lớp cùng thầy và các bạn tuy nhiên chưa hăng hái và tích cực. Nhìn chung, con đã tiếp thu kiến thức ngày hôm nay khá tốt. Về phần ngữ âm, con đã nhận biết beginning or ending g, làm bài ôn tập khá nhanh và chính xác. Ngoài ra, con cũng đã nhớ được nhiều từ vựng thuộc chủ đề Động từ và Quần áo với sự giúp đỡ của giáo viên.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YYNMdCM0D68_QKAgAr4Ah6pwS_dFdiwz/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
