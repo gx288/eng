@@ -1,5 +1,55 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "big": "to, lớn",
+        "small": "nhỏ, bé",
+        "fast": "nhanh",
+        "slow": "chậm",
+        "strong": "khỏe",
+        "weak": "yếu",
+        "tall": "cao",
+        "short": "thấp",
+        "cry": "khóc",
+        "watch": "quan sát, xem",
+        "swim": "bơi",
+        "eat": "ăn",
+        "play": "chơi",
+        "sing": "hát",
+        "dance": "nhảy múa",
+        "count": "đếm",
+        "laugh": "cười to",
+        "cook": "nấu ăn",
+        "map": "bản đồ",
+        "mud": "bùn",
+        "mop": "cây lau nhà",
+        "drum": "cái trống",
+        "jam": "mứt",
+        "ham": "thịt hun khói"
+    },
+    "sentence_structures": {
+        "it's + từ vựng chỉ đặc điểm, tính chất": "it's big.",
+        "what can you do?": [
+            "i can + từ vựng chỉ hoạt động.",
+            "i can sing."
+        ]
+    },
+    "report_date": "2025-12-12",
+    "lesson_title": "Lesson 15 (1st time).",
+    "homework": "Các con hoàn thành các bài tập sau:\n. Student book 2: Lesson 15 (Page 29)\n. Handwriting book: Beginning or ending m (Page 47-48)",
+    "links": [
+        "https://youtu.be/XAMtgyiUhIo",
+        "https://youtu.be/RNUZBHlRH4Y",
+        "https://youtu.be/gVIFEVLzP4o",
+        "https://youtu.be/qI7nYvVXudo",
+        "https://quizlet.com/_3zlomz",
+        "https://youtu.be/pML85kP-8JY",
+        "https://quizlet.com/vn/958501363/kg2_l15_beginning-or-ending-m-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://quizlet.com/vn/234630268/adjectives-tu-vung-chi-dac-diem-flash-cards/",
+        "https://quizlet.com/vn/234630268/a"
+    ],
+    "student_comments_minh_huy": "Con đã có ý thức tham gia vào bài học tương đối tốt. Con hòa đồng với các bạn trong lớp và nhiệt tình tham gia các hoạt động tập thể. Đôi lúc con có hơi mất tập trung và tư thế ngồi học chưa được nghiêm chỉnh, con chú ý vấn đề này. Về phần ôn tập, con đã nắm được tương đối các từ chỉ tính từ mô tả ‘It’s purple. mouse is very small’. Phần từ mới con chủ đề ‘Verbs 2’ - các từ chỉ hành động 2, con ghi nhớ từ và nói được ‘I can sing. I can run’. Về phần ngữ âm, con đã nắm được cách phát âm beginning or ending m, các từ vựng đi kèm con ghép âm khá tốt song vẫn cần ôn tập thêm. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/12Q7Krl8cJAKdEdBwwxdgJ5VGLOulV0X_/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
