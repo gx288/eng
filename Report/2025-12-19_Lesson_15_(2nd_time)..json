@@ -1,0 +1,1021 @@
+{
+    "new_vocabulary": {
+        "big": "to, lớn",
+        "small": "nhỏ, bé",
+        "fast": "nhanh",
+        "slow": "chậm",
+        "strong": "khỏe",
+        "weak": "yếu",
+        "tall": "cao",
+        "short": "thấp",
+        "cry": "khóc",
+        "watch": "quan sát, xem",
+        "swim": "bơi",
+        "eat": "ăn",
+        "play": "chơi",
+        "sing": "hát",
+        "dance": "nhảy múa",
+        "count": "đếm",
+        "laugh": "cười to",
+        "cook": "nấu ăn",
+        "map": "bản đồ",
+        "mud": "bùn",
+        "mop": "cây lau nhà",
+        "drum": "cái trống",
+        "jam": "mứt",
+        "ham": "thịt hun khói"
+    },
+    "sentence_structures": {
+        "what can you do?": "i can sing."
+    },
+    "report_date": "2025-12-19",
+    "lesson_title": "Lesson 15 (2nd time).",
+    "homework": "Các con hoàn thành các bài tập sau: . Student book 2: Lesson 15 (Page 30) . Handwriting book: Beginning or ending m (Page 49-50)",
+    "links": [
+        "https://quizlet.com/vn/234630268/adjectives-tu-vung-chi-dac-diem-flash-cards/",
+        "https://youtu.be/qI7nYvVXudo",
+        "https://youtu.be/XAMtgyiUhIo",
+        "https://youtu.be/RNUZBHlRH4Y",
+        "https://quizlet.com/vn/958501363/kg2_l15_beginning-or-ending-m-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://quizlet.com/_3zlomz",
+        "https://youtu.be/gVIFEVLzP4o",
+        "https://youtu.be/pML85kP-8JY"
+    ],
+    "student_comments_minh_huy": "Minh Huy: Con đã có ý thức tham gia vào bài học tương đối tốt. Con hòa đồng với các bạn trong lớp và nhiệt tình tham gia các hoạt động tập thể. Con tiếp tục phát huy con nhé. Về phần ôn tập, con đã nắm được tương đối các từ chỉ tính từ mô tả. Phần từ mới con chủ đề ‘Verbs 2’ - các từ chỉ hành động 2, con ghi nhớ từ và nói được ‘I can sing. I can run. I can cook’. Về phần ngữ âm, con đã nắm được cách phát âm beginning or ending m, các từ vựng đi kèm con ghép âm khá tốt, con làm bài ôn tập nhanh và chính xác. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GEBjZgd991UUWj3h4l7y8pQbqbC9aj4h/export?format=pdf",
+    "total_vocabulary": [
+        {
+            "word": "pen",
+            "meaning": "bút mực"
+        },
+        {
+            "word": "pencil",
+            "meaning": "bút chì"
+        },
+        {
+            "word": "book",
+            "meaning": "sách"
+        },
+        {
+            "word": "ruler",
+            "meaning": "thước kẻ"
+        },
+        {
+            "word": "crayons",
+            "meaning": "sáp màu"
+        },
+        {
+            "word": "chair",
+            "meaning": "ghế"
+        },
+        {
+            "word": "paper",
+            "meaning": "giấy"
+        },
+        {
+            "word": "scissors",
+            "meaning": "kéo"
+        },
+        {
+            "word": "dog",
+            "meaning": "chó"
+        },
+        {
+            "word": "hog",
+            "meaning": "lợn rừng"
+        },
+        {
+            "word": "mop",
+            "meaning": "chổi lau nhà"
+        },
+        {
+            "word": "sister",
+            "meaning": "Chị/ em gái"
+        },
+        {
+            "word": "family",
+            "meaning": "gia đình"
+        },
+        {
+            "word": "grandmother",
+            "meaning": "bà"
+        },
+        {
+            "word": "parents",
+            "meaning": "bố mẹ"
+        },
+        {
+            "word": "mother",
+            "meaning": "mẹ"
+        },
+        {
+            "word": "father",
+            "meaning": "bố"
+        },
+        {
+            "word": "grandfather",
+            "meaning": "ông"
+        },
+        {
+            "word": "brother",
+            "meaning": "Anh/em trai"
+        },
+        {
+            "word": "crayon",
+            "meaning": "bút màu"
+        },
+        {
+            "word": "computer",
+            "meaning": "máy tính"
+        },
+        {
+            "word": "bun",
+            "meaning": "Bánh tròn nhỏ"
+        },
+        {
+            "word": "run",
+            "meaning": "Chạy"
+        },
+        {
+            "word": "sun",
+            "meaning": "Mặt trời"
+        },
+        {
+            "word": "mug",
+            "meaning": "Cốc có quai"
+        },
+        {
+            "word": "bug",
+            "meaning": "Con bọ"
+        },
+        {
+            "word": "hug",
+            "meaning": "Ôm"
+        },
+        {
+            "word": "rug",
+            "meaning": "Tấm thảm"
+        },
+        {
+            "word": "tub",
+            "meaning": "Bồn tắm"
+        },
+        {
+            "word": "dad",
+            "meaning": "Bố"
+        },
+        {
+            "word": "mom",
+            "meaning": "Mẹ"
+        },
+        {
+            "word": "grandma",
+            "meaning": "Bà"
+        },
+        {
+            "word": "grandpa",
+            "meaning": "Ông"
+        },
+        {
+            "word": "pot",
+            "meaning": "cái nồi"
+        },
+        {
+            "word": "is",
+            "meaning": "là"
+        },
+        {
+            "word": "a",
+            "meaning": "một"
+        },
+        {
+            "word": "in",
+            "meaning": "trong"
+        },
+        {
+            "word": "the",
+            "meaning": "mạo từ xác định"
+        },
+        {
+            "word": "gets",
+            "meaning": "nhận được"
+        },
+        {
+            "word": "has",
+            "meaning": "có"
+        },
+        {
+            "word": "and",
+            "meaning": "và"
+        },
+        {
+            "word": "red",
+            "meaning": "màu đỏ"
+        },
+        {
+            "word": "yellow",
+            "meaning": "màu vàng"
+        },
+        {
+            "word": "blue",
+            "meaning": "màu xanh biển"
+        },
+        {
+            "word": "green",
+            "meaning": "màu xanh lá"
+        },
+        {
+            "word": "orange",
+            "meaning": "màu cam"
+        },
+        {
+            "word": "pink",
+            "meaning": "màu hồng"
+        },
+        {
+            "word": "white",
+            "meaning": "màu trắng"
+        },
+        {
+            "word": "black",
+            "meaning": "màu đen"
+        },
+        {
+            "word": "help",
+            "meaning": "giúp đỡ"
+        },
+        {
+            "word": "funny",
+            "meaning": "hài hước"
+        },
+        {
+            "word": "here",
+            "meaning": "tại đây"
+        },
+        {
+            "word": "go",
+            "meaning": "đi"
+        },
+        {
+            "word": "i",
+            "meaning": "tôi"
+        },
+        {
+            "word": "fan",
+            "meaning": "cái quạt"
+        },
+        {
+            "word": "bat",
+            "meaning": "con dơi"
+        },
+        {
+            "word": "can",
+            "meaning": "cái lon"
+        },
+        {
+            "word": "hat",
+            "meaning": "cái mũ"
+        },
+        {
+            "word": "rat",
+            "meaning": "con chuột"
+        },
+        {
+            "word": "pan",
+            "meaning": "cái chảo"
+        },
+        {
+            "word": "cat",
+            "meaning": "con mèo"
+        },
+        {
+            "word": "tap",
+            "meaning": "đập"
+        },
+        {
+            "word": "pat",
+            "meaning": "vỗ nhẹ"
+        },
+        {
+            "word": "pal",
+            "meaning": "bạn bè"
+        },
+        {
+            "word": "ran",
+            "meaning": "đã chạy"
+        },
+        {
+            "word": "see",
+            "meaning": "nhìn"
+        },
+        {
+            "word": "big",
+            "meaning": "to lớn"
+        },
+        {
+            "word": "crab",
+            "meaning": "con cua"
+        },
+        {
+            "word": "bath",
+            "meaning": "bồn tắm"
+        },
+        {
+            "word": "ball",
+            "meaning": "quả bóng"
+        },
+        {
+            "word": "sub",
+            "meaning": "phụ"
+        },
+        {
+            "word": "bus",
+            "meaning": "xe buýt"
+        },
+        {
+            "word": "clothes",
+            "meaning": "quần áo"
+        },
+        {
+            "word": "trousers",
+            "meaning": "quần dài"
+        },
+        {
+            "word": "shoes",
+            "meaning": "đôi giày"
+        },
+        {
+            "word": "socks",
+            "meaning": "đôi tất"
+        },
+        {
+            "word": "coat",
+            "meaning": "áo khoác"
+        },
+        {
+            "word": "t-shirt",
+            "meaning": "áo phông"
+        },
+        {
+            "word": "skirt",
+            "meaning": "chân váy"
+        },
+        {
+            "word": "shorts",
+            "meaning": "quần đùi"
+        },
+        {
+            "word": "mother(mom)",
+            "meaning": "mẹ"
+        },
+        {
+            "word": "grandpa(grandfather)",
+            "meaning": "ông"
+        },
+        {
+            "word": "father (dad)",
+            "meaning": "bố"
+        },
+        {
+            "word": "grandma(grandmother)",
+            "meaning": "bà"
+        },
+        {
+            "word": "aunt",
+            "meaning": "cô, dì, thím, bác gái"
+        },
+        {
+            "word": "uncle",
+            "meaning": "chú, bác, cậu"
+        },
+        {
+            "word": "cousin",
+            "meaning": "anh em họ"
+        },
+        {
+            "word": "ten",
+            "meaning": "số mười"
+        },
+        {
+            "word": "top",
+            "meaning": "trên cùng"
+        },
+        {
+            "word": "triangle",
+            "meaning": "hình tam giác"
+        },
+        {
+            "word": "star",
+            "meaning": "hình ngôi sao"
+        },
+        {
+            "word": "oval",
+            "meaning": "hình bầu dục"
+        },
+        {
+            "word": "rectangle",
+            "meaning": "hình chữ nhật"
+        },
+        {
+            "word": "diamond",
+            "meaning": "hình kim cương/ hình thoi"
+        },
+        {
+            "word": "heart",
+            "meaning": "hình trái tim"
+        },
+        {
+            "word": "circle",
+            "meaning": "hình tròn"
+        },
+        {
+            "word": "square",
+            "meaning": "hình vuông"
+        },
+        {
+            "word": "three",
+            "meaning": "số ba"
+        },
+        {
+            "word": "he",
+            "meaning": "anh ấy, ông ấy, cậu ấy"
+        },
+        {
+            "word": "net",
+            "meaning": "lưới"
+        },
+        {
+            "word": "nap",
+            "meaning": "giấc ngủ ngắn"
+        },
+        {
+            "word": "nut",
+            "meaning": "hạt"
+        },
+        {
+            "word": "van",
+            "meaning": "xe tải nhỏ"
+        },
+        {
+            "word": "man",
+            "meaning": "đàn ông"
+        },
+        {
+            "word": "helicopter",
+            "meaning": "máy bay trực thăng"
+        },
+        {
+            "word": "airplane",
+            "meaning": "máy bay"
+        },
+        {
+            "word": "car",
+            "meaning": "xe ô tô"
+        },
+        {
+            "word": "boat",
+            "meaning": "thuyền"
+        },
+        {
+            "word": "bicycle",
+            "meaning": "xe đạp"
+        },
+        {
+            "word": "train",
+            "meaning": "tàu hỏa"
+        },
+        {
+            "word": "motorbike",
+            "meaning": "xe máy"
+        },
+        {
+            "word": "pet",
+            "meaning": "thú cưng"
+        },
+        {
+            "word": "wet",
+            "meaning": "ẩm ướt"
+        },
+        {
+            "word": "jet",
+            "meaning": "máy bay"
+        },
+        {
+            "word": "vet",
+            "meaning": "bác sĩ thú y"
+        },
+        {
+            "word": "hen",
+            "meaning": "gà mái"
+        },
+        {
+            "word": "get",
+            "meaning": "lấy"
+        },
+        {
+            "word": "look",
+            "meaning": "nhìn"
+        },
+        {
+            "word": "waterfall",
+            "meaning": "Thác nước"
+        },
+        {
+            "word": "cave",
+            "meaning": "Hang động"
+        },
+        {
+            "word": "mud",
+            "meaning": "Bùn đất"
+        },
+        {
+            "word": "bridge",
+            "meaning": "Cây cầu"
+        },
+        {
+            "word": "sand",
+            "meaning": "Cát"
+        },
+        {
+            "word": "volcano",
+            "meaning": "Núi lửa"
+        },
+        {
+            "word": "hill",
+            "meaning": "Ngọn đồi"
+        },
+        {
+            "word": "path",
+            "meaning": "Con đường"
+        },
+        {
+            "word": "cab",
+            "meaning": "Xe taxi"
+        },
+        {
+            "word": "ham",
+            "meaning": "Thịt nguội"
+        },
+        {
+            "word": "jam",
+            "meaning": "Mứt"
+        },
+        {
+            "word": "drum",
+            "meaning": "Cái trống"
+        },
+        {
+            "word": "you",
+            "meaning": "bạn/các bạn"
+        },
+        {
+            "word": "up",
+            "meaning": "lên"
+        },
+        {
+            "word": "like",
+            "meaning": "thích"
+        },
+        {
+            "word": "she",
+            "meaning": "cô ấy/chị ấy/bà ấy"
+        },
+        {
+            "word": "apple",
+            "meaning": "quả táo"
+        },
+        {
+            "word": "igloo",
+            "meaning": "lều tuyết"
+        },
+        {
+            "word": "juice",
+            "meaning": "nước ép"
+        },
+        {
+            "word": "kangaroo",
+            "meaning": "chuột túi"
+        },
+        {
+            "word": "elephant",
+            "meaning": "con voi"
+        },
+        {
+            "word": "lion",
+            "meaning": "sư tử"
+        },
+        {
+            "word": "fish",
+            "meaning": "con cá"
+        },
+        {
+            "word": "monkey",
+            "meaning": "con khỉ"
+        },
+        {
+            "word": "gorilla",
+            "meaning": "con khỉ đột"
+        },
+        {
+            "word": "no",
+            "meaning": "không"
+        },
+        {
+            "word": "octopus",
+            "meaning": "con bạch tuộc"
+        },
+        {
+            "word": "pig",
+            "meaning": "con lợn"
+        },
+        {
+            "word": "tiger",
+            "meaning": "con hổ"
+        },
+        {
+            "word": "question",
+            "meaning": "câu hỏi"
+        },
+        {
+            "word": "umbrella",
+            "meaning": "cái ô"
+        },
+        {
+            "word": "rainbow",
+            "meaning": "cầu vồng"
+        },
+        {
+            "word": "vampire",
+            "meaning": "ma cà rồng"
+        },
+        {
+            "word": "watch",
+            "meaning": "đồng hồ"
+        },
+        {
+            "word": "zebra",
+            "meaning": "con ngựa vằn"
+        },
+        {
+            "word": "box",
+            "meaning": "hộp"
+        },
+        {
+            "word": "tree",
+            "meaning": "cái cây"
+        },
+        {
+            "word": "grass",
+            "meaning": "cỏ"
+        },
+        {
+            "word": "rainfall",
+            "meaning": "thác nước"
+        },
+        {
+            "word": "flower",
+            "meaning": "hoa"
+        },
+        {
+            "word": "mountain",
+            "meaning": "núi"
+        },
+        {
+            "word": "stars",
+            "meaning": "ngôi sao"
+        },
+        {
+            "word": "moon",
+            "meaning": "mặt trăng"
+        },
+        {
+            "word": "bed",
+            "meaning": "cái giường"
+        },
+        {
+            "word": "frog",
+            "meaning": "con ếch"
+        },
+        {
+            "word": "hand",
+            "meaning": "bàn tay"
+        },
+        {
+            "word": "bread",
+            "meaning": "cái bánh mì"
+        },
+        {
+            "word": "log",
+            "meaning": "khúc gỗ"
+        },
+        {
+            "word": "one",
+            "meaning": "số một"
+        },
+        {
+            "word": "play",
+            "meaning": "chơi"
+        },
+        {
+            "word": "said",
+            "meaning": "đã nói (quá khứ của say)"
+        },
+        {
+            "word": "head",
+            "meaning": "đầu"
+        },
+        {
+            "word": "eyes",
+            "meaning": "mắt"
+        },
+        {
+            "word": "shoulders",
+            "meaning": "vai"
+        },
+        {
+            "word": "ears",
+            "meaning": "tai"
+        },
+        {
+            "word": "knees",
+            "meaning": "đầu gối"
+        },
+        {
+            "word": "mouth",
+            "meaning": "miệng"
+        },
+        {
+            "word": "toes",
+            "meaning": "ngón chân"
+        },
+        {
+            "word": "nose",
+            "meaning": "mũi"
+        },
+        {
+            "word": "duck",
+            "meaning": "con vịt"
+        },
+        {
+            "word": "sad",
+            "meaning": "Buồn bã"
+        },
+        {
+            "word": "desk",
+            "meaning": "cái bàn"
+        },
+        {
+            "word": "on",
+            "meaning": "trên"
+        },
+        {
+            "word": "under",
+            "meaning": "dưới"
+        },
+        {
+            "word": "eat",
+            "meaning": "ăn"
+        },
+        {
+            "word": "my",
+            "meaning": "của tôi"
+        },
+        {
+            "word": "not",
+            "meaning": "không"
+        },
+        {
+            "word": "two",
+            "meaning": "số 2"
+        },
+        {
+            "word": "four",
+            "meaning": "số 4"
+        },
+        {
+            "word": "five",
+            "meaning": "số 5"
+        },
+        {
+            "word": "six",
+            "meaning": "số 6"
+        },
+        {
+            "word": "seven",
+            "meaning": "số 7"
+        },
+        {
+            "word": "eight",
+            "meaning": "số 8"
+        },
+        {
+            "word": "nine",
+            "meaning": "số 9"
+        },
+        {
+            "word": "eleven",
+            "meaning": "số 11"
+        },
+        {
+            "word": "twelve",
+            "meaning": "số 12"
+        },
+        {
+            "word": "thirteen",
+            "meaning": "số 13"
+        },
+        {
+            "word": "fourteen",
+            "meaning": "số 14"
+        },
+        {
+            "word": "fifteen",
+            "meaning": "số 15"
+        },
+        {
+            "word": "sixteen",
+            "meaning": "số 16"
+        },
+        {
+            "word": "seventeen",
+            "meaning": "số 17"
+        },
+        {
+            "word": "eighteen",
+            "meaning": "số 18"
+        },
+        {
+            "word": "nineteen",
+            "meaning": "số 19"
+        },
+        {
+            "word": "twenty",
+            "meaning": "số 20"
+        },
+        {
+            "word": "thirty",
+            "meaning": "số 30"
+        },
+        {
+            "word": "forty",
+            "meaning": "số 40"
+        },
+        {
+            "word": "fifty",
+            "meaning": "số 50"
+        },
+        {
+            "word": "sixty",
+            "meaning": "số 60"
+        },
+        {
+            "word": "seventy",
+            "meaning": "số 70"
+        },
+        {
+            "word": "eighty",
+            "meaning": "số 80"
+        },
+        {
+            "word": "ninety",
+            "meaning": "số 90"
+        },
+        {
+            "word": "one hundred",
+            "meaning": "số 100"
+        },
+        {
+            "word": "hungry",
+            "meaning": "đói bụng"
+        },
+        {
+            "word": "sleepy",
+            "meaning": "buồn ngủ"
+        },
+        {
+            "word": "happy",
+            "meaning": "vui vẻ"
+        },
+        {
+            "word": "cold",
+            "meaning": "lạnh"
+        },
+        {
+            "word": "hot",
+            "meaning": "nóng"
+        },
+        {
+            "word": "great",
+            "meaning": "hạnh phúc"
+        },
+        {
+            "word": "tired",
+            "meaning": "mệt mỏi"
+        },
+        {
+            "word": "brown",
+            "meaning": "màu nâu"
+        },
+        {
+            "word": "gray",
+            "meaning": "màu xám"
+        },
+        {
+            "word": "purple",
+            "meaning": "màu tím"
+        },
+        {
+            "word": "cry",
+            "meaning": "khóc"
+        },
+        {
+            "word": "sing",
+            "meaning": "hát"
+        },
+        {
+            "word": "laugh",
+            "meaning": "cười"
+        },
+        {
+            "word": "swim",
+            "meaning": "bơi"
+        },
+        {
+            "word": "dance",
+            "meaning": "nhảy, múa"
+        },
+        {
+            "word": "count",
+            "meaning": "đếm"
+        },
+        {
+            "word": "gum",
+            "meaning": "kẹo cao su"
+        },
+        {
+            "word": "gas",
+            "meaning": "dầu xăng"
+        },
+        {
+            "word": "ladybug",
+            "meaning": "con bọ rùa"
+        },
+        {
+            "word": "gun",
+            "meaning": "súng"
+        },
+        {
+            "word": "they",
+            "meaning": "họ, chúng"
+        },
+        {
+            "word": "this",
+            "meaning": "này, đây"
+        },
+        {
+            "word": "are",
+            "meaning": "thì, là, ở"
+        },
+        {
+            "word": "to",
+            "meaning": "đến, tới"
+        },
+        {
+            "word": "small",
+            "meaning": "nhỏ, bé"
+        },
+        {
+            "word": "fast",
+            "meaning": "nhanh"
+        },
+        {
+            "word": "slow",
+            "meaning": "chậm"
+        },
+        {
+            "word": "strong",
+            "meaning": "khỏe"
+        },
+        {
+            "word": "weak",
+            "meaning": "yếu"
+        },
+        {
+            "word": "tall",
+            "meaning": "cao"
+        },
+        {
+            "word": "short",
+            "meaning": "thấp"
+        },
+        {
+            "word": "cook",
+            "meaning": "nấu ăn"
+        },
+        {
+            "word": "map",
+            "meaning": "bản đồ"
+        }
+    ]
+}
