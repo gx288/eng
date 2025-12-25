@@ -39028,3 +39028,83 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1rzZ
 [2025-12-25 10:28:32] Saved processed2.json successfully
 [2025-12-25 10:28:32] Git repository detected
 [2025-12-25 10:28:32] Committing and pushing changes to GitHub
+[2025-12-25 10:28:32] Pushed processed2.json and class_info_log2.txt successfully
+[2025-12-25 10:28:32] Starting PDF processing for report analysis
+[2025-12-25 10:28:32] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1rzZfatQnYAle-ylDqAWGiIIDTkBVN3DU/export?format=pdf
+[2025-12-25 10:28:32] Downloading PDF from https://docs.google.com/document/d/1rzZfatQnYAle-ylDqAWGiIIDTkBVN3DU/export?format=pdf
+[2025-12-25 10:28:34] Successfully downloaded PDF to temp_report.pdf
+[2025-12-25 10:28:34] Extracting text and links from PDF
+[2025-12-25 10:28:35] Extracted 8599 characters and 9 links from PDF
+[2025-12-25 10:28:35] Deleted temporary PDF file: temp_report.pdf
+[2025-12-25 10:28:35] Gemini API attempt 1/3
+[2025-12-25 10:28:35] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash-exp', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-exp-image-generation', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.0-flash-lite-preview-02-05', 'models/gemini-2.0-flash-lite-preview', 'models/gemini-exp-1206', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-3-1b-it', 'models/gemma-3-4b-it', 'models/gemma-3-12b-it', 'models/gemma-3-27b-it', 'models/gemma-3n-e4b-it', 'models/gemma-3n-e2b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image-preview', 'models/gemini-2.5-flash-image', 'models/gemini-2.5-flash-preview-09-2025', 'models/gemini-2.5-flash-lite-preview-09-2025', 'models/gemini-3-pro-preview', 'models/gemini-3-flash-preview', 'models/gemini-3-pro-image-preview', 'models/nano-banana-pro-preview', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/deep-research-pro-preview-12-2025']
+[2025-12-25 10:28:35] Using model: models/gemini-2.5-flash
+[2025-12-25 10:28:43] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "triangle": "hình tam giác",
+    "diamond": "hình kim cương",
+    "star"...
+[2025-12-25 10:28:43] API attempt 1 successful
+[2025-12-25 10:28:43] Updating Google Sheet 'ReportContent' with extracted data
+[2025-12-25 10:28:44] Inserted 27 rows to 'ReportContent' after header
+[2025-12-25 10:28:44] Processing total vocabulary
+[2025-12-25 10:28:44] Loaded existing vocabulary from vocab_total.json: 243 entries
+[2025-12-25 10:28:44] Added 10 new vocabulary entries. Total vocabulary: 253
+[2025-12-25 10:28:44] Saving updated vocabulary to vocab_total.json
+[2025-12-25 10:28:44] Successfully saved vocab_total.json
+[2025-12-25 10:28:44] Updating Google Sheet 'vocab' with total vocabulary
+[2025-12-25 10:28:44] Updated Google Sheet 'vocab' successfully with 253 vocabulary entries
+[2025-12-25 10:28:44] Creating Report directory if not exists
+[2025-12-25 10:28:44] Saving result to Report/2025-12-24_Lesson_16_(1st_time)..json
+[2025-12-25 10:28:44] Successfully saved: Report/2025-12-24_Lesson_16_(1st_time)..json
+[2025-12-25 10:28:44] Starting detailed Telegram notifications
+[2025-12-25 10:28:44] Initializing Telegram Bot for detailed messages
+[2025-12-25 10:28:44] Sending detailed Telegram messages to chat_id 1900957785
+[2025-12-25 10:28:44] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2025-12-24*
+📅 *Ngày*: 2025-12-24
+📚 *Tiêu đề*: Lesson 16 (1st time).
+🏫 *Lớp*: VQ2-...
+[2025-12-25 10:28:45] Sent general info message to chat_id 1900957785
+[2025-12-25 10:28:45] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2025-12-24*
+• `triangle`: hình tam giác
+• `diamond`: hình kim cương
+• `star`: hình sa...
+[2025-12-25 10:28:46] Sent vocabulary message to chat_id 1900957785
+[2025-12-25 10:28:46] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2025-12-24*
+• *It's + từ vựng chỉ hình khối*: It's heart.
+• *How many are there?*: T...
+[2025-12-25 10:28:47] Sent sentence structures message to chat_id 1900957785
+[2025-12-25 10:28:47] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2025-12-24*
+Các con hoàn thành các bài tập sau:
+. Student book 2: Lesson 16 (Page ...
+[2025-12-25 10:28:47] Sent homework message to chat_id 1900957785
+[2025-12-25 10:28:48] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2025-12-24*
+Con đã có ý thức tham gia vào bài học tương đối tốt. Con hòa đồn...
+[2025-12-25 10:28:48] Sent comments message to chat_id 1900957785
+[2025-12-25 10:28:49] Completed sending detailed messages to chat_id 1900957785
+[2025-12-25 10:28:49] Sending detailed Telegram messages to chat_id 1924741087
+[2025-12-25 10:28:49] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2025-12-24*
+📅 *Ngày*: 2025-12-24
+📚 *Tiêu đề*: Lesson 16 (1st time).
+🏫 *Lớp*: VQ2-...
+[2025-12-25 10:28:49] Sent general info message to chat_id 1924741087
+[2025-12-25 10:28:49] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2025-12-24*
+• `triangle`: hình tam giác
+• `diamond`: hình kim cương
+• `star`: hình sa...
+[2025-12-25 10:28:50] Sent vocabulary message to chat_id 1924741087
+[2025-12-25 10:28:50] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2025-12-24*
+• *It's + từ vựng chỉ hình khối*: It's heart.
+• *How many are there?*: T...
+[2025-12-25 10:28:50] Sent sentence structures message to chat_id 1924741087
+[2025-12-25 10:28:51] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2025-12-24*
+Các con hoàn thành các bài tập sau:
+. Student book 2: Lesson 16 (Page ...
+[2025-12-25 10:28:51] Sent homework message to chat_id 1924741087
+[2025-12-25 10:28:52] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2025-12-24*
+Con đã có ý thức tham gia vào bài học tương đối tốt. Con hòa đồn...
+[2025-12-25 10:28:52] Sent comments message to chat_id 1924741087
+[2025-12-25 10:28:53] Completed sending detailed messages to chat_id 1924741087
+[2025-12-25 10:28:53] Completed detailed Telegram notifications
+[2025-12-25 10:28:53] Git repository detected
+[2025-12-25 10:28:53] Committing and pushing Report and vocab files to GitHub

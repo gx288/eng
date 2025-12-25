@@ -1,5 +1,57 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "triangle": "hình tam giác",
+        "diamond": "hình kim cương",
+        "star": "hình sao",
+        "heart": "hình trái tim",
+        "oval": "hình bầu dục",
+        "square": "hình vuông",
+        "circle": "hình tròn",
+        "rectangle": "hình chữ nhật",
+        "apple": "quả táo",
+        "banana": "quả chuối",
+        "lemon": "quả chanh",
+        "cherry": "quả anh đào",
+        "strawberry": "quả dâu tây",
+        "pineapple": "quả dứa",
+        "orange": "quả cam",
+        "grapes": "quả nho",
+        "chin": "cằm",
+        "pin": "đinh ghim",
+        "bin": "thùng rác",
+        "pig": "con heo",
+        "dig": "đào đất",
+        "big": "to"
+    },
+    "sentence_structures": {
+        "It's + từ vựng chỉ hình khối": "It's heart.",
+        "How many are there?": [
+            "There is an orange.",
+            "There are two bananas."
+        ],
+        "I like + Danh từ": [
+            "I like strawberry.",
+            "I like lemons."
+        ]
+    },
+    "report_date": "2025-12-24",
+    "lesson_title": "Lesson 16 (1st time).",
+    "homework": "Các con hoàn thành các bài tập sau:\n. Student book 2: Lesson 16 (Page 31 )\n. Handwriting book: In and ig - Page 51",
+    "links": [
+        "https://www.bing.com/videos/riverview/relatedvideo?q=shapes+for+kids&&mid=41FA0773CF8D4438FAB941FA0773CF8D4438FAB9&FORM=VRDGAR",
+        "https://www.youtube.com/watch?v=KC-8AvunL8Y",
+        "https://quizlet.com/vn/958502301/kg2_l16_in-and-ig-flash-cards/?i=5lxnmh&x=1jqt",
+        "https://www.bing.com/videos/riverview/relatedvideo?q=in+and+ig+sounds+for+kids&&mid=E6972AD52C53EBE8829FE6972AD52C53EBE8829F&FORM=VRDGAR",
+        "https://quizlet.com/vn/241187414/fruit-tu-vung-chu-de-hoa-qua-flash-cards/",
+        "https://quizlet.com/vn/241190259/shapes-tu-vung-chu-de-hinh-khoi-flash-cards/?funnelUUID=eebf0dfd-be04-4980-bad8-9e5fb955eb3c",
+        "https://youtu.be/QKbJK16F1zU?si=ujiyIgfeHYY-eDvU",
+        "https://youtu.be/gVIFEVLzP4o",
+        "https://www.youtube.com/watch?v=aDU_dKJHssg"
+    ],
+    "student_comments_minh_huy": "Con đã có ý thức tham gia vào bài học tương đối tốt. Con hòa đồng với các bạn trong lớp và nhiệt tình tham gia các hoạt động tập thể. Con tiếp tục phát huy con nhé. Về phần ôn tập, con đã nắm được tương đối các từ về Hình khối. Phần từ mới con chủ đề Hoa quả con ghi nhớ từ và nói được ‘I like apple’. Về phần ngữ âm, con đã nắm được cách phát âm âm ig và in cùng các từ vựng đi kèm con ghép âm khá tốt, con làm bài ôn tập nhanh và chính xác. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ.",
+    "class_name": "VQ2-K2-2501",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1rzZfatQnYAle-ylDqAWGiIIDTkBVN3DU/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
