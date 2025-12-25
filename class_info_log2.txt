@@ -39108,3 +39108,6 @@ Con đã có ý thức tham gia vào bài học tương đối tốt. Con hòa �
 [2025-12-25 10:28:53] Completed detailed Telegram notifications
 [2025-12-25 10:28:53] Git repository detected
 [2025-12-25 10:28:53] Committing and pushing Report and vocab files to GitHub
+[2025-12-25 10:28:53] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2025-12-25 10:28:53] Closing WebDriver
+[2025-12-25 10:28:53] Script completed
