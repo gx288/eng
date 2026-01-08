@@ -46690,3 +46690,6 @@ Buổi học hôm nay con rất hăng hái tham gia các hoạt động của l�
 [2026-01-08 08:33:58] Completed detailed Telegram notifications
 [2026-01-08 08:33:58] Git repository detected
 [2026-01-08 08:33:58] Committing and pushing Report and vocab files to GitHub
+[2026-01-08 08:33:59] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-01-08 08:33:59] Closing WebDriver
+[2026-01-08 08:33:59] Script completed
