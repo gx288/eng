@@ -234704,3 +234704,30 @@ Stacktrace:
 [2026-01-13 11:48:22] Processing Class ID 10539
 [2026-01-13 11:48:29] Updated Google Sheet for Class ID 10539, Lesson 1
 [2026-01-13 11:48:29] Run completed
+[2026-01-13 11:52:29] Đăng nhập thành công
+[2026-01-13 11:52:30] Xử lý lớp 10539
+[2026-01-13 11:52:34] Lớp 10539 có 1 buổi
+[2026-01-13 11:52:34] Lớp 10539 lỗi nghiêm trọng: Message: no such element: Unable to locate element: {"method":"xpath","selector":"./td[4]"}
+  (Session info: chrome=143.0.7499.169); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+#0 0x55a3f700740a <unknown>
+#1 0x55a3f6a3b76b <unknown>
+#2 0x55a3f6a8ce88 <unknown>
+#3 0x55a3f6a8d0c1 <unknown>
+#4 0x55a3f6a810f6 <unknown>
+#5 0x55a3f6a80fe7 <unknown>
+#6 0x55a3f6ad8760 <unknown>
+#7 0x55a3f6a7f7b2 <unknown>
+#8 0x55a3f6a80461 <unknown>
+#9 0x55a3f6fcfdf9 <unknown>
+#10 0x55a3f6fd2d5d <unknown>
+#11 0x55a3f6fb8b41 <unknown>
+#12 0x55a3f6fd393b <unknown>
+#13 0x55a3f6f9f870 <unknown>
+#14 0x55a3f6ff4828 <unknown>
+#15 0x55a3f6ff49fc <unknown>
+#16 0x55a3f7006763 <unknown>
+#17 0x7f0a2209caa4 <unknown>
+#18 0x7f0a22129c6c <unknown>
+
+[2026-01-13 11:52:34] Hoàn tất toàn bộ
