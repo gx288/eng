@@ -49872,3 +49872,6 @@ Con tham gia lớp nhanh nhẹn, chủ động chào thầy và tham gia trò ..
 [2026-01-14 15:32:08] Completed detailed Telegram notifications
 [2026-01-14 15:32:08] Git repository detected
 [2026-01-14 15:32:08] Committing and pushing Report and vocab files to GitHub
+[2026-01-14 15:32:09] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-01-14 15:32:09] Closing WebDriver
+[2026-01-14 15:32:09] Script completed
