@@ -49789,3 +49789,86 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wst
 [2026-01-14 15:31:34] Saved processed2.json successfully
 [2026-01-14 15:31:34] Git repository detected
 [2026-01-14 15:31:34] Committing and pushing changes to GitHub
+[2026-01-14 15:31:35] Pushed processed2.json and class_info_log2.txt successfully
+[2026-01-14 15:31:35] Starting PDF processing for report analysis
+[2026-01-14 15:31:35] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wstPseYV2zzPLIjGre1i4mNJoXF9xI9-/export?format=pdf
+[2026-01-14 15:31:35] Downloading PDF from https://docs.google.com/document/d/1wstPseYV2zzPLIjGre1i4mNJoXF9xI9-/export?format=pdf
+[2026-01-14 15:31:36] Successfully downloaded PDF to temp_report.pdf
+[2026-01-14 15:31:36] Extracting text and links from PDF
+[2026-01-14 15:31:38] Extracted 11337 characters and 11 links from PDF
+[2026-01-14 15:31:38] Deleted temporary PDF file: temp_report.pdf
+[2026-01-14 15:31:38] Gemini API attempt 1/3
+[2026-01-14 15:31:38] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash-exp', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-exp-image-generation', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.0-flash-lite-preview-02-05', 'models/gemini-2.0-flash-lite-preview', 'models/gemini-exp-1206', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-3-1b-it', 'models/gemma-3-4b-it', 'models/gemma-3-12b-it', 'models/gemma-3-27b-it', 'models/gemma-3n-e4b-it', 'models/gemma-3n-e2b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image-preview', 'models/gemini-2.5-flash-image', 'models/gemini-2.5-flash-preview-09-2025', 'models/gemini-2.5-flash-lite-preview-09-2025', 'models/gemini-3-pro-preview', 'models/gemini-3-flash-preview', 'models/gemini-3-pro-image-preview', 'models/nano-banana-pro-preview', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/deep-research-pro-preview-12-2025']
+[2026-01-14 15:31:38] Using model: models/gemini-2.5-flash
+[2026-01-14 15:31:56] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "jam": "mứt",
+    "jog": "chạy bộ",
+    "jar": "cái lọ",
+    "jump": "bậ...
+[2026-01-14 15:31:56] API attempt 1 successful
+[2026-01-14 15:31:56] Updating Google Sheet 'ReportContent' with extracted data
+[2026-01-14 15:31:57] Inserted 52 rows to 'ReportContent' after header
+[2026-01-14 15:31:57] Processing total vocabulary
+[2026-01-14 15:31:57] Loaded existing vocabulary from vocab_total.json: 294 entries
+[2026-01-14 15:31:57] Added 29 new vocabulary entries. Total vocabulary: 323
+[2026-01-14 15:31:57] Saving updated vocabulary to vocab_total.json
+[2026-01-14 15:31:57] Successfully saved vocab_total.json
+[2026-01-14 15:31:57] Updating Google Sheet 'vocab' with total vocabulary
+[2026-01-14 15:31:59] Updated Google Sheet 'vocab' successfully with 323 vocabulary entries
+[2026-01-14 15:31:59] Creating Report directory if not exists
+[2026-01-14 15:31:59] Saving result to Report/2026-01-13_Lesson_9.json
+[2026-01-14 15:31:59] Successfully saved: Report/2026-01-13_Lesson_9.json
+[2026-01-14 15:31:59] Starting detailed Telegram notifications
+[2026-01-14 15:31:59] Initializing Telegram Bot for detailed messages
+[2026-01-14 15:31:59] Sending detailed Telegram messages to chat_id 1900957785
+[2026-01-14 15:31:59] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-01-13*
+📅 *Ngày*: 2026-01-13
+📚 *Tiêu đề*: Lesson 9
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-01-14 15:31:59] Sent general info message to chat_id 1900957785
+[2026-01-14 15:32:00] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-01-13*
+• `jam`: mứt
+• `jog`: chạy bộ
+• `jar`: cái lọ
+• `jump`: bật nhảy
+• `jug`:...
+[2026-01-14 15:32:00] Sent vocabulary message to chat_id 1900957785
+[2026-01-14 15:32:01] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-01-13*
+• *Is it [adjective]?*: Yes, it is / No, it isn’t.
+• *Is it new?*: Yes i...
+[2026-01-14 15:32:01] Sent sentence structures message to chat_id 1900957785
+[2026-01-14 15:32:02] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-01-13*
+Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang s...
+[2026-01-14 15:32:02] Sent homework message to chat_id 1900957785
+[2026-01-14 15:32:02] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-01-13*
+Con tham gia lớp nhanh nhẹn, chủ động chào thầy và tham gia trò ...
+[2026-01-14 15:32:03] Sent comments message to chat_id 1900957785
+[2026-01-14 15:32:03] Completed sending detailed messages to chat_id 1900957785
+[2026-01-14 15:32:03] Sending detailed Telegram messages to chat_id 1924741087
+[2026-01-14 15:32:03] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-01-13*
+📅 *Ngày*: 2026-01-13
+📚 *Tiêu đề*: Lesson 9
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-01-14 15:32:04] Sent general info message to chat_id 1924741087
+[2026-01-14 15:32:04] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-01-13*
+• `jam`: mứt
+• `jog`: chạy bộ
+• `jar`: cái lọ
+• `jump`: bật nhảy
+• `jug`:...
+[2026-01-14 15:32:05] Sent vocabulary message to chat_id 1924741087
+[2026-01-14 15:32:05] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-01-13*
+• *Is it [adjective]?*: Yes, it is / No, it isn’t.
+• *Is it new?*: Yes i...
+[2026-01-14 15:32:05] Sent sentence structures message to chat_id 1924741087
+[2026-01-14 15:32:06] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-01-13*
+Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang s...
+[2026-01-14 15:32:06] Sent homework message to chat_id 1924741087
+[2026-01-14 15:32:07] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-01-13*
+Con tham gia lớp nhanh nhẹn, chủ động chào thầy và tham gia trò ...
+[2026-01-14 15:32:07] Sent comments message to chat_id 1924741087
+[2026-01-14 15:32:08] Completed sending detailed messages to chat_id 1924741087
+[2026-01-14 15:32:08] Completed detailed Telegram notifications
+[2026-01-14 15:32:08] Git repository detected
+[2026-01-14 15:32:08] Committing and pushing Report and vocab files to GitHub

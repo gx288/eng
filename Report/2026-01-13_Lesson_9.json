@@ -1,5 +1,95 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "jam": "mứt",
+        "jog": "chạy bộ",
+        "jar": "cái lọ",
+        "jump": "bật nhảy",
+        "jug": "cái bình",
+        "jet": "máy bay phản lực",
+        "jeep": "xe díp",
+        "jelly": "thạch",
+        "van": "xe tải nhỏ",
+        "volcano": "núi lửa",
+        "vet": "bác sĩ thú ý",
+        "victory": "chiến thắng",
+        "vest": "áo vest",
+        "village": "làng",
+        "vat": "thùng, bể chứa",
+        "glove": "găng tay",
+        "win": "thắng",
+        "wind": "gió",
+        "wig": "tóc giả",
+        "wing": "cánh",
+        "web": "mạng lưới",
+        "watch": "đồng hồ đeo tay",
+        "wet": "ướt",
+        "witch": "phù thuỷ",
+        "wag": "vẫy đuôi",
+        "wolf": "chó sói",
+        "wax": "sáp",
+        "window": "cửa sổ",
+        "wand": "đũa thần",
+        "box": "cái hộp",
+        "taxi": "xe taxi",
+        "mix": "trộn",
+        "x-ray": "chụp x-quang",
+        "fix": "sửa chữa",
+        "t-rex": "khủng long bạo chúa",
+        "six": "số 6",
+        "xylophone": "đàn mộc cầm",
+        "fox": "con cáo",
+        "you": "bạn",
+        "they": "họ",
+        "are": "là",
+        "old": "cũ/ già",
+        "big": "lớn",
+        "new": "mới",
+        "small": "nhỏ",
+        "long": "dài",
+        "short": "ngắn"
+    },
+    "sentence_structures": {
+        "Is it [adjective]?": "Yes, it is / No, it isn’t.",
+        "Is it new?": "Yes it is",
+        "Is the sun wet?": [
+            "Yes, it is.",
+            "No, it isn't."
+        ],
+        "Will a box fit a van?": [
+            "Yes, it will.",
+            "No, it won't."
+        ],
+        "Has a fox got six legs?": "No, it hasn't.",
+        "Has a pot of jam got a lid?": [
+            "Yes, it has.",
+            "No, it hasn't."
+        ],
+        "Has a cat got a web?": "No, it hasn't.",
+        "Can a taxi hop?": "No, it can't.",
+        "Can a van go up a hill?": [
+            "Yes, it can.",
+            "No, it can't."
+        ],
+        "Can men jog to get fit?": "Yes, they can."
+    },
+    "report_date": "2026-01-13",
+    "lesson_title": "Lesson 9",
+    "homework": "Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang sách): CLL 2_Homework_Lesson 9 (Review graphemes j, v, w, x) * Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Lots of fun' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/vn/977262238/cll2_phonics_word-set-4-x-flash-cards/?funnelUUID=318954ba-2a35-4b0a-a429-ace8340c20bb",
+        "https://quizlet.com/vn/967579981/cll2_phonics_word-set-3-w-flash-cards/?funnelUUID=bbb44b7c-ce16-47c1-8ae7-d959e0e705e1",
+        "https://quizlet.com/vn/967569815/cll2_phonics_word-set-2-v-flash-cards/?funnelUUID=0d0e2458-fbbc-47f9-b2a5-51c90280ea2b",
+        "https://quizlet.com/vn/984739653/cll2_lesson-09_tricky-words-captions-flash-cards/?x=1jqt",
+        "https://docs.google.com/document/d/1vs-RO34EYxZVhY3NFJkAY318R-AwHUrEfjGMqbf_fXk/edit?usp=drive_link",
+        "https://quizlet.com/vn/984748831/cll2_lesson-08_communicative-english-flash-cards/?i=5g095j&x=1jqt",
+        "https://youtu.be/BoJBeGUHGv8?feature=shared",
+        "https://drive.google.com/file/d/1pxJ3tCsN2o76nBgWL2qTNRGg68ZIF4ms/view?usp=sharing",
+        "https://quizlet.com/vn/967557081/cll2_phonics_word-set-1-j-flash-cards/?funnelUUID=86c3a0a6-fd14-44af-bf2e-677a1682957b"
+    ],
+    "student_comments_minh_huy": "Con tham gia lớp nhanh nhẹn, chủ động chào thầy và tham gia trò chơi khởi động rất vui vẻ. Con đọc khá tốt các âm /j/, /v/, /w/, /x/, đặc biệt là từ ‘jelly’ và ‘wolf’. Khi luyện tricky words, con nhận diện được ‘you, they, are’ và đọc câu ngắn chính xác. Trong phần đọc truyện The Rug, con tự tin ghép vần để đọc từ ‘rug’ và ‘box’. Với caption reading, con đã trả lời nhanh “Yes/No” khi nghe câu hỏi như ‘Is the sun wet?’. Ở phần mini project, con chuẩn bị được ý tưởng để giới thiệu đồ chơi yêu thích bằng mẫu câu ‘I have a…’. Con về nhà nhớ ôn tập bài học nhé!",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wstPseYV2zzPLIjGre1i4mNJoXF9xI9-/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
