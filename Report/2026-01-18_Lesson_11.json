@@ -1,5 +1,48 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "yap": "tiếng sủa",
+        "yum-yum": "ngon",
+        "yes": "có",
+        "yoyo": "yo-yo",
+        "yak": "bò Tây Tạng",
+        "yogurt": "sữa chua",
+        "yell": "quát, hét",
+        "yellow": "màu vàng",
+        "licks": "liếm",
+        "kiss": "hôn",
+        "fill": "làm đầy, đổ đầy",
+        "puffs": "thổi phồng, phun ra (khói/hơi)",
+        "i": "tôi",
+        "of": "của",
+        "to": "đến / tới",
+        "the": "(mạo từ xác định – dùng trước danh từ để chỉ sự cụ thể)",
+        "tree": "cây",
+        "grass": "cỏ",
+        "flower": "hoa",
+        "bee": "ong"
+    },
+    "sentence_structures": {
+        "What can you see in a park?": "I can see ... in a park."
+    },
+    "report_date": "2026-01-18",
+    "lesson_title": "Lesson 11",
+    "homework": "Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang sách): CLL2 Lesson 11 Homework. CLL 2_Homework_Lesson 11 (Grapheme y ). Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Lots of fun' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://docs.google.com/document/d/1gGKBLn-W2EBTS1HqLUoChqw6WexqyDlPxHhfLb9xoDM/edit?usp=drive_link",
+        "https://quizlet.com/vn/985865214/cll2_lesson-11_tricky-words-captions-flash-cards/?funnelUUID=a442c654-54a1-4209-af74-12c7b42ca5cb",
+        "https://drive.google.com/file/d/11WiqHd5sxI8PgKCXxLDt9r93tn3akK4p/view?usp=sharing",
+        "CLL2_Lesson 11_Tricky words & Captions",
+        "CLL2_Lesson 11_Communicative English",
+        "CLL2_Lesson 10_Tricky words & Captions Flashcards | Quizlet",
+        "https://drive.google.com/file/d/19z5YXvDVVbE0pGgQB7xIH9geZiQuGRDD/view",
+        "https://quizlet.com/vn/984765526/cll2_lesson-10_tricky-words-captions-flash-cards/?funnelUUID=e3447c5c-447e-4ea3-b27a-e0f6391e46e5",
+        "https://quizlet.com/vn/985892556/cll2_lesson-11_communicative-english-flash-cards/?funnelUUID=c1c5548b-777b-412c-9d92-50a0122fc78c",
+        "CLL2 Lesson 11 Homework. CLL 2_Homework_Lesson 11 (Grapheme y )"
+    ],
+    "student_comments_minh_huy": "Con luôn thể hiện thái độ học tập tích cực và chủ động tham gia các hoạt động trên lớp. Con nhận biết âm /y/ chính xác, đọc đúng các từ “yap, yes, yell, yellow” và phát âm khá chuẩn. Trong phần đọc sách, con đọc trôi chảy hơn và cần rất ít sự hỗ trợ từ giáo viên. Con ghi nhớ tốt từ vựng về công viên như “grass, tree, flower” và sử dụng đúng cấu trúc câu khi luyện nói “I can see a bread in the park”. Con có tinh thần học tập tốt.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1Ss1m4e5dE8GhVHkGMZGnVH73UTZ4qKIZ/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
