@@ -53298,3 +53298,6 @@ Con tham gia tốt các hoạt động học tập trên lớp dù chưa chuẩn
 [2026-01-21 09:38:55] Completed detailed Telegram notifications
 [2026-01-21 09:38:55] Git repository detected
 [2026-01-21 09:38:55] Committing and pushing Report and vocab files to GitHub
+[2026-01-21 09:38:56] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-01-21 09:38:56] Closing WebDriver
+[2026-01-21 09:38:56] Script completed
