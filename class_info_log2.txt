@@ -55731,3 +55731,6 @@ Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu tr
 [2026-01-26 13:50:21] Completed detailed Telegram notifications
 [2026-01-26 13:50:21] Git repository detected
 [2026-01-26 13:50:21] Committing and pushing Report and vocab files to GitHub
+[2026-01-26 13:50:22] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-01-26 13:50:22] Closing WebDriver
+[2026-01-26 13:50:22] Script completed
