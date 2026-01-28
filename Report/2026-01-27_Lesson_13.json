@@ -1,5 +1,54 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "zebra": "ngựa vằn",
+        "zigzag": "đường ngoằn ngoèo, díc-dắc",
+        "zoo": "sở thú",
+        "zip": "khóa",
+        "zero": "số 0",
+        "zap": "giật điện",
+        "zucchini": "bí ngòi",
+        "cups": "cốc",
+        "hotdog": "bánh mì kẹp xúc xích",
+        "dolls": "búp bê",
+        "napkin": "khăn ăn",
+        "next to": "bên cạnh",
+        "in front of": "đằng trước",
+        "behind": "đằng sau",
+        "between": "ở giữa",
+        "ant": "con kiến",
+        "iguana": "con kỳ nhông",
+        "umbrella": "cái ô",
+        "park": "công viên",
+        "teddy bear": "gấu bông"
+    },
+    "sentence_structures": {
+        "What’s the weather like?": "Thời tiết thế nào?",
+        "Where is Teddy?": [
+            "It’s + preposition + …",
+            "In front of the cups!"
+        ],
+        "Where is the toy ant?": "cannot find info",
+        "Where is the toy iguana?": "It’s on the tree",
+        "Why do they need an umbrella?": "Because it’s raining!"
+    },
+    "report_date": "2026-01-27",
+    "lesson_title": "Lesson 13",
+    "homework": "Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang sách): CLL2 Lesson 13 Homework: CLL 2_Homework_Lesson 13 (Grapheme z) - Google Docs. Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'A big mud mess' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/vn/985904412/cll2_lesson-13_communicative-english-flash-cards/?i=5g095j&x=1jqt",
+        "https://youtu.be/xERTESWbqhU?feature=shared",
+        "https://quizlet.com/vn/977264646/cll2_phonics_word-set-6-z-flash-cards/?funnelUUID=48a11ad3-2c84-4ad6-88c3-513809055aea",
+        "https://docs.google.com/document/d/1JVU3obNznc4ZZFmSqhFYFTnmq6o60KTZkwN6LFCt_7A/edit?tab=t.0#heading=h.llulmp2q127p",
+        "https://youtu.be/5Zh6MuQ-7Bo?feature=shared",
+        "https://drive.google.com/file/d/1Zf0N5lRbrpjtK1rk3eY1cwU_VP6kDv8i/view?usp=drive_link",
+        "https://drive.google.com/file/d/1E_EpCWgGd-DUBK6gfrBhmCh8MbygX7QO/view?usp=sharing",
+        "https://quizlet.com/vn/985904412/cll2_lesson-13_communicative-english-flash-cards/?funnelUUID=350b69f9-a873-42de-bf44-f151b6584958",
+        "https://drive.google.com/file/d/1C0Akn9zSPEegCNz4zdrmhxfy0sntdR_k/view?usp=drive_link"
+    ],
+    "student_comments_minh_huy": "Con hôm nay ngồi học ngoan, nghiêm túc, song đôi lúc con cố gắng tập trung hơn vào hoạt động đọc đồng thanh nhé! Trong phần Phonics, con phát âm đúng từ chứa âm /z/ như ‘zebra, zigzag’. Khi đọc truyện, con đọc được từ ‘hotdog’, nhưng cần luyện to và rõ hơn. Ở phần hỏi đáp, con trả lời ‘Where is Teddy?’ rất tốt. Con nhớ làm đầy đủ bài tập về nhà để củng cố kiến thức nhé!",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YipDpp-FbvBOxoUF8Vdr1Rsz9xqJvGaB/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
