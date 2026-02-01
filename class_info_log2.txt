@@ -58574,3 +58574,21 @@ Con hôm nay ngồi học ngoan, nghiêm túc, song đôi lúc con cố gắng..
 [2026-02-01 09:37:00] No classes found before today
 [2026-02-01 09:37:00] Closing WebDriver
 [2026-02-01 09:37:00] Script completed
+[2026-02-01 10:32:25] Starting script
+[2026-02-01 10:32:25] Starting report check for calendar overview
+[2026-02-01 10:32:25] Loaded processed2.json: {'date': '2026-01-27', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YipDpp-FbvBOxoUF8Vdr1Rsz9xqJvGaB/export?format=pdf'}
+[2026-02-01 10:32:25] Writing Google credentials to credentials.json
+[2026-02-01 10:32:25] Credentials written successfully
+[2026-02-01 10:32:25] Initializing Chrome WebDriver
+[2026-02-01 10:32:31] WebDriver session ID: 1a0b266caed87e754b86365f9fbfabeb
+[2026-02-01 10:32:31] Navigating to login page: https://apps.cec.com.vn/login
+[2026-02-01 10:32:35] Login attempt 1/3
+[2026-02-01 10:32:35] Entering password
+[2026-02-01 10:32:35] Clicking login button
+[2026-02-01 10:32:38] Login successful
+[2026-02-01 10:32:38] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-02-01 10:32:46] Scrolled to bottom of page
+[2026-02-01 10:32:46] Found 12 class events
+[2026-02-01 10:32:46] No classes found before today
+[2026-02-01 10:32:46] Closing WebDriver
+[2026-02-01 10:32:46] Script completed
