@@ -1,5 +1,67 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "box": "cái hộp",
+        "taxi": "xe ta-xi",
+        "mix": "trộn",
+        "x-ray": "chụp x-quang",
+        "fix": "sửa chữa",
+        "t-rex": "khủng long bạo chúa",
+        "six": "số 6",
+        "xylophone": "đàn mộc cầm",
+        "fox": "con cáo",
+        "yak": "bò tây tạng",
+        "yell": "kêu la",
+        "yes": "đồng ý",
+        "yap": "sủa",
+        "yum-yum": "ngon",
+        "yellow": "màu vàng",
+        "yo-yo": "đồ chơi yoyo",
+        "yogurt": "sữa chua",
+        "zip": "khoá kéo",
+        "zigzag": "đường ziczac",
+        "zap": "điện giật",
+        "zoo": "sở thú",
+        "zebra": "ngựa vằn",
+        "zero": "số 0",
+        "i": "tôi",
+        "me": "tôi",
+        "they": "họ",
+        "them": "họ",
+        "trash": "rác",
+        "paper": "giấy",
+        "glass": "thuỷ tinh",
+        "peel": "vỏ hoa quả",
+        "plastic": "đồ nhựa"
+    },
+    "sentence_structures": {
+        "What happened first?": "Josh looks for his teddy bear.",
+        "Is it dirty or clean?": [
+            "It’s dirty",
+            "It’s clean"
+        ],
+        "What can you see?": "tree, trash …",
+        "Where is it?": "A park"
+    },
+    "report_date": "2026-02-01",
+    "lesson_title": "Lesson 14",
+    "homework": "Hoàn thành phần Handwriting lesson 14 trong sách CLL2. CLL 2_Homework_Lesson 14 (Review graphemes x, y, z). Phonics & Vocabulary (Ôn tập ngữ âm và từ vựng): Quizlet - Lesson 14. E-book: A big mud mess: A Big Mud Mess.webm. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App",
+    "links": [
+        "https://quizlet.com/vn/977264646/cll2_phonics_word-set-6-z-flash-cards/?funnelUUID=de608774-4df7-4ef6-81d6-f108a4b135ac",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://quizlet.com/vn/977263496/cll2_phonics_word-set-5-y-flash-cards/?funnelUUID=bd0f6fa6-a1c1-47ed-9505-279cb9c3aa16",
+        "https://quizlet.com/join/xpqPZRz2r?i=5lxnmh&x=1bqt",
+        "A Big Mud Mess.webm",
+        "Phonicsmonsters.com",
+        "https://www.youtube.com/watch?v=WxSA_3dLyuo",
+        "https://quizlet.com/vn/985905921/cll2_lesson-14_tricky-words-captions-flash-cards/?funnelUUID=33e0b26c-e36d-4c4b-a93d-23d3c0cf570e",
+        "https://drive.google.com/file/d/1r3lSokRXrq-lqCApi7oUQ_SphXevbL3P/view?usp=sharing",
+        "https://quizlet.com/vn/977262238/cll2_phonics_word-set-4-x-flash-cards/?funnelUUID=318954ba-2a35-4b0a-a429-ace8340c20bb",
+        "https://docs.google.com/document/d/1L9Wghljq3zCzOea8sMYmBR7-bYbMdlbpOJdQah16pWc/edit?tab=t.0#heading=h.lsu6d0y2hk65"
+    ],
+    "student_comments_minh_huy": "Con hoạt bát và chủ động trong giờ học, luôn xung phong trả lời khi thầy gọi. Khi học âm ‘/z/’, con đọc rõ các từ như ‘zebra’ và ‘zap’, nhưng nên luyện thêm ở từ ‘zucchini’ để trôi chảy hơn. Con phân biệt khá tốt ‘I’ và ‘me’, nhưng cần cẩn thận hơn khi dùng ‘them’ trong câu. Trong phần đọc ‘A big mud mess’, con đọc to và biết ngắt câu tự nhiên. Khi học về phân loại rác, con nhanh chóng tìm đúng ‘glass’ và ‘peel’ theo yêu cầu. Con nhớ mang đầy đủ sách vào buổi tới nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YFiABxRiFG5yVNN_88pOswwj-zdYtwNWV91ofpF22Ds/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
