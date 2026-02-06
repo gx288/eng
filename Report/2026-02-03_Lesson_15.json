@@ -1,5 +1,47 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "buzz": "vo ve",
+        "fizz": "xì xèo (bọt khí)",
+        "jazz": "nhạc jazz",
+        "fuzz": "lông tơ, lông mịn",
+        "dizzy": "chóng mặt",
+        "puzzle": "câu đố, trò chơi ghép hình",
+        "buzzer": "chuông reo, còi báo",
+        "slide": "cầu trượt",
+        "swing": "xích đu",
+        "seesaw": "bập bênh",
+        "monkey bars": "xà leo (thanh leo cho trẻ em)",
+        "he": "anh ấy/ông ấy",
+        "him": "anh ấy/ông ấy (tân ngữ)",
+        "she": "cô ấy/bà ấy",
+        "her": "cô ấy/bà ấy (tân ngữ hoặc tính từ sở hữu)"
+    },
+    "sentence_structures": {
+        "Do you like to play on the ___?": [
+            "Yes, I do.",
+            "No, I don’t."
+        ],
+        "I like to play on the ___": "cấu trúc được dùng để nói về trò chơi hoặc thiết bị vui chơi mà bạn thích chơi."
+    },
+    "report_date": "2026-02-03",
+    "lesson_title": "Lesson 15",
+    "homework": "Hoàn thiện bài tập trong sách: CLL2 Lesson 15 Homework (Mở đường dẫn này để xem các mục BTVN). Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'The Map' và ' Bins, bins, bins' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "CLL2 Lesson 15 Homework",
+        "A Big Mud Mess.webm",
+        "https://quizlet.com/vn/978433533/cll2_phonics_word-set-7-zz-flash-cards/?funnelUUID=e7d8d39c-dbd7-49b3-936b-2686a67d0839",
+        "CLL2_Lesson 15_Communicative English",
+        "CLL2_Phonics_Word Set 7 ZZ",
+        "https://drive.google.com/drive/folders/1U5atKwmeH6ksAZWSqBJWUSiX3SxinMJp?usp=sharing",
+        "https://drive.google.com/file/d/1r3lSokRXrq-lqCApi7oUQ_SphXevbL3P/view?usp=sharing",
+        "https://quizlet.com/vn/985918141/cll2_lesson-15_communicative-english-flash-cards/?funnelUUID=513cab23-6a07-45ca-828c-14f54d274278",
+        "CLL2_Lesson 15_Tricky words & Captions",
+        "https://quizlet.com/vn/985917143/cll2_lesson-15_tricky-words-captions-flash-cards/?funnelUUID=7526c928-f77a-4ea5-9176-38a8974f765c"
+    ],
+    "student_comments_minh_huy": "Con tham gia lớp học nghiêm túc và hợp tác tốt trong các hoạt động. Trong phần Phonics, con đọc đúng các từ có âm /zz/ như ‘fizz’, ‘buzz’, tuy cần luyện thêm các từ dài như ‘puzzle’. Khi đọc ‘A Big Mud Mess’, con đọc rõ và hiểu nội dung chính. Con nhận diện được tricky words ‘he’, ‘she’ trong bài. Ở phần Vocabulary, con nhớ tốt ‘seesaw’, ‘monkey bars’ và trả lời được câu hỏi về sở thích. Con hoàn thành tốt các hoạt động trên lớp.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/17JVAi6LZIa6-yHaJsNueIqJbP8c0Eu4c/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
