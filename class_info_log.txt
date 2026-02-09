@@ -235490,3 +235490,8 @@ Stacktrace:
 [2026-02-09 16:04:51] Lớp 10539 có 1 buổi
 [2026-02-09 16:04:51] Lớp 10539 - số cột: 1
 [2026-02-09 16:04:51] Lớp 10539 bảng bất thường (ít cột hoặc thiếu icon Action) → bỏ qua lớp này
+[2026-02-09 20:54:56] Đăng nhập thành công
+[2026-02-09 20:54:57] Xử lý lớp 10539
+[2026-02-09 20:55:02] Lớp 10539 có 1 buổi
+[2026-02-09 20:55:02] Lớp 10539 - số cột: 1
+[2026-02-09 20:55:02] Lớp 10539 bảng bất thường (ít cột hoặc thiếu icon Action) → bỏ qua lớp này
