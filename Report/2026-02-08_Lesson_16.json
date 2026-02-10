@@ -1,5 +1,68 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "yak": "bò tây tạng",
+        "yell": "kêu la",
+        "yes": "đồng ý",
+        "yap": "sủa",
+        "yum-yum": "ngon",
+        "yellow": "màu vàng",
+        "yo-yo": "đồ chơi yoyo",
+        "yogurt": "sữa chua",
+        "zip": "khoá kéo",
+        "zigzag": "đường ziczac",
+        "zap": "điện giật",
+        "zoo": "sở thú",
+        "zebra": "ngựa vằn",
+        "zero": "số 0",
+        "buzz": "tiếng vù vù",
+        "dizzy": "chóng mặt",
+        "fizz": "tiếng xèo xèo",
+        "puzzle": "miếng xếp hình",
+        "jazz": "nhạc ja",
+        "buzzer": "cái còi",
+        "fuzz": "lông tơ",
+        "butterfly": "con bướm",
+        "cloud": "đám mây",
+        "sky": "bầu trời",
+        "sun": "mặt trời",
+        "we": "chúng tôi",
+        "us": "chúng tôi (tân ngữ)",
+        "all": "tất cả"
+    },
+    "sentence_structures": {
+        "what can you see?": "I can see…",
+        "what is it?": "It’s a…",
+        "do you like …?": [
+            "yes, i do",
+            "no, i don’t"
+        ]
+    },
+    "report_date": "2026-02-08",
+    "lesson_title": "Lesson 16",
+    "homework": "Hoàn thành phần Handwriting lesson 16 trong sách CLL2. CLL 2_Homework_Lesson 16 (Review grapheme y, z, zz). Phonics & Vocabulary (Ôn tập ngữ âm và từ vựng): Quizlet - Lesson 16. Ebook: The map: The map.webm. Bins, bins, bins: Bins, Bins, Bins!.webm",
+    "links": [
+        "https://quizlet.com/vn/978433533/cll2_phonics_word-set-7-zz-flash-cards/?funnelUUID=edb0e412-0218-4ca7-8c2e-d5c887f4a786",
+        "Level 2 - Video 6.3 Practice -zz ~ PhonicsMonsters.com",
+        "CLL2_Phonics_Word Set ZZ",
+        "Bins, Bins, Bins!.webm",
+        "CLL2_Phonics_Word set Y",
+        "The map.webm",
+        "https://quizlet.com/vn/985928741/cll2_lesson-16_tricky-words-captions-flash-cards/?funnelUUID=b7360193-8689-4003-a65e-9501d53dafbd",
+        "https://www.youtube.com/watch?v=9qDRFxmygIM",
+        "https://quizlet.com/vn/977263496/cll2_phonics_word-set-5-y-flash-cards/?funnelUUID=bd0f6fa6-a1c1-47ed-9505-279cb9c3aa16",
+        "Quizlet - Lesson 16",
+        "https://drive.google.com/file/d/1x0v81qYY_1EdDNwtRtv65HIfzrvzB6h_/view?usp=drive_link",
+        "CLL2_Lesson16_Tricky words & Captions",
+        "https://quizlet.com/join/FTAK2UeCd?i=5lxnmh&x=1bqt",
+        "https://quizlet.com/vn/977264646/cll2_phonics_word-set-6-z-flash-cards/?funnelUUID=de608774-4df7-4ef6-81d6-f108a4b135ac",
+        "CLL2_Phonics_Word set Z",
+        "https://docs.google.com/document/d/1aT66RPkglwaat3kJJGRLDOHufMW7NcxtIkMYdSF9cDQ/edit?tab=t.0#heading=h.lsu6d0y2hk65",
+        "https://drive.google.com/file/d/1NYVCTpCvo1_fESE6vhKJ7ZJeEeOLCL-S/view?usp=sharing"
+    ],
+    "student_comments_minh_huy": "Con học tập với thái độ rất tích cực và luôn hứng thú tham gia các hoạt động trên lớp. Con đọc tốt các âm /z/ và /zz/, ghép âm nhanh và chính xác. Con nhận diện nhanh các tricky words và sử dụng được trong câu nói ngắn. Khi đọc sách, con thể hiện khả năng đọc độc lập tốt và hiểu nội dung. Con nhận biết hình tam giác rất nhanh và không bị nhầm lẫn với các hình khác. Con sử dụng linh hoạt các từ vựng về công viên và diễn đạt được cảm xúc thích không thích. Con có tinh thần học hỏi tốt, cần tiếp tục phát huy.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/15tPyZe7xadclmFTqEkKwQAf5wiO0FnE9b4imkWKgOPw/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
