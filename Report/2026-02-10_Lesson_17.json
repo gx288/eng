@@ -1,5 +1,41 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "queen": "nữ hoàng",
+        "liquid": "chất lỏng",
+        "quiet": "trật tự",
+        "quit": "từ bỏ",
+        "quail": "chim cút",
+        "quiz": "câu đố",
+        "quack": "tiếng kêu của con vịt",
+        "quill": "bút lông",
+        "sun": "Mặt trời",
+        "cloud": "Mây",
+        "butterfly": "Bươm Bướm",
+        "grass": "Cỏ",
+        "tree": "Cây",
+        "flower": "Bông hoa"
+    },
+    "sentence_structures": {
+        "What can you see?": "I can see a/some___.",
+        "What is it?": "It is a …",
+        "How many flowers can you see?": [
+            "I can see a ..",
+            "I can see some …"
+        ],
+        "What is it? What does it look like?": "It is a pen, it is small and thin."
+    },
+    "report_date": "2026-02-10",
+    "lesson_title": "Lesson 17",
+    "homework": "Hoàn thành phần Handwriting lesson 17 trong sách CLL2. CLL 2_Homework_Lesson 17. Phonics & Vocabulary (Ôn tập ngữ âm và từ vựng): Quizlet - Lesson 17. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App",
+    "links": [
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://docs.google.com/document/d/1XWR0XsEn4sRyGX07PtzFkUj7_dS32xgW9pPHl2zkBMs/edit?tab=t.0",
+        "https://quizlet.com/class/30194127/materials"
+    ],
+    "student_comments_minh_huy": "Con hoạt bát và chủ động trong giờ học, luôn xung phong trả lời khi thầy gọi. Khi học âm ‘/Q/’, con đọc rõ các từ như ‘Quill’ và ‘Quit’, nhưng nên luyện thêm ở từ ‘Quilt’ để trôi chảy hơn. Con đọc to rõ ràng các câu “I can see some grasses”, “It is a pen”, “It is small” theo yêu cầu của thầy giáo. Tuy nhiên về một số từ có đuôi ‘s’ ở sau con cần luyện tập thêm ở nhà để lên lớp có thể phát âm chuẩn xác hơn nhé. Con nhớ mang đầy đủ sách và làm bài tập đầy đủ vào buổi tới nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/12NoIuN66TI0SXcM38jhvAn791u5hA0cqqc9BrSg5Q4Y/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
