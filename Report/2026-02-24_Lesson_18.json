@@ -1,5 +1,55 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "zip": "kéo khóa",
+        "zag": "ngoặt, rẽ gấp",
+        "zap": "tiêu diệt, đánh nhanh",
+        "buzz": "vo ve",
+        "fizz": "sủi bọt",
+        "jazz": "nhạc jazz",
+        "fuzz": "lông tơ",
+        "quack": "kêu quạc quạc",
+        "quick": "nhanh",
+        "quiz": "bài kiểm tra ngắn",
+        "quit": "nghỉ, bỏ",
+        "quill": "lông vũ (dùng để viết)",
+        "as": "như, khi",
+        "but": "nhưng",
+        "got": "đã có, nhận được",
+        "fish": "con cá",
+        "banana": "quả chuối",
+        "carrot": "củ cà rốt",
+        "flower": "bông hoa",
+        "tree": "cái cây",
+        "cloud": "đám mây",
+        "baby": "em bé",
+        "swing": "xích đu",
+        "slide": "cầu trượt"
+    },
+    "sentence_structures": {
+        "I got a cat.": "Tôi có một con mèo.",
+        "I got a fox.": "Tôi có một con cáo.",
+        "My cat is as quick as my fox.": "Con mèo của tôi nhanh như con cáo của tôi.",
+        "They are fun, but I got mad.": "Chúng thật vui, nhưng tôi đã tức giận.",
+        "What is it?": "It’s a … ."
+    },
+    "report_date": "2026-02-24",
+    "lesson_title": "Lesson 18",
+    "homework": "CLL2 Lesson 18 Homework (Mở đường dẫn này để xem các mục BTVN)\n* Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Get that cat' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "CLL2 Lesson 18 Homework",
+        "CLL2_Phonics_Word Set 6 Z",
+        "https://quizlet.com/vn/987330572/cll2_lesson-18_tricky-words-captions-flash-cards/?funnelUUID=52b7a648-40df-4ac0-aa93-1f2110ac1687",
+        "CLL2_Phonics_Word Set 7 ZZ",
+        "https://quizlet.com/vn/977264646/cll2_phonics_word-set-6-z-flash-cards/?funnelUUID=48a11ad3-2c84-4ad6-88c3-513809055aea",
+        "https://quizlet.com/vn/978433533/cll2_phonics_word-set-7-zz-flash-cards/?funnelUUID=e7d8d39c-dbd7-49b3-936b-2686a67d0839",
+        "CLL2_Lesson 18_Tricky words & Captions",
+        "CLL2_Phonics_Word Set 8 QU",
+        "https://quizlet.com/vn/976931247/cll2_phonics_word-set-8-qu-flash-cards/?funnelUUID=e4bacef5-6895-4aca-bcf4-a272c3fd2451"
+    ],
+    "student_comments_minh_huy": "Con tham gia lớp học với thái độ tích cực và tự giác. Phần luyện âm con đọc đúng nhiều từ mới và biết ghép âm thành từ hoàn chỉnh. Con đọc được các tricky words và vận dụng tốt khi đọc câu. Khi đọc A big mud mess, con đã cố gắng đọc rõ ràng và hiểu câu chuyện. Trong bài Science, con phân loại được các sự vật xung quanh theo nhóm tự nhiên và phi tự nhiên. Phần Toán con nhận diện số nhanh và làm bài cẩn thận. Con về nhớ hoàn thành bài tập đầy đủ nhé",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1kLCrkWv2Tb5QZNmafcop6DNlku56HF8K9LLcM1Vsrik/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
