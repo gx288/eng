@@ -1,5 +1,39 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "presentation skills": "kỹ năng thuyết trình",
+        "objectives": "mục tiêu",
+        "phonics": "ngữ âm",
+        "tricky word": "từ khó",
+        "reading": "đọc",
+        "mini project 2 filming": "dự án nhỏ 2 quay phim",
+        "warm up": "khởi động",
+        "homework check": "kiểm tra bài tập về nhà",
+        "running oral presentation": "thuyết trình miệng",
+        "presentation with visual aids": "thuyết trình với sự hỗ trợ của hình ảnh minh họa",
+        "writing worksheet": "phiếu bài tập luyện viết",
+        "body language": "ngôn ngữ cơ thể",
+        "posture": "tư thế",
+        "eye contact": "giao tiếp bằng mắt",
+        "gestures": "cử chỉ",
+        "voice inflection": "cách thay đổi tone giọng",
+        "functional presentation language": "ngôn ngữ thuyết trình chức năng",
+        "q&a": "hỏi và trả lời",
+        "thank you for listening": "cảm ơn đã lắng nghe"
+    },
+    "sentence_structures": {
+        "what is a presentation?": [
+            "thuyết trình là trình chiếu hình ảnh và giải thích nội dung về một chủ đề nào đó cho người nghe.",
+            "mỗi bài thuyết trình kéo dài từ 3-5 phút cho phần nói và 1-2 phút cho phần hỏi và trả lời."
+        ]
+    },
+    "report_date": "2026-03-03",
+    "lesson_title": "Unit 8 Lesson 10 – Project 2 filming",
+    "homework": ". CLL2 Workbook Lesson 20",
+    "links": [],
+    "student_comments_minh_huy": "cannot find info",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1MMDsloyV9_6ZxUbsmvYU3yT-SE9oPVuiepUyyWLrGH8/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
