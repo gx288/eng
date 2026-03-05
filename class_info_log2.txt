@@ -74197,3 +74197,23 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1MMD
 [2026-03-05 11:38:11] Class VQ2-C2-2504 on 2026-03-03 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1MMDsloyV9_6ZxUbsmvYU3yT-SE9oPVuiepUyyWLrGH8/export?format=pdf
 [2026-03-05 11:38:11] Closing WebDriver
 [2026-03-05 11:38:11] Script completed
+[2026-03-05 13:11:50] Starting script
+[2026-03-05 13:11:50] Starting report check for calendar overview
+[2026-03-05 13:11:50] Loaded processed2.json: {'date': '2026-03-03', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1MMDsloyV9_6ZxUbsmvYU3yT-SE9oPVuiepUyyWLrGH8/export?format=pdf'}
+[2026-03-05 13:11:50] Writing Google credentials to credentials.json
+[2026-03-05 13:11:51] Credentials written successfully
+[2026-03-05 13:11:51] Initializing Chrome WebDriver
+[2026-03-05 13:11:57] WebDriver session ID: 7e7925295194695f8f2c2db5cdb092ce
+[2026-03-05 13:11:57] Navigating to login page: https://apps.cec.com.vn/login
+[2026-03-05 13:12:00] Login attempt 1/3
+[2026-03-05 13:12:01] Entering password
+[2026-03-05 13:12:01] Clicking login button
+[2026-03-05 13:12:03] Login successful
+[2026-03-05 13:12:03] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-03-05 13:12:12] Scrolled to bottom of page
+[2026-03-05 13:12:12] Found 20 class events
+[2026-03-05 13:12:12] Latest class date before today: 2026-03-03
+[2026-03-05 13:12:15] Class name from popup: VQ2-C2-2504
+[2026-03-05 13:12:15] Class VQ2-C2-2504 on 2026-03-03 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1MMDsloyV9_6ZxUbsmvYU3yT-SE9oPVuiepUyyWLrGH8/export?format=pdf
+[2026-03-05 13:12:15] Closing WebDriver
+[2026-03-05 13:12:15] Script completed
