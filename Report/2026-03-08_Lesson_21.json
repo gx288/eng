@@ -1,5 +1,27 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "tricky words": "những từ khó (từ có cách đánh vần không theo quy tắc)",
+        "mud mess": "một mớ bùn lầy bừa bộn",
+        "chicken": "thịt gà",
+        "park": "công viên",
+        "toy": "đồ chơi",
+        "color": "màu sắc"
+    },
+    "sentence_structures": {
+        "What food do you like?": "I like chicken.",
+        "What can you see in the park?": "I can see…",
+        "What is it?": "It’s a…",
+        "What is your favourite toy?": "My favourite toy is…",
+        "What color is it?": "It’s… (từ chỉ màu sắc)"
+    },
+    "report_date": "2026-03-08",
+    "lesson_title": "Lesson 21",
+    "homework": "Buổi học hôm nay không có bài tập về nhà.",
+    "links": [],
+    "student_comments_minh_huy": "cannot find info",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1SO1svQfzoSo_sCa6hNVCXFKLe-5ahyC7ILESfG9jQq8/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
