@@ -76895,3 +76895,6 @@ Buổi học hôm nay không có bài tập về nhà....
 [2026-03-11 13:13:22] Completed detailed Telegram notifications
 [2026-03-11 13:13:22] Git repository detected
 [2026-03-11 13:13:22] Committing and pushing Report and vocab files to GitHub
+[2026-03-11 13:13:23] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-03-11 13:13:23] Closing WebDriver
+[2026-03-11 13:13:23] Script completed
