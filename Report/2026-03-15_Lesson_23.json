@@ -1,5 +1,37 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "chin": "cằm",
+        "chest": "hòm, rương",
+        "chop": "chặt",
+        "church": "nhà thờ",
+        "chick": "gà",
+        "chess": "cờ vua",
+        "rich": "giàu",
+        "chair": "cái ghế",
+        "country": "nông thôn",
+        "city": "thành phố"
+    },
+    "sentence_structures": {
+        "Where do you live?": [
+            "I live in a…",
+            "I live in a city."
+        ]
+    },
+    "report_date": "2026-03-15",
+    "lesson_title": "Lesson 23",
+    "homework": "Hoàn thành phần Handwriting lesson 23 trong sách CLL2\nCLL 2_Homework_Lesson 23 (Grapheme ch)\nPhonics & Vocabulary (Ôn tập ngữ âm và từ vựng): Quizlet - Lesson 23\nE-book: Get that cat Get That Cat.webm\nKhan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App",
+    "links": [
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://quizlet.com/vn/988223605/cll2_lesson-23_tricky-words-captions-flash-cards/?funnelUUID=4bb6448f-a219-447f-bc5f-f4c11e04cb13",
+        "https://drive.google.com/file/d/1IfdPW4i6Nq7gXMu7pxBL_NazY9ed7_df/view?usp=sharing",
+        "https://docs.google.com/document/d/1Yja2v6Y680TzFCBPkLRLY-uTiaof4Q2vUSiheGXod3E/edit?tab=t.0#heading=h.lsu6d0y2hk65",
+        "https://quizlet.com/join/ZEVyAjeAc?i=5lxnmh&x=1bqt",
+        "https://youtu.be/mGSFG37LewA?feature=shared"
+    ],
+    "student_comments_minh_huy": "Con học khá tốt và tham gia đọc từ trong giờ học. Con nhận diện được âm /ch/ và đọc đúng các từ chin, chop, chick, chess. Khi ghép âm, con đọc từ trôi chảy. Con tham gia đọc truyện “Get That Cat!” tự tin. Con cũng nói được hai từ city và country khi thầy hỏi. Tuy nhiên đôi lúc con cần chú ý lắng nghe kỹ hơn yêu cầu của thầy trước khi thực hiện hoạt động. Khi tập trung, con làm bài tốt. Con tích cực tham gia đọc từ và câu cùng lớp.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1xkJXwFbplAgBsKNk2PwpQDNPULkPEyM5GqMnzivshmI/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
