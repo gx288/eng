@@ -1,5 +1,47 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "chin": "cằm",
+        "chest": "hòm, rương",
+        "chop": "chặt",
+        "church": "nhà thờ",
+        "chick": "gà",
+        "chess": "cờ vua",
+        "rich": "giàu",
+        "chair": "cái ghế",
+        "queen": "nữ hoàng",
+        "quiz": "câu đố",
+        "quill": "bút lông",
+        "quack": "tiếng vịt kêu",
+        "quit": "bỏ cuộc",
+        "buzz": "tiếng ong",
+        "puzz": "câu đố",
+        "fizz": "xì hơi",
+        "jazz": "nhạc jazz",
+        "dizzy": "chóng mặt",
+        "elephant": "con voi",
+        "orange": "màu cam",
+        "country": "nông thôn",
+        "house": "ngôi nhà",
+        "city": "thành phố",
+        "farm": "nông trại"
+    },
+    "sentence_structures": {
+        "where do you live?": "I live in a…"
+    },
+    "report_date": "2026-03-17",
+    "lesson_title": "Lesson 24",
+    "homework": "Hoàn thành phần Handwriting lesson 24 trong sách CLL2. CLL 2_Homework_Lesson 24 (Review grapgemes zz, qu, ch). Ôn tập ngữ âm và từ vựng: Quizlet - Lesson 24. Hướng dẫn cài đặt và sử dụng Khan Academy Kids App.",
+    "links": [
+        "https://drive.google.com/file/d/1tz2OvuVcxZbBwGpwqbM9fwUNbtlZ6XXH/view",
+        "https://quizlet.com/join/GF7eqveAF?i=5lxnmh&x=1bqt",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://docs.google.com/document/d/1VXOZkzkPzWdFfSoyWtRFX0tn5_m7RL019feXJi-NBrQ/edit?tab=t.0#heading=h.lurfc1dvwv9i",
+        "https://youtu.be/mGSFG37LewA?feature=shared"
+    ],
+    "student_comments_minh_huy": "Con học khá tốt và tham gia đọc từ trong giờ học. Con nhận diện được âm /zz/ và đọc đúng các từ fuzz, buzz. Khi ghép âm, con đọc từ trôi chảy. Con tham gia đọc truyện “Rhino Reader Phase 3a” tự tin. Con cũng nói được câu ‘I live in the city’ khi thầy hỏi. Tuy nhiên, đôi lúc con cần chú ý lắng nghe kỹ hơn yêu cầu của thầy trước khi thực hiện hoạt động. Khi tập trung, con làm bài tốt. Con tích cực tham gia đọc từ và câu cùng lớp.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1MPh7vZf1xGLty_Ca60qnjuOp5oJZSXjihu6-32aZojE/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
