@@ -79831,3 +79831,6 @@ Con học khá tốt và tham gia đọc từ trong giờ học. Con nhận di�
 [2026-03-18 10:58:10] Completed detailed Telegram notifications
 [2026-03-18 10:58:10] Git repository detected
 [2026-03-18 10:58:10] Committing and pushing Report and vocab files to GitHub
+[2026-03-18 10:58:11] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-03-18 10:58:11] Closing WebDriver
+[2026-03-18 10:58:11] Script completed
