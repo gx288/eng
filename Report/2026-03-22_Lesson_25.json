@@ -1,5 +1,44 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "ship": "con tàu",
+        "rush": "vội vàng",
+        "shell": "vỏ sò",
+        "cash": "tiền mặt",
+        "shop": "cửa hàng",
+        "push": "đẩy",
+        "shed": "túp lều",
+        "shark": "cá mập",
+        "shoe": "giày",
+        "sheep": "con cừu",
+        "was": "là",
+        "he": "anh ấy",
+        "she": "cô ấy",
+        "flat": "căn hộ",
+        "house": "ngôi nhà"
+    },
+    "sentence_structures": {
+        "Where do you live?": [
+            "I live in a…",
+            "I live in a house."
+        ]
+    },
+    "report_date": "2026-03-22",
+    "lesson_title": "Lesson 25",
+    "homework": "Hoàn thành phần Handwriting lesson 25 trong sách CLL2. Ôn tập ngữ âm và từ vựng với Quizlet - Lesson 25. Luyện Phonics: 'sh' Words | Blending Phonics Phase 3. E-book: Will we win.webm. Tham khảo Hướng dẫn cài đặt và sử dụng Khan Academy Kids App.",
+    "links": [
+        "https://drive.google.com/file/d/1zVInyHm93P33eAy3fxL6dkC_SvKzlwNC/view",
+        "Cambrige Little Steps 1 Unit 9 Story.mp4",
+        "https://drive.google.com/file/d/1WDBQ7oS3-IZM-gnPr6l_kAtlTAbhOMEs/view?usp=drive_link",
+        "Will we win.webm",
+        "https://quizlet.com/join/WGrSwJQuC?i=5lxnmh&x=1bqt",
+        "https://docs.google.com/document/d/1vGpECW-bz8nVrRBm3uURYPR3AxjTTgqnuBfeUA0erK0/edit?usp=drive_link",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://youtu.be/7gBsGxhdt2E?feature=shared"
+    ],
+    "student_comments_minh_huy": "Con có thái độ học tập tốt và luôn tham gia đầy đủ các hoạt động trong lớp. Con nhận biết và phát âm được âm /sh/ trong các từ như ship, shell, shop, shoe. Con đọc được các từ đơn giản như shop, shed, ship khi ghép âm. Trong phần đọc truyện, con có thể theo dõi và đọc với sự hỗ trợ nhẹ. Con hiểu được nội dung chính của câu chuyện. Con tham gia hoạt động kể chuyện và có thể trả lời các câu hỏi cơ bản. Con có tinh thần học tập tốt và chăm chỉ.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1uMBRU-7Azf_SRil1XVikcsJtDrSDotNc/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
