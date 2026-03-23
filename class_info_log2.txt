@@ -82161,3 +82161,6 @@ Con có thái độ học tập tốt và luôn tham gia đầy đủ các hoạ
 [2026-03-23 10:12:19] Completed detailed Telegram notifications
 [2026-03-23 10:12:19] Git repository detected
 [2026-03-23 10:12:19] Committing and pushing Report and vocab files to GitHub
+[2026-03-23 10:12:20] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-03-23 10:12:20] Closing WebDriver
+[2026-03-23 10:12:20] Script completed
