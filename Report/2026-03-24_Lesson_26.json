@@ -1,5 +1,47 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "ship": "con tàu",
+        "rush": "vội vàng",
+        "shell": "vỏ sò",
+        "cash": "tiền mặt",
+        "shop": "cửa hàng",
+        "push": "đẩy",
+        "shed": "túp lều",
+        "shark": "cá mập",
+        "shoe": "giày",
+        "sheep": "con cừu",
+        "they": "họ",
+        "their": "của họ",
+        "we": "chúng tôi",
+        "our": "của chúng tôi"
+    },
+    "sentence_structures": {
+        "Where do you live?": "I live in a…",
+        "Who lives in a shoe?": "A woman",
+        "Where does she live?": "She lives in an orange shoe.",
+        "How many children does she have?": "She has eight children.",
+        "What do they eat?": "They eat broth.",
+        "What does the woman do?": "She reads a book.",
+        "What do the children do?": "They go to bed."
+    },
+    "report_date": "2026-03-24",
+    "lesson_title": "Lesson 26",
+    "homework": "Hoàn thành phần Handwriting lesson 26 trong sách CLL2. CLL2_Homework_Lesson 26. Phonics & Vocabulary (Ôn tập ngữ âm và từ vựng): Quizlet - Lesson 26. Phonics: 'sh' Words | Blending Phonics Phase 3. E-book: Will we win. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App.",
+    "links": [
+        "https://drive.google.com/file/d/1WDBQ7oS3-IZM-gnPr6l_kAtlTAbhOMEs/view?usp=drive_link",
+        "https://drive.google.com/file/d/1nU6LPyadtB2VR9AIkzhy57fyikgHs-T2/view?usp=drive_link",
+        "https://drive.google.com/file/d/1zVInyHm93P33eAy3fxL6dkC_SvKzlwNC/view",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "Will we win.web",
+        "https://youtu.be/7gBsGxhdt2E?feature=shared",
+        "https://docs.google.com/document/d/1O-_UqkW6ivaMIgPeeEfqnEJ45Aq-WGt_v_sMHMWI8wI/edit?tab=t.0#heading=h.5c3vlyet6pfo",
+        "https://quizlet.com/join/rDVu8XfDK?i=5lxnmh&x=1bqt",
+        "Cambrige Little Steps 1 Unit 9 Story.mp4"
+    ],
+    "student_comments_minh_huy": "Con có thái độ học tập tốt và luôn tham gia đầy đủ các hoạt động trong lớp. Con nhận biết và phát âm được âm /ch/ trong các từ như chip, chess, chin, chair. Con đọc được các từ đơn giản như shop, shed, ship khi ghép âm. Trong phần đọc truyện, con có thể theo dõi và đọc với sự hỗ trợ nhẹ. Con hiểu được nội dung chính của câu chuyện. Con tham gia hoạt động kể chuyện và có thể trả lời các câu hỏi cơ bản. Con có tinh thần học tập tốt và chăm chỉ.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1aoqMkxxStD7MsbqofIz19LIJKn5dnppE/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
