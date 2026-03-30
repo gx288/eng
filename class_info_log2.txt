@@ -84844,3 +84844,84 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1yg-
 [2026-03-30 09:19:31] Saved processed2.json successfully
 [2026-03-30 09:19:31] Git repository detected
 [2026-03-30 09:19:31] Committing and pushing changes to GitHub
+[2026-03-30 09:19:32] Pushed processed2.json and class_info_log2.txt successfully
+[2026-03-30 09:19:32] Starting PDF processing for report analysis
+[2026-03-30 09:19:32] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1yg-nFgJpyTMKlBhyckgiVPKEz2M8LD0hBzh3f6J9wWY/export?format=pdf
+[2026-03-30 09:19:32] Downloading PDF from https://docs.google.com/document/d/1yg-nFgJpyTMKlBhyckgiVPKEz2M8LD0hBzh3f6J9wWY/export?format=pdf
+[2026-03-30 09:19:33] Successfully downloaded PDF to temp_report.pdf
+[2026-03-30 09:19:33] Extracting text and links from PDF
+[2026-03-30 09:19:34] Extracted 7178 characters and 8 links from PDF
+[2026-03-30 09:19:34] Deleted temporary PDF file: temp_report.pdf
+[2026-03-30 09:19:34] Gemini API attempt 1/3
+[2026-03-30 09:19:34] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-3-1b-it', 'models/gemma-3-4b-it', 'models/gemma-3-12b-it', 'models/gemma-3-27b-it', 'models/gemma-3n-e4b-it', 'models/gemma-3n-e2b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image', 'models/gemini-2.5-flash-lite-preview-09-2025', 'models/gemini-3-pro-preview', 'models/gemini-3-flash-preview', 'models/gemini-3.1-pro-preview', 'models/gemini-3.1-pro-preview-customtools', 'models/gemini-3.1-flash-lite-preview', 'models/gemini-3-pro-image-preview', 'models/nano-banana-pro-preview', 'models/gemini-3.1-flash-image-preview', 'models/lyria-3-clip-preview', 'models/lyria-3-pro-preview', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/deep-research-pro-preview-12-2025']
+[2026-03-30 09:19:34] Using model: models/gemini-2.5-flash
+[2026-03-30 09:19:45] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "thin": "mỏng",
+    "with": "cùng",
+    "moth": "bướm đêm",
+    "this": ...
+[2026-03-30 09:19:45] API attempt 1 successful
+[2026-03-30 09:19:45] Updating Google Sheet 'ReportContent' with extracted data
+[2026-03-30 09:19:46] Inserted 17 rows to 'ReportContent' after header
+[2026-03-30 09:19:46] Processing total vocabulary
+[2026-03-30 09:19:46] Loaded existing vocabulary from vocab_total.json: 443 entries
+[2026-03-30 09:19:46] Added 6 new vocabulary entries. Total vocabulary: 449
+[2026-03-30 09:19:46] Saving updated vocabulary to vocab_total.json
+[2026-03-30 09:19:46] Successfully saved vocab_total.json
+[2026-03-30 09:19:46] Updating Google Sheet 'vocab' with total vocabulary
+[2026-03-30 09:19:47] Updated Google Sheet 'vocab' successfully with 449 vocabulary entries
+[2026-03-30 09:19:47] Creating Report directory if not exists
+[2026-03-30 09:19:47] Saving result to Report/2026-03-29_Lesson_27.json
+[2026-03-30 09:19:47] Successfully saved: Report/2026-03-29_Lesson_27.json
+[2026-03-30 09:19:47] Starting detailed Telegram notifications
+[2026-03-30 09:19:47] Initializing Telegram Bot for detailed messages
+[2026-03-30 09:19:47] Sending detailed Telegram messages to chat_id 1900957785
+[2026-03-30 09:19:47] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-03-29*
+📅 *Ngày*: 2026-03-29
+📚 *Tiêu đề*: Lesson 27
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-03-30 09:19:48] Sent general info message to chat_id 1900957785
+[2026-03-30 09:19:48] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-03-29*
+• `thin`: mỏng
+• `with`: cùng
+• `moth`: bướm đêm
+• `this`: đây
+• `thick`:...
+[2026-03-30 09:19:49] Sent vocabulary message to chat_id 1900957785
+[2026-03-30 09:19:49] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-03-29*
+• *Where do you live?*: I live in a(n)…, I live in a house....
+[2026-03-30 09:19:50] Sent sentence structures message to chat_id 1900957785
+[2026-03-30 09:19:50] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-03-29*
+Hoàn thành phần Handwriting lesson 27 trong sách CLL2. CLL 2_Homework_...
+[2026-03-30 09:19:50] Sent homework message to chat_id 1900957785
+[2026-03-30 09:19:51] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-03-29*
+Con có thái độ học tập tốt và hoàn thành bài tập đầy đủ. Trong p...
+[2026-03-30 09:19:51] Sent comments message to chat_id 1900957785
+[2026-03-30 09:19:52] Completed sending detailed messages to chat_id 1900957785
+[2026-03-30 09:19:52] Sending detailed Telegram messages to chat_id 1924741087
+[2026-03-30 09:19:52] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-03-29*
+📅 *Ngày*: 2026-03-29
+📚 *Tiêu đề*: Lesson 27
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-03-30 09:19:52] Sent general info message to chat_id 1924741087
+[2026-03-30 09:19:53] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-03-29*
+• `thin`: mỏng
+• `with`: cùng
+• `moth`: bướm đêm
+• `this`: đây
+• `thick`:...
+[2026-03-30 09:19:53] Sent vocabulary message to chat_id 1924741087
+[2026-03-30 09:19:53] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-03-29*
+• *Where do you live?*: I live in a(n)…, I live in a house....
+[2026-03-30 09:19:54] Sent sentence structures message to chat_id 1924741087
+[2026-03-30 09:19:54] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-03-29*
+Hoàn thành phần Handwriting lesson 27 trong sách CLL2. CLL 2_Homework_...
+[2026-03-30 09:19:55] Sent homework message to chat_id 1924741087
+[2026-03-30 09:19:55] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-03-29*
+Con có thái độ học tập tốt và hoàn thành bài tập đầy đủ. Trong p...
+[2026-03-30 09:19:55] Sent comments message to chat_id 1924741087
+[2026-03-30 09:19:56] Completed sending detailed messages to chat_id 1924741087
+[2026-03-30 09:19:56] Completed detailed Telegram notifications
+[2026-03-30 09:19:56] Git repository detected
+[2026-03-30 09:19:56] Committing and pushing Report and vocab files to GitHub
