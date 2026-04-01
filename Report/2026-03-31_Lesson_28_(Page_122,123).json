@@ -1,5 +1,54 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "shell": "vỏ sò",
+        "chop": "chặt/băm",
+        "bath": "bồn tắm",
+        "moth": "con bướm đêm",
+        "near": "gần",
+        "far": "xa",
+        "market": "chợ",
+        "toy store": "cửa hàng đồ chơi",
+        "park": "công viên",
+        "playground": "sân chơi",
+        "tree": "cái cây",
+        "yo-yo": "cái yoyo",
+        "swings": "xích đu",
+        "apples": "táo",
+        "then": "sau đó",
+        "now": "bây giờ",
+        "look": "nhìn",
+        "rush": "vội vã, xông tới",
+        "rich": "giàu có",
+        "thick": "dày",
+        "this": "cái này",
+        "chair": "cái ghế",
+        "door": "cái cửa",
+        "puppet": "con rối",
+        "window": "cái cửa sổ"
+    },
+    "sentence_structures": {
+        "What is it?": [
+            "It’s a tree.",
+            "It's a yo-yo."
+        ],
+        "Where can you see a tree?": "I can see a tree in a park.",
+        "Where can you see swings?": "I can see swings in a playground.",
+        "Where can you see apples?": "I can see apples in a market.",
+        "Where can you see a yo-yo?": "I can see a yo-yo in a toy store."
+    },
+    "report_date": "2026-03-31",
+    "lesson_title": "Lesson 28 (Page 122,123)",
+    "homework": "Các con về nhà hoàn thành bài tập trong sách (HS chú ý xem đầu trang sách): CLL2 Lesson 28 - Homework. Chuẩn bị cho buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'In the Bag' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/drive/folders/1JQAeKniCRh0fz_Bopi0GUjnZ-yQ5e7-B?usp=sharing",
+        "https://youtu.be/7gBsGxhdt2E?feature=shared",
+        "https://youtu.be/mGSFG37LewA?feature=shared",
+        "https://youtu.be/7f74GArsWis?feature=shared"
+    ],
+    "student_comments_minh_huy": "Minh Huy có thái độ học tập ngoan ngoãn và biết lắng nghe lời giảng của thầy cô. Con đã ghi nhớ các từ vựng mới như 'market', 'park' và tham gia tốt hoạt động thảo luận nhóm. Thỉnh thoảng con còn làm việc riêng, nên cần tập trung cao độ hơn để nắm vững kỹ thuật 'dot blending'. Thầy cô khuyến khích con luyện đọc thêm ở nhà các từ chứa âm 'ch', 'sh', 'th' để cải thiện sự tự tin khi phát âm.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/13u0gXMaTC6sUrdGr2Vaa_lXJwP5XdpFdwOSN7V3dnnQ/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
