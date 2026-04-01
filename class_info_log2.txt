@@ -85639,3 +85639,6 @@ Minh Huy có thái độ học tập ngoan ngoãn và biết lắng nghe lời g
 [2026-04-01 11:03:54] Completed detailed Telegram notifications
 [2026-04-01 11:03:54] Git repository detected
 [2026-04-01 11:03:54] Committing and pushing Report and vocab files to GitHub
+[2026-04-01 11:03:55] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-04-01 11:03:55] Closing WebDriver
+[2026-04-01 11:03:55] Script completed
