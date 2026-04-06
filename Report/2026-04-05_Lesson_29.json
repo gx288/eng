@@ -1,5 +1,42 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "lung": "phổi",
+        "king": "vua",
+        "long": "dài",
+        "spring": "mùa xuân",
+        "sing": "hát",
+        "wrong": "sai",
+        "fang": "nanh",
+        "school": "trường học",
+        "market": "chợ",
+        "playground": "sân chơi",
+        "street": "đường",
+        "toy store": "cửa hàng đồ chơi",
+        "park": "công viên"
+    },
+    "sentence_structures": {
+        "What can you see near your house?": "I can see … near my house."
+    },
+    "report_date": "2026-04-05",
+    "lesson_title": "Lesson 29",
+    "homework": "Hoàn thành phần Handwriting lesson 29 trong sách CLL2.\nÔn tập ngữ âm và từ vựng qua Quizlet - Lesson 29.\nĐọc E-book: A fox at the shops.\nCài đặt và sử dụng Khan Academy Kids app.",
+    "links": [
+        "https://quizlet.com/vn/989961582/cll2_lesson-27_tricky-words-captions-flash-cards/?funnelUUID=37993ef0-9131-4779-b550-5ad2bf0bc172",
+        "Khan Academy Kids App",
+        "https://docs.google.com/document/d/1Y1NEEX7PPC2RNLSRmXEm0uJiPQyKRr3vNVPK3Xd5gLg/edit?tab=t.0#heading=h.w84bahz6cf45",
+        "https://drive.google.com/file/d/1QUCKDU1BtHmPAMfdlYvh0Bxol_t-ne33/view?usp=drive_link",
+        "CLL 2_Homework_Lesson 29 (Grapheme ng)",
+        "A fox at the shops.webm",
+        "CLL2_Lesson27_Tricky words & Captions",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://quizlet.com/join/UA5dYgEzs?i=5lxnmh&x=1bqt",
+        "https://youtu.be/Nrjb0rIer5M?feature=shared",
+        "Quizlet - Lesson 29"
+    ],
+    "student_comments_minh_huy": "Con thể hiện thái độ học tập khá tốt. Con cần chú ý đọc đồng bài và các câu cùng cả lớp nhé. Phần Phonics con nhận diện âm /ng/ nhanh, chính xác. Con đọc rõ ràng các từ như “sing”, “spring”, “wrong”. Trong phần đọc sách, con thể hiện khả năng đọc độc lập tốt, biết tự đánh vần và hiểu nội dung cơ bản “She gets lots of things”. Khi trả lời câu hỏi, con luôn giơ tay phát biểu và nói rõ ràng, tự tin. Con sử dụng tốt các mẫu câu như “I can see school near my house” với phát âm tương đối tốt.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1a79ZYsInVVTPj04kqarM5XLJoIQl4trm37Qd2hQF96s/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
