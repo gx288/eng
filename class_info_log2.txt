@@ -87436,3 +87436,79 @@ Stacktrace:
 [2026-04-06 09:15:29] Report button is disabled
 [2026-04-06 09:15:29] Closing WebDriver
 [2026-04-06 09:15:29] Script completed
+[2026-04-06 11:02:33] Starting script
+[2026-04-06 11:02:33] Starting report check for calendar overview
+[2026-04-06 11:02:33] Loaded processed2.json: {'date': '2026-03-31', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/13u0gXMaTC6sUrdGr2Vaa_lXJwP5XdpFdwOSN7V3dnnQ/export?format=pdf'}
+[2026-04-06 11:02:33] Writing Google credentials to credentials.json
+[2026-04-06 11:02:33] Credentials written successfully
+[2026-04-06 11:02:33] Initializing Chrome WebDriver
+[2026-04-06 11:02:34] WebDriver session ID: 41ceadb8eb4453a12a04018aaaf891c8
+[2026-04-06 11:02:34] Navigating to login page: https://apps.cec.com.vn/login
+[2026-04-06 11:02:37] Login attempt 1/3
+[2026-04-06 11:02:37] Entering password
+[2026-04-06 11:02:37] Clicking login button
+[2026-04-06 11:02:39] Login successful
+[2026-04-06 11:02:39] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-04-06 11:02:48] Scrolled to bottom of page
+[2026-04-06 11:02:48] Found 18 class events
+[2026-04-06 11:02:48] Latest class date before today: 2026-04-05
+[2026-04-06 11:02:52] Class name from popup: VQ2-C2-2504
+[2026-04-06 11:02:52] Report button is enabled, clicking to get report URL
+[2026-04-06 11:02:52] Attempt 1/3 to click report button
+[2026-04-06 11:03:52] Window switch attempt 1/3 failed: Message: timeout: Timed out receiving message from renderer: 60.000
+  (Session info: chrome=146.0.7680.164)
+Stacktrace:
+#0 0x557888590a6a <unknown>
+#1 0x557887f9fab5 <unknown>
+#2 0x557887f873bb <unknown>
+#3 0x557887f870a4 <unknown>
+#4 0x557887f84deb <unknown>
+#5 0x557887f8576f <unknown>
+#6 0x557887f947a0 <unknown>
+#7 0x557887fae4b7 <unknown>
+#8 0x557887fb4feb <unknown>
+#9 0x557887f85ebf <unknown>
+#10 0x557887fae24b <unknown>
+#11 0x55788803a67f <unknown>
+#12 0x557887fe5cbf <unknown>
+#13 0x557887fe6a81 <unknown>
+#14 0x557888556a64 <unknown>
+#15 0x557888559951 <unknown>
+#16 0x55788854321e <unknown>
+#17 0x55788855a51e <unknown>
+#18 0x557888529be0 <unknown>
+#19 0x55788857d9b8 <unknown>
+#20 0x55788857db88 <unknown>
+#21 0x55788858f4de <unknown>
+#22 0x7f2d9e89caa4 <unknown>
+#23 0x7f2d9e929c6c <unknown>
+
+[2026-04-06 11:03:52] Restarting WebDriver
+[2026-04-06 11:04:03] Error checking reports: Message: no such element: element not found
+  (Session info: chrome=146.0.7680.164); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+#0 0x564429b21a6a <unknown>
+#1 0x564429530ab5 <unknown>
+#2 0x5644295447e4 <unknown>
+#3 0x564429543581 <unknown>
+#4 0x564429538329 <unknown>
+#5 0x564429538463 <unknown>
+#6 0x5644295364f9 <unknown>
+#7 0x56442953a4ab <unknown>
+#8 0x5644295cc8d9 <unknown>
+#9 0x5644295cb7b6 <unknown>
+#10 0x564429576cbf <unknown>
+#11 0x564429577a81 <unknown>
+#12 0x564429ae7a64 <unknown>
+#13 0x564429aea951 <unknown>
+#14 0x564429ad421e <unknown>
+#15 0x564429aeb51e <unknown>
+#16 0x564429ababe0 <unknown>
+#17 0x564429b0e9b8 <unknown>
+#18 0x564429b0eb88 <unknown>
+#19 0x564429b204de <unknown>
+#20 0x7f8c0969caa4 <unknown>
+#21 0x7f8c09729c6c <unknown>
+
+[2026-04-06 11:04:03] Closing WebDriver
+[2026-04-06 11:04:03] Script completed
