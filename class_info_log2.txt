@@ -90937,3 +90937,23 @@ Stacktrace:
 [2026-04-14 21:56:24] Report button is disabled
 [2026-04-14 21:56:24] Closing WebDriver
 [2026-04-14 21:56:24] Script completed
+[2026-04-14 22:51:06] Starting script
+[2026-04-14 22:51:06] Starting report check for calendar overview
+[2026-04-14 22:51:06] Loaded processed2.json: {'date': '2026-04-12', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_q7Zy8YkgJhVPWV-lJo5Y3wWmi61Xzkuk9kBsG5A-7w/export?format=pdf'}
+[2026-04-14 22:51:06] Writing Google credentials to credentials.json
+[2026-04-14 22:51:06] Credentials written successfully
+[2026-04-14 22:51:06] Initializing Chrome WebDriver
+[2026-04-14 22:51:12] WebDriver session ID: 38fdacc3e52ad245252363d43c304762
+[2026-04-14 22:51:12] Navigating to login page: https://apps.cec.com.vn/login
+[2026-04-14 22:51:16] Login attempt 1/3
+[2026-04-14 22:51:16] Entering password
+[2026-04-14 22:51:16] Clicking login button
+[2026-04-14 22:51:19] Login successful
+[2026-04-14 22:51:19] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-04-14 22:51:29] Scrolled to bottom of page
+[2026-04-14 22:51:29] Found 18 class events
+[2026-04-14 22:51:29] Latest class date before today: 2026-04-14
+[2026-04-14 22:51:32] Class name from popup: VQ2-C2-2504
+[2026-04-14 22:51:32] Report button is disabled
+[2026-04-14 22:51:32] Closing WebDriver
+[2026-04-14 22:51:32] Script completed
