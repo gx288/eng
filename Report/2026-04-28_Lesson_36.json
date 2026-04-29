@@ -1,5 +1,35 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "boat": "thuyền",
+        "soap": "xà phòng",
+        "coat": "áo khoác",
+        "oak": "cây sồi",
+        "goal": "khung thành",
+        "loaf": "ổ bánh mỳ",
+        "goat": "con dê",
+        "toast": "bánh mỳ nướng",
+        "pick up trash": "nhặt rác",
+        "put toys away": "cất đồ chơi đi",
+        "throw trash into the bin": "vứt rác vào thùng rác",
+        "clean the table": "dọn dẹp bàn"
+    },
+    "sentence_structures": {
+        "Is the classroom messy or tidy?": "The classroom is messy/tidy.",
+        "Is your classroom messy or tidy?": "My classroom is tidy."
+    },
+    "report_date": "2026-04-28",
+    "lesson_title": "Lesson 36",
+    "homework": "Hoàn thành phần Handwriting lesson 36 trong sách CLL2. CLL 2_Homework_Lesson 36 (Grapheme oa). Phonics & Vocabulary (Ôn tập ngữ âm và từ vựng): Quizlet - Lesson 36. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App.",
+    "links": [
+        "https://quizlet.com/vn/978476900/cll2_phonics_word-set-16-oa-flash-cards/?funnelUUID=c9c4dd79-2b8b-4afb-b553-df314745452a",
+        "https://docs.google.com/document/d/1sGg9cNk9oOmhEJfJtgqwxLb67ejdMkFmXg7jnrNaIfo/edit?tab=t.0#heading=h.f8asdsak1kw",
+        "https://youtu.be/M8nGaspuWAQ?feature=shared",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit"
+    ],
+    "student_comments_minh_huy": "Con là học sinh có thái độ học tập rất tốt và luôn chú ý nghe giảng trong giờ học. Con tích cực tham gia vào các hoạt động và hoàn thành nhiệm vụ được giao. Trong phần Phonics, con nhận diện âm /oa/ khá chính xác và đọc được nhiều từ như “coat”, “goat”, “loaf”. Trong phần đọc sách, con có thể tự đọc câu “My coat was right here!”. Khi trả lời câu hỏi, con trả lời rõ ràng: “The goal is the oak tree.”.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1LAiFRvuryEmzaAv4C68J-ldFfiFJzjcwh1qFzk-zuhA/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
