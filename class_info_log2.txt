@@ -96501,3 +96501,6 @@ Con là học sinh có thái độ học tập rất tốt và luôn chú ý ngh
 [2026-04-29 14:11:48] Completed detailed Telegram notifications
 [2026-04-29 14:11:48] Git repository detected
 [2026-04-29 14:11:48] Committing and pushing Report and vocab files to GitHub
+[2026-04-29 14:11:50] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-04-29 14:11:50] Closing WebDriver
+[2026-04-29 14:11:50] Script completed
