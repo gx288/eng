@@ -96784,3 +96784,29 @@ Con là học sinh có thái độ học tập rất tốt và luôn chú ý ngh
 [2026-04-30 20:12:03] Class VQ2-C2-2504 on 2026-04-28 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1LAiFRvuryEmzaAv4C68J-ldFfiFJzjcwh1qFzk-zuhA/export?format=pdf
 [2026-04-30 20:12:03] Closing WebDriver
 [2026-04-30 20:12:03] Script completed
+[2026-04-30 22:00:04] Starting script
+[2026-04-30 22:00:04] Starting report check for calendar overview
+[2026-04-30 22:00:04] Loaded processed2.json: {'date': '2026-04-28', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1LAiFRvuryEmzaAv4C68J-ldFfiFJzjcwh1qFzk-zuhA/export?format=pdf'}
+[2026-04-30 22:00:04] Writing Google credentials to credentials.json
+[2026-04-30 22:00:04] Credentials written successfully
+[2026-04-30 22:00:04] Initializing Chrome WebDriver
+[2026-04-30 22:00:07] WebDriver session ID: deaa80875623745ecf2f7f5e8c1d8bdd
+[2026-04-30 22:00:07] Navigating to login page: https://apps.cec.com.vn/login
+[2026-04-30 22:00:11] Login attempt 1/3
+[2026-04-30 22:00:11] Entering password
+[2026-04-30 22:00:11] Clicking login button
+[2026-04-30 22:00:21] Login attempt 1/3 failed: Message: 
+
+[2026-04-30 22:00:21] No specific error message found on login page
+[2026-04-30 22:00:24] Login attempt 2/3
+[2026-04-30 22:00:24] Entering password
+[2026-04-30 22:00:24] Clicking login button
+[2026-04-30 22:00:26] Login successful
+[2026-04-30 22:00:26] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-04-30 22:00:33] Scrolled to bottom of page
+[2026-04-30 22:00:33] Found 20 class events
+[2026-04-30 22:00:33] Latest class date before today: 2026-04-28
+[2026-04-30 22:00:36] Class name from popup: VQ2-C2-2504
+[2026-04-30 22:00:36] Class VQ2-C2-2504 on 2026-04-28 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1LAiFRvuryEmzaAv4C68J-ldFfiFJzjcwh1qFzk-zuhA/export?format=pdf
+[2026-04-30 22:00:36] Closing WebDriver
+[2026-04-30 22:00:37] Script completed
