@@ -1,5 +1,78 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "snail": "ốc sên",
+        "pain": "cơn đau",
+        "hail": "mưa đá",
+        "chain": "chuỗi",
+        "rain": "mưa",
+        "train": "tàu hoả",
+        "sail": "cánh buồm",
+        "paint": "vẽ",
+        "night": "ban đêm",
+        "fight": "đánh nhau",
+        "light": "đèn",
+        "tight": "chặt",
+        "knight": "kỵ sĩ",
+        "thigh": "đùi",
+        "bright": "sáng",
+        "high": "cao",
+        "goat": "con dê",
+        "soap": "xà phòng",
+        "boat": "chiếc thuyền",
+        "oak": "cây sồi",
+        "coat": "áo khoác",
+        "loaf": "ổ bánh mì",
+        "goal": "đích, khung thành 'môn bóng đá'",
+        "toast": "lát bánh mì nướng",
+        "teeth": "răng",
+        "bee": "con ong",
+        "see": "nhìn",
+        "feet": "bàn chân",
+        "sleep": "ngủ",
+        "leek": "cây hành",
+        "eat": "ăn (dùng cho chủ ngữ số nhiều)",
+        "all": "tất cả",
+        "eats": "ăn ( dùng cho chủ ngữ số ít)",
+        "pencil": "bút chì",
+        "glue stick": "keo, hồ dán",
+        "marker": "bút đánh dấu",
+        "scissors": "kéo",
+        "paintbrush": "bút lông, cọ vẽ"
+    },
+    "sentence_structures": {
+        "What is your favorite color?": "My favorite color is [green/ blue/ red/ yellow/ orange/ purple].",
+        "What do you do at school ?": "I eat lunch",
+        "Do you…?": [
+            "Yes, I do.",
+            "No, I don’t."
+        ],
+        "Do you listen to stories ?": [
+            "Yes, I do.",
+            "No, I don’t."
+        ]
+    },
+    "report_date": "2026-05-10",
+    "lesson_title": "Lesson 38",
+    "homework": "Hoàn thành phần Handwriting lesson 37 trong sách CLL2\nCLL 2_Homework_Lesson 38 (Review graphemes qu, sh, ai, ee, igh, oa)\n. Vocabulary & Phonics: Quizlet_Lesson 38\n. E-book: Has a goat got my coat.webm\n. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App\n* Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'All sorts of dogs ?' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "Quizlet_Lesson 38",
+        "https://drive.google.com/file/d/1aq17betYC_bzgs569TN_volH0HI95jUz/view?usp=drive_link",
+        "https://www.youtube.com/watch?v=M8nGaspuWAQ",
+        "Has a goat got my coat.webm",
+        "https://quizlet.com/vn/990646655/cll2_lesson-38_tricky-words-captions-flash-cards/?i=583cdq&x=1jqt",
+        "https://youtu.be/3UVtOaeBIDg?feature=shared",
+        "https://youtu.be/JDzpV3jFefs?feature=shared",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://www.youtube.com/watch?v=du3incCU6Xc",
+        "Hướng dẫn cài đặt và sử dụng Khan Academy Kids App",
+        "https://quizlet.com/join/JdgAmyZEm?i=5lxnmh&x=1bqt",
+        "Tricky words",
+        "https://docs.google.com/document/d/17uK3_OYIaqzMO5qCNSSMaupJHjLstLHbwcaStKN1wp8/edit?usp=sharing"
+    ],
+    "student_comments_minh_huy": "Con học ngoan và nghiêm túc, tuy nhiên nhiều lúc con hơi mất tập trung. Con chú ý hơn nhé. Con đã nhớ và trả lời tốt cấu trúc “What do you do at school” và “Do you…”. Con đã nắm được cách phát âm của âm /oa, sh, ee/ và những từ kèm theo. Con ghi nhớ được cấu trúc câu đã học và trả lời tốt câu hỏi của giáo viên. Con cũng đã đọc truyện “Has a goat got my coat?” tốt. Về nhà con nhớ ôn tập lại bài và hoàn thành đầy đủ bài tập về nhà nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1DC_XclFdEo5UBgPFz98KfYYstUp5BIxb/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
