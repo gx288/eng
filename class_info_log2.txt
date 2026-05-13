@@ -100488,3 +100488,48 @@ Stacktrace:
 [2026-05-13 12:08:15] Report button is disabled
 [2026-05-13 12:08:15] Closing WebDriver
 [2026-05-13 12:08:15] Script completed
+[2026-05-13 15:45:34] Starting script
+[2026-05-13 15:45:34] Starting report check for calendar overview
+[2026-05-13 15:45:34] Loaded processed2.json: {'date': '2026-05-10', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1DC_XclFdEo5UBgPFz98KfYYstUp5BIxb/export?format=pdf'}
+[2026-05-13 15:45:34] Writing Google credentials to credentials.json
+[2026-05-13 15:45:34] Credentials written successfully
+[2026-05-13 15:45:34] Initializing Chrome WebDriver
+[2026-05-13 15:45:35] WebDriver session ID: 33061a309773df44fd79f1eaa87477b9
+[2026-05-13 15:45:35] Navigating to login page: https://apps.cec.com.vn/login
+[2026-05-13 15:45:39] Login attempt 1/3
+[2026-05-13 15:45:40] Entering password
+[2026-05-13 15:45:40] Clicking login button
+[2026-05-13 15:45:50] Login attempt 1/3 failed: Message: 
+
+[2026-05-13 15:45:50] No specific error message found on login page
+[2026-05-13 15:45:53] Login attempt 2/3
+[2026-05-13 15:45:53] Entering password
+[2026-05-13 15:45:53] Clicking login button
+[2026-05-13 15:46:03] Login attempt 2/3 failed: Message: 
+
+[2026-05-13 15:46:03] No specific error message found on login page
+[2026-05-13 15:46:06] Login attempt 3/3
+[2026-05-13 15:46:06] Entering password
+[2026-05-13 15:46:06] Clicking login button
+[2026-05-13 15:46:12] Login successful
+[2026-05-13 15:46:12] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-05-13 15:46:22] Scrolled to bottom of page
+[2026-05-13 15:46:22] Found 20 class events
+[2026-05-13 15:46:22] Latest class date before today: 2026-05-12
+[2026-05-13 15:46:25] Class name from popup: VQ2-C2-2504
+[2026-05-13 15:46:25] Report button is enabled, clicking to get report URL
+[2026-05-13 15:46:25] Attempt 1/3 to click report button
+[2026-05-13 15:46:27] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1qRvhoXSxaOpeoQDY3lrdQlCbi4fjxM3d/export?format=pdf
+[2026-05-13 15:46:27] Preparing to send basic Telegram notification
+[2026-05-13 15:46:27] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-C2-2504 ngày 2026-05-12
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1qRvhoXSxaOpeoQDY3lrdQlCbi4fjxM3d/export?format=pdf
+[2026-05-13 15:46:28] Telegram notification sent successfully to chat_id 1900957785
+[2026-05-13 15:46:28] Sending Telegram message to chat_id 1924741087: Báo cáo bài học mới cho lớp VQ2-C2-2504 ngày 2026-05-12
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1qRvhoXSxaOpeoQDY3lrdQlCbi4fjxM3d/export?format=pdf
+[2026-05-13 15:46:28] Telegram notification sent successfully to chat_id 1924741087
+[2026-05-13 15:46:28] Updating Google Sheet 'Report' with Date 2026-05-12, Class VQ2-C2-2504, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1qRvhoXSxaOpeoQDY3lrdQlCbi4fjxM3d/export?format=pdf
+[2026-05-13 15:46:31] Updated Google Sheet 'Report' successfully: 2026-05-12, VQ2-C2-2504, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1qRvhoXSxaOpeoQDY3lrdQlCbi4fjxM3d/export?format=pdf at 2026-05-13 15:46:27
+[2026-05-13 15:46:31] Saving processed data to processed2.json
+[2026-05-13 15:46:31] Saved processed2.json successfully
+[2026-05-13 15:46:31] Git repository detected
+[2026-05-13 15:46:31] Committing and pushing changes to GitHub
