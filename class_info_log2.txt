@@ -100616,3 +100616,6 @@ Con học ngoan và nghiêm túc. Con chú ý hơn nhé. Con đã trả lời t.
 [2026-05-13 15:46:50] Completed detailed Telegram notifications
 [2026-05-13 15:46:50] Git repository detected
 [2026-05-13 15:46:50] Committing and pushing Report and vocab files to GitHub
+[2026-05-13 15:46:52] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-05-13 15:46:52] Closing WebDriver
+[2026-05-13 15:46:52] Script completed
