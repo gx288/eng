@@ -1,5 +1,44 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "book": "sách",
+        "cook": "nấu",
+        "look": "nhìn",
+        "hook": "lưỡi câu",
+        "wood": "gỗ",
+        "foot": "bàn chân",
+        "wool": "len",
+        "hood": "mũ trùm đầu",
+        "eat lunch": "ăn trưa",
+        "sing songs": "hát bài hát",
+        "clean up": "dọn dẹp",
+        "listen to stories": "nghe truyện",
+        "play with friends": "chơi với bạn"
+    },
+    "sentence_structures": {
+        "What do you like to do?": "I like to ___ (sing songs).",
+        "May I + Vo + … + please?": "May I go out, please?",
+        "May I get some paper, please?": "I may get some paper.",
+        "May I go to the bathroom, please?": "I may go to the bathroom."
+    },
+    "report_date": "2026-05-12",
+    "lesson_title": "Lesson 39",
+    "homework": "Hoàn thành phần Handwriting lesson 39 trong sách CLL2, CLL 2_Homework_Lesson 39 (Grapheme short oo). Vocabulary & Phonics: Quizlet_Lesson 39. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App. Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'All sorts of dogs ?' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/join/zBqk7XAGT?i=5lxnmh&x=1bqt",
+        "https://docs.google.com/document/d/1vU2xCJVCujsv4eWx1FqONden6-ndbAVax15qhOVPrsY/edit?tab=t.0#heading=h.pvu73uirul52",
+        "All Sorts of Dogs.webm",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://youtu.be/ONgqoexO8gY?feature=shared",
+        "All Sorts of Dogs (Landscape).pdf",
+        "Quizlet_Lesson 39",
+        "https://drive.google.com/file/d/1tv0fHLVK0qEpEUgzAnAjV5X6ODgm4gUI/view?usp=drive_link",
+        "https://drive.google.com/file/d/1x8dP1swfy3D_zWE_fUrA0HqN1TI1ds7A/view?usp=sharing",
+        "Khan Academy Kids App"
+    ],
+    "student_comments_minh_huy": "Con học ngoan và nghiêm túc. Con chú ý hơn nhé. Con đã trả lời tốt cấu trúc “May I …?”. Con đã nắm được cách phát âm của âm /oo/ như ‘look, book, foot, hook’. Con cũng đã đọc truyện “All sorts of dogs” tốt với câu ‘This dog has long ears’. Về nhà, con nhớ ôn tập lại bài và hoàn thành đầy đủ bài tập về nhà nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1qRvhoXSxaOpeoQDY3lrdQlCbi4fjxM3d/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
