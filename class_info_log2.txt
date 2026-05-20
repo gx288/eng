@@ -102325,3 +102325,6 @@ CLL 2_Homework_...
 [2026-05-20 09:44:03] Completed detailed Telegram notifications
 [2026-05-20 09:44:03] Git repository detected
 [2026-05-20 09:44:03] Committing and pushing Report and vocab files to GitHub
+[2026-05-20 09:44:05] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-05-20 09:44:05] Closing WebDriver
+[2026-05-20 09:44:05] Script completed
