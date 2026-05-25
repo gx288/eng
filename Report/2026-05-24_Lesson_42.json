@@ -1,5 +1,39 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "short": "thấp",
+        "sport": "thể thao",
+        "corn": "ngô",
+        "horn": "kèn",
+        "fork": "cái nĩa",
+        "horse": "ngựa",
+        "storm": "bão",
+        "torch": "đèn pin",
+        "play with friends": "chơi với những người bạn",
+        "eat lunch": "ăn trưa",
+        "listen to stories": "nghe những câu truyện",
+        "clean up": "dọn dẹp",
+        "sing songs": "hát các bài hát",
+        "paint": "sơn"
+    },
+    "sentence_structures": {
+        "Tell me about your school": "Hello everyone. My name is … I am … years old.Today I am talking about my school. I color with ….. I glue with …… I like to ……. I like to ……. I like to ……. I like to …… Thank you for listening."
+    },
+    "report_date": "2026-05-24",
+    "lesson_title": "Lesson 42",
+    "homework": "Hoàn thành phần Handwriting lesson 41 trong sách CLL2\nCLL 2_Homework_Lesson 42 (Grapheme or)\n* Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'All for Dad' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://youtu.be/0TKWxjU0UgQ?feature=shared",
+        "https://drive.google.com/file/d/1tv0fHLVK0qEpEUgzAnAjV5X6ODgm4gUI/view?usp=drive_link",
+        "https://quizlet.com/join/SU7CfkKdQ?i=5lxnmh&x=1bqt",
+        "https://drive.google.com/file/d/1iwRIhA34bbjn957OnigJZZEMTAX99wpb/view?usp=drive_link",
+        "https://quizlet.com/vn/991751173/cll2_lesson-41_communicative-english-flash-cards/?i=5g095j&x=1jqt",
+        "https://docs.google.com/document/d/1BBt9jCEqRYP2I39qBzf_J1vHO6XOrPXM3XFPDawCOcs/edit?tab=t.0#heading=h.rwyw2noc30oo",
+        "https://quizlet.com/join/4CszqhHy3?i=5lxnmh&x=1bqt"
+    ],
+    "student_comments_minh_huy": "cannot find info",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1ypVaEOxxbuOJOGPVcH2sOjaVnRgccyew/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"

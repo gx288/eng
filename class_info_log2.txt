@@ -103531,3 +103531,80 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1ypV
 [2026-05-25 15:54:48] Saved processed2.json successfully
 [2026-05-25 15:54:48] Git repository detected
 [2026-05-25 15:54:48] Committing and pushing changes to GitHub
+[2026-05-25 15:54:49] Pushed processed2.json and class_info_log2.txt successfully
+[2026-05-25 15:54:49] Starting PDF processing for report analysis
+[2026-05-25 15:54:49] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1ypVaEOxxbuOJOGPVcH2sOjaVnRgccyew/export?format=pdf
+[2026-05-25 15:54:49] Downloading PDF from https://docs.google.com/document/d/1ypVaEOxxbuOJOGPVcH2sOjaVnRgccyew/export?format=pdf
+[2026-05-25 15:54:50] Successfully downloaded PDF to temp_report.pdf
+[2026-05-25 15:54:50] Extracting text and links from PDF
+[2026-05-25 15:54:51] Extracted 8270 characters and 7 links from PDF
+[2026-05-25 15:54:51] Deleted temporary PDF file: temp_report.pdf
+[2026-05-25 15:54:51] Gemini API attempt 1/3
+[2026-05-25 15:54:51] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-4-26b-a4b-it', 'models/gemma-4-31b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image', 'models/gemini-3-pro-preview', 'models/gemini-3-flash-preview', 'models/gemini-3.1-pro-preview', 'models/gemini-3.1-pro-preview-customtools', 'models/gemini-3.1-flash-lite-preview', 'models/gemini-3.1-flash-lite', 'models/gemini-3-pro-image-preview', 'models/nano-banana-pro-preview', 'models/gemini-3.1-flash-image-preview', 'models/gemini-3.5-flash', 'models/lyria-3-clip-preview', 'models/lyria-3-pro-preview', 'models/gemini-3.1-flash-tts-preview', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-robotics-er-1.6-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/antigravity-preview-05-2026', 'models/deep-research-max-preview-04-2026', 'models/deep-research-preview-04-2026', 'models/deep-research-pro-preview-12-2025']
+[2026-05-25 15:54:51] Using model: models/gemini-2.5-flash
+[2026-05-25 15:55:04] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "short": "thấp",
+    "sport": "thể thao",
+    "corn": "ngô",
+    "horn":...
+[2026-05-25 15:55:04] API attempt 1 successful
+[2026-05-25 15:55:04] Updating Google Sheet 'ReportContent' with extracted data
+[2026-05-25 15:55:05] Inserted 19 rows to 'ReportContent' after header
+[2026-05-25 15:55:05] Processing total vocabulary
+[2026-05-25 15:55:05] Loaded existing vocabulary from vocab_total.json: 531 entries
+[2026-05-25 15:55:05] Added 6 new vocabulary entries. Total vocabulary: 537
+[2026-05-25 15:55:05] Saving updated vocabulary to vocab_total.json
+[2026-05-25 15:55:05] Successfully saved vocab_total.json
+[2026-05-25 15:55:05] Updating Google Sheet 'vocab' with total vocabulary
+[2026-05-25 15:55:06] Updated Google Sheet 'vocab' successfully with 537 vocabulary entries
+[2026-05-25 15:55:06] Creating Report directory if not exists
+[2026-05-25 15:55:06] Saving result to Report/2026-05-24_Lesson_42.json
+[2026-05-25 15:55:06] Successfully saved: Report/2026-05-24_Lesson_42.json
+[2026-05-25 15:55:06] Starting detailed Telegram notifications
+[2026-05-25 15:55:06] Initializing Telegram Bot for detailed messages
+[2026-05-25 15:55:06] Sending detailed Telegram messages to chat_id 1900957785
+[2026-05-25 15:55:06] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-05-24*
+📅 *Ngày*: 2026-05-24
+📚 *Tiêu đề*: Lesson 42
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-05-25 15:55:06] Sent general info message to chat_id 1900957785
+[2026-05-25 15:55:07] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-05-24*
+• `short`: thấp
+• `sport`: thể thao
+• `corn`: ngô
+• `horn`: kèn
+• `fork`:...
+[2026-05-25 15:55:07] Sent vocabulary message to chat_id 1900957785
+[2026-05-25 15:55:08] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-05-24*
+• *Tell me about your school*: Hello everyone. My name is … I am … years...
+[2026-05-25 15:55:08] Sent sentence structures message to chat_id 1900957785
+[2026-05-25 15:55:09] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-05-24*
+Hoàn thành phần Handwriting lesson 41 trong sách CLL2
+CLL 2_Homework_L...
+[2026-05-25 15:55:09] Sent homework message to chat_id 1900957785
+[2026-05-25 15:55:09] Completed sending detailed messages to chat_id 1900957785
+[2026-05-25 15:55:09] Sending detailed Telegram messages to chat_id 1924741087
+[2026-05-25 15:55:09] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-05-24*
+📅 *Ngày*: 2026-05-24
+📚 *Tiêu đề*: Lesson 42
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-05-25 15:55:10] Sent general info message to chat_id 1924741087
+[2026-05-25 15:55:10] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-05-24*
+• `short`: thấp
+• `sport`: thể thao
+• `corn`: ngô
+• `horn`: kèn
+• `fork`:...
+[2026-05-25 15:55:11] Sent vocabulary message to chat_id 1924741087
+[2026-05-25 15:55:11] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-05-24*
+• *Tell me about your school*: Hello everyone. My name is … I am … years...
+[2026-05-25 15:55:11] Sent sentence structures message to chat_id 1924741087
+[2026-05-25 15:55:12] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-05-24*
+Hoàn thành phần Handwriting lesson 41 trong sách CLL2
+CLL 2_Homework_L...
+[2026-05-25 15:55:12] Sent homework message to chat_id 1924741087
+[2026-05-25 15:55:13] Completed sending detailed messages to chat_id 1924741087
+[2026-05-25 15:55:13] Completed detailed Telegram notifications
+[2026-05-25 15:55:13] Git repository detected
+[2026-05-25 15:55:13] Committing and pushing Report and vocab files to GitHub
