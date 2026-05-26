@@ -103829,3 +103829,6 @@ Con có ý thức và tinh thần học tập tốt. Buổi học hôm nay, con 
 [2026-05-26 07:57:00] Completed detailed Telegram notifications
 [2026-05-26 07:57:00] Git repository detected
 [2026-05-26 07:57:00] Committing and pushing Report and vocab files to GitHub
+[2026-05-26 07:57:01] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-05-26 07:57:01] Closing WebDriver
+[2026-05-26 07:57:02] Script completed
