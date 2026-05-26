@@ -8,24 +8,34 @@
         "root": "rễ cây",
         "room": "căn phòng",
         "tool": "công cụ",
-        "primary colours": "màu cơ bản (red, blue, yellow)"
+        "primary colours": "màu cơ bản"
     },
     "sentence_structures": {
-        "What are the three primary colours?": "yellow, red, blue",
+        "What are the three primary colours?": [
+            "yellow, red, blue"
+        ],
         "What colour can you see when mixing [blue and red]?": "It’s….",
         "What colour can you see when mixing blue and yellow?": "It’s green"
     },
     "report_date": "2026-05-17",
     "lesson_title": "Lesson 40",
-    "homework": "Hoàn thành phần Handwriting lesson 39 trong sách CLL2. CLL 2_Homework_Lesson 40 (Grapheme long oo). Vocabulary & Phonics: Quizlet_Lesson 40. E-book: All Sorts of Dogs.webm. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App",
+    "homework": "Hoàn thành phần Handwriting lesson 39 trong sách CLL2\nCLL 2_Homework_Lesson 40 (Grapheme long oo)\n. Vocabulary & Phonics: Quizlet_Lesson 40\n. E-book: All Sorts of Dogs.webm\n. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App",
     "links": [
-        "https://docs.google.com/document/d/1v8w3KQnw_0-JPXtmc0JNgrTPHebKTQ7SDgMG28AI8-w/edit?tab=t.0#heading=h.vnhce8svk50j",
-        "https://quizlet.com/join/zBqk7XAGT?i=5lxnmh&x=1bqt",
+        "All sorts of dogs",
+        "https://www.youtube.com/watch?v=vOZJw-V1qtI",
+        "All Sorts of Dogs.webm",
+        "Hướng dẫn cài đặt và sử dụng Khan Academy Kids App",
+        "https://www.youtube.com/watch?v=MYvJfvaW9Bg",
+        "CLL2_Phonics_Word Set 18 OO (long)",
         "https://drive.google.com/file/d/1tv0fHLVK0qEpEUgzAnAjV5X6ODgm4gUI/view?usp=drive_link",
+        "https://quizlet.com/join/zBqk7XAGT?i=5lxnmh&x=1bqt",
+        "15 Color Recipes made from Red, Blue & Yellow",
+        "Learn Big Numbers 100, 200, 300 up to 1000 Little Flyers",
+        "Quizlet_Lesson 40",
         "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
         "https://quizlet.com/join/SU7CfkKdQ?i=5lxnmh&x=1bqt",
-        "https://www.youtube.com/watch?v=MYvJfvaW9Bg",
-        "https://www.youtube.com/watch?v=vOZJw-V1qtI"
+        "https://docs.google.com/document/d/1v8w3KQnw_0-JPXtmc0JNgrTPHebKTQ7SDgMG28AI8-w/edit?tab=t.0#heading=h.vnhce8svk50j",
+        "Trick words"
     ],
     "student_comments_minh_huy": "Con có ý thức và tinh thần học tập tốt. Buổi học hôm nay, con tích cực tham gia các hoạt động về từ vựng mà giáo viên giáo đưa ra. Ngoài ra, con cũng đã đọc tốt âm /oo/ cùng từ vựng đi kèm. Con đã áp dụng tốt vào đọc mẩu truyện và con cũng đã ghi nhớ cách đọc các chữ số hàng trăm. Tuy nhiên con cần chú ý hơn kiến thức về primary colors nhé. Con về nhớ hoàn thành bài tập về nhà nhé.",
     "class_name": "VQ2-C2-2504",
@@ -2134,6 +2144,50 @@
         {
             "word": "primary colours",
             "meaning": "màu cơ bản (red, blue, yellow)"
+        },
+        {
+            "word": "card",
+            "meaning": "thẻ"
+        },
+        {
+            "word": "yarn",
+            "meaning": "sợi chỉ"
+        },
+        {
+            "word": "farmyard",
+            "meaning": "trang trại"
+        },
+        {
+            "word": "bark",
+            "meaning": "tiếng sủa"
+        },
+        {
+            "word": "garden",
+            "meaning": "vườn"
+        },
+        {
+            "word": "sport",
+            "meaning": "thể thao"
+        },
+        {
+            "word": "horn",
+            "meaning": "kèn"
+        },
+        {
+            "word": "fork",
+            "meaning": "cái nĩa"
+        },
+        {
+            "word": "horse",
+            "meaning": "ngựa"
+        },
+        {
+            "word": "storm",
+            "meaning": "bão"
+        },
+        {
+            "word": "torch",
+            "meaning": "đèn pin"
         }
     ]
 }

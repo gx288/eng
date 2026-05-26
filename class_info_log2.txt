@@ -103744,3 +103744,88 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1lV9
 [2026-05-26 07:56:37] Saved processed2.json successfully
 [2026-05-26 07:56:37] Git repository detected
 [2026-05-26 07:56:37] Committing and pushing changes to GitHub
+[2026-05-26 07:56:39] Pushed processed2.json and class_info_log2.txt successfully
+[2026-05-26 07:56:39] Starting PDF processing for report analysis
+[2026-05-26 07:56:39] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1lV9raW3Z6DLLX_LJYMxpzA221ZDx30Gj/export?format=pdf
+[2026-05-26 07:56:39] Downloading PDF from https://docs.google.com/document/d/1lV9raW3Z6DLLX_LJYMxpzA221ZDx30Gj/export?format=pdf
+[2026-05-26 07:56:39] Successfully downloaded PDF to temp_report.pdf
+[2026-05-26 07:56:39] Extracting text and links from PDF
+[2026-05-26 07:56:41] Extracted 8651 characters and 11 links from PDF
+[2026-05-26 07:56:41] Deleted temporary PDF file: temp_report.pdf
+[2026-05-26 07:56:41] Gemini API attempt 1/3
+[2026-05-26 07:56:41] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-4-26b-a4b-it', 'models/gemma-4-31b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image', 'models/gemini-3-pro-preview', 'models/gemini-3-flash-preview', 'models/gemini-3.1-pro-preview', 'models/gemini-3.1-pro-preview-customtools', 'models/gemini-3.1-flash-lite-preview', 'models/gemini-3.1-flash-lite', 'models/gemini-3-pro-image-preview', 'models/nano-banana-pro-preview', 'models/gemini-3.1-flash-image-preview', 'models/gemini-3.5-flash', 'models/lyria-3-clip-preview', 'models/lyria-3-pro-preview', 'models/gemini-3.1-flash-tts-preview', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-robotics-er-1.6-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/antigravity-preview-05-2026', 'models/deep-research-max-preview-04-2026', 'models/deep-research-preview-04-2026', 'models/deep-research-pro-preview-12-2025']
+[2026-05-26 07:56:41] Using model: models/gemini-2.5-flash
+[2026-05-26 07:56:50] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "food": "thức ăn",
+    "spoon": "cái thìa",
+    "moon": "mặt trăng",
+   ...
+[2026-05-26 07:56:50] API attempt 1 successful
+[2026-05-26 07:56:50] Updating Google Sheet 'ReportContent' with extracted data
+[2026-05-26 07:56:51] Inserted 14 rows to 'ReportContent' after header
+[2026-05-26 07:56:51] Processing total vocabulary
+[2026-05-26 07:56:51] Loaded existing vocabulary from vocab_total.json: 537 entries
+[2026-05-26 07:56:51] Added 0 new vocabulary entries. Total vocabulary: 537
+[2026-05-26 07:56:51] Saving updated vocabulary to vocab_total.json
+[2026-05-26 07:56:51] Successfully saved vocab_total.json
+[2026-05-26 07:56:51] Updating Google Sheet 'vocab' with total vocabulary
+[2026-05-26 07:56:52] Updated Google Sheet 'vocab' successfully with 537 vocabulary entries
+[2026-05-26 07:56:52] Creating Report directory if not exists
+[2026-05-26 07:56:52] Saving result to Report/2026-05-17_Lesson_40.json
+[2026-05-26 07:56:52] Successfully saved: Report/2026-05-17_Lesson_40.json
+[2026-05-26 07:56:52] Starting detailed Telegram notifications
+[2026-05-26 07:56:52] Initializing Telegram Bot for detailed messages
+[2026-05-26 07:56:52] Sending detailed Telegram messages to chat_id 1900957785
+[2026-05-26 07:56:52] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-05-17*
+📅 *Ngày*: 2026-05-17
+📚 *Tiêu đề*: Lesson 40
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-05-26 07:56:52] Sent general info message to chat_id 1900957785
+[2026-05-26 07:56:53] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-05-17*
+• `food`: thức ăn
+• `spoon`: cái thìa
+• `moon`: mặt trăng
+• `boot`: ủng
+•...
+[2026-05-26 07:56:53] Sent vocabulary message to chat_id 1900957785
+[2026-05-26 07:56:54] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-05-17*
+• *What are the three primary colours?*: yellow, red, blue
+• *What colou...
+[2026-05-26 07:56:54] Sent sentence structures message to chat_id 1900957785
+[2026-05-26 07:56:54] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-05-17*
+Hoàn thành phần Handwriting lesson 39 trong sách CLL2
+CLL 2_Homework_L...
+[2026-05-26 07:56:55] Sent homework message to chat_id 1900957785
+[2026-05-26 07:56:55] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-05-17*
+Con có ý thức và tinh thần học tập tốt. Buổi học hôm nay, con tí...
+[2026-05-26 07:56:55] Sent comments message to chat_id 1900957785
+[2026-05-26 07:56:56] Completed sending detailed messages to chat_id 1900957785
+[2026-05-26 07:56:56] Sending detailed Telegram messages to chat_id 1924741087
+[2026-05-26 07:56:56] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-05-17*
+📅 *Ngày*: 2026-05-17
+📚 *Tiêu đề*: Lesson 40
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-05-26 07:56:56] Sent general info message to chat_id 1924741087
+[2026-05-26 07:56:57] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-05-17*
+• `food`: thức ăn
+• `spoon`: cái thìa
+• `moon`: mặt trăng
+• `boot`: ủng
+•...
+[2026-05-26 07:56:57] Sent vocabulary message to chat_id 1924741087
+[2026-05-26 07:56:57] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-05-17*
+• *What are the three primary colours?*: yellow, red, blue
+• *What colou...
+[2026-05-26 07:56:58] Sent sentence structures message to chat_id 1924741087
+[2026-05-26 07:56:58] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-05-17*
+Hoàn thành phần Handwriting lesson 39 trong sách CLL2
+CLL 2_Homework_L...
+[2026-05-26 07:56:59] Sent homework message to chat_id 1924741087
+[2026-05-26 07:56:59] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-05-17*
+Con có ý thức và tinh thần học tập tốt. Buổi học hôm nay, con tí...
+[2026-05-26 07:56:59] Sent comments message to chat_id 1924741087
+[2026-05-26 07:57:00] Completed sending detailed messages to chat_id 1924741087
+[2026-05-26 07:57:00] Completed detailed Telegram notifications
+[2026-05-26 07:57:00] Git repository detected
+[2026-05-26 07:57:00] Committing and pushing Report and vocab files to GitHub
