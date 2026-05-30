@@ -104518,3 +104518,94 @@ Con có ý thức và tinh thần học tập tốt. Buổi học hôm nay, con 
 [2026-05-30 19:24:27] Class VQ2-C2-2504 on 2026-05-17 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1lV9raW3Z6DLLX_LJYMxpzA221ZDx30Gj/export?format=pdf
 [2026-05-30 19:24:27] Closing WebDriver
 [2026-05-30 19:24:27] Script completed
+[2026-05-30 21:04:25] Starting script
+[2026-05-30 21:04:25] Starting report check for calendar overview
+[2026-05-30 21:04:25] Loaded processed2.json: {'date': '2026-05-17', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1lV9raW3Z6DLLX_LJYMxpzA221ZDx30Gj/export?format=pdf'}
+[2026-05-30 21:04:25] Writing Google credentials to credentials.json
+[2026-05-30 21:04:25] Credentials written successfully
+[2026-05-30 21:04:25] Initializing Chrome WebDriver
+[2026-05-30 21:04:27] WebDriver session ID: 6ba8d3fee989a34d0f75a6df56a37000
+[2026-05-30 21:04:27] Navigating to login page: https://apps.cec.com.vn/login
+[2026-05-30 21:04:31] Login attempt 1/3
+[2026-05-30 21:04:31] Entering password
+[2026-05-30 21:04:31] Clicking login button
+[2026-05-30 21:04:41] Login attempt 1/3 failed: Message: 
+
+[2026-05-30 21:04:41] No specific error message found on login page
+[2026-05-30 21:04:44] Login attempt 2/3
+[2026-05-30 21:04:44] Entering password
+[2026-05-30 21:04:44] Clicking login button
+[2026-05-30 21:04:44] Login attempt 2/3 failed: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=148.0.7778.215); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+#0 0x5649d3e9716a <unknown>
+#1 0x5649d38946b9 <unknown>
+#2 0x5649d389b89b <unknown>
+#3 0x5649d389e11b <unknown>
+#4 0x5649d389e1c3 <unknown>
+#5 0x5649d38eacc3 <unknown>
+#6 0x5649d38e9f2a <unknown>
+#7 0x5649d38de531 <unknown>
+#8 0x5649d38dda87 <unknown>
+#9 0x5649d3930cbf <unknown>
+#10 0x5649d38dc222 <unknown>
+#11 0x5649d38dd011 <unknown>
+#12 0x5649d3e5ca0b <unknown>
+#13 0x5649d3e5f92d <unknown>
+#14 0x5649d3e49948 <unknown>
+#15 0x5649d3e604c0 <unknown>
+#16 0x5649d3e30560 <unknown>
+#17 0x5649d3e83dd8 <unknown>
+#18 0x5649d3e83f75 <unknown>
+#19 0x5649d3e95bce <unknown>
+#20 0x7feea709caa4 <unknown>
+#21 0x7feea7129c6c <unknown>
+
+[2026-05-30 21:04:44] No specific error message found on login page
+[2026-05-30 21:04:47] Login attempt 3/3
+[2026-05-30 21:05:17] Login attempt 3/3 failed: Message: 
+Stacktrace:
+#0 0x5649d3e9716a <unknown>
+#1 0x5649d38946b9 <unknown>
+#2 0x5649d38e8c0d <unknown>
+#3 0x5649d38e8e51 <unknown>
+#4 0x5649d3933b24 <unknown>
+#5 0x5649d3930cbf <unknown>
+#6 0x5649d38dc222 <unknown>
+#7 0x5649d38dd011 <unknown>
+#8 0x5649d3e5ca0b <unknown>
+#9 0x5649d3e5f92d <unknown>
+#10 0x5649d3e49948 <unknown>
+#11 0x5649d3e604c0 <unknown>
+#12 0x5649d3e30560 <unknown>
+#13 0x5649d3e83dd8 <unknown>
+#14 0x5649d3e83f75 <unknown>
+#15 0x5649d3e95bce <unknown>
+#16 0x7feea709caa4 <unknown>
+#17 0x7feea7129c6c <unknown>
+
+[2026-05-30 21:05:17] No specific error message found on login page
+[2026-05-30 21:05:17] Max login retries reached
+[2026-05-30 21:05:17] Error checking reports: Login failed after 3 attempts: Message: 
+Stacktrace:
+#0 0x5649d3e9716a <unknown>
+#1 0x5649d38946b9 <unknown>
+#2 0x5649d38e8c0d <unknown>
+#3 0x5649d38e8e51 <unknown>
+#4 0x5649d3933b24 <unknown>
+#5 0x5649d3930cbf <unknown>
+#6 0x5649d38dc222 <unknown>
+#7 0x5649d38dd011 <unknown>
+#8 0x5649d3e5ca0b <unknown>
+#9 0x5649d3e5f92d <unknown>
+#10 0x5649d3e49948 <unknown>
+#11 0x5649d3e604c0 <unknown>
+#12 0x5649d3e30560 <unknown>
+#13 0x5649d3e83dd8 <unknown>
+#14 0x5649d3e83f75 <unknown>
+#15 0x5649d3e95bce <unknown>
+#16 0x7feea709caa4 <unknown>
+#17 0x7feea7129c6c <unknown>
+
+[2026-05-30 21:05:17] Closing WebDriver
+[2026-05-30 21:05:17] Script completed
