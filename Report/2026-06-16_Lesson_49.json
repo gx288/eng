@@ -1,5 +1,42 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "tinfoil": "lá thiếc",
+        "coin": "đồng xu",
+        "soil": "đất",
+        "point": "chỉ tay",
+        "oil": "dầu",
+        "join": "tham gia",
+        "boil": "đun sôi",
+        "toilet": "nhà vệ sinh",
+        "jump rope": "dây nhảy",
+        "towel": "khăn tắm",
+        "toothbrush": "bàn chải đánh răng",
+        "soap": "xà phòng",
+        "brush": "bàn chải"
+    },
+    "sentence_structures": {
+        "(He/She) takes care of (himself/Herself).": [],
+        "(He/She) washes (his/her) hands with soap.": []
+    },
+    "report_date": "2026-06-16",
+    "lesson_title": "Lesson 49",
+    "homework": "Hoàn thành phần Handwriting lesson 49 trong sách CLL2.\nCLL 2_Homework_Lesson 49.\nVocabulary & Phonics: Quizlet_Lesson 49\nKhan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App*\nChuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Back on the road' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "Quizlet_Lesson 49",
+        "https://drive.google.com/file/d/1cQAZNClbFhP22z33GThRwSrge0rNga38/view?usp=drive_link",
+        "https://quizlet.com/vn/979686689/cll2_phonics_word-set-23_oi-flash-cards/?funnelUUID=d88bd226-cea6-45de-b578-14a7a8e2a7e6",
+        "Khan Academy Kids App",
+        "https://docs.google.com/document/d/1kDP2-VZwHxS1xzidU48cjrPXzCvIU_dQXYQUNUKFga4/edit?tab=t.0#heading=h.g7srpo6gbxha",
+        "https://youtu.be/CgR1fEDi1jE?feature=shared",
+        "At the Fair.mp3",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "At the Fair (Landscape).pdf",
+        "https://drive.google.com/file/d/1o8rzsuSKcbbZqOlziCV9gJofV6F62eTG/view?usp=drive_link"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Tuy nhiên, con còn hay ra khỏi chỗ và làm việc riêng nhiều. Buổi học hôm nay, con đã nắm được cách phát âm âm /oi/ và nhận diện tốt các từ vựng đi kèm: boil, tinfoil, coin, toilet. Con cũng đọc tốt mẩu chuyện ‘At the fairs’. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1pzmNQxAWCU2DXd9nT5eg9NpuNMT5YnvJ/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
