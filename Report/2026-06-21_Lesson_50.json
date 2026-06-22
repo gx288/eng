@@ -1,5 +1,53 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "ear": "tai",
+        "fear": "nỗi sợ",
+        "near": "gần",
+        "year": "năm",
+        "beard": "bộ râu",
+        "hear": "nghe",
+        "tear": "khóc",
+        "dear": "gửi",
+        "deep": "sâu",
+        "hard": "khó khăn",
+        "road": "con đường",
+        "tired": "mệt mỏi",
+        "hungry": "đói",
+        "thirsty": "khát",
+        "sick": "ốm",
+        "dirty": "bẩn",
+        "squares": "hình vuông",
+        "rectangles": "hình chữ nhật",
+        "circles": "hình tròn",
+        "stars": "hình ngôi sao"
+    },
+    "sentence_structures": {
+        "How do you feel?": [
+            "I feel hungry.",
+            "I feel thirsty.",
+            "I feel tired.",
+            "I feel sick.",
+            "I feel dirty."
+        ]
+    },
+    "report_date": "2026-06-21",
+    "lesson_title": "Lesson 50",
+    "homework": "CLL 2_Homework_Lesson 50 (Grapheme ear). Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'At the fair' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/join/nHYm3tvpQ?i=5lxnmh&x=1bqt",
+        "https://youtu.be/4JSwmP61nXo?feature=shared",
+        "https://docs.google.com/document/d/15qP9UaNwuK0Ui1a_uAVkZxSlSUj8AWwZhl8TPRdm2pU/edit?tab=t.0#heading=h.lsu6d0y2hk65",
+        "https://drive.google.com/file/d/1czz9l5n1syIEMpqKOxcrlj3EGRkEP3mS/view?usp=drive_link",
+        "CLL2_Phonic_Word Set_24_EAR",
+        "CLL2_Lesson 50_Communicative English",
+        "https://quizlet.com/join/qrfeYz3mZ?i=5lxnmh&x=1bqt",
+        "Back on the road.webm",
+        "ear Words | Phase 3 Phonics | Trigraph"
+    ],
+    "student_comments_minh_huy": "Con đọc được một số từ có âm ‘ear’ như ‘beard, hear, ear’ khi có giáo viên hỗ trợ, tuy nhiên con cần chú ý bật âm cuối (ending sound) rõ hơn nhé. Trong hoạt động đọc truyện ‘Back on the road’, con đọc theo đồng thanh tốt và nhận diện được tranh minh họa trong câu chuyện. Con có thể trả lời được ‘I feel thirsty’. Con cần hoàn thành bài tập đầy đủ ở nhà để củng cố kỹ năng đọc và viết nhé!",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1MSrJsz9SsGUZ4uN4nY5lbZv20HC9u-Rv/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
