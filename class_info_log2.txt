@@ -109793,3 +109793,88 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1eEI
 [2026-06-29 14:09:24] Saved processed2.json successfully
 [2026-06-29 14:09:24] Git repository detected
 [2026-06-29 14:09:24] Committing and pushing changes to GitHub
+[2026-06-29 14:09:26] Pushed processed2.json and class_info_log2.txt successfully
+[2026-06-29 14:09:26] Starting PDF processing for report analysis
+[2026-06-29 14:09:26] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1eEIp9Ph7aZqgdPLPPTtSHF9KxWGaDyJ7/export?format=pdf
+[2026-06-29 14:09:26] Downloading PDF from https://docs.google.com/document/d/1eEIp9Ph7aZqgdPLPPTtSHF9KxWGaDyJ7/export?format=pdf
+[2026-06-29 14:09:27] Successfully downloaded PDF to temp_report.pdf
+[2026-06-29 14:09:27] Extracting text and links from PDF
+[2026-06-29 14:09:28] Extracted 7931 characters and 8 links from PDF
+[2026-06-29 14:09:28] Deleted temporary PDF file: temp_report.pdf
+[2026-06-29 14:09:28] Gemini API attempt 1/3
+[2026-06-29 14:09:28] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-4-26b-a4b-it', 'models/gemma-4-31b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image', 'models/gemini-3-pro-preview', 'models/gemini-3-flash-preview', 'models/gemini-3.1-pro-preview', 'models/gemini-3.1-pro-preview-customtools', 'models/gemini-3.1-flash-lite-preview', 'models/gemini-3.1-flash-lite', 'models/gemini-3-pro-image-preview', 'models/gemini-3-pro-image', 'models/nano-banana-pro-preview', 'models/gemini-3.1-flash-image-preview', 'models/gemini-3.1-flash-image', 'models/gemini-3.5-flash', 'models/lyria-3-clip-preview', 'models/lyria-3-pro-preview', 'models/gemini-3.1-flash-tts-preview', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-robotics-er-1.6-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/antigravity-preview-05-2026', 'models/deep-research-max-preview-04-2026', 'models/deep-research-preview-04-2026', 'models/deep-research-pro-preview-12-2025']
+[2026-06-29 14:09:28] Using model: models/gemini-2.5-flash
+[2026-06-29 14:09:34] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "queen": "hoàng hậu",
+    "quiz": "câu đố",
+    "quill": "lông",
+    "qu...
+[2026-06-29 14:09:34] API attempt 1 successful
+[2026-06-29 14:09:34] Updating Google Sheet 'ReportContent' with extracted data
+[2026-06-29 14:09:35] Inserted 57 rows to 'ReportContent' after header
+[2026-06-29 14:09:35] Processing total vocabulary
+[2026-06-29 14:09:35] Loaded existing vocabulary from vocab_total.json: 565 entries
+[2026-06-29 14:09:35] Added 9 new vocabulary entries. Total vocabulary: 574
+[2026-06-29 14:09:35] Saving updated vocabulary to vocab_total.json
+[2026-06-29 14:09:35] Successfully saved vocab_total.json
+[2026-06-29 14:09:35] Updating Google Sheet 'vocab' with total vocabulary
+[2026-06-29 14:09:36] Updated Google Sheet 'vocab' successfully with 574 vocabulary entries
+[2026-06-29 14:09:36] Creating Report directory if not exists
+[2026-06-29 14:09:36] Saving result to Report/2026-06-28_Lesson_52.json
+[2026-06-29 14:09:36] Successfully saved: Report/2026-06-28_Lesson_52.json
+[2026-06-29 14:09:36] Starting detailed Telegram notifications
+[2026-06-29 14:09:36] Initializing Telegram Bot for detailed messages
+[2026-06-29 14:09:36] Sending detailed Telegram messages to chat_id 1900957785
+[2026-06-29 14:09:36] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-06-28*
+📅 *Ngày*: 2026-06-28
+📚 *Tiêu đề*: Lesson 52
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-06-29 14:09:36] Sent general info message to chat_id 1900957785
+[2026-06-29 14:09:37] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-06-28*
+• `queen`: hoàng hậu
+• `quiz`: câu đố
+• `quill`: lông
+• `quick`: nhanh
+• ...
+[2026-06-29 14:09:37] Sent vocabulary message to chat_id 1900957785
+[2026-06-29 14:09:38] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-06-28*
+• *What is it?*: It’s a … .
+• *What are they?*: They’re …
+• *Do you like...
+[2026-06-29 14:09:38] Sent sentence structures message to chat_id 1900957785
+[2026-06-29 14:09:39] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-06-28*
+52. CLL2 - Lesson 52 (Review graphemes qu, ch, sh, th, ng). Quý PHHS v...
+[2026-06-29 14:09:39] Sent homework message to chat_id 1900957785
+[2026-06-29 14:09:39] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-06-28*
+Con tham gia lớp học nghiêm túc, chú ý lắng nghe và hợp tác tốt ...
+[2026-06-29 14:09:40] Sent comments message to chat_id 1900957785
+[2026-06-29 14:09:40] Completed sending detailed messages to chat_id 1900957785
+[2026-06-29 14:09:40] Sending detailed Telegram messages to chat_id 1924741087
+[2026-06-29 14:09:40] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-06-28*
+📅 *Ngày*: 2026-06-28
+📚 *Tiêu đề*: Lesson 52
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-06-29 14:09:41] Sent general info message to chat_id 1924741087
+[2026-06-29 14:09:41] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-06-28*
+• `queen`: hoàng hậu
+• `quiz`: câu đố
+• `quill`: lông
+• `quick`: nhanh
+• ...
+[2026-06-29 14:09:41] Sent vocabulary message to chat_id 1924741087
+[2026-06-29 14:09:42] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-06-28*
+• *What is it?*: It’s a … .
+• *What are they?*: They’re …
+• *Do you like...
+[2026-06-29 14:09:42] Sent sentence structures message to chat_id 1924741087
+[2026-06-29 14:09:43] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-06-28*
+52. CLL2 - Lesson 52 (Review graphemes qu, ch, sh, th, ng). Quý PHHS v...
+[2026-06-29 14:09:43] Sent homework message to chat_id 1924741087
+[2026-06-29 14:09:44] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-06-28*
+Con tham gia lớp học nghiêm túc, chú ý lắng nghe và hợp tác tốt ...
+[2026-06-29 14:09:44] Sent comments message to chat_id 1924741087
+[2026-06-29 14:09:44] Completed sending detailed messages to chat_id 1924741087
+[2026-06-29 14:09:44] Completed detailed Telegram notifications
+[2026-06-29 14:09:44] Git repository detected
+[2026-06-29 14:09:44] Committing and pushing Report and vocab files to GitHub
