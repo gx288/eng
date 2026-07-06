@@ -1,5 +1,49 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "stair": "cầu thang",
+        "airport": "sân bay",
+        "hair": "mái tóc",
+        "repair": "sửa chữa",
+        "pair": "đôi, cặp",
+        "fair": "hội chợ",
+        "chair": "cái ghế",
+        "take care of ourselves": "chăm sóc bản thân",
+        "hair brush": "lược",
+        "soap": "xà phòng",
+        "sick": "ốm",
+        "take medicine": "uống thuốc",
+        "hungry": "đói",
+        "eat healthy food": "ăn thực phẩm lành mạnh"
+    },
+    "sentence_structures": {
+        "I can see ____": "Tôi nhìn thấy____",
+        "I ___ with a ___.": "Tôi ____ bằng____",
+        "I (brush my hair) with a (hair brush).": "Tôi chải tóc bằng lược.",
+        "I (wash my hands) with (soap).": "Tôi rửa tay bằng xà phòng.",
+        "I am ___. I need to .": "Tôi ___. Tôi cần____",
+        "I am (sick). I need to (take medicine).": "Tôi bị ốm. Tôi cần uống thuốc.",
+        "I am (hungry). I need to (eat healthy food).": "Tôi đói. Tôi cần ăn thực phẩm lành mạnh."
+    },
+    "report_date": "2026-07-05",
+    "lesson_title": "Lesson 54",
+    "homework": "Các bạn về nhà hoàn thành các bài tập sau: Workbook: lesson 54 - trang 101, 102, 103, 104, 105. Các con ôn tập thêm phần đọc và từ vựng ở các link sau đây: Link tập đọc: All for Dad (Landscape).pdf, At the Fair (Landscape).pdf. Ôn tập Lesson 54: https://quizlet.com/join/rUZTQjQZm?i=5lxnmh&x=1bqt. Phonics video |air|: air Words | Phase 3 Phonics. Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Back on the road' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/file/d/1kY-QCsH9sPPOdU16Yzz3I64zgnTiEUTw/view?usp=drive_link",
+        "All for Dad (Landscape).pdf",
+        "https://youtu.be/uZHKK9jnfFQ?feature=shared",
+        "All for Dad.webm",
+        "https://quizlet.com/join/rUZTQjQZm?i=5lxnmh&x=1bqt",
+        "At the Fair (Landscape).pdf",
+        "https://drive.google.com/file/d/1iwRIhA34bbjn957OnigJZZEMTAX99wpb/view?usp=drive_link",
+        "https://drive.google.com/file/d/1mEYN5bCS0teRX1NtFLUqlooEP0WvbZ9K/view?usp=drive_link",
+        "https://drive.google.com/file/d/1o8rzsuSKcbbZqOlziCV9gJofV6F62eTG/view?usp=drive_link",
+        "At the Fair.webm",
+        "air Words | Phase 3 Phonics"
+    ],
+    "student_comments_minh_huy": "Minh Huy: Con chủ động tham gia hoạt động của lớp, lắng nghe kiến thức mới tuy nhiên còn hay mất tập trung vào việc cá nhân. Con cố gắng chú ý vào bài giảng hơn vào buổi học tới nhé. Con phát âm đúng nhiều từ có phiên âm /air/. Con nên luyện tập thêm để phát âm rõ âm tiết cuối nhé. Trong phần đọc truyện 'All for dad' and 'At the fair' , con đọc đúng mặt chữ và hiểu nội dung chính. Con hoàn thành bài tập đúng yêu cầu và thể hiện sự tiến bộ trong kỹ năng đọc. Về nhà con nhớ hoàn thiện bài tập đầy đủ nhé!",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/19g0LVfHkAaouml06-98Zd44e11GGZce2/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
