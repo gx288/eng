@@ -111430,3 +111430,6 @@ Minh Huy: Con chủ động tham gia hoạt động của lớp, lắng nghe ki�
 [2026-07-06 10:47:20] Completed detailed Telegram notifications
 [2026-07-06 10:47:20] Git repository detected
 [2026-07-06 10:47:20] Committing and pushing Report and vocab files to GitHub
+[2026-07-06 10:47:22] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-07-06 10:47:22] Closing WebDriver
+[2026-07-06 10:47:22] Script completed
