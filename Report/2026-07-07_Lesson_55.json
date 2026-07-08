@@ -1,5 +1,43 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "cure": "chữa trị",
+        "pure": "nguyên chất",
+        "manure": "phân bón",
+        "secure": "an toàn",
+        "mature": "trưởng thành",
+        "living room": "phòng khách",
+        "dining room": "phòng ăn",
+        "kitchen": "nhà bếp",
+        "bedroom": "phòng ngủ",
+        "bathroom": "phòng tắm",
+        "eat": "ăn",
+        "sleep": "ngủ",
+        "cook": "nấu ăn",
+        "study": "học",
+        "read": "đọc",
+        "play": "chơi",
+        "watch tv": "xem tv",
+        "brush my teeth": "đánh răng",
+        "wash my face": "rửa mặt"
+    },
+    "sentence_structures": {
+        "What do you do at home?": "I … in the …"
+    },
+    "report_date": "2026-07-07",
+    "lesson_title": "Lesson 55",
+    "homework": "Hoàn thành phần Handwriting lesson 55 trong sách CLL2. CLL 2_Homework_Lesson 55. Vocabulary & Phonics: Quizlet_Lesson 55. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App. Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Back on the road' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/file/d/1HsHF9gq3oVtwN7sS_nEwmtjZtxHj7SoJ/view?usp=drive_link",
+        "https://docs.google.com/document/d/1QyoRVqsmWRzBW1M1TyVRDfdSCFoLT9kzIHUKC2Rp6jc/edit?tab=t.0#heading=h.lsu6d0y2hk65",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://quizlet.com/vn/979693147/cll2_phonics_word-set-26_ure-flash-cards/?funnelUUID=c322af16-46d8-4203-a3f4-eed2ea1565b4",
+        "https://youtu.be/g_2Oju8WKW4?feature=shared",
+        "https://drive.google.com/file/d/1kr4kDeZomsrXxhiSTgLcbfvsgs74TLF9/view"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Tuy nhiên, con còn hay ra khỏi chỗ và làm việc riêng nhiều. Buổi học hôm nay, con đã nắm được cách phát âm âm /ure/ và nhận diện tốt các từ vựng đi kèm: pure, cure, mature, manure, secure. Con cũng đọc tốt mẩu chuyện ‘Back to the Road’. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1oi3vMZ9bLec7YtXO4LZ1mje1cndoXhth/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
