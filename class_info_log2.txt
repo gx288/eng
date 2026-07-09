@@ -112093,3 +112093,21 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 
 [2026-07-09 19:59:19] Closing WebDriver
 [2026-07-09 19:59:19] Script completed
+[2026-07-09 21:26:03] Starting script
+[2026-07-09 21:26:03] Starting report check for calendar overview
+[2026-07-09 21:26:03] Loaded processed2.json: {'date': '2026-07-07', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1oi3vMZ9bLec7YtXO4LZ1mje1cndoXhth/export?format=pdf'}
+[2026-07-09 21:26:03] Writing Google credentials to credentials.json
+[2026-07-09 21:26:03] Credentials written successfully
+[2026-07-09 21:26:03] Initializing Chrome WebDriver
+[2026-07-09 21:26:05] WebDriver session ID: 4c871b4e9c8e7bb49e74705318e341ad
+[2026-07-09 21:26:05] Navigating to login page: https://apps.cec.com.vn/login
+[2026-07-09 21:26:09] Login attempt 1/3
+[2026-07-09 21:26:09] Entering password
+[2026-07-09 21:26:10] Clicking login button
+[2026-07-09 21:26:12] Login successful
+[2026-07-09 21:26:12] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-07-09 21:26:22] Scrolled to bottom of page
+[2026-07-09 21:26:52] Error checking reports: Message: 
+
+[2026-07-09 21:26:52] Closing WebDriver
+[2026-07-09 21:26:52] Script completed
