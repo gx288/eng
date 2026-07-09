@@ -112033,3 +112033,21 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 [2026-07-09 12:10:05] Class VQ2-C2-2504 on 2026-07-07 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1oi3vMZ9bLec7YtXO4LZ1mje1cndoXhth/export?format=pdf
 [2026-07-09 12:10:05] Closing WebDriver
 [2026-07-09 12:10:05] Script completed
+[2026-07-09 16:01:18] Starting script
+[2026-07-09 16:01:18] Starting report check for calendar overview
+[2026-07-09 16:01:18] Loaded processed2.json: {'date': '2026-07-07', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1oi3vMZ9bLec7YtXO4LZ1mje1cndoXhth/export?format=pdf'}
+[2026-07-09 16:01:18] Writing Google credentials to credentials.json
+[2026-07-09 16:01:18] Credentials written successfully
+[2026-07-09 16:01:18] Initializing Chrome WebDriver
+[2026-07-09 16:01:20] WebDriver session ID: 1a31f1b4d2e57d9f6ac835f5341be819
+[2026-07-09 16:01:20] Navigating to login page: https://apps.cec.com.vn/login
+[2026-07-09 16:01:24] Login attempt 1/3
+[2026-07-09 16:01:24] Entering password
+[2026-07-09 16:01:24] Clicking login button
+[2026-07-09 16:01:31] Login successful
+[2026-07-09 16:01:31] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-07-09 16:01:40] Scrolled to bottom of page
+[2026-07-09 16:02:11] Error checking reports: Message: 
+
+[2026-07-09 16:02:11] Closing WebDriver
+[2026-07-09 16:02:11] Script completed
