@@ -1,5 +1,42 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "mixer": "bộ xử lý âm thanh",
+        "river": "dòng sông",
+        "water": "nước",
+        "flower": "hoa",
+        "finger": "ngón tay",
+        "hammer": "búa",
+        "ladder": "thang",
+        "letter": "lá thư",
+        "wait": "chờ",
+        "sheep": "con cừu",
+        "car": "ô tô",
+        "turn": "rẽ",
+        "airport": "sân bay",
+        "candy": "kẹo",
+        "door": "cửa",
+        "dish": "bát đĩa",
+        "washing dishes": "rửa bát",
+        "taking a shower": "tắm rửa",
+        "singing": "hát"
+    },
+    "sentence_structures": {},
+    "report_date": "2026-07-12",
+    "lesson_title": "Lesson 56",
+    "homework": "Các bạn về nhà hoàn thành các bài tập sau: CLL 2_Homework_Lesson 56 (Grapheme er). Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn ''Off to the airport” đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/file/d/1ARK4ahy06SsFyt395-KyoiQ3DDaO92_q/view?usp=drive_link",
+        "https://youtu.be/Taa3ANEyN_Y?feature=shared",
+        "https://quizlet.com/vn/994217909/cll2_lesson-56_tricky-words-captions-flash-cards/?funnelUUID=1e9e698a-a00e-428b-8042-0427ccad518f",
+        "https://drive.google.com/file/d/1OhToc_AJ_f05Np3JQjVcnxAGpOUKBIHG/view?usp=drive_link",
+        "https://docs.google.com/document/d/1F_eLcyfE2WXLcxX2STT3Ep_QVRLKHi9A1m8zob1PgP8/edit?tab=t.0#heading=h.pvu73uirul52",
+        "https://quizlet.com/vn/994219259/cll2_lesson-56_communicative-english-flash-cards/?funnelUUID=16f35a85-ebec-4aa1-ad17-3aeb31f7da19",
+        "https://quizlet.com/vn/979694499/cll2_phonics_word-set-27_er-flash-cards/?funnelUUID=82f9bf5e-5217-4f31-b6c6-b655c2ab648e"
+    ],
+    "student_comments_minh_huy": "Buổi học hôm nay con chưa tập trung vào bài học, còn để thầy nhắc đọc bài nhiều lần, con chú ý nhé. Ở phần phonics, con cơ bản nắm được âm /er/ song về nhà con hãy ôn tập thêm về từ vựng nhé. Con đọc tốt truyện Off to the airport, song một số chỗ convẫn còn đọc chưa đúng và , con về nhớ luyện đọc thêm nhé. Con về nhà nhớ hoàn thành bài tập đầy đủ nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1xqKdcuBi5FxG4pymmk2BOcSD8WP_iy_a/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"

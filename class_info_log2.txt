@@ -112978,3 +112978,75 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1xqK
 [2026-07-13 11:17:42] Saved processed2.json successfully
 [2026-07-13 11:17:42] Git repository detected
 [2026-07-13 11:17:42] Committing and pushing changes to GitHub
+[2026-07-13 11:17:44] Pushed processed2.json and class_info_log2.txt successfully
+[2026-07-13 11:17:44] Starting PDF processing for report analysis
+[2026-07-13 11:17:44] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1xqKdcuBi5FxG4pymmk2BOcSD8WP_iy_a/export?format=pdf
+[2026-07-13 11:17:44] Downloading PDF from https://docs.google.com/document/d/1xqKdcuBi5FxG4pymmk2BOcSD8WP_iy_a/export?format=pdf
+[2026-07-13 11:17:45] Successfully downloaded PDF to temp_report.pdf
+[2026-07-13 11:17:45] Extracting text and links from PDF
+[2026-07-13 11:17:45] Extracted 6863 characters and 7 links from PDF
+[2026-07-13 11:17:45] Deleted temporary PDF file: temp_report.pdf
+[2026-07-13 11:17:45] Gemini API attempt 1/3
+[2026-07-13 11:17:46] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.0-flash', 'models/gemini-2.0-flash-001', 'models/gemini-2.0-flash-lite-001', 'models/gemini-2.0-flash-lite', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-4-26b-a4b-it', 'models/gemma-4-31b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image', 'models/gemini-3-pro-preview', 'models/gemini-3-flash-preview', 'models/gemini-3.1-pro-preview', 'models/gemini-3.1-pro-preview-customtools', 'models/gemini-3.1-flash-lite-preview', 'models/gemini-3.1-flash-lite', 'models/gemini-3-pro-image-preview', 'models/gemini-3-pro-image', 'models/nano-banana-pro-preview', 'models/gemini-3.1-flash-image-preview', 'models/gemini-3.1-flash-image', 'models/gemini-3.1-flash-lite-image', 'models/gemini-3.5-flash', 'models/gemini-omni-flash-preview', 'models/lyria-3-clip-preview', 'models/lyria-3-pro-preview', 'models/gemini-3.1-flash-tts-preview', 'models/gemini-robotics-er-1.5-preview', 'models/gemini-robotics-er-1.6-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/antigravity-preview-05-2026', 'models/deep-research-max-preview-04-2026', 'models/deep-research-preview-04-2026', 'models/deep-research-pro-preview-12-2025']
+[2026-07-13 11:17:46] Using model: models/gemini-2.5-flash
+[2026-07-13 11:17:54] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "mixer": "bộ xử lý âm thanh",
+    "river": "dòng sông",
+    "water": "nư...
+[2026-07-13 11:17:54] API attempt 1 successful
+[2026-07-13 11:17:54] Updating Google Sheet 'ReportContent' with extracted data
+[2026-07-13 11:17:55] Inserted 24 rows to 'ReportContent' after header
+[2026-07-13 11:17:55] Processing total vocabulary
+[2026-07-13 11:17:55] Loaded existing vocabulary from vocab_total.json: 602 entries
+[2026-07-13 11:17:55] Added 13 new vocabulary entries. Total vocabulary: 615
+[2026-07-13 11:17:55] Saving updated vocabulary to vocab_total.json
+[2026-07-13 11:17:55] Successfully saved vocab_total.json
+[2026-07-13 11:17:55] Updating Google Sheet 'vocab' with total vocabulary
+[2026-07-13 11:17:56] Updated Google Sheet 'vocab' successfully with 615 vocabulary entries
+[2026-07-13 11:17:56] Creating Report directory if not exists
+[2026-07-13 11:17:56] Saving result to Report/2026-07-12_Lesson_56.json
+[2026-07-13 11:17:56] Successfully saved: Report/2026-07-12_Lesson_56.json
+[2026-07-13 11:17:56] Starting detailed Telegram notifications
+[2026-07-13 11:17:56] Initializing Telegram Bot for detailed messages
+[2026-07-13 11:17:56] Sending detailed Telegram messages to chat_id 1900957785
+[2026-07-13 11:17:56] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-07-12*
+📅 *Ngày*: 2026-07-12
+📚 *Tiêu đề*: Lesson 56
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-07-13 11:17:57] Sent general info message to chat_id 1900957785
+[2026-07-13 11:17:57] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-07-12*
+• `mixer`: bộ xử lý âm thanh
+• `river`: dòng sông
+• `water`: nước
+• `flow...
+[2026-07-13 11:17:58] Sent vocabulary message to chat_id 1900957785
+[2026-07-13 11:17:58] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-07-12*
+Các bạn về nhà hoàn thành các bài tập sau: CLL 2_Homework_Lesson 56 (G...
+[2026-07-13 11:17:58] Sent homework message to chat_id 1900957785
+[2026-07-13 11:17:59] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-07-12*
+Buổi học hôm nay con chưa tập trung vào bài học, còn để thầy nhắ...
+[2026-07-13 11:17:59] Sent comments message to chat_id 1900957785
+[2026-07-13 11:18:00] Completed sending detailed messages to chat_id 1900957785
+[2026-07-13 11:18:00] Sending detailed Telegram messages to chat_id 1924741087
+[2026-07-13 11:18:00] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-07-12*
+📅 *Ngày*: 2026-07-12
+📚 *Tiêu đề*: Lesson 56
+🏫 *Lớp*: VQ2-C2-2504...
+[2026-07-13 11:18:00] Sent general info message to chat_id 1924741087
+[2026-07-13 11:18:01] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-07-12*
+• `mixer`: bộ xử lý âm thanh
+• `river`: dòng sông
+• `water`: nước
+• `flow...
+[2026-07-13 11:18:01] Sent vocabulary message to chat_id 1924741087
+[2026-07-13 11:18:02] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-07-12*
+Các bạn về nhà hoàn thành các bài tập sau: CLL 2_Homework_Lesson 56 (G...
+[2026-07-13 11:18:02] Sent homework message to chat_id 1924741087
+[2026-07-13 11:18:02] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-07-12*
+Buổi học hôm nay con chưa tập trung vào bài học, còn để thầy nhắ...
+[2026-07-13 11:18:03] Sent comments message to chat_id 1924741087
+[2026-07-13 11:18:03] Completed sending detailed messages to chat_id 1924741087
+[2026-07-13 11:18:03] Completed detailed Telegram notifications
+[2026-07-13 11:18:03] Git repository detected
+[2026-07-13 11:18:03] Committing and pushing Report and vocab files to GitHub
