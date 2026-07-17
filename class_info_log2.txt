@@ -114273,3 +114273,87 @@ Stacktrace:
 
 [2026-07-17 21:02:10] Closing WebDriver
 [2026-07-17 21:02:10] Script completed
+[2026-07-17 21:57:41] Starting script
+[2026-07-17 21:57:41] Starting report check for calendar overview
+[2026-07-17 21:57:41] Loaded processed2.json: {'date': '2026-07-14', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1oi3vMZ9bLec7YtXO4LZ1mje1cndoXhth/export?format=pdf'}
+[2026-07-17 21:57:41] Writing Google credentials to credentials.json
+[2026-07-17 21:57:41] Credentials written successfully
+[2026-07-17 21:57:41] Initializing Chrome WebDriver
+[2026-07-17 21:57:43] WebDriver session ID: dd7997b78f78cbfcb961ed7fa02f2397
+[2026-07-17 21:57:43] Navigating to login page: https://apps.cec.com.vn/login
+[2026-07-17 21:57:47] Login attempt 1/3
+[2026-07-17 21:57:47] Entering password
+[2026-07-17 21:57:48] Clicking login button
+[2026-07-17 21:57:58] Login attempt 1/3 failed: Message: 
+
+[2026-07-17 21:57:58] No specific error message found on login page
+[2026-07-17 21:58:01] Login attempt 2/3
+[2026-07-17 21:58:31] Login attempt 2/3 failed: Message: 
+Stacktrace:
+#0 0x5595f1f0f44a <unknown>
+#1 0x5595f18e78c9 <unknown>
+#2 0x5595f193cf32 <unknown>
+#3 0x5595f193d181 <unknown>
+#4 0x5595f1988374 <unknown>
+#5 0x5595f198555d <unknown>
+#6 0x5595f19303ff <unknown>
+#7 0x5595f1931261 <unknown>
+#8 0x5595f1ed4cc7 <unknown>
+#9 0x5595f1ed34a8 <unknown>
+#10 0x5595f1ebe196 <unknown>
+#11 0x5595f1ed406a <unknown>
+#12 0x5595f1ea6020 <unknown>
+#13 0x5595f1efab98 <unknown>
+#14 0x5595f1efad35 <unknown>
+#15 0x5595f1f0dffe <unknown>
+#16 0x7f1fc149caa4 <unknown>
+#17 0x7f1fc1529c6c <unknown>
+
+[2026-07-17 21:58:31] No specific error message found on login page
+[2026-07-17 21:58:34] Login attempt 3/3
+[2026-07-17 21:59:04] Login attempt 3/3 failed: Message: 
+Stacktrace:
+#0 0x5595f1f0f44a <unknown>
+#1 0x5595f18e78c9 <unknown>
+#2 0x5595f193cf32 <unknown>
+#3 0x5595f193d181 <unknown>
+#4 0x5595f1988374 <unknown>
+#5 0x5595f198555d <unknown>
+#6 0x5595f19303ff <unknown>
+#7 0x5595f1931261 <unknown>
+#8 0x5595f1ed4cc7 <unknown>
+#9 0x5595f1ed34a8 <unknown>
+#10 0x5595f1ebe196 <unknown>
+#11 0x5595f1ed406a <unknown>
+#12 0x5595f1ea6020 <unknown>
+#13 0x5595f1efab98 <unknown>
+#14 0x5595f1efad35 <unknown>
+#15 0x5595f1f0dffe <unknown>
+#16 0x7f1fc149caa4 <unknown>
+#17 0x7f1fc1529c6c <unknown>
+
+[2026-07-17 21:59:04] No specific error message found on login page
+[2026-07-17 21:59:04] Max login retries reached
+[2026-07-17 21:59:04] Error checking reports: Login failed after 3 attempts: Message: 
+Stacktrace:
+#0 0x5595f1f0f44a <unknown>
+#1 0x5595f18e78c9 <unknown>
+#2 0x5595f193cf32 <unknown>
+#3 0x5595f193d181 <unknown>
+#4 0x5595f1988374 <unknown>
+#5 0x5595f198555d <unknown>
+#6 0x5595f19303ff <unknown>
+#7 0x5595f1931261 <unknown>
+#8 0x5595f1ed4cc7 <unknown>
+#9 0x5595f1ed34a8 <unknown>
+#10 0x5595f1ebe196 <unknown>
+#11 0x5595f1ed406a <unknown>
+#12 0x5595f1ea6020 <unknown>
+#13 0x5595f1efab98 <unknown>
+#14 0x5595f1efad35 <unknown>
+#15 0x5595f1f0dffe <unknown>
+#16 0x7f1fc149caa4 <unknown>
+#17 0x7f1fc1529c6c <unknown>
+
+[2026-07-17 21:59:04] Closing WebDriver
+[2026-07-17 21:59:04] Script completed
