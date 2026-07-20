@@ -115141,3 +115141,6 @@ Buổi học hôm nay, con học tập tương đối tốt và chú ý nghe gi�
 [2026-07-20 10:16:35] Completed detailed Telegram notifications
 [2026-07-20 10:16:35] Git repository detected
 [2026-07-20 10:16:35] Committing and pushing Report and vocab files to GitHub
+[2026-07-20 10:16:37] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-07-20 10:16:37] Closing WebDriver
+[2026-07-20 10:16:37] Script completed
