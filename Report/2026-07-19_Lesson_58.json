@@ -1,5 +1,36 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "goat": "con dê",
+        "cow": "con bò",
+        "burger": "bánh hamburger",
+        "card": "thẻ (bài)",
+        "fork": "cái dĩa",
+        "here": "ở đây (gần)",
+        "there": "ở đó (xa)",
+        "look!": "nhìn kìa!",
+        "set the table": "dọn bàn",
+        "fold the clothes": "gấp quần áo",
+        "make the bed": "dọn giường",
+        "wash the fruit": "rửa hoa quả",
+        "sweep the floor": "lau nhà",
+        "wash the vegetables": "rửa rau",
+        "help": "giúp đỡ"
+    },
+    "sentence_structures": {
+        "What do you do to help at home?": "I make the bed."
+    },
+    "report_date": "2026-07-19",
+    "lesson_title": "Lesson 58",
+    "homework": "Các bạn về nhà hoàn thành các bài tập sau: CLL 2_Homework_Lesson 58 (Review graphemes oa, ar, or, ur, ow). Chuẩn bị buổi học tiếp theo: . Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn ''Chicks on the run' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/vn/994473260/cll2_lesson-58_communicative-english-flash-cards/?funnelUUID=da116d45-107c-4efc-a48f-361d94bcddaa",
+        "https://drive.google.com/file/d/1OhToc_AJ_f05Np3JQjVcnxAGpOUKBIHG/view?usp=drive_link",
+        "https://docs.google.com/document/d/10MilcCm82azOXggkvAVagMYOOK8J1Zug6dkRJ1S_F14/edit?tab=t.0#heading=h.lsu6d0y2hk65"
+    ],
+    "student_comments_minh_huy": "Buổi học hôm nay, con học tập tương đối tốt và chú ý nghe giảng nhưng đôi lúc còn hơi mất tập trung, con chú ý nhé. Con đọc tốt các âm trong phần Phonics và biết tự ghép âm để đọc câu. Ở tricky words, con nhận diện nhanh và đọc đúng trong ngữ cảnh. Khi đọc sách, con hiểu nội dung chính và kể lại câu chuyện rõ ràng. Con trả lời tốt các câu hỏi về việc giúp đỡ gia đình. Con về nhà nhớ hoàn thành bài tập đúng hạn nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wOULoeaq82WrxJLPtGCbMe_PMHhs3K-n/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
