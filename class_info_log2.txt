@@ -115728,3 +115728,6 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 [2026-07-22 11:51:36] Completed detailed Telegram notifications
 [2026-07-22 11:51:36] Git repository detected
 [2026-07-22 11:51:36] Committing and pushing Report and vocab files to GitHub
+[2026-07-22 11:51:38] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-07-22 11:51:38] Closing WebDriver
+[2026-07-22 11:51:38] Script completed
