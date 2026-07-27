@@ -117156,3 +117156,6 @@ Con tham gia tiết học tích cực, song con vẫn hay làm việc riêng ...
 [2026-07-27 14:46:57] Completed detailed Telegram notifications
 [2026-07-27 14:46:57] Git repository detected
 [2026-07-27 14:46:57] Committing and pushing Report and vocab files to GitHub
+[2026-07-27 14:46:59] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-07-27 14:46:59] Closing WebDriver
+[2026-07-27 14:46:59] Script completed
