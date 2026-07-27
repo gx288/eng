@@ -1,5 +1,54 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "cheep": "tiếng chiêm chiếp",
+        "cheek": "má",
+        "church": "nhà thờ",
+        "coach": "huấn luyện viên",
+        "chain": "chuỗi",
+        "arch": "vòm, mái vòm",
+        "march": "tháng 3",
+        "torch": "đèn pin",
+        "like": "thích",
+        "where": "ở đâu",
+        "likes": "thích",
+        "in": "trong",
+        "by": "bên cạnh",
+        "on": "trên",
+        "in front of": "phía trước",
+        "under": "dưới",
+        "behind": "đằng sau",
+        "make the bed": "dọn giường",
+        "sweep the floor": "lau sàn",
+        "set the table": "dọn bàn",
+        "watch tv": "xem tivi",
+        "cook": "nấu ăn"
+    },
+    "sentence_structures": {
+        "what does she/he do?": "He cooks"
+    },
+    "report_date": "2026-07-26",
+    "lesson_title": "Lesson 60",
+    "homework": "CLL 2_Homework_Lesson 60. Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn ''Chicks on the run' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/vn/995048466/cll2_lesson-60_tricky-words-captions-flash-cards/?funnelUUID=02b77948-2de3-453b-b124-d66b3b61db55",
+        "https://drive.google.com/file/d/1ARK4ahy06SsFyt395-KyoiQ3DDaO92_q/view?usp=sharing",
+        "https://youtube.com/playlist?list=PLetiKvWftA5vy3w2uzkQT0rqnEVD0GJzV&si=MFn7YN9mp1mn4ey_",
+        "Rhino Reader Phase 3b Chick on the run",
+        "CLL2 Lesson 60 Tricky words & Captions",
+        "CL2 Phonics Word Set 28",
+        "CLL2_Lesson 59_Communicative English",
+        "https://quizlet.com/vn/995045663/cll2_lesson-59_communicative-english-flash-cards/?i=583cdq&x=1jqt",
+        "CLL 2_Homework_Lesson 60",
+        "https://youtu.be/fseGHTXZUT4?feature=shared",
+        "https://quizlet.com/vn/979695272/cll2_phonics_word-set-28-flash-cards/?funnelUUID=78562f52-6a5f-4ef4-8de9-b87259a86c7c",
+        "https://docs.google.com/document/d/1U0EPlYMOrLNYwXh_5IjGZ3IKbFMairz_wo3S97zu1hk/edit?tab=t.0#heading=h.383h1575gj2k",
+        "https://drive.google.com/file/d/1xIsf7PnAr31EE9xDC_DBFdqvL8y2AFjN/view?usp=drive_link",
+        "Chick on the run.mp3"
+    ],
+    "student_comments_minh_huy": "Con tham gia tiết học tích cực, song con vẫn hay làm việc riêng trong giờ và đôi khi mất tập trung, con hãy chú ý hơn nhé. Con đã biết ghép âm chính xác. Ở bài đọc, con tự ghép âm để đọc sách Rhino Reader, thể hiện kỹ năng đọc khá tốt. Con mô tả được vị trí vật thể bằng câu đơn giản và nêu được các hoạt động gia đình đầy đủ. Con về nhớ hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1regaHaiqayDaA64wlfBkrlrbMpLi_BfO/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
