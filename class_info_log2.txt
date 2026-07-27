@@ -116967,3 +116967,41 @@ Stacktrace:
 
 [2026-07-26 22:07:04] Closing WebDriver
 [2026-07-26 22:07:04] Script completed
+[2026-07-27 00:04:21] Starting script
+[2026-07-27 00:04:21] Starting report check for calendar overview
+[2026-07-27 00:04:21] Loaded processed2.json: {'date': '2026-07-21', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1o32IUosSewbWrtSsOHYq64Yi0o1EmSoQ/export?format=pdf'}
+[2026-07-27 00:04:21] Writing Google credentials to credentials.json
+[2026-07-27 00:04:21] Credentials written successfully
+[2026-07-27 00:04:21] Initializing Chrome WebDriver
+[2026-07-27 00:04:22] WebDriver session ID: 70b46bf3d464e1f4c0aa9698edd761cf
+[2026-07-27 00:04:22] Navigating to login page: https://apps.cec.com.vn/login
+[2026-07-27 00:05:22] Error checking reports: Message: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=150.0.7871.186)
+Stacktrace:
+#0 0x558ffbb1544a <unknown>
+#1 0x558ffb4ed8c9 <unknown>
+#2 0x558ffb4d535a <unknown>
+#3 0x558ffb4d4fd6 <unknown>
+#4 0x558ffb4d2bbe <unknown>
+#5 0x558ffb4d353f <unknown>
+#6 0x558ffb4e2710 <unknown>
+#7 0x558ffb4fc617 <unknown>
+#8 0x558ffb503e8b <unknown>
+#9 0x558ffb4d3c99 <unknown>
+#10 0x558ffb4fc372 <unknown>
+#11 0x558ffb58b420 <unknown>
+#12 0x558ffb5363ff <unknown>
+#13 0x558ffb537261 <unknown>
+#14 0x558ffbadacc7 <unknown>
+#15 0x558ffbad94a8 <unknown>
+#16 0x558ffbac4196 <unknown>
+#17 0x558ffbada06a <unknown>
+#18 0x558ffbaac020 <unknown>
+#19 0x558ffbb00b98 <unknown>
+#20 0x558ffbb00d35 <unknown>
+#21 0x558ffbb13ffe <unknown>
+#22 0x7fb2fa29caa4 <unknown>
+#23 0x7fb2fa329c6c <unknown>
+
+[2026-07-27 00:05:22] Closing WebDriver
+[2026-07-27 00:05:22] Script completed
