@@ -1,5 +1,37 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "sheep": "cừu",
+        "sheet": "tờ giấy",
+        "sharp": "sắc",
+        "shorter": "thấp hơn",
+        "shear": "cạo lông cừu",
+        "shoal": "đàn cá",
+        "harsh": "khắc nghiệt",
+        "shook": "sốc",
+        "cook": "nấu ăn",
+        "watch tv": "xem TV",
+        "set the table": "xếp bàn ghế",
+        "sweep the floor": "quét nhà",
+        "make the bed": "dọn giường"
+    },
+    "sentence_structures": {
+        "what is she/he doing?": "She/he is doing …",
+        "where is she/he?": "She/he is…"
+    },
+    "report_date": "2026-07-28",
+    "lesson_title": "Lesson 61",
+    "homework": "Hoàn thành phần Handwriting lesson 61 trong sách CLL2\nCLL 2_Homework_Lesson 61 (Phase 2 & 3 grapheme combination)\nKhan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App\nChuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Farm to Yarn' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/vn/979697668/cll2_phonics_word-set-29-flash-cards/?funnelUUID=a17cc99c-0e71-4c93-ac52-4736596dc030",
+        "https://docs.google.com/document/d/1QoNmdZU79CgcYsWLe-tNJHbZmt56V2btvlYaa65nwFc/edit?tab=t.0#heading=h.qz3zftai174n",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://drive.google.com/file/d/1aHpqTuFJmpBipfBgFlOy1Qzcju8fWq-O/view",
+        "https://drive.google.com/file/d/1xIsf7PnAr31EE9xDC_DBFdqvL8y2AFjN/view?usp=drive_link"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Tuy nhiên, con còn hay ra khỏi chỗ và làm việc riêng nhiều. Buổi học hôm nay, con đã nắm được cách phát âm âm /sh/ và nhận diện tốt các từ vựng đi kèm: sharsh, shook, sharp, shear. Con cũng đọc tốt mẩu chuyện ‘Chicks on the Run’. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/15rQAb8OdmmfMq33n2Blp-gOqvpC0UP4F/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
