@@ -1,5 +1,49 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "thing": "đồ vật",
+        "faith": "niềm tin",
+        "tooth": "1 chiếc răng",
+        "north": "hướng bắc",
+        "thorn": "gai nhọn",
+        "booth": "gian hàng",
+        "teeth": "hàm răng",
+        "thicker": "dày hơn",
+        "eat": "ăn",
+        "cook": "nấu ăn",
+        "watch tv": "xem TV",
+        "sleep": "ngủ",
+        "read": "đọc",
+        "brush the teeth": "đánh răng",
+        "study": "học",
+        "play": "chơi",
+        "wash the face": "rửa mặt",
+        "take a shower": "tắm",
+        "wash the dishes": "rửa bát",
+        "fold the clothes": "gấp quần áo"
+    },
+    "sentence_structures": {
+        "what do you do at home during the day?": "i [play].",
+        "what do you do at home at night?": "i [sleep].",
+        "how many [stars] can you see?": "i can see [...]."
+    },
+    "report_date": "2026-08-02",
+    "lesson_title": "Lesson 62",
+    "homework": "Các bạn về nhà hoàn thành các bài tập trong link: 62. CLL2 - Lesson 62 (Phase 2 & 3 grapheme combination) * Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Farm to Yarn' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/vn/979701151/cll2_phonics_word-set-30-flash-cards/?funnelUUID=d8a7b51a-09f3-4ee4-bb7f-14ef5165ad4c",
+        "https://drive.google.com/file/d/1EhmPpGeCpolstUOeMZZui1rWWfEr0xwL/view",
+        "https://drive.google.com/file/d/1n2JACJMi1EHgZzht8uDBwDNsjZGqWmcG/view?usp=drive_link",
+        "https://www.gamestolearnenglish.com/fast-phrases/",
+        "Farm%20to%20Yarn%20(Landscape).pdf",
+        "Farm%20to%20Yarn.mp3",
+        "https://quizlet.com/CLL2_Phonics_Word_Set_30",
+        "https://drive.google.com/drive/folders/1E_NxbO64ijfaY5UHl8Q1FGDsErvr6gxE",
+        "https://forms.gle/62.CLL2.Lesson.62"
+    ],
+    "student_comments_minh_huy": "Hôm nay con chăm chỉ học tập và tham gia đầy đủ các hoạt động chung. Song con cố gắng mạnh dạn tương tác với giáo viên hơn nữa nhé. Con đã đọc đúng nhiều từ ôn tập như ‘play, take a shower, study’ và áp dụng được cấu trúc câu hỏi trọng tâm. Khi học về đếm số 100-1000, con đã hiểu bài và áp dụng được khi chơi trò chơi đếm số, song con vẫn cần ôn tập thêm để có thể đọc thuần thục hơn nhé. Về nhà con tiếp tục ôn tập kiến thức đã học và làm bài tập đầy đủ nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YBCbC-MD0VwKyGekkLDoQfe5qNKZ-IU3/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
