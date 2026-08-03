@@ -118820,3 +118820,36 @@ Stacktrace:
 [2026-08-03 14:49:19] Error checking reports: Failed to retrieve report URL after 3 attempts: HTTPConnectionPool(host='localhost', port=35233): Max retries exceeded with url: /session/d9bdadaddcc5ea11cd784649b12dbf04/element/f.117C05597B13D67AA5D57389B6ABD2DC.d.EC88EA9E01ABC74842DADA4CA34D58EE.e.73/click (Caused by NewConnectionError("HTTPConnection(host='localhost', port=35233): Failed to establish a new connection: [Errno 111] Connection refused"))
 [2026-08-03 14:49:19] Closing WebDriver
 [2026-08-03 14:49:19] Script completed
+[2026-08-03 17:11:05] Starting script
+[2026-08-03 17:11:05] Starting report check for calendar overview
+[2026-08-03 17:11:05] Loaded processed2.json: {'date': '2026-07-28', 'class_name': 'VQ2-C2-2504', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/15rQAb8OdmmfMq33n2Blp-gOqvpC0UP4F/export?format=pdf'}
+[2026-08-03 17:11:05] Writing Google credentials to credentials.json
+[2026-08-03 17:11:05] Credentials written successfully
+[2026-08-03 17:11:05] Initializing Chrome WebDriver
+[2026-08-03 17:11:06] WebDriver session ID: c38387889d4a2584c72ee2f0aa5c1557
+[2026-08-03 17:11:06] Navigating to login page: https://apps.cec.com.vn/login
+[2026-08-03 17:11:10] Login attempt 1/3
+[2026-08-03 17:11:10] Entering password
+[2026-08-03 17:11:10] Clicking login button
+[2026-08-03 17:11:13] Login successful
+[2026-08-03 17:11:13] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-08-03 17:11:22] Scrolled to bottom of page
+[2026-08-03 17:11:24] Found 24 class events
+[2026-08-03 17:11:24] Latest class date before today: 2026-08-02
+[2026-08-03 17:11:27] Class name from popup: VQ2-C2-2504
+[2026-08-03 17:11:27] Report button is enabled, clicking to get report URL
+[2026-08-03 17:11:27] Attempt 1/3 to click report button
+[2026-08-03 17:11:29] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YBCbC-MD0VwKyGekkLDoQfe5qNKZ-IU3/export?format=pdf
+[2026-08-03 17:11:29] Preparing to send basic Telegram notification
+[2026-08-03 17:11:29] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-C2-2504 ngày 2026-08-02
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YBCbC-MD0VwKyGekkLDoQfe5qNKZ-IU3/export?format=pdf
+[2026-08-03 17:11:31] Telegram notification sent successfully to chat_id 1900957785
+[2026-08-03 17:11:31] Sending Telegram message to chat_id 1924741087: Báo cáo bài học mới cho lớp VQ2-C2-2504 ngày 2026-08-02
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YBCbC-MD0VwKyGekkLDoQfe5qNKZ-IU3/export?format=pdf
+[2026-08-03 17:11:32] Telegram notification sent successfully to chat_id 1924741087
+[2026-08-03 17:11:32] Updating Google Sheet 'Report' with Date 2026-08-02, Class VQ2-C2-2504, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YBCbC-MD0VwKyGekkLDoQfe5qNKZ-IU3/export?format=pdf
+[2026-08-03 17:11:34] Updated Google Sheet 'Report' successfully: 2026-08-02, VQ2-C2-2504, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YBCbC-MD0VwKyGekkLDoQfe5qNKZ-IU3/export?format=pdf at 2026-08-03 17:11:29
+[2026-08-03 17:11:34] Saving processed data to processed2.json
+[2026-08-03 17:11:34] Saved processed2.json successfully
+[2026-08-03 17:11:34] Git repository detected
+[2026-08-03 17:11:34] Committing and pushing changes to GitHub
