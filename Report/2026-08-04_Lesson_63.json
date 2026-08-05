@@ -1,5 +1,46 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "lightning": "sấm sét",
+        "longer": "dài hơn",
+        "corner": "góc",
+        "singer": "ca sĩ",
+        "looking": "tìm kiếm",
+        "waiter": "phục vụ nam",
+        "farmer": "nông dân",
+        "powder": "bột",
+        "one": "một",
+        "two": "hai",
+        "three": "ba",
+        "yarn": "sợi",
+        "kitchen": "nhà bếp",
+        "couch": "ghế sofa",
+        "sheep": "con cừu",
+        "wool": "lông cừu",
+        "shears off": "cắt tỉa",
+        "put into bags": "cho vào túi",
+        "shops": "cửa hàng",
+        "sell": "bán"
+    },
+    "sentence_structures": {
+        "This is the…": "This is the kitchen",
+        "I can see…": "I can see a couch",
+        "I … at home": "I watch TV at home"
+    },
+    "report_date": "2026-08-04",
+    "lesson_title": "Lesson 63",
+    "homework": "Hoàn thành phần Handwriting lesson 63 trong sách CLL2 63. CLL2 - Lesson 63 (Phase 2 & 3 grapheme combination). Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App. Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Farm to Yarn' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/drive/folders/1FJ_1hccu8bPndwqPD1i8vaMwABfiL1Lw",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://youtu.be/fseGHTXZUT4?feature=shared",
+        "https://quizlet.com/vn/979708094/cll2_phonics_word-set-31-flash-cards/?funnelUUID=ffb57867-f8a8-47ec-8e12-2f57dcd42578",
+        "https://drive.google.com/file/d/1EhmPpGeCpolstUOeMZZui1rWWfEr0xwL/view",
+        "https://drive.google.com/file/d/1n2JACJMi1EHgZzht8uDBwDNsjZGqWmcG/view?usp=drive_link"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Buổi học hôm nay, con đã nắm được cách phát âm và nhận diện tốt các từ vựng đi kèm: looking, longer, singer, waiter. Con cũng đọc tốt mẩu chuyện ‘Farm to Yarn’. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1z2Rzu9nOyJZJCSk__QNFsAnIj7aN-nwi/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
