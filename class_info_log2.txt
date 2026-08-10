@@ -121152,3 +121152,6 @@ Buổi học hôm nay con chưa tập trung vào bài học, con chú ý nhé. .
 [2026-08-10 10:21:32] Completed detailed Telegram notifications
 [2026-08-10 10:21:32] Git repository detected
 [2026-08-10 10:21:32] Committing and pushing Report and vocab files to GitHub
+[2026-08-10 10:21:34] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-08-10 10:21:34] Closing WebDriver
+[2026-08-10 10:21:35] Script completed
