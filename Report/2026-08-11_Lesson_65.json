@@ -1,5 +1,19 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "phonics phase 3": "giai đoạn 3 ngữ âm học",
+        "arm blending": "đánh vần kết hợp cử động tay",
+        "tricky words": "các từ khó",
+        "cambridge little steps 2": "sách Cambridge Little Steps 2"
+    },
+    "sentence_structures": {},
+    "report_date": "2026-08-11",
+    "lesson_title": "Lesson 65",
+    "homework": "Không có bài tập về nhà",
+    "links": [],
+    "student_comments_minh_huy": "cannot find info",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1x9tT-bPPwr_fs5BbnihHZ2ep3kK-BWsW00tVECVso60/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
