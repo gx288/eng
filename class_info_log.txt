@@ -239519,3 +239519,8 @@ Stacktrace:
 [2026-08-17 01:50:37] Lớp 10539 có 67 buổi
 [2026-08-17 01:50:37] Lớp 10539 - số cột: 5
 [2026-08-17 05:43:10] Lỗi đăng nhập: Login failed
+[2026-08-17 10:41:25] Không đọc được Google Sheet: APIError: [503]: The service is currently unavailable.
+[2026-08-17 10:41:35] Đăng nhập thành công
+[2026-08-17 10:41:36] Xử lý lớp 10539
+[2026-08-17 10:41:41] Lớp 10539 có 67 buổi
+[2026-08-17 10:41:41] Lớp 10539 - số cột: 5
