@@ -1,5 +1,50 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "living room": "Phòng khách",
+        "dining room": "Phòng ăn",
+        "kitchen": "Phòng bếp",
+        "bedroom": "Phòng ngủ",
+        "bathroom": "Phòng tắm",
+        "brush": "Bàn chải",
+        "toothbrush": "Bàn chải đánh răng",
+        "jump rope": "Dây nhảy",
+        "soap": "Xà phòng",
+        "towel": "Cái khăn",
+        "lunchbox": "Hộp đồ ăn trưa"
+    },
+    "sentence_structures": {
+        "What’s your name?": "My name’s …",
+        "How old are you?": "I’m 5 / 6 / … years old.",
+        "How are you?": "I’m happy / good / … .",
+        "What food do you like?": "I like ... .",
+        "Where was the fair?": [
+            "in the town",
+            "The fair was in the town"
+        ],
+        "Where did Tess have a go?": [
+            "at Hook a Duck",
+            "Tess had a go at Hook a Duck"
+        ],
+        "What did Mum, Sam and Tess have?": [
+            "chips",
+            "Mum, Sam and Tess had chips"
+        ],
+        "What is it ?": [
+            "It’s a towel",
+            "It’s a living room"
+        ],
+        "What can you see in a ... ?": "I can see a ...",
+        "How do you take care of yourself ?": "I need to ...",
+        "What do we do at home ?": "I ... at home."
+    },
+    "report_date": "2026-08-16",
+    "lesson_title": "Lesson 66",
+    "homework": "Hôm nay các con không có bài tập về nhà. Gia Hân và Nhật Minh buổi sau hoàn thành quay Video test 3.",
+    "links": [],
+    "student_comments_minh_huy": "cannot find info",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1aLuJmOyia-CH0UtlVYUKhrZCfoUG_W0K/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
