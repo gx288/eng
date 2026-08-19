@@ -125265,3 +125265,6 @@ Các con không có bài tập. Kính mong Quý phụ huynh nhắc nhở con ho�
 [2026-08-19 11:29:43] Completed detailed Telegram notifications
 [2026-08-19 11:29:43] Git repository detected
 [2026-08-19 11:29:43] Committing and pushing Report and vocab files to GitHub
+[2026-08-19 11:29:45] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-08-19 11:29:45] Closing WebDriver
+[2026-08-19 11:29:45] Script completed
