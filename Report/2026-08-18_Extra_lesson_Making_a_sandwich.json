@@ -1,5 +1,25 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "review words about colors": "ôn tập các từ vựng về đồ ăn",
+        "activate students’ existing knowledge": "kích hoạt những kiến thức nền tảng của học sinh",
+        "products": "các sản phẩm",
+        "communicate in learning": "giao tiếp trong học tập",
+        "homework check": "kiểm tra bài tập về nhà",
+        "making a sandwich tutorial": "thực hành xem mẫu cách làm bánh sandwich",
+        "ingredients": "nguyên liệu",
+        "pronunciation": "phát âm",
+        "product": "sản phẩm",
+        "actively": "tích cực, sôi nổi"
+    },
+    "sentence_structures": {},
+    "report_date": "2026-08-18",
+    "lesson_title": "Extra lesson_Making a sandwich",
+    "homework": "Các con không có bài tập. Kính mong Quý phụ huynh nhắc nhở con hoàn thành bài tập về nhà đầy đủ trước buổi học sau.",
+    "links": [],
+    "student_comments_minh_huy": "cannot find info",
+    "class_name": "VQ2-C2-2504",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/18gg5HsUU9emsSAnkp1WuwLSHO7hZFi0ZB3t5dCCysZY/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
