@@ -239577,3 +239577,9 @@ Stacktrace:
 [2026-08-20 01:46:21] Lớp 10539 có 1 buổi
 [2026-08-20 01:46:21] Lớp 10539 - số cột: 1
 [2026-08-20 01:46:21] Lớp 10539 bảng bất thường (ít cột hoặc thiếu icon Action) → bỏ qua lớp này
+[2026-08-20 05:39:31] Không đọc được Google Sheet: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[2026-08-20 05:39:41] Đăng nhập thành công
+[2026-08-20 05:39:43] Xử lý lớp 10539
+[2026-08-20 05:39:48] Lớp 10539 có 1 buổi
+[2026-08-20 05:39:48] Lớp 10539 - số cột: 1
+[2026-08-20 05:39:48] Lớp 10539 bảng bất thường (ít cột hoặc thiếu icon Action) → bỏ qua lớp này
