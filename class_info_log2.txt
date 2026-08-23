@@ -127310,3 +127310,6 @@ Con chú ý nghe giảng và làm bài theo hướng dẫn, tuy nhiên đôi lú
 [2026-08-23 13:36:13] Completed detailed Telegram notifications
 [2026-08-23 13:36:13] Git repository detected
 [2026-08-23 13:36:13] Committing and pushing Report and vocab files to GitHub
+[2026-08-23 13:36:15] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-08-23 13:36:15] Closing WebDriver
+[2026-08-23 13:36:15] Script completed
