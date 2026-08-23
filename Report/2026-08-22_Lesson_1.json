@@ -1,5 +1,39 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "start": "bắt đầu",
+        "artist": "họa sĩ",
+        "stairs": "cầu thang",
+        "coast": "bờ biển",
+        "starfish": "sao biển",
+        "dust": "bụi",
+        "cow": "con bò",
+        "sheep": "con cừu",
+        "hen": "gà mái",
+        "duck": "con vịt",
+        "horse": "con ngựa"
+    },
+    "sentence_structures": {
+        "What can we see on a farm?": "I can see a...",
+        "What's this?": "It’s..."
+    },
+    "report_date": "2026-08-02",
+    "lesson_title": "Lesson 1",
+    "homework": "● Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App):\nLưu ý: Nếu luyện tập trên Apps điện thoại/Ipad, để sử dụng đầy đủ tính năng luyện tập của Quizlet, trước khi luyện tập Quý PH vui lòng chọn Tham gia / Join https://quizlet.com/join/C6KcZm2un?i=5lxnmh&x=1bqt\n- Phonics words & Sentences: Từ vựng và câu chứa âm /st/. Đối với Từ vựng ngữ âm, học sinh cần luyện tập nhận diện âm, ghép âm và tập đọc từ vựng ngữ âm. Sử dụng thêm công cụ Word Mapper · Project Read giúp tách một từ thành từng âm và chữ cái / tổ hợp chữ cái tương ứng với từng âm. Nhờ đó, phụ huynh có thể hướng dẫn con đánh vần đúng, sửa lỗi phát âm kịp thời.\n- Communicative English: Từ vựng và mẫu câu phần tiếng Anh giao tiếp.\n● Tập đọc Rhino Readers book ‘Fun at the Pool’ (Sách truyện tập đọc ‘Fun at the Pool’)\n- Nghe và luyện tập đọc với audio: Fun at the Pool.mp3\n- Luyện tập đọc câu chuyện sử dụng sách in hoặc truy cập link sách: Fun at the Pool (landscape).pdf\n* Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Fun at the Pool' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/vn/1064594934/cll3_communicative-english_lesson-01-flash-cards/?i=5g095j&x=1jqt",
+        "https://drive.google.com/drive/folders/1fDj1ibXbwopC6paPh9_u-yw7IKCJ3p46",
+        "https://drive.google.com/file/d/1_2soxsXlhW9OKUnBs6LXG2pxFdZJN81L/view?usp=drive_link",
+        "Fun at the Pool.mp3",
+        "https://www.projectread.ai/tools/word-mapper",
+        "Fun at the Pool (landscape).pdf",
+        "https://drive.google.com/file/d/18XIPzUdtKIT0RxLZapSAAC9BtJgPBD0B/view?usp=drive_link",
+        "https://quizlet.com/vn/1064983564/cll3_phonics_word-set-01_st-flash-cards/?funnelUUID=13da1b5d-ed28-4f48-b684-c3d6b93b6da1",
+        "https://quizlet.com/join/C6KcZm2un?i=5lxnmh&x=1bqt"
+    ],
+    "student_comments_minh_huy": "Con chú ý nghe giảng và làm bài theo hướng dẫn, tuy nhiên đôi lúc con còn làm việc riêng, con chú ý nhé. Con ghép âm /st/ và đọc từ ở mức khá tốt. Phần đọc, con hiểu được nội dung truyện và tự mình đọc được hết câu sau khi được thầy hướng dẫn. Con sử dụng đúng từ vựng chủ đề trang trại khi trả lời câu hỏi. Con nhớ hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1kmgrvK-Q-dJ1rRxtUS81NORp0QWtpd-V/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
