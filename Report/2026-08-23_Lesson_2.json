@@ -1,5 +1,41 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "land": "Đất liền",
+        "hand": "Bàn tay",
+        "sand": "Cát",
+        "mend": "Sửa chữa",
+        "stand": "Đứng",
+        "pond": "Hồ nước",
+        "seed": "Hạt giống",
+        "cut": "Cắt",
+        "find": "Tìm kiếm",
+        "flour": "Bột mì",
+        "plant": "Trồng cây",
+        "bread": "Bánh mì",
+        "wheat": "Cây lúa mì",
+        "bake": "Nướng, nướng bánh"
+    },
+    "sentence_structures": {},
+    "report_date": "2026-08-23",
+    "lesson_title": "Lesson 2",
+    "homework": ". CLL3 Lesson 2 Homework (PHHS vui lòng truy cập để xem chi tiết)\n● Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App):\nLưu ý: Nếu luyện tập trên Apps điện thoại/Ipad, để sử dụng đầy đủ các tính năng\ncủa Quizlet, trước khi luyện tập Quý PH vui lòng chọn Tham gia / Join\nhttps://quizlet.com/join/qvQbxrMW4?i=5lxnmh&x=1bqt\n- Phonics words & Sentences: Từ vựng và câu chứa âm /nd/.\n- Communicative English: Từ vựng và mẫu câu phần tiếng Anh giao tiếp.\n● Storytime: Tập đọc câu chuyện ‘The Little Red Hen’\n- Nghe video và nhắc lại:\nCambridge Little Steps 2 Unit 4 Story.mp4\n- Luyện tập đọc câu chuyện theo link sách:\nLittle Steps 2 Big Book - The Little Red Hen.pdf\n● Tập đọc Rhino Readers book ‘Fun at the Pool’ (Sách truyện tập đọc ‘Fun at the\nPool’)\n- Nghe và luyện tập đọc với audio:\nFun at the Pool.mp3\n- Luyện tập đọc câu chuyện sử dụng sách in hoặc truy cập link sách:\nFun at the Pool (landscape).pdf",
+    "links": [
+        "https://drive.google.com/file/d/1_2soxsXlhW9OKUnBs6LXG2pxFdZJN81L/view?usp=drive_link",
+        "https://quizlet.com/vn/1065192734/cll3_communicative-english_lesson-02-flash-cards/?x=1jqt",
+        "https://drive.google.com/file/d/18XIPzUdtKIT0RxLZapSAAC9BtJgPBD0B/view?usp=drive_link",
+        "https://quizlet.com/join/qvQbxrMW7?i=5lxnmh&x=1bqt",
+        "https://drive.google.com/file/d/1G7KqQU0PXzRKoAjqVUnrIo_LFnlIcjNJ/view?resourcekey",
+        "https://drive.google.com/file/d/1HH3kF4mGqhAEnEWxPOj3urAJ3CzIz9wP/view?usp=sharing",
+        "https://quizlet.com/join/qvQbxrMW4?i=5lxnmh&x=1bqt",
+        "https://drive.google.com/file/d/1Uf3psLmUd7E1d_SPNtv96nnSdXcIB8Sg/view?usp=sharing",
+        "https://youtu.be/472AnCrHYVs?si=KlBmeXxA_qw5_4kO",
+        "https://drive.google.com/drive/folders/1fVS7cO5epMPmzkqzF40yuKxQMcj6EZ44?usp=sharing",
+        "https://quizlet.com/vn/1065191349/cll3_phonics_word-set-02_nd-flash-cards/?x=1jqt"
+    ],
+    "student_comments_minh_huy": "Hôm nay con chăm chỉ học tập và tham gia hoạt động tích cực, song con vẫn cần chú ý tư thế ngồi học ngay ngắn trong giờ nhé. Con tham gia lớp học tốt, ghi nhớ được âm /nd/ cùng các từ vựng liên quan ở mức khá. Con cũng phản xạ nhanh với các câu hỏi của giáo viên. Trong thời gian đọc truyện ‘Fun at the Pool’ và học từ vựng, con tham gia rất tích cực. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ con nhé. Hôm nay con tập trung học bài và hoàn thành yêu cầu của giáo viên, ngoài ra, con cũng tham gia rất tích cực vào các hoạt động của lớp. Tuy nhiên, con vẫn cần chú ý tư thế ngồi học của con nhé. Con phát âm rõ nhiều từ chứa âm /nd/ và tương đối tự nhiên và trôi chảy, phản xạ nhanh với các câu hỏi liên quan đến flashcard. Khi tham gia hoạt động đọc truyện, con đọc truyện rất tốt khi giọng con to, rõ ràng. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-Ma_sdkAXtEhlIR8q3n1QoCX1OLM3Y5s/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
