@@ -127765,3 +127765,6 @@ Hôm nay con chăm chỉ học tập và tham gia hoạt động tích cực, so
 [2026-08-24 10:41:46] Completed detailed Telegram notifications
 [2026-08-24 10:41:46] Git repository detected
 [2026-08-24 10:41:46] Committing and pushing Report and vocab files to GitHub
+[2026-08-24 10:41:48] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-08-24 10:41:48] Closing WebDriver
+[2026-08-24 10:41:48] Script completed
