@@ -127653,3 +127653,38 @@ Con chú ý nghe giảng và làm bài theo hướng dẫn, tuy nhiên đôi lú
 [2026-08-24 09:52:52] Report button is disabled
 [2026-08-24 09:52:52] Closing WebDriver
 [2026-08-24 09:52:52] Script completed
+[2026-08-24 10:40:41] Starting script
+[2026-08-24 10:40:41] Starting report check for calendar overview
+[2026-08-24 10:40:41] Loaded processed2.json: {'date': '2026-08-22', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1kmgrvK-Q-dJ1rRxtUS81NORp0QWtpd-V/export?format=pdf'}
+[2026-08-24 10:40:41] Writing Google credentials to credentials.json
+[2026-08-24 10:40:41] Credentials written successfully
+[2026-08-24 10:40:41] Initializing Chrome WebDriver
+[2026-08-24 10:40:43] WebDriver session ID: d1d656d23b40cbcf711697823ed84020
+[2026-08-24 10:40:43] Navigating to login page: https://apps.cec.com.vn/login
+[2026-08-24 10:40:47] Login attempt 1/3
+[2026-08-24 10:40:48] Entering password
+[2026-08-24 10:40:48] Clicking login button
+[2026-08-24 10:40:50] Login successful
+[2026-08-24 10:40:50] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-08-24 10:41:00] Scrolled to bottom of page
+[2026-08-24 10:41:00] Found 24 class events
+[2026-08-24 10:41:00] Latest class date before today: 2026-08-23
+[2026-08-24 10:41:03] Class name from popup: VQ2-C3-2602
+[2026-08-24 10:41:03] Report button is enabled, clicking to get report URL
+[2026-08-24 10:41:03] Attempt 1/3 to click report button
+[2026-08-24 10:41:05] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-Ma_sdkAXtEhlIR8q3n1QoCX1OLM3Y5s/export?format=pdf
+[2026-08-24 10:41:05] Preparing to send basic Telegram notification
+[2026-08-24 10:41:05] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-08-23
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-Ma_sdkAXtEhlIR8q3n1QoCX1OLM3Y5s/export?format=pdf
+[2026-08-24 10:41:06] Telegram notification sent successfully to chat_id 1900957785
+[2026-08-24 10:41:06] Sending Telegram message to chat_id 1924741087: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-08-23
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-Ma_sdkAXtEhlIR8q3n1QoCX1OLM3Y5s/export?format=pdf
+[2026-08-24 10:41:07] Telegram notification sent successfully to chat_id 1924741087
+[2026-08-24 10:41:07] Updating Google Sheet 'Report' with Date 2026-08-23, Class VQ2-C3-2602, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-Ma_sdkAXtEhlIR8q3n1QoCX1OLM3Y5s/export?format=pdf
+[2026-08-24 10:41:07] Attempt 1/3 failed to update Google Sheet 'Report': APIError: [503]: The service is currently unavailable.
+[2026-08-24 10:41:11] Attempt 2/3 failed to update Google Sheet 'Report': APIError: [503]: The service is currently unavailable.
+[2026-08-24 10:41:15] Updated Google Sheet 'Report' successfully: 2026-08-23, VQ2-C3-2602, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-Ma_sdkAXtEhlIR8q3n1QoCX1OLM3Y5s/export?format=pdf at 2026-08-24 10:41:05
+[2026-08-24 10:41:15] Saving processed data to processed2.json
+[2026-08-24 10:41:15] Saved processed2.json successfully
+[2026-08-24 10:41:15] Git repository detected
+[2026-08-24 10:41:15] Committing and pushing changes to GitHub
