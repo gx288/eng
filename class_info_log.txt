@@ -239709,3 +239709,9 @@ Stacktrace:
 [2026-08-25 10:42:28] Lớp 10539 có 1 buổi
 [2026-08-25 10:42:28] Lớp 10539 - số cột: 1
 [2026-08-25 10:42:28] Lớp 10539 bảng bất thường (ít cột hoặc thiếu icon Action) → bỏ qua lớp này
+[2026-08-25 15:53:19] Không đọc được Google Sheet: APIError: [503]: The service is currently unavailable.
+[2026-08-25 15:53:30] Đăng nhập thành công
+[2026-08-25 15:53:31] Xử lý lớp 10539
+[2026-08-25 15:53:36] Lớp 10539 có 1 buổi
+[2026-08-25 15:53:36] Lớp 10539 - số cột: 1
+[2026-08-25 15:53:36] Lớp 10539 bảng bất thường (ít cột hoặc thiếu icon Action) → bỏ qua lớp này
