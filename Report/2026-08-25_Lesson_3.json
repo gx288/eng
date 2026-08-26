@@ -1,5 +1,39 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "jump": "nhảy",
+        "bump": "va chạm",
+        "lamp": "đèn",
+        "chimp": "tinh tinh",
+        "stomp": "giậm chân",
+        "dumpling": "há cảo",
+        "said": "đã nói",
+        "find": "tìm",
+        "yesterday": "hôm qua",
+        "found": "đã thấy",
+        "seed": "hạt giống",
+        "plant": "thực vật",
+        "wheat": "cây lúa mì",
+        "cut": "cắt",
+        "bake": "nướng",
+        "flour": "bột mì",
+        "bread": "bánh mỳ"
+    },
+    "sentence_structures": {},
+    "report_date": "2026-08-25",
+    "lesson_title": "Lesson 3",
+    "homework": "Hoàn thành phần Handwriting lesson 3 trong sách CLL3. Ôn tập Lesson 3: từ vựng và các mẫu câu trên Quizlet (https://quizlet.com/join/k5ZF9yETg?i=5lxnmh&x=1bqt), bao gồm Phonics words & Sentences, Tricky words & Sentences, Communicative English. Tập đọc Rhino Readers book ‘Fun at the Pool’ (nghe và luyện tập đọc với audio Fun at the Pool.mp3; luyện tập đọc câu chuyện sử dụng sách in hoặc truy cập link sách Fun at the Pool (landscape).pdf). Hướng dẫn cài đặt và sử dụng Khan Academy Kids app. Chuẩn bị sách truyện Rhino Readers cuốn 'Fun at the pool' cho buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/file/d/1_2soxsXlhW9OKUnBs6LXG2pxFdZJN81L/view?usp=drive_link",
+        "https://drive.google.com/file/d/18XIPzUdtKIT0RxLZapSAAC9BtJgPBD0B/view?usp=drive_link",
+        "https://quizlet.com/class/31487914/materials",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://docs.google.com/document/d/1zb66tW5KJu7FcjDJz8LySYELBPNKMPhHO2kmZjPz4kA/edit?tab=t.0#heading=h.lsu6d0y2hk65",
+        "https://quizlet.com/join/k5ZF9yETg?i=5lxnmh&x=1bqt"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Buổi học hôm nay, con đã nắm được cách phát âm âm /mp/ và nhận diện tốt các từ vựng đi kèm: jump, bump, lamp, chimp. Con cũng đọc tốt ‘Can you find a pen in your bag?’. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YHPTk8fnsgC6wf7dS3x_7zK8GIWOhMF5/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
