@@ -1,5 +1,31 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "first": "Đầu tiên",
+        "next": "tiếp theo",
+        "then": "sau đó",
+        "at the end": "cuối cùng",
+        "milk the cows": "Vắt sữa bò",
+        "shear the sheep": "Cắt lông cừu",
+        "collect the eggs": "Thu hoạch trứng",
+        "feed the chickens": "Cho gà ăn",
+        "feed the cows": "Cho bò ăn",
+        "groom the horses": "Chải chuốt cho ngựa",
+        "pick the fruit": "Thu hoạch trái cây"
+    },
+    "sentence_structures": {},
+    "report_date": "2026-09-06",
+    "lesson_title": "Lesson 4",
+    "homework": "CLL3 Lesson 4. Quizlet: CLL3_Lesson 04. Storytime: Little Steps 2 Big Book - The Little Red Hen.pdf. Chuẩn bị cho buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'A Trip in a Rocket' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/file/d/18XIPzUdtKIT0RxLZapSAAC9BtJgPBD0B/view?usp=drive_link",
+        "https://drive.google.com/file/d/1Uf3psLmUd7E1d_SPNtv96nnSdXcIB8Sg/view?usp=sharing",
+        "https://drive.google.com/drive/folders/1CWuymb8KXm209-ay-sRAC4r8hIxzU11L?usp=sharing",
+        "https://quizlet.com/join/Yr7nvagKz?i=5lxnmh&x=1bqt"
+    ],
+    "student_comments_minh_huy": "Hôm nay con có tinh thần học tập rất tốt. Về phần ngữ âm, con đã nhận biết và ôn tập khá tốt các âm /st, nd, mp/. Con đã có thể đọc truyện tương đối tự tin, song con cần chú ý cách phát âm từ ‘drown, said’ con nhé để tránh ngập ngừng khi đọc truyện. Ngoài ra, con đã nhận biết được các từ vựng liên quan đến công việc trong nông trại ở mức khá. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VYxCafxoW5oSUJh_OVdaBNl2VyvEoo5T/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
