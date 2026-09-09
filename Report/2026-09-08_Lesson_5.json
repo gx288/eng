@@ -1,5 +1,39 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "tent": "lều",
+        "hunt": "săn",
+        "vent": "lỗ thông gió",
+        "paint": "sơn",
+        "mint": "bạc hà",
+        "ant": "kiến",
+        "groom the horses": "giữ ngựa",
+        "feed the chickens": "cho gà ăn",
+        "collect the eggs": "thu thập trứng",
+        "milk the cows": "vắt sữa",
+        "shear the sheep": "cắt lông cừu",
+        "pick the fruit": "thu thập trái cây",
+        "feed the cows": "cho bò ăn"
+    },
+    "sentence_structures": {
+        "what is the farmer doing?": "he is … feeding the chikens"
+    },
+    "report_date": "2026-09-08",
+    "lesson_title": "Lesson 5",
+    "homework": "Hoàn thành phần Handwriting lesson 5 trong sách CLL3. CLL 3_Homework_Lesson 5. Ôn tập Lesson 3. Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App): Lưu ý: Nếu luyện tập trên Apps điện thoại/Ipad, để sử dụng đầy đủ các tính năng của Quizlet, trước khi luyện tập Quý PH vui lòng chọn Tham gia / Join https://quizlet.com/join/k5ZF9yETg?i=5lxnmh&x=1bqt - Phonics words & Sentences: Từ vựng và câu. - Tricky words & Sentences: Từ vựng và câu không theo quy tắc đánh vần. - Communicative English: Từ vựng và mẫu câu phần tiếng Anh giao tiếp. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App. Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Fun at the pool' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "A Trip in a Rocket (landscape).pdf",
+        "https://docs.google.com/document/d/1gqOdPbxmWnUhIlMiU3CPL2HUN_3LXKf8MWVFvIOzxtI/edit?tab=t.0#heading=h.q12vz2ta5fvm",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://quizlet.com/join/Qa9nYudUG?i=5lxnmh&x=1bqt",
+        "https://drive.google.com/file/d/1zQiTOZg8gzdtowSdAC86hyw4DwjPY5kL/view?usp=drive_link",
+        "https://drive.google.com/file/d/1BeYec5xuIFcK4CA4G-RtEy6es9HcKo-X/view?usp=drive_link",
+        "A Trip in a Rocket.mp3",
+        "https://quizlet.com/join/k5ZF9yETg?i=5lxnmh&x=1bqt"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Tuy nhiên, con vẫn còn hay bị mất tập trung trong giờ học. Buổi học hôm nay, con đã nắm được cách phát âm âm /nt/ và nhận diện tốt các từ vựng đi kèm: ant, tent, vent, mint, hunt, paint. Con cũng đọc tốt ‘Then, they had a cool rocket!’ trong truyện Rhino. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1kuXXrAJLNaxwctNznWJP5pTuOFM7UOdc/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
