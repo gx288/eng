@@ -131314,3 +131314,6 @@ Buổi học hôm nay con chú ý nghe giảng và thực hiện yêu cầu củ
 [2026-09-14 12:19:05] Completed detailed Telegram notifications
 [2026-09-14 12:19:05] Git repository detected
 [2026-09-14 12:19:05] Committing and pushing Report and vocab files to GitHub
+[2026-09-14 12:19:07] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-09-14 12:19:07] Closing WebDriver
+[2026-09-14 12:19:08] Script completed
