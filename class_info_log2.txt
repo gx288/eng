@@ -131196,3 +131196,36 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 [2026-09-14 05:57:45] Report button is disabled
 [2026-09-14 05:57:45] Closing WebDriver
 [2026-09-14 05:57:45] Script completed
+[2026-09-14 12:18:10] Starting script
+[2026-09-14 12:18:10] Starting report check for calendar overview
+[2026-09-14 12:18:10] Loaded processed2.json: {'date': '2026-09-08', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1kuXXrAJLNaxwctNznWJP5pTuOFM7UOdc/export?format=pdf'}
+[2026-09-14 12:18:10] Writing Google credentials to credentials.json
+[2026-09-14 12:18:10] Credentials written successfully
+[2026-09-14 12:18:10] Initializing Chrome WebDriver
+[2026-09-14 12:18:11] WebDriver session ID: 472023e38e57f7f9d88307efc6857a29
+[2026-09-14 12:18:11] Navigating to login page: https://apps.cec.com.vn/login
+[2026-09-14 12:18:17] Login attempt 1/3
+[2026-09-14 12:18:17] Entering password
+[2026-09-14 12:18:17] Clicking login button
+[2026-09-14 12:18:20] Login successful
+[2026-09-14 12:18:20] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-09-14 12:18:29] Scrolled to bottom of page
+[2026-09-14 12:18:29] Found 16 class events
+[2026-09-14 12:18:29] Latest class date before today: 2026-09-13
+[2026-09-14 12:18:32] Class name from popup: VQ2-C3-2602
+[2026-09-14 12:18:32] Report button is enabled, clicking to get report URL
+[2026-09-14 12:18:32] Attempt 1/3 to click report button
+[2026-09-14 12:18:35] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GhlXVhCuAo2tBd9-zXnt8NcwItwAYJkZ/export?format=pdf
+[2026-09-14 12:18:35] Preparing to send basic Telegram notification
+[2026-09-14 12:18:35] Sending Telegram message to chat_id 1900957785: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-09-13
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GhlXVhCuAo2tBd9-zXnt8NcwItwAYJkZ/export?format=pdf
+[2026-09-14 12:18:36] Telegram notification sent successfully to chat_id 1900957785
+[2026-09-14 12:18:36] Sending Telegram message to chat_id 1924741087: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-09-13
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GhlXVhCuAo2tBd9-zXnt8NcwItwAYJkZ/export?format=pdf
+[2026-09-14 12:18:37] Telegram notification sent successfully to chat_id 1924741087
+[2026-09-14 12:18:37] Updating Google Sheet 'Report' with Date 2026-09-13, Class VQ2-C3-2602, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GhlXVhCuAo2tBd9-zXnt8NcwItwAYJkZ/export?format=pdf
+[2026-09-14 12:18:39] Updated Google Sheet 'Report' successfully: 2026-09-13, VQ2-C3-2602, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GhlXVhCuAo2tBd9-zXnt8NcwItwAYJkZ/export?format=pdf at 2026-09-14 12:18:35
+[2026-09-14 12:18:39] Saving processed data to processed2.json
+[2026-09-14 12:18:39] Saved processed2.json successfully
+[2026-09-14 12:18:39] Git repository detected
+[2026-09-14 12:18:39] Committing and pushing changes to GitHub
