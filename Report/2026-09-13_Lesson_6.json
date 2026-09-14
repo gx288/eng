@@ -1,5 +1,38 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "ink": "mực",
+        "wink": "nháy mắt",
+        "think": "nghĩ",
+        "thank": "cảm ơn",
+        "bank": "ngân hàng",
+        "stink": "hôi",
+        "calf": "con bê",
+        "chick": "gà con",
+        "lamb": "cừu con",
+        "foal": "ngựa con",
+        "duckling": "vịt con"
+    },
+    "sentence_structures": {
+        "How many horses are there?": "There are 2 horses.",
+        "How many lambs are there?": "There is 1 lamb."
+    },
+    "report_date": "2026-09-13",
+    "lesson_title": "Lesson 6",
+    "homework": "Lesson 6 Các bài tập về nhà trong sách\n● Phiếu bài tập trên lớp Lesson 6 trong sách Workbook trang 28, 29, 30. (Những bài chưa hoàn thành)\n● Phiếu bài tập về nhà Lesson 6 trong sách Workbook trang 31, 32, 33, 34.\nÔn tập Lesson 6\n● Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App):\nLưu ý: Nếu luyện tập trên Apps điện thoại/ Ipad, để sử dụng đầy đủ tính năng luyện tập của Quizlet, trước khi luyện tập Quý PH vui lòng ấn Tham gia / Join https://quizlet.com/join/wD24pGEuK?i=5lxnmh&x=1bqt\n- Phonics words & Sentences: Từ vựng và câu chứa âm /nk/.\n- Communicative English: Từ vựng và mẫu câu phần tiếng Anh giao tiếp.\n● Tập đọc Rhino Readers book ‘A Trip in a Rocket’ (Sách truyện tập đọc ‘A Trip in a Rocket’)\n- Nghe và luyện tập đọc với audio: A Trip in a Rocket.mp3\n- Luyện tập đọc câu chuyện sử dụng sách in hoặc truy cập link sách: A Trip in a Rocket (landscape).pdf\nPhụ huynh học sinh truy cập đường link trên để xem các mục bài tập về nhà.\nChuẩn bị cho buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'A Trip in a Rocket' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/file/d/1zQiTOZg8gzdtowSdAC86hyw4DwjPY5kL/view?usp=drive_link",
+        "A Trip in a Rocket.mp3",
+        "https://quizlet.com/vn/1065248913/cll3_phonics_word-set-05_nk-flash-cards/?funnelUUID=9fa8b58c-937d-4977-ae66-36f1791f26f2",
+        "https://drive.google.com/file/d/1BeYec5xuIFcK4CA4G-RtEy6es9HcKo-X/view?usp=drive_link",
+        "https://drive.google.com/drive/folders/1VaaVBOfaLdUa6qDptuymeM3an010OTBK?usp=sharing",
+        "https://quizlet.com/vn/1065250543/cll3_communicative-english_lesson-06-flash-cards/?funnelUUID=f0a04b05-ea29-4a26-842e-28422bf760ef",
+        "A Trip in a Rocket (landscape).pdf",
+        "https://quizlet.com/join/wD24pGEuK?i=5lxnmh&x=1bqt"
+    ],
+    "student_comments_minh_huy": "Buổi học hôm nay con chú ý nghe giảng và thực hiện yêu cầu của giáo viên. Nhìn chung, con ghi nhớ và nhận biết tốt kiến thức phần ngữ âm /nk/ cùng các từ vựng liên quan. Khi đọc truyện ‘A Trip in Rocket’, con tham gia đọc truyện tương đối tích cực và chủ động đọc truyện. Ngoài ra, con cũng đã nhận biết các từ vựng liên quan đến động vật chưa trưởng thành trong nông trại và phản xạ nhanh với các câu hỏi của giáo viên. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1GhlXVhCuAo2tBd9-zXnt8NcwItwAYJkZ/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
