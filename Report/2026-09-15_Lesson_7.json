@@ -1,5 +1,44 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "lunch": "bữa trưa",
+        "bench": "ghế dài",
+        "lunchbox": "hộp đồ ăn",
+        "pinch": "nhéo",
+        "trench": "con mương",
+        "these": "những cái này",
+        "those": "những thứ kia",
+        "yellow": "màu vàng",
+        "blue": "màu xanh",
+        "milk": "sữa",
+        "butter": "bơ",
+        "cheese": "phô mai",
+        "beef": "thịt bò",
+        "yogurt": "sữa chua",
+        "eggs": "trứng"
+    },
+    "sentence_structures": {
+        "What does a [cow] say?": "cannot find info",
+        "Where does [milk] come from?": "cannot find info",
+        "Where do [eggs] come from?": "cannot find info",
+        "Where does …butter… come from?": "…Butter… comes from a",
+        "These are my cats.": "cannot find info",
+        "Bananas are yellow.": "cannot find info",
+        "The paint is blue": "cannot find info",
+        "Those are my cats.": "cannot find info"
+    },
+    "report_date": "2026-09-15",
+    "lesson_title": "Lesson 7",
+    "homework": "Hoàn thành phần Handwriting lesson 7 trong sách CLL3. Ôn tập Lesson 7:\n● Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App):\n- Phonics words & Sentences: Từ vựng và câu chứa âm /nch/.\n- Tricky words & Sentences: Từ vựng và câu không theo quy tắc đánh vần.\n- Communicative English: Từ vựng và mẫu câu phần tiếng Anh giao tiếp.\n. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App\n* Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Fun at the pool' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://quizlet.com/class/31488862/materials",
+        "https://quizlet.com/join/k5ZF9yETg?i=5lxnmh&x=1bqt",
+        "https://docs.google.com/document/d/1KpfuokorcBHRso_hYLNxTsIhz8hKv2yaU2iBloQ83Ys/edit?tab=t.0#heading=h.8l5o5h96pe8",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Buổi học hôm nay, con đã nắm được cách phát âm âm /nch/ và nhận diện tốt các từ vựng đi kèm: lunch, lunchbox, trench, bench, pinch. Con cũng đọc tốt ‘These are my cats.’ và ‘Bananas are yellow.’ trong buổi hôm nay. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/194fZFszAEo87LO1FAzGDDT5EXOcI5Hel/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
