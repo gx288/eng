@@ -240107,3 +240107,8 @@ Stacktrace:
 [2026-09-15 18:54:48] Lớp 10539 - số cột: 5
 [2026-09-15 22:51:42] Không đọc được Google Sheet: APIError: [503]: The service is currently unavailable.
 [2026-09-15 22:51:53] Lỗi đăng nhập: Login failed
+[2026-09-16 04:40:03] Đăng nhập thành công
+[2026-09-16 04:40:04] Xử lý lớp 10539
+[2026-09-16 04:40:09] Lớp 10539 có 1 buổi
+[2026-09-16 04:40:09] Lớp 10539 - số cột: 1
+[2026-09-16 04:40:09] Lớp 10539 bảng bất thường (ít cột hoặc thiếu icon Action) → bỏ qua lớp này
