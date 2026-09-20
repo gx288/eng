@@ -240208,3 +240208,4 @@ Stacktrace:
 [2026-09-20 18:11:34] Lớp 10539 có 1 buổi
 [2026-09-20 18:11:34] Lớp 10539 - số cột: 1
 [2026-09-20 18:11:34] Lớp 10539 bảng bất thường (ít cột hoặc thiếu icon Action) → bỏ qua lớp này
+[2026-09-20 22:23:44] Lỗi đăng nhập: Login failed
