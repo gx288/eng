@@ -1,5 +1,58 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "work hard": "làm việc chăm chỉ",
+        "play": "chơi",
+        "fly a kite": "thả diều",
+        "recycling": "tái chế",
+        "milk the cows": "vắt sữa bò",
+        "shear the sheep": "tỉa lông cừu",
+        "collect the eggs": "thu trứng gà",
+        "feed the chickens": "cho gà ăn",
+        "feed the cows": "cho bò ăn",
+        "groom the horses": "chải lông ngựa",
+        "pick the fruit": "hái trái cây",
+        "ant": "con kiến",
+        "paint": "sơn",
+        "tent": "cái lều",
+        "vent": "lỗ thông gió",
+        "mint": "bạc hà",
+        "hunt": "săn đuổi",
+        "ink": "mực",
+        "wink": "nháy mắt",
+        "think": "nghĩ",
+        "thank": "cảm ơn",
+        "bank": "ngân hàng",
+        "stink": "hôi",
+        "lunch": "bữa trưa",
+        "pinch": "véo",
+        "lunchbox": "cơm hộp",
+        "trench": "rãnh, mương",
+        "bench": "ghế dài"
+    },
+    "sentence_structures": {
+        "Is it important to work hard on a farm?": "Yes, it is/ No, it isn’t",
+        "What do we get from farms?": "We get eggs, milk, fruits,..from farms.",
+        "What is she / he doing?": "She/He is feeding the cows.",
+        "Is he / she working hard?": "Yes, he/she is/ No, he/she isn’t."
+    },
+    "report_date": "2026-09-20",
+    "lesson_title": "Lesson 8",
+    "homework": "Các bài tập về nhà trong sách Lesson 8:\n● Phiếu bài tập trên lớp Lesson 8 trong sách Workbook trang 40, 41 (Những bài chưa hoàn thành).\n● Phiếu bài tập về nhà Lesson 8 trong sách Workbook trang 42, 43, 44, 45.\nÔn tập Lesson 8:\n● Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App). Để sử dụng đầy đủ tính năng luyện tập của Quizlet, trước khi luyện tập Quý PH vui lòng ấn Tham gia / Join: https://quizlet.com/join/PYJcRUb7T?i=5lxnmh&x=1bqt\n  - Phonics words & Sentences: Từ vựng và câu chứa âm /nt/, /nk/, /nch/.\n  - Communicative English: Từ vựng và mẫu câu phần tiếng Anh giao tiếp.\n● Tập đọc Rhino Readers book ‘A Trip in a Rocket’ (Sách truyện tập đọc ‘A Trip in a Rocket’):\n  - Nghe và luyện tập đọc với audio: A Trip in a Rocket.mp3\n  - Luyện tập đọc câu chuyện sử dụng sách in hoặc truy cập link sách: https://drive.google.com/file/d/1BeYec5xuIFcK4CA4G-RtEy6es9HcKo-X/view?usp=drive_link\nPhụ huynh học sinh truy cập đường link trên để xem các mục bài tập về nhà.\nChuẩn bị cho buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'A Trip in a Rocket' đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://drive.google.com/drive/folders/121nldYMllTyPnitgh6ZoUXwF2ZLQDHjB?usp=sharing",
+        "https://quizlet.com/vn/1065220962/cll3_phonics_word-set-04_nt-flash-cards/?funnelUUID=00bb49ec-3ae6-49ea-9060-f32c66dc1b35",
+        "https://quizlet.com/join/PYJcRUb7T?i=5lxnmh&x=1bqt",
+        "https://quizlet.com/vn/1065423044/cll3_communicative-english_lesson-08-flash-cards/?funnelUUID=27796993-477e-4115-ae05-77d0ee5927e0",
+        "https://quizlet.com/vn/1065248913/cll3_phonics_word-set-05_nk-flash-cards/?funnelUUID=9fa8b58c-937d-4977-ae66-36f1791f26f2",
+        "https://quizlet.com/vn/1065252936/cll3_phonics_word-set-06_nch-flash-cards/?funnelUUID=eb14ed46-675c-4426-9829-f85e861cbaa9",
+        "A Trip in a Rocket.mp3",
+        "https://drive.google.com/file/d/1zQiTOZg8gzdtowSdAC86hyw4DwjPY5kL/view?usp=drive_link",
+        "https://drive.google.com/file/d/1BeYec5xuIFcK4CA4G-RtEy6es9HcKo-X/view?usp=drive_link"
+    ],
+    "student_comments_minh_huy": "Con vào lớp với thái độ ngoan ngoãn và chú ý nghe giảng. Con thực hiện khá tốt phần Phonics và đọc sách tương đối trôi chảy. Con nắm được kiến thức về các số đã học và biết đọc các số từ 1000 đến 9000. Trong phần Language, con đã biết trao đổi và trả lời các câu hỏi về tầm quan trọng của việc làm việc chăm chỉ. Con về nhớ hoàn thành bài tập đầy đủ nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1YQDPS2obon-aylIz9mEh761bgbFPWQUr/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
