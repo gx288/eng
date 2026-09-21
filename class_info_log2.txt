@@ -132474,3 +132474,6 @@ Con vào lớp với thái độ ngoan ngoãn và chú ý nghe giảng. Con th�
 [2026-09-21 16:55:03] Completed detailed Telegram notifications
 [2026-09-21 16:55:03] Git repository detected
 [2026-09-21 16:55:03] Committing and pushing Report and vocab files to GitHub
+[2026-09-21 16:55:05] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-09-21 16:55:05] Closing WebDriver
+[2026-09-21 16:55:05] Script completed
