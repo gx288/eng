@@ -1,5 +1,41 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "gift": "quà",
+        "shaft": "hầm",
+        "lift": "thang máy",
+        "soft": "nhẹ",
+        "left": "bên trái",
+        "theft": "trộm cắp",
+        "farm animals": "trang trại động vật",
+        "food": "đồ ăn",
+        "baby farm animals": "động vật non trong trang trại",
+        "farm chores": "công việc đồng áng",
+        "milk": "sữa",
+        "cheese": "phô mai",
+        "yoghurt": "sữa chua",
+        "eggs": "trứng"
+    },
+    "sentence_structures": {
+        "The lift goes up and down.": [],
+        "He sits on a soft sofa.": [],
+        "The theft of the bike made the boy sad.": [],
+        "It is dark in the shaft.": [],
+        "This is my left arm.": [],
+        "I cannot lift the big box.": [],
+        "I got a gift for my birthday.": []
+    },
+    "report_date": "2026-09-22",
+    "lesson_title": "Lesson 9",
+    "homework": "Hoàn thành phần Handwriting lesson 9 trong sách CLL3. Ôn tập Lesson 9: Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App) qua link https://quizlet.com/join/PBYwMRteT?i=5lxnmh&x=1bqt. Luyện tập Phonics words & Sentences: Từ vựng và câu chứa âm /nch/. Luyện tập Tricky words & Sentences: Từ vựng và câu không theo quy tắc đánh vần. Luyện tập Communicative English: Từ vựng và mẫu câu phần tiếng Anh giao tiếp. Cài đặt và sử dụng Khan Academy Kids app. Chuẩn bị buổi học tiếp theo: mang sách truyện Rhino Readers cuốn 'Fun at the pool' đến lớp.",
+    "links": [
+        "https://docs.google.com/document/d/1IbK3xjKRYVE8jpLMbuJ0CkIF7O-SLHb27BybIWZXxwk/edit?tab=t.0#heading=h.lsu6d0y2hk65",
+        "https://quizlet.com/join/PBYwMRteT?i=5lxnmh&x=1bqt",
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Buổi học hôm nay, con đã nắm được cách phát âm âm /ft/ và nhận diện tốt các từ vựng đi kèm: gift, shaft, lift, left, soft, theft. Con cũng đọc tốt ‘The theft of the bike made the boy sad.’ và ‘It is dark in the shaft.’ trong buổi hôm nay. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1gSUEb7hyDTcVgnQgEspr7DnUg24NXiDz/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
