@@ -1,5 +1,27 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "skull": "hộp sọ",
+        "skinny": "gầy gò",
+        "whisker": "ria mép",
+        "tusk": "ngà",
+        "ask": "hỏi",
+        "desk": "cái bàn"
+    },
+    "sentence_structures": {},
+    "report_date": "2026-09-27",
+    "lesson_title": "Lesson 10",
+    "homework": "Lesson 10: Các bài tập về nhà trong sách. Phiếu bài tập trên lớp Lesson 10 sách Workbook trang 50, 51 (Những bài chưa hoàn thành). Phiếu bài tập về nhà Lesson 10 sách Workbook trang 52, 53, 54. Ôn tập Lesson 10: Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App) bao gồm Phonics words & Sentences (Từ vựng và câu chứa âm /sk/) và Communicative English (Từ vựng và mẫu câu phần tiếng Anh giao tiếp). Để sử dụng đầy đủ tính năng luyện tập của Quizlet trên Apps điện thoại/Ipad, Quý PH vui lòng ấn Tham gia / Join. Tập đọc Rhino Readers book ‘Fun at the Pool’ (Sách truyện tập đọc ‘Fun at the Pool’) và ‘A Trip in a Rocket’ (Sách truyện tập đọc ‘A Trip in a Rocket’).",
+    "links": [
+        "https://drive.google.com/drive/folders/1oovjkI19vIw91xCZDosy1H6H1NTX7jEP?usp=sharing",
+        "https://drive.google.com/file/d/18XIPzUdtKIT0RxLZapSAAC9BtJgPBD0B/view?usp=drive_link",
+        "https://quizlet.com/vn/1072026959/cll3_phonics_word-set-08_sk-flash-cards",
+        "https://drive.google.com/file/d/1BeYec5xuIFcK4CA4G-RtEy6es9HcKo-X/view?usp=drive_link",
+        "https://quizlet.com/join/8FzQJdHxz?i=5lxnmh&x=1bqt"
+    ],
+    "student_comments_minh_huy": "Dạo gần đây cô nhận thấy con đã có nhiều cố gắng hơn trong việc tập trung vào bài học. Hôm nay con đã học và luyện đọc các từ tusk, skinny và whisker trong bài Phonic /sk/, đồng thời thực hành ghép vần và đọc câu có âm /sk/. Con tham gia các hoạt động khá nghiêm túc và hoàn thành phần thuyết trình trước lớp tốt. Hôm nay con cũng khá tự tin khi trình bày và có sự cố gắng ghi nhớ nội dung mà không sử dụng giấy nháp. Cô rất vui khi thấy con có sự tiến bộ trong việc tập trung, con tiếp tục duy trì tinh thần này nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1n1Bci5DfkssoErWEHr7-PdLVb5DoKnXG/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
