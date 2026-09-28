@@ -133668,3 +133668,6 @@ Dạo gần đây cô nhận thấy con đã có nhiều cố gắng hơn trong 
 [2026-09-28 15:10:45] Completed detailed Telegram notifications
 [2026-09-28 15:10:45] Git repository detected
 [2026-09-28 15:10:45] Committing and pushing Report and vocab files to GitHub
+[2026-09-28 15:10:48] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-09-28 15:10:48] Closing WebDriver
+[2026-09-28 15:10:48] Script completed
