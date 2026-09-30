@@ -133771,3 +133771,23 @@ Dạo gần đây cô nhận thấy con đã có nhiều cố gắng hơn trong 
 [2026-09-29 20:35:06] Report button is disabled
 [2026-09-29 20:35:06] Closing WebDriver
 [2026-09-29 20:35:06] Script completed
+[2026-09-30 00:11:22] Starting script
+[2026-09-30 00:11:22] Starting report check for calendar overview
+[2026-09-30 00:11:22] Loaded processed2.json: {'date': '2026-09-27', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1n1Bci5DfkssoErWEHr7-PdLVb5DoKnXG/export?format=pdf'}
+[2026-09-30 00:11:22] Writing Google credentials to credentials.json
+[2026-09-30 00:11:22] Credentials written successfully
+[2026-09-30 00:11:22] Initializing Chrome WebDriver
+[2026-09-30 00:11:30] WebDriver session ID: 5c6d6b51a3ef80020f4916cbe965c100
+[2026-09-30 00:11:30] Navigating to login page: https://apps.cec.com.vn/login
+[2026-09-30 00:11:35] Login attempt 1/3
+[2026-09-30 00:11:35] Entering password
+[2026-09-30 00:11:35] Clicking login button
+[2026-09-30 00:11:38] Login successful
+[2026-09-30 00:11:38] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-09-30 00:11:48] Scrolled to bottom of page
+[2026-09-30 00:11:48] Found 16 class events
+[2026-09-30 00:11:48] Latest class date before today: 2026-09-29
+[2026-09-30 00:11:51] Class name from popup: VQ2-C3-2602
+[2026-09-30 00:11:51] Report button is disabled
+[2026-09-30 00:11:51] Closing WebDriver
+[2026-09-30 00:11:51] Script completed
