@@ -630,98 +630,62 @@ def generate_quizlet_file(vocab_dict, output_txt_path):
 
 async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf=None, quizlet_txt=None, vocab_sources=None):
     try:
-        general_info = (
-            f"*BÁO CÁO BÀI HỌC - {result_data['report_date']}*\n"
-            f"📅 *Ngày*: {result_data['report_date']}\n"
-            f"📚 *Tiêu đề*: {result_data['lesson_title']}\n"
-            f"🏫 *Lớp*: {result_data['class_name']}"
-        )
-        log_message(f"Sending general info message to chat_id {chat_id}: {general_info[:100]}...")
-        await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(general_info), parse_mode='MarkdownV2')
-        log_message(f"Sent general info message to chat_id {chat_id}")
-        await asyncio.sleep(0.5)
+        lesson_title = result_data.get('lesson_title', 'Bài học')
+        report_date = result_data.get('report_date', '')
+        class_name = result_data.get('class_name', '')
+        
+        comments = result_data.get('student_comments_minh_huy', '')
+        if not comments or comments == "cannot find info":
+            comments = "Không có nhận xét riêng"
 
-        vocab_text = f"*TỪ VỰNG MỚI - {result_data['report_date']}*\n" + "\n".join(
-            f"• `{k}`: {v}" for k, v in result_data['new_vocabulary'].items()
-        )
-        if result_data['new_vocabulary']:
-            log_message(f"Sending vocabulary message to chat_id {chat_id}: {vocab_text[:100]}...")
-            await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(vocab_text), parse_mode='MarkdownV2')
-            log_message(f"Sent vocabulary message to chat_id {chat_id}")
-            await asyncio.sleep(0.5)
-
-        sentence_text = f"*CẤU TRÚC CÂU - {result_data['report_date']}*\n" + "\n".join(
-            f"• *{k}*: {v if isinstance(v, str) else ', '.join(v)}"
-            for k, v in result_data['sentence_structures'].items()
-            if v is not None
-        )
-        if result_data['sentence_structures']:
-            log_message(f"Sending sentence structures message to chat_id {chat_id}: {sentence_text[:100]}...")
-            await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(sentence_text), parse_mode='MarkdownV2')
-            log_message(f"Sent sentence structures message to chat_id {chat_id}")
-            await asyncio.sleep(0.5)
-
-        homework_text = f"*BÀI TẬP VỀ NHÀ - {result_data['report_date']}*\n{result_data['homework']}"
-        if result_data['homework'] and result_data['homework'] != "cannot find info":
-            log_message(f"Sending homework message to chat_id {chat_id}: {homework_text[:100]}...")
-            await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(homework_text), parse_mode='MarkdownV2')
-            log_message(f"Sent homework message to chat_id {chat_id}")
-            await asyncio.sleep(0.5)
-
-        comments_text = f"*NHẬN XÉT VỀ MINH HUY - {result_data['report_date']}*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
-        if result_data['student_comments_minh_huy'] and result_data['student_comments_minh_huy'] != "cannot find info":
-            log_message(f"Sending comments message to chat_id {chat_id}: {comments_text[:100]}...")
-            await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(comments_text), parse_mode='MarkdownV2')
-            log_message(f"Sent comments message to chat_id {chat_id}")
-            await asyncio.sleep(0.5)
+        homework = result_data.get('homework', '')
+        if not homework or homework == "cannot find info":
+            homework = "Không có bài tập được giao"
 
         is_padded = vocab_sources and len(vocab_sources) > 1
         total_practice_words = sum(s[1] for s in vocab_sources) if vocab_sources else len(result_data.get('new_vocabulary', {}))
+        vocab_note = f"Đã gộp ôn tập đủ {total_practice_words} từ" if is_padded else f"Gồm {total_practice_words} từ vựng"
 
-        # Gửi kèm tài liệu phiếu tập chép 5 cột A4
+        # Tóm tắt link Quizlet nếu có trong danh sách link bài tập
+        links = result_data.get('links', [])
+        quiz_links = [l for l in links if 'quizlet' in l.lower()]
+        quiz_str = f"\n🔗 Quizlet: {quiz_links[0]}" if quiz_links else ""
+
+        summary_text = (
+            f"📚 BÁO CÁO CEC: {lesson_title}\n"
+            f"📅 Ngày: {report_date} • Lớp: {class_name}\n\n"
+            f"💬 Nhận xét Minh Huy:\n{comments}\n\n"
+            f"🏠 Bài tập về nhà:\n{homework}\n\n"
+            f"✍️ Phiếu tập chép A4: {vocab_note} (kèm file bên dưới){quiz_str}"
+        )
+
+        log_message(f"Sending concise Telegram message with PDF to chat_id {chat_id}")
+
         if worksheet_pdf and os.path.exists(worksheet_pdf):
-            try:
-                log_message(f"Sending A4 worksheet PDF to chat_id {chat_id}")
-                pdf_caption = (
-                    f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} "
-                    f"(Đã ghép ôn tập bài trước: {total_practice_words} từ)"
-                    if is_padded
-                    else f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
-                )
-                with open(worksheet_pdf, "rb") as f_doc:
+            with open(worksheet_pdf, "rb") as f_doc:
+                if len(summary_text) <= 1000:
                     await bot.send_document(
                         chat_id=chat_id,
                         document=f_doc,
                         filename=os.path.basename(worksheet_pdf),
-                        caption=pdf_caption
+                        caption=summary_text
                     )
-                log_message(f"Sent A4 worksheet PDF to chat_id {chat_id}")
-                await asyncio.sleep(0.5)
-            except Exception as e:
-                log_message(f"Error sending worksheet PDF: {str(e)}")
-
-        # Gửi kèm file 1-Click Import Quizlet
-        if quizlet_txt and os.path.exists(quizlet_txt):
-            try:
-                log_message(f"Sending Quizlet text file to chat_id {chat_id}")
-                quiz_caption = (
-                    f"⚡ File 1-Click Import Quizlet ({total_practice_words} từ - Gồm từ mới & ôn tập bài trước)"
-                    if is_padded
-                    else "⚡ File 1-Click Import Quizlet (Copy & Paste vào Quizlet trong 3 giây)"
-                )
-                with open(quizlet_txt, "rb") as f_quiz:
+                else:
+                    await bot.send_message(chat_id=chat_id, text=summary_text)
+                    await asyncio.sleep(0.5)
                     await bot.send_document(
                         chat_id=chat_id,
-                        document=f_quiz,
-                        filename=os.path.basename(quizlet_txt),
-                        caption=quiz_caption
+                        document=f_doc,
+                        filename=os.path.basename(worksheet_pdf),
+                        caption=f"📄 Phiếu tập chép A4 - {lesson_title} ({report_date})"
                     )
-                log_message(f"Sent Quizlet text file to chat_id {chat_id}")
-                await asyncio.sleep(0.5)
-            except Exception as e:
-                log_message(f"Error sending Quizlet text file: {str(e)}")
+            log_message(f"Sent A4 worksheet PDF cleanly with summary to chat_id {chat_id}")
+        else:
+            await bot.send_message(chat_id=chat_id, text=summary_text)
+            log_message(f"Sent concise summary text to chat_id {chat_id}")
+
     except Exception as e:
-        log_message(f"Failed to send detailed Telegram messages to chat_id {chat_id}: {str(e)}")
+        log_message(f"Failed to send concise Telegram message to chat_id {chat_id}: {str(e)}")
         raise
 
 # Get available Gemini model
