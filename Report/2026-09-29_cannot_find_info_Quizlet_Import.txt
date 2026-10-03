@@ -1,0 +1,40 @@
+pot	cái nồi
+skull	hộp sọ
+skinny	gầy gò
+whisker	ria mép
+tusk	ngà
+ask	hỏi
+desk	cái bàn
+gift	quà
+shaft	hầm
+lift	thang máy
+soft	nhẹ
+left	bên trái
+theft	trộm cắp
+farm animals	trang trại động vật
+food	đồ ăn
+baby farm animals	động vật non trong trang trại
+farm chores	công việc đồng áng
+milk	sữa
+cheese	phô mai
+yoghurt	sữa chua
+eggs	trứng
+work hard	làm việc chăm chỉ
+play	chơi
+fly a kite	thả diều
+recycling	tái chế
+milk the cows	vắt sữa bò
+shear the sheep	tỉa lông cừu
+collect the eggs	thu trứng gà
+feed the chickens	cho gà ăn
+feed the cows	cho bò ăn
+groom the horses	chải lông ngựa
+pick the fruit	hái trái cây
+ant	con kiến
+paint	sơn
+tent	cái lều
+vent	lỗ thông gió
+mint	bạc hà
+hunt	săn đuổi
+ink	mực
+wink	nháy mắt

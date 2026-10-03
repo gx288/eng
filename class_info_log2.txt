@@ -134261,3 +134261,154 @@ Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmA
 [2026-10-03 18:09:39] Saved processed2.json successfully
 [2026-10-03 18:09:39] Git repository detected
 [2026-10-03 18:09:39] Committing and pushing changes to GitHub
+[2026-10-03 18:09:41] Pushed processed2.json and class_info_log2.txt successfully
+[2026-10-03 18:09:41] Starting PDF processing for report analysis
+[2026-10-03 18:09:41] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-03 18:09:41] Downloading PDF from https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-03 18:09:42] Successfully downloaded PDF to temp_report.pdf
+[2026-10-03 18:09:42] Extracting text and links from PDF
+[2026-10-03 18:09:42] Extracted 7428 characters and 10 links from PDF
+[2026-10-03 18:09:42] Deleted temporary PDF file: temp_report.pdf
+[2026-10-03 18:09:42] Gemini API attempt 1/3
+[2026-10-03 18:09:43] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-4-26b-a4b-it', 'models/gemma-4-31b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image', 'models/gemini-3-flash-preview', 'models/gemini-3.1-pro-preview', 'models/gemini-3.1-pro-preview-customtools', 'models/gemini-3.1-flash-lite-preview', 'models/gemini-3.1-flash-lite', 'models/gemini-3-pro-image-preview', 'models/gemini-3-pro-image', 'models/nano-banana-pro-preview', 'models/gemini-3.1-flash-image-preview', 'models/gemini-3.1-flash-image', 'models/gemini-3.1-flash-lite-image', 'models/gemini-3.5-flash', 'models/gemini-3.5-flash-lite', 'models/gemini-omni-flash-preview', 'models/gemini-omni-1.1-flash', 'models/gemini-3.5-transcribe', 'models/gemini-3.6-flash', 'models/gemini-3.7-flash', 'models/gemini-3.8-flash', 'models/lyria-3-clip-preview', 'models/lyria-3-pro-preview', 'models/lyria-3.5', 'models/gemini-3.1-flash-tts-preview', 'models/gemini-3.8-flash-tts', 'models/gemini-3.8-flash-lite-tts', 'models/gemini-robotics-er-2-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/antigravity-preview-05-2026', 'models/antigravity-preview-09-2026', 'models/antigravity-preview-latest', 'models/deep-research-max-preview-04-2026', 'models/deep-research-preview-04-2026', 'models/deep-research-pro-preview-12-2025']
+[2026-10-03 18:09:43] Using model: models/gemini-2.5-flash
+[2026-10-03 18:09:43] API attempt 1/3 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 5h50m16.716198983s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 21016
+}
+]
+[2026-10-03 18:09:43] Gemini API attempt 2/3
+[2026-10-03 18:09:43] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-4-26b-a4b-it', 'models/gemma-4-31b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image', 'models/gemini-3-flash-preview', 'models/gemini-3.1-pro-preview', 'models/gemini-3.1-pro-preview-customtools', 'models/gemini-3.1-flash-lite-preview', 'models/gemini-3.1-flash-lite', 'models/gemini-3-pro-image-preview', 'models/gemini-3-pro-image', 'models/nano-banana-pro-preview', 'models/gemini-3.1-flash-image-preview', 'models/gemini-3.1-flash-image', 'models/gemini-3.1-flash-lite-image', 'models/gemini-3.5-flash', 'models/gemini-3.5-flash-lite', 'models/gemini-omni-flash-preview', 'models/gemini-omni-1.1-flash', 'models/gemini-3.5-transcribe', 'models/gemini-3.6-flash', 'models/gemini-3.7-flash', 'models/gemini-3.8-flash', 'models/lyria-3-clip-preview', 'models/lyria-3-pro-preview', 'models/lyria-3.5', 'models/gemini-3.1-flash-tts-preview', 'models/gemini-3.8-flash-tts', 'models/gemini-3.8-flash-lite-tts', 'models/gemini-robotics-er-2-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/antigravity-preview-05-2026', 'models/antigravity-preview-09-2026', 'models/antigravity-preview-latest', 'models/deep-research-max-preview-04-2026', 'models/deep-research-preview-04-2026', 'models/deep-research-pro-preview-12-2025']
+[2026-10-03 18:09:43] Using model: models/gemini-2.5-pro
+[2026-10-03 18:09:43] API attempt 2/3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 18:09:43] Gemini API attempt 3/3
+[2026-10-03 18:09:43] Available models: ['models/gemini-2.5-flash', 'models/gemini-2.5-pro', 'models/gemini-2.5-flash-preview-tts', 'models/gemini-2.5-pro-preview-tts', 'models/gemma-4-26b-a4b-it', 'models/gemma-4-31b-it', 'models/gemini-flash-latest', 'models/gemini-flash-lite-latest', 'models/gemini-pro-latest', 'models/gemini-2.5-flash-lite', 'models/gemini-2.5-flash-image', 'models/gemini-3-flash-preview', 'models/gemini-3.1-pro-preview', 'models/gemini-3.1-pro-preview-customtools', 'models/gemini-3.1-flash-lite-preview', 'models/gemini-3.1-flash-lite', 'models/gemini-3-pro-image-preview', 'models/gemini-3-pro-image', 'models/nano-banana-pro-preview', 'models/gemini-3.1-flash-image-preview', 'models/gemini-3.1-flash-image', 'models/gemini-3.1-flash-lite-image', 'models/gemini-3.5-flash', 'models/gemini-3.5-flash-lite', 'models/gemini-omni-flash-preview', 'models/gemini-omni-1.1-flash', 'models/gemini-3.5-transcribe', 'models/gemini-3.6-flash', 'models/gemini-3.7-flash', 'models/gemini-3.8-flash', 'models/lyria-3-clip-preview', 'models/lyria-3-pro-preview', 'models/lyria-3.5', 'models/gemini-3.1-flash-tts-preview', 'models/gemini-3.8-flash-tts', 'models/gemini-3.8-flash-lite-tts', 'models/gemini-robotics-er-2-preview', 'models/gemini-2.5-computer-use-preview-10-2025', 'models/antigravity-preview-05-2026', 'models/antigravity-preview-09-2026', 'models/antigravity-preview-latest', 'models/deep-research-max-preview-04-2026', 'models/deep-research-preview-04-2026', 'models/deep-research-pro-preview-12-2025']
+[2026-10-03 18:09:43] Using model: models/gemini-pro-latest
+[2026-10-03 18:09:43] API attempt 3/3 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro
+Please retry in 5h50m16.308151574s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.1-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.1-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.1-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerDay-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.1-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 21016
+}
+]
+[2026-10-03 18:09:43] All API attempts failed. Using best response or default.
+[2026-10-03 18:09:43] Updating Google Sheet 'ReportContent' with extracted data
+[2026-10-03 18:09:44] Inserted 6 rows to 'ReportContent' after header
+[2026-10-03 18:09:44] Processing total vocabulary
+[2026-10-03 18:09:44] Loaded existing vocabulary from vocab_total.json: 766 entries
+[2026-10-03 18:09:44] Added 0 new vocabulary entries. Total vocabulary: 766
+[2026-10-03 18:09:44] Saving updated vocabulary to vocab_total.json
+[2026-10-03 18:09:44] Successfully saved vocab_total.json
+[2026-10-03 18:09:44] Updating Google Sheet 'vocab' with total vocabulary
+[2026-10-03 18:09:46] Updated Google Sheet 'vocab' successfully with 766 vocabulary entries
+[2026-10-03 18:09:46] Creating Report directory if not exists
+[2026-10-03 18:09:46] Practice vocabulary count: 40 (Original lesson words: 1)
+[2026-10-03 18:09:46]   + Bài hiện tại: 1 words
+[2026-10-03 18:09:46]   + 2026-09-27_Lesson_10: 6 words
+[2026-10-03 18:09:46]   + 2026-09-22_Lesson_9: 14 words
+[2026-10-03 18:09:46]   + 2026-09-20_Lesson_8: 19 words
+[2026-10-03 18:09:47] Successfully generated PDF worksheet: Report/2026-09-29_cannot_find_info_Phieu_Tap_Chep.pdf
+[2026-10-03 18:09:47] Successfully generated Quizlet file: Report/2026-09-29_cannot_find_info_Quizlet_Import.txt
+[2026-10-03 18:09:47] Saving result to Report/2026-09-29_cannot_find_info.json
+[2026-10-03 18:09:47] Successfully saved: Report/2026-09-29_cannot_find_info.json
+[2026-10-03 18:09:47] Starting detailed Telegram notifications
+[2026-10-03 18:09:47] Initializing Telegram Bot for detailed messages
+[2026-10-03 18:09:47] Sending detailed Telegram messages to chat_id 1900957785
+[2026-10-03 18:09:47] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-09-29*
+📅 *Ngày*: 2026-09-29
+📚 *Tiêu đề*: cannot find info
+🏫 *Lớp*: VQ2-C3-26...
+[2026-10-03 18:09:48] Sent general info message to chat_id 1900957785
+[2026-10-03 18:09:48] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-09-29*
+• `pot`: cái nồi...
+[2026-10-03 18:09:48] Sent vocabulary message to chat_id 1900957785
+[2026-10-03 18:09:49] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-10-03 18:09:50] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-10-03 18:09:51] Completed sending detailed messages to chat_id 1900957785
+[2026-10-03 18:09:51] Sending detailed Telegram messages to chat_id 1924741087
+[2026-10-03 18:09:51] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-09-29*
+📅 *Ngày*: 2026-09-29
+📚 *Tiêu đề*: cannot find info
+🏫 *Lớp*: VQ2-C3-26...
+[2026-10-03 18:09:51] Sent general info message to chat_id 1924741087
+[2026-10-03 18:09:52] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-09-29*
+• `pot`: cái nồi...
+[2026-10-03 18:09:52] Sent vocabulary message to chat_id 1924741087
+[2026-10-03 18:09:53] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-10-03 18:09:54] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-10-03 18:09:54] Completed sending detailed messages to chat_id 1924741087
+[2026-10-03 18:09:54] Completed detailed Telegram notifications
+[2026-10-03 18:09:54] Git repository detected
+[2026-10-03 18:09:54] Committing and pushing Report and vocab files to GitHub
