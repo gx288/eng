@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+credentials.json
+.env
+.credentials.json
+temp_report.pdf
+*.log

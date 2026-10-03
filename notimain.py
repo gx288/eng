@@ -271,7 +271,283 @@ def escape_markdown_v2(text):
     return re.sub(special_chars, r'\\\g<1>', text)
 
 # Send detailed Telegram message
-async def send_detailed_telegram_message(bot, chat_id, result_data):
+
+# ────────────────────────────────────────────────
+#    CÔNG CỤ TẠO PHIẾU CHÉP A4 & QUIZLET TỰ ĐỘNG
+# ────────────────────────────────────────────────
+
+def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
+    import shutil
+    vocab_items = [{"en": k, "vi": v} for k, v in vocab_dict.items() if k and v]
+    total_words = len(vocab_items)
+    if total_words == 0:
+        return None
+
+    if total_words <= 15:
+        pages = [vocab_items]
+        row_height = "15.2mm"
+    elif total_words <= 30:
+        mid = (total_words + 1) // 2
+        pages = [vocab_items[:mid], vocab_items[mid:]]
+        row_height = "15.2mm"
+    else:
+        per_page = 24
+        pages = [vocab_items[i:i + per_page] for i in range(0, total_words, per_page)]
+        row_height = "10.2mm"
+
+    total_pages = len(pages)
+
+    def render_page(items, start_idx, page_num):
+        rows = []
+        for i, item in enumerate(items, start=start_idx):
+            rows.append(f"""          <tr>
+            <td class="col-en">{i}. {item['en']}</td>
+            <td class="col-vi">{item['vi']}</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>""")
+        rows_html = "\n".join(rows)
+
+        return f"""
+    <div class="a4-page">
+      <div class="page-head">
+        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG TIẾNG ANH</div>
+        <div class="info-bar">
+          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+          <div>Lớp: <strong>VQ2-C3-2602</strong></div>
+          <div>Bài học: <strong>{lesson_title}</strong></div>
+          <div style="text-align: right;">Ngày: {date_str}</div>
+        </div>
+      </div>
+
+      <table class="vocab-grid">
+        <thead>
+          <tr>
+            <th style="width: 16%;">Từ Vựng</th>
+            <th style="width: 16%;">Nghĩa</th>
+            <th style="width: 22.66%;">Lần 1 (Tập chép)</th>
+            <th style="width: 22.67%;">Lần 2 (Tập chép)</th>
+            <th style="width: 22.67%;">Lần 3 (Tập chép)</th>
+          </tr>
+        </thead>
+        <tbody>
+{rows_html}
+        </tbody>
+      </table>
+
+      <div class="page-foot">
+        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-C3-2602 &bull; Trung tâm CEC</div>
+        <div>Trang {page_num} / {total_pages}</div>
+      </div>
+    </div>"""
+
+    pages_html = "\n".join(render_page(page_items, sum(len(p) for p in pages[:idx]) + 1, idx + 1) for idx, page_items in enumerate(pages))
+
+    html_content = f"""<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phiếu Tập Chép Từ Vựng - {lesson_title}</title>
+  <style>
+    * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+    body {{
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased;
+    }}
+    .a4-page {{
+      background: #ffffff;
+      width: 210mm;
+      min-height: 286mm;
+      max-height: 286mm;
+      padding: 6mm 5mm 5mm 5mm;
+      margin: 0 auto 30px auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }}
+    .a4-page:last-child {{
+      page-break-after: auto;
+      break-after: auto;
+    }}
+    .page-head {{
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      margin-bottom: 5px;
+    }}
+    .title-main {{
+      font-size: 17px;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #000000;
+      margin-bottom: 3px;
+    }}
+    .info-bar {{
+      display: grid;
+      grid-template-columns: 2.2fr 1.3fr 1.3fr 1fr;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #000000;
+      padding: 2px 0;
+    }}
+    .vocab-grid {{
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      flex-grow: 1;
+    }}
+    .vocab-grid th {{
+      background: #ffffff;
+      color: #000000;
+      font-size: 11.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 2px solid #000000;
+      padding: 4px 2px;
+      text-align: center;
+    }}
+    .vocab-grid td {{
+      border: 1.5px solid #000000;
+      padding: 0 4px;
+      vertical-align: middle;
+      height: {row_height};
+    }}
+    .col-en {{
+      width: 16%;
+      font-weight: 800;
+      font-size: 11px;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.25;
+      padding: 0 2px !important;
+    }}
+    .col-vi {{
+      width: 16%;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.25;
+      padding: 0 2px !important;
+    }}
+    .col-write {{
+      width: 22.66%;
+      padding: 0 !important;
+      position: relative;
+    }}
+    .handwriting-box {{
+      width: 100%;
+      height: 100%;
+      min-height: {row_height};
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }}
+    .handwriting-box::after {{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      border-top: 1.2px dashed #000000;
+      pointer-events: none;
+    }}
+    .page-foot {{
+      border-top: 1.5px solid #000000;
+      margin-top: 5px;
+      padding-top: 3px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 700;
+      color: #000000;
+    }}
+    @page {{
+      size: A4 portrait;
+      margin: 6mm 5mm 5mm 5mm;
+    }}
+    @media print {{
+      body {{ background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
+      .a4-page {{
+        width: 100% !important;
+        min-height: 286mm !important;
+        max-height: 286mm !important;
+        margin: 0 !important;
+        padding: 6mm 5mm 5mm 5mm !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }}
+      .a4-page:last-child {{
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }}
+    }}
+  </style>
+</head>
+<body>
+{pages_html}
+</body>
+</html>
+"""
+    temp_html_path = output_pdf_path.replace('.pdf', '.html')
+    with open(temp_html_path, 'w', encoding='utf-8') as f:
+        f.write(html_content)
+
+    chrome_binary = None
+    if sys.platform == 'win32':
+        win_chrome = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
+        if os.path.exists(win_chrome):
+            chrome_binary = win_chrome
+    else:
+        chrome_binary = shutil.which('google-chrome') or shutil.which('google-chrome-stable') or shutil.which('chromium')
+
+    if not chrome_binary:
+        log_message('Warning: Chrome binary not found, skipping PDF generation')
+        return None
+
+    try:
+        cmd = [
+            chrome_binary,
+            '--headless',
+            '--disable-gpu',
+            '--no-sandbox',
+            '--disable-dev-shm-usage',
+            '--no-pdf-header-footer',
+            f'--print-to-pdf={output_pdf_path}',
+            temp_html_path
+        ]
+        subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        log_message(f'Successfully generated PDF worksheet: {output_pdf_path}')
+        return output_pdf_path
+    except Exception as e:
+        log_message(f'Failed to generate PDF worksheet: {str(e)}')
+        return None
+
+def generate_quizlet_file(vocab_dict, output_txt_path):
+    try:
+        with open(output_txt_path, 'w', encoding='utf-8') as f:
+            for k, v in vocab_dict.items():
+                if k and v:
+                    f.write(f"{k.strip()}\t{v.strip()}\n")
+        log_message(f'Successfully generated Quizlet file: {output_txt_path}')
+        return output_txt_path
+    except Exception as e:
+        log_message(f'Failed to generate Quizlet file: {str(e)}')
+        return None
+
+async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf=None, quizlet_txt=None):
     try:
         general_info = (
             f"*BÁO CÁO BÀI HỌC - {result_data['report_date']}*\n"
@@ -317,6 +593,38 @@ async def send_detailed_telegram_message(bot, chat_id, result_data):
             await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(comments_text), parse_mode='MarkdownV2')
             log_message(f"Sent comments message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
+
+        # Gửi kèm tài liệu phiếu tập chép 5 cột A4
+        if worksheet_pdf and os.path.exists(worksheet_pdf):
+            try:
+                log_message(f"Sending A4 worksheet PDF to chat_id {chat_id}")
+                with open(worksheet_pdf, "rb") as f_doc:
+                    await bot.send_document(
+                        chat_id=chat_id,
+                        document=f_doc,
+                        filename=os.path.basename(worksheet_pdf),
+                        caption=f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
+                    )
+                log_message(f"Sent A4 worksheet PDF to chat_id {chat_id}")
+                await asyncio.sleep(0.5)
+            except Exception as e:
+                log_message(f"Error sending worksheet PDF: {str(e)}")
+
+        # Gửi kèm file 1-Click Import Quizlet
+        if quizlet_txt and os.path.exists(quizlet_txt):
+            try:
+                log_message(f"Sending Quizlet text file to chat_id {chat_id}")
+                with open(quizlet_txt, "rb") as f_quiz:
+                    await bot.send_document(
+                        chat_id=chat_id,
+                        document=f_quiz,
+                        filename=os.path.basename(quizlet_txt),
+                        caption="⚡ File 1-Click Import Quizlet (Copy & Paste vào Quizlet trong 3 giây)"
+                    )
+                log_message(f"Sent Quizlet text file to chat_id {chat_id}")
+                await asyncio.sleep(0.5)
+            except Exception as e:
+                log_message(f"Error sending Quizlet text file: {str(e)}")
     except Exception as e:
         log_message(f"Failed to send detailed Telegram messages to chat_id {chat_id}: {str(e)}")
         raise
@@ -725,8 +1033,16 @@ def process_report():
 
                 log_message("Creating Report directory if not exists")
                 os.makedirs('Report', exist_ok=True)
-                title = extracted_data['lesson_title'].replace(' ', '_') if extracted_data['lesson_title'] else 'unknown'
+                # Làm sạch tiêu đề bài học tránh ký tự cấm trên Windows NTFS
+                title_raw = extracted_data['lesson_title'] if extracted_data.get('lesson_title') else 'unknown'
+                title = re.sub(r'[:"*?<>|\\/]', '_', title_raw).replace(' ', '_')
                 result_filename = f"Report/{date_str}_{title}.json"
+
+                # Tự động tạo Phiếu tập chép A4 và File Quizlet 1-Click Import
+                worksheet_pdf = f"Report/{date_str}_{title}_Phieu_Tap_Chep.pdf"
+                quizlet_txt = f"Report/{date_str}_{title}_Quizlet_Import.txt"
+                generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), extracted_data.get('new_vocabulary', {}), worksheet_pdf)
+                generate_quizlet_file(extracted_data.get('new_vocabulary', {}), quizlet_txt)
 
                 result_data = {
                     **extracted_data,
@@ -746,7 +1062,7 @@ def process_report():
                     for chat_id in [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]:
                         if chat_id:
                             log_message(f"Sending detailed Telegram messages to chat_id {chat_id}")
-                            await send_detailed_telegram_message(bot, chat_id, result_data)
+                            await send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf, quizlet_txt)
                             log_message(f"Completed sending detailed messages to chat_id {chat_id}")
 
                 log_message("Starting detailed Telegram notifications")

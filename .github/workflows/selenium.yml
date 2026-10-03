@@ -1,8 +1,8 @@
 name: Lay thong tin lop hop
 
 on:
-  schedule:
-    - cron: '5 0,5,10,15,20 * * *'
+  # schedule:
+  #   - cron: '5 0,5,10,15,20 * * *'  # Tạm tắt để dồn tài nguyên cho sele.yml (notimain.py)
   workflow_dispatch:
 
 jobs:
