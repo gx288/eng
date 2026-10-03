@@ -134412,3 +134412,6 @@ violations {
 [2026-10-03 18:09:54] Completed detailed Telegram notifications
 [2026-10-03 18:09:54] Git repository detected
 [2026-10-03 18:09:54] Committing and pushing Report and vocab files to GitHub
+[2026-10-03 18:09:57] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-10-03 18:09:57] Closing WebDriver
+[2026-10-03 18:09:57] Script completed
