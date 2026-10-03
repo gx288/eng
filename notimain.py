@@ -358,32 +358,32 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
 
     if total_words <= 15:
         pages = [vocab_items]
-        row_height = "15.2mm"
+        row_height = "16.5mm"
     elif total_words <= 20:
         pages = [vocab_items]
-        row_height = "12.5mm"
+        row_height = "13.2mm"
     elif total_words <= 40:
         mid = (total_words + 1) // 2
         pages = [vocab_items[:mid], vocab_items[mid:]]
         max_page_items = max(len(pages[0]), len(pages[1]))
         if max_page_items <= 16:
-            row_height = "15.0mm"
+            row_height = "16.0mm"
         elif max_page_items <= 18:
-            row_height = "13.5mm"
+            row_height = "14.5mm"
         else:
-            row_height = "12.3mm"
+            row_height = "13.0mm"
     else:
         per_page = 24
         pages = [vocab_items[i:i + per_page] for i in range(0, total_words, per_page)]
-        row_height = "10.2mm"
+        row_height = "10.8mm"
 
     total_pages = len(pages)
 
-    def render_page(items, start_idx, page_num):
+    def render_page(items, page_num):
         rows = []
-        for i, item in enumerate(items, start=start_idx):
+        for item in items:
             rows.append(f"""          <tr>
-            <td class="col-en">{i}. {item['en']}</td>
+            <td class="col-en">{item['en']}</td>
             <td class="col-vi">{item['vi']}</td>
             <td class="col-write"><div class="handwriting-box"></div></td>
             <td class="col-write"><div class="handwriting-box"></div></td>
@@ -417,14 +417,9 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
 {rows_html}
         </tbody>
       </table>
-
-      <div class="page-foot">
-        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-C3-2602 &bull; Trung tâm CEC</div>
-        <div>Trang {page_num} / {total_pages} (Tổng {total_words} từ)</div>
-      </div>
     </div>"""
 
-    pages_html = "\n".join(render_page(page_items, sum(len(p) for p in pages[:idx]) + 1, idx + 1) for idx, page_items in enumerate(pages))
+    pages_html = "\n".join(render_page(page_items, idx + 1) for idx, page_items in enumerate(pages))
 
     html_content = f"""<!DOCTYPE html>
 <html lang="vi">
@@ -450,7 +445,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       overflow: hidden;
       page-break-after: always;
       break-after: page;
@@ -465,7 +460,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
       margin-bottom: 5px;
     }}
     .title-main {{
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 900;
       text-align: center;
       text-transform: uppercase;
@@ -476,8 +471,8 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     .info-bar {{
       display: grid;
       grid-template-columns: 2.2fr 1.3fr 1.3fr 1fr;
-      font-size: 11.5px;
-      font-weight: 700;
+      font-size: 12px;
+      font-weight: 800;
       color: #000000;
       padding: 2px 0;
     }}
@@ -490,7 +485,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     .vocab-grid th {{
       background: #ffffff;
       color: #000000;
-      font-size: 11.5px;
+      font-size: 12.5px;
       font-weight: 900;
       text-transform: uppercase;
       border: 2px solid #000000;
@@ -505,21 +500,21 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     }}
     .col-en {{
       width: 16%;
-      font-weight: 800;
-      font-size: 11.5px;
+      font-weight: 900;
+      font-size: 13.5px;
       color: #000000;
       word-break: break-word;
       line-height: 1.25;
-      padding: 0 2px !important;
+      padding: 0 4px !important;
     }}
     .col-vi {{
       width: 16%;
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 700;
       color: #000000;
       word-break: break-word;
       line-height: 1.25;
-      padding: 0 2px !important;
+      padding: 0 4px !important;
     }}
     .col-write {{
       width: 22.66%;
@@ -543,16 +538,6 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
       top: 50%;
       border-top: 1.2px dashed #000000;
       pointer-events: none;
-    }}
-    .page-foot {{
-      border-top: 1.5px solid #000000;
-      margin-top: 5px;
-      padding-top: 3px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-      font-weight: 700;
-      color: #000000;
     }}
     @page {{
       size: A4 portrait;
@@ -705,23 +690,78 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
         log_message(f"Failed to send detailed Telegram messages to chat_id {chat_id}: {str(e)}")
         raise
 
+# Fallback parser trực tiếp từ nội dung văn bản PDF khi Gemini gặp lỗi hạn ngạch (429)
+def parse_report_from_text(pdf_text, date_str, pdf_links=None):
+    log_message("Executing fallback regex parser on PDF text")
+    lesson_title = "Lesson"
+    m_lesson = re.search(r'(?:Lesson|Bài học)[\s:：]*([^\n\r]+)', pdf_text, re.IGNORECASE)
+    if m_lesson:
+        lesson_title = m_lesson.group(1).strip()
+    else:
+        m_unit = re.search(r'(Unit\s+\d+[^\n\r]*)', pdf_text, re.IGNORECASE)
+        if m_unit:
+            lesson_title = m_unit.group(1).strip()
+
+    comments = ""
+    m_comment = re.search(r'Minh Huy\s*[:：]\s*([^\n\r]+(?:\n[^\n\r]+)*?)(?=\n\s*\.\s*[A-Z]|\n\s*PHẦN|\n\s*Cambridge|\Z)', pdf_text, re.IGNORECASE)
+    if m_comment:
+        comments = re.sub(r'\s+', ' ', m_comment.group(1)).strip()
+
+    homework = ""
+    m_hw = re.search(r'(?:Homework|Bài tập về nhà)[^\n\r]*:\s*([\s\S]*?)(?=\n\s*Minh Huy|\n\s*Nhận xét|\Z)', pdf_text, re.IGNORECASE)
+    if m_hw:
+        homework = re.sub(r'\s+', ' ', m_hw.group(1)).strip()
+
+    vocab = {}
+    lines = pdf_text.splitlines()
+    for line in lines:
+        line = line.strip()
+        if not line or len(line) > 80:
+            continue
+        pairs = re.findall(r'([a-zA-Z\s\-]{2,25})\s*[:：]\s*([a-zA-ZÀ-ỹ0-9\s,\(\)\/\.]{2,40})', line)
+        for w, m in pairs:
+            w_clean = w.strip().lower()
+            m_clean = m.strip()
+            if any(skip in w_clean for skip in ['class', 'lesson', 'date', 'skills', 'link', 'audio', 'phonic']):
+                continue
+            if w_clean and m_clean:
+                vocab[w_clean] = m_clean
+
+    log_message(f"Fallback extracted: title='{lesson_title}', vocab_count={len(vocab)}")
+    return {
+        "new_vocabulary": vocab,
+        "sentence_structures": {},
+        "report_date": date_str,
+        "lesson_title": lesson_title if lesson_title != "cannot find info" else f"Lesson ({date_str})",
+        "homework": homework or "Ôn tập nội dung bài học và làm bài tập theo hướng dẫn của giáo viên.",
+        "links": pdf_links or [],
+        "student_comments_minh_huy": comments or "Không có nhận xét riêng trong báo cáo."
+    }
+
 # Get available Gemini model
 def get_available_model(attempt=0):
+    candidate_order = [
+        'gemini-2.5-flash',
+        'gemini-2.5-flash-lite',
+        'gemini-flash-latest',
+        'gemini-3.5-flash',
+        'gemini-3.5-flash-lite'
+    ]
     try:
-        models = genai.list_models()
-        available_models = [model.name for model in models if 'generateContent' in model.supported_generation_methods]
-        log_message(f"Available models: {available_models}")
-        for model in available_models:
-            if attempt == 0 and 'gemini-2.5-flash' in model:
-                return model
-            if attempt == 1 and 'gemini-2.5-pro' in model:
-                return model
-            if attempt == 2 and 'gemini-pro' in model:
-                return model
-        return available_models[0] if available_models else None
+        models = [model.name for model in genai.list_models() if 'generateContent' in model.supported_generation_methods]
+        log_message(f"Available Gemini models count: {len(models)}")
+        if attempt < len(candidate_order):
+            target = candidate_order[attempt]
+            for m in models:
+                if target in m:
+                    return m
+        for m in models:
+            if 'flash' in m.lower():
+                return m
+        return models[0] if models else 'models/gemini-2.5-flash'
     except Exception as e:
         log_message(f"Failed to list models: {str(e)}")
-        return None
+        return 'models/gemini-2.5-flash'
 
 # Fix invalid report date
 def fix_report_date(date_str, fallback_date):
@@ -926,7 +966,7 @@ def process_report():
             if report_url:
                 timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
                 body = f"Báo cáo bài học mới cho lớp {class_name} ngày {date_str}\nLink: {report_url}"
-                send_basic_notification("Có Báo cáo bài học mới!", body)
+                log_message(f"Found new report: {body}")
                 update_google_sheet(date_str, class_name, report_url, timestamp)
                 save_processed(date_str, class_name, report_url)
 
@@ -1056,17 +1096,27 @@ def process_report():
                         break
                     except Exception as e:
                         log_message(f"API attempt {attempt + 1}/{max_attempts} failed: {str(e)}")
+                        time.sleep(3)
                         if attempt == max_attempts - 1:
-                            log_message("All API attempts failed. Using best response or default.")
-                            extracted_data = best_response or {
-                                "new_vocabulary": {"pot": "cái nồi"},
-                                "sentence_structures": {},
-                                "report_date": date_str,
-                                "lesson_title": "cannot find info",
-                                "homework": "cannot find info",
-                                "links": pdf_links,
-                                "student_comments_minh_huy": "cannot find info"
-                            }
+                            log_message("All API attempts failed. Attempting recovery from cache or PDF text.")
+                            recovered = None
+                            if os.path.exists('Report'):
+                                for rf in os.listdir('Report'):
+                                    if rf.startswith(date_str) and rf.endswith('.json') and 'cannot_find_info' not in rf:
+                                        try:
+                                            with open(os.path.join('Report', rf), 'r', encoding='utf-8') as cf:
+                                                cdata = json.load(cf)
+                                                if cdata.get('new_vocabulary') and cdata.get('lesson_title') != 'cannot find info':
+                                                    recovered = cdata
+                                                    log_message(f"Successfully recovered report data from existing file: {rf}")
+                                                    break
+                                        except Exception:
+                                            pass
+
+                            if not recovered:
+                                recovered = parse_report_from_text(pdf_text, date_str, pdf_links)
+
+                            extracted_data = best_response or recovered
 
                 update_report_content_sheet(extracted_data, class_name, date_str, extracted_data['lesson_title'])
 
@@ -1147,11 +1197,11 @@ def process_report():
                 async def send_report_to_telegram():
                     log_message("Initializing Telegram Bot for detailed messages")
                     bot = Bot(token=TELEGRAM_BOT_TOKEN)
-                    for chat_id in [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]:
-                        if chat_id:
-                            log_message(f"Sending detailed Telegram messages to chat_id {chat_id}")
-                            await send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf, quizlet_txt, vocab_sources)
-                            log_message(f"Completed sending detailed messages to chat_id {chat_id}")
+                    chat_ids = list(dict.fromkeys(cid for cid in [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2] if cid))
+                    for chat_id in chat_ids:
+                        log_message(f"Sending detailed Telegram messages to chat_id {chat_id}")
+                        await send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf, quizlet_txt, vocab_sources)
+                        log_message(f"Completed sending detailed messages to chat_id {chat_id}")
 
                 log_message("Starting detailed Telegram notifications")
                 asyncio.run(send_report_to_telegram())
