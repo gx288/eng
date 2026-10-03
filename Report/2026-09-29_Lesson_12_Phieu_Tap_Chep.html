@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phiếu Tập Chép Từ Vựng - Lesson 12</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased;
+    }
+    .a4-page {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 286mm;
+      max-height: 286mm;
+      padding: 6mm 5mm 5mm 5mm;
+      margin: 0 auto 30px auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }
+    .a4-page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    .page-head {
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      margin-bottom: 5px;
+    }
+    .title-main {
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #000000;
+      margin-bottom: 3px;
+    }
+    .info-bar {
+      display: grid;
+      grid-template-columns: 2.2fr 1.3fr 1.3fr 1fr;
+      font-size: 12px;
+      font-weight: 800;
+      color: #000000;
+      padding: 2px 0;
+    }
+    .vocab-grid {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      flex-grow: 1;
+    }
+    .vocab-grid th {
+      background: #ffffff;
+      color: #000000;
+      font-size: 12.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 2px solid #000000;
+      padding: 4px 2px;
+      text-align: center;
+    }
+    .vocab-grid td {
+      border: 1.5px solid #000000;
+      padding: 0 4px;
+      vertical-align: middle;
+      height: 13.0mm;
+    }
+    .col-en {
+      width: 16%;
+      font-weight: 900;
+      font-size: 13.5px;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.25;
+      padding: 0 4px !important;
+    }
+    .col-vi {
+      width: 16%;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.25;
+      padding: 0 4px !important;
+    }
+    .col-write {
+      width: 22.66%;
+      padding: 0 !important;
+      position: relative;
+    }
+    .handwriting-box {
+      width: 100%;
+      height: 100%;
+      min-height: 13.0mm;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .handwriting-box::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      border-top: 1.2px dashed #000000;
+      pointer-events: none;
+    }
+    @page {
+      size: A4 portrait;
+      margin: 6mm 5mm 5mm 5mm;
+    }
+    @media print {
+      body { background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .a4-page {
+        width: 100% !important;
+        min-height: 286mm !important;
+        max-height: 286mm !important;
+        margin: 0 !important;
+        padding: 6mm 5mm 5mm 5mm !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      .a4-page:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <div class="a4-page">
+      <div class="page-head">
+        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG TIẾNG ANH</div>
+        <div class="info-bar">
+          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+          <div>Lớp: <strong>VQ2-C3-2602</strong></div>
+          <div>Bài học: <strong>Lesson 12</strong></div>
+          <div style="text-align: right;">Ngày: 2026-09-29</div>
+        </div>
+      </div>
+
+      <table class="vocab-grid">
+        <thead>
+          <tr>
+            <th style="width: 16%;">Từ Vựng</th>
+            <th style="width: 16%;">Nghĩa</th>
+            <th style="width: 22.66%;">Lần 1 (Tập chép)</th>
+            <th style="width: 22.67%;">Lần 2 (Tập chép)</th>
+            <th style="width: 22.67%;">Lần 3 (Tập chép)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-en">quilt</td>
+            <td class="col-vi">chăn bông</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">bolt</td>
+            <td class="col-vi">then cửa</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">belt</td>
+            <td class="col-vi">thắt lưng</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">tilt</td>
+            <td class="col-vi">nghiêng</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">wilt</td>
+            <td class="col-vi">khô héo</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">skull</td>
+            <td class="col-vi">hộp sọ</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">tusk</td>
+            <td class="col-vi">cái ngà</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">skinny</td>
+            <td class="col-vi">gầy gò</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">ask</td>
+            <td class="col-vi">hỏi</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">whisker</td>
+            <td class="col-vi">ria mép</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">desk</td>
+            <td class="col-vi">cái bàn</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">gift</td>
+            <td class="col-vi">quà</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">shaft</td>
+            <td class="col-vi">hầm</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">lift</td>
+            <td class="col-vi">thang máy</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">soft</td>
+            <td class="col-vi">nhẹ</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">left</td>
+            <td class="col-vi">bên trái</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">theft</td>
+            <td class="col-vi">trộm cắp</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">breakfast</td>
+            <td class="col-vi">bữa sáng</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">lunch</td>
+            <td class="col-vi">bữa trưa</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">dinner</td>
+            <td class="col-vi">bữa tối</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="a4-page">
+      <div class="page-head">
+        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG TIẾNG ANH</div>
+        <div class="info-bar">
+          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+          <div>Lớp: <strong>VQ2-C3-2602</strong></div>
+          <div>Bài học: <strong>Lesson 12</strong></div>
+          <div style="text-align: right;">Ngày: 2026-09-29</div>
+        </div>
+      </div>
+
+      <table class="vocab-grid">
+        <thead>
+          <tr>
+            <th style="width: 16%;">Từ Vựng</th>
+            <th style="width: 16%;">Nghĩa</th>
+            <th style="width: 22.66%;">Lần 1 (Tập chép)</th>
+            <th style="width: 22.67%;">Lần 2 (Tập chép)</th>
+            <th style="width: 22.67%;">Lần 3 (Tập chép)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-en">eggs</td>
+            <td class="col-vi">trứng</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">chicken</td>
+            <td class="col-vi">thịt gà</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">salad</td>
+            <td class="col-vi">sa-lát</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">noodles</td>
+            <td class="col-vi">mì/phở</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">juice</td>
+            <td class="col-vi">nước ép trái cây</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">farm animals</td>
+            <td class="col-vi">trang trại động vật</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">food</td>
+            <td class="col-vi">đồ ăn</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">baby farm animals</td>
+            <td class="col-vi">động vật non trong trang trại</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">farm chores</td>
+            <td class="col-vi">công việc đồng áng</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">milk</td>
+            <td class="col-vi">sữa</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">cheese</td>
+            <td class="col-vi">phô mai</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">yoghurt</td>
+            <td class="col-vi">sữa chua</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">work hard</td>
+            <td class="col-vi">làm việc chăm chỉ</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">play</td>
+            <td class="col-vi">chơi</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">fly a kite</td>
+            <td class="col-vi">thả diều</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">recycling</td>
+            <td class="col-vi">tái chế</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">milk the cows</td>
+            <td class="col-vi">vắt sữa bò</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">shear the sheep</td>
+            <td class="col-vi">tỉa lông cừu</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">collect the eggs</td>
+            <td class="col-vi">thu trứng gà</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr>
+            <td class="col-en">feed the chickens</td>
+            <td class="col-vi">cho gà ăn</td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>

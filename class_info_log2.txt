@@ -134504,3 +134504,150 @@ Please retry in 5h35m27.893847523s. [links {
 [2026-10-03 18:25:31] Error checking reports: get_merged_vocabulary() got an unexpected keyword argument 'min_threshold'
 [2026-10-03 18:25:31] Closing WebDriver
 [2026-10-03 18:25:31] Script completed
+[2026-10-03 18:28:27] Starting script
+[2026-10-03 18:28:27] Starting report check for calendar overview
+[2026-10-03 18:28:27] Loaded processed2.json: {'date': '2026-09-27', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf'}
+[2026-10-03 18:28:27] Writing Google credentials to credentials.json
+[2026-10-03 18:28:27] Credentials written successfully
+[2026-10-03 18:28:27] Initializing Chrome WebDriver
+[2026-10-03 18:28:39] WebDriver session ID: 884a39ef78fdf3a88e19a52d71907c75
+[2026-10-03 18:28:39] Navigating to login page: https://apps.cec.com.vn/login
+[2026-10-03 18:28:44] Login attempt 1/3
+[2026-10-03 18:28:44] Entering password
+[2026-10-03 18:28:44] Clicking login button
+[2026-10-03 18:28:47] Login successful
+[2026-10-03 18:28:47] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-10-03 18:28:57] Scrolled to bottom of page
+[2026-10-03 18:28:57] Found 20 class events
+[2026-10-03 18:28:57] Latest class date before today: 2026-09-29
+[2026-10-03 18:29:00] Class name from popup: VQ2-C3-2602
+[2026-10-03 18:29:00] Report button is enabled, clicking to get report URL
+[2026-10-03 18:29:00] Attempt 1/3 to click report button
+[2026-10-03 18:29:15] Window switch attempt 1/3 failed: Message: 
+
+[2026-10-03 18:29:20] Attempt 2/3 to click report button
+[2026-10-03 18:29:22] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-03 18:29:22] Found new report: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-09-29
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-03 18:29:22] Updating Google Sheet 'Report' with Date 2026-09-29, Class VQ2-C3-2602, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-03 18:29:23] Updated Google Sheet 'Report' successfully: 2026-09-29, VQ2-C3-2602, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf at 2026-10-03 18:29:22
+[2026-10-03 18:29:23] Saving processed data to processed2.json
+[2026-10-03 18:29:23] Saved processed2.json successfully
+[2026-10-03 18:29:23] Starting PDF processing for report analysis
+[2026-10-03 18:29:23] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-03 18:29:23] Downloading PDF from https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-03 18:29:24] Successfully downloaded PDF to temp_report.pdf
+[2026-10-03 18:29:24] Extracting text and links from PDF
+[2026-10-03 18:29:25] Extracted 7428 characters and 10 links from PDF
+[2026-10-03 18:29:25] Deleted temporary PDF file: temp_report.pdf
+[2026-10-03 18:29:25] Gemini API attempt 1/3
+[2026-10-03 18:29:25] Available Gemini models count: 44
+[2026-10-03 18:29:25] Using model: models/gemini-2.5-flash
+[2026-10-03 18:29:25] API attempt 1/3 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 5h30m34.487148066s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 19834
+}
+]
+[2026-10-03 18:29:28] Gemini API attempt 2/3
+[2026-10-03 18:29:28] Available Gemini models count: 44
+[2026-10-03 18:29:28] Using model: models/gemini-2.5-flash-lite
+[2026-10-03 18:29:28] API attempt 2/3 failed: 404 This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 18:29:31] Gemini API attempt 3/3
+[2026-10-03 18:29:31] Available Gemini models count: 44
+[2026-10-03 18:29:31] Using model: models/gemini-flash-latest
+[2026-10-03 18:29:38] Received API response (attempt 3): {
+  "new_vocabulary": {
+    "quilt": "chăn bông",
+    "bolt": "then cửa",
+    "belt": "thắt lưng",
+ ...
+[2026-10-03 18:29:38] API attempt 3 successful
+[2026-10-03 18:29:38] Updating Google Sheet 'ReportContent' with extracted data
+[2026-10-03 18:29:39] Inserted 30 rows to 'ReportContent' after header
+[2026-10-03 18:29:39] Processing total vocabulary
+[2026-10-03 18:29:39] Loaded existing vocabulary from vocab_total.json: 766 entries
+[2026-10-03 18:29:39] Added 0 new vocabulary entries. Total vocabulary: 766
+[2026-10-03 18:29:39] Saving updated vocabulary to vocab_total.json
+[2026-10-03 18:29:39] Successfully saved vocab_total.json
+[2026-10-03 18:29:39] Updating Google Sheet 'vocab' with total vocabulary
+[2026-10-03 18:29:41] Updated Google Sheet 'vocab' successfully with 766 vocabulary entries
+[2026-10-03 18:29:41] Creating Report directory if not exists
+[2026-10-03 18:29:41] Practice vocabulary count: 40 (Original lesson words: 25)
+[2026-10-03 18:29:41]   + Bài hiện tại: 25 words
+[2026-10-03 18:29:41]   + 2026-09-22_Lesson_9: 7 words
+[2026-10-03 18:29:41]   + 2026-09-20_Lesson_8: 8 words
+[2026-10-03 18:29:43] Successfully generated PDF worksheet: Report/2026-09-29_Lesson_12_Phieu_Tap_Chep.pdf
+[2026-10-03 18:29:43] Successfully generated Quizlet file: Report/2026-09-29_Lesson_12_Quizlet_Import.txt
+[2026-10-03 18:29:43] Saving result to Report/2026-09-29_Lesson_12.json
+[2026-10-03 18:29:43] Successfully saved: Report/2026-09-29_Lesson_12.json
+[2026-10-03 18:29:43] Starting detailed Telegram notifications
+[2026-10-03 18:29:43] Initializing Telegram Bot for detailed messages
+[2026-10-03 18:29:43] Sending detailed Telegram messages to chat_id 1900957785
+[2026-10-03 18:29:43] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-09-29*
+📅 *Ngày*: 2026-09-29
+📚 *Tiêu đề*: Lesson 12
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-03 18:29:43] Sent general info message to chat_id 1900957785
+[2026-10-03 18:29:44] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-09-29*
+• `quilt`: chăn bông
+• `bolt`: then cửa
+• `belt`: thắt lưng
+• `tilt`: ngh...
+[2026-10-03 18:29:44] Sent vocabulary message to chat_id 1900957785
+[2026-10-03 18:29:45] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-09-29*
+• *What do we eat at breakfast?*: We eat......
+[2026-10-03 18:29:45] Sent sentence structures message to chat_id 1900957785
+[2026-10-03 18:29:45] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-09-29*
+Hoàn thành phần Handwriting trong sách CLL3 CLL 3_Homework_Lesson 12. ...
+[2026-10-03 18:29:46] Sent homework message to chat_id 1900957785
+[2026-10-03 18:29:46] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-09-29*
+Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi...
+[2026-10-03 18:29:46] Sent comments message to chat_id 1900957785
+[2026-10-03 18:29:47] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-10-03 18:29:48] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-10-03 18:29:49] Completed sending detailed messages to chat_id 1900957785
+[2026-10-03 18:29:49] Sending detailed Telegram messages to chat_id 1924741087
+[2026-10-03 18:29:49] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-09-29*
+📅 *Ngày*: 2026-09-29
+📚 *Tiêu đề*: Lesson 12
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-03 18:29:49] Sent general info message to chat_id 1924741087
+[2026-10-03 18:29:49] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-09-29*
+• `quilt`: chăn bông
+• `bolt`: then cửa
+• `belt`: thắt lưng
+• `tilt`: ngh...
+[2026-10-03 18:29:50] Sent vocabulary message to chat_id 1924741087
+[2026-10-03 18:29:50] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-09-29*
+• *What do we eat at breakfast?*: We eat......
+[2026-10-03 18:29:51] Sent sentence structures message to chat_id 1924741087
+[2026-10-03 18:29:51] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-09-29*
+Hoàn thành phần Handwriting trong sách CLL3 CLL 3_Homework_Lesson 12. ...
+[2026-10-03 18:29:51] Sent homework message to chat_id 1924741087
+[2026-10-03 18:29:52] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-09-29*
+Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi...
+[2026-10-03 18:29:52] Sent comments message to chat_id 1924741087
+[2026-10-03 18:29:53] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-10-03 18:29:54] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-10-03 18:29:55] Completed sending detailed messages to chat_id 1924741087
+[2026-10-03 18:29:55] Completed detailed Telegram notifications
+[2026-10-03 18:29:55] Git repository detected
+[2026-10-03 18:29:55] Committing and pushing Report and vocab files to GitHub

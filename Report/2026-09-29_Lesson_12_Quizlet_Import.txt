@@ -1,0 +1,40 @@
+quilt	chăn bông
+bolt	then cửa
+belt	thắt lưng
+tilt	nghiêng
+wilt	khô héo
+skull	hộp sọ
+tusk	cái ngà
+skinny	gầy gò
+ask	hỏi
+whisker	ria mép
+desk	cái bàn
+gift	quà
+shaft	hầm
+lift	thang máy
+soft	nhẹ
+left	bên trái
+theft	trộm cắp
+breakfast	bữa sáng
+lunch	bữa trưa
+dinner	bữa tối
+eggs	trứng
+chicken	thịt gà
+salad	sa-lát
+noodles	mì/phở
+juice	nước ép trái cây
+farm animals	trang trại động vật
+food	đồ ăn
+baby farm animals	động vật non trong trang trại
+farm chores	công việc đồng áng
+milk	sữa
+cheese	phô mai
+yoghurt	sữa chua
+work hard	làm việc chăm chỉ
+play	chơi
+fly a kite	thả diều
+recycling	tái chế
+milk the cows	vắt sữa bò
+shear the sheep	tỉa lông cừu
+collect the eggs	thu trứng gà
+feed the chickens	cho gà ăn
