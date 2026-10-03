@@ -1870,3 +1870,1491 @@
 [2026-01-13 12:10:14,301] INFO: Output files saved locally: /home/runner/work/eng/eng/homework2.json and /home/runner/work/eng/eng/class_info_log3.txt
 [2026-01-13 12:10:14,301] INFO: If running in GitHub Actions, download 'homework.json' and 'class_info_log3.txt' from the workflow artifacts at https://github.com/gx288/eng/actions
 [2026-01-13 12:10:14,301] INFO: Script terminated
+[2026-10-03 15:59:34,789] INFO: Initializing script
+[2026-10-03 15:59:34,789] INFO: Starting report extraction
+[2026-10-03 15:59:34,789] INFO: Configured Gemini API
+[2026-10-03 15:59:34,789] INFO: Found 32 URLs
+[2026-10-03 15:59:34,789] INFO: Processing URL: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2026-10-03 15:59:34,790] INFO: Processing report: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2026-10-03 15:59:34,790] INFO: Processing URL: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2026-10-03 15:59:34,790] INFO: PDF export URL: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/export?format=pdf
+[2026-10-03 15:59:34,790] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 15:59:35,726] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 15:59:35,726] INFO: Extracting text and links from PDF
+[2026-10-03 15:59:35,823] ERROR: Failed to process page 1: 'y1'
+[2026-10-03 15:59:35,876] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 15:59:35,993] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 15:59:36,219] INFO: Extracted 8024 characters and 0 links from PDF
+[2026-10-03 15:59:36,219] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 15:59:36,219] INFO: Gemini API attempt 1/3
+[2026-10-03 15:59:36,400] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:07,953] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:07,953] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:08,065] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:08,145] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:08,145] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:08,269] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:08,346] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:08,346] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:08,346] INFO: Completed processing for https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2026-10-03 16:00:08,346] INFO: Processed report: https://docs.google.com/document/d/1N-1f4Ij9DhZtmudo4ck5pDf56Tug9faH2AaicjaBXCw/edit?usp=sharing
+[2026-10-03 16:00:08,346] INFO: Processing URL: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:08,346] INFO: Processing report: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:08,346] INFO: Processing URL: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:08,346] INFO: PDF export URL: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/export?format=pdf
+[2026-10-03 16:00:08,346] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:09,307] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:09,307] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:09,373] ERROR: Failed to process page 1: 'y1'
+[2026-10-03 16:00:09,430] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:09,542] ERROR: Failed to process page 3: 'y1'
+[2026-10-03 16:00:09,771] INFO: Extracted 7534 characters and 0 links from PDF
+[2026-10-03 16:00:09,771] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:09,771] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:09,881] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:09,980] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:09,980] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:10,103] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:10,210] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:10,210] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:10,319] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:10,388] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:10,388] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:10,388] INFO: Completed processing for https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:10,388] INFO: Processed report: https://docs.google.com/document/d/1wXioDYoXiYpG27oxbFLZjJaffqKjoLoJ/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:10,388] INFO: Processing URL: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:10,388] INFO: Processing report: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:10,388] INFO: Processing URL: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:10,388] INFO: PDF export URL: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/export?format=pdf
+[2026-10-03 16:00:10,388] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:11,250] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:11,250] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:11,393] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:11,453] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:11,549] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:11,862] INFO: Extracted 9716 characters and 0 links from PDF
+[2026-10-03 16:00:11,863] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:11,863] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:11,962] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:12,044] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:12,044] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:12,143] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:12,225] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:12,225] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:12,324] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:12,453] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:12,453] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:12,453] INFO: Completed processing for https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:12,453] INFO: Processed report: https://docs.google.com/document/d/18QWKM73gtInC1YvwUVAvjGcQH0KWNMdp/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:12,453] INFO: Processing URL: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:12,453] INFO: Processing report: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:12,453] INFO: Processing URL: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:12,453] INFO: PDF export URL: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/export?format=pdf
+[2026-10-03 16:00:12,453] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:13,422] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:13,422] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:13,486] ERROR: Failed to process page 1: 'y1'
+[2026-10-03 16:00:13,566] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:13,830] INFO: Extracted 6659 characters and 0 links from PDF
+[2026-10-03 16:00:13,830] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:13,830] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:13,945] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:14,020] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:14,020] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:14,116] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:14,222] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:14,223] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:14,327] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:14,399] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:14,399] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:14,399] INFO: Completed processing for https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:14,399] INFO: Processed report: https://docs.google.com/document/d/1jrqAqfGZdEcLPLmcpcyCO2w_EXATAdD0/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:14,399] INFO: Processing URL: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:14,399] INFO: Processing report: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:14,399] INFO: Processing URL: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:14,399] INFO: PDF export URL: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/export?format=pdf
+[2026-10-03 16:00:14,400] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:15,490] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:15,490] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:15,571] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:15,635] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:15,729] ERROR: Failed to process page 4: 'y0'
+[2026-10-03 16:00:16,051] INFO: Extracted 9403 characters and 0 links from PDF
+[2026-10-03 16:00:16,051] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:16,051] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:16,156] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:16,258] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:16,258] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:16,362] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:16,440] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:16,440] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:16,542] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:16,616] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:16,616] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:16,616] INFO: Completed processing for https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:16,616] INFO: Processed report: https://docs.google.com/document/d/1sYb83tcVaXFALydZg3e2iW1naVjfKsAm/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:16,616] INFO: Processing URL: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:16,616] INFO: Processing report: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:16,616] INFO: Processing URL: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:16,616] INFO: PDF export URL: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/export?format=pdf
+[2026-10-03 16:00:16,616] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:17,454] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:17,455] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:17,513] ERROR: Failed to process page 1: 'y1'
+[2026-10-03 16:00:17,537] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:17,594] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:17,723] ERROR: Failed to process page 4: 'y1'
+[2026-10-03 16:00:17,905] INFO: Extracted 7294 characters and 0 links from PDF
+[2026-10-03 16:00:17,905] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:17,905] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:18,002] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:18,073] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:18,073] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:18,154] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:18,244] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:18,244] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:18,349] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:18,405] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:18,405] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:18,405] INFO: Completed processing for https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:18,406] INFO: Processed report: https://docs.google.com/document/d/1malyKHCcj6CCIfaujXqM30pHdhF_3BRi/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:18,406] INFO: Processing URL: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:18,406] INFO: Processing report: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:18,406] INFO: Processing URL: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:18,406] INFO: PDF export URL: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/export?format=pdf
+[2026-10-03 16:00:18,406] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:20,320] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:20,320] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:20,499] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:20,550] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:20,619] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:20,899] INFO: Extracted 8267 characters and 0 links from PDF
+[2026-10-03 16:00:20,899] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:20,899] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:21,006] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:21,093] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:21,093] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:21,188] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:21,260] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:21,260] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:21,353] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:21,421] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:21,421] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:21,421] INFO: Completed processing for https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:21,421] INFO: Processed report: https://docs.google.com/document/d/1oC1lhxtwigk70MfW-767xUkVk9TA2Ke-/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:21,421] INFO: Processing URL: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:21,421] INFO: Processing report: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:21,421] INFO: Processing URL: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:21,421] INFO: PDF export URL: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/export?format=pdf
+[2026-10-03 16:00:21,421] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:22,402] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:22,402] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:22,475] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:22,527] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:22,627] ERROR: Failed to process page 3: 'y1'
+[2026-10-03 16:00:22,866] INFO: Extracted 7725 characters and 0 links from PDF
+[2026-10-03 16:00:22,867] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:22,867] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:22,952] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:23,026] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:23,026] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:23,133] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:23,201] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:23,201] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:23,297] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:23,367] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:23,367] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:23,367] INFO: Completed processing for https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:23,367] INFO: Processed report: https://docs.google.com/document/d/1l8bcG-GcuSKRVX5xV4JdiHEvlda5L9eo/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:23,367] INFO: Processing URL: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2026-10-03 16:00:23,367] INFO: Processing report: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2026-10-03 16:00:23,367] INFO: Processing URL: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2026-10-03 16:00:23,367] INFO: PDF export URL: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/export?format=pdf
+[2026-10-03 16:00:23,367] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:24,491] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:24,491] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:24,569] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:24,661] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:24,976] INFO: Extracted 8246 characters and 0 links from PDF
+[2026-10-03 16:00:24,977] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:24,977] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:25,057] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:25,148] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:25,148] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:25,231] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:25,303] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:25,303] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:25,388] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:25,459] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:25,459] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:25,459] INFO: Completed processing for https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2026-10-03 16:00:25,459] INFO: Processed report: https://docs.google.com/document/d/1BUpOQSVMI7iS6RYX9uDH3R1bGXzrD5Ht/edit
+[2026-10-03 16:00:25,459] INFO: Processing URL: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:25,459] INFO: Processing report: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:25,459] INFO: Processing URL: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:25,459] INFO: PDF export URL: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/export?format=pdf
+[2026-10-03 16:00:25,459] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:26,426] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:26,426] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:26,499] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:26,551] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:26,652] ERROR: Failed to process page 3: 'y1'
+[2026-10-03 16:00:26,864] INFO: Extracted 7266 characters and 0 links from PDF
+[2026-10-03 16:00:26,865] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:26,865] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:26,956] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:27,042] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:27,042] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:27,141] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:27,212] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:27,212] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:27,321] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:27,395] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:27,395] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:27,395] INFO: Completed processing for https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:27,395] INFO: Processed report: https://docs.google.com/document/d/1aR2W66-4og7Fu6FuVhGaxJ8X-qwrnXFr/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:27,395] INFO: Processing URL: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:27,395] INFO: Processing report: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:27,395] INFO: Processing URL: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:27,395] INFO: PDF export URL: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/export?format=pdf
+[2026-10-03 16:00:27,395] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:28,330] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:28,330] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:28,413] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:28,470] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:28,610] ERROR: Failed to process page 3: 'y1'
+[2026-10-03 16:00:28,892] INFO: Extracted 8033 characters and 0 links from PDF
+[2026-10-03 16:00:28,893] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:28,893] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:29,001] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:29,073] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:29,073] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:29,167] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:29,244] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:29,245] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:29,330] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:29,401] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:29,401] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:29,401] INFO: Completed processing for https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:29,401] INFO: Processed report: https://docs.google.com/document/d/14cVK5sjPLCSdb4WDZ_BVyaEA0nCe0CVd/edit?usp=sharing&ouid=103204323159202426848&rtpof=true&sd=true
+[2026-10-03 16:00:29,401] INFO: Processing URL: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:29,401] INFO: Processing report: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:29,401] INFO: Processing URL: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:29,401] INFO: PDF export URL: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/export?format=pdf
+[2026-10-03 16:00:29,401] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:30,294] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:30,295] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:30,369] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:30,420] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:30,667] INFO: Extracted 6134 characters and 0 links from PDF
+[2026-10-03 16:00:30,667] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:30,667] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:30,748] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:30,816] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:30,816] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:30,893] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:30,977] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:30,977] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:31,062] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:31,062] ERROR: No suitable model found
+[2026-10-03 16:00:31,063] INFO: Completed processing for https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:31,063] WARNING: Failed to process report: https://docs.google.com/document/d/1Ml_5fWC0ioKPDBc5mXNvkM3hcKDlNOFA/edit?usp=drivesdk&ouid=114786846556630218118&rtpof=true&sd=true, continuing
+[2026-10-03 16:00:31,063] INFO: Processing URL: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2026-10-03 16:00:31,063] INFO: Processing report: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2026-10-03 16:00:31,063] INFO: Processing URL: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2026-10-03 16:00:31,063] INFO: PDF export URL: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/export?format=pdf
+[2026-10-03 16:00:31,063] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:32,093] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:32,093] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:32,166] ERROR: Failed to process page 1: 'y1'
+[2026-10-03 16:00:32,206] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:32,248] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:32,299] ERROR: Failed to process page 4: 'y0'
+[2026-10-03 16:00:32,577] INFO: Extracted 7845 characters and 0 links from PDF
+[2026-10-03 16:00:32,577] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:32,577] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:32,617] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:32,617] ERROR: No suitable model found
+[2026-10-03 16:00:32,617] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:32,645] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:32,645] ERROR: No suitable model found
+[2026-10-03 16:00:32,645] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:32,726] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:32,726] ERROR: No suitable model found
+[2026-10-03 16:00:32,726] INFO: Completed processing for https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit
+[2026-10-03 16:00:32,726] WARNING: Failed to process report: https://docs.google.com/document/d/1MDv-AAYF53pOyjJFbC1eowgwklEllGXq/edit, continuing
+[2026-10-03 16:00:32,726] INFO: Processing URL: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2026-10-03 16:00:32,726] INFO: Processing report: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2026-10-03 16:00:32,726] INFO: Processing URL: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2026-10-03 16:00:32,726] INFO: PDF export URL: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/export?format=pdf
+[2026-10-03 16:00:32,726] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:33,658] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:33,658] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:33,730] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:33,768] ERROR: Failed to process page 2: 'y1'
+[2026-10-03 16:00:33,769] INFO: Extracted 1543 characters and 0 links from PDF
+[2026-10-03 16:00:33,769] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:33,769] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:33,810] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:33,810] ERROR: No suitable model found
+[2026-10-03 16:00:33,810] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:33,879] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:33,954] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:33,954] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:33,986] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:33,986] ERROR: No suitable model found
+[2026-10-03 16:00:33,986] INFO: Completed processing for https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit
+[2026-10-03 16:00:33,986] WARNING: Failed to process report: https://docs.google.com/document/d/1synGMwm4UGcKGhl1hXq5h0HhaWxYUvY-/edit, continuing
+[2026-10-03 16:00:33,986] INFO: Processing URL: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:33,986] INFO: Processing report: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:33,986] INFO: Processing URL: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:33,986] INFO: PDF export URL: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/export?format=pdf
+[2026-10-03 16:00:33,986] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:35,002] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:35,002] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:35,070] ERROR: Failed to process page 1: 'y1'
+[2026-10-03 16:00:35,110] ERROR: Failed to process page 2: 'y1'
+[2026-10-03 16:00:35,216] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:35,498] INFO: Extracted 8438 characters and 0 links from PDF
+[2026-10-03 16:00:35,499] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:35,499] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:35,528] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:35,528] ERROR: No suitable model found
+[2026-10-03 16:00:35,528] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:35,626] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:35,626] ERROR: No suitable model found
+[2026-10-03 16:00:35,626] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:35,719] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:00:35,719] ERROR: No suitable model found
+[2026-10-03 16:00:35,719] INFO: Completed processing for https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:35,719] WARNING: Failed to process report: https://docs.google.com/document/d/1vw-vHC8gaCk9xFfRJhfQwC0gMpK-r9TH/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true, continuing
+[2026-10-03 16:00:35,719] INFO: Processing URL: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2026-10-03 16:00:35,719] INFO: Processing report: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2026-10-03 16:00:35,719] INFO: Processing URL: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2026-10-03 16:00:35,719] INFO: PDF export URL: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/export?format=pdf
+[2026-10-03 16:00:35,719] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:36,847] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:36,847] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:36,929] ERROR: Failed to process page 1: 'y1'
+[2026-10-03 16:00:36,962] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:37,149] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:37,471] INFO: Extracted 8933 characters and 0 links from PDF
+[2026-10-03 16:00:37,472] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:37,472] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:37,566] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:40,688] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:40,688] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:40,783] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:40,840] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:40,840] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:40,927] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:40,994] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:40,994] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:40,994] INFO: Completed processing for https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2026-10-03 16:00:40,994] INFO: Processed report: https://docs.google.com/document/d/17W9FSB21-utO9J6-kGklkucz1-9Cpz20/edit
+[2026-10-03 16:00:40,994] INFO: Processing URL: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:40,994] INFO: Processing report: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:40,994] INFO: Processing URL: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:40,995] INFO: PDF export URL: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/export?format=pdf
+[2026-10-03 16:00:40,995] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:41,692] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:41,692] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:41,778] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:41,804] ERROR: Failed to process page 2: 'y1'
+[2026-10-03 16:00:41,879] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:42,169] INFO: Extracted 8031 characters and 0 links from PDF
+[2026-10-03 16:00:42,170] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:42,170] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:42,266] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:42,344] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:42,344] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:42,488] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:42,561] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:42,562] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:42,640] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:42,699] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:42,699] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:42,699] INFO: Completed processing for https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:42,699] INFO: Processed report: https://docs.google.com/document/d/1Wc0Gr5mH-m84fgVCBy6OcAI3hnOGtpUI/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:42,699] INFO: Processing URL: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2026-10-03 16:00:42,699] INFO: Processing report: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2026-10-03 16:00:42,699] INFO: Processing URL: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2026-10-03 16:00:42,699] INFO: PDF export URL: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/export?format=pdf
+[2026-10-03 16:00:42,699] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:43,778] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:43,778] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:43,868] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:43,948] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:44,251] INFO: Extracted 8077 characters and 0 links from PDF
+[2026-10-03 16:00:44,251] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:44,251] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:44,339] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:44,400] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:44,400] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:44,473] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:44,535] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:44,535] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:44,610] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:44,676] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:44,676] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:44,676] INFO: Completed processing for https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2026-10-03 16:00:44,676] INFO: Processed report: https://docs.google.com/document/d/1-H2xjvKiA_v96H50uMx0d7wyCeDmcOIy/edit
+[2026-10-03 16:00:44,676] INFO: Processing URL: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:44,676] INFO: Processing report: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:44,676] INFO: Processing URL: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:44,676] INFO: PDF export URL: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/export?format=pdf
+[2026-10-03 16:00:44,676] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:47,710] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:47,710] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:47,793] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:47,864] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:48,127] INFO: Extracted 7002 characters and 0 links from PDF
+[2026-10-03 16:00:48,127] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:48,127] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:48,196] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:48,293] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:48,293] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:48,369] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:48,448] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:48,448] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:48,518] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:48,588] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:48,588] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:48,588] INFO: Completed processing for https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:48,588] INFO: Processed report: https://docs.google.com/document/d/1mOvg83SZ6abVnB2bOHbuXtIAenuJk4mS/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:48,588] INFO: Processing URL: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2026-10-03 16:00:48,588] INFO: Processing report: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2026-10-03 16:00:48,588] INFO: Processing URL: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2026-10-03 16:00:48,589] INFO: PDF export URL: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/export?format=pdf
+[2026-10-03 16:00:48,589] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:49,663] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:49,663] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:49,740] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:49,797] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:49,911] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:50,203] INFO: Extracted 7519 characters and 0 links from PDF
+[2026-10-03 16:00:50,203] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:50,204] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:50,280] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:50,344] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:50,344] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:50,424] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:50,495] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:50,495] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:50,575] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:50,624] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:50,625] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:50,625] INFO: Completed processing for https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2026-10-03 16:00:50,625] INFO: Processed report: https://docs.google.com/document/d/1NDEQdlDrx7nBlsgdyeKY5G1BoKk_MDZd/edit
+[2026-10-03 16:00:50,625] INFO: Processing URL: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2026-10-03 16:00:50,625] INFO: Processing report: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2026-10-03 16:00:50,625] INFO: Processing URL: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2026-10-03 16:00:50,625] INFO: PDF export URL: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/export?format=pdf
+[2026-10-03 16:00:50,625] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:51,485] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:51,485] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:51,562] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:51,594] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:51,677] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:51,892] INFO: Extracted 6682 characters and 0 links from PDF
+[2026-10-03 16:00:51,892] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:51,892] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:51,967] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:52,043] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:52,043] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:52,127] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:52,201] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:52,201] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:52,291] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:52,347] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:52,347] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:52,347] INFO: Completed processing for https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2026-10-03 16:00:52,347] INFO: Processed report: https://docs.google.com/document/d/1iNLqagaxitdkS4YmJY0Jt34Z0WQGtyur/edit?usp=sharing&ouid=100220588208817279868&rtpof=true&sd=true
+[2026-10-03 16:00:52,347] INFO: Processing URL: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true
+[2026-10-03 16:00:52,347] INFO: Processing report: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true
+[2026-10-03 16:00:52,347] INFO: Processing URL: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true
+[2026-10-03 16:00:52,347] INFO: PDF export URL: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/export?format=pdf
+[2026-10-03 16:00:52,347] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:52,824] ERROR: Failed to download PDF: 410 Client Error: Gone for url: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/export?format=pdf
+[2026-10-03 16:00:52,826] WARNING: Failed to process report: https://docs.google.com/document/d/19B51L8uGFfudiEft7xQUcUP4PrfJYHmx/edit?usp=drive_link&ouid=110857264165949638619&rtpof=true&sd=true, continuing
+[2026-10-03 16:00:52,826] INFO: Processing URL: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:52,826] INFO: Processing report: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:52,826] INFO: Processing URL: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:52,826] INFO: PDF export URL: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/export?format=pdf
+[2026-10-03 16:00:52,826] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:53,659] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:53,659] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:53,739] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:53,793] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:54,064] INFO: Extracted 6853 characters and 0 links from PDF
+[2026-10-03 16:00:54,064] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:54,064] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:54,149] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:54,218] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:54,218] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:54,305] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:54,367] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:54,367] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:54,442] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:54,513] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:54,513] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:54,513] INFO: Completed processing for https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:54,513] INFO: Processed report: https://docs.google.com/document/d/18MvX7CRHDocYGOvKAOpuu83B13nZNKv_/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:54,513] INFO: Processing URL: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:00:54,513] INFO: Processing report: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:00:54,513] INFO: Processing URL: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:00:54,513] INFO: PDF export URL: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/export?format=pdf
+[2026-10-03 16:00:54,513] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:55,571] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:55,571] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:55,585] WARNING: Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2026-10-03 16:00:55,657] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:55,704] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:55,783] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:55,908] ERROR: Failed to process page 4: 'y0'
+[2026-10-03 16:00:56,146] INFO: Extracted 9695 characters and 0 links from PDF
+[2026-10-03 16:00:56,147] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:56,147] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:56,226] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:56,295] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:56,295] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:56,373] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:56,445] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:56,445] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:56,525] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:56,592] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:56,592] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:56,592] INFO: Completed processing for https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:00:56,593] INFO: Processed report: https://docs.google.com/document/d/1Pa4D1pYPBWYSvivPSkyv-vTkMMi6f50M/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:00:56,593] INFO: Processing URL: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:56,593] INFO: Processing report: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:56,593] INFO: Processing URL: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:56,593] INFO: PDF export URL: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/export?format=pdf
+[2026-10-03 16:00:56,593] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:00:57,830] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:00:57,830] INFO: Extracting text and links from PDF
+[2026-10-03 16:00:57,909] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:00:57,958] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:00:58,057] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:00:58,360] INFO: Extracted 6989 characters and 0 links from PDF
+[2026-10-03 16:00:58,360] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:00:58,361] INFO: Gemini API attempt 1/3
+[2026-10-03 16:00:58,464] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:00:58,532] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:00:58,532] INFO: Gemini API attempt 2/3
+[2026-10-03 16:00:58,613] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:58,692] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:58,692] INFO: Gemini API attempt 3/3
+[2026-10-03 16:00:58,773] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:00:58,831] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:00:58,831] ERROR: All API attempts failed, using default response
+[2026-10-03 16:00:58,831] INFO: Completed processing for https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:58,831] INFO: Processed report: https://docs.google.com/document/d/1Bzecy0oyZ-r7oy2rZqWj0l6tqBbwbmhF/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:00:58,831] INFO: Processing URL: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:00:58,831] INFO: Processing report: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:00:58,831] INFO: Processing URL: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:00:58,831] INFO: PDF export URL: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/export?format=pdf
+[2026-10-03 16:00:58,831] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:01:00,122] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:01:00,122] INFO: Extracting text and links from PDF
+[2026-10-03 16:01:00,136] WARNING: Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2026-10-03 16:01:00,201] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:01:00,247] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:01:00,298] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:01:00,397] ERROR: Failed to process page 4: 'y0'
+[2026-10-03 16:01:00,751] INFO: Extracted 10410 characters and 0 links from PDF
+[2026-10-03 16:01:00,751] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:01:00,751] INFO: Gemini API attempt 1/3
+[2026-10-03 16:01:00,829] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:01:00,904] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:01:00,904] INFO: Gemini API attempt 2/3
+[2026-10-03 16:01:00,976] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:01:01,039] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:01:01,040] INFO: Gemini API attempt 3/3
+[2026-10-03 16:01:01,115] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:01:01,188] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:01:01,188] ERROR: All API attempts failed, using default response
+[2026-10-03 16:01:01,188] INFO: Completed processing for https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:01:01,188] INFO: Processed report: https://docs.google.com/document/d/1MSHltuu9IMV6lT8G2esChdmlW_czXLpv/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:01:01,188] INFO: Processing URL: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:01,188] INFO: Processing report: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:01,188] INFO: Processing URL: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:01,188] INFO: PDF export URL: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/export?format=pdf
+[2026-10-03 16:01:01,188] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:01:02,103] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:01:02,103] INFO: Extracting text and links from PDF
+[2026-10-03 16:01:02,115] WARNING: Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2026-10-03 16:01:02,192] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:01:02,240] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:01:02,313] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:01:02,619] INFO: Extracted 8667 characters and 0 links from PDF
+[2026-10-03 16:01:02,619] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:01:02,619] INFO: Gemini API attempt 1/3
+[2026-10-03 16:01:02,692] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:01:02,760] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:01:02,760] INFO: Gemini API attempt 2/3
+[2026-10-03 16:01:02,833] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:01:02,898] ERROR: API attempt 2 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:01:02,898] INFO: Gemini API attempt 3/3
+[2026-10-03 16:01:02,970] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:01:03,053] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:01:03,053] ERROR: All API attempts failed, using default response
+[2026-10-03 16:01:03,053] INFO: Completed processing for https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:03,053] INFO: Processed report: https://docs.google.com/document/d/1GW-tg9Dd22egV10Dtw0vqILQessziW-T/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:03,053] INFO: Processing URL: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:01:03,053] INFO: Processing report: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:01:03,053] INFO: Processing URL: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:01:03,053] INFO: PDF export URL: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/export?format=pdf
+[2026-10-03 16:01:03,053] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:01:04,256] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:01:04,256] INFO: Extracting text and links from PDF
+[2026-10-03 16:01:04,272] WARNING: Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2026-10-03 16:01:04,338] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:01:04,387] ERROR: Failed to process page 2: 'y1'
+[2026-10-03 16:01:04,443] ERROR: Failed to process page 3: 'y1'
+[2026-10-03 16:01:04,507] ERROR: Failed to process page 4: 'y1'
+[2026-10-03 16:01:04,633] ERROR: Failed to process page 5: 'y0'
+[2026-10-03 16:01:04,929] INFO: Extracted 11134 characters and 0 links from PDF
+[2026-10-03 16:01:04,929] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:01:04,929] INFO: Gemini API attempt 1/3
+[2026-10-03 16:01:05,000] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:01:05,070] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:01:05,070] INFO: Gemini API attempt 2/3
+[2026-10-03 16:01:05,107] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:05,107] ERROR: No suitable model found
+[2026-10-03 16:01:05,107] INFO: Gemini API attempt 3/3
+[2026-10-03 16:01:05,137] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:05,137] ERROR: No suitable model found
+[2026-10-03 16:01:05,137] INFO: Completed processing for https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true
+[2026-10-03 16:01:05,137] WARNING: Failed to process report: https://docs.google.com/document/d/1BcHt4rt5BHANFmcBu4xyo3ah-JpGDTll/edit?usp=sharing&ouid=116438900133817322157&rtpof=true&sd=true, continuing
+[2026-10-03 16:01:05,137] INFO: Processing URL: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:05,137] INFO: Processing report: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:05,137] INFO: Processing URL: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:05,137] INFO: PDF export URL: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/export?format=pdf
+[2026-10-03 16:01:05,137] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:01:06,148] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:01:06,148] INFO: Extracting text and links from PDF
+[2026-10-03 16:01:06,220] ERROR: Failed to process page 1: 'y1'
+[2026-10-03 16:01:06,259] ERROR: Failed to process page 2: 'y0'
+[2026-10-03 16:01:06,294] ERROR: Failed to process page 3: 'y0'
+[2026-10-03 16:01:06,808] INFO: Extracted 9006 characters and 0 links from PDF
+[2026-10-03 16:01:06,808] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:01:06,808] INFO: Gemini API attempt 1/3
+[2026-10-03 16:01:06,885] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:01:06,946] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:01:06,946] INFO: Gemini API attempt 2/3
+[2026-10-03 16:01:06,978] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:06,978] ERROR: No suitable model found
+[2026-10-03 16:01:06,978] INFO: Gemini API attempt 3/3
+[2026-10-03 16:01:07,055] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:01:07,107] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:01:07,107] ERROR: All API attempts failed, using default response
+[2026-10-03 16:01:07,107] INFO: Completed processing for https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:07,107] INFO: Processed report: https://docs.google.com/document/d/1bHlUm5-R324m6AzXWFKIiAyFFSFjwv9G/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:07,107] INFO: Processing URL: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2026-10-03 16:01:07,107] INFO: Processing report: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2026-10-03 16:01:07,107] INFO: Processing URL: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2026-10-03 16:01:07,107] INFO: PDF export URL: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/export?format=pdf
+[2026-10-03 16:01:07,107] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:01:08,031] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:01:08,031] INFO: Extracting text and links from PDF
+[2026-10-03 16:01:08,045] WARNING: Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2026-10-03 16:01:08,109] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:01:08,155] ERROR: Failed to process page 2: 'y1'
+[2026-10-03 16:01:08,210] ERROR: Failed to process page 3: 'y1'
+[2026-10-03 16:01:08,253] ERROR: Failed to process page 4: 'y1'
+[2026-10-03 16:01:08,323] ERROR: Failed to process page 5: 'y0'
+[2026-10-03 16:01:08,693] INFO: Extracted 10931 characters and 0 links from PDF
+[2026-10-03 16:01:08,693] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:01:08,693] INFO: Gemini API attempt 1/3
+[2026-10-03 16:01:08,720] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:08,720] ERROR: No suitable model found
+[2026-10-03 16:01:08,720] INFO: Gemini API attempt 2/3
+[2026-10-03 16:01:08,749] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:08,749] ERROR: No suitable model found
+[2026-10-03 16:01:08,749] INFO: Gemini API attempt 3/3
+[2026-10-03 16:01:08,775] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043176"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:08,775] ERROR: No suitable model found
+[2026-10-03 16:01:08,775] INFO: Completed processing for https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit
+[2026-10-03 16:01:08,775] WARNING: Failed to process report: https://docs.google.com/document/d/1vNA7Vct38Ikobr0TNgJn2wbRAPl7w43B/edit, continuing
+[2026-10-03 16:01:08,775] INFO: Processing URL: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:08,775] INFO: Processing report: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:08,775] INFO: Processing URL: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:08,775] INFO: PDF export URL: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/export?format=pdf
+[2026-10-03 16:01:08,775] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:01:10,367] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:01:10,368] INFO: Extracting text and links from PDF
+[2026-10-03 16:01:10,382] WARNING: Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2026-10-03 16:01:10,444] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:01:10,493] ERROR: Failed to process page 3: 'y1'
+[2026-10-03 16:01:10,520] ERROR: Failed to process page 4: 'y1'
+[2026-10-03 16:01:10,551] ERROR: Failed to process page 5: 'y0'
+[2026-10-03 16:01:10,577] ERROR: Failed to process page 6: 'y0'
+[2026-10-03 16:01:10,626] ERROR: Failed to process page 8: 'y0'
+[2026-10-03 16:01:10,654] INFO: Extracted 3833 characters and 0 links from PDF
+[2026-10-03 16:01:10,654] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:01:10,654] INFO: Gemini API attempt 1/3
+[2026-10-03 16:01:10,726] INFO: Selected model: models/gemini-2.5-flash
+[2026-10-03 16:01:10,786] WARNING: Quota exceeded for models/gemini-2.5-flash, trying next model
+[2026-10-03 16:01:10,786] INFO: Gemini API attempt 2/3
+[2026-10-03 16:01:10,815] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043236"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:10,815] ERROR: No suitable model found
+[2026-10-03 16:01:10,815] INFO: Gemini API attempt 3/3
+[2026-10-03 16:01:10,887] INFO: Selected model: models/gemini-2.5-pro
+[2026-10-03 16:01:10,933] ERROR: API attempt 3 failed: 404 This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+[2026-10-03 16:01:10,933] ERROR: All API attempts failed, using default response
+[2026-10-03 16:01:10,933] INFO: Completed processing for https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:10,933] INFO: Processed report: https://docs.google.com/document/d/1s8oJzb1lI_tcoasI3fvY_sb3dZHZEnAo/edit?usp=sharing&ouid=114786846556630218118&rtpof=true&sd=true
+[2026-10-03 16:01:10,933] INFO: Processing URL: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2026-10-03 16:01:10,933] INFO: Processing report: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2026-10-03 16:01:10,933] INFO: Processing URL: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2026-10-03 16:01:10,933] INFO: PDF export URL: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/export?format=pdf
+[2026-10-03 16:01:10,933] INFO: Downloading PDF to temp_report.pdf
+[2026-10-03 16:01:12,229] INFO: Downloaded PDF to temp_report.pdf
+[2026-10-03 16:01:12,229] INFO: Extracting text and links from PDF
+[2026-10-03 16:01:12,244] WARNING: Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[2026-10-03 16:01:12,303] ERROR: Failed to process page 1: 'y0'
+[2026-10-03 16:01:12,352] ERROR: Failed to process page 3: 'y1'
+[2026-10-03 16:01:12,381] ERROR: Failed to process page 4: 'y1'
+[2026-10-03 16:01:12,411] ERROR: Failed to process page 5: 'y0'
+[2026-10-03 16:01:12,437] ERROR: Failed to process page 6: 'y0'
+[2026-10-03 16:01:12,485] ERROR: Failed to process page 8: 'y0'
+[2026-10-03 16:01:12,513] INFO: Extracted 3815 characters and 0 links from PDF
+[2026-10-03 16:01:12,514] INFO: Deleted PDF file: temp_report.pdf
+[2026-10-03 16:01:12,514] INFO: Gemini API attempt 1/3
+[2026-10-03 16:01:12,546] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043236"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:12,547] ERROR: No suitable model found
+[2026-10-03 16:01:12,547] INFO: Gemini API attempt 2/3
+[2026-10-03 16:01:12,617] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043236"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:12,617] ERROR: No suitable model found
+[2026-10-03 16:01:12,617] INFO: Gemini API attempt 3/3
+[2026-10-03 16:01:12,683] ERROR: Failed to list models: 429 Quota exceeded for quota metric 'Read API requests' and limit 'Model operations request limit per minute for a region' of service 'generativelanguage.googleapis.com' for consumer 'project_number:348257382869'. [reason: "RATE_LIMIT_EXCEEDED"
+domain: "googleapis.com"
+metadata {
+  key: "window_start_time"
+  value: "1791043236"
+}
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+metadata {
+  key: "quota_unit"
+  value: "1/min/{project}/{region}"
+}
+metadata {
+  key: "quota_metric"
+  value: "generativelanguage.googleapis.com/model_requests"
+}
+metadata {
+  key: "quota_location"
+  value: "us-central1"
+}
+metadata {
+  key: "quota_limit"
+  value: "ModelRequestsPerMinutePerProjectPerRegion"
+}
+metadata {
+  key: "quota_limit_value"
+  value: "200"
+}
+metadata {
+  key: "consumer"
+  value: "projects/348257382869"
+}
+, links {
+  description: "Request a higher quota limit."
+  url: "https://cloud.google.com/docs/quotas/help/request_increase"
+}
+]
+[2026-10-03 16:01:12,683] ERROR: No suitable model found
+[2026-10-03 16:01:12,683] INFO: Completed processing for https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit
+[2026-10-03 16:01:12,683] WARNING: Failed to process report: https://docs.google.com/document/d/14weW3ZfCAUceNLbb1rJinWaVk7h3DqaZ/edit, continuing
+[2026-10-03 16:01:12,685] INFO: Saved homework2.json with 24 entries
+[2026-10-03 16:01:12,685] INFO: Output files saved locally: /home/runner/work/eng/eng/homework2.json and /home/runner/work/eng/eng/class_info_log3.txt
+[2026-10-03 16:01:12,685] INFO: If running in GitHub Actions, download 'homework.json' and 'class_info_log3.txt' from the workflow artifacts at https://github.com/gx288/eng/actions
+[2026-10-03 16:01:12,685] INFO: Script terminated
