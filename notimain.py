@@ -277,7 +277,7 @@ def escape_markdown_v2(text):
 #    CÔNG CỤ TẠO PHIẾU CHÉP A4 & QUIZLET TỰ ĐỘNG
 # ────────────────────────────────────────────────
 
-def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=40):
+def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=40, **kwargs):
     """
     Quy tắc gộp từ vựng ôn tập:
     - Nếu bài học >= target_max (40 từ): Giữ nguyên toàn bộ (không bị giới hạn 40).
@@ -1156,13 +1156,12 @@ def process_report():
                 title = re.sub(r'[:"*?<>|\\/]', '_', title_raw).replace(' ', '_')
                 result_filename = f"Report/{date_str}_{title}.json"
 
-                # Tự động gộp từ vựng ôn tập nếu ít hơn 20 từ (lấy từ các bài trước tối đa 40 từ)
+                # Tự động gộp từ vựng ôn tập nếu ít hơn 40 từ (lấy từ các bài trước đủ đúng 40 từ)
                 practice_vocab, vocab_sources = get_merged_vocabulary(
                     extracted_data.get('new_vocabulary', {}),
                     report_dir='Report',
                     current_date=date_str,
-                    target_max=40,
-                    min_threshold=20
+                    target_max=40
                 )
                 log_message(f"Practice vocabulary count: {len(practice_vocab)} (Original lesson words: {len(extracted_data.get('new_vocabulary', {}))})")
                 for src_name, cnt in vocab_sources:
