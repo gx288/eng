@@ -54,4 +54,5 @@ jobs:
         git config --global user.email "action@github.com"
         git add processed2.json class_info_log2.txt vocab_total.json Report/* || true
         git commit -m "Update processed2.json, class_info_log2.txt, vocab_total.json, and Report/*" || echo "Nothing to commit"
+        git pull --rebase || true
         git push || echo "Nothing to push"

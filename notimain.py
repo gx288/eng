@@ -277,18 +277,17 @@ def escape_markdown_v2(text):
 #    CÔNG CỤ TẠO PHIẾU CHÉP A4 & QUIZLET TỰ ĐỘNG
 # ────────────────────────────────────────────────
 
-def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=40, min_threshold=20):
+def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=40):
     """
     Quy tắc gộp từ vựng ôn tập:
-    - Nếu bài học >= min_threshold (20 từ): Giữ nguyên, không gộp.
-    - Nếu bài học > 40 từ: Giữ nguyên toàn bộ (không bị giới hạn 40).
-    - Nếu bài học < min_threshold (20 từ): Lấy từ vựng các bài trước (không trùng lặp),
-      lần lượt qua các bài trước cho đến khi đạt tối đa target_max (40 từ).
+    - Nếu bài học >= target_max (40 từ): Giữ nguyên toàn bộ (không bị giới hạn 40).
+    - Nếu bài học < target_max (40 từ): Lấy từ vựng các bài trước (không trùng lặp),
+      lần lượt qua các bài trước cho đến khi đạt đủ target_max (40 từ).
     """
     merged = dict(current_vocab)
     
-    # Nếu bài hiện tại đã đủ từ (>= 20 từ) thì giữ nguyên (kể cả > 40 từ)
-    if len(merged) >= min_threshold:
+    # Nếu bài hiện tại đã đủ từ (>= target_max) thì giữ nguyên toàn bộ (kể cả > 40 từ)
+    if len(merged) >= target_max:
         return merged, [("Bài hiện tại", len(merged))]
 
     if not os.path.exists(report_dir):
@@ -668,12 +667,15 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
         if worksheet_pdf and os.path.exists(worksheet_pdf):
             try:
                 log_message(f"Sending A4 worksheet PDF to chat_id {chat_id}")
-                pdf_caption = (
-                    f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} "
-                    f"(Đã ghép ôn tập bài trước: {total_practice_words} từ)"
-                    if is_padded
-                    else f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
-                )
+                if is_padded:
+                    new_count = vocab_sources[0][1]
+                    review_count = total_practice_words - new_count
+                    pdf_caption = (
+                        f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} "
+                        f"(Đã ghép đủ {total_practice_words} từ: {new_count} từ mới + {review_count} từ ôn tập)"
+                    )
+                else:
+                    pdf_caption = f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
                 with open(worksheet_pdf, "rb") as f_doc:
                     await bot.send_document(
                         chat_id=chat_id,
@@ -970,17 +972,7 @@ def process_report():
                 update_google_sheet(date_str, class_name, report_url, timestamp)
                 save_processed(date_str, class_name, report_url)
 
-                if is_git_repository():
-                    log_message("Committing and pushing changes to GitHub")
-                    try:
-                        subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
-                        subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
-                        subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE], check=True)
-                        subprocess.run(["git", "commit", "-m", f"Update {PROCESSED_FILE} and {LOG_FILE} for {date_str}"], check=True)
-                        subprocess.run(["git", "push"], check=True)
-                        log_message(f"Pushed {PROCESSED_FILE} and {LOG_FILE} successfully")
-                    except Exception as e:
-                        log_message(f"Error committing/pushing: {str(e)}")
+
 
                 driver.close()
                 driver.switch_to.window(original_window)
@@ -1214,6 +1206,7 @@ def process_report():
                         subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
                         subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE, VOCAB_FILE, "Report/*"], check=True)
                         subprocess.run(["git", "commit", "-m", f"Update report and vocab for {date_str}"], check=True)
+                        subprocess.run(["git", "pull", "--rebase"], check=True)
                         subprocess.run(["git", "push"], check=True)
                         log_message(f"Pushed {PROCESSED_FILE}, {LOG_FILE}, {VOCAB_FILE}, and Report/* successfully")
                     except Exception as e:
