@@ -276,6 +276,78 @@ def escape_markdown_v2(text):
 #    CÔNG CỤ TẠO PHIẾU CHÉP A4 & QUIZLET TỰ ĐỘNG
 # ────────────────────────────────────────────────
 
+def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=40, min_threshold=20):
+    """
+    Quy tắc gộp từ vựng ôn tập:
+    - Nếu bài học >= min_threshold (20 từ): Giữ nguyên, không gộp.
+    - Nếu bài học > 40 từ: Giữ nguyên toàn bộ (không bị giới hạn 40).
+    - Nếu bài học < min_threshold (20 từ): Lấy từ vựng các bài trước (không trùng lặp),
+      lần lượt qua các bài trước cho đến khi đạt tối đa target_max (40 từ).
+    """
+    merged = dict(current_vocab)
+    
+    # Nếu bài hiện tại đã đủ từ (>= 20 từ) thì giữ nguyên (kể cả > 40 từ)
+    if len(merged) >= min_threshold:
+        return merged, [("Bài hiện tại", len(merged))]
+
+    if not os.path.exists(report_dir):
+        return merged, [("Bài hiện tại", len(merged))]
+
+    report_files = sorted(
+        [f for f in os.listdir(report_dir) if f.endswith('.json')],
+        reverse=True
+    )
+
+    # Chỉ lấy các báo cáo diễn ra TRƯỚC ngày hiện tại (file_date < current_date)
+    filtered_reports = []
+    for f in report_files:
+        if current_date:
+            file_date = f[:10]
+            if file_date >= current_date:
+                continue
+        filtered_reports.append(os.path.join(report_dir, f))
+
+    sources = [("Bài hiện tại", len(merged))]
+    existing_keys = {k.strip().lower() for k in merged.keys()}
+
+    for rf in filtered_reports:
+        if len(merged) >= target_max:
+            break
+        try:
+            with open(rf, 'r', encoding='utf-8') as fp:
+                data = json.load(fp)
+            prev_vocab = data.get('new_vocabulary', {})
+            added_from_this = 0
+
+            if isinstance(prev_vocab, dict):
+                for k, v in prev_vocab.items():
+                    k_clean = k.strip()
+                    if k_clean and v and k_clean.lower() not in existing_keys:
+                        merged[k_clean] = v.strip()
+                        existing_keys.add(k_clean.lower())
+                        added_from_this += 1
+                        if len(merged) >= target_max:
+                            break
+            elif isinstance(prev_vocab, list):
+                for item in prev_vocab:
+                    if isinstance(item, dict):
+                        w = item.get('word', '').strip()
+                        m = item.get('meaning', '').strip()
+                        if w and m and w.lower() not in existing_keys:
+                            merged[w] = m
+                            existing_keys.add(w.lower())
+                            added_from_this += 1
+                            if len(merged) >= target_max:
+                                break
+
+            if added_from_this > 0:
+                report_name = os.path.basename(rf).replace('.json', '')
+                sources.append((report_name, added_from_this))
+        except Exception:
+            continue
+
+    return merged, sources
+
 def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     import shutil
     vocab_items = [{"en": k, "vi": v} for k, v in vocab_dict.items() if k and v]
@@ -286,10 +358,19 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     if total_words <= 15:
         pages = [vocab_items]
         row_height = "15.2mm"
-    elif total_words <= 30:
+    elif total_words <= 20:
+        pages = [vocab_items]
+        row_height = "12.5mm"
+    elif total_words <= 40:
         mid = (total_words + 1) // 2
         pages = [vocab_items[:mid], vocab_items[mid:]]
-        row_height = "15.2mm"
+        max_page_items = max(len(pages[0]), len(pages[1]))
+        if max_page_items <= 16:
+            row_height = "15.0mm"
+        elif max_page_items <= 18:
+            row_height = "13.5mm"
+        else:
+            row_height = "12.3mm"
     else:
         per_page = 24
         pages = [vocab_items[i:i + per_page] for i in range(0, total_words, per_page)]
@@ -338,7 +419,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
 
       <div class="page-foot">
         <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-C3-2602 &bull; Trung tâm CEC</div>
-        <div>Trang {page_num} / {total_pages}</div>
+        <div>Trang {page_num} / {total_pages} (Tổng {total_words} từ)</div>
       </div>
     </div>"""
 
@@ -424,7 +505,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     .col-en {{
       width: 16%;
       font-weight: 800;
-      font-size: 11px;
+      font-size: 11.5px;
       color: #000000;
       word-break: break-word;
       line-height: 1.25;
@@ -432,7 +513,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     }}
     .col-vi {{
       width: 16%;
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 600;
       color: #000000;
       word-break: break-word;
@@ -547,7 +628,7 @@ def generate_quizlet_file(vocab_dict, output_txt_path):
         log_message(f'Failed to generate Quizlet file: {str(e)}')
         return None
 
-async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf=None, quizlet_txt=None):
+async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf=None, quizlet_txt=None, vocab_sources=None):
     try:
         general_info = (
             f"*BÁO CÁO BÀI HỌC - {result_data['report_date']}*\n"
@@ -594,16 +675,25 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
             log_message(f"Sent comments message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
+        is_padded = vocab_sources and len(vocab_sources) > 1
+        total_practice_words = sum(s[1] for s in vocab_sources) if vocab_sources else len(result_data.get('new_vocabulary', {}))
+
         # Gửi kèm tài liệu phiếu tập chép 5 cột A4
         if worksheet_pdf and os.path.exists(worksheet_pdf):
             try:
                 log_message(f"Sending A4 worksheet PDF to chat_id {chat_id}")
+                pdf_caption = (
+                    f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} "
+                    f"(Đã ghép ôn tập bài trước: {total_practice_words} từ)"
+                    if is_padded
+                    else f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
+                )
                 with open(worksheet_pdf, "rb") as f_doc:
                     await bot.send_document(
                         chat_id=chat_id,
                         document=f_doc,
                         filename=os.path.basename(worksheet_pdf),
-                        caption=f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
+                        caption=pdf_caption
                     )
                 log_message(f"Sent A4 worksheet PDF to chat_id {chat_id}")
                 await asyncio.sleep(0.5)
@@ -614,12 +704,17 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
         if quizlet_txt and os.path.exists(quizlet_txt):
             try:
                 log_message(f"Sending Quizlet text file to chat_id {chat_id}")
+                quiz_caption = (
+                    f"⚡ File 1-Click Import Quizlet ({total_practice_words} từ - Gồm từ mới & ôn tập bài trước)"
+                    if is_padded
+                    else "⚡ File 1-Click Import Quizlet (Copy & Paste vào Quizlet trong 3 giây)"
+                )
                 with open(quizlet_txt, "rb") as f_quiz:
                     await bot.send_document(
                         chat_id=chat_id,
                         document=f_quiz,
                         filename=os.path.basename(quizlet_txt),
-                        caption="⚡ File 1-Click Import Quizlet (Copy & Paste vào Quizlet trong 3 giây)"
+                        caption=quiz_caption
                     )
                 log_message(f"Sent Quizlet text file to chat_id {chat_id}")
                 await asyncio.sleep(0.5)
@@ -1038,11 +1133,23 @@ def process_report():
                 title = re.sub(r'[:"*?<>|\\/]', '_', title_raw).replace(' ', '_')
                 result_filename = f"Report/{date_str}_{title}.json"
 
+                # Tự động gộp từ vựng ôn tập nếu ít hơn 20 từ (lấy từ các bài trước tối đa 40 từ)
+                practice_vocab, vocab_sources = get_merged_vocabulary(
+                    extracted_data.get('new_vocabulary', {}),
+                    report_dir='Report',
+                    current_date=date_str,
+                    target_max=40,
+                    min_threshold=20
+                )
+                log_message(f"Practice vocabulary count: {len(practice_vocab)} (Original lesson words: {len(extracted_data.get('new_vocabulary', {}))})")
+                for src_name, cnt in vocab_sources:
+                    log_message(f"  + {src_name}: {cnt} words")
+
                 # Tự động tạo Phiếu tập chép A4 và File Quizlet 1-Click Import
                 worksheet_pdf = f"Report/{date_str}_{title}_Phieu_Tap_Chep.pdf"
                 quizlet_txt = f"Report/{date_str}_{title}_Quizlet_Import.txt"
-                generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), extracted_data.get('new_vocabulary', {}), worksheet_pdf)
-                generate_quizlet_file(extracted_data.get('new_vocabulary', {}), quizlet_txt)
+                generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), practice_vocab, worksheet_pdf)
+                generate_quizlet_file(practice_vocab, quizlet_txt)
 
                 result_data = {
                     **extracted_data,
@@ -1062,7 +1169,7 @@ def process_report():
                     for chat_id in [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]:
                         if chat_id:
                             log_message(f"Sending detailed Telegram messages to chat_id {chat_id}")
-                            await send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf, quizlet_txt)
+                            await send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf, quizlet_txt, vocab_sources)
                             log_message(f"Completed sending detailed messages to chat_id {chat_id}")
 
                 log_message("Starting detailed Telegram notifications")
