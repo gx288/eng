@@ -1,3 +1,11 @@
+breakfast	bữa sáng
+lunch	bữa trưa
+dinner	bữa tối
+eggs	trứng
+chicken	thịt gà
+salad	sa-lát
+noodles	mì/phở
+juice	nước ép trái cây
 quilt	chăn bông
 bolt	then cửa
 belt	thắt lưng
@@ -15,14 +23,10 @@ lift	thang máy
 soft	nhẹ
 left	bên trái
 theft	trộm cắp
-breakfast	bữa sáng
-lunch	bữa trưa
-dinner	bữa tối
-eggs	trứng
-chicken	thịt gà
-salad	sa-lát
-noodles	mì/phở
-juice	nước ép trái cây
+guava	quả ổi
+apple	quả táo
+pear	quả lê
+mango	quả xoài
 farm animals	trang trại động vật
 food	đồ ăn
 baby farm animals	động vật non trong trang trại
@@ -34,7 +38,3 @@ work hard	làm việc chăm chỉ
 play	chơi
 fly a kite	thả diều
 recycling	tái chế
-milk the cows	vắt sữa bò
-shear the sheep	tỉa lông cừu
-collect the eggs	thu trứng gà
-feed the chickens	cho gà ăn
