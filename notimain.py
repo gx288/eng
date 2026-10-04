@@ -357,24 +357,24 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
 
     if total_words <= 15:
         pages = [vocab_items]
-        row_height = "16.5mm"
+        row_height = "15.0mm"
     elif total_words <= 20:
         pages = [vocab_items]
-        row_height = "13.2mm"
+        row_height = "11.5mm"
     elif total_words <= 40:
         mid = (total_words + 1) // 2
         pages = [vocab_items[:mid], vocab_items[mid:]]
         max_page_items = max(len(pages[0]), len(pages[1]))
         if max_page_items <= 16:
-            row_height = "16.0mm"
+            row_height = "14.2mm"
         elif max_page_items <= 18:
-            row_height = "14.5mm"
+            row_height = "12.8mm"
         else:
-            row_height = "13.0mm"
+            row_height = "11.5mm"
     else:
         per_page = 24
         pages = [vocab_items[i:i + per_page] for i in range(0, total_words, per_page)]
-        row_height = "10.8mm"
+        row_height = "9.5mm"
 
     total_pages = len(pages)
 
@@ -416,6 +416,11 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
 {rows_html}
         </tbody>
       </table>
+
+      <div class="page-foot">
+        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-C3-2602 &bull; Trung tâm CEC</div>
+        <div>Trang {page_num} / {total_pages} (Tổng {total_words} từ)</div>
+      </div>
     </div>"""
 
     pages_html = "\n".join(render_page(page_items, idx + 1) for idx, page_items in enumerate(pages))
@@ -537,6 +542,16 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
       top: 50%;
       border-top: 1.2px dashed #000000;
       pointer-events: none;
+    }}
+    .page-foot {{
+      border-top: 1.5px solid #000000;
+      margin-top: 4px;
+      padding-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 700;
+      color: #000000;
     }}
     @page {{
       size: A4 portrait;
