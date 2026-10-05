@@ -134952,3 +134952,79 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 [2026-10-05 08:42:28] Report button is disabled
 [2026-10-05 08:42:28] Closing WebDriver
 [2026-10-05 08:42:28] Script completed
+[2026-10-05 11:06:27] Starting script
+[2026-10-05 11:06:27] Starting report check for calendar overview
+[2026-10-05 11:06:27] Loaded processed2.json: {'date': '2026-09-29', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf'}
+[2026-10-05 11:06:27] Writing Google credentials to credentials.json
+[2026-10-05 11:06:27] Credentials written successfully
+[2026-10-05 11:06:27] Initializing Chrome WebDriver
+[2026-10-05 11:06:35] WebDriver session ID: 5ffe00a32a612fa12034442a6ae59d7b
+[2026-10-05 11:06:35] Navigating to login page: https://apps.cec.com.vn/login
+[2026-10-05 11:06:39] Login attempt 1/3
+[2026-10-05 11:06:39] Entering password
+[2026-10-05 11:06:39] Clicking login button
+[2026-10-05 11:06:41] Login successful
+[2026-10-05 11:06:41] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-10-05 11:06:50] Scrolled to bottom of page
+[2026-10-05 11:06:50] Found 20 class events
+[2026-10-05 11:06:50] Latest class date before today: 2026-10-04
+[2026-10-05 11:06:53] Class name from popup: VQ2-C3-2602
+[2026-10-05 11:06:53] Report button is enabled, clicking to get report URL
+[2026-10-05 11:06:53] Attempt 1/3 to click report button
+[2026-10-05 11:06:54] Window switch attempt 1/3 failed: argument of type 'NoneType' is not iterable
+[2026-10-05 11:06:59] WebDriver unresponsive: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=154.0.8037.57)
+Stacktrace:
+#0 0x561d80202aaa <unknown>
+#1 0x561d7fb30aa9 <unknown>
+#2 0x561d7fb04298 <unknown>
+#3 0x561d7fbb5708 <unknown>
+#4 0x561d7fbd0b88 <unknown>
+#5 0x561d7fb7a148 <unknown>
+#6 0x561d7fb7af11 <unknown>
+#7 0x561d801c55ac <unknown>
+#8 0x561d801c3dc5 <unknown>
+#9 0x561d801aee95 <unknown>
+#10 0x561d801c4a1a <unknown>
+#11 0x561d801975c9 <unknown>
+#12 0x561d801ed0f8 <unknown>
+#13 0x561d801ed295 <unknown>
+#14 0x561d802013f3 <unknown>
+#15 0x7fa57e89cb84 <unknown>
+#16 0x7fa57e929ecc <unknown>
+
+[2026-10-05 11:06:59] WebDriver unresponsive before clicking report button, restarting
+[2026-10-05 11:06:59] Restarting WebDriver
+[2026-10-05 11:07:09] Window switch attempt 2/3 failed: Message: no such element: element not found
+  (Session info: chrome=154.0.8037.57); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+#0 0x56430f723aaa <unknown>
+#1 0x56430f051aa9 <unknown>
+#2 0x56430f0668ab <unknown>
+#3 0x56430f0655d1 <unknown>
+#4 0x56430f059759 <unknown>
+#5 0x56430f059893 <unknown>
+#6 0x56430f057929 <unknown>
+#7 0x56430f05b88c <unknown>
+#8 0x56430f0f32a8 <unknown>
+#9 0x56430f0f21df <unknown>
+#10 0x56430f09b148 <unknown>
+#11 0x56430f09bf11 <unknown>
+#12 0x56430f6e65ac <unknown>
+#13 0x56430f6e4dc5 <unknown>
+#14 0x56430f6cfe95 <unknown>
+#15 0x56430f6e5a1a <unknown>
+#16 0x56430f6b85c9 <unknown>
+#17 0x56430f70e0f8 <unknown>
+#18 0x56430f70e295 <unknown>
+#19 0x56430f7223f3 <unknown>
+#20 0x7f73f389cb84 <unknown>
+#21 0x7f73f3929ecc <unknown>
+
+[2026-10-05 11:07:14] Attempt 3/3 to click report button
+[2026-10-05 11:07:14] Window switch attempt 3/3 failed: HTTPConnectionPool(host='localhost', port=47439): Max retries exceeded with url: /session/5ffe00a32a612fa12034442a6ae59d7b/element/f.6449AF62841249795BDC62B868DABC9E.d.240821EA7BF4CA544E4086F765CDFC52.e.68/click (Caused by NewConnectionError("HTTPConnection(host='localhost', port=47439): Failed to establish a new connection: [Errno 111] Connection refused"))
+[2026-10-05 11:07:14] Max retries reached for window switch
+[2026-10-05 11:07:14] Error checking reports: Failed to retrieve report URL after 3 attempts: HTTPConnectionPool(host='localhost', port=47439): Max retries exceeded with url: /session/5ffe00a32a612fa12034442a6ae59d7b/element/f.6449AF62841249795BDC62B868DABC9E.d.240821EA7BF4CA544E4086F765CDFC52.e.68/click (Caused by NewConnectionError("HTTPConnection(host='localhost', port=47439): Failed to establish a new connection: [Errno 111] Connection refused"))
+[2026-10-05 11:07:14] Closing WebDriver
+[2026-10-05 11:07:15] Script completed
