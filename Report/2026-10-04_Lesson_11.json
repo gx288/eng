@@ -16,28 +16,40 @@
         "your": "của bạn",
         "said": "nói (quá khứ)",
         "blue": "màu xanh dương",
-        "yesterday": "hôm qua"
+        "yesterday": "hôm qua",
+        "foal": "ngựa con",
+        "chick": "gà con",
+        "duckling": "vịt con",
+        "cheese": "phô mai",
+        "yogurt": "sữa chua",
+        "cow": "con bò",
+        "calf": "bê con",
+        "horse": "con ngựa",
+        "sheep": "con cừu",
+        "farm": "trang trại",
+        "haircuts": "cắt tóc",
+        "tricky words": "từ bất quy tắc",
+        "phonics": "ngữ âm",
+        "blend sounds": "ghép âm",
+        "listen": "nghe",
+        "speak": "nói",
+        "read": "đọc",
+        "write": "viết"
     },
     "sentence_structures": {
-        "What can we see on a farm?": "On farms, we can see …",
-        "A baby ... is called a ...": "A baby cow is called a calf.",
-        "Hello everyone. My name is …": "I am … years old. Today I am talking about farms. On farms, we can see … Thank you for listening."
+        "What can we see on farms?": "On farms, we can see …",
+        "What is a baby cow called?": "A baby cow is called a calf."
     },
     "report_date": "2026-10-04",
     "lesson_title": "Lesson 11",
     "homework": "Phụ huynh mở đường dẫn này để xem các mục BTVN: CLL3_Homework_Lesson 11. Chuẩn bị cho buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Haircuts' đến lớp vào buổi học tiếp theo.",
     "links": [
-        "CLL3_Phonics_Word Set 09_'lt'",
-        "Haircuts (landscape).pdf",
-        "CLL3_Communicative English_Lesson 11",
+        "https://quizlet.com/vn/1073590662/cll3_tricky-words_review-l11-flash-cards/?funnelUUID=6f91e367-c34f-41e9-809a-8e64c28a27db",
+        "https://quizlet.com/vn/1073536657/cll3_phonics_word-set-09_lt-flash-cards/?funnelUUID=3f0df157-1775-4dad-84c6-bf67295d556f",
         "https://wordwall.net/resource/1620527/baby-animals",
         "https://docs.google.com/document/d/1arvzqwRpmWNXYDtwWhX8OAW-vXu0x_y_N-DvmDqS6X0/edit?tab=t.0#heading=h.8l5o5h96pe8",
-        "CLL3_Tricky words_Review L11",
-        "CLL3_Homework_Lesson 11",
-        "https://quizlet.com/vn/1075317191/cll3_communicative-english_lesson-11-flash-cards/?funnelUUID=8dbd5ca0-3104-449e-9c87-c9ab21e3202d",
-        "https://quizlet.com/vn/1073590662/cll3_tricky-words_review-l11-flash-cards/?funnelUUID=6f91e367-c34f-41e9-809a-8e64c28a27db",
         "https://drive.google.com/file/d/1mlYsWRoxA38jDyrwbPU5R7dO3Od9PDrm/view",
-        "https://quizlet.com/vn/1073536657/cll3_phonics_word-set-09_lt-flash-cards/?funnelUUID=3f0df157-1775-4dad-84c6-bf67295d556f"
+        "https://quizlet.com/vn/1075317191/cll3_communicative-english_lesson-11-flash-cards/?funnelUUID=8dbd5ca0-3104-449e-9c87-c9ab21e3202d"
     ],
     "student_comments_minh_huy": "Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích cực làm bài tập, tham gia lớp học với tinh thần hăng hái. Con đã tham gia học và ghi nhớ tốt âm /lt/ cùng các từ vựng liên quan như ‘bolt, tilt, belt’ và có thể đọc câu chứa các từ vựng trên một cách trôi chảy và phát âm tốt. Phần Tricky words, con đã nắm được ngữ nghĩa và phát âm của các từ, song con chú ý ôn tập thêm các từ ‘yesterday, their, our’ để bật âm rõ ràng hơn nhé. Ngoài ra, con đã ghi nhớ các từ vựng và cấu trúc về chủ đề Farm và thực hành luyện tập tốt. Về nhà con tiếp tục ôn tập kiến thức đã học và hoàn thành bài tập về nhà đầy đủ.",
     "class_name": "VQ2-C3-2602",
@@ -3110,6 +3122,18 @@
         {
             "word": "your",
             "meaning": "của bạn"
+        },
+        {
+            "word": "haircuts",
+            "meaning": "cắt tóc"
+        },
+        {
+            "word": "blend sounds",
+            "meaning": "ghép âm"
+        },
+        {
+            "word": "speak",
+            "meaning": "nói"
         }
     ]
 }

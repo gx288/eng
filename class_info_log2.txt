@@ -135292,3 +135292,117 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 [2026-10-05 11:23:35] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
 [2026-10-05 11:23:35] Closing WebDriver
 [2026-10-05 11:23:35] Script completed
+[2026-10-05 11:27:35] Starting script
+[2026-10-05 11:27:35] Starting report check for calendar overview
+[2026-10-05 11:27:35] Loaded processed2.json: {'date': '2026-09-29', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf'}
+[2026-10-05 11:27:35] Writing Google credentials to credentials.json
+[2026-10-05 11:27:35] Credentials written successfully
+[2026-10-05 11:27:35] Initializing Chrome WebDriver
+[2026-10-05 11:27:36] WebDriver session ID: 3cca88f6921664eb4f56aa84fd0302ca
+[2026-10-05 11:27:36] Navigating to login page: https://apps.cec.com.vn/login
+[2026-10-05 11:27:40] Login attempt 1/3
+[2026-10-05 11:27:40] Entering password
+[2026-10-05 11:27:40] Clicking login button
+[2026-10-05 11:27:43] Login successful
+[2026-10-05 11:27:43] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-10-05 11:27:52] Scrolled to bottom of page
+[2026-10-05 11:27:52] Found 20 class events
+[2026-10-05 11:27:52] Latest class date up to today: 2026-10-04
+[2026-10-05 11:27:55] Targeting report for VQ2-C3-2602 on 2026-10-04
+[2026-10-05 11:27:55] Attempt 1/3 to click report button
+[2026-10-05 11:27:58] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf
+[2026-10-05 11:27:58] Found new report: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-10-04
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf
+[2026-10-05 11:27:58] Updating Google Sheet 'Report' with Date 2026-10-04, Class VQ2-C3-2602, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf
+[2026-10-05 11:27:59] Updated Google Sheet 'Report' successfully: 2026-10-04, VQ2-C3-2602, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf at 2026-10-05 11:27:58
+[2026-10-05 11:27:59] Saving processed data to processed2.json
+[2026-10-05 11:27:59] Saved processed2.json successfully
+[2026-10-05 11:27:59] Starting PDF processing for report analysis
+[2026-10-05 11:27:59] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf
+[2026-10-05 11:27:59] Downloading PDF from https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf
+[2026-10-05 11:27:59] Successfully downloaded PDF to temp_report.pdf
+[2026-10-05 11:27:59] Extracting text and links from PDF
+[2026-10-05 11:28:01] Extracted 9613 characters and 6 links from PDF
+[2026-10-05 11:28:01] Deleted temporary PDF file: temp_report.pdf
+[2026-10-05 11:28:01] Gemini API attempt 1/3
+[2026-10-05 11:28:01] Available Gemini models count: 44
+[2026-10-05 11:28:01] Using model: models/gemini-2.5-flash
+[2026-10-05 11:28:17] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "quilt": "chăn bông",
+    "bolt": "chốt cài",
+    "belt": "thắt lưng",
+ ...
+[2026-10-05 11:28:17] API attempt 1 successful
+[2026-10-05 11:28:17] Updating Google Sheet 'ReportContent' with extracted data
+[2026-10-05 11:28:18] Inserted 40 rows to 'ReportContent' after header
+[2026-10-05 11:28:18] Processing total vocabulary
+[2026-10-05 11:28:18] Loaded existing vocabulary from vocab_total.json: 767 entries
+[2026-10-05 11:28:18] Added 3 new vocabulary entries. Total vocabulary: 770
+[2026-10-05 11:28:18] Saving updated vocabulary to vocab_total.json
+[2026-10-05 11:28:18] Successfully saved vocab_total.json
+[2026-10-05 11:28:18] Updating Google Sheet 'vocab' with total vocabulary
+[2026-10-05 11:28:19] Updated Google Sheet 'vocab' successfully with 770 vocabulary entries
+[2026-10-05 11:28:19] Creating Report directory if not exists
+[2026-10-05 11:28:19] Practice vocabulary count: 40 (Original lesson words: 35)
+[2026-10-05 11:28:19]   + Bài hiện tại: 35 words
+[2026-10-05 11:28:19]   + 2026-09-29_Lesson_12: 5 words
+[2026-10-05 11:28:20] Successfully generated PDF worksheet: Report/2026-10-04_Lesson_11_Phieu_Tap_Chep.pdf
+[2026-10-05 11:28:20] Successfully generated Quizlet file: Report/2026-10-04_Lesson_11_Quizlet_Import.txt
+[2026-10-05 11:28:20] Saving result to Report/2026-10-04_Lesson_11.json
+[2026-10-05 11:28:20] Successfully saved: Report/2026-10-04_Lesson_11.json
+[2026-10-05 11:28:20] Starting detailed Telegram notifications
+[2026-10-05 11:28:20] Initializing Telegram Bot for detailed messages
+[2026-10-05 11:28:20] Sending detailed Telegram messages to chat_id 1900957785
+[2026-10-05 11:28:20] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-10-04*
+📅 *Ngày*: 2026-10-04
+📚 *Tiêu đề*: Lesson 11
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-05 11:28:21] Sent general info message to chat_id 1900957785
+[2026-10-05 11:28:21] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-10-04*
+• `quilt`: chăn bông
+• `bolt`: chốt cài
+• `belt`: thắt lưng
+• `tilt`: ngh...
+[2026-10-05 11:28:22] Sent vocabulary message to chat_id 1900957785
+[2026-10-05 11:28:22] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-10-04*
+• *What can we see on farms?*: On farms, we can see …
+• *What is a baby ...
+[2026-10-05 11:28:23] Sent sentence structures message to chat_id 1900957785
+[2026-10-05 11:28:23] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-10-04*
+Phụ huynh mở đường dẫn này để xem các mục BTVN: CLL3_Homework_Lesson 1...
+[2026-10-05 11:28:23] Sent homework message to chat_id 1900957785
+[2026-10-05 11:28:24] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-10-04*
+Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích cự...
+[2026-10-05 11:28:24] Sent comments message to chat_id 1900957785
+[2026-10-05 11:28:25] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-10-05 11:28:26] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-10-05 11:28:27] Completed sending detailed messages to chat_id 1900957785
+[2026-10-05 11:28:27] Sending detailed Telegram messages to chat_id 1924741087
+[2026-10-05 11:28:27] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-10-04*
+📅 *Ngày*: 2026-10-04
+📚 *Tiêu đề*: Lesson 11
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-05 11:28:27] Sent general info message to chat_id 1924741087
+[2026-10-05 11:28:28] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-10-04*
+• `quilt`: chăn bông
+• `bolt`: chốt cài
+• `belt`: thắt lưng
+• `tilt`: ngh...
+[2026-10-05 11:28:28] Sent vocabulary message to chat_id 1924741087
+[2026-10-05 11:28:28] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-10-04*
+• *What can we see on farms?*: On farms, we can see …
+• *What is a baby ...
+[2026-10-05 11:28:29] Sent sentence structures message to chat_id 1924741087
+[2026-10-05 11:28:29] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-10-04*
+Phụ huynh mở đường dẫn này để xem các mục BTVN: CLL3_Homework_Lesson 1...
+[2026-10-05 11:28:29] Sent homework message to chat_id 1924741087
+[2026-10-05 11:28:30] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-10-04*
+Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích cự...
+[2026-10-05 11:28:30] Sent comments message to chat_id 1924741087
+[2026-10-05 11:28:31] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-10-05 11:28:32] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-10-05 11:28:32] Completed sending detailed messages to chat_id 1924741087
+[2026-10-05 11:28:32] Completed detailed Telegram notifications
+[2026-10-05 11:28:32] Git repository detected
+[2026-10-05 11:28:32] Committing and pushing Report and vocab files to GitHub
