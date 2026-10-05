@@ -135903,3 +135903,20 @@ Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích
 [2026-10-05 16:02:38] Latest class on 2026-10-04 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf. Exiting.
 [2026-10-05 16:02:38] Closing WebDriver
 [2026-10-05 16:02:38] Script completed
+[2026-10-05 16:16:08] Starting script
+[2026-10-05 16:16:08] Starting report check for calendar overview
+[2026-10-05 16:16:08] Loaded processed2.json: {'date': '2026-10-04', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf'}}
+[2026-10-05 16:16:08] Writing Google credentials to credentials.json
+[2026-10-05 16:16:08] Credentials written successfully
+[2026-10-05 16:16:08] Initializing Chrome WebDriver
+[2026-10-05 16:16:09] WebDriver session ID: c2f88d5011b1f795ac948c4b9c41c845
+[2026-10-05 16:16:09] Attempting to restore session from cache...
+[2026-10-05 16:16:14] Navigating to student calendar overview with restored session...
+[2026-10-05 16:16:21] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-05 16:16:21] Active session restored, bypassed fresh login!
+[2026-10-05 16:16:21] Scrolled to bottom of page
+[2026-10-05 16:16:21] Found 20 class events
+[2026-10-05 16:16:21] Latest class date up to today: 2026-10-04
+[2026-10-05 16:16:21] Latest class on 2026-10-04 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf. Exiting.
+[2026-10-05 16:16:21] Closing WebDriver
+[2026-10-05 16:16:21] Script completed
