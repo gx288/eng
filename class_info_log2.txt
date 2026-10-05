@@ -135784,3 +135784,20 @@ Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích
 [2026-10-05 14:16:59] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
 [2026-10-05 14:16:59] Closing WebDriver
 [2026-10-05 14:16:59] Script completed
+[2026-10-05 14:31:29] Starting script
+[2026-10-05 14:31:29] Starting report check for calendar overview
+[2026-10-05 14:31:29] Loaded processed2.json: {'date': '2026-10-04', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf'}}
+[2026-10-05 14:31:29] Writing Google credentials to credentials.json
+[2026-10-05 14:31:29] Credentials written successfully
+[2026-10-05 14:31:29] Initializing Chrome WebDriver
+[2026-10-05 14:31:39] WebDriver session ID: eda6ee2e164883a6a42d17459b4acbfb
+[2026-10-05 14:31:39] Attempting to restore session from cache...
+[2026-10-05 14:31:45] Navigating to student calendar overview with restored session...
+[2026-10-05 14:31:53] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-05 14:31:53] Active session restored, bypassed fresh login!
+[2026-10-05 14:31:53] Scrolled to bottom of page
+[2026-10-05 14:31:53] Found 20 class events
+[2026-10-05 14:31:53] Latest class date up to today: 2026-10-04
+[2026-10-05 14:31:53] Latest class on 2026-10-04 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf. Exiting.
+[2026-10-05 14:31:53] Closing WebDriver
+[2026-10-05 14:31:53] Script completed
