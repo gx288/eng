@@ -848,10 +848,12 @@ def process_report():
             return
 
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless")
+    options.add_argument("--headless=new")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-popup-blocking")
+    options.add_argument("--window-size=1920,1080")
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0")
     log_message("Initializing Chrome WebDriver")
     driver = webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
@@ -879,106 +881,156 @@ def process_report():
         )
         log_message(f"Found {len(class_events)} class events")
 
-        latest_date = None
-        latest_event = None
+        # Collect all class events on or before today
+        candidate_events = []
         for event in class_events:
-            date_str = event.get_attribute("data-date")
+            date_str_attr = event.get_attribute("data-date")
             try:
-                event_date = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=ZoneInfo("Asia/Ho_Chi_Minh"))
-                if event_date < TODAY and (latest_date is None or event_date > latest_date):
-                    latest_date = event_date
-                    latest_event = event
+                event_date = datetime.strptime(date_str_attr, "%Y-%m-%d").replace(tzinfo=ZoneInfo("Asia/Ho_Chi_Minh"))
+                if event_date <= TODAY:
+                    candidate_events.append((event_date, date_str_attr, event))
             except Exception as e:
-                log_message(f"Error parsing date {date_str}: {str(e)}")
+                log_message(f"Error parsing date {date_str_attr}: {str(e)}")
                 continue
 
-        if not latest_date:
-            log_message("No classes found before today")
+        if not candidate_events:
+            log_message("No classes found on or before today")
             return
 
-        date_str = latest_date.strftime("%Y-%m-%d")
-        log_message(f"Latest class date before today: {date_str}")
+        candidate_events.sort(key=lambda x: x[0], reverse=True)
+        log_message(f"Found {len(candidate_events)} candidate class events up to today. Newest: {candidate_events[0][1]}")
 
-        driver.execute_script("arguments[0].click();", latest_event)
-        time.sleep(3)
+        target_event = None
+        target_date_str = None
+        target_class_name = None
 
-        popup = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
-        )
-        title_element = popup.find_element(By.CLASS_NAME, "v-toolbar__title")
-        title_text = title_element.text.strip()
-        class_name = title_text.split(" : ")[-1] if " : " in title_text else "Unknown"
-        log_message(f"Class name from popup: {class_name}")
+        for event_date, d_str, event in candidate_events:
+            if processed.get("date") == d_str and processed.get("report_url"):
+                log_message(f"Event on {d_str} already processed with report URL: {processed['report_url']}")
+                continue
 
-        if (processed.get("date") == date_str and
-                processed.get("class_name") == class_name and
-                processed.get("report_url")):
-            log_message(f"Class {class_name} on {date_str} already processed with report URL: {processed['report_url']}")
-            return
+            log_message(f"Checking candidate event on {d_str}...")
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            driver.execute_script("arguments[0].click();", event)
+            time.sleep(3)
 
-        report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
-        is_enabled = "v-btn--disabled" not in report_button.get_attribute("class") and report_button.is_enabled()
-
-        if is_enabled:
-            log_message("Report button is enabled, clicking to get report URL")
-            original_window = driver.current_window_handle
-            max_window_retries = 3
-            report_url = None
-        
-            for attempt in range(max_window_retries):
-                try:
-                    if not check_webdriver(driver):
-                        log_message("WebDriver unresponsive before clicking report button, restarting")
-                        driver = restart_webdriver(driver, options)
-                        # Re-navigate to calendar page and re-open popup
-                        driver.get("https://apps.cec.com.vn/student-calendar/overview")
-                        time.sleep(7)
-                        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                        driver.execute_script("arguments[0].click();", latest_event)
-                        time.sleep(3)
-                        popup = WebDriverWait(driver, 10).until(
-                            EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
-                        )
-                        report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
-        
-                    log_message(f"Attempt {attempt + 1}/{max_window_retries} to click report button")
-                    report_button.click()
-        
-                    # Wait for new window to open
-                    WebDriverWait(driver, 15).until(
-                        lambda d: len(d.window_handles) > len([original_window])
-                    )
-                    for window_handle in driver.window_handles:
-                        if window_handle != original_window:
-                            driver.switch_to.window(window_handle)
-                            break
-        
-                    # Wait for the new window to load
-                    WebDriverWait(driver, 60).until(
-                        EC.url_contains("docs.google.com")
-                    )
-                    report_url = driver.current_url
-                    log_message(f"Report URL: {report_url}")
+            try:
+                popup = WebDriverWait(driver, 10).until(
+                    EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
+                )
+                title_element = popup.find_element(By.CLASS_NAME, "v-toolbar__title")
+                title_text = title_element.text.strip()
+                c_name = title_text.split(" : ")[-1] if " : " in title_text else "Unknown"
+                
+                report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
+                is_enabled = "v-btn--disabled" not in report_button.get_attribute("class") and report_button.is_enabled()
+                
+                if is_enabled:
+                    log_message(f"Found enabled report button for {c_name} on {d_str}!")
+                    target_event = event
+                    target_date_str = d_str
+                    target_class_name = c_name
                     break
-                except Exception as e:
-                    log_message(f"Window switch attempt {attempt + 1}/{max_window_retries} failed: {str(e)}")
-                    if attempt == max_window_retries - 1:
-                        log_message("Max retries reached for window switch")
-                        raise Exception(f"Failed to retrieve report URL after {max_window_retries} attempts: {str(e)}")
-                    # Restart WebDriver if unresponsive
-                    if "connection refused" in str(e).lower() or "timeout" in str(e).lower():
-                        driver = restart_webdriver(driver, options)
-                        # Re-navigate to calendar page
-                        driver.get("https://apps.cec.com.vn/student-calendar/overview")
-                        time.sleep(7)
-                        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                        driver.execute_script("arguments[0].click();", latest_event)
-                        time.sleep(3)
-                        popup = WebDriverWait(driver, 10).until(
-                            EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
-                        )
-                        report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
-                    time.sleep(5)  # Wait longer before retrying
+                else:
+                    log_message(f"Report button for {c_name} on {d_str} is disabled. Checking next candidate...")
+                    try:
+                        driver.execute_script("document.body.click();")
+                    except:
+                        pass
+                    time.sleep(1)
+            except Exception as e:
+                log_message(f"Error checking event {d_str}: {str(e)}")
+                try:
+                    driver.execute_script("document.body.click();")
+                except:
+                    pass
+                continue
+
+        if not target_event or not target_date_str:
+            log_message("No new enabled reports found among candidate events.")
+            return
+
+        date_str = target_date_str
+        class_name = target_class_name
+        latest_event = target_event
+
+        log_message(f"Targeting report for {class_name} on {date_str}")
+        report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
+
+        original_window = driver.current_window_handle
+        max_window_retries = 3
+        report_url = None
+
+        for attempt in range(max_window_retries):
+            try:
+                if not check_webdriver(driver):
+                    log_message("WebDriver unresponsive before clicking report button, restarting")
+                    driver = restart_webdriver(driver, options)
+                    driver.get("https://apps.cec.com.vn/student-calendar/overview")
+                    time.sleep(7)
+                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                    class_events_fresh = driver.find_elements(By.XPATH, f"//div[contains(@class, 'v-event') and @data-date='{date_str}']")
+                    if class_events_fresh:
+                        latest_event = class_events_fresh[0]
+                    driver.execute_script("arguments[0].click();", latest_event)
+                    time.sleep(3)
+                    popup = WebDriverWait(driver, 10).until(
+                        EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
+                    )
+                    report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
+
+                log_message(f"Attempt {attempt + 1}/{max_window_retries} to click report button")
+                try:
+                    report_button.click()
+                except Exception:
+                    driver.execute_script("arguments[0].click();", report_button)
+
+                # Wait for new window to open
+                WebDriverWait(driver, 15).until(
+                    lambda d: len(d.window_handles) > len([original_window])
+                )
+                for window_handle in driver.window_handles:
+                    if window_handle != original_window:
+                        driver.switch_to.window(window_handle)
+                        break
+
+                # Wait for new window to load Google Docs safely without TypeError on NoneType
+                def is_doc_loaded(d):
+                    try:
+                        u = d.current_url
+                        return bool(u and ("docs.google.com" in u or "drive.google.com" in u))
+                    except Exception:
+                        return False
+
+                WebDriverWait(driver, 60).until(is_doc_loaded)
+                report_url = driver.current_url
+                log_message(f"Report URL: {report_url}")
+                break
+            except Exception as e:
+                log_message(f"Window switch attempt {attempt + 1}/{max_window_retries} failed: {str(e)}")
+                if attempt == max_window_retries - 1:
+                    log_message("Max retries reached for window switch")
+                    raise Exception(f"Failed to retrieve report URL after {max_window_retries} attempts: {str(e)}")
+                try:
+                    if original_window in driver.window_handles:
+                        driver.switch_to.window(original_window)
+                except:
+                    pass
+                if "connection refused" in str(e).lower() or "timeout" in str(e).lower() or "no such window" in str(e).lower():
+                    driver = restart_webdriver(driver, options)
+                    driver.get("https://apps.cec.com.vn/student-calendar/overview")
+                    time.sleep(7)
+                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                    class_events_fresh = driver.find_elements(By.XPATH, f"//div[contains(@class, 'v-event') and @data-date='{date_str}']")
+                    if class_events_fresh:
+                        latest_event = class_events_fresh[0]
+                    driver.execute_script("arguments[0].click();", latest_event)
+                    time.sleep(3)
+                    popup = WebDriverWait(driver, 10).until(
+                        EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
+                    )
+                    report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
+                time.sleep(5)
         
             if report_url:
                 timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
