@@ -2,10 +2,10 @@ breakfast	bữa sáng
 lunch	bữa trưa
 dinner	bữa tối
 eggs	trứng
-chicken	thịt gà
+chicken	gà
 salad	sa-lát
 noodles	mì/phở
-juice	nước ép trái cây
+juice	nước ép
 quilt	chăn bông
 bolt	then cửa
 belt	thắt lưng

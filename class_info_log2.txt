@@ -135173,3 +135173,119 @@ Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích
 [2026-10-05 11:16:16] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
 [2026-10-05 11:16:16] Closing WebDriver
 [2026-10-05 11:16:16] Script completed
+[2026-10-05 11:22:36] Starting script
+[2026-10-05 11:22:36] Starting report check for calendar overview
+[2026-10-05 11:22:36] Loaded processed2.json: {'date': '2026-10-04', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf'}
+[2026-10-05 11:22:36] Writing Google credentials to credentials.json
+[2026-10-05 11:22:36] Credentials written successfully
+[2026-10-05 11:22:36] Initializing Chrome WebDriver
+[2026-10-05 11:22:38] WebDriver session ID: fe6c0a5ecbf49d4ec935572a8ee92057
+[2026-10-05 11:22:38] Navigating to login page: https://apps.cec.com.vn/login
+[2026-10-05 11:22:42] Login attempt 1/3
+[2026-10-05 11:22:42] Entering password
+[2026-10-05 11:22:42] Clicking login button
+[2026-10-05 11:22:44] Login successful
+[2026-10-05 11:22:44] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-10-05 11:22:53] Scrolled to bottom of page
+[2026-10-05 11:22:53] Found 20 class events
+[2026-10-05 11:22:53] Found 6 candidate class events up to today. Newest: 2026-10-04
+[2026-10-05 11:22:53] Event on 2026-10-04 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf
+[2026-10-05 11:22:53] Event on 2026-10-04 already processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf
+[2026-10-05 11:22:53] Checking candidate event on 2026-09-29...
+[2026-10-05 11:22:56] Found enabled report button for VQ2-C3-2602 on 2026-09-29!
+[2026-10-05 11:22:56] Targeting report for VQ2-C3-2602 on 2026-09-29
+[2026-10-05 11:22:56] Attempt 1/3 to click report button
+[2026-10-05 11:22:58] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-05 11:22:58] Found new report: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-09-29
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-05 11:22:58] Updating Google Sheet 'Report' with Date 2026-09-29, Class VQ2-C3-2602, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-05 11:22:59] Updated Google Sheet 'Report' successfully: 2026-09-29, VQ2-C3-2602, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf at 2026-10-05 11:22:58
+[2026-10-05 11:22:59] Saving processed data to processed2.json
+[2026-10-05 11:22:59] Saved processed2.json successfully
+[2026-10-05 11:22:59] Starting PDF processing for report analysis
+[2026-10-05 11:22:59] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-05 11:22:59] Downloading PDF from https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf
+[2026-10-05 11:23:00] Successfully downloaded PDF to temp_report.pdf
+[2026-10-05 11:23:00] Extracting text and links from PDF
+[2026-10-05 11:23:01] Extracted 7428 characters and 10 links from PDF
+[2026-10-05 11:23:01] Deleted temporary PDF file: temp_report.pdf
+[2026-10-05 11:23:01] Gemini API attempt 1/3
+[2026-10-05 11:23:01] Available Gemini models count: 44
+[2026-10-05 11:23:01] Using model: models/gemini-2.5-flash
+[2026-10-05 11:23:16] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "breakfast": "bữa sáng",
+    "lunch": "bữa trưa",
+    "dinner": "bữa tối...
+[2026-10-05 11:23:16] API attempt 1 successful
+[2026-10-05 11:23:16] Updating Google Sheet 'ReportContent' with extracted data
+[2026-10-05 11:23:17] Inserted 34 rows to 'ReportContent' after header
+[2026-10-05 11:23:17] Processing total vocabulary
+[2026-10-05 11:23:17] Loaded existing vocabulary from vocab_total.json: 767 entries
+[2026-10-05 11:23:17] Added 0 new vocabulary entries. Total vocabulary: 767
+[2026-10-05 11:23:17] Saving updated vocabulary to vocab_total.json
+[2026-10-05 11:23:17] Successfully saved vocab_total.json
+[2026-10-05 11:23:17] Updating Google Sheet 'vocab' with total vocabulary
+[2026-10-05 11:23:18] Updated Google Sheet 'vocab' successfully with 767 vocabulary entries
+[2026-10-05 11:23:18] Creating Report directory if not exists
+[2026-10-05 11:23:18] Practice vocabulary count: 40 (Original lesson words: 29)
+[2026-10-05 11:23:18]   + Bài hiện tại: 29 words
+[2026-10-05 11:23:18]   + 2026-09-22_Lesson_9: 7 words
+[2026-10-05 11:23:18]   + 2026-09-20_Lesson_8: 4 words
+[2026-10-05 11:23:19] Successfully generated PDF worksheet: Report/2026-09-29_Lesson_12_Phieu_Tap_Chep.pdf
+[2026-10-05 11:23:19] Successfully generated Quizlet file: Report/2026-09-29_Lesson_12_Quizlet_Import.txt
+[2026-10-05 11:23:19] Saving result to Report/2026-09-29_Lesson_12.json
+[2026-10-05 11:23:19] Successfully saved: Report/2026-09-29_Lesson_12.json
+[2026-10-05 11:23:19] Starting detailed Telegram notifications
+[2026-10-05 11:23:19] Initializing Telegram Bot for detailed messages
+[2026-10-05 11:23:19] Sending detailed Telegram messages to chat_id 1900957785
+[2026-10-05 11:23:19] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-09-29*
+📅 *Ngày*: 2026-09-29
+📚 *Tiêu đề*: Lesson 12
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-05 11:23:20] Sent general info message to chat_id 1900957785
+[2026-10-05 11:23:20] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-09-29*
+• `breakfast`: bữa sáng
+• `lunch`: bữa trưa
+• `dinner`: bữa tối
+• `eggs`:...
+[2026-10-05 11:23:21] Sent vocabulary message to chat_id 1900957785
+[2026-10-05 11:23:21] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-09-29*
+• *What do we eat at …breakfast…?*: We eat ……...
+[2026-10-05 11:23:22] Sent sentence structures message to chat_id 1900957785
+[2026-10-05 11:23:22] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-09-29*
+Hoàn thành phần Handwriting trong sách CLL3. CLL 3_Homework_Lesson 12....
+[2026-10-05 11:23:22] Sent homework message to chat_id 1900957785
+[2026-10-05 11:23:23] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-09-29*
+Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi...
+[2026-10-05 11:23:23] Sent comments message to chat_id 1900957785
+[2026-10-05 11:23:24] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-10-05 11:23:25] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-10-05 11:23:26] Completed sending detailed messages to chat_id 1900957785
+[2026-10-05 11:23:26] Sending detailed Telegram messages to chat_id 1924741087
+[2026-10-05 11:23:26] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-09-29*
+📅 *Ngày*: 2026-09-29
+📚 *Tiêu đề*: Lesson 12
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-05 11:23:26] Sent general info message to chat_id 1924741087
+[2026-10-05 11:23:27] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-09-29*
+• `breakfast`: bữa sáng
+• `lunch`: bữa trưa
+• `dinner`: bữa tối
+• `eggs`:...
+[2026-10-05 11:23:27] Sent vocabulary message to chat_id 1924741087
+[2026-10-05 11:23:27] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-09-29*
+• *What do we eat at …breakfast…?*: We eat ……...
+[2026-10-05 11:23:28] Sent sentence structures message to chat_id 1924741087
+[2026-10-05 11:23:28] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-09-29*
+Hoàn thành phần Handwriting trong sách CLL3. CLL 3_Homework_Lesson 12....
+[2026-10-05 11:23:29] Sent homework message to chat_id 1924741087
+[2026-10-05 11:23:29] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-09-29*
+Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi...
+[2026-10-05 11:23:29] Sent comments message to chat_id 1924741087
+[2026-10-05 11:23:30] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-10-05 11:23:31] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-10-05 11:23:32] Completed sending detailed messages to chat_id 1924741087
+[2026-10-05 11:23:32] Completed detailed Telegram notifications
+[2026-10-05 11:23:32] Git repository detected
+[2026-10-05 11:23:32] Committing and pushing Report and vocab files to GitHub
