@@ -248,10 +248,30 @@ def update_vocab_sheet(total_vocab):
 # Save processed data
 def save_processed(date, class_name, report_url):
     log_message(f"Saving processed data to {PROCESSED_FILE}")
-    processed = {"date": date, "class_name": class_name, "report_url": report_url}
+    processed = {}
+    if os.path.exists(PROCESSED_FILE):
+        try:
+            with open(PROCESSED_FILE, 'r', encoding='utf-8') as f:
+                processed = json.load(f)
+        except Exception:
+            processed = {}
+
+    processed_dates = processed.get("processed_dates", {})
+    if not isinstance(processed_dates, dict):
+        processed_dates = {}
+    if processed.get("date") and processed.get("report_url"):
+        processed_dates[processed["date"]] = processed["report_url"]
+    processed_dates[date] = report_url
+
+    processed_out = {
+        "date": date,
+        "class_name": class_name,
+        "report_url": report_url,
+        "processed_dates": processed_dates
+    }
     try:
         with open(PROCESSED_FILE, 'w', encoding='utf-8') as f:
-            json.dump(processed, f, indent=2)
+            json.dump(processed_out, f, indent=2)
         log_message(f"Saved {PROCESSED_FILE} successfully")
     except Exception as e:
         log_message(f"Error saving {PROCESSED_FILE}: {str(e)}")
@@ -898,64 +918,35 @@ def process_report():
             return
 
         candidate_events.sort(key=lambda x: x[0], reverse=True)
-        log_message(f"Found {len(candidate_events)} candidate class events up to today. Newest: {candidate_events[0][1]}")
+        latest_event_date, latest_date_str, latest_event = candidate_events[0]
+        log_message(f"Latest class date up to today: {latest_date_str}")
 
-        target_event = None
-        target_date_str = None
-        target_class_name = None
-
-        for event_date, d_str, event in candidate_events:
-            if processed.get("date") == d_str and processed.get("report_url"):
-                log_message(f"Event on {d_str} already processed with report URL: {processed['report_url']}")
-                continue
-
-            log_message(f"Checking candidate event on {d_str}...")
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            driver.execute_script("arguments[0].click();", event)
-            time.sleep(3)
-
-            try:
-                popup = WebDriverWait(driver, 10).until(
-                    EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
-                )
-                title_element = popup.find_element(By.CLASS_NAME, "v-toolbar__title")
-                title_text = title_element.text.strip()
-                c_name = title_text.split(" : ")[-1] if " : " in title_text else "Unknown"
-                
-                report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
-                is_enabled = "v-btn--disabled" not in report_button.get_attribute("class") and report_button.is_enabled()
-                
-                if is_enabled:
-                    log_message(f"Found enabled report button for {c_name} on {d_str}!")
-                    target_event = event
-                    target_date_str = d_str
-                    target_class_name = c_name
-                    break
-                else:
-                    log_message(f"Report button for {c_name} on {d_str} is disabled. Checking next candidate...")
-                    try:
-                        driver.execute_script("document.body.click();")
-                    except:
-                        pass
-                    time.sleep(1)
-            except Exception as e:
-                log_message(f"Error checking event {d_str}: {str(e)}")
-                try:
-                    driver.execute_script("document.body.click();")
-                except:
-                    pass
-                continue
-
-        if not target_event or not target_date_str:
-            log_message("No new enabled reports found among candidate events.")
+        # Check if the latest class has already been processed
+        processed_date = processed.get("date")
+        processed_history = processed.get("processed_dates", {})
+        if (processed_date == latest_date_str and processed.get("report_url")) or latest_date_str in processed_history:
+            log_message(f"Latest class on {latest_date_str} has already been processed with report URL: {processed.get('report_url') or processed_history.get(latest_date_str)}. Exiting.")
             return
 
-        date_str = target_date_str
-        class_name = target_class_name
-        latest_event = target_event
+        date_str = latest_date_str
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        driver.execute_script("arguments[0].click();", latest_event)
+        time.sleep(3)
 
+        popup = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, "//div[contains(@class, 'v-menu__content') and contains(@class, 'menuable__content__active')]"))
+        )
+        title_element = popup.find_element(By.CLASS_NAME, "v-toolbar__title")
+        title_text = title_element.text.strip()
+        class_name = title_text.split(" : ")[-1] if " : " in title_text else "Unknown"
         log_message(f"Targeting report for {class_name} on {date_str}")
+
         report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
+        is_enabled = "v-btn--disabled" not in report_button.get_attribute("class") and report_button.is_enabled()
+
+        if not is_enabled:
+            log_message(f"Report button for {class_name} on {date_str} is disabled. Waiting for teacher to publish report.")
+            return
 
         original_window = driver.current_window_handle
         max_window_retries = 3
