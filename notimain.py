@@ -23,6 +23,7 @@ import socket
 
 # Configuration
 PROCESSED_FILE = "processed2.json"
+SESSION_FILE = "cec_session.json"
 CREDENTIALS_FILE = "credentials.json"
 SHEET_ID = "1-MMsbAGlg7MNbBPAzioqARu6QLfry5mCrWJ-Q_aqmIM"
 SHEET_NAME = "Report"
@@ -69,7 +70,12 @@ def restart_webdriver(driver, options):
         driver.quit()
     except:
         pass
-    return webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
+    new_driver = webdriver.Chrome(service=webdriver.chrome.service.Service(ChromeDriverManager().install()), options=options)
+    try:
+        restore_session(new_driver)
+    except:
+        pass
+    return new_driver
 
 # Send basic Telegram notification
 def send_basic_notification(subject, body, chat_ids=[TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2]):
@@ -96,6 +102,78 @@ def send_basic_notification(subject, body, chat_ids=[TELEGRAM_CHAT_ID, TELEGRAM_
                 log_message(f"Telegram send failed for chat_id {chat_id}: {response.text}")
         except Exception as e:
             log_message(f"Error sending Telegram notification to chat_id {chat_id}: {str(e)}")
+
+# Save session (cookies + localStorage)
+def save_session(driver):
+    try:
+        cookies = driver.get_cookies()
+        local_storage = driver.execute_script("return Object.assign({}, window.localStorage);")
+        session_data = {
+            "cookies": cookies,
+            "localStorage": local_storage,
+            "timestamp": time.time()
+        }
+        with open(SESSION_FILE, "w", encoding="utf-8") as f:
+            json.dump(session_data, f, indent=2)
+        log_message(f"Saved session cache ({len(cookies)} cookies, {len(local_storage)} localStorage items) to {SESSION_FILE}")
+    except Exception as e:
+        log_message(f"Warning: Failed to save session cache: {str(e)}")
+
+# Restore session (cookies + localStorage)
+def restore_session(driver):
+    if not os.path.exists(SESSION_FILE):
+        log_message("No session cache file found, will perform fresh login")
+        return False
+    try:
+        with open(SESSION_FILE, "r", encoding="utf-8") as f:
+            session_data = json.load(f)
+
+        log_message("Attempting to restore session from cache...")
+        driver.get("https://apps.cec.com.vn/login")
+        time.sleep(2)
+
+        # Restore cookies
+        cookies = session_data.get("cookies", [])
+        for cookie in cookies:
+            try:
+                cookie_dict = {k: v for k, v in cookie.items() if k in ['name', 'value', 'path', 'domain', 'secure', 'httpOnly']}
+                driver.add_cookie(cookie_dict)
+            except Exception:
+                pass
+
+        # Restore localStorage
+        local_storage = session_data.get("localStorage", {})
+        if local_storage:
+            for k, v in local_storage.items():
+                try:
+                    driver.execute_script("window.localStorage.setItem(arguments[0], arguments[1]);", k, v)
+                except Exception:
+                    pass
+
+        # Navigate to student calendar overview
+        log_message("Navigating to student calendar overview with restored session...")
+        driver.get("https://apps.cec.com.vn/student-calendar/overview")
+        time.sleep(5)
+
+        # Check if session is valid or redirected back to login
+        current_url = driver.current_url
+        if "login" not in current_url:
+            try:
+                WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'v-event') and @data-date]"))
+                )
+                log_message("Session verified successfully! Calendar events loaded without fresh login.")
+                return True
+            except Exception:
+                if "login" not in driver.current_url:
+                    log_message(f"Session active at {driver.current_url}. Bypassed fresh login.")
+                    return True
+
+        log_message("Session cache expired or redirected to login, will perform fresh login")
+        return False
+    except Exception as e:
+        log_message(f"Error restoring session cache: {str(e)}, will perform fresh login")
+        return False
 
 # Login to the website
 def login(driver, max_retries=3):
@@ -133,6 +211,8 @@ def login(driver, max_retries=3):
                 EC.url_contains("login")
             )
             log_message("Login successful")
+            time.sleep(2)
+            save_session(driver)
             return True
 
         except Exception as e:
@@ -884,13 +964,20 @@ def process_report():
     try:
         if not check_webdriver(driver):
             driver = restart_webdriver(driver, options)
-        if not login(driver):
-            log_message("Login failed, aborting process")
-            return
 
-        log_message("Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview")
-        driver.get("https://apps.cec.com.vn/student-calendar/overview")
-        time.sleep(7)
+        session_valid = restore_session(driver)
+        if not session_valid:
+            log_message("Session cache not available or expired. Performing fresh login...")
+            if not login(driver):
+                log_message("Login failed, aborting process")
+                return
+            log_message("Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview")
+            driver.get("https://apps.cec.com.vn/student-calendar/overview")
+            time.sleep(7)
+            save_session(driver)
+        else:
+            log_message("Active session restored, bypassed fresh login!")
+
         if not check_webdriver(driver):
             driver = restart_webdriver(driver, options)
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

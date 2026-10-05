@@ -6,3 +6,4 @@ credentials.json
 .credentials.json
 temp_report.pdf
 *.log
+cec_session.json

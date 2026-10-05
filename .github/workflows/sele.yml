@@ -34,6 +34,14 @@ jobs:
       run: |
         echo "$GOOGLE_CREDENTIALS" > credentials.json
 
+    - name: Restore CEC Session Cache
+      uses: actions/cache@v4
+      with:
+        path: cec_session.json
+        key: cec-session-${{ github.run_id }}
+        restore-keys: |
+          cec-session-
+
     - name: Run script
       env:
         NEW_CEC_USER: ${{ secrets.NEW_CEC_USER }}
