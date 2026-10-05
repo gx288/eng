@@ -1184,7 +1184,7 @@ def process_report():
             You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return "cannot find info" for strings or {} or [] for objects/arrays.
             Extract from the given text:
             {
-              "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese, must not be empty)
+              "new_vocabulary": {},  // Dictionary of official vocabulary words/phrases taught in this lesson (key: word/phrase in lowercase, value: meaning in Vietnamese, must not be empty)
               "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple, no null values)
               "report_date": "",  // Report date in YYYY-MM-DD (if not found, use date from input JSON)
               "lesson_title": "",  // Lesson title (if not found, "cannot find info")
@@ -1192,7 +1192,11 @@ def process_report():
               "links": [],  // List of all URLs found in the content (e.g., homework links, YouTube videos)
               "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, "cannot find info")
             }
-            For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning. For missing meanings, use a default dictionary (e.g., "pot": "cái nồi").
+            CRITICAL RULES FOR new_vocabulary:
+            - ONLY extract words listed explicitly in the lesson's vocabulary sections (such as 'Phonics', 'Words set', 'Từ vựng', 'Tricky words', 'New words', 'Vocabulary').
+            - DO NOT extract classroom activity skills, directions, or headings (e.g., 'listen', 'speak', 'read', 'write', 'reading', 'speaking', 'listening', 'phonics', 'tricky words', 'blend sounds', 'arm blending', 'dot blending').
+            - DO NOT extract words mentioned exclusively inside the teacher's comments for other individual students (e.g., from 'Comments' section of other kids).
+            - Every word in new_vocabulary must have a clear, accurate meaning in Vietnamese (e.g., {"quilt": "chăn bông"}).
             For sentence_structures, map questions to answers (e.g., {"What is this?": "It's a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). If no sentence structures found, return {}.
             Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
             Use date from input JSON if report_date is not found in text.
