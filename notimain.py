@@ -1032,254 +1032,254 @@ def process_report():
                     report_button = popup.find_element(By.XPATH, "//button[.//p[text()='Báo cáo bài học']]")
                 time.sleep(5)
         
-            if report_url:
-                timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
-                body = f"Báo cáo bài học mới cho lớp {class_name} ngày {date_str}\nLink: {report_url}"
-                log_message(f"Found new report: {body}")
-                update_google_sheet(date_str, class_name, report_url, timestamp)
-                save_processed(date_str, class_name, report_url)
+        if report_url:
+            timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+            body = f"Báo cáo bài học mới cho lớp {class_name} ngày {date_str}\nLink: {report_url}"
+            log_message(f"Found new report: {body}")
+            update_google_sheet(date_str, class_name, report_url, timestamp)
+            save_processed(date_str, class_name, report_url)
 
 
 
-                driver.close()
-                driver.switch_to.window(original_window)
+            driver.close()
+            driver.switch_to.window(original_window)
 
-                # Segment B: Process the report PDF
-                log_message("Starting PDF processing for report analysis")
-                if not API_KEY:
-                    log_message("Missing GEMINI_API_KEY, skipping PDF processing. Please set GEMINI_API_KEY in environment variables.")
+            # Segment B: Process the report PDF
+            log_message("Starting PDF processing for report analysis")
+            if not API_KEY:
+                log_message("Missing GEMINI_API_KEY, skipping PDF processing. Please set GEMINI_API_KEY in environment variables.")
+                return
+
+            genai.configure(api_key=API_KEY)
+            log_message(f"Extracting direct PDF URL from {report_url}")
+            parsed_url = urlparse(report_url)
+            query_params = parse_qs(parsed_url.query)
+            direct_pdf_url = query_params.get('url', [None])[0]
+
+            if not direct_pdf_url:
+                log_message("Could not extract direct PDF URL from Google Docs viewer")
+                return
+
+            pdf_path = 'temp_report.pdf'
+            log_message(f"Downloading PDF from {direct_pdf_url}")
+            try:
+                response = requests.get(direct_pdf_url, timeout=10)
+                response.raise_for_status()
+                content_type = response.headers.get('content-type', '')
+                if 'application/pdf' not in content_type:
+                    log_message(f"Downloaded file is not a PDF (Content-Type: {content_type})")
                     return
+                with open(pdf_path, 'wb') as f:
+                    f.write(response.content)
+                log_message(f"Successfully downloaded PDF to {pdf_path}")
+            except requests.RequestException as e:
+                log_message(f"Failed to download PDF: {str(e)}")
+                return
 
-                genai.configure(api_key=API_KEY)
-                log_message(f"Extracting direct PDF URL from {report_url}")
-                parsed_url = urlparse(report_url)
-                query_params = parse_qs(parsed_url.query)
-                direct_pdf_url = query_params.get('url', [None])[0]
-
-                if not direct_pdf_url:
-                    log_message("Could not extract direct PDF URL from Google Docs viewer")
-                    return
-
-                pdf_path = 'temp_report.pdf'
-                log_message(f"Downloading PDF from {direct_pdf_url}")
-                try:
-                    response = requests.get(direct_pdf_url, timeout=10)
-                    response.raise_for_status()
-                    content_type = response.headers.get('content-type', '')
-                    if 'application/pdf' not in content_type:
-                        log_message(f"Downloaded file is not a PDF (Content-Type: {content_type})")
-                        return
-                    with open(pdf_path, 'wb') as f:
-                        f.write(response.content)
-                    log_message(f"Successfully downloaded PDF to {pdf_path}")
-                except requests.RequestException as e:
-                    log_message(f"Failed to download PDF: {str(e)}")
-                    return
-
-                pdf_text = ''
-                pdf_links = []
-                log_message("Extracting text and links from PDF")
-                try:
-                    with pdfplumber.open(pdf_path) as pdf:
-                        for page in pdf.pages:
-                            text = page.extract_text()
-                            pdf_text += text or ''
-                            if page.annots:
-                                for annot in page.annots:
-                                    if 'uri' in annot:
-                                        pdf_links.append(annot['uri'])
-                    log_message(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
-                except Exception as e:
-                    log_message(f"Failed to extract text or links from PDF: {str(e)}")
+            pdf_text = ''
+            pdf_links = []
+            log_message("Extracting text and links from PDF")
+            try:
+                with pdfplumber.open(pdf_path) as pdf:
+                    for page in pdf.pages:
+                        text = page.extract_text()
+                        pdf_text += text or ''
+                        if page.annots:
+                            for annot in page.annots:
+                                if 'uri' in annot:
+                                    pdf_links.append(annot['uri'])
+                log_message(f"Extracted {len(pdf_text)} characters and {len(pdf_links)} links from PDF")
+            except Exception as e:
+                log_message(f"Failed to extract text or links from PDF: {str(e)}")
+                os.remove(pdf_path)
+                return
+            finally:
+                if os.path.exists(pdf_path):
                     os.remove(pdf_path)
-                    return
-                finally:
-                    if os.path.exists(pdf_path):
-                        os.remove(pdf_path)
-                        log_message(f"Deleted temporary PDF file: {pdf_path}")
+                    log_message(f"Deleted temporary PDF file: {pdf_path}")
 
-                if not pdf_text:
-                    log_message("No text extracted from PDF")
-                    return
+            if not pdf_text:
+                log_message("No text extracted from PDF")
+                return
 
-                system_prompt = """
-                You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return "cannot find info" for strings or {} or [] for objects/arrays.
-                Extract from the given text:
-                {
-                  "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese, must not be empty)
-                  "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple, no null values)
-                  "report_date": "",  // Report date in YYYY-MM-DD (if not found, use date from input JSON)
-                  "lesson_title": "",  // Lesson title (if not found, "cannot find info")
-                  "homework": "",  // Homework description with any associated links (if not found, "cannot find info")
-                  "links": [],  // List of all URLs found in the content (e.g., homework links, YouTube videos)
-                  "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, "cannot find info")
-                }
-                For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning. For missing meanings, use a default dictionary (e.g., "pot": "cái nồi").
-                For sentence_structures, map questions to answers (e.g., {"What is this?": "It's a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). If no sentence structures found, return {}.
-                Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
-                Use date from input JSON if report_date is not found in text.
-                Ensure the output is a valid JSON object with all required fields.
-                """
+            system_prompt = """
+            You are an AI extractor that **must** output in strict JSON format with no extra text, comments, or markdown. The output must be a valid JSON object. Do not wrap the JSON in code blocks or add any explanation. If you cannot extract information, return "cannot find info" for strings or {} or [] for objects/arrays.
+            Extract from the given text:
+            {
+              "new_vocabulary": {},  // Dictionary of new English words/phrases (key: word/phrase in lowercase, value: meaning in Vietnamese, must not be empty)
+              "sentence_structures": {},  // Dictionary of question-answer pairs (key: question, value: answer or list of answers if multiple, no null values)
+              "report_date": "",  // Report date in YYYY-MM-DD (if not found, use date from input JSON)
+              "lesson_title": "",  // Lesson title (if not found, "cannot find info")
+              "homework": "",  // Homework description with any associated links (if not found, "cannot find info")
+              "links": [],  // List of all URLs found in the content (e.g., homework links, YouTube videos)
+              "student_comments_minh_huy": ""  // Comments about student Minh Huy (if not found, "cannot find info")
+            }
+            For new_vocabulary, provide meanings in Vietnamese (e.g., {"pen": "cái bút"}). Every word must have a non-empty meaning. For missing meanings, use a default dictionary (e.g., "pot": "cái nồi").
+            For sentence_structures, map questions to answers (e.g., {"What is this?": "It's a pen."} or {"What are they?": ["They are scissors.", "They are books."]}). If no sentence structures found, return {}.
+            Include all URLs (e.g., YouTube, Google Drive, Quizlet) in the links field, especially those related to homework.
+            Use date from input JSON if report_date is not found in text.
+            Ensure the output is a valid JSON object with all required fields.
+            """
 
-                max_attempts = 3
-                extracted_data = None
-                best_response = None
-                for attempt in range(max_attempts):
-                    log_message(f"Gemini API attempt {attempt + 1}/{max_attempts}")
-                    model_name = get_available_model(attempt)
-                    if not model_name:
-                        log_message("No suitable model found. Using default response.")
-                        break
-                    log_message(f"Using model: {model_name}")
-                    try:
-                        model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
-                        response = model.generate_content(pdf_text)
-                        cleaned_text = clean_response_text(response.text)
-                        cleaned_text = fix_invalid_json(cleaned_text)
-                        log_message(f"Received API response (attempt {attempt + 1}): {cleaned_text[:100]}...")
-                        extracted_data = json.loads(cleaned_text)
-                        extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
-                        extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date_str), date_str)
-                        for word in extracted_data['new_vocabulary']:
-                            if not extracted_data['new_vocabulary'][word]:
-                                extracted_data['new_vocabulary'][word] = {
-                                    "pot": "cái nồi"
-                                }.get(word, "nghĩa không xác định")
-                        extracted_data['sentence_structures'] = {
-                            k: v for k, v in extracted_data['sentence_structures'].items()
-                            if v is not None and (isinstance(v, str) or (isinstance(v, list) and all(isinstance(x, str) for x in v)))
-                        }
-                        if best_response is None or len(extracted_data.get('new_vocabulary', {})) > len(best_response.get('new_vocabulary', {})):
-                            best_response = extracted_data
-                        log_message(f"API attempt {attempt + 1} successful")
-                        break
-                    except Exception as e:
-                        log_message(f"API attempt {attempt + 1}/{max_attempts} failed: {str(e)}")
-                        time.sleep(3)
-                        if attempt == max_attempts - 1:
-                            log_message("All API attempts failed. Attempting recovery from cache or PDF text.")
-                            recovered = None
-                            if os.path.exists('Report'):
-                                for rf in os.listdir('Report'):
-                                    if rf.startswith(date_str) and rf.endswith('.json') and 'cannot_find_info' not in rf:
-                                        try:
-                                            with open(os.path.join('Report', rf), 'r', encoding='utf-8') as cf:
-                                                cdata = json.load(cf)
-                                                if cdata.get('new_vocabulary') and cdata.get('lesson_title') != 'cannot find info':
-                                                    recovered = cdata
-                                                    log_message(f"Successfully recovered report data from existing file: {rf}")
-                                                    break
-                                        except Exception:
-                                            pass
+            max_attempts = 3
+            extracted_data = None
+            best_response = None
+            for attempt in range(max_attempts):
+                log_message(f"Gemini API attempt {attempt + 1}/{max_attempts}")
+                model_name = get_available_model(attempt)
+                if not model_name:
+                    log_message("No suitable model found. Using default response.")
+                    break
+                log_message(f"Using model: {model_name}")
+                try:
+                    model = genai.GenerativeModel(model_name, system_instruction=system_prompt)
+                    response = model.generate_content(pdf_text)
+                    cleaned_text = clean_response_text(response.text)
+                    cleaned_text = fix_invalid_json(cleaned_text)
+                    log_message(f"Received API response (attempt {attempt + 1}): {cleaned_text[:100]}...")
+                    extracted_data = json.loads(cleaned_text)
+                    extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
+                    extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date_str), date_str)
+                    for word in extracted_data['new_vocabulary']:
+                        if not extracted_data['new_vocabulary'][word]:
+                            extracted_data['new_vocabulary'][word] = {
+                                "pot": "cái nồi"
+                            }.get(word, "nghĩa không xác định")
+                    extracted_data['sentence_structures'] = {
+                        k: v for k, v in extracted_data['sentence_structures'].items()
+                        if v is not None and (isinstance(v, str) or (isinstance(v, list) and all(isinstance(x, str) for x in v)))
+                    }
+                    if best_response is None or len(extracted_data.get('new_vocabulary', {})) > len(best_response.get('new_vocabulary', {})):
+                        best_response = extracted_data
+                    log_message(f"API attempt {attempt + 1} successful")
+                    break
+                except Exception as e:
+                    log_message(f"API attempt {attempt + 1}/{max_attempts} failed: {str(e)}")
+                    time.sleep(3)
+                    if attempt == max_attempts - 1:
+                        log_message("All API attempts failed. Attempting recovery from cache or PDF text.")
+                        recovered = None
+                        if os.path.exists('Report'):
+                            for rf in os.listdir('Report'):
+                                if rf.startswith(date_str) and rf.endswith('.json') and 'cannot_find_info' not in rf:
+                                    try:
+                                        with open(os.path.join('Report', rf), 'r', encoding='utf-8') as cf:
+                                            cdata = json.load(cf)
+                                            if cdata.get('new_vocabulary') and cdata.get('lesson_title') != 'cannot find info':
+                                                recovered = cdata
+                                                log_message(f"Successfully recovered report data from existing file: {rf}")
+                                                break
+                                    except Exception:
+                                        pass
 
-                            if not recovered:
-                                recovered = parse_report_from_text(pdf_text, date_str, pdf_links)
+                        if not recovered:
+                            recovered = parse_report_from_text(pdf_text, date_str, pdf_links)
 
-                            extracted_data = best_response or recovered
+                        extracted_data = best_response or recovered
 
-                update_report_content_sheet(extracted_data, class_name, date_str, extracted_data['lesson_title'])
+            update_report_content_sheet(extracted_data, class_name, date_str, extracted_data['lesson_title'])
 
-                log_message("Processing total vocabulary")
-                if os.path.exists(VOCAB_FILE):
-                    try:
-                        with open(VOCAB_FILE, 'r', encoding='utf-8') as f:
-                            vocab_data = json.load(f)
-                            if isinstance(vocab_data, dict) and 'vocabulary' in vocab_data:
-                                total_vocab = vocab_data['vocabulary']
-                            elif isinstance(vocab_data, list) and all(isinstance(item, str) for item in vocab_data):
-                                total_vocab = [{"word": word, "meaning": ""} for word in vocab_data]
-                            else:
-                                total_vocab = []
-                        log_message(f"Loaded existing vocabulary from {VOCAB_FILE}: {len(total_vocab)} entries")
-                    except Exception as e:
-                        log_message(f"Error reading {VOCAB_FILE}: {str(e)}. Starting with empty vocab.")
-                        total_vocab = []
-                else:
-                    log_message(f"{VOCAB_FILE} does not exist. Starting with empty vocab.")
+            log_message("Processing total vocabulary")
+            if os.path.exists(VOCAB_FILE):
+                try:
+                    with open(VOCAB_FILE, 'r', encoding='utf-8') as f:
+                        vocab_data = json.load(f)
+                        if isinstance(vocab_data, dict) and 'vocabulary' in vocab_data:
+                            total_vocab = vocab_data['vocabulary']
+                        elif isinstance(vocab_data, list) and all(isinstance(item, str) for item in vocab_data):
+                            total_vocab = [{"word": word, "meaning": ""} for word in vocab_data]
+                        else:
+                            total_vocab = []
+                    log_message(f"Loaded existing vocabulary from {VOCAB_FILE}: {len(total_vocab)} entries")
+                except Exception as e:
+                    log_message(f"Error reading {VOCAB_FILE}: {str(e)}. Starting with empty vocab.")
                     total_vocab = []
+            else:
+                log_message(f"{VOCAB_FILE} does not exist. Starting with empty vocab.")
+                total_vocab = []
 
-                new_vocab = extracted_data['new_vocabulary']
-                new_vocab_lower = {k.lower(): v for k, v in new_vocab.items()}
-                total_vocab_lower = {item['word'].lower(): item['meaning'] for item in total_vocab if isinstance(item, dict)}
-                added_vocab = [
-                    {"word": k, "meaning": v}
-                    for k, v in new_vocab.items()
-                    if k.lower() not in total_vocab_lower or total_vocab_lower.get(k.lower(), '') == ''
-                ]
-                total_vocab.extend(added_vocab)
-                log_message(f"Added {len(added_vocab)} new vocabulary entries. Total vocabulary: {len(total_vocab)}")
+            new_vocab = extracted_data['new_vocabulary']
+            new_vocab_lower = {k.lower(): v for k, v in new_vocab.items()}
+            total_vocab_lower = {item['word'].lower(): item['meaning'] for item in total_vocab if isinstance(item, dict)}
+            added_vocab = [
+                {"word": k, "meaning": v}
+                for k, v in new_vocab.items()
+                if k.lower() not in total_vocab_lower or total_vocab_lower.get(k.lower(), '') == ''
+            ]
+            total_vocab.extend(added_vocab)
+            log_message(f"Added {len(added_vocab)} new vocabulary entries. Total vocabulary: {len(total_vocab)}")
 
-                log_message(f"Saving updated vocabulary to {VOCAB_FILE}")
-                with open(VOCAB_FILE, 'w', encoding='utf-8') as f:
-                    json.dump({'vocabulary': total_vocab}, f, ensure_ascii=False, indent=4)
-                log_message(f"Successfully saved {VOCAB_FILE}")
+            log_message(f"Saving updated vocabulary to {VOCAB_FILE}")
+            with open(VOCAB_FILE, 'w', encoding='utf-8') as f:
+                json.dump({'vocabulary': total_vocab}, f, ensure_ascii=False, indent=4)
+            log_message(f"Successfully saved {VOCAB_FILE}")
 
-                update_vocab_sheet(total_vocab)
+            update_vocab_sheet(total_vocab)
 
-                log_message("Creating Report directory if not exists")
-                os.makedirs('Report', exist_ok=True)
-                # Làm sạch tiêu đề bài học tránh ký tự cấm trên Windows NTFS
-                title_raw = extracted_data['lesson_title'] if extracted_data.get('lesson_title') else 'unknown'
-                title = re.sub(r'[:"*?<>|\\/]', '_', title_raw).replace(' ', '_')
-                result_filename = f"Report/{date_str}_{title}.json"
+            log_message("Creating Report directory if not exists")
+            os.makedirs('Report', exist_ok=True)
+            # Làm sạch tiêu đề bài học tránh ký tự cấm trên Windows NTFS
+            title_raw = extracted_data['lesson_title'] if extracted_data.get('lesson_title') else 'unknown'
+            title = re.sub(r'[:"*?<>|\\/]', '_', title_raw).replace(' ', '_')
+            result_filename = f"Report/{date_str}_{title}.json"
 
-                # Tự động gộp từ vựng ôn tập nếu ít hơn 40 từ (lấy từ các bài trước đủ đúng 40 từ)
-                practice_vocab, vocab_sources = get_merged_vocabulary(
-                    extracted_data.get('new_vocabulary', {}),
-                    report_dir='Report',
-                    current_date=date_str,
-                    target_max=40
-                )
-                log_message(f"Practice vocabulary count: {len(practice_vocab)} (Original lesson words: {len(extracted_data.get('new_vocabulary', {}))})")
-                for src_name, cnt in vocab_sources:
-                    log_message(f"  + {src_name}: {cnt} words")
+            # Tự động gộp từ vựng ôn tập nếu ít hơn 40 từ (lấy từ các bài trước đủ đúng 40 từ)
+            practice_vocab, vocab_sources = get_merged_vocabulary(
+                extracted_data.get('new_vocabulary', {}),
+                report_dir='Report',
+                current_date=date_str,
+                target_max=40
+            )
+            log_message(f"Practice vocabulary count: {len(practice_vocab)} (Original lesson words: {len(extracted_data.get('new_vocabulary', {}))})")
+            for src_name, cnt in vocab_sources:
+                log_message(f"  + {src_name}: {cnt} words")
 
-                # Tự động tạo Phiếu tập chép A4 và File Quizlet 1-Click Import
-                worksheet_pdf = f"Report/{date_str}_{title}_Phieu_Tap_Chep.pdf"
-                quizlet_txt = f"Report/{date_str}_{title}_Quizlet_Import.txt"
-                generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), practice_vocab, worksheet_pdf)
-                generate_quizlet_file(practice_vocab, quizlet_txt)
+            # Tự động tạo Phiếu tập chép A4 và File Quizlet 1-Click Import
+            worksheet_pdf = f"Report/{date_str}_{title}_Phieu_Tap_Chep.pdf"
+            quizlet_txt = f"Report/{date_str}_{title}_Quizlet_Import.txt"
+            generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), practice_vocab, worksheet_pdf)
+            generate_quizlet_file(practice_vocab, quizlet_txt)
 
-                result_data = {
-                    **extracted_data,
-                    'class_name': class_name,
-                    'report_url': report_url,
-                    'total_vocabulary': total_vocab
-                }
+            result_data = {
+                **extracted_data,
+                'class_name': class_name,
+                'report_url': report_url,
+                'total_vocabulary': total_vocab
+            }
 
-                log_message(f"Saving result to {result_filename}")
-                with open(result_filename, 'w', encoding='utf-8') as f:
-                    json.dump(result_data, f, ensure_ascii=False, indent=4)
-                log_message(f"Successfully saved: {result_filename}")
+            log_message(f"Saving result to {result_filename}")
+            with open(result_filename, 'w', encoding='utf-8') as f:
+                json.dump(result_data, f, ensure_ascii=False, indent=4)
+            log_message(f"Successfully saved: {result_filename}")
 
-                async def send_report_to_telegram():
-                    log_message("Initializing Telegram Bot for detailed messages")
-                    bot = Bot(token=TELEGRAM_BOT_TOKEN)
-                    chat_ids = list(dict.fromkeys(cid for cid in [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2] if cid))
-                    for chat_id in chat_ids:
-                        log_message(f"Sending detailed Telegram messages to chat_id {chat_id}")
-                        await send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf, quizlet_txt, vocab_sources)
-                        log_message(f"Completed sending detailed messages to chat_id {chat_id}")
+            async def send_report_to_telegram():
+                log_message("Initializing Telegram Bot for detailed messages")
+                bot = Bot(token=TELEGRAM_BOT_TOKEN)
+                chat_ids = list(dict.fromkeys(cid for cid in [TELEGRAM_CHAT_ID, TELEGRAM_CHAT_ID_2] if cid))
+                for chat_id in chat_ids:
+                    log_message(f"Sending detailed Telegram messages to chat_id {chat_id}")
+                    await send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pdf, quizlet_txt, vocab_sources)
+                    log_message(f"Completed sending detailed messages to chat_id {chat_id}")
 
-                log_message("Starting detailed Telegram notifications")
-                asyncio.run(send_report_to_telegram())
-                log_message("Completed detailed Telegram notifications")
+            log_message("Starting detailed Telegram notifications")
+            asyncio.run(send_report_to_telegram())
+            log_message("Completed detailed Telegram notifications")
 
-                if is_git_repository():
-                    log_message("Committing and pushing Report and vocab files to GitHub")
-                    try:
-                        subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
-                        subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
-                        subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE, VOCAB_FILE, "Report/*"], check=True)
-                        subprocess.run(["git", "commit", "-m", f"Update report and vocab for {date_str}"], check=True)
-                        subprocess.run(["git", "pull", "--rebase"], check=True)
-                        subprocess.run(["git", "push"], check=True)
-                        log_message(f"Pushed {PROCESSED_FILE}, {LOG_FILE}, {VOCAB_FILE}, and Report/* successfully")
-                    except Exception as e:
-                        log_message(f"Error committing/pushing Report and vocab files: {str(e)}")
+            if is_git_repository():
+                log_message("Committing and pushing Report and vocab files to GitHub")
+                try:
+                    subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
+                    subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
+                    subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE, VOCAB_FILE, "Report/*"], check=True)
+                    subprocess.run(["git", "commit", "-m", f"Update report and vocab for {date_str}"], check=True)
+                    subprocess.run(["git", "pull", "--rebase"], check=True)
+                    subprocess.run(["git", "push"], check=True)
+                    log_message(f"Pushed {PROCESSED_FILE}, {LOG_FILE}, {VOCAB_FILE}, and Report/* successfully")
+                except Exception as e:
+                    log_message(f"Error committing/pushing Report and vocab files: {str(e)}")
 
         else:
-            log_message("Report button is disabled")
+            log_message('Failed to retrieve report URL')
     except Exception as e:
         log_message(f"Error checking reports: {str(e)}")
     finally:
