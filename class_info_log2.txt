@@ -135781,3 +135781,6 @@ Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích
 [2026-10-05 14:16:56] Completed detailed Telegram notifications
 [2026-10-05 14:16:56] Git repository detected
 [2026-10-05 14:16:56] Committing and pushing Report and vocab files to GitHub
+[2026-10-05 14:16:59] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-10-05 14:16:59] Closing WebDriver
+[2026-10-05 14:16:59] Script completed
