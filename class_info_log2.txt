@@ -135447,3 +135447,22 @@ Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích
 [2026-10-05 11:32:00] Latest class on 2026-10-04 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf. Exiting.
 [2026-10-05 11:32:00] Closing WebDriver
 [2026-10-05 11:32:00] Script completed
+[2026-10-05 11:46:06] Starting script
+[2026-10-05 11:46:06] Starting report check for calendar overview
+[2026-10-05 11:46:06] Loaded processed2.json: {'date': '2026-10-04', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf'}}
+[2026-10-05 11:46:06] Writing Google credentials to credentials.json
+[2026-10-05 11:46:06] Credentials written successfully
+[2026-10-05 11:46:06] Initializing Chrome WebDriver
+[2026-10-05 11:46:15] WebDriver session ID: 21596b07a62ceda3e198d1936789eccd
+[2026-10-05 11:46:15] Navigating to login page: https://apps.cec.com.vn/login
+[2026-10-05 11:46:20] Login attempt 1/3
+[2026-10-05 11:46:20] Entering password
+[2026-10-05 11:46:20] Clicking login button
+[2026-10-05 11:46:23] Login successful
+[2026-10-05 11:46:23] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-10-05 11:46:32] Scrolled to bottom of page
+[2026-10-05 11:46:32] Found 20 class events
+[2026-10-05 11:46:32] Latest class date up to today: 2026-10-04
+[2026-10-05 11:46:32] Latest class on 2026-10-04 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf. Exiting.
+[2026-10-05 11:46:32] Closing WebDriver
+[2026-10-05 11:46:32] Script completed
