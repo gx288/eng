@@ -2394,3 +2394,21 @@ Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích
 [2026-10-06 07:22:11] Report button for VQ2-C3-2602 on 2026-10-06 is disabled. Waiting for teacher to publish report.
 [2026-10-06 07:22:11] Closing WebDriver
 [2026-10-06 07:22:11] Script completed
+[2026-10-06 07:31:34] Starting script
+[2026-10-06 07:31:34] Starting report check for calendar overview
+[2026-10-06 07:31:34] Loaded processed2.json: {'date': '2026-10-04', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf'}}
+[2026-10-06 07:31:34] Writing Google credentials to credentials.json
+[2026-10-06 07:31:34] Credentials written successfully
+[2026-10-06 07:31:34] Initializing Chrome WebDriver
+[2026-10-06 07:31:42] WebDriver session ID: e633ee9ded50009ce7697ecd830336e0
+[2026-10-06 07:31:42] Attempting to restore session from cache...
+[2026-10-06 07:31:48] Navigating to student calendar overview with restored session...
+[2026-10-06 07:31:55] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-06 07:31:55] Active session restored, bypassed fresh login!
+[2026-10-06 07:31:55] Scrolled to bottom of page
+[2026-10-06 07:31:55] Found 20 class events
+[2026-10-06 07:31:55] Latest class date up to today: 2026-10-06
+[2026-10-06 07:31:58] Targeting report for VQ2-C3-2602 on 2026-10-06
+[2026-10-06 07:31:58] Report button for VQ2-C3-2602 on 2026-10-06 is disabled. Waiting for teacher to publish report.
+[2026-10-06 07:31:58] Closing WebDriver
+[2026-10-06 07:31:58] Script completed
