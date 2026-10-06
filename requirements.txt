@@ -1,7 +1,9 @@
-pandas
 selenium
 webdriver-manager
 gspread
 oauth2client
 requests
+schedule
 pdfplumber
+google-generativeai
+python-telegram-bot==20.7

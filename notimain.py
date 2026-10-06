@@ -45,6 +45,17 @@ def log_message(message):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"[{timestamp}] {message}\n")
 
+def rotate_log_if_needed(max_lines=5000, keep_lines=2000):
+    try:
+        if os.path.exists(LOG_FILE):
+            with open(LOG_FILE, "r", encoding="utf-8", errors="ignore") as f:
+                lines = f.readlines()
+            if len(lines) > max_lines:
+                with open(LOG_FILE, "w", encoding="utf-8") as f:
+                    f.writelines(lines[-keep_lines:])
+    except Exception as e:
+        print(f"Log rotation error: {e}")
+
 # Check network connectivity
 def check_network():
     try:
@@ -1369,6 +1380,7 @@ def process_report():
         driver.quit()
 
 if __name__ == "__main__":
+    rotate_log_if_needed()
     log_message("Starting script")
     process_report()
     log_message("Script completed")
