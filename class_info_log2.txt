@@ -4907,3 +4907,20 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 [2026-10-07 16:21:02] Latest class on 2026-10-06 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf. Exiting.
 [2026-10-07 16:21:02] Closing WebDriver
 [2026-10-07 16:21:02] Script completed
+[2026-10-07 16:31:27] Starting script
+[2026-10-07 16:31:27] Starting report check for calendar overview
+[2026-10-07 16:31:27] Loaded processed2.json: {'date': '2026-10-06', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf'}}
+[2026-10-07 16:31:27] Writing Google credentials to credentials.json
+[2026-10-07 16:31:27] Credentials written successfully
+[2026-10-07 16:31:27] Initializing Chrome WebDriver
+[2026-10-07 16:31:45] WebDriver session ID: 48789316e9d704dbb57d513d8ba0a8cd
+[2026-10-07 16:31:45] Attempting to restore session from cache...
+[2026-10-07 16:31:52] Navigating to student calendar overview with restored session...
+[2026-10-07 16:31:59] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-07 16:31:59] Active session restored, bypassed fresh login!
+[2026-10-07 16:31:59] Scrolled to bottom of page
+[2026-10-07 16:31:59] Found 20 class events
+[2026-10-07 16:32:00] Latest class date up to today: 2026-10-06
+[2026-10-07 16:32:00] Latest class on 2026-10-06 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf. Exiting.
+[2026-10-07 16:32:00] Closing WebDriver
+[2026-10-07 16:32:00] Script completed
