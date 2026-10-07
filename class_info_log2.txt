@@ -4763,3 +4763,28 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 [2026-10-07 14:16:29] Latest class on 2026-10-06 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf. Exiting.
 [2026-10-07 14:16:29] Closing WebDriver
 [2026-10-07 14:16:29] Script completed
+[2026-10-07 14:21:59] Starting script
+[2026-10-07 14:21:59] Starting report check for calendar overview
+[2026-10-07 14:21:59] Loaded processed2.json: {'date': '2026-10-06', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf'}}
+[2026-10-07 14:21:59] Writing Google credentials to credentials.json
+[2026-10-07 14:21:59] Credentials written successfully
+[2026-10-07 14:21:59] Initializing Chrome WebDriver
+[2026-10-07 14:22:11] WebDriver session ID: 43d94468d1ad7b37952fb7f4b1caf0b4
+[2026-10-07 14:22:11] Attempting to restore session from cache...
+[2026-10-07 14:22:18] Navigating to student calendar overview with restored session...
+[2026-10-07 14:22:25] Session cache expired or redirected to login, will perform fresh login
+[2026-10-07 14:22:25] Session cache not available or expired. Performing fresh login...
+[2026-10-07 14:22:25] Navigating to login page: https://apps.cec.com.vn/login
+[2026-10-07 14:22:25] Login attempt 1/3
+[2026-10-07 14:22:25] Entering password
+[2026-10-07 14:22:25] Clicking login button
+[2026-10-07 14:22:26] Login successful
+[2026-10-07 14:22:29] Saved session cache (0 cookies, 4 localStorage items) to cec_session.json
+[2026-10-07 14:22:29] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-10-07 14:22:36] Saved session cache (0 cookies, 5 localStorage items) to cec_session.json
+[2026-10-07 14:22:36] Scrolled to bottom of page
+[2026-10-07 14:22:36] Found 20 class events
+[2026-10-07 14:22:36] Latest class date up to today: 2026-10-06
+[2026-10-07 14:22:36] Latest class on 2026-10-06 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf. Exiting.
+[2026-10-07 14:22:36] Closing WebDriver
+[2026-10-07 14:22:36] Script completed
