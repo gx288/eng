@@ -4256,3 +4256,116 @@ Con tham gia đầy đủ các hoạt động và chú ý nghe giảng và tích
 [2026-10-07 08:16:37] Report button for VQ2-C3-2602 on 2026-10-06 is disabled. Waiting for teacher to publish report.
 [2026-10-07 08:16:37] Closing WebDriver
 [2026-10-07 08:16:37] Script completed
+[2026-10-07 08:31:33] Starting script
+[2026-10-07 08:31:33] Starting report check for calendar overview
+[2026-10-07 08:31:33] Loaded processed2.json: {'date': '2026-10-04', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf'}}
+[2026-10-07 08:31:33] Writing Google credentials to credentials.json
+[2026-10-07 08:31:33] Credentials written successfully
+[2026-10-07 08:31:33] Initializing Chrome WebDriver
+[2026-10-07 08:31:41] WebDriver session ID: f47e11836580b5d8d56d052f95c2a2f2
+[2026-10-07 08:31:41] Attempting to restore session from cache...
+[2026-10-07 08:31:47] Navigating to student calendar overview with restored session...
+[2026-10-07 08:31:55] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-07 08:31:55] Active session restored, bypassed fresh login!
+[2026-10-07 08:31:55] Scrolled to bottom of page
+[2026-10-07 08:31:55] Found 20 class events
+[2026-10-07 08:31:55] Latest class date up to today: 2026-10-06
+[2026-10-07 08:31:58] Targeting report for VQ2-C3-2602 on 2026-10-06
+[2026-10-07 08:31:58] Attempt 1/3 to click report button
+[2026-10-07 08:32:13] Window switch attempt 1/3 failed: Message: 
+
+[2026-10-07 08:32:18] Attempt 2/3 to click report button
+[2026-10-07 08:32:21] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf
+[2026-10-07 08:32:21] Found new report: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-10-06
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf
+[2026-10-07 08:32:21] Updating Google Sheet 'Report' with Date 2026-10-06, Class VQ2-C3-2602, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf
+[2026-10-07 08:32:23] Updated Google Sheet 'Report' successfully: 2026-10-06, VQ2-C3-2602, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf at 2026-10-07 08:32:21
+[2026-10-07 08:32:23] Saving processed data to processed2.json
+[2026-10-07 08:32:23] Saved processed2.json successfully
+[2026-10-07 08:32:23] Starting PDF processing for report analysis
+[2026-10-07 08:32:23] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf
+[2026-10-07 08:32:23] Downloading PDF from https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf
+[2026-10-07 08:32:24] Successfully downloaded PDF to temp_report.pdf
+[2026-10-07 08:32:24] Extracting text and links from PDF
+[2026-10-07 08:32:25] Extracted 7151 characters and 6 links from PDF
+[2026-10-07 08:32:25] Deleted temporary PDF file: temp_report.pdf
+[2026-10-07 08:32:25] Gemini API attempt 1/3
+[2026-10-07 08:32:25] Available Gemini models count: 45
+[2026-10-07 08:32:25] Using model: models/gemini-2.5-flash
+[2026-10-07 08:32:34] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "kelp": "tảo bẹ",
+    "yelp": "tiếng kêu (của chó)",
+    "gulp": "nuốt c...
+[2026-10-07 08:32:34] API attempt 1 successful
+[2026-10-07 08:32:34] Updating Google Sheet 'ReportContent' with extracted data
+[2026-10-07 08:32:35] Inserted 20 rows to 'ReportContent' after header
+[2026-10-07 08:32:35] Processing total vocabulary
+[2026-10-07 08:32:35] Loaded existing vocabulary from vocab_total.json: 770 entries
+[2026-10-07 08:32:35] Added 13 new vocabulary entries. Total vocabulary: 783
+[2026-10-07 08:32:35] Saving updated vocabulary to vocab_total.json
+[2026-10-07 08:32:35] Successfully saved vocab_total.json
+[2026-10-07 08:32:35] Updating Google Sheet 'vocab' with total vocabulary
+[2026-10-07 08:32:36] Updated Google Sheet 'vocab' successfully with 783 vocabulary entries
+[2026-10-07 08:32:36] Creating Report directory if not exists
+[2026-10-07 08:32:36] Practice vocabulary count: 40 (Original lesson words: 15)
+[2026-10-07 08:32:36]   + Bài hiện tại: 15 words
+[2026-10-07 08:32:36]   + 2026-10-04_Lesson_11: 17 words
+[2026-10-07 08:32:36]   + 2026-09-29_Lesson_12: 8 words
+[2026-10-07 08:32:38] Successfully generated PDF worksheet: Report/2026-10-06_Lesson_13_Phieu_Tap_Chep.pdf
+[2026-10-07 08:32:38] Successfully generated Quizlet file: Report/2026-10-06_Lesson_13_Quizlet_Import.txt
+[2026-10-07 08:32:38] Saving result to Report/2026-10-06_Lesson_13.json
+[2026-10-07 08:32:38] Successfully saved: Report/2026-10-06_Lesson_13.json
+[2026-10-07 08:32:38] Starting detailed Telegram notifications
+[2026-10-07 08:32:38] Initializing Telegram Bot for detailed messages
+[2026-10-07 08:32:38] Sending detailed Telegram messages to chat_id 1900957785
+[2026-10-07 08:32:38] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-10-06*
+📅 *Ngày*: 2026-10-06
+📚 *Tiêu đề*: Lesson 13
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-07 08:32:39] Sent general info message to chat_id 1900957785
+[2026-10-07 08:32:39] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-10-06*
+• `kelp`: tảo bẹ
+• `yelp`: tiếng kêu (của chó)
+• `gulp`: nuốt chửng
+• `pu...
+[2026-10-07 08:32:40] Sent vocabulary message to chat_id 1900957785
+[2026-10-07 08:32:40] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-10-06*
+• *Do you have _______ for breakfast?*: Yes, I do., No, I don’t....
+[2026-10-07 08:32:41] Sent sentence structures message to chat_id 1900957785
+[2026-10-07 08:32:41] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-10-06*
+Hoàn thành phần Handwriting trong sách CLL3. Ôn tập Lesson 13. Ôn tập ...
+[2026-10-07 08:32:42] Sent homework message to chat_id 1900957785
+[2026-10-07 08:32:42] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-10-06*
+Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi...
+[2026-10-07 08:32:42] Sent comments message to chat_id 1900957785
+[2026-10-07 08:32:43] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-10-07 08:32:44] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-10-07 08:32:45] Completed sending detailed messages to chat_id 1900957785
+[2026-10-07 08:32:45] Sending detailed Telegram messages to chat_id 1924741087
+[2026-10-07 08:32:45] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-10-06*
+📅 *Ngày*: 2026-10-06
+📚 *Tiêu đề*: Lesson 13
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-07 08:32:45] Sent general info message to chat_id 1924741087
+[2026-10-07 08:32:46] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-10-06*
+• `kelp`: tảo bẹ
+• `yelp`: tiếng kêu (của chó)
+• `gulp`: nuốt chửng
+• `pu...
+[2026-10-07 08:32:46] Sent vocabulary message to chat_id 1924741087
+[2026-10-07 08:32:47] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-10-06*
+• *Do you have _______ for breakfast?*: Yes, I do., No, I don’t....
+[2026-10-07 08:32:47] Sent sentence structures message to chat_id 1924741087
+[2026-10-07 08:32:47] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-10-06*
+Hoàn thành phần Handwriting trong sách CLL3. Ôn tập Lesson 13. Ôn tập ...
+[2026-10-07 08:32:48] Sent homework message to chat_id 1924741087
+[2026-10-07 08:32:48] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-10-06*
+Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi...
+[2026-10-07 08:32:48] Sent comments message to chat_id 1924741087
+[2026-10-07 08:32:49] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-10-07 08:32:50] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-10-07 08:32:51] Completed sending detailed messages to chat_id 1924741087
+[2026-10-07 08:32:51] Completed detailed Telegram notifications
+[2026-10-07 08:32:51] Git repository detected
+[2026-10-07 08:32:51] Committing and pushing Report and vocab files to GitHub

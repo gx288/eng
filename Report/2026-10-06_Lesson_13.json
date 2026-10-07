@@ -1,5 +1,42 @@
 {
-    "vocabulary": [
+    "new_vocabulary": {
+        "kelp": "tảo bẹ",
+        "yelp": "tiếng kêu (của chó)",
+        "gulp": "nuốt chửng",
+        "pulp": "phần thịt quả",
+        "help": "giúp đỡ",
+        "write": "viết",
+        "again": "lại từ đầu",
+        "about": "về",
+        "birthday": "sinh nhật",
+        "asleep": "đang ngủ",
+        "dream": "giấc mơ",
+        "fried eggs": "trứng chiên",
+        "rice": "gạo",
+        "ice cream": "kem",
+        "cupcakes": "bánh cupcake"
+    },
+    "sentence_structures": {
+        "Do you have _______ for breakfast?": [
+            "Yes, I do.",
+            "No, I don’t."
+        ]
+    },
+    "report_date": "2026-10-06",
+    "lesson_title": "Lesson 13",
+    "homework": "Hoàn thành phần Handwriting trong sách CLL3. Ôn tập Lesson 13. Ôn tập từ vựng và các mẫu câu trên Quizlet (Website / App): https://quizlet.com/join/PBYwMRteT?i=5lxnmh&x=1bqt. Tập đọc Rhino Readers book ‘Haircuts’ (Sách truyện tập đọc ‘Haircuts’). Nghe và luyện tập đọc với audio: Haircuts.mp3. Luyện tập đọc câu chuyện sử dụng sách in hoặc truy cập link sách: Haircuts (landscape).pdf. Khan Academy Kids app: Hướng dẫn cài đặt và sử dụng Khan Academy Kids App. Chuẩn bị buổi học tiếp theo: Quý PHHS vui lòng nhắc con mang sách truyện Rhino Readers cuốn 'Hair Cut’ đến lớp vào buổi học tiếp theo.",
+    "links": [
+        "https://docs.google.com/document/d/1kDiyIC-azB9BqlmeWTfumVFpwWQbS-3MGrxvWiANg8Q/edit",
+        "https://quizlet.com/join/PBYwMRteT?i=5lxnmh&x=1bqt",
+        "https://docs.google.com/document/d/1eJbnHoPcyrn9jEdiwHdPSLGWkSFsRWnIs7lRSuHU20Q/edit?tab=t.0#heading=h.lsu6d0y2hk65",
+        "https://drive.google.com/file/d/1XjWqOK4oQYHJbony6h8dCeMwzblOyb7R/view?usp=drive_link",
+        "https://quizlet.com/join/VMBS4scVx?i=5lxnmh&x=1bqt",
+        "https://drive.google.com/file/d/1mlYsWRoxA38jDyrwbPU5R7dO3Od9PDrm/view?usp=drive_link"
+    ],
+    "student_comments_minh_huy": "Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng đi kèm. Buổi học hôm nay, con đã nắm được cách phát âm âm /lp/ và nhận diện tốt các từ vựng đi kèm: help, yelp, kelp, gulp, pulp. Con cũng đọc tốt ‘Can you say it again?’ và ‘I write with my pen.’ trong buổi hôm nay. Về nhà, con nhớ ôn tập lại và hoàn thành bài tập về nhà đầy đủ nhé.",
+    "class_name": "VQ2-C3-2602",
+    "report_url": "https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf",
+    "total_vocabulary": [
         {
             "word": "pen",
             "meaning": "bút mực"
