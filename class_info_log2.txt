@@ -3037,3 +3037,19 @@ Stacktrace:
 
 [2026-10-10 00:32:22] Closing WebDriver
 [2026-10-10 00:32:22] Script completed
+[2026-10-10 00:36:46] Starting script
+[2026-10-10 00:36:46] Starting report check for calendar overview
+[2026-10-10 00:36:46] Loaded processed2.json: {'date': '2026-10-06', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf'}}
+[2026-10-10 00:36:46] Writing Google credentials to credentials.json
+[2026-10-10 00:36:46] Credentials written successfully
+[2026-10-10 00:36:46] Initializing Chrome WebDriver
+[2026-10-10 00:36:54] WebDriver session ID: e4be5e47a894aaf2c027e3286161a151
+[2026-10-10 00:36:54] Attempting to restore session from cache...
+[2026-10-10 00:36:58] Navigating to student calendar overview with restored session...
+[2026-10-10 00:37:14] Session active at https://apps.cec.com.vn/student-calendar/overview. Bypassed fresh login.
+[2026-10-10 00:37:14] Active session restored, bypassed fresh login!
+[2026-10-10 00:37:14] Scrolled to bottom of page
+[2026-10-10 00:37:45] Error checking reports: Message: 
+
+[2026-10-10 00:37:45] Closing WebDriver
+[2026-10-10 00:37:45] Script completed
