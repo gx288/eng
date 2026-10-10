@@ -3290,3 +3290,71 @@ Stacktrace:
 
 [2026-10-10 21:33:42] Closing WebDriver
 [2026-10-10 21:33:42] Script completed
+[2026-10-10 21:46:14] Starting script
+[2026-10-10 21:46:14] Starting report check for calendar overview
+[2026-10-10 21:46:14] Loaded processed2.json: {'date': '2026-10-06', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf'}}
+[2026-10-10 21:46:14] Writing Google credentials to credentials.json
+[2026-10-10 21:46:14] Credentials written successfully
+[2026-10-10 21:46:14] Initializing Chrome WebDriver
+[2026-10-10 21:46:23] WebDriver session ID: a45cf66206289f6e766d119d83cf1218
+[2026-10-10 21:46:24] Attempting to restore session from cache...
+[2026-10-10 21:47:24] Error restoring session cache: Message: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: chrome=154.0.8037.97)
+Stacktrace:
+#0 0x55f1896bbaaa <unknown>
+#1 0x55f188fe9aa9 <unknown>
+#2 0x55f188fd149b <unknown>
+#3 0x55f188fd1116 <unknown>
+#4 0x55f188fced40 <unknown>
+#5 0x55f188fcf69f <unknown>
+#6 0x55f188fde890 <unknown>
+#7 0x55f188ff87f6 <unknown>
+#8 0x55f1890002eb <unknown>
+#9 0x55f188fcfdf9 <unknown>
+#10 0x55f188ff855d <unknown>
+#11 0x55f18908a0a2 <unknown>
+#12 0x55f189033148 <unknown>
+#13 0x55f189033f11 <unknown>
+#14 0x55f18967e5ac <unknown>
+#15 0x55f18967cdc5 <unknown>
+#16 0x55f189667e95 <unknown>
+#17 0x55f18967da1a <unknown>
+#18 0x55f1896505c9 <unknown>
+#19 0x55f1896a60f8 <unknown>
+#20 0x55f1896a6295 <unknown>
+#21 0x55f1896ba3f3 <unknown>
+#22 0x7ff3c8a9cb84 <unknown>
+#23 0x7ff3c8b29ecc <unknown>
+, will perform fresh login
+[2026-10-10 21:47:24] Session cache not available or expired. Performing fresh login...
+[2026-10-10 21:47:24] Navigating to login page: https://apps.cec.com.vn/login
+[2026-10-10 21:48:24] Error checking reports: Message: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: chrome=154.0.8037.97)
+Stacktrace:
+#0 0x55f1896bbaaa <unknown>
+#1 0x55f188fe9aa9 <unknown>
+#2 0x55f188fd149b <unknown>
+#3 0x55f188fd1116 <unknown>
+#4 0x55f188fced40 <unknown>
+#5 0x55f188fcf69f <unknown>
+#6 0x55f188fde890 <unknown>
+#7 0x55f188ff87f6 <unknown>
+#8 0x55f1890002eb <unknown>
+#9 0x55f188fcfdf9 <unknown>
+#10 0x55f188ff855d <unknown>
+#11 0x55f18908a0a2 <unknown>
+#12 0x55f189033148 <unknown>
+#13 0x55f189033f11 <unknown>
+#14 0x55f18967e5ac <unknown>
+#15 0x55f18967cdc5 <unknown>
+#16 0x55f189667e95 <unknown>
+#17 0x55f18967da1a <unknown>
+#18 0x55f1896505c9 <unknown>
+#19 0x55f1896a60f8 <unknown>
+#20 0x55f1896a6295 <unknown>
+#21 0x55f1896ba3f3 <unknown>
+#22 0x7ff3c8a9cb84 <unknown>
+#23 0x7ff3c8b29ecc <unknown>
+
+[2026-10-10 21:48:24] Closing WebDriver
+[2026-10-10 21:48:24] Script completed
