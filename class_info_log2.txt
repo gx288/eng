@@ -3946,3 +3946,111 @@ Stacktrace:
 [2026-10-12 08:16:34] Report button for VQ2-C3-2602 on 2026-10-11 is disabled. Waiting for teacher to publish report.
 [2026-10-12 08:16:34] Closing WebDriver
 [2026-10-12 08:16:34] Script completed
+[2026-10-12 08:31:40] Starting script
+[2026-10-12 08:31:40] Starting report check for calendar overview
+[2026-10-12 08:31:40] Loaded processed2.json: {'date': '2026-10-06', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf'}}
+[2026-10-12 08:31:40] Writing Google credentials to credentials.json
+[2026-10-12 08:31:40] Credentials written successfully
+[2026-10-12 08:31:40] Initializing Chrome WebDriver
+[2026-10-12 08:31:42] WebDriver session ID: 4b08f25d0a141070d06c1980d062b0af
+[2026-10-12 08:31:42] Attempting to restore session from cache...
+[2026-10-12 08:31:47] Navigating to student calendar overview with restored session...
+[2026-10-12 08:31:53] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-12 08:31:53] Active session restored, bypassed fresh login!
+[2026-10-12 08:31:53] Scrolled to bottom of page
+[2026-10-12 08:31:53] Found 20 class events
+[2026-10-12 08:31:53] Latest class date up to today: 2026-10-11
+[2026-10-12 08:31:57] Targeting report for VQ2-C3-2602 on 2026-10-11
+[2026-10-12 08:31:57] Attempt 1/3 to click report button
+[2026-10-12 08:31:59] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf
+[2026-10-12 08:31:59] Found new report: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-10-11
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf
+[2026-10-12 08:31:59] Updating Google Sheet 'Report' with Date 2026-10-11, Class VQ2-C3-2602, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf
+[2026-10-12 08:32:02] Updated Google Sheet 'Report' successfully: 2026-10-11, VQ2-C3-2602, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf at 2026-10-12 08:31:59
+[2026-10-12 08:32:02] Saving processed data to processed2.json
+[2026-10-12 08:32:02] Saved processed2.json successfully
+[2026-10-12 08:32:02] Starting PDF processing for report analysis
+[2026-10-12 08:32:02] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf
+[2026-10-12 08:32:02] Downloading PDF from https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf
+[2026-10-12 08:32:03] Successfully downloaded PDF to temp_report.pdf
+[2026-10-12 08:32:03] Extracting text and links from PDF
+[2026-10-12 08:32:04] Extracted 8027 characters and 9 links from PDF
+[2026-10-12 08:32:04] Deleted temporary PDF file: temp_report.pdf
+[2026-10-12 08:32:04] Gemini API attempt 1/3
+[2026-10-12 08:32:04] Available Gemini models count: 45
+[2026-10-12 08:32:04] Using model: models/gemini-2.5-flash
+[2026-10-12 08:32:13] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "calf": "bắp chân",
+    "golf": "gôn",
+    "wolf": "con cáo",
+    "gulf"...
+[2026-10-12 08:32:13] API attempt 1 successful
+[2026-10-12 08:32:13] Updating Google Sheet 'ReportContent' with extracted data
+[2026-10-12 08:32:15] Inserted 18 rows to 'ReportContent' after header
+[2026-10-12 08:32:15] Processing total vocabulary
+[2026-10-12 08:32:15] Loaded existing vocabulary from vocab_total.json: 783 entries
+[2026-10-12 08:32:15] Added 3 new vocabulary entries. Total vocabulary: 786
+[2026-10-12 08:32:15] Saving updated vocabulary to vocab_total.json
+[2026-10-12 08:32:15] Successfully saved vocab_total.json
+[2026-10-12 08:32:15] Updating Google Sheet 'vocab' with total vocabulary
+[2026-10-12 08:32:16] Updated Google Sheet 'vocab' successfully with 786 vocabulary entries
+[2026-10-12 08:32:16] Creating Report directory if not exists
+[2026-10-12 08:32:16] Practice vocabulary count: 40 (Original lesson words: 13)
+[2026-10-12 08:32:16]   + Bài hiện tại: 13 words
+[2026-10-12 08:32:16]   + 2026-10-06_Lesson_13: 8 words
+[2026-10-12 08:32:16]   + 2026-10-04_Lesson_11: 17 words
+[2026-10-12 08:32:16]   + 2026-09-29_Lesson_12: 2 words
+[2026-10-12 08:32:17] Successfully generated PDF worksheet: Report/2026-10-11_Lesson_14_Phieu_Tap_Chep.pdf
+[2026-10-12 08:32:17] Successfully generated Quizlet file: Report/2026-10-11_Lesson_14_Quizlet_Import.txt
+[2026-10-12 08:32:17] Saving result to Report/2026-10-11_Lesson_14.json
+[2026-10-12 08:32:17] Successfully saved: Report/2026-10-11_Lesson_14.json
+[2026-10-12 08:32:17] Starting detailed Telegram notifications
+[2026-10-12 08:32:17] Initializing Telegram Bot for detailed messages
+[2026-10-12 08:32:17] Sending detailed Telegram messages to chat_id 1900957785
+[2026-10-12 08:32:17] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-10-11*
+📅 *Ngày*: 2026-10-11
+📚 *Tiêu đề*: Lesson 14
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-12 08:32:18] Sent general info message to chat_id 1900957785
+[2026-10-12 08:32:18] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-10-11*
+• `calf`: bắp chân
+• `golf`: gôn
+• `wolf`: con cáo
+• `gulf`: vịnh
+• `shel...
+[2026-10-12 08:32:19] Sent vocabulary message to chat_id 1900957785
+[2026-10-12 08:32:19] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-10-11*
+Hoàn thành phần Handwriting trong sách CLL3. Ôn tập Lesson 13: ôn tập ...
+[2026-10-12 08:32:20] Sent homework message to chat_id 1900957785
+[2026-10-12 08:32:20] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-10-11*
+Con có thái độ học tập ngoan ngoãn và hợp tác tốt trong giờ học ...
+[2026-10-12 08:32:21] Sent comments message to chat_id 1900957785
+[2026-10-12 08:32:21] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-10-12 08:32:23] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-10-12 08:32:23] Completed sending detailed messages to chat_id 1900957785
+[2026-10-12 08:32:23] Sending detailed Telegram messages to chat_id 1924741087
+[2026-10-12 08:32:23] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-10-11*
+📅 *Ngày*: 2026-10-11
+📚 *Tiêu đề*: Lesson 14
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-12 08:32:23] Sent general info message to chat_id 1924741087
+[2026-10-12 08:32:24] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-10-11*
+• `calf`: bắp chân
+• `golf`: gôn
+• `wolf`: con cáo
+• `gulf`: vịnh
+• `shel...
+[2026-10-12 08:32:24] Sent vocabulary message to chat_id 1924741087
+[2026-10-12 08:32:25] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-10-11*
+Hoàn thành phần Handwriting trong sách CLL3. Ôn tập Lesson 13: ôn tập ...
+[2026-10-12 08:32:25] Sent homework message to chat_id 1924741087
+[2026-10-12 08:32:26] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-10-11*
+Con có thái độ học tập ngoan ngoãn và hợp tác tốt trong giờ học ...
+[2026-10-12 08:32:26] Sent comments message to chat_id 1924741087
+[2026-10-12 08:32:27] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-10-12 08:32:28] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-10-12 08:32:28] Completed sending detailed messages to chat_id 1924741087
+[2026-10-12 08:32:28] Completed detailed Telegram notifications
+[2026-10-12 08:32:28] Git repository detected
+[2026-10-12 08:32:28] Committing and pushing Report and vocab files to GitHub
