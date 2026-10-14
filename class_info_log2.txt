@@ -4282,3 +4282,21 @@ Con có thái độ học tập ngoan ngoãn và hợp tác tốt trong giờ h�
 [2026-10-14 04:16:26] Report button for VQ2-C3-2602 on 2026-10-13 is disabled. Waiting for teacher to publish report.
 [2026-10-14 04:16:26] Closing WebDriver
 [2026-10-14 04:16:26] Script completed
+[2026-10-14 04:31:34] Starting script
+[2026-10-14 04:31:34] Starting report check for calendar overview
+[2026-10-14 04:31:34] Loaded processed2.json: {'date': '2026-10-11', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf'}}
+[2026-10-14 04:31:34] Writing Google credentials to credentials.json
+[2026-10-14 04:31:34] Credentials written successfully
+[2026-10-14 04:31:34] Initializing Chrome WebDriver
+[2026-10-14 04:31:45] WebDriver session ID: 674b2e7625f634daa9844134ffcf7e62
+[2026-10-14 04:31:45] Attempting to restore session from cache...
+[2026-10-14 04:31:51] Navigating to student calendar overview with restored session...
+[2026-10-14 04:31:58] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-14 04:31:58] Active session restored, bypassed fresh login!
+[2026-10-14 04:31:58] Scrolled to bottom of page
+[2026-10-14 04:31:58] Found 20 class events
+[2026-10-14 04:31:58] Latest class date up to today: 2026-10-13
+[2026-10-14 04:32:01] Targeting report for VQ2-C3-2602 on 2026-10-13
+[2026-10-14 04:32:01] Report button for VQ2-C3-2602 on 2026-10-13 is disabled. Waiting for teacher to publish report.
+[2026-10-14 04:32:01] Closing WebDriver
+[2026-10-14 04:32:01] Script completed
