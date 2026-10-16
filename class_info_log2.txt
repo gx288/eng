@@ -3171,3 +3171,20 @@
 [2026-10-16 22:46:33] Latest class on 2026-10-13 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf. Exiting.
 [2026-10-16 22:46:33] Closing WebDriver
 [2026-10-16 22:46:33] Script completed
+[2026-10-16 23:01:44] Starting script
+[2026-10-16 23:01:44] Starting report check for calendar overview
+[2026-10-16 23:01:44] Loaded processed2.json: {'date': '2026-10-13', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf'}}
+[2026-10-16 23:01:44] Writing Google credentials to credentials.json
+[2026-10-16 23:01:44] Credentials written successfully
+[2026-10-16 23:01:44] Initializing Chrome WebDriver
+[2026-10-16 23:01:55] WebDriver session ID: f5a7256a931391bc25b85fde24c36af7
+[2026-10-16 23:01:55] Attempting to restore session from cache...
+[2026-10-16 23:02:02] Navigating to student calendar overview with restored session...
+[2026-10-16 23:02:09] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-16 23:02:09] Active session restored, bypassed fresh login!
+[2026-10-16 23:02:09] Scrolled to bottom of page
+[2026-10-16 23:02:09] Found 20 class events
+[2026-10-16 23:02:09] Latest class date up to today: 2026-10-13
+[2026-10-16 23:02:09] Latest class on 2026-10-13 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf. Exiting.
+[2026-10-16 23:02:09] Closing WebDriver
+[2026-10-16 23:02:09] Script completed
