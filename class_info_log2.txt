@@ -4701,3 +4701,6 @@ Con ngồi học ngoan và tập trung và tự tin trong các hoạt động tr
 [2026-10-19 10:02:54] Completed detailed Telegram notifications
 [2026-10-19 10:02:54] Git repository detected
 [2026-10-19 10:02:54] Committing and pushing Report and vocab files to GitHub
+[2026-10-19 10:02:56] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-10-19 10:02:56] Closing WebDriver
+[2026-10-19 10:02:56] Script completed
