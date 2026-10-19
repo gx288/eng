@@ -2,21 +2,41 @@ import json
 import time
 import os
 import sys
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+try:
+    import gspread
+    from oauth2client.service_account import ServiceAccountCredentials
+except ImportError:
+    gspread = None
+    ServiceAccountCredentials = None
 import requests
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
+try:
+    from selenium import webdriver
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from webdriver_manager.chrome import ChromeDriverManager
+except ImportError:
+    webdriver = None
+    ChromeDriverManager = None
 import subprocess
 from datetime import datetime
 from zoneinfo import ZoneInfo
-import pdfplumber
-import google.generativeai as genai
+try:
+    import pdfplumber
+except ImportError:
+    pdfplumber = None
+
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
+
 from urllib.parse import parse_qs, urlparse
-from telegram import Bot
+
+try:
+    from telegram import Bot
+except ImportError:
+    Bot = None
 import asyncio
 import re
 import socket
@@ -459,52 +479,343 @@ def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None,
 
     return merged, sources
 
-def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
+def generate_fallback_sentences(vocab_items, sentence_structures=None):
+    """
+    Sinh câu ví dụ ngắn gọn (4-7 từ) dự phòng thông minh chuẩn Cambridge CLL3 cho học sinh lớp 3 (Lê Minh Huy).
+    Áp dụng cấu trúc bài học hoặc các mẫu câu tiểu học quen thuộc.
+    """
+    results = []
+    for item in vocab_items:
+        w = item['word'].strip()
+        m = item['meaning'].strip()
+        w_lower = w.lower()
+
+        # 1. Đồ ăn / thức uống
+        if any(food in w_lower for food in ['egg', 'salad', 'chicken', 'noodle', 'bread', 'rice', 'meat', 'fish', 'soup', 'pizza', 'cake']):
+            s_en = f"We eat {w_lower} at lunch."
+            s_vi = f"Chúng tôi ăn {m} vào bữa trưa."
+        elif any(drink in w_lower for drink in ['juice', 'milk', 'water', 'tea']):
+            s_en = f"He drinks fresh {w_lower}."
+            s_vi = f"Cậu ấy uống {m} tươi."
+        elif any(meal in w_lower for meal in ['breakfast', 'lunch', 'dinner']):
+            s_en = f"What do we eat at {w_lower}?"
+            s_vi = f"Chúng ta ăn gì vào {m}?"
+        # 2. Động vật & Nông trại
+        elif any(animal in w_lower for animal in ['cow', 'calf', 'sheep', 'horse', 'chick', 'foal', 'duck', 'duckling', 'pig', 'goat', 'rabbit', 'cat', 'dog', 'kitten', 'puppy', 'bird', 'animal', 'farm']):
+            if 'calf' in w_lower:
+                s_en = "A baby cow is called a calf."
+                s_vi = "Bò con được gọi là một chú bê."
+            elif 'foal' in w_lower:
+                s_en = "A baby horse is a foal."
+                s_vi = "Ngựa con là một chú ngựa non."
+            elif 'chick' in w_lower:
+                s_en = "The little chick is very cute."
+                s_vi = "Chú gà con rất đáng yêu."
+            elif 'duckling' in w_lower:
+                s_en = "The duckling swims in the pond."
+                s_vi = "Vịt con bơi trong ao."
+            elif 'farm' in w_lower:
+                s_en = "We can see cows on the farm."
+                s_vi = "Chúng tôi có thể thấy những con bò ở trang trại."
+            else:
+                s_en = f"We see a {w_lower} on the farm."
+                s_vi = f"Chúng tôi thấy một con {m} ở nông trại."
+        # 3. Đồ vật / trang phục
+        elif any(obj in w_lower for obj in ['belt', 'bolt', 'quilt', 'desk', 'pen', 'pencil', 'ruler', 'book', 'bag', 'gift', 'door', 'clock']):
+            if 'belt' in w_lower:
+                s_en = "He wears a nice black belt."
+                s_vi = "Cậu ấy đeo một chiếc thắt lưng đen đẹp."
+            elif 'quilt' in w_lower:
+                s_en = "My mother made a warm quilt."
+                s_vi = "Mẹ tôi làm một chiếc chăn bông ấm."
+            elif 'bolt' in w_lower:
+                s_en = "This door has a strong bolt."
+                s_vi = "Cánh cửa này có một cái chốt chắc chắn."
+            elif 'desk' in w_lower:
+                s_en = "Put your book on the desk."
+                s_vi = "Hãy để sách của em trên bàn học."
+            elif 'gift' in w_lower:
+                s_en = "I received a lovely gift."
+                s_vi = "Tôi đã nhận được một món quà đáng yêu."
+            else:
+                s_en = f"This is my new {w_lower}."
+                s_vi = f"Đây là {m} mới của tôi."
+        # 3b. Từ vựng Phonics đặc thù (sk, ft, lt...)
+        elif w_lower in ['skinny', 'fat', 'tall', 'short', 'big', 'small']:
+            s_en = f"The {w_lower} puppy needs food."
+            s_vi = f"Chú cún {m} cần thức ăn."
+        elif 'whisker' in w_lower:
+            s_en = "The cat has white whiskers."
+            s_vi = "Con mèo có ria mép màu trắng."
+        elif 'tusk' in w_lower:
+            s_en = "An elephant has a long tusk."
+            s_vi = "Con voi có một chiếc ngà dài."
+        elif 'skull' in w_lower:
+            s_en = "The dinosaur skull is huge."
+            s_vi = "Hộp sọ khủng long rất khổng lồ."
+        elif 'lift' in w_lower:
+            s_en = "Take the lift to the top floor."
+            s_vi = "Đi thang máy lên tầng cao nhất."
+        elif 'shaft' in w_lower:
+            s_en = "The miners go down the shaft."
+            s_vi = "Các thợ mỏ đi xuống hầm."
+        elif 'theft' in w_lower:
+            s_en = "The police stopped the theft."
+            s_vi = "Cảnh sát đã ngăn chặn vụ trộm."
+        # 4. Trái cây
+        elif any(fruit in w_lower for fruit in ['apple', 'pear', 'mango', 'guava', 'orange', 'banana']):
+            s_en = f"She eats a sweet {w_lower}."
+            s_vi = f"Cô ấy ăn một quả {m} ngọt."
+        # 5. Từ vựng ngữ âm & bất quy tắc (Tricky words / Phonics)
+        elif w_lower in ['our', 'your', 'their', 'my', 'his', 'her']:
+            s_en = f"This is {w_lower} lovely classroom."
+            s_vi = f"Đây là lớp học đáng yêu {m}."
+        elif w_lower in ['we', 'they', 'i', 'you']:
+            s_en = f"{w.capitalize()} learn English together."
+            s_vi = f"{m.capitalize()} cùng nhau học tiếng Anh."
+        elif w_lower in ['she', 'he']:
+            s_en = f"{w.capitalize()} learns English with us."
+            s_vi = f"{m.capitalize()} học tiếng Anh cùng chúng tôi."
+        elif w_lower == 'yesterday':
+            s_en = "We visited the farm yesterday."
+            s_vi = "Hôm qua chúng tôi đã thăm trang trại."
+        elif w_lower == 'said':
+            s_en = "The teacher said hello to us."
+            s_vi = "Cô giáo đã nói xin chào với chúng tôi."
+        elif w_lower == 'goes':
+            s_en = "He goes to school every day."
+            s_vi = "Cậu ấy đi học mỗi ngày."
+        elif w_lower == 'one':
+            s_en = "I see one cute kitten."
+            s_vi = "Tôi thấy một chú mèo con đáng yêu."
+        elif w_lower == 'these':
+            s_en = "These chicks are very small."
+            s_vi = "Những chú gà con này rất nhỏ."
+        elif w_lower == 'but':
+            s_en = "He is small but very strong."
+            s_vi = "Cậu ấy nhỏ nhưng rất khỏe."
+        elif w_lower in ['blue', 'red', 'green', 'yellow', 'white', 'black']:
+            s_en = f"The sky is very {w_lower} today."
+            s_vi = f"Hôm nay bầu trời rất {m}."
+        elif w_lower == 'tilt':
+            s_en = "Please do not tilt your head."
+            s_vi = "Xin đừng nghiêng đầu của bạn."
+        elif w_lower == 'wilt':
+            s_en = "Flowers wilt without water."
+            s_vi = "Hoa bị khô héo khi không có nước."
+        elif w_lower == 'soft':
+            s_en = "The little chick is very soft."
+            s_vi = "Chú gà con rất mềm mại."
+        elif w_lower == 'left':
+            s_en = "Turn left at the red door."
+            s_vi = "Rẽ trái ở cánh cửa màu đỏ."
+        elif w_lower == 'ask':
+            s_en = "You can ask the teacher."
+            s_vi = "Em có thể hỏi cô giáo."
+        else:
+            s_en = f"I like this {w_lower} very much."
+            s_vi = f"Tôi rất thích {m} này."
+
+        results.append({
+            "word": w,
+            "meaning": m,
+            "sentence_en": s_en,
+            "sentence_vi": s_vi
+        })
+    return results
+
+def generate_vocabulary_sentences(vocab_input, lesson_title="", sentence_structures=None, api_key=None):
+    """
+    Sinh câu ví dụ ngắn gọn, tự nhiên, đổi mới sau mỗi buổi qua Gemini AI cho học sinh lớp 3 (Lê Minh Huy).
+    Ưu tiên áp dụng các cấu trúc câu của bài học hiện tại hoặc bài học trước.
+    """
+    if isinstance(vocab_input, dict):
+        items = [{"word": k.strip(), "meaning": v.strip()} for k, v in vocab_input.items() if k and v]
+    elif isinstance(vocab_input, list):
+        items = vocab_input
+    else:
+        items = []
+
+    if not items:
+        return []
+
+    if not api_key:
+        api_key = API_KEY or os.getenv("GEMINI_API_KEY")
+
+    if not api_key:
+        log_message("No GEMINI_API_KEY available, using smart fallback sentences")
+        return generate_fallback_sentences(items, sentence_structures)
+
+    struct_text = ""
+    if sentence_structures:
+        if isinstance(sentence_structures, dict):
+            struct_text = "\n".join(f"- {k}: {v if isinstance(v, str) else ', '.join(v)}" for k, v in sentence_structures.items() if v)
+        elif isinstance(sentence_structures, list):
+            struct_text = "\n".join(f"- {s}" for s in sentence_structures)
+
+    system_instruction = f"""You are an expert Cambridge Primary English teacher creating learning materials for Grade 3 student Lê Minh Huy (level CLL3 / Starter-Mover).
+Your task is to create a practical, child-friendly example sentence for each given English vocabulary word.
+
+Lesson: "{lesson_title}"
+Lesson Sentence Structures taught in class:
+{struct_text or "General Cambridge CLL3 Primary English structures (e.g., 'What do we eat at...?', 'We can see... on the farm', 'A baby cow is called a...', 'I have a...', 'She likes...')."}
+
+CRITICAL RULES:
+1. Sentence Length: Strictly 4 to 8 words per sentence. Keep it short, concise, and easy to copy.
+2. Structure Priority: Whenever possible, use or adapt the lesson's target sentence structures above to make the sentence directly reinforce the lesson grammar!
+3. Target Word: The vocabulary word must appear naturally in the sentence in proper context.
+4. Vietnamese Meaning: Provide a clear, natural Vietnamese translation for the sentence, suitable for a 3rd grader.
+5. Freshness & Variety: Make the sentences dynamic, natural, and age-appropriate (family, school, animals, food, daily routines). Avoid dry, robotic sentences.
+
+OUTPUT FORMAT:
+Return ONLY a valid JSON array of objects with NO Markdown code blocks, NO commentary.
+Example:
+[
+  {{
+    "word": "calf",
+    "meaning": "bê con",
+    "sentence_en": "A baby cow is called a calf.",
+    "sentence_vi": "Bò con được gọi là một chú bê."
+  }}
+]
+"""
+
+    prompt = f"Here is the vocabulary list ({len(items)} words):\n" + json.dumps(items, ensure_ascii=False, indent=2)
+
+    try:
+        genai.configure(api_key=api_key)
+        model_name = get_available_model(0)
+        log_message(f"Generating example sentences using Gemini model: {model_name}")
+        model = genai.GenerativeModel(model_name, system_instruction=system_instruction)
+        response = model.generate_content(prompt)
+        cleaned = clean_response_text(response.text)
+        cleaned = fix_invalid_json(cleaned)
+        parsed = json.loads(cleaned)
+        if isinstance(parsed, list) and len(parsed) >= len(items) * 0.8:
+            parsed_dict = {p.get("word", "").lower().strip(): p for p in parsed if isinstance(p, dict)}
+            final_list = []
+            for it in items:
+                w_key = it["word"].lower().strip()
+                if w_key in parsed_dict and parsed_dict[w_key].get("sentence_en"):
+                    p = parsed_dict[w_key]
+                    final_list.append({
+                        "word": it["word"],
+                        "meaning": it["meaning"],
+                        "sentence_en": p.get("sentence_en", "").strip(),
+                        "sentence_vi": p.get("sentence_vi", "").strip()
+                    })
+                else:
+                    fb = generate_fallback_sentences([it], sentence_structures)[0]
+                    final_list.append(fb)
+            log_message(f"Successfully generated {len(final_list)} example sentences via Gemini AI")
+            return final_list
+        else:
+            log_message(f"Gemini sentence response invalid format or incomplete, falling back to smart templates")
+            return generate_fallback_sentences(items, sentence_structures)
+    except Exception as e:
+        log_message(f"Error calling Gemini for sentences: {str(e)}, using smart fallback templates")
+        return generate_fallback_sentences(items, sentence_structures)
+
+def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, sentence_structures=None):
+    """
+    Tạo Phiếu tập chép A4 chuẩn in ấn đơn sắc đen trắng (monochrome high-contrast):
+    - Chuẩn hóa 40 từ vựng và câu ví dụ gói gọn đúng 3 trang A4 (14 từ, 13 từ, 13 từ).
+    - Mỗi từ gồm 2 dòng:
+      + Dòng 1 (Từ vựng): 5 cột (EN 14%, Nghĩa 14%, Lần 1 24%, Lần 2 24%, Lần 3 24%).
+      + Dòng 2 (Câu ví dụ): 3 ô (Câu EN 28%, Nghĩa câu 24%, Chép câu 48% rộng ~96mm).
+    - Viết trực tiếp ở đáy dòng (baseline), không kẻ đường nét đứt ở giữa dòng.
+    - Đơn sắc đen trắng tương phản cao, chân trang cách mép giấy an toàn chống cấn lề.
+    """
     import shutil
-    vocab_items = [{"en": k, "vi": v} for k, v in vocab_dict.items() if k and v]
+
+    if isinstance(vocab_input, dict):
+        vocab_items = generate_vocabulary_sentences(vocab_input, lesson_title, sentence_structures)
+    elif isinstance(vocab_input, list):
+        if vocab_input and not vocab_input[0].get("sentence_en"):
+            vocab_items = generate_vocabulary_sentences(vocab_input, lesson_title, sentence_structures)
+        else:
+            vocab_items = vocab_input
+    else:
+        return None
+
     total_words = len(vocab_items)
     if total_words == 0:
         return None
 
-    if total_words <= 15:
+    # Phân trang động tối ưu
+    if total_words <= 12:
         pages = [vocab_items]
-        row_height = "15.0mm"
-    elif total_words <= 20:
-        pages = [vocab_items]
-        row_height = "11.5mm"
-    elif total_words <= 40:
+    elif total_words <= 24:
         mid = (total_words + 1) // 2
         pages = [vocab_items[:mid], vocab_items[mid:]]
-        max_page_items = max(len(pages[0]), len(pages[1]))
-        if max_page_items <= 16:
-            row_height = "14.2mm"
-        elif max_page_items <= 18:
-            row_height = "12.8mm"
-        else:
-            row_height = "11.5mm"
+    elif total_words <= 42:
+        # Chuẩn 40 từ: 14 từ trang 1, 13 từ trang 2, 13 từ trang 3 = đúng 3 trang A4
+        p1_cnt = (total_words + 2) // 3
+        p2_cnt = (total_words - p1_cnt + 1) // 2
+        pages = [vocab_items[:p1_cnt], vocab_items[p1_cnt:p1_cnt + p2_cnt], vocab_items[p1_cnt + p2_cnt:]]
     else:
-        per_page = 24
+        per_page = 13
         pages = [vocab_items[i:i + per_page] for i in range(0, total_words, per_page)]
-        row_height = "9.5mm"
 
     total_pages = len(pages)
 
-    def render_page(items, page_num):
+    def render_page(items, p_idx):
+        n = len(items)
+        if n >= 14:
+            word_row_h = "8.2mm"
+            sent_row_h = "9.8mm"
+            font_en = "13px"
+            font_vi = "11.5px"
+            font_sent_en = "10.5px"
+            font_sent_vi = "10px"
+        elif n == 13:
+            word_row_h = "8.8mm"
+            sent_row_h = "10.6mm"
+            font_en = "13px"
+            font_vi = "11.5px"
+            font_sent_en = "10.5px"
+            font_sent_vi = "10px"
+        elif n <= 10:
+            word_row_h = "11.5mm"
+            sent_row_h = "13.0mm"
+            font_en = "13.5px"
+            font_vi = "12px"
+            font_sent_en = "11px"
+            font_sent_vi = "10.5px"
+        else: # 11-12 từ
+            word_row_h = "9.5mm"
+            sent_row_h = "11.5mm"
+            font_en = "13px"
+            font_vi = "11.5px"
+            font_sent_en = "10.5px"
+            font_sent_vi = "10px"
+
         rows = []
-        for item in items:
-            rows.append(f"""          <tr>
-            <td class="col-en">{item['en']}</td>
-            <td class="col-vi">{item['vi']}</td>
+        for it in items:
+            rows.append(f"""          <tr class="row-word" style="height: {word_row_h};">
+            <td class="col-en" style="font-size: {font_en};">{it['word']}</td>
+            <td class="col-vi" style="font-size: {font_vi};">{it['meaning']}</td>
             <td class="col-write"><div class="handwriting-box"></div></td>
             <td class="col-write"><div class="handwriting-box"></div></td>
             <td class="col-write"><div class="handwriting-box"></div></td>
+          </tr>
+          <tr class="row-sentence" style="height: {sent_row_h};">
+            <td colspan="2" class="col-sent-en" style="font-size: {font_sent_en};">
+              <span class="badge-vd">VD</span> {it['sentence_en']}
+            </td>
+            <td class="col-sent-vi" style="font-size: {font_sent_vi};">
+              {it['sentence_vi']}
+            </td>
+            <td colspan="2" class="col-sent-write">
+              <div class="handwriting-box sentence-box"></div>
+            </td>
           </tr>""")
         rows_html = "\n".join(rows)
 
         return f"""
     <div class="a4-page">
       <div class="page-head">
-        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG TIẾNG ANH</div>
+        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
         <div class="info-bar">
           <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
           <div>Lớp: <strong>VQ2-C3-2602</strong></div>
@@ -516,11 +827,11 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
       <table class="vocab-grid">
         <thead>
           <tr>
-            <th style="width: 16%;">Từ Vựng</th>
-            <th style="width: 16%;">Nghĩa</th>
-            <th style="width: 22.66%;">Lần 1 (Tập chép)</th>
-            <th style="width: 22.67%;">Lần 2 (Tập chép)</th>
-            <th style="width: 22.67%;">Lần 3 (Tập chép)</th>
+            <th style="width: 14%;">Từ Vựng (EN)</th>
+            <th style="width: 14%;">Nghĩa (VI)</th>
+            <th style="width: 24%;">Lần 1 (Tập chép)</th>
+            <th style="width: 24%;">Lần 2 (Tập chép)</th>
+            <th style="width: 24%;">Lần 3 (Tập chép)</th>
           </tr>
         </thead>
         <tbody>
@@ -530,17 +841,17 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
 
       <div class="page-foot">
         <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-C3-2602 &bull; Trung tâm CEC</div>
-        <div>Trang {page_num} / {total_pages} (Tổng {total_words} từ)</div>
+        <div>Trang {p_idx} / {total_pages} (Tổng {total_words} từ &amp; câu)</div>
       </div>
     </div>"""
 
-    pages_html = "\n".join(render_page(page_items, idx + 1) for idx, page_items in enumerate(pages))
+    pages_html = "\n".join(render_page(p, i + 1) for i, p in enumerate(pages))
 
     html_content = f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Phiếu Tập Chép Từ Vựng - {lesson_title}</title>
+  <title>Phiếu Tập Chép Từ Vựng &amp; Câu - {lesson_title}</title>
   <style>
     * {{ box-sizing: border-box; margin: 0; padding: 0; }}
     body {{
@@ -571,25 +882,25 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     }}
     .page-head {{
       border-bottom: 2px solid #000000;
-      padding-bottom: 4px;
-      margin-bottom: 5px;
+      padding-bottom: 3px;
+      margin-bottom: 4px;
     }}
     .title-main {{
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 900;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: #000000;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }}
     .info-bar {{
       display: grid;
       grid-template-columns: 2.2fr 1.3fr 1.3fr 1fr;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 800;
       color: #000000;
-      padding: 2px 0;
+      padding: 1px 0;
     }}
     .vocab-grid {{
       width: 100%;
@@ -600,67 +911,90 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
     .vocab-grid th {{
       background: #ffffff;
       color: #000000;
-      font-size: 12.5px;
+      font-size: 11.5px;
       font-weight: 900;
       text-transform: uppercase;
       border: 2px solid #000000;
-      padding: 4px 2px;
+      padding: 3px 2px;
       text-align: center;
     }}
     .vocab-grid td {{
-      border: 1.5px solid #000000;
+      border-left: 1.5px solid #000000;
+      border-right: 1.5px solid #000000;
       padding: 0 4px;
       vertical-align: middle;
-      height: {row_height};
+    }}
+    .row-word td {{
+      border-top: 2px solid #000000;
+      border-bottom: 1.2px solid #000000;
+      background-color: #ffffff;
+    }}
+    .row-sentence td {{
+      border-bottom: 2.2px solid #000000;
+      background-color: #ffffff;
     }}
     .col-en {{
-      width: 16%;
+      width: 14%;
       font-weight: 900;
-      font-size: 13.5px;
       color: #000000;
       word-break: break-word;
-      line-height: 1.25;
-      padding: 0 4px !important;
+      line-height: 1.15;
     }}
     .col-vi {{
-      width: 16%;
-      font-size: 12px;
+      width: 14%;
       font-weight: 700;
       color: #000000;
       word-break: break-word;
-      line-height: 1.25;
-      padding: 0 4px !important;
+      line-height: 1.15;
     }}
     .col-write {{
-      width: 22.66%;
+      width: 24%;
       padding: 0 !important;
       position: relative;
     }}
     .handwriting-box {{
       width: 100%;
       height: 100%;
-      min-height: {row_height};
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }}
-    .handwriting-box::after {{
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 50%;
-      border-top: 1.2px dashed #000000;
-      pointer-events: none;
+    .col-sent-en {{
+      font-weight: 700;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.2;
+      padding: 0 4px !important;
+    }}
+    .badge-vd {{
+      font-weight: 900;
+      font-size: 9.5px;
+      background: #000000;
+      color: #ffffff;
+      padding: 1px 3px;
+      border-radius: 2px;
+      margin-right: 3px;
+      display: inline-block;
+    }}
+    .col-sent-vi {{
+      font-weight: 600;
+      color: #333333;
+      word-break: break-word;
+      line-height: 1.2;
+      padding: 0 4px !important;
+    }}
+    .col-sent-write {{
+      padding: 0 !important;
+      position: relative;
+      background: #ffffff;
+    }}
+    .sentence-box {{
+      background: #ffffff;
     }}
     .page-foot {{
       border-top: 1.5px solid #000000;
-      margin-top: 4px;
+      margin-top: 3px;
       padding-top: 2px;
       display: flex;
       justify-content: space-between;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 700;
       color: #000000;
     }}
@@ -710,6 +1044,8 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
         return None
 
     try:
+        abs_html = os.path.abspath(temp_html_path).replace('\\', '/')
+        abs_pdf = os.path.abspath(output_pdf_path)
         cmd = [
             chrome_binary,
             '--headless',
@@ -717,8 +1053,8 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_dict, output_pdf_path):
             '--no-sandbox',
             '--disable-dev-shm-usage',
             '--no-pdf-header-footer',
-            f'--print-to-pdf={output_pdf_path}',
-            temp_html_path
+            f'--print-to-pdf={abs_pdf}',
+            f'file:///{abs_html}'
         ]
         subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         log_message(f'Successfully generated PDF worksheet: {output_pdf_path}')
@@ -797,11 +1133,11 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
                     new_count = vocab_sources[0][1]
                     review_count = total_practice_words - new_count
                     pdf_caption = (
-                        f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} "
-                        f"(Đã ghép đủ {total_practice_words} từ: {new_count} từ mới + {review_count} từ ôn tập)"
+                        f"📄 Phiếu tập chép 5 cột A4 (Từ vựng & Câu) - {result_data.get('lesson_title', '')} "
+                        f"(Đã ghép đủ {total_practice_words} từ & câu ví dụ: {new_count} từ mới + {review_count} từ ôn tập)"
                     )
                 else:
-                    pdf_caption = f"📄 Phiếu tập chép 5 cột A4 - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
+                    pdf_caption = f"📄 Phiếu tập chép 5 cột A4 (Từ vựng & Câu) - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
                 with open(worksheet_pdf, "rb") as f_doc:
                     await bot.send_document(
                         chat_id=chat_id,
@@ -1330,14 +1666,25 @@ def process_report():
             # Tự động tạo Phiếu tập chép A4 và File Quizlet 1-Click Import
             worksheet_pdf = f"Report/{date_str}_{title}_Phieu_Tap_Chep.pdf"
             quizlet_txt = f"Report/{date_str}_{title}_Quizlet_Import.txt"
-            generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), practice_vocab, worksheet_pdf)
+            
+            # Sinh câu ví dụ chuẩn Cambridge CLL3 cho 40 từ vựng (ưu tiên cấu trúc bài học và đổi mới sau mỗi buổi)
+            lesson_structures = extracted_data.get('sentence_structures', {})
+            practice_items = generate_vocabulary_sentences(
+                practice_vocab,
+                lesson_title=extracted_data.get('lesson_title', title_raw),
+                sentence_structures=lesson_structures,
+                api_key=API_KEY
+            )
+
+            generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), practice_items, worksheet_pdf, sentence_structures=lesson_structures)
             generate_quizlet_file(practice_vocab, quizlet_txt)
 
             result_data = {
                 **extracted_data,
                 'class_name': class_name,
                 'report_url': report_url,
-                'total_vocabulary': total_vocab
+                'total_vocabulary': total_vocab,
+                'practice_vocabulary': practice_items
             }
 
             log_message(f"Saving result to {result_filename}")
