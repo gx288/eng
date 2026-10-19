@@ -742,68 +742,33 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
     if total_words == 0:
         return None
 
-    # Phân trang động tối ưu
-    if total_words <= 12:
-        pages = [vocab_items]
-    elif total_words <= 24:
-        mid = (total_words + 1) // 2
-        pages = [vocab_items[:mid], vocab_items[mid:]]
-    elif total_words <= 42:
-        # Chuẩn 40 từ: 14 từ trang 1, 13 từ trang 2, 13 từ trang 3 = đúng 3 trang A4
-        p1_cnt = (total_words + 2) // 3
-        p2_cnt = (total_words - p1_cnt + 1) // 2
-        pages = [vocab_items[:p1_cnt], vocab_items[p1_cnt:p1_cnt + p2_cnt], vocab_items[p1_cnt + p2_cnt:]]
-    else:
-        per_page = 13
-        pages = [vocab_items[i:i + per_page] for i in range(0, total_words, per_page)]
-
+    # Phân trang chuẩn 4 trang (10 từ & câu / trang = đúng 2 tờ in 2 mặt)
+    per_page = 10
+    pages = [vocab_items[i:i + per_page] for i in range(0, total_words, per_page)]
     total_pages = len(pages)
 
-    def render_page(items, p_idx):
-        n = len(items)
-        if n >= 14:
-            word_row_h = "8.2mm"
-            sent_row_h = "9.8mm"
-            font_en = "13px"
-            font_vi = "11.5px"
-            font_sent_en = "10.5px"
-            font_sent_vi = "10px"
-        elif n == 13:
-            word_row_h = "8.8mm"
-            sent_row_h = "10.6mm"
-            font_en = "13px"
-            font_vi = "11.5px"
-            font_sent_en = "10.5px"
-            font_sent_vi = "10px"
-        elif n <= 10:
-            word_row_h = "11.5mm"
-            sent_row_h = "13.0mm"
-            font_en = "13.5px"
-            font_vi = "12px"
-            font_sent_en = "11px"
-            font_sent_vi = "10.5px"
-        else: # 11-12 từ
-            word_row_h = "9.5mm"
-            sent_row_h = "11.5mm"
-            font_en = "13px"
-            font_vi = "11.5px"
-            font_sent_en = "10.5px"
-            font_sent_vi = "10px"
+    word_row_h = "11.5mm"
+    sent_row_h = "13.5mm"
+    font_en = "15px"
+    font_vi = "13px"
+    font_sent_en = "12.5px"
+    font_sent_vi = "11.5px"
 
+    def render_page(items, p_idx):
         rows = []
         for it in items:
-            rows.append(f"""          <tr class="row-word" style="height: {word_row_h};">
-            <td class="col-en" style="font-size: {font_en};">{it['word']}</td>
-            <td class="col-vi" style="font-size: {font_vi};">{it['meaning']}</td>
+            rows.append(f"""          <tr class="row-word">
+            <td class="col-en">{it['word']}</td>
+            <td class="col-vi">{it['meaning']}</td>
             <td class="col-write"><div class="handwriting-box"></div></td>
             <td class="col-write"><div class="handwriting-box"></div></td>
             <td class="col-write"><div class="handwriting-box"></div></td>
           </tr>
-          <tr class="row-sentence" style="height: {sent_row_h};">
-            <td colspan="2" class="col-sent-en" style="font-size: {font_sent_en};">
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
               <span class="badge-vd">VD</span> {it['sentence_en']}
             </td>
-            <td class="col-sent-vi" style="font-size: {font_sent_vi};">
+            <td class="col-sent-vi">
               {it['sentence_vi']}
             </td>
             <td colspan="2" class="col-sent-write">
@@ -866,7 +831,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       width: 210mm;
       min-height: 286mm;
       max-height: 286mm;
-      padding: 6mm 5mm 5mm 5mm;
+      padding: 5mm 5mm 5mm 5mm;
       margin: 0 auto 30px auto;
       box-sizing: border-box;
       display: flex;
@@ -881,12 +846,12 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       break-after: auto;
     }}
     .page-head {{
-      border-bottom: 2px solid #000000;
+      border-bottom: 2.5px solid #000000;
       padding-bottom: 3px;
       margin-bottom: 4px;
     }}
     .title-main {{
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 900;
       text-align: center;
       text-transform: uppercase;
@@ -897,7 +862,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
     .info-bar {{
       display: grid;
       grid-template-columns: 2.2fr 1.3fr 1.3fr 1fr;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 800;
       color: #000000;
       padding: 1px 0;
@@ -907,42 +872,48 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       border-collapse: collapse;
       table-layout: fixed;
       flex-grow: 1;
+      border: 2.5px solid #000000;
     }}
     .vocab-grid th {{
       background: #ffffff;
       color: #000000;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
       border: 2px solid #000000;
-      padding: 3px 2px;
+      padding: 4px 2px;
       text-align: center;
     }}
     .vocab-grid td {{
-      border-left: 1.5px solid #000000;
-      border-right: 1.5px solid #000000;
-      padding: 0 4px;
+      border-left: 1.8px solid #000000;
+      border-right: 1.8px solid #000000;
+      padding: 0 5px;
       vertical-align: middle;
     }}
+    /* Đậm nét tương phản cao cho máy in mờ */
     .row-word td {{
-      border-top: 2px solid #000000;
-      border-bottom: 1.2px solid #000000;
+      border-top: 2.5px solid #000000;
+      border-bottom: 1.8px solid #000000;
       background-color: #ffffff;
+      height: {word_row_h};
     }}
     .row-sentence td {{
-      border-bottom: 2.2px solid #000000;
+      border-bottom: 3px solid #000000;
       background-color: #ffffff;
+      height: {sent_row_h};
     }}
     .col-en {{
       width: 14%;
       font-weight: 900;
+      font-size: {font_en};
       color: #000000;
       word-break: break-word;
       line-height: 1.15;
     }}
     .col-vi {{
       width: 14%;
-      font-weight: 700;
+      font-weight: 800;
+      font-size: {font_vi};
       color: #000000;
       word-break: break-word;
       line-height: 1.15;
@@ -957,28 +928,30 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       height: 100%;
     }}
     .col-sent-en {{
-      font-weight: 700;
+      font-weight: 800;
+      font-size: {font_sent_en};
       color: #000000;
       word-break: break-word;
-      line-height: 1.2;
-      padding: 0 4px !important;
+      line-height: 1.25;
+      padding: 0 5px !important;
     }}
     .badge-vd {{
       font-weight: 900;
-      font-size: 9.5px;
+      font-size: 10.5px;
       background: #000000;
       color: #ffffff;
-      padding: 1px 3px;
+      padding: 1px 4px;
       border-radius: 2px;
-      margin-right: 3px;
+      margin-right: 4px;
       display: inline-block;
     }}
     .col-sent-vi {{
-      font-weight: 600;
-      color: #333333;
+      font-weight: 700;
+      font-size: {font_sent_vi};
+      color: #000000;
       word-break: break-word;
-      line-height: 1.2;
-      padding: 0 4px !important;
+      line-height: 1.25;
+      padding: 0 5px !important;
     }}
     .col-sent-write {{
       padding: 0 !important;
@@ -989,18 +962,18 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       background: #ffffff;
     }}
     .page-foot {{
-      border-top: 1.5px solid #000000;
+      border-top: 2px solid #000000;
       margin-top: 3px;
       padding-top: 2px;
       display: flex;
       justify-content: space-between;
-      font-size: 9.5px;
-      font-weight: 700;
+      font-size: 10px;
+      font-weight: 800;
       color: #000000;
     }}
     @page {{
       size: A4 portrait;
-      margin: 6mm 5mm 5mm 5mm;
+      margin: 5mm 5mm 5mm 5mm;
     }}
     @media print {{
       body {{ background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
@@ -1009,7 +982,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
         min-height: 286mm !important;
         max-height: 286mm !important;
         margin: 0 !important;
-        padding: 6mm 5mm 5mm 5mm !important;
+        padding: 5mm 5mm 5mm 5mm !important;
         box-shadow: none !important;
         border: none !important;
         page-break-after: always !important;
