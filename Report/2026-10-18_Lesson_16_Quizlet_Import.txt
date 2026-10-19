@@ -1,0 +1,40 @@
+milk	sữa
+bulk	cơ bắp
+silk	vải lụa
+hulk	người khổng lồ xanh
+damp	ẩm ướt
+left	bên trái
+stem	cuống, thân cây
+land	đáp xuống, hạ cánh
+sink	lún, chìm xuống
+drop	rơi
+first	đầu tiên
+orange juice	nước ép cam
+salad	rau trộn
+next	tiếp theo
+soup	súp
+chicken	gà
+then	sau đó
+rice	cơm, gạo
+pancakes	bánh kếp
+at the end	cuối cùng
+fried eggs	trứng rán
+cupcakes	bánh nướng nhỏ
+water	nước
+noodles	mì
+ice cream	kem
+a few	ít
+a lot of	Nhiều
+calf	bắp chân
+golf	gôn
+wolf	con cáo
+gulf	vịnh
+shelf	kệ, giá sách,..
+selfish	ích kỷ
+birthday	sinh nhật
+asleep	ngủ
+dream	mơ
+kelp	tảo bẹ
+yelp	tiếng kêu (của chó)
+gulp	nuốt chửng
+pulp	phần thịt quả
