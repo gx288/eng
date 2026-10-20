@@ -2708,3 +2708,21 @@ Con ngồi học ngoan và tập trung và tự tin trong các hoạt động tr
 [2026-10-19 23:46:36] Report button for VQ2-C3-2602 on 2026-10-20 is disabled. Waiting for teacher to publish report.
 [2026-10-19 23:46:36] Closing WebDriver
 [2026-10-19 23:46:36] Script completed
+[2026-10-20 00:01:44] Starting script
+[2026-10-20 00:01:44] Starting report check for calendar overview
+[2026-10-20 00:01:44] Loaded processed2.json: {'date': '2026-10-18', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf'}}
+[2026-10-20 00:01:44] Writing Google credentials to credentials.json
+[2026-10-20 00:01:44] Credentials written successfully
+[2026-10-20 00:01:44] Initializing Chrome WebDriver
+[2026-10-20 00:01:56] WebDriver session ID: c00f97d59db1e156089fa6380ac1ff4e
+[2026-10-20 00:01:56] Attempting to restore session from cache...
+[2026-10-20 00:02:03] Navigating to student calendar overview with restored session...
+[2026-10-20 00:02:10] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-20 00:02:10] Active session restored, bypassed fresh login!
+[2026-10-20 00:02:10] Scrolled to bottom of page
+[2026-10-20 00:02:10] Found 20 class events
+[2026-10-20 00:02:10] Latest class date up to today: 2026-10-20
+[2026-10-20 00:02:13] Targeting report for VQ2-C3-2602 on 2026-10-20
+[2026-10-20 00:02:13] Report button for VQ2-C3-2602 on 2026-10-20 is disabled. Waiting for teacher to publish report.
+[2026-10-20 00:02:13] Closing WebDriver
+[2026-10-20 00:02:13] Script completed
