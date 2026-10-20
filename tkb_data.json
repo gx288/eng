@@ -1,0 +1,96 @@
+{
+  "student_name": "Lê Minh Huy",
+  "class_name": "3",
+  "teacher_name": "Cô Lê Thị Vân",
+  "updated_at": "2026-10-20",
+  "general_rules": [
+    "Sáng có mặt lúc 7h30 (7h45 vào học - 11h00 tan học).",
+    "Chiều có mặt lúc 13h30 (13h35 vào học - 16h35 tan học).",
+    "Mặc đồng phục các ngày trong tuần, đi giày (dép) có quai.",
+    "Sắp xếp sách vở, đồ dùng học tập đầy đủ, bơm mực bút viết cho vào cặp sách trước khi đi học.",
+    "Tối ôn bài cũ, học bảng cửu chương, chuẩn bị bài theo tờ dặn dò cho buổi học hôm sau.",
+    "Ốm, sốt, mệt nhắc bố mẹ nhắn tin/ĐT cho cô Lê Thị Vân xin nghỉ trước 7h00 sáng để cô báo cắt cơm."
+  ],
+  "schedule": {
+    "Thứ 2": {
+      "morning": [
+        "Tiết 1: CC + HĐTN (Chào cờ + Hoạt động trải nghiệm)",
+        "Tiết 2: Toán",
+        "Tiết 3: Tiếng Việt",
+        "Tiết 4: Tiếng Việt"
+      ],
+      "afternoon": [
+        "Tiết 1: Tin học",
+        "Tiết 2: Đạo đức",
+        "Tiết 3: Erobic",
+        "Tiết 4: Kĩ năng"
+      ],
+      "books_to_pack": ["Toán", "Tiếng Việt", "HĐTN", "Tin học", "Đạo đức", "Kĩ năng"],
+      "notes": "Mặc đồng phục, đi giày/dép có quai. Có tiết Erobic buổi chiều."
+    },
+    "Thứ 3": {
+      "morning": [
+        "Tiết 1: Tiếng Anh",
+        "Tiết 2: Công Nghệ",
+        "Tiết 3: Tiếng Việt",
+        "Tiết 4: Toán"
+      ],
+      "afternoon": [
+        "Tiết 1: TNXH (Tự nhiên & Xã hội)",
+        "Tiết 2: HĐCC (Hoạt động củng cố)",
+        "Tiết 3: TABT (Tiếng Anh bổ trợ)",
+        "Tiết 4: Trông giữ"
+      ],
+      "books_to_pack": ["Tiếng Anh", "Công Nghệ", "Tiếng Việt", "Toán", "TNXH", "TABT (Tiếng Anh bổ trợ)"],
+      "notes": "Mặc đồng phục, đi giày/dép có quai. Mang đủ sách Tiếng Anh & Tiếng Anh bổ trợ."
+    },
+    "Thứ 4": {
+      "morning": [
+        "Tiết 1: GDTC (Thể dục)",
+        "Tiết 2: Toán",
+        "Tiết 3: Tiếng Việt",
+        "Tiết 4: Tiếng Việt"
+      ],
+      "afternoon": [
+        "Tiết 1: HĐTN (Hoạt động trải nghiệm)",
+        "Tiết 2: Kĩ năng",
+        "Tiết 3: Mĩ thuật",
+        "Tiết 4: Trông giữ"
+      ],
+      "books_to_pack": ["Toán", "Tiếng Việt", "HĐTN", "Kĩ năng", "Mĩ thuật (Đồ dùng vẽ/màu)"],
+      "notes": "Sáng có tiết GDTC (Thể dục). Chiều có môn Mĩ thuật (nhớ mang đồ dùng Mĩ thuật)."
+    },
+    "Thứ 5": {
+      "morning": [
+        "Tiết 1: Tiếng Anh",
+        "Tiết 2: GDTC (Thể dục)",
+        "Tiết 3: Toán",
+        "Tiết 4: Tiếng Việt"
+      ],
+      "afternoon": [
+        "Tiết 1: TNXH (Tự nhiên & Xã hội)",
+        "Tiết 2: GDTC (Thể dục)",
+        "Tiết 3: HĐCC (Hoạt động củng cố)",
+        "Tiết 4: Toán tư duy"
+      ],
+      "books_to_pack": ["Tiếng Anh", "Toán", "Tiếng Việt", "TNXH", "Toán tư duy"],
+      "notes": "Cả Sáng và Chiều đều có tiết GDTC (Thể dục)."
+    },
+    "Thứ 6": {
+      "morning": [
+        "Tiết 1: Tiếng Anh",
+        "Tiết 2: Tiếng Việt",
+        "Tiết 3: Toán",
+        "Tiết 4: SHL-HĐTN (Sinh hoạt lớp - HĐTN)"
+      ],
+      "afternoon": [
+        "Tiết 1: Âm nhạc",
+        "Tiết 2: Tiếng Anh",
+        "Tiết 3: HĐCC (Hoạt động củng cố)",
+        "Tiết 4: Võ"
+      ],
+      "books_to_pack": ["Tiếng Anh", "Tiếng Việt", "Toán", "HĐTN", "Âm nhạc"],
+      "notes": "Cả Sáng và Chiều đều có Tiếng Anh. Chiều tiết 4 có môn Võ."
+    }
+  }
+}
