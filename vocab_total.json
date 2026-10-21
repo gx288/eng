@@ -3191,6 +3191,50 @@
         {
             "word": "a lot of",
             "meaning": "Nhiều"
+        },
+        {
+            "word": "text",
+            "meaning": "chữ"
+        },
+        {
+            "word": "context",
+            "meaning": "ngữ cảnh"
+        },
+        {
+            "word": "extend",
+            "meaning": "mở rộng"
+        },
+        {
+            "word": "before",
+            "meaning": "trước đó"
+        },
+        {
+            "word": "after",
+            "meaning": "sau đó"
+        },
+        {
+            "word": "use",
+            "meaning": "sử dụng"
+        },
+        {
+            "word": "cereal",
+            "meaning": "ngũ cốc"
+        },
+        {
+            "word": "meat",
+            "meaning": "thịt"
+        },
+        {
+            "word": "morning",
+            "meaning": "buổi sáng"
+        },
+        {
+            "word": "afternoon",
+            "meaning": "buổi chiều"
+        },
+        {
+            "word": "evening",
+            "meaning": "buổi tối"
         }
     ]
 }

@@ -1,0 +1,40 @@
+next	tiếp theo
+text	chữ
+context	ngữ cảnh
+sixty	60
+extend	mở rộng
+before	trước đó
+after	sau đó
+use	sử dụng
+thank	cảm ơn
+milk	sữa
+orange juice	nước cam
+cereal	ngũ cốc
+fish	cá
+meat	thịt
+strawberry	dâu tây
+breakfast	bữa sáng
+lunch	bữa trưa
+dinner	bữa tối
+morning	buổi sáng
+afternoon	buổi chiều
+evening	buổi tối
+bulk	cơ bắp
+silk	vải lụa
+hulk	người khổng lồ xanh
+damp	ẩm ướt
+left	bên trái
+stem	cuống, thân cây
+land	đáp xuống, hạ cánh
+sink	lún, chìm xuống
+drop	rơi
+first	đầu tiên
+salad	rau trộn
+soup	súp
+chicken	gà
+then	sau đó
+rice	cơm, gạo
+pancakes	bánh kếp
+at the end	cuối cùng
+fried eggs	trứng rán
+cupcakes	bánh nướng nhỏ
