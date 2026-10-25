@@ -3878,3 +3878,71 @@
 [2026-10-25 15:16:44] Report button for VQ2-C3-2602 on 2026-10-25 is disabled. Waiting for teacher to publish report.
 [2026-10-25 15:16:44] Closing WebDriver
 [2026-10-25 15:16:44] Script completed
+[2026-10-25 15:31:44] Starting script
+[2026-10-25 15:31:44] Starting report check for calendar overview
+[2026-10-25 15:31:44] Loaded processed2.json: {'date': '2026-10-20', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf'}}
+[2026-10-25 15:31:44] Writing Google credentials to credentials.json
+[2026-10-25 15:31:44] Credentials written successfully
+[2026-10-25 15:31:44] Initializing Chrome WebDriver
+[2026-10-25 15:31:47] WebDriver session ID: 1b6c7c206cfcc8ec9859ca1a938e72b5
+[2026-10-25 15:31:47] Attempting to restore session from cache...
+[2026-10-25 15:32:47] Error restoring session cache: Message: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: chrome=155.0.8059.39)
+Stacktrace:
+#0 0x55f03f8dd5ea <unknown>
+#1 0x55f03f1f7869 <unknown>
+#2 0x55f03f1df2a1 <unknown>
+#3 0x55f03f1deec6 <unknown>
+#4 0x55f03f1dcad0 <unknown>
+#5 0x55f03f1dd43f <unknown>
+#6 0x55f03f1ec600 <unknown>
+#7 0x55f03f206596 <unknown>
+#8 0x55f03f20e30b <unknown>
+#9 0x55f03f1ddb99 <unknown>
+#10 0x55f03f2062fb <unknown>
+#11 0x55f03f29cc11 <unknown>
+#12 0x55f03f24129b <unknown>
+#13 0x55f03f2420a1 <unknown>
+#14 0x55f03f89ffec <unknown>
+#15 0x55f03f89e7f5 <unknown>
+#16 0x55f03f889785 <unknown>
+#17 0x55f03f89f45a <unknown>
+#18 0x55f03f871d99 <unknown>
+#19 0x55f03f8c7b18 <unknown>
+#20 0x55f03f8c7cb5 <unknown>
+#21 0x55f03f8dbf73 <unknown>
+#22 0x7f23dbc9cb84 <unknown>
+#23 0x7f23dbd29ecc <unknown>
+, will perform fresh login
+[2026-10-25 15:32:47] Session cache not available or expired. Performing fresh login...
+[2026-10-25 15:32:47] Navigating to login page: https://apps.cec.com.vn/login
+[2026-10-25 15:33:47] Error checking reports: Message: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: chrome=155.0.8059.39)
+Stacktrace:
+#0 0x55f03f8dd5ea <unknown>
+#1 0x55f03f1f7869 <unknown>
+#2 0x55f03f1df2a1 <unknown>
+#3 0x55f03f1deec6 <unknown>
+#4 0x55f03f1dcad0 <unknown>
+#5 0x55f03f1dd43f <unknown>
+#6 0x55f03f1ec600 <unknown>
+#7 0x55f03f206596 <unknown>
+#8 0x55f03f20e30b <unknown>
+#9 0x55f03f1ddb99 <unknown>
+#10 0x55f03f2062fb <unknown>
+#11 0x55f03f29cc11 <unknown>
+#12 0x55f03f24129b <unknown>
+#13 0x55f03f2420a1 <unknown>
+#14 0x55f03f89ffec <unknown>
+#15 0x55f03f89e7f5 <unknown>
+#16 0x55f03f889785 <unknown>
+#17 0x55f03f89f45a <unknown>
+#18 0x55f03f871d99 <unknown>
+#19 0x55f03f8c7b18 <unknown>
+#20 0x55f03f8c7cb5 <unknown>
+#21 0x55f03f8dbf73 <unknown>
+#22 0x7f23dbc9cb84 <unknown>
+#23 0x7f23dbd29ecc <unknown>
+
+[2026-10-25 15:33:47] Closing WebDriver
+[2026-10-25 15:33:47] Script completed
