@@ -2312,3 +2312,121 @@ Stacktrace:
 [2026-10-26 09:46:37] Report button for VQ2-C3-2602 on 2026-10-25 is disabled. Waiting for teacher to publish report.
 [2026-10-26 09:46:37] Closing WebDriver
 [2026-10-26 09:46:37] Script completed
+[2026-10-26 10:00:33] Starting script
+[2026-10-26 10:00:33] Starting report check for calendar overview
+[2026-10-26 10:00:33] Loaded processed2.json: {'date': '2026-10-20', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf'}}
+[2026-10-26 10:00:33] Writing Google credentials to credentials.json
+[2026-10-26 10:00:33] Credentials written successfully
+[2026-10-26 10:00:33] Initializing Chrome WebDriver
+[2026-10-26 10:00:45] WebDriver session ID: fb4a4283330d30fe6472c42f84bd3cb9
+[2026-10-26 10:00:45] Attempting to restore session from cache...
+[2026-10-26 10:00:51] Navigating to student calendar overview with restored session...
+[2026-10-26 10:01:03] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-26 10:01:03] Active session restored, bypassed fresh login!
+[2026-10-26 10:01:03] Scrolled to bottom of page
+[2026-10-26 10:01:03] Found 24 class events
+[2026-10-26 10:01:04] Latest class date up to today: 2026-10-25
+[2026-10-26 10:01:07] Targeting report for VQ2-C3-2602 on 2026-10-25
+[2026-10-26 10:01:07] Attempt 1/3 to click report button
+[2026-10-26 10:01:22] Window switch attempt 1/3 failed: Message: 
+
+[2026-10-26 10:01:27] Attempt 2/3 to click report button
+[2026-10-26 10:01:29] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf
+[2026-10-26 10:01:29] Found new report: Báo cáo bài học mới cho lớp VQ2-C3-2602 ngày 2026-10-25
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf
+[2026-10-26 10:01:29] Updating Google Sheet 'Report' with Date 2026-10-25, Class VQ2-C3-2602, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf
+[2026-10-26 10:01:32] Updated Google Sheet 'Report' successfully: 2026-10-25, VQ2-C3-2602, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf at 2026-10-26 10:01:29
+[2026-10-26 10:01:32] Saving processed data to processed2.json
+[2026-10-26 10:01:32] Saved processed2.json successfully
+[2026-10-26 10:01:32] Starting PDF processing for report analysis
+[2026-10-26 10:01:32] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf
+[2026-10-26 10:01:32] Downloading PDF from https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf
+[2026-10-26 10:01:33] Successfully downloaded PDF to temp_report.pdf
+[2026-10-26 10:01:33] Extracting text and links from PDF
+[2026-10-26 10:01:33] Extracted 10357 characters and 5 links from PDF
+[2026-10-26 10:01:33] Deleted temporary PDF file: temp_report.pdf
+[2026-10-26 10:01:33] Gemini API attempt 1/3
+[2026-10-26 10:01:34] Available Gemini models count: 46
+[2026-10-26 10:01:34] Using model: models/gemini-3.5-flash
+[2026-10-26 10:01:43] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "act": "hành động / diễn",
+    "fact": "sự thật",
+    "strict": "nghiêm ...
+[2026-10-26 10:01:43] API attempt 1 successful
+[2026-10-26 10:01:43] Updating Google Sheet 'ReportContent' with extracted data
+[2026-10-26 10:01:45] Inserted 21 rows to 'ReportContent' after header
+[2026-10-26 10:01:45] Processing total vocabulary
+[2026-10-26 10:01:45] Loaded existing vocabulary from vocab_total.json: 809 entries
+[2026-10-26 10:01:45] Added 12 new vocabulary entries. Total vocabulary: 821
+[2026-10-26 10:01:45] Saving updated vocabulary to vocab_total.json
+[2026-10-26 10:01:45] Successfully saved vocab_total.json
+[2026-10-26 10:01:45] Updating Google Sheet 'vocab' with total vocabulary
+[2026-10-26 10:01:46] Updated Google Sheet 'vocab' successfully with 821 vocabulary entries
+[2026-10-26 10:01:46] Creating Report directory if not exists
+[2026-10-26 10:01:46] Practice vocabulary count: 40 (Original lesson words: 16)
+[2026-10-26 10:01:46]   + Bài hiện tại: 16 words
+[2026-10-26 10:01:46]   + 2026-10-20_Lesson_17: 19 words
+[2026-10-26 10:01:46]   + 2026-10-18_Lesson_16: 5 words
+[2026-10-26 10:01:46] Available Gemini models count: 46
+[2026-10-26 10:01:46] Generating natural example sentences using Gemini model: models/gemini-3.5-flash
+[2026-10-26 10:02:07] Gemini sentence response invalid format or incomplete, falling back to curated sentences
+[2026-10-26 10:02:08] Successfully generated PDF worksheet: Report/2026-10-25_Lesson_18_Phieu_Tap_Chep.pdf
+[2026-10-26 10:02:08] Successfully generated Quizlet file: Report/2026-10-25_Lesson_18_Quizlet_Import.txt
+[2026-10-26 10:02:08] Saving result to Report/2026-10-25_Lesson_18.json
+[2026-10-26 10:02:08] Successfully saved: Report/2026-10-25_Lesson_18.json
+[2026-10-26 10:02:08] Starting detailed Telegram notifications
+[2026-10-26 10:02:08] Initializing Telegram Bot for detailed messages
+[2026-10-26 10:02:08] Sending detailed Telegram messages to chat_id 1900957785
+[2026-10-26 10:02:08] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-10-25*
+📅 *Ngày*: 2026-10-25
+📚 *Tiêu đề*: Lesson 18
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-26 10:02:09] Sent general info message to chat_id 1900957785
+[2026-10-26 10:02:10] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-10-25*
+• `act`: hành động / diễn
+• `fact`: sự thật
+• `strict`: nghiêm khắc
+• `in...
+[2026-10-26 10:02:10] Sent vocabulary message to chat_id 1900957785
+[2026-10-26 10:02:11] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-10-25*
+• *What do you want for [breakfast]?*: [Eggs], please.
+• *Does [rice] co...
+[2026-10-26 10:02:11] Sent sentence structures message to chat_id 1900957785
+[2026-10-26 10:02:12] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-10-25*
+Hoàn thành phần Handwriting trong sách CLL3 CLL3_Homework_Lesson 18. Ô...
+[2026-10-26 10:02:12] Sent homework message to chat_id 1900957785
+[2026-10-26 10:02:12] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-10-25*
+Con thể hiện sự tập trung cao, thái độ học tập ngoan ngoãn và tư...
+[2026-10-26 10:02:13] Sent comments message to chat_id 1900957785
+[2026-10-26 10:02:13] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-10-26 10:02:15] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-10-26 10:02:15] Completed sending detailed messages to chat_id 1900957785
+[2026-10-26 10:02:15] Sending detailed Telegram messages to chat_id 1924741087
+[2026-10-26 10:02:15] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-10-25*
+📅 *Ngày*: 2026-10-25
+📚 *Tiêu đề*: Lesson 18
+🏫 *Lớp*: VQ2-C3-2602...
+[2026-10-26 10:02:16] Sent general info message to chat_id 1924741087
+[2026-10-26 10:02:16] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-10-25*
+• `act`: hành động / diễn
+• `fact`: sự thật
+• `strict`: nghiêm khắc
+• `in...
+[2026-10-26 10:02:17] Sent vocabulary message to chat_id 1924741087
+[2026-10-26 10:02:17] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-10-25*
+• *What do you want for [breakfast]?*: [Eggs], please.
+• *Does [rice] co...
+[2026-10-26 10:02:18] Sent sentence structures message to chat_id 1924741087
+[2026-10-26 10:02:18] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-10-25*
+Hoàn thành phần Handwriting trong sách CLL3 CLL3_Homework_Lesson 18. Ô...
+[2026-10-26 10:02:18] Sent homework message to chat_id 1924741087
+[2026-10-26 10:02:19] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-10-25*
+Con thể hiện sự tập trung cao, thái độ học tập ngoan ngoãn và tư...
+[2026-10-26 10:02:19] Sent comments message to chat_id 1924741087
+[2026-10-26 10:02:20] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-10-26 10:02:21] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-10-26 10:02:22] Completed sending detailed messages to chat_id 1924741087
+[2026-10-26 10:02:22] Completed detailed Telegram notifications
+[2026-10-26 10:02:22] Git repository detected
+[2026-10-26 10:02:22] Committing and pushing Report and vocab files to GitHub

@@ -3235,6 +3235,54 @@
         {
             "word": "evening",
             "meaning": "buổi tối"
+        },
+        {
+            "word": "act",
+            "meaning": "hành động / diễn"
+        },
+        {
+            "word": "fact",
+            "meaning": "sự thật"
+        },
+        {
+            "word": "strict",
+            "meaning": "nghiêm khắc"
+        },
+        {
+            "word": "insect",
+            "meaning": "côn trùng"
+        },
+        {
+            "word": "object",
+            "meaning": "đồ vật"
+        },
+        {
+            "word": "subject",
+            "meaning": "môn học"
+        },
+        {
+            "word": "plants",
+            "meaning": "thực vật"
+        },
+        {
+            "word": "animals",
+            "meaning": "động vật"
+        },
+        {
+            "word": "vegetables",
+            "meaning": "rau củ"
+        },
+        {
+            "word": "fruits",
+            "meaning": "hoa quả"
+        },
+        {
+            "word": "oranges",
+            "meaning": "cam"
+        },
+        {
+            "word": "strawberries",
+            "meaning": "dâu tây"
         }
     ]
 }

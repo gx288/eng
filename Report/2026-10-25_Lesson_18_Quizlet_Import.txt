@@ -1,0 +1,40 @@
+act	hành động / diễn
+fact	sự thật
+strict	nghiêm khắc
+insect	côn trùng
+object	đồ vật
+subject	môn học
+plants	thực vật
+animals	động vật
+vegetables	rau củ
+fruits	hoa quả
+milk	sữa
+pineapple	dứa
+eggs	trứng
+oranges	cam
+strawberries	dâu tây
+cereal	ngũ cốc
+next	tiếp theo
+text	chữ
+context	ngữ cảnh
+sixty	60
+extend	mở rộng
+before	trước đó
+after	sau đó
+use	sử dụng
+thank	cảm ơn
+orange juice	nước cam
+fish	cá
+meat	thịt
+strawberry	dâu tây
+breakfast	bữa sáng
+lunch	bữa trưa
+dinner	bữa tối
+morning	buổi sáng
+afternoon	buổi chiều
+evening	buổi tối
+bulk	cơ bắp
+silk	vải lụa
+hulk	người khổng lồ xanh
+damp	ẩm ướt
+left	bên trái
