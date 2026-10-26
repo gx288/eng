@@ -18,7 +18,7 @@
       min-height: 286mm;
       max-height: 286mm;
       padding: 5mm 5mm 5mm 5mm;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 20px auto;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -34,7 +34,7 @@
     .page-head {
       border-bottom: 2.5px solid #000000;
       padding-bottom: 3px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .title-main {
       font-size: 17px;
@@ -53,40 +53,49 @@
       color: #000000;
       padding: 1px 0;
     }
-    .vocab-grid {
+    /* BẢNG TƯƠNG PHẢN SIÊU CAO, VIỀN LIỀN NÉT 100% KHÔNG BỊ MẤT VIỀN */
+    .vocab-table {
       width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
+      border-collapse: separate;
+      border-spacing: 0;
       flex-grow: 1;
       border: 2.5px solid #000000;
     }
-    .vocab-grid th {
+    .vocab-table th {
       background: #ffffff;
       color: #000000;
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
-      border: 2px solid #000000;
+      border-bottom: 2.5px solid #000000;
+      border-right: 2px solid #000000;
       padding: 4px 2px;
       text-align: center;
     }
-    .vocab-grid td {
-      border-left: 1.8px solid #000000;
-      border-right: 1.8px solid #000000;
+    .vocab-table th:last-child {
+      border-right: none;
+    }
+    .row-word td {
+      height: 11.2mm;
+      border-bottom: 2px solid #000000;
+      border-right: 2px solid #000000;
+      background-color: #ffffff;
       padding: 0 5px;
       vertical-align: middle;
     }
-    /* Đậm nét tương phản cao cho máy in mờ */
-    .row-word td {
-      border-top: 2.5px solid #000000;
-      border-bottom: 1.8px solid #000000;
-      background-color: #ffffff;
-      height: 11.5mm;
+    .row-word td:last-child {
+      border-right: none;
     }
     .row-sentence td {
+      height: 13.6mm;
       border-bottom: 3px solid #000000;
+      border-right: 2px solid #000000;
       background-color: #ffffff;
-      height: 13.5mm;
+      padding: 0 5px;
+      vertical-align: middle;
+    }
+    .row-sentence td:last-child {
+      border-right: none;
     }
     .col-en {
       width: 14%;
@@ -109,11 +118,21 @@
       padding: 0 !important;
       position: relative;
     }
-    .handwriting-box {
+    /* DÒNG KẺ TẬP VIẾT TÌ ĐÁY (BASELINE GUIDE LINE) */
+    .baseline-box {
       width: 100%;
       height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 6px 2.8mm 6px;
+    }
+    .baseline-line {
+      width: 100%;
+      height: 0;
+      border-bottom: 2.2px solid #000000; /* Đậm nét 2.2px chống máy in mờ */
     }
     .col-sent-en {
+      width: 28%;
       font-weight: 800;
       font-size: 12.5px;
       color: #000000;
@@ -132,6 +151,7 @@
       display: inline-block;
     }
     .col-sent-vi {
+      width: 24%;
       font-weight: 700;
       font-size: 11.5px;
       color: #000000;
@@ -140,16 +160,13 @@
       padding: 0 5px !important;
     }
     .col-sent-write {
+      width: 48%;
       padding: 0 !important;
       position: relative;
-      background: #ffffff;
-    }
-    .sentence-box {
-      background: #ffffff;
     }
     .page-foot {
       border-top: 2px solid #000000;
-      margin-top: 3px;
+      margin-top: 2px;
       padding-top: 2px;
       display: flex;
       justify-content: space-between;
@@ -194,7 +211,7 @@
         </div>
       </div>
 
-      <table class="vocab-grid">
+      <table class="vocab-table">
         <thead>
           <tr>
             <th style="width: 14%;">Từ Vựng (EN)</th>
@@ -208,9 +225,9 @@
           <tr class="row-word">
             <td class="col-en">quilt</td>
             <td class="col-vi">chăn bông</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -220,15 +237,15 @@
               Cô ấy kéo chiếc chăn bông lên quanh người.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">bolt</td>
             <td class="col-vi">chốt cài</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -238,15 +255,15 @@
               Cô ấy gài then cửa lại.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">belt</td>
             <td class="col-vi">thắt lưng</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -256,15 +273,15 @@
               Xin vui lòng thắt dây an toàn.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">tilt</td>
             <td class="col-vi">nghiêng</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -274,15 +291,15 @@
               Cô ấy nghiêng đầu sang một bên.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">wilt</td>
             <td class="col-vi">khô héo</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -292,15 +309,15 @@
               Những bông hoa đã bắt đầu héo.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">goes</td>
             <td class="col-vi">đi</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -310,15 +327,15 @@
               Anh ấy đi làm bằng tàu hỏa.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">our</td>
             <td class="col-vi">của chúng tôi</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -328,15 +345,15 @@
               Chúng tôi đã bán nhà năm ngoái.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">we</td>
             <td class="col-vi">chúng tôi</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -346,15 +363,15 @@
               Chúng tôi sắp đi ra bãi biển.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">she</td>
             <td class="col-vi">cô ấy</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -364,15 +381,15 @@
               Cô ấy sống trong một ngôi làng nhỏ.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">their</td>
             <td class="col-vi">của họ, của chúng</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -382,7 +399,7 @@
               Họ đã bán chiếc xe ô tô của mình.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
         </tbody>
@@ -405,7 +422,7 @@
         </div>
       </div>
 
-      <table class="vocab-grid">
+      <table class="vocab-table">
         <thead>
           <tr>
             <th style="width: 14%;">Từ Vựng (EN)</th>
@@ -419,9 +436,9 @@
           <tr class="row-word">
             <td class="col-en">one</td>
             <td class="col-vi">số 1</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -431,15 +448,15 @@
               Chỉ còn lại một phòng.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">these</td>
             <td class="col-vi">những cái này</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -449,15 +466,15 @@
               Ai sở hữu tất cả những cuốn sách này?
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">but</td>
             <td class="col-vi">nhưng</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -467,15 +484,15 @@
               Trời lạnh nhưng có nắng.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">your</td>
             <td class="col-vi">của bạn</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -485,15 +502,15 @@
               Cặp sách của bạn ở đâu?
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">said</td>
             <td class="col-vi">nói (quá khứ)</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -503,15 +520,15 @@
               Cô ấy không nói gì về điều đó.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">blue</td>
             <td class="col-vi">màu xanh dương</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -521,15 +538,15 @@
               Cô ấy đang mặc một chiếc váy màu xanh.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">yesterday</td>
             <td class="col-vi">hôm qua</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -539,15 +556,15 @@
               Sáng hôm qua bạn đã ở đâu?
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">breakfast</td>
             <td class="col-vi">bữa sáng</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -557,15 +574,15 @@
               Anh ấy thường ăn bánh mì nướng cho bữa sáng.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">lunch</td>
             <td class="col-vi">bữa trưa</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -575,15 +592,15 @@
               Bạn đã ăn gì cho bữa trưa?
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">dinner</td>
             <td class="col-vi">bữa tối</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -593,7 +610,7 @@
               Họ đã mời chúng tôi đến ăn tối.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
         </tbody>
@@ -616,7 +633,7 @@
         </div>
       </div>
 
-      <table class="vocab-grid">
+      <table class="vocab-table">
         <thead>
           <tr>
             <th style="width: 14%;">Từ Vựng (EN)</th>
@@ -630,9 +647,9 @@
           <tr class="row-word">
             <td class="col-en">eggs</td>
             <td class="col-vi">trứng</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -642,15 +659,15 @@
               Bạn thích ăn trứng chế biến thế nào?
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">chicken</td>
             <td class="col-vi">gà</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -660,15 +677,15 @@
               Chúng tôi đã ăn gà quay cho bữa tối.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">salad</td>
             <td class="col-vi">sa-lát</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -678,15 +695,15 @@
               Tôi đã gọi một đĩa rau trộn tươi.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">noodles</td>
             <td class="col-vi">mì/phở</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -696,15 +713,15 @@
               Nấu mì trong nước sôi.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">juice</td>
             <td class="col-vi">nước ép</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -714,15 +731,15 @@
               Bạn có muốn uống chút nước cam không?
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">skull</td>
             <td class="col-vi">hộp sọ</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -732,15 +749,15 @@
               Một chiếc sọ khủng long đã được tìm thấy ở đây.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">tusk</td>
             <td class="col-vi">cái ngà</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -750,15 +767,15 @@
               Con voi có hai chiếc ngà dài.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">skinny</td>
             <td class="col-vi">gầy gò</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -768,15 +785,15 @@
               Anh ấy cao và gầy gò.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">ask</td>
             <td class="col-vi">hỏi</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -786,15 +803,15 @@
               Em có thể hỏi một câu được không?
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">whisker</td>
             <td class="col-vi">ria mép</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -804,7 +821,7 @@
               Con mèo khẽ giật giật ria mép.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
         </tbody>
@@ -827,7 +844,7 @@
         </div>
       </div>
 
-      <table class="vocab-grid">
+      <table class="vocab-table">
         <thead>
           <tr>
             <th style="width: 14%;">Từ Vựng (EN)</th>
@@ -841,9 +858,9 @@
           <tr class="row-word">
             <td class="col-en">desk</td>
             <td class="col-vi">cái bàn</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -853,15 +870,15 @@
               Anh ấy đang ngồi tại bàn làm việc.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">gift</td>
             <td class="col-vi">quà</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -871,15 +888,15 @@
               Đây là một món quà đặc biệt dành cho bạn.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">shaft</td>
             <td class="col-vi">hầm</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -889,15 +906,15 @@
               Một vệt nắng ấm chiếu vào căn phòng.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">lift</td>
             <td class="col-vi">thang máy</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -907,15 +924,15 @@
               Đi thang máy lên tầng trên cùng.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">soft</td>
             <td class="col-vi">nhẹ</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -925,15 +942,15 @@
               Chiếc gối ấm áp và mềm mại.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">left</td>
             <td class="col-vi">bên trái</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -943,15 +960,15 @@
               Rẽ trái ở cột đèn giao thông.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">theft</td>
             <td class="col-vi">trộm cắp</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -961,15 +978,15 @@
               Khóa xe cẩn thận để tránh bị trộm.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">guava</td>
             <td class="col-vi">quả ổi</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -979,15 +996,15 @@
               Ổi là một loại trái cây nhiệt đới ngọt ngào.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">apple</td>
             <td class="col-vi">quả táo</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -997,15 +1014,15 @@
               Anh ấy cắn một miếng táo.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
           <tr class="row-word">
             <td class="col-en">pear</td>
             <td class="col-vi">quả lê</td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
-            <td class="col-write"><div class="handwriting-box"></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -1015,7 +1032,7 @@
               Cô ấy gọt một quả lê cho đứa trẻ.
             </td>
             <td colspan="2" class="col-sent-write">
-              <div class="handwriting-box sentence-box"></div>
+              <div class="baseline-box"><div class="baseline-line"></div></div>
             </td>
           </tr>
         </tbody>
