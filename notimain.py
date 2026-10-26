@@ -825,9 +825,9 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
             rows.append(f"""          <tr class="row-word">
             <td class="col-en">{it['word']}</td>
             <td class="col-vi">{it['meaning']}</td>
-            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
-            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
-            <td class="col-write"><div class="baseline-box"><div class="baseline-line"></div></div></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
@@ -836,9 +836,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
             <td class="col-sent-vi">
               {it['sentence_vi']}
             </td>
-            <td colspan="2" class="col-sent-write">
-              <div class="baseline-box"><div class="baseline-line"></div></div>
-            </td>
+            <td colspan="2" class="col-sent-write"></td>
           </tr>""")
         rows_html = "\n".join(rows)
 
