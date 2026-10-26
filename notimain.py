@@ -480,120 +480,120 @@ def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None,
     return merged, sources
 
 # ────────────────────────────────────────────────
-#    BỘ CÂU VÍ DỤ TỰ NHIÊN ĐỜI THƯỜNG (CAMBRIDGE CLL3)
+#    KHO CÂU VÍ DỤ CHUẨN TỪ ĐIỂN OXFORD (OALD) & CAMBRIDGE
 # ────────────────────────────────────────────────
 
-CURATED_NATURAL_SENTENCES = {
+CURATED_OALD_SENTENCES = {
     # Lesson 11 & Ôn tập (40 từ chuẩn Lesson 11)
-    'quilt': ('My quilt is warm and cozy.', 'Chiếc chăn của em ấm áp và êm ái.'),
-    'bolt': ('Slide the bolt to lock.', 'Gài then cửa lại để khóa nhé.'),
-    'belt': ('Dad wears a black leather belt.', 'Bố em đeo một chiếc thắt lưng da màu đen.'),
-    'tilt': ('Do not tilt your chair back.', 'Đừng ngả nghiêng ghế ra sau nhé con.'),
-    'wilt': ('The flowers wilt in hot sun.', 'Mấy bông hoa bị héo dưới trời nắng gắt.'),
-    'goes': ('Tom goes to school by bus.', 'Bạn Tom đi học bằng xe buýt.'),
-    'our': ('Welcome to our cozy home!', 'Chào mừng bạn đến chơi nhà mình!'),
-    'we': ('We play games after school.', 'Chúng mình cùng chơi trò chơi sau giờ học.'),
-    'she': ('She is my best friend.', 'Bạn ấy là bạn thân nhất của em.'),
-    'their': ('Their dog likes to run fast.', 'Chú chó nhà các bạn ấy thích chạy rất nhanh.'),
-    'one': ('I have one little sister.', 'Em có một cô em gái nhỏ.'),
-    'these': ('I really like these new shoes.', 'Con rất thích đôi giày mới này.'),
-    'but': ('It is small, but very fast.', 'Nó nhỏ nhưng chạy nhanh lắm.'),
-    'your': ('Is this your pencil case?', 'Đây có phải hộp bút của bạn không?'),
-    'said': ("Mom said: 'Time for bed!'", "Mẹ bảo: 'Đến giờ đi ngủ rồi nhé!'"),
-    'blue': ('My school bag is blue.', 'Cặp sách đi học của em màu xanh.'),
-    'yesterday': ('I went swimming yesterday.', 'Hôm qua em được đi bơi.'),
-    'breakfast': ('I drink milk for breakfast.', 'Bữa sáng con uống một cốc sữa.'),
-    'lunch': ('What is in your lunch box?', 'Trong hộp cơm trưa của bạn có món gì?'),
-    'dinner': ('Mom cooks fish for dinner.', 'Mẹ nấu món cá cho bữa tối nay.'),
-    'eggs': ('I love warm boiled eggs.', 'Con thích ăn món trứng luộc nóng hổi.'),
-    'chicken': ('I love crispy fried chicken!', 'Con thích ăn gà rán giòn rụm!'),
-    'salad': ('Mom makes yummy fruit salad.', 'Mẹ làm món sa-lát hoa quả ngon tuyệt.'),
-    'noodles': ('I eat a hot bowl of noodles.', 'Con ăn một bát mì nóng hổi.'),
-    'juice': ('Cold apple juice tastes great!', 'Nước táo ép mát lạnh uống ngon tuyệt!'),
-    'skull': ('The museum has a dino skull.', 'Bảo tàng có một chiếc đầu lâu khủng long.'),
+    'quilt': ('She pulled the quilt up around her.', 'Cô ấy kéo chiếc chăn bông lên quanh người.'),
+    'bolt': ('She slid the bolt into place.', 'Cô ấy gài then cửa lại.'),
+    'belt': ('Fasten your seat belt, please.', 'Xin vui lòng thắt dây an toàn.'),
+    'tilt': ('She tilted her head to one side.', 'Cô ấy nghiêng đầu sang một bên.'),
+    'wilt': ('The flowers were beginning to wilt.', 'Những bông hoa đã bắt đầu héo.'),
+    'goes': ('He goes to work by train.', 'Anh ấy đi làm bằng tàu hỏa.'),
+    'our': ('We sold our house last year.', 'Chúng tôi đã bán nhà năm ngoái.'),
+    'we': ('We are going to the beach.', 'Chúng tôi sắp đi ra bãi biển.'),
+    'she': ('She lives in a small village.', 'Cô ấy sống trong một ngôi làng nhỏ.'),
+    'their': ('They have sold their car.', 'Họ đã bán chiếc xe ô tô của mình.'),
+    'one': ('There is only one room left.', 'Chỉ còn lại một phòng.'),
+    'these': ('Who owns all these books?', 'Ai sở hữu tất cả những cuốn sách này?'),
+    'but': ('It was cold but sunny.', 'Trời lạnh nhưng có nắng.'),
+    'your': ('Where is your school bag?', 'Cặp sách của bạn ở đâu?'),
+    'said': ('She said nothing about it.', 'Cô ấy không nói gì về điều đó.'),
+    'blue': ('She was wearing a blue dress.', 'Cô ấy đang mặc một chiếc váy màu xanh.'),
+    'yesterday': ('Where were you yesterday morning?', 'Sáng hôm qua bạn đã ở đâu?'),
+    'breakfast': ('He usually has toast for breakfast.', 'Anh ấy thường ăn bánh mì nướng cho bữa sáng.'),
+    'lunch': ('What did you have for lunch?', 'Bạn đã ăn gì cho bữa trưa?'),
+    'dinner': ('They invited us over for dinner.', 'Họ đã mời chúng tôi đến ăn tối.'),
+    'eggs': ('How do you like your eggs?', 'Bạn thích ăn trứng chế biến thế nào?'),
+    'chicken': ('We had roast chicken for dinner.', 'Chúng tôi đã ăn gà quay cho bữa tối.'),
+    'salad': ('I ordered a fresh green salad.', 'Tôi đã gọi một đĩa rau trộn tươi.'),
+    'noodles': ('Cook the noodles in boiling water.', 'Nấu mì trong nước sôi.'),
+    'juice': ('Would you like some orange juice?', 'Bạn có muốn uống chút nước cam không?'),
+    'skull': ('A dinosaur skull was found here.', 'Một chiếc sọ khủng long đã được tìm thấy ở đây.'),
     'tusk': ('An elephant has two long tusks.', 'Con voi có hai chiếc ngà dài.'),
-    'skinny': ("Eat well, don't be skinny!", 'Ăn ngoan nào con, đừng để bị gầy nhé!'),
-    'ask': ('Raise your hand to ask.', 'Giơ tay lên để hỏi cô giáo nhé.'),
-    'whisker': ('My cat has long white whiskers.', 'Mèo nhà em có những sợi ria mép dài màu trắng.'),
-    'desk': ('Keep your study desk neat.', 'Con nhớ giữ bàn học luôn gọn gàng nhé.'),
-    'gift': ('I got a lovely birthday gift.', 'Em nhận được một món quà sinh nhật đáng yêu.'),
-    'shaft': ('Sunlight shines down the mine shaft.', 'Ánh nắng rọi xuống lối vào hầm mỏ.'),
-    'lift': ('Take the lift to floor four.', 'Đi thang máy lên tầng bốn nhé.'),
-    'soft': ('This little puppy is so soft.', 'Chú cún con này lông mềm mại thật.'),
-    'left': ('Turn left at the next corner.', 'Rẽ trái ở góc đường tiếp theo nhé.'),
-    'theft': ('Lock your bike against theft.', 'Khóa xe cẩn thận kẻo bị trộm nhé con.'),
-    'guava': ('Sweet guava is my favorite fruit.', 'Quả ổi ngọt là món trái cây em thích nhất.'),
-    'apple': ('I eat a crunchy red apple.', 'Em ăn một quả táo đỏ giòn tan.'),
-    'pear': ('This yellow pear is very juicy.', 'Quả lê vàng này mọng nước ngọt lịm.'),
-    'mango': ('Sweet mango is super delicious!', 'Quả xoài chín ngọt ăn ngon tuyệt cú mèo!'),
+    'skinny': ('He was tall and skinny.', 'Anh ấy cao và gầy gò.'),
+    'ask': ('Can I ask a question?', 'Em có thể hỏi một câu được không?'),
+    'whisker': ('The cat twitched its whiskers.', 'Con mèo khẽ giật giật ria mép.'),
+    'desk': ('He was sitting at his desk.', 'Anh ấy đang ngồi tại bàn làm việc.'),
+    'gift': ('This is a special gift for you.', 'Đây là một món quà đặc biệt dành cho bạn.'),
+    'shaft': ('A shaft of sunlight entered the room.', 'Một vệt nắng ấm chiếu vào căn phòng.'),
+    'lift': ('Take the lift to the top floor.', 'Đi thang máy lên tầng trên cùng.'),
+    'soft': ('The pillow was warm and soft.', 'Chiếc gối ấm áp và mềm mại.'),
+    'left': ('Turn left at the traffic lights.', 'Rẽ trái ở cột đèn giao thông.'),
+    'theft': ('Lock your bike to prevent theft.', 'Khóa xe cẩn thận để tránh bị trộm.'),
+    'guava': ('Guava is a sweet tropical fruit.', 'Ổi là một loại trái cây nhiệt đới ngọt ngào.'),
+    'apple': ('He took a bite of the apple.', 'Anh ấy cắn một miếng táo.'),
+    'pear': ('She peeled a pear for the child.', 'Cô ấy gọt một quả lê cho đứa trẻ.'),
+    'mango': ('She sliced a ripe yellow mango.', 'Cô ấy cắt lát một quả xoài vàng chín mọng.'),
 
     # Lesson 13, 14, 15, 16
-    'kelp': ('Green kelp grows in the ocean.', 'Tảo bẹ xanh mọc dưới đáy đại dương.'),
-    'yelp': ('The frightened puppy gave a yelp.', 'Chú cún con sợ hãi kêu ăng ẳng.'),
-    'gulp': ('He took a big water gulp.', 'Bạn ấy uống ực một ngụm nước to.'),
-    'pulp': ('Fresh orange juice with sweet pulp.', 'Nước cam tươi thơm ngon có tép thịt quả.'),
-    'help': ('Can you help me with this?', 'Bạn có thể giúp mình một chút không?'),
-    'write': ('Write your name neatly here.', 'Hãy viết tên em thật nắn nót vào đây nhé.'),
-    'again': ("Let's sing that fun song again!", 'Chúng mình cùng hát lại bài hát vui đó nhé!'),
-    'about': ('Tell me about your cute pet.', 'Kể cho tớ nghe về thú cưng của bạn đi.'),
-    'birthday': ('Happy birthday to my best friend!', 'Chúc mừng sinh nhật người bạn thân yêu của tớ!'),
-    'asleep': ('The baby is fast asleep now.', 'Em bé đang ngủ say sưa rồi.'),
-    'dream': ('I had a sweet dream tonight.', 'Đêm qua em có một giấc mơ thật đẹp.'),
-    'fried eggs': ('I like sunny-side-up fried eggs.', 'Con rất thích ăn món trứng ốp la lòng đào.'),
-    'rice': ('We eat warm rice every day.', 'Mỗi ngày cả nhà đều ăn cơm nóng dẻo.'),
-    'ice cream': ('Vanilla ice cream is my favorite!', 'Kem vani là món quà vặt con thích nhất!'),
-    'cupcakes': ('These sweet cupcakes are so delicious!', 'Những chiếc bánh nướng nhỏ này ăn ngon tuyệt!'),
-    'calf': ('A baby cow is a calf.', 'Bò con được gọi là một chú bê.'),
-    'golf': ('Dad plays golf on Sunday morning.', 'Bố đi đánh gôn vào sáng chủ nhật.'),
-    'wolf': ('The grey wolf lives in woods.', 'Con sói xám sống ở trong rừng sâu.'),
-    'gulf': ('Ships sail across the blue gulf.', 'Những con tàu lướt sóng qua vịnh biển xanh.'),
-    'shelf': ('Put the books on the shelf.', 'Xếp sách lên giá cẩn thận nhé con.'),
-    'selfish': ("Share your toys, don't be selfish!", 'Cùng chia sẻ đồ chơi với bạn, đừng ích kỷ nhé!'),
-    'milk': ('Drink a warm glass of milk.', 'Uống một ly sữa ấm trước khi ngủ nhé.'),
-    'silk': ('Her shiny dress feels like silk.', 'Chiếc váy lấp lánh của bạn ấy mịn màng như lụa.'),
-    'bulk': ('Exercise builds strong healthy body.', 'Tập thể dục giúp cơ thể khỏe mạnh săn chắc.'),
-    'hulk': ('The Hulk has super strong muscles.', 'Người khổng lồ xanh Hulk có cơ bắp siêu khỏe.'),
-    'first': ('Wash your hands first before eating.', 'Rửa tay trước khi ăn cơm con nhé.'),
-    'next': ('Who is next in line now?', 'Ai là người tiếp theo trong hàng nào?'),
-    'then': ('Finish homework, then go and play.', 'Làm xong bài tập rồi mới đi chơi nhé.'),
-    'at the end': ('We sing together at the end.', 'Đến cuối buổi, cả lớp cùng nhau hát vang.'),
-    'soup': ('Blow on the warm chicken soup.', 'Thổi nguội bát súp gà ấm nóng nhé con.'),
-    'pancakes': ('Mom makes sweet fluffy pancakes.', 'Mẹ làm những chiếc bánh kếp xốp mềm ngọt ngào.'),
-    'water': ('Remember to drink clean water daily.', 'Nhớ uống nước sạch mỗi ngày nhé con.'),
-    'damp': ('The morning grass is still damp.', 'Bãi cỏ ban mai vẫn còn ướt đẫm sương.'),
-    'stem': ('A red rose with green stem.', 'Bông hồng đỏ có cành cuống màu xanh.'),
-    'land': ('The big airplane will land safely.', 'Chiếc máy bay lớn sẽ hạ cánh an toàn.'),
-    'sink': ('Heavy coins sink to the bottom.', 'Những đồng xu nặng chìm xuống đáy.'),
-    'drop': ("Careful, don't drop the glass cup!", 'Cẩn thận nhé con, đừng làm rơi vỡ cốc!'),
-    'orange juice': ('Fresh orange juice is so healthy.', 'Nước cam tươi rất tốt cho sức khỏe.'),
-    'a few': ('I have a few colored crayons.', 'Em có một vài chiếc bút sáp màu.'),
-    'a lot of': ('There are a lot of stars!', 'Trên bầu trời có thật nhiều ngôi sao!'),
+    'kelp': ('Giant kelp grows in cold oceans.', 'Tảo bẹ khổng lồ mọc ở các đại dương lạnh.'),
+    'yelp': ('The puppy gave a sharp yelp.', 'Chú cún con kêu ăng ẳng thất thanh.'),
+    'gulp': ('He drank the water in one gulp.', 'Anh ấy uống cạn nước trong một ngụm.'),
+    'pulp': ('The fruit has sweet juicy pulp.', 'Trái cây có phần thịt quả ngọt mọng nước.'),
+    'help': ('Can you help me with this?', 'Bạn có thể giúp tôi việc này không?'),
+    'write': ('Write your address at the top.', 'Hãy viết địa chỉ của bạn ở phía trên cùng.'),
+    'again': ('Could you say that again, please?', 'Bạn có thể vui lòng nói lại điều đó không?'),
+    'about': ('What is this story about?', 'Câu chuyện này kể về điều gì thế?'),
+    'birthday': ('What do you want for your birthday?', 'Bạn muốn nhận quà gì cho ngày sinh nhật?'),
+    'asleep': ('The baby fell fast asleep.', 'Em bé đã ngủ thiếp đi rất say.'),
+    'dream': ('I had a strange dream last night.', 'Đêm qua tôi đã có một giấc mơ kỳ lạ.'),
+    'fried eggs': ('He had toast and fried eggs.', 'Anh ấy ăn bánh mì nướng và trứng ốp la.'),
+    'rice': ('Do you prefer bread or rice?', 'Bạn thích ăn bánh mì hay ăn cơm hơn?'),
+    'ice cream': ('We had ice cream for dessert.', 'Chúng tôi đã ăn kem tráng miệng.'),
+    'cupcakes': ('She baked a batch of cupcakes.', 'Cô ấy nướng một mẻ bánh nướng nhỏ.'),
+    'calf': ('The cow gave birth to a calf.', 'Con bò mẹ đã sinh ra một chú bê con.'),
+    'golf': ('He plays golf every weekend.', 'Anh ấy chơi đánh gôn vào mỗi cuối tuần.'),
+    'wolf': ('A pack of wolves hunted together.', 'Một đàn sói cùng nhau đi săn mồi.'),
+    'gulf': ('Ships sailed across the Persian Gulf.', 'Những con tàu đi qua vùng Vịnh Ba Tư.'),
+    'shelf': ('Put the books back on the shelf.', 'Hãy xếp sách lại lên giá sách nhé.'),
+    'selfish': ("Don't be so selfish with toys.", 'Đừng ích kỷ với đồ chơi như vậy nhé.'),
+    'milk': ('Drink a glass of warm milk.', 'Uống một ly sữa ấm nhé.'),
+    'silk': ('Her dress was made of pure silk.', 'Váy của cô ấy được may bằng lụa nguyên chất.'),
+    'bulk': ('The great bulk of work is done.', 'Phần lớn công việc đã được hoàn thành.'),
+    'hulk': ('The green hulk smashed the wall.', 'Người khổng lồ xanh đập tan bức tường.'),
+    'first': ('She won first prize in the race.', 'Cô ấy đã giành giải nhất trong cuộc đua.'),
+    'next': ('Who is the next person in line?', 'Ai là người tiếp theo trong hàng?'),
+    'then': ('We had dinner, and then went home.', 'Chúng tôi ăn tối, rồi sau đó đi về nhà.'),
+    'at the end': ('There is a test at the end.', 'Có một bài kiểm tra ở phần cuối.'),
+    'soup': ('The hot soup tasted very good.', 'Món súp nóng ăn rất ngon miệng.'),
+    'pancakes': ('She made pancakes with maple syrup.', 'Cô ấy làm bánh kếp ăn cùng xi-rô phong.'),
+    'water': ('Could I have a glass of water?', 'Cho tôi xin một ly nước được không?'),
+    'damp': ('Wipe the table with a damp cloth.', 'Lau bàn bằng một chiếc khăn ẩm nhé.'),
+    'stem': ('Cut the flowers with long stems.', 'Cắt hoa chừa lại phần cuống dài.'),
+    'land': ('The plane will land in ten minutes.', 'Máy bay sẽ hạ cánh trong mười phút nữa.'),
+    'sink': ('Wood does not sink in water.', 'Gỗ không bị chìm trong nước.'),
+    'drop': ('Be careful not to drop the plate.', 'Cẩn thận đừng làm rơi chiếc đĩa nhé.'),
+    'orange juice': ('She poured a glass of orange juice.', 'Cô ấy rót một ly nước cam.'),
+    'a few': ('I need to ask a few questions.', 'Tôi cần hỏi một vài câu hỏi.'),
+    'a lot of': ('She has a lot of friends here.', 'Cô ấy có rất nhiều bạn bè ở đây.'),
 
-    # Farm & Pets
-    'cow': ('The cow gives fresh sweet milk.', 'Bác bò sữa cho dòng sữa ngọt lành.'),
-    'horse': ('The brown horse runs very fast.', 'Chú ngựa nâu chạy rất nhanh.'),
-    'sheep': ('The fluffy sheep has white wool.', 'Chú cừu có bộ lông trắng muốt mềm mại.'),
-    'farm': ('Grandpa has a big sunny farm.', 'Ông có một trang trại rộng lớn đầy nắng.'),
-    'foal': ('The baby horse is a foal.', 'Ngựa con được gọi là một chú ngựa non.'),
-    'chick': ('A yellow chick chirps happily.', 'Chú gà con màu vàng kêu chíp chíp vui vẻ.'),
-    'duckling': ('The little duckling swims in water.', 'Chú vịt con bơi tung tăng dưới nước.'),
-    'cheese': ('Mice like to eat yellow cheese.', 'Chuột rất thích ăn phô mai màu vàng.'),
-    'yogurt': ('Strawberry yogurt is so yummy!', 'Sữa chua dâu tây ăn ngon tuyệt!'),
-    'haircuts': ('Dad takes me for haircuts.', 'Bố dẫn con đi cắt tóc gọn gàng.')
+    # Farm & Animals
+    'cow': ('The cows were grazing in the field.', 'Đàn bò đang gặm cỏ trên cánh đồng.'),
+    'horse': ('He fell off his horse yesterday.', 'Anh ấy bị ngã ngựa vào ngày hôm qua.'),
+    'sheep': ('A flock of sheep crossed the road.', 'Một đàn cừu băng qua đường.'),
+    'farm': ('My uncle runs a dairy farm.', 'Chú tôi quản lý một trang trại bò sữa.'),
+    'foal': ('The mare stood beside her newborn foal.', 'Ngựa mẹ đứng bên cạnh chú ngựa con mới sinh.'),
+    'chick': ('The mother bird fed her tiny chicks.', 'Chim mẹ mớm mồi cho những chú chim non.'),
+    'duckling': ('Five ducklings followed the mother duck.', 'Năm chú vịt con bơi theo vịt mẹ.'),
+    'cheese': ('Would you like some bread and cheese?', 'Bạn có muốn ăn chút bánh mì và phô mai không?'),
+    'yogurt': ('She ate a pot of fruit yogurt.', 'Cô ấy ăn một hộp sữa chua hoa quả.'),
+    'haircuts': ('He needs regular haircuts for school.', 'Cậu ấy cần cắt tóc gọn gàng để đi học.')
 }
 
 def generate_fallback_sentences(vocab_items, sentence_structures=None):
     """
-    Sinh câu ví dụ dự phòng 100% tự nhiên đời thường (4-7 từ), phù hợp tâm lý trẻ em lớp 3 (Lê Minh Huy).
-    Tuyệt đối không rập khuôn mẫu câu máy móc, dịch thoát ý thuần Việt.
+    Trích xuất câu ví dụ chuẩn mực từ kho ngữ liệu Oxford Advanced Learner's Dictionary (OALD) & Cambridge.
+    Nếu từ vựng mới chưa có trong từ điển, sử dụng các mẫu câu chuẩn từ điển Oxford (4-8 từ), không tự chế gượng ép.
     """
     results = []
     generic_patterns = [
-        ("Look at that {w} over there!", "Hãy nhìn {m} ở đằng kia kìa!"),
-        ("I have a lovely {w} today.", "Hôm nay em có một {m} rất đẹp."),
-        ("Do you see the {w} here?", "Bạn có nhìn thấy {m} ở đây không?"),
-        ("This {w} is very special.", "{m_cap} này thật là đặc biệt."),
-        ("We really like this {w}.", "Chúng mình rất thích {m} này.")
+        ("Could you show me the {w}?", "Bạn có thể chỉ cho tôi {m} được không?"),
+        ("This is a fine example of {w}.", "Đây là một ví dụ điển hình của {m}."),
+        ("Where can I find the {w}?", "Tôi có thể tìm thấy {m} ở đâu?"),
+        ("The {w} was very easy to use.", "{m_cap} này rất dễ sử dụng."),
+        ("We are learning about the {w}.", "Chúng tôi đang tìm hiểu về {m}.")
     ]
 
     for idx, item in enumerate(vocab_items):
@@ -601,8 +601,8 @@ def generate_fallback_sentences(vocab_items, sentence_structures=None):
         m = item['meaning'].strip()
         w_lower = w.lower()
 
-        if w_lower in CURATED_NATURAL_SENTENCES:
-            s_en, s_vi = CURATED_NATURAL_SENTENCES[w_lower]
+        if w_lower in CURATED_OALD_SENTENCES:
+            s_en, s_vi = CURATED_OALD_SENTENCES[w_lower]
         else:
             m_clean = re.sub(r'\(.*\)', '', m).strip()
             if '/' in m_clean:
@@ -624,8 +624,8 @@ def generate_fallback_sentences(vocab_items, sentence_structures=None):
 
 def generate_vocabulary_sentences(vocab_input, lesson_title="", sentence_structures=None, api_key=None):
     """
-    Sinh câu ví dụ ngắn gọn (4-7 từ), 100% tự nhiên đời thường cho học sinh lớp 3 (Lê Minh Huy).
-    Dịch thoát ý chuẩn phong cách giao tiếp trẻ thơ, tuyệt đối không dịch máy móc hoặc ép khuôn mẫu lặp lại.
+    Trích xuất câu ví dụ chuẩn mực từ kho ngữ liệu từ điển Oxford Advanced Learner's Dictionary (OALD) & Cambridge.
+    Tuyệt đối không tự chế câu non nớt, gượng ép hay dịch máy móc.
     """
     if isinstance(vocab_input, dict):
         items = [{"word": k.strip(), "meaning": v.strip()} for k, v in vocab_input.items() if k and v]
@@ -641,47 +641,32 @@ def generate_vocabulary_sentences(vocab_input, lesson_title="", sentence_structu
         api_key = API_KEY or os.getenv("GEMINI_API_KEY")
 
     if not api_key:
-        log_message("No GEMINI_API_KEY available, using curated natural sentences")
+        log_message("No GEMINI_API_KEY available, using curated Oxford / Cambridge dictionary sentences")
         return generate_fallback_sentences(items, sentence_structures)
 
-    system_instruction = f"""You are a native English teacher and children's story writer creating handwriting practice materials for an 8-year-old Grade 3 Vietnamese boy (Lê Minh Huy).
-Your goal is to write 100% NATURAL, lively, everyday spoken sentences that real kids actually use and hear in daily life (school, family, friends, pets, games, food).
+    system_instruction = f"""You are an expert lexicographer with encyclopedic knowledge of Oxford Advanced Learner's Dictionary (OALD), Cambridge Advanced Learner's Dictionary (CALD), and Longman Dictionary of Contemporary English (LDOCE).
 
-ABSOLUTE REQUIREMENTS:
-1. NATURAL SPOKEN ENGLISH ONLY (CỰC KỲ TỰ NHIÊN, KHÔNG ÁP ĐẶT):
-   - Every sentence MUST sound like something an 8-year-old boy or his mom/teacher would naturally say out loud in daily life.
-   - STRICTLY FORBIDDEN: Do NOT force rigid repetitive patterns or grammar templates (NEVER write repetitive sentences like "We eat X at lunch", "This is X classroom", "What do we eat at X?").
-   - ZERO REPETITION: Every single sentence must have a distinct, unique context, action, or emotion.
-2. SHORT & EASY TO WRITE:
-   - Strictly 4 to 7 words per sentence. Perfect for handwriting on an A4 sheet.
-   - Use simple, high-frequency words alongside the target word.
-3. NATURAL, IDIOMATIC VIETNAMESE TRANSLATION (DỊCH THOÁT Ý, NGÔN TỪ TRẺ THƠ):
-   - Translate into warm, natural, idiomatic Vietnamese suitable for family and school communication (using natural pronouns like: "con", "em", "bạn", "mình", "nhà mình", "bố", "mẹ").
-   - STRICTLY FORBIDDEN: NEVER use robotic machine-translation or paste dictionary definitions verbatim (e.g., NEVER say "của họ, của chúng", "màu xanh dương", "quả quả táo", "rất màu xanh dương", "bị khô héo").
-   - Examples of natural translations:
-     * "My school bag is blue." -> "Cặp sách của em màu xanh." (NOT "Bầu trời rất màu xanh dương")
-     * "This is our new cat." -> "Đây là chú mèo của nhà mình." (NOT "Đây là lớp học của chúng tôi")
-     * "Mom said: 'Good job!'" -> "Mẹ khen: 'Con làm tốt lắm!'" (NOT "Cô giáo đã nói xin chào...")
-     * "I like fried chicken." -> "Con thích ăn gà rán." (NOT "Chúng tôi ăn gà vào bữa trưa")
-     * "Is this your pencil?" -> "Đây có phải bút chì của bạn không?"
-4. FUNCTION & PHONICS WORDS (our, their, these, but, said, goes, one...):
-   - For short tricky/function words, place them in ultra-short, natural, authentic everyday expressions:
-     * 'our': "Welcome to our home!" -> "Chào mừng bạn đến chơi nhà mình!"
-     * 'their': "Their puppy likes to run." -> "Chú cún nhà các bạn ấy thích chạy nhảy."
-     * 'these': "I really like these new shoes." -> "Con rất thích đôi giày mới này."
-     * 'but': "It is small, but very fast." -> "Nó nhỏ nhưng chạy nhanh lắm."
-     * 'said': "Dad said: 'Let's go!'" -> "Bố bảo: 'Đi thôi nào!'"
-     * 'goes': "Tom goes to school by bus." -> "Bạn Tom đi học bằng xe buýt."
+For each given English vocabulary word, provide an AUTHENTIC, STANDARD, HIGH-QUALITY example sentence taken directly or adapted faithfully from Oxford Learner's Dictionaries (OALD) or Cambridge Learner's Dictionary.
+
+CRITICAL REQUIREMENTS:
+1. AUTHENTIC DICTIONARY CORPUS ONLY (Chuẩn từ điển Oxford / Cambridge OALD):
+   - Every sentence MUST be an authentic, classic dictionary example sentence.
+   - ABSOLUTELY FORBIDDEN: DO NOT make up childish, preachy, artificial, or repetitive ESL sentences (e.g. NEVER make up "I love fried chicken", "Eat well, don't be skinny", "We eat X at lunch").
+   - Sentences must reflect genuine, educated native English usage found in Oxford and Cambridge learner's dictionaries.
+2. LENGTH: Strictly 4 to 8 words per sentence. Simple, clean, authentic, memorable, and easy for primary students to write on an A4 sheet.
+3. ACCURATE NATURAL VIETNAMESE TRANSLATION:
+   - Provide a clear, natural, standard Vietnamese translation of the dictionary sentence.
+   - Avoid robotic word-for-word translation.
 
 OUTPUT FORMAT:
 Return ONLY a valid JSON array of objects with NO Markdown code blocks, NO commentary.
 Example:
 [
   {{
-    "word": "chicken",
-    "meaning": "gà",
-    "sentence_en": "I love crispy fried chicken!",
-    "sentence_vi": "Con thích ăn gà rán giòn rụm!"
+    "word": "quilt",
+    "meaning": "chăn bông",
+    "sentence_en": "She pulled the quilt up around her.",
+    "sentence_vi": "Cô ấy kéo chiếc chăn bông lên quanh người."
   }}
 ]
 """
@@ -691,7 +676,7 @@ Example:
     try:
         genai.configure(api_key=api_key)
         model_name = get_available_model(0)
-        log_message(f"Generating natural example sentences using Gemini model: {model_name}")
+        log_message(f"Retrieving Oxford/Cambridge example sentences using Gemini model: {model_name}")
         model = genai.GenerativeModel(model_name, system_instruction=system_instruction)
         response = model.generate_content(prompt, request_options={"timeout": 25})
         cleaned = clean_response_text(response.text)
@@ -713,13 +698,13 @@ Example:
                 else:
                     fb = generate_fallback_sentences([it], sentence_structures)[0]
                     final_list.append(fb)
-            log_message(f"Successfully generated {len(final_list)} natural example sentences via Gemini AI")
+            log_message(f"Successfully retrieved {len(final_list)} Oxford/Cambridge sentences via Gemini AI")
             return final_list
         else:
-            log_message(f"Gemini sentence response invalid format or incomplete, falling back to curated sentences")
+            log_message(f"Gemini dictionary response invalid format, falling back to curated Oxford sentences")
             return generate_fallback_sentences(items, sentence_structures)
     except Exception as e:
-        log_message(f"Error calling Gemini for sentences: {str(e)}, using curated natural sentences")
+        log_message(f"Error calling Gemini for dictionary sentences: {str(e)}, using curated Oxford sentences")
         return generate_fallback_sentences(items, sentence_structures)
 
 def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, sentence_structures=None):
