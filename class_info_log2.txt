@@ -2430,3 +2430,6 @@ Con thể hiện sự tập trung cao, thái độ học tập ngoan ngoãn và 
 [2026-10-26 10:02:22] Completed detailed Telegram notifications
 [2026-10-26 10:02:22] Git repository detected
 [2026-10-26 10:02:22] Committing and pushing Report and vocab files to GitHub
+[2026-10-26 10:02:23] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-10-26 10:02:23] Closing WebDriver
+[2026-10-26 10:02:24] Script completed
