@@ -2780,3 +2780,54 @@ Con tiếp thu bài tốt, con đọc rõ ràng âm cũng như các từ vựng 
 [2026-10-29 23:31:58] Latest class on 2026-10-27 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf. Exiting.
 [2026-10-29 23:31:58] Closing WebDriver
 [2026-10-29 23:31:58] Script completed
+[2026-10-29 23:46:13] Starting script
+[2026-10-29 23:46:13] Starting report check for calendar overview
+[2026-10-29 23:46:13] Loaded processed2.json: {'date': '2026-10-27', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf'}}
+[2026-10-29 23:46:13] Writing Google credentials to credentials.json
+[2026-10-29 23:46:13] Credentials written successfully
+[2026-10-29 23:46:13] Initializing Chrome WebDriver
+[2026-10-29 23:47:12] WebDriver session ID: 438bebfc9dd713a34b6f6b400f9ff339
+[2026-10-29 23:48:12] WebDriver unresponsive: Message: timeout: Timed out receiving message from renderer: 60.000
+  (Session info: chrome=156.0.8078.47)
+Stacktrace:
+#0 0x55f13f1840aa <unknown>
+#1 0x55f13eab7875 <unknown>
+#2 0x55f13eaa7802 <unknown>
+#3 0x55f13eaa7576 <unknown>
+#4 0x55f13eaa5cfb <unknown>
+#5 0x55f13eaa610f <unknown>
+#6 0x55f13eab16f6 <unknown>
+#7 0x55f13eac2740 <unknown>
+#8 0x55f13eac83eb <unknown>
+#9 0x55f13eaa69e7 <unknown>
+#10 0x55f13eaa6708 <unknown>
+#11 0x55f13eac2603 <unknown>
+#12 0x55f13eb3599d <unknown>
+#13 0x55f13eaf0a07 <unknown>
+#14 0x55f13eaefd1e <unknown>
+#15 0x55f13eaf07f1 <unknown>
+#16 0x55f13f146c5c <unknown>
+#17 0x55f13f145475 <unknown>
+#18 0x55f13f1307f8 <unknown>
+#19 0x55f13f1460ca <unknown>
+#20 0x55f13f1193f9 <unknown>
+#21 0x55f13f16e848 <unknown>
+#22 0x55f13f16e9e5 <unknown>
+#23 0x55f13f182a43 <unknown>
+#24 0x7f5806a9cb84 <unknown>
+#25 0x7f5806b29ecc <unknown>
+
+[2026-10-29 23:48:12] Restarting WebDriver
+[2026-10-29 23:48:13] Attempting to restore session from cache...
+[2026-10-29 23:48:21] Navigating to student calendar overview with restored session...
+[2026-10-29 23:48:29] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-29 23:48:29] Attempting to restore session from cache...
+[2026-10-29 23:48:31] Navigating to student calendar overview with restored session...
+[2026-10-29 23:48:36] Session verified successfully! Calendar events loaded without fresh login.
+[2026-10-29 23:48:36] Active session restored, bypassed fresh login!
+[2026-10-29 23:48:36] Scrolled to bottom of page
+[2026-10-29 23:48:36] Found 24 class events
+[2026-10-29 23:48:37] Latest class date up to today: 2026-10-27
+[2026-10-29 23:48:37] Latest class on 2026-10-27 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf. Exiting.
+[2026-10-29 23:48:37] Closing WebDriver
+[2026-10-29 23:48:37] Script completed
