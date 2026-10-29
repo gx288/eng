@@ -399,8 +399,20 @@ def is_git_repository():
 
 # Escape MarkdownV2 characters
 def escape_markdown_v2(text):
+    if not text:
+        return ""
+    text = str(text).replace('\\', '\\\\')
     special_chars = r'([_*[\](){}~`>#+=|.!-])'
     return re.sub(special_chars, r'\\\g<1>', text)
+
+async def safe_send_message(bot, chat_id, raw_text):
+    """Gửi tin nhắn Telegram an toàn: thử MarkdownV2 trước, nếu lỗi định dạng tự động fallback sang plain text"""
+    try:
+        await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(raw_text), parse_mode='MarkdownV2')
+    except Exception as e:
+        log_message(f"MarkdownV2 send warning ({e}), falling back to plain text")
+        clean_plain = raw_text.replace('*', '').replace('`', '')
+        await bot.send_message(chat_id=chat_id, text=clean_plain)
 
 # Send detailed Telegram message
 
@@ -830,20 +842,25 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
 
     def render_page(items, p_idx):
         rows = []
+        import html as _html
         for it in items:
+            w_esc = _html.escape(str(it.get('word', '')))
+            m_esc = _html.escape(str(it.get('meaning', '')))
+            se_esc = _html.escape(str(it.get('sentence_en', '')))
+            sv_esc = _html.escape(str(it.get('sentence_vi', '')))
             rows.append(f"""          <tr class="row-word">
-            <td class="col-en">{it['word']}</td>
-            <td class="col-vi">{it['meaning']}</td>
+            <td class="col-en">{w_esc}</td>
+            <td class="col-vi">{m_esc}</td>
             <td class="col-write"></td>
             <td class="col-write"></td>
             <td class="col-write"></td>
           </tr>
           <tr class="row-sentence">
             <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> {it['sentence_en']}
+              <span class="badge-vd">VD</span> {se_esc}
             </td>
             <td class="col-sent-vi">
-              {it['sentence_vi']}
+              {sv_esc}
             </td>
             <td colspan="2" class="col-sent-write"></td>
           </tr>""")
@@ -1146,7 +1163,7 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
             f"🏫 *Lớp*: {result_data['class_name']}"
         )
         log_message(f"Sending general info message to chat_id {chat_id}: {general_info[:100]}...")
-        await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(general_info), parse_mode='MarkdownV2')
+        await safe_send_message(bot, chat_id, general_info)
         log_message(f"Sent general info message to chat_id {chat_id}")
         await asyncio.sleep(0.5)
 
@@ -1155,7 +1172,7 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
         )
         if result_data['new_vocabulary']:
             log_message(f"Sending vocabulary message to chat_id {chat_id}: {vocab_text[:100]}...")
-            await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(vocab_text), parse_mode='MarkdownV2')
+            await safe_send_message(bot, chat_id, vocab_text)
             log_message(f"Sent vocabulary message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
@@ -1166,21 +1183,21 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
         )
         if result_data['sentence_structures']:
             log_message(f"Sending sentence structures message to chat_id {chat_id}: {sentence_text[:100]}...")
-            await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(sentence_text), parse_mode='MarkdownV2')
+            await safe_send_message(bot, chat_id, sentence_text)
             log_message(f"Sent sentence structures message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
         homework_text = f"*BÀI TẬP VỀ NHÀ - {result_data['report_date']}*\n{result_data['homework']}"
         if result_data['homework'] and result_data['homework'] != "cannot find info":
             log_message(f"Sending homework message to chat_id {chat_id}: {homework_text[:100]}...")
-            await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(homework_text), parse_mode='MarkdownV2')
+            await safe_send_message(bot, chat_id, homework_text)
             log_message(f"Sent homework message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
         comments_text = f"*NHẬN XÉT VỀ MINH HUY - {result_data['report_date']}*\n{result_data['student_comments_minh_huy'] or 'Không có nhận xét'}"
         if result_data['student_comments_minh_huy'] and result_data['student_comments_minh_huy'] != "cannot find info":
             log_message(f"Sending comments message to chat_id {chat_id}: {comments_text[:100]}...")
-            await bot.send_message(chat_id=chat_id, text=escape_markdown_v2(comments_text), parse_mode='MarkdownV2')
+            await safe_send_message(bot, chat_id, comments_text)
             log_message(f"Sent comments message to chat_id {chat_id}")
             await asyncio.sleep(0.5)
 
@@ -1242,16 +1259,22 @@ def parse_report_from_text(pdf_text, date_str, pdf_links=None):
     lines = pdf_text.splitlines()
     for line in lines:
         line = line.strip()
-        if not line or len(line) > 80:
+        if not line or len(line) > 120:
             continue
-        pairs = re.findall(r'([a-zA-Z\s\-]{2,25})\s*[:：]\s*([a-zA-ZÀ-ỹ0-9\s,\(\)\/\.]{2,40})', line)
-        for w, m in pairs:
-            w_clean = w.strip().lower()
-            m_clean = m.strip()
-            if any(skip in w_clean for skip in ['class', 'lesson', 'date', 'skills', 'link', 'audio', 'phonic']):
+        # Tách các cột từ vựng đánh số trên cùng 1 dòng (VD: "1. unhealthy: không lành mạnh 6. healthy: lành mạnh")
+        segments = re.split(r'(?:^|\s+)\d+\.\s*', line)
+        for seg in segments:
+            seg = seg.strip()
+            if not seg:
                 continue
-            if w_clean and m_clean:
-                vocab[w_clean] = m_clean
+            pairs = re.findall(r'([a-zA-Z\s\-]{2,25})\s*[:：]\s*([^:：\n\r]{1,40})', seg)
+            for w, m in pairs:
+                w_clean = w.strip().lower()
+                m_clean = re.sub(r'\s+\d+\.?$', '', m.strip()).strip()
+                if any(skip in w_clean for skip in ['class', 'lesson', 'date', 'skills', 'link', 'audio', 'phonic', 'words', 'grammar', 'summary']):
+                    continue
+                if w_clean and m_clean:
+                    vocab[w_clean] = m_clean
 
     log_message(f"Fallback extracted: title='{lesson_title}', vocab_count={len(vocab)}")
     return {
@@ -1652,6 +1675,8 @@ def process_report():
                         k: v for k, v in extracted_data['sentence_structures'].items()
                         if v is not None and (isinstance(v, str) or (isinstance(v, list) and all(isinstance(x, str) for x in v)))
                     }
+                    if not extracted_data.get('new_vocabulary') or extracted_data.get('lesson_title') in (None, '', 'cannot find info'):
+                        raise ValueError("Gemini returned empty new_vocabulary or invalid lesson_title")
                     if best_response is None or len(extracted_data.get('new_vocabulary', {})) > len(best_response.get('new_vocabulary', {})):
                         best_response = extracted_data
                     log_message(f"API attempt {attempt + 1} successful")
