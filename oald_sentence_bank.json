@@ -249,7 +249,7 @@
   ],
   "milk": [
     "Drink a glass of warm milk.",
-    "Uống một ly sữa ấm nhé."
+    "Hãy uống một ly sữa ấm nhé."
   ],
   "silk": [
     "Her dress was made of pure silk.",
@@ -364,247 +364,335 @@
     "Cậu ấy cần cắt tóc gọn gàng để đi học."
   ],
   "act": [
-    "You have committed a serious criminal act.",
-    "Bạn đã phạm một hành vi tội phạm nghiêm trọng."
+    "She knows how to act on stage.",
+    "Cô ấy biết cách diễn xuất trên sân khấu."
   ],
   "fact": [
-    "First, somebasic factsabout healthy eating.",
-    "Đầu tiên, một số thông tin cơ bản về ăn uống lành mạnh."
+    "It is a well-known scientific fact.",
+    "Đó là một sự thật khoa học ai cũng biết."
   ],
   "strict": [
-    "The head teacher imposed very strict discipline.",
-    "Hiệu trưởng áp đặt kỷ luật rất nghiêm khắc."
+    "Our parents are very strict with us.",
+    "Bố mẹ rất nghiêm khắc với chúng tôi."
   ],
   "insect": [
-    "Most birds spend most of the day eating insects.",
-    "Hầu hết các loài chim dành phần lớn thời gian trong ngày để ăn côn trùng."
+    "Birds love to eat small insects.",
+    "Các loài chim rất thích ăn côn trùng nhỏ."
   ],
   "object": [
-    "everyday objects such as cups and saucers",
-    "những vật dụng hàng ngày như cốc, đĩa"
+    "What is that strange metal object?",
+    "Đồ vật bằng kim loại kỳ lạ kia là gì vậy?"
   ],
   "subject": [
-    "Walker's work has been thesubject ofmuchdebate.",
-    "Công việc của Walker là chủ đề của nhiều cuộc tranh luận."
+    "English is my favourite school subject.",
+    "Tiếng Anh là môn học yêu thích của em ở trường."
   ],
   "plants": [
     "All plants need light and water.",
-    "Tất cả các loại cây đều cần ánh sáng và nước."
+    "Tất cả thực vật đều cần ánh sáng và nước."
   ],
   "animals": [
-    "Fish oils are less saturated than animal fats.",
-    "Dầu cá ít bão hòa hơn mỡ động vật."
+    "Children love learning about wild animals.",
+    "Trẻ em rất thích tìm hiểu về các loài động vật hoang dã."
   ],
   "vegetables": [
-    "The children don't eat enoughfresh vegetables.",
-    "Trẻ em không ăn đủ rau tươi."
+    "Eat plenty of fresh fruit and vegetables.",
+    "Hãy ăn thật nhiều trái cây và rau củ tươi."
   ],
   "fruits": [
-    "Eat plenty offresh fruitand vegetables.",
-    "Ăn nhiều trái cây và rau quả tươi."
+    "Citrus fruits are rich in vitamin C.",
+    "Các loại quả có múi rất giàu vitamin C."
   ],
   "oranges": [
-    "Would you like some orange?",
-    "Bạn có muốn một chút cam không?"
+    "She bought a bag of sweet oranges.",
+    "Cô ấy mua một túi cam ngọt."
   ],
   "text": [
-    "a computer that can process text",
-    "một máy tính có thể xử lý văn bản"
+    "Read the text carefully before answering.",
+    "Hãy đọc kỹ văn bản trước khi trả lời."
   ],
   "context": [
-    "His decision can only be understood in context.",
-    "Quyết định của ông chỉ có thể được hiểu trong bối cảnh."
+    "Guess the meaning from the context.",
+    "Hãy đoán nghĩa của từ dựa vào ngữ cảnh."
   ],
   "extend": [
-    "The Democratic candidateextended herearlyleadin the polls.",
-    "Ứng cử viên Đảng Dân chủ đã sớm dẫn đầu trong các cuộc thăm dò."
+    "They plan to extend the school library.",
+    "Họ dự định mở rộng thư viện trường học."
   ],
   "before": [
-    "You should have told me so before.",
-    "Lẽ ra cậu nên nói với tôi như vậy trước đây."
+    "Wash your hands before having dinner.",
+    "Hãy rửa tay sạch trước khi ăn tối nhé."
   ],
   "after": [
-    "I'll call you after I've spoken to them.",
-    "Tôi sẽ gọi cho bạn sau khi tôi nói chuyện với họ."
+    "We played football after school yesterday.",
+    "Chúng tôi đã chơi bóng đá sau giờ học hôm qua."
   ],
   "use": [
-    "use something, Can I use the photocopier?",
-    "sử dụng cái gì đó, Tôi có thể sử dụng máy photocopy không?"
+    "Can I use your pencil, please?",
+    "Mình mượn bút chì của bạn nhé?"
   ],
   "thank": [
-    "She said goodbye and thanked us for coming.",
-    "Cô ấy nói lời tạm biệt và cảm ơn chúng tôi đã đến."
+    "She thanked us warmly for coming.",
+    "Cô ấy cảm ơn chúng tôi nồng nhiệt vì đã đến."
   ],
   "fish": [
-    "They caught several fish.",
-    "Họ bắt được vài con cá."
+    "My grandfather caught three big fish.",
+    "Ông tôi đã câu được ba con cá to."
   ],
   "meat": [
-    "Do you eat meat?",
-    "Bạn có ăn thịt không?"
+    "Keep raw meat in the fridge.",
+    "Hãy bảo quản thịt sống ở trong tủ lạnh."
   ],
   "morning": [
-    "They left for Spain early this morning.",
-    "Họ khởi hành đi Tây Ban Nha vào sáng sớm nay."
+    "They left early in the morning.",
+    "Họ đã khởi hành từ sáng sớm."
   ],
   "afternoon": [
-    "In the afternoon, they went shopping.",
-    "Buổi chiều, họ đi mua sắm."
+    "We went swimming in the afternoon.",
+    "Chúng tôi đã đi bơi vào buổi chiều."
   ],
   "evening": [
     "Remember to call me this evening.",
-    "Tối nay nhớ gọi cho tôi nhé."
+    "Tối nay nhớ gọi điện cho tôi nhé."
   ],
   "food": [
-    "Pat had preparedfood and drinkfor the work party.",
-    "Pat đã chuẩn bị đồ ăn và đồ uống cho bữa tiệc làm việc."
+    "They brought plenty of food and drink.",
+    "Họ mang theo rất nhiều đồ ăn và thức uống."
   ],
   "play": [
-    "You'll have to play inside today.",
-    "Hôm nay bạn sẽ phải chơi bên trong."
+    "The children are playing in the park.",
+    "Bọn trẻ đang vui chơi ngoài công viên."
   ],
   "recycling": [
     "Remember to take out the recycling.",
-    "Hãy nhớ lấy rác tái chế ra."
+    "Hãy nhớ mang rác tái chế ra ngoài nhé."
   ],
   "paint": [
-    "The paint is starting to peel off.",
-    "Lớp sơn đang bắt đầu bong ra."
+    "The wet paint is starting to dry.",
+    "Lớp sơn ướt đang bắt đầu khô lại."
   ],
   "tent": [
-    "Food will be served in the hospitality tent.",
-    "Thức ăn sẽ được phục vụ trong lều khách sạn."
+    "We pitched our tent near the river.",
+    "Chúng tôi dựng lều ở gần bờ sông."
   ],
   "vent": [
-    "He vented his anger on the referee.",
-    "Anh trút giận lên trọng tài."
+    "Fresh air comes through the ceiling vent.",
+    "Không khí trong lành đi qua lỗ thông gió."
   ],
   "mint": [
-    "The bills were fresh from the mint.",
-    "Những tờ tiền còn mới nguyên."
+    "She planted fresh mint in the garden.",
+    "Cô ấy trồng rau bạc hà tươi trong vườn."
   ],
   "hunt": [
-    "The hunt is on for a suitable candidate.",
-    "Cuộc săn lùng một ứng cử viên phù hợp đang được tiến hành."
+    "Lions often hunt for food at night.",
+    "Sư tử thường đi săn mồi vào ban đêm."
   ],
   "ink": [
-    "in ink, written in ink",
-    "bằng mực, viết bằng mực"
+    "Please write your answers in black ink.",
+    "Vui lòng viết câu trả lời bằng mực đen."
   ],
   "wink": [
-    "She gave him a knowing wink.",
-    "Cô nháy mắt đầy hiểu biết với anh."
+    "He gave me a friendly wink.",
+    "Anh ấy nháy mắt thân thiện với tôi."
   ],
   "think": [
-    "think (that)…, Do you really think (that) he'll win?",
-    "nghĩ (điều đó)…, Bạn có thực sự nghĩ rằng (rằng) anh ấy sẽ thắng không?"
+    "Do you think it will rain today?",
+    "Bạn có nghĩ hôm nay trời sẽ mưa không?"
   ],
   "bank": [
-    "I need to go to the bank.",
-    "Tôi cần phải đến ngân hàng."
+    "My mother works at a local bank.",
+    "Mẹ tôi làm việc tại một ngân hàng địa phương."
   ],
   "stink": [
-    "Her breath stank of garlic.",
-    "Hơi thở của cô có mùi tỏi."
+    "Those wet shoes really stink!",
+    "Đôi giày ướt kia bốc mùi khó chịu thật!"
   ],
   "pinch": [
-    "He pinched the baby's cheek playfully.",
-    "Anh nhéo má đứa bé một cách tinh nghịch."
+    "Add a pinch of salt to the soup.",
+    "Thêm một nhúm muối vào nồi súp nhé."
   ],
   "trench": [
-    "Workmen were digging a trench beside the road.",
-    "Các công nhân đang đào rãnh bên đường."
+    "Workers dug a deep trench for pipes.",
+    "Công nhân đào một cái rãnh sâu để đặt ống."
   ],
   "bench": [
-    "His lawyer turned to address the bench.",
-    "Luật sư của anh ta quay sang nói với quan tòa."
+    "We sat on a wooden park bench.",
+    "Chúng tôi ngồi trên chiếc ghế gỗ ở công viên."
   ],
   "yellow": [
-    "She was dressed in yellow.",
-    "Cô ấy mặc đồ màu vàng."
+    "She was wearing a bright yellow hat.",
+    "Cô ấy đội một chiếc mũ màu vàng tươi."
   ],
   "butter": [
-    "Fry the onions in butter.",
-    "Chiên hành tây trong bơ."
+    "Fry the onions in a little butter.",
+    "Xào hành tây với một chút bơ nhé."
   ],
   "beef": [
-    "What's his latest beef?",
-    "Thịt bò mới nhất của anh ấy là gì?"
+    "We had roast beef for Sunday dinner.",
+    "Chúng tôi ăn thịt bò nướng vào bữa tối."
   ],
   "lamb": [
-    "She’s due to lamb in two weeks’ time.",
-    "Cô ấy sẽ sinh con cừu non trong hai tuần nữa."
+    "A little white lamb followed its mother.",
+    "Chú cừu non màu trắng đi theo mẹ."
   ],
   "jump": [
-    "to do a parachute jump",
-    "để nhảy dù"
+    "The cat can jump over the fence.",
+    "Con mèo có thể nhảy qua hàng rào."
   ],
   "bump": [
-    "In the dark I bumped into a chair.",
-    "Trong bóng tối, tôi va vào một chiếc ghế."
+    "Be careful not to bump your head.",
+    "Cẩn thận kẻo cụng đầu đấy nhé."
   ],
   "lamp": [
-    "The specimen was viewed under an ultraviolet lamp.",
-    "Mẫu vật được quan sát dưới đèn cực tím."
+    "She turned on the bedside lamp.",
+    "Cô ấy bật chiếc đèn ngủ cạnh giường."
   ],
   "stomp": [
-    "She stomped angrily out of the office.",
-    "Cô giận dữ bước ra khỏi văn phòng."
+    "He stomped his feet to shake off snow.",
+    "Cậu ấy giậm chân để giũ sạch tuyết."
   ],
   "find": [
-    "Look what I've found!",
-    "Hãy xem tôi đã tìm thấy gì này!"
+    "Did you find your lost keys?",
+    "Bạn đã tìm thấy chùm chìa khóa bị mất chưa?"
   ],
   "found": [
-    "Her family founded the college in 1895.",
-    "Gia đình cô thành lập trường vào năm 1895."
+    "I found a shiny coin on the ground.",
+    "Tôi nhặt được một đồng xu sáng bóng trên đất."
   ],
   "seed": [
-    "a packet of wild flower seeds",
-    "một gói hạt giống hoa dại"
+    "We planted flower seeds in the spring.",
+    "Chúng tôi gieo hạt giống hoa vào mùa xuân."
   ],
   "plant": [
-    "All plants need light and water.",
-    "Tất cả các loại cây đều cần ánh sáng và nước."
+    "Don't forget to water the plants.",
+    "Đừng quên tưới nước cho cây cối nhé."
   ],
   "cut": [
-    "cuts and bruises on the face",
-    "vết cắt và vết bầm tím trên mặt"
+    "She cut the birthday cake into pieces.",
+    "Cô ấy cắt bánh sinh nhật thành từng miếng."
   ],
   "bake": [
-    "The bread is baking in the oven.",
-    "Bánh mì đang nướng trong lò."
+    "The fresh bread is baking in the oven.",
+    "Mẻ bánh mì tươi đang được nướng trong lò."
   ],
   "flour": [
     "Sift the flour and salt into a bowl.",
-    "Rây bột mì và muối vào tô."
+    "Rây bột mì và muối vào một cái tô."
   ],
   "hand": [
-    "Ian placed a hand on her shoulder.",
-    "Ian đặt tay lên vai cô."
+    "Raise your hand if you know the answer.",
+    "Hãy giơ tay nếu em biết câu trả lời nhé."
   ],
   "sand": [
-    "a grain of sand",
-    "một hạt cát"
+    "The children built a castle in the sand.",
+    "Bọn trẻ xây một lâu đài trên cát."
   ],
   "mend": [
     "Could you mend my bike for me?",
-    "Bạn có thể sửa xe đạp giúp tôi được không?"
+    "Bạn có thể sửa xe đạp giúp mình được không?"
   ],
   "stand": [
-    "He has avoided taking a firm stand.",
-    "Anh ta đã tránh giữ vững lập trường."
+    "Please stand up when the teacher enters.",
+    "Vui lòng đứng dậy khi giáo viên bước vào lớp."
   ],
   "start": [
-    "If we don't hurry, we'll miss the start.",
-    "Nếu chúng ta không nhanh lên, chúng ta sẽ bỏ lỡ sự khởi đầu."
+    "What time does the concert start?",
+    "Buổi hòa nhạc bắt đầu lúc mấy giờ?"
   ],
   "artist": [
-    "an exhibition of work by contemporary British artists",
-    "một cuộc triển lãm tác phẩm của các nghệ sĩ đương đại người Anh"
+    "She is a very talented young artist.",
+    "Cô ấy là một họa sĩ trẻ rất tài năng."
   ],
   "coast": [
-    "a trip to the coast",
-    "một chuyến đi đến bờ biển"
+    "We drove along the southern coast.",
+    "Chúng tôi lái xe dọc theo bờ biển phía nam."
+  ],
+  "track": [
+    "The train stopped on the track.",
+    "Đoàn tàu dừng lại trên đường ray."
+  ],
+  "trail": [
+    "We walked along the forest trail.",
+    "Chúng tôi đi bộ dọc theo đường mòn trong rừng."
+  ],
+  "trash": [
+    "Please throw your trash in the bin.",
+    "Vui lòng bỏ rác vào thùng nhé."
+  ],
+  "trust": [
+    "You can always trust a good friend.",
+    "Bạn luôn có thể tin tưởng một người bạn tốt."
+  ],
+  "tree": [
+    "We sat in the shade of a tree.",
+    "Chúng tôi ngồi dưới bóng râm của một cái cây."
+  ],
+  "traffic": [
+    "There is heavy traffic on the roads.",
+    "Giao thông trên đường đang rất đông đúc."
+  ],
+  "unhealthy": [
+    "Eating too much sugar is unhealthy.",
+    "Ăn quá nhiều đường thì không tốt cho sức khỏe."
+  ],
+  "donut": [
+    "She bought a box of sweet donuts.",
+    "Cô ấy mua một hộp bánh rán vòng ngọt."
+  ],
+  "doughnut": [
+    "She bought a box of sweet doughnuts.",
+    "Cô ấy mua một hộp bánh rán vòng ngọt."
+  ],
+  "french fries": [
+    "He ordered a burger and French fries.",
+    "Cậu ấy gọi một chiếc bánh kẹp và khoai tây chiên."
+  ],
+  "cream cake": [
+    "We shared a delicious cream cake.",
+    "Chúng tôi cùng ăn chung một chiếc bánh kem ngon lành."
+  ],
+  "sugar": [
+    "Do you take sugar in your tea?",
+    "Bạn có cho đường vào trà không?"
+  ],
+  "healthy": [
+    "Fresh fruit keeps your body healthy.",
+    "Trái cây tươi giúp cơ thể bạn khỏe mạnh."
+  ],
+  "sick": [
+    "He stayed home because he felt sick.",
+    "Cậu ấy ở nhà vì cảm thấy bị ốm."
+  ],
+  "toothache": [
+    "She went to the dentist with toothache.",
+    "Cô ấy đến gặp nha sĩ vì bị đau răng."
+  ],
+  "hamburger": [
+    "He ate a hamburger for lunch.",
+    "Cậu ấy đã ăn một chiếc bánh ham-bơ-gơ vào bữa trưa."
+  ],
+  "oil": [
+    "Heat a little oil in the pan.",
+    "Đun nóng một chút dầu ăn trong chảo."
+  ],
+  "pineapple": [
+    "She cut the fresh pineapple into slices.",
+    "Cô ấy cắt quả dứa tươi thành từng lát."
+  ],
+  "strawberries": [
+    "We picked fresh strawberries in the garden.",
+    "Chúng tôi hái những quả dâu tây tươi trong vườn."
+  ],
+  "cereal": [
+    "I have a bowl of cereal every morning.",
+    "Tôi ăn một bát ngũ cốc vào mỗi buổi sáng."
+  ],
+  "sixty": [
+    "There are sixty seconds in a minute.",
+    "Có sáu mươi giây trong một phút."
+  ],
+  "strawberry": [
+    "Would you like some strawberry jam?",
+    "Bạn có muốn dùng một chút mứt dâu tây không?"
   ]
 }

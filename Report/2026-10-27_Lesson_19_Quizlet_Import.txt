@@ -1,0 +1,40 @@
+track	đường ray
+trail	đường mòn
+trash	rác
+trust	tin tưởng
+tree	cây cối
+traffic	giao thông
+unhealthy	không lành mạnh
+donut	bánh rán vòng
+french fries	khoai tây chiên
+cream cake	bánh kem
+sugar	đường
+healthy	lành mạnh
+sick	ốm
+toothache	đau răng
+hamburger	bánh ham bơ gơ
+oil	dầu
+act	hành động / diễn
+fact	sự thật
+strict	nghiêm khắc
+insect	côn trùng
+object	đồ vật
+subject	môn học
+plants	thực vật
+animals	động vật
+vegetables	rau củ
+fruits	hoa quả
+milk	sữa
+pineapple	dứa
+eggs	trứng
+oranges	cam
+strawberries	dâu tây
+cereal	ngũ cốc
+next	tiếp theo
+text	chữ
+context	ngữ cảnh
+sixty	60
+extend	mở rộng
+before	trước đó
+after	sau đó
+use	sử dụng

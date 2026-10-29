@@ -26,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install selenium webdriver-manager gspread oauth2client requests schedule pdfplumber google-generativeai python-telegram-bot==20.7
+        pip install selenium webdriver-manager gspread oauth2client requests schedule pdfplumber google-generativeai python-telegram-bot==20.7 beautifulsoup4
 
     - name: Create credentials.json
       env:
@@ -60,7 +60,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
-        git add processed2.json class_info_log2.txt vocab_total.json Report/* || true
+        git add processed2.json class_info_log2.txt vocab_total.json oald_sentence_bank.json Report/* || true
         git commit -m "Update processed2.json, class_info_log2.txt, vocab_total.json, and Report/*" || echo "Nothing to commit"
         git pull --rebase || true
         git push || echo "Nothing to push"

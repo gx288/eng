@@ -660,7 +660,7 @@ def get_oxford_5000_map(repo_dir='.'):
                     ex = v.get('example', '').strip()
                     if w and ex and w not in _OXFORD_5000_MAP:
                         words = ex.split()
-                        if 4 <= len(words) <= 9 and not any(bad in ex for bad in ['...', 'etc.', 'e.g.', '/', '~', ';']):
+                        if 4 <= len(words) <= 9 and ex[0].isupper() and ex[-1] in '.?!' and not any(bad in ex for bad in ['...', 'etc.', 'e.g.', '/', '~', ';', '…']):
                             _OXFORD_5000_MAP[w] = ex
         except Exception as e:
             log_message(f"Warning loading oxford_5000.json: {e}")
@@ -681,7 +681,10 @@ def translate_to_vietnamese(text):
 
 def scrape_oxford_live_sentence(word):
     """Trích xuất câu ví dụ ngắn gọn (4-8 từ) trực tiếp từ website Oxford Learner's Dictionaries"""
-    from bs4 import BeautifulSoup
+    try:
+        from bs4 import BeautifulSoup
+    except ImportError:
+        BeautifulSoup = None
     clean_w = word.lower().strip().replace(' ', '-')
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -697,14 +700,20 @@ def scrape_oxford_live_sentence(word):
         req = urllib.request.Request(url, headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=3) as resp:
-                soup = BeautifulSoup(resp.read().decode('utf-8', errors='ignore'), 'html.parser')
-                for tag in soup.select('ul.examples li span.x, .sense .examples .x, .x'):
-                    txt = tag.get_text(strip=True)
+                html_str = resp.read().decode('utf-8', errors='ignore')
+                raw_texts = []
+                if BeautifulSoup is not None:
+                    soup = BeautifulSoup(html_str, 'html.parser')
+                    raw_texts = [tag.get_text(" ", strip=True) for tag in soup.select('ul.examples li span.x, .sense .examples .x, .x')]
+                else:
+                    matches = re.findall(r'<span[^>]*class="[^"]*\bx\b[^"]*"[^>]*>(.*?)</span>', html_str, flags=re.I | re.S)
+                    raw_texts = [re.sub(r'<[^>]+>', ' ', m) for m in matches]
+                for txt in raw_texts:
                     txt = re.sub(r'\(.*?\)', '', txt).strip()
                     txt = re.sub(r'\s+', ' ', txt).strip()
                     words = txt.split()
-                    if 4 <= len(words) <= 8 and not any(bad in txt for bad in ['...', 'etc.', 'e.g.', '/', '~', ';']):
-                        if txt[0].isupper():
+                    if 4 <= len(words) <= 8 and txt and txt[0].isupper() and txt[-1] in '.?!':
+                        if not any(bad in txt for bad in ['...', 'etc.', 'e.g.', '/', '~', ';', '…']):
                             return txt
         except Exception:
             continue
@@ -1515,7 +1524,6 @@ def process_report():
             body = f"Báo cáo bài học mới cho lớp {class_name} ngày {date_str}\nLink: {report_url}"
             log_message(f"Found new report: {body}")
             update_google_sheet(date_str, class_name, report_url, timestamp)
-            save_processed(date_str, class_name, report_url)
 
 
 
@@ -1606,7 +1614,20 @@ def process_report():
             max_attempts = 3
             extracted_data = None
             best_response = None
-            for attempt in range(max_attempts):
+            if os.path.exists('Report'):
+                for rf in os.listdir('Report'):
+                    if rf.startswith(date_str) and rf.endswith('.json') and 'cannot_find_info' not in rf:
+                        try:
+                            with open(os.path.join('Report', rf), 'r', encoding='utf-8') as cf:
+                                cdata = json.load(cf)
+                                if cdata.get('new_vocabulary') and cdata.get('lesson_title') and cdata.get('lesson_title') != 'cannot find info':
+                                    extracted_data = cdata
+                                    log_message(f"Loaded verified report data from existing file: {rf}")
+                                    break
+                        except Exception:
+                            pass
+
+            for attempt in range(0 if extracted_data else max_attempts):
                 log_message(f"Gemini API attempt {attempt + 1}/{max_attempts}")
                 model_name = get_available_model(attempt)
                 if not model_name:
@@ -1758,12 +1779,15 @@ def process_report():
             asyncio.run(send_report_to_telegram())
             log_message("Completed detailed Telegram notifications")
 
+            # Chỉ lưu trạng thái đã xử lý sau khi đã tạo xong phiếu tập chép và gửi Telegram thành công
+            save_processed(date_str, class_name, report_url)
+
             if is_git_repository():
                 log_message("Committing and pushing Report and vocab files to GitHub")
                 try:
                     subprocess.run(["git", "config", "--global", "user.name", "GitHub Action"], check=True)
                     subprocess.run(["git", "config", "--global", "user.email", "action@github.com"], check=True)
-                    subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE, VOCAB_FILE, "Report/*"], check=True)
+                    subprocess.run(["git", "add", PROCESSED_FILE, LOG_FILE, VOCAB_FILE, "oald_sentence_bank.json", "Report/*"], check=True)
                     subprocess.run(["git", "commit", "-m", f"Update report and vocab for {date_str}"], check=True)
                     subprocess.run(["git", "pull", "--rebase"], check=True)
                     subprocess.run(["git", "push"], check=True)
