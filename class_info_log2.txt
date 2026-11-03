@@ -4923,3 +4923,6 @@ Trong giờ học con rất ngoan, chăm chú lắng nghe giảng và cực kỳ
 [2026-11-03 07:00:21] Saved processed2.json successfully
 [2026-11-03 07:00:21] Git repository detected
 [2026-11-03 07:00:21] Committing and pushing Report and vocab files to GitHub
+[2026-11-03 07:00:23] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-11-03 07:00:23] Closing WebDriver
+[2026-11-03 07:00:23] Script completed
