@@ -2193,3 +2193,75 @@ Trong giờ học con rất ngoan, chăm chú lắng nghe giảng và cực kỳ
 [2026-11-03 10:31:57] Latest class on 2026-11-01 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf. Exiting.
 [2026-11-03 10:31:57] Closing WebDriver
 [2026-11-03 10:31:57] Script completed
+[2026-11-03 10:46:18] Starting script
+[2026-11-03 10:46:18] Starting report check for calendar overview
+[2026-11-03 10:46:18] Loaded processed2.json: {'date': '2026-11-01', 'class_name': 'VQ2-E1L-2603', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', '2026-11-01': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf'}}
+[2026-11-03 10:46:18] Writing Google credentials to credentials.json
+[2026-11-03 10:46:18] Credentials written successfully
+[2026-11-03 10:46:18] Initializing Chrome WebDriver
+[2026-11-03 10:46:29] WebDriver session ID: 66770c4533545c1a29e80c0451287fb6
+[2026-11-03 10:46:29] Attempting to restore session from cache...
+[2026-11-03 10:47:29] Error restoring session cache: Message: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: chrome=156.0.8078.47)
+Stacktrace:
+#0 0x55eea81df0aa <unknown>
+#1 0x55eea7b12875 <unknown>
+#2 0x55eea7b02802 <unknown>
+#3 0x55eea7b02576 <unknown>
+#4 0x55eea7b00cfb <unknown>
+#5 0x55eea7b0110f <unknown>
+#6 0x55eea7b0c6f6 <unknown>
+#7 0x55eea7b1d740 <unknown>
+#8 0x55eea7b233eb <unknown>
+#9 0x55eea7b019e7 <unknown>
+#10 0x55eea7b01708 <unknown>
+#11 0x55eea7b1d603 <unknown>
+#12 0x55eea7b9099d <unknown>
+#13 0x55eea7b4ba07 <unknown>
+#14 0x55eea7b4ad1e <unknown>
+#15 0x55eea7b4b7f1 <unknown>
+#16 0x55eea81a1c5c <unknown>
+#17 0x55eea81a0475 <unknown>
+#18 0x55eea818b7f8 <unknown>
+#19 0x55eea81a10ca <unknown>
+#20 0x55eea81743f9 <unknown>
+#21 0x55eea81c9848 <unknown>
+#22 0x55eea81c99e5 <unknown>
+#23 0x55eea81dda43 <unknown>
+#24 0x7f67eba9cb84 <unknown>
+#25 0x7f67ebb29ecc <unknown>
+, will perform fresh login
+[2026-11-03 10:47:29] Session cache not available or expired. Performing fresh login...
+[2026-11-03 10:47:29] Navigating to login page: https://apps.cec.com.vn/login
+[2026-11-03 10:48:29] Error checking reports: Message: timeout: Timed out receiving message from renderer: -0.003
+  (Session info: chrome=156.0.8078.47)
+Stacktrace:
+#0 0x55eea81df0aa <unknown>
+#1 0x55eea7b12875 <unknown>
+#2 0x55eea7b02802 <unknown>
+#3 0x55eea7b02576 <unknown>
+#4 0x55eea7b00cfb <unknown>
+#5 0x55eea7b0110f <unknown>
+#6 0x55eea7b0c6f6 <unknown>
+#7 0x55eea7b1d740 <unknown>
+#8 0x55eea7b233eb <unknown>
+#9 0x55eea7b019e7 <unknown>
+#10 0x55eea7b01708 <unknown>
+#11 0x55eea7b1d603 <unknown>
+#12 0x55eea7b9099d <unknown>
+#13 0x55eea7b4ba07 <unknown>
+#14 0x55eea7b4ad1e <unknown>
+#15 0x55eea7b4b7f1 <unknown>
+#16 0x55eea81a1c5c <unknown>
+#17 0x55eea81a0475 <unknown>
+#18 0x55eea818b7f8 <unknown>
+#19 0x55eea81a10ca <unknown>
+#20 0x55eea81743f9 <unknown>
+#21 0x55eea81c9848 <unknown>
+#22 0x55eea81c99e5 <unknown>
+#23 0x55eea81dda43 <unknown>
+#24 0x7f67eba9cb84 <unknown>
+#25 0x7f67ebb29ecc <unknown>
+
+[2026-11-03 10:48:29] Closing WebDriver
+[2026-11-03 10:48:29] Script completed
