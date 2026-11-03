@@ -3096,3 +3096,87 @@ Please retry in 6h57m50.224269198s. [links {
 [2026-11-03 01:02:19] Error checking reports: name 'urllib' is not defined
 [2026-11-03 01:02:19] Closing WebDriver
 [2026-11-03 01:02:19] Script completed
+[2026-11-03 01:16:16] Starting script
+[2026-11-03 01:16:16] Starting report check for calendar overview
+[2026-11-03 01:16:16] Loaded processed2.json: {'date': '2026-10-27', 'class_name': 'VQ2-C3-2602', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf'}}
+[2026-11-03 01:16:16] Writing Google credentials to credentials.json
+[2026-11-03 01:16:16] Credentials written successfully
+[2026-11-03 01:16:16] Initializing Chrome WebDriver
+[2026-11-03 01:16:26] WebDriver session ID: 2f32ec56195f558d0ce7979fc3ec9404
+[2026-11-03 01:16:26] Attempting to restore session from cache...
+[2026-11-03 01:16:32] Navigating to student calendar overview with restored session...
+[2026-11-03 01:16:39] Session verified successfully! Calendar events loaded without fresh login.
+[2026-11-03 01:16:39] Active session restored, bypassed fresh login!
+[2026-11-03 01:16:39] Scrolled to bottom of page
+[2026-11-03 01:16:39] Found 30 class events
+[2026-11-03 01:16:39] Latest class date up to today: 2026-11-01
+[2026-11-03 01:16:42] Targeting report for VQ2-E1L-2603 on 2026-11-01
+[2026-11-03 01:16:42] Attempt 1/3 to click report button
+[2026-11-03 01:16:45] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf
+[2026-11-03 01:16:45] Found new report: Báo cáo bài học mới cho lớp VQ2-E1L-2603 ngày 2026-11-01
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf
+[2026-11-03 01:16:45] Updating Google Sheet 'Report' with Date 2026-11-01, Class VQ2-E1L-2603, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf
+[2026-11-03 01:16:48] Updated Google Sheet 'Report' successfully: 2026-11-01, VQ2-E1L-2603, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf at 2026-11-03 01:16:45
+[2026-11-03 01:16:48] Starting PDF processing for report analysis
+[2026-11-03 01:16:48] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf
+[2026-11-03 01:16:48] Downloading PDF from https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf
+[2026-11-03 01:16:49] Successfully downloaded PDF to temp_report.pdf
+[2026-11-03 01:16:49] Extracting text and links from PDF
+[2026-11-03 01:16:50] Extracted 4337 characters and 4 links from PDF
+[2026-11-03 01:16:50] Deleted temporary PDF file: temp_report.pdf
+[2026-11-03 01:16:50] Gemini API attempt 1/3
+[2026-11-03 01:16:50] Available Gemini models count: 46
+[2026-11-03 01:16:50] Using model: models/gemini-3.5-flash
+[2026-11-03 01:16:50] API attempt 1/3 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits.
+Please retry in 6h43m9.304752063s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  description: "Generate content requests per day limit exceeded on Free Tier. See https://ai.google.dev/gemini-api/docs/rate-limits."
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.6-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 24189
+}
+]
+[2026-11-03 01:16:53] Gemini API attempt 2/3
+[2026-11-03 01:16:53] Available Gemini models count: 46
+[2026-11-03 01:16:53] Using model: models/gemini-3.5-flash-lite
+[2026-11-03 01:16:55] Received API response (attempt 2): {
+  "new_vocabulary": {
+    "eleven": "mười một",
+    "fifteen": "mười lăm",
+    "twenty": "hai mươi...
+[2026-11-03 01:16:55] API attempt 2 successful
+[2026-11-03 01:16:55] Updating Google Sheet 'ReportContent' with extracted data
+[2026-11-03 01:16:56] Inserted 9 rows to 'ReportContent' after header
+[2026-11-03 01:16:56] Processing total vocabulary
+[2026-11-03 01:16:56] Loaded existing vocabulary from vocab_total.json: 832 entries
+[2026-11-03 01:16:56] Added 0 new vocabulary entries. Total vocabulary: 832
+[2026-11-03 01:16:56] Saving updated vocabulary to vocab_total.json
+[2026-11-03 01:16:56] Successfully saved vocab_total.json
+[2026-11-03 01:16:56] Updating Google Sheet 'vocab' with total vocabulary
+[2026-11-03 01:16:58] Updated Google Sheet 'vocab' successfully with 832 vocabulary entries
+[2026-11-03 01:16:58] Creating Report directory if not exists
+[2026-11-03 01:16:58] Practice vocabulary count: 40 (Original lesson words: 3)
+[2026-11-03 01:16:58]   + Bài hiện tại: 3 words
+[2026-11-03 01:16:58]   + 2026-10-27_Lesson_19: 16 words
+[2026-11-03 01:16:58]   + 2026-10-25_Lesson_18: 16 words
+[2026-11-03 01:16:58]   + 2026-10-20_Lesson_17: 5 words
+[2026-11-03 01:16:58] Found Oxford 5000 example for 'eleven': There are only eleven of these rare animals left.
+[2026-11-03 01:16:58] Found Oxford 5000 example for 'fifteen': He's in the first fifteen.
+[2026-11-03 01:16:58] Error checking reports: name 'urllib' is not defined
+[2026-11-03 01:16:58] Closing WebDriver
+[2026-11-03 01:16:58] Script completed
