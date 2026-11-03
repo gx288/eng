@@ -41,7 +41,7 @@
   ],
   "one": [
     "There is only one room left.",
-    "Chỉ còn lại một phòng."
+    "Chỉ còn lại một căn phòng."
   ],
   "these": [
     "Who owns all these books?",
@@ -694,5 +694,81 @@
   "strawberry": [
     "Would you like some strawberry jam?",
     "Bạn có muốn dùng một chút mứt dâu tây không?"
+  ],
+  "two": [
+    "She has two younger brothers.",
+    "Cô ấy có hai người em trai."
+  ],
+  "three": [
+    "We waited for three hours.",
+    "Chúng tôi đã đợi trong ba tiếng đồng hồ."
+  ],
+  "four": [
+    "A square has four equal sides.",
+    "Hình vuông có bốn cạnh bằng nhau."
+  ],
+  "five": [
+    "Hold up your hand with five fingers.",
+    "Hãy giơ bàn tay có năm ngón lên nhé."
+  ],
+  "six": [
+    "There are six chairs around the table.",
+    "Có sáu chiếc ghế xung quanh bàn."
+  ],
+  "seven": [
+    "There are seven days in a week.",
+    "Có bảy ngày trong một tuần."
+  ],
+  "eight": [
+    "School starts at eight o'clock.",
+    "Giờ học bắt đầu lúc tám giờ đúng."
+  ],
+  "nine": [
+    "The shop opens at nine every morning.",
+    "Cửa hàng mở cửa lúc chín giờ mỗi sáng."
+  ],
+  "ten": [
+    "Count from one to ten slowly.",
+    "Hãy đếm chậm từ một đến mười nhé."
+  ],
+  "eleven": [
+    "A football team has eleven players.",
+    "Một đội bóng đá có mười một cầu thủ."
+  ],
+  "twelve": [
+    "There are twelve months in a year.",
+    "Có mười hai tháng trong một năm."
+  ],
+  "thirteen": [
+    "She turned thirteen last week.",
+    "Tuần trước cô ấy vừa tròn mười ba tuổi."
+  ],
+  "fourteen": [
+    "The course lasts for fourteen days.",
+    "Khóa học kéo dài trong mười bốn ngày."
+  ],
+  "fifteen": [
+    "The bus arrives in fifteen minutes.",
+    "Xe buýt sẽ đến trong mười lăm phút nữa."
+  ],
+  "sixteen": [
+    "There are sixteen students in the class.",
+    "Có mười sáu học sinh trong lớp học."
+  ],
+  "seventeen": [
+    "He is seventeen years old now.",
+    "Bây giờ anh ấy đã mười bảy tuổi."
+  ],
+  "eighteen": [
+    "She finished school at age eighteen.",
+    "Cô ấy tốt nghiệp phổ thông ở tuổi mười tám."
+  ],
+  "nineteen": [
+    "The book costs nineteen dollars.",
+    "Cuốn sách này có giá mười chín đô la."
+  ],
+  "twenty": [
+    "There are twenty desks in the room.",
+    "Có hai mươi chiếc bàn học trong phòng."
   ]
 }

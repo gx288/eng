@@ -31,6 +31,8 @@ try:
 except ImportError:
     genai = None
 
+import urllib.request
+import urllib.parse
 from urllib.parse import parse_qs, urlparse
 
 try:
@@ -680,11 +682,12 @@ def get_oxford_5000_map(repo_dir='.'):
 
 def translate_to_vietnamese(text):
     """Dịch câu ví dụ sang tiếng Việt tự nhiên qua Google Translation API gọn nhẹ 0.1s không cần API key"""
-    import urllib.parse
-    q = urllib.parse.quote(text)
-    url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q={q}"
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     try:
+        import urllib.parse
+        import urllib.request
+        q = urllib.parse.quote(text)
+        url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q={q}"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=4) as resp:
             data = json.loads(resp.read().decode('utf-8'))
             return ''.join([part[0] for part in data[0] if part[0]]).strip()
@@ -693,6 +696,8 @@ def translate_to_vietnamese(text):
 
 def scrape_oxford_live_sentence(word):
     """Trích xuất câu ví dụ ngắn gọn (4-8 từ) trực tiếp từ website Oxford Learner's Dictionaries"""
+    import urllib.request
+    import urllib.parse
     try:
         from bs4 import BeautifulSoup
     except ImportError:
@@ -763,24 +768,27 @@ def generate_vocabulary_sentences(vocab_input, lesson_title="", sentence_structu
 
         s_en, s_vi = None, None
 
-        # 1. Tra cứu trong Bank
-        if w_key in bank:
-            s_en, s_vi = bank[w_key]
-        # 2. Tra cứu trong Oxford 5000
-        elif w_key in o5k_map:
-            s_en = o5k_map[w_key]
-            s_vi = translate_to_vietnamese(s_en)
-            bank[w_key] = (s_en, s_vi)
-            bank_updated = True
-            log_message(f"Found Oxford 5000 example for '{w_key}': {s_en}")
-        # 3. Scrape live Oxford OALD
-        else:
-            s_en = scrape_oxford_live_sentence(w_orig)
-            if s_en:
+        try:
+            # 1. Tra cứu trong Bank
+            if w_key in bank:
+                s_en, s_vi = bank[w_key]
+            # 2. Tra cứu trong Oxford 5000
+            elif w_key in o5k_map:
+                s_en = o5k_map[w_key]
                 s_vi = translate_to_vietnamese(s_en)
                 bank[w_key] = (s_en, s_vi)
                 bank_updated = True
-                log_message(f"Scraped live Oxford OALD example for '{w_key}': {s_en}")
+                log_message(f"Found Oxford 5000 example for '{w_key}': {s_en}")
+            # 3. Scrape live Oxford OALD
+            else:
+                s_en = scrape_oxford_live_sentence(w_orig)
+                if s_en:
+                    s_vi = translate_to_vietnamese(s_en)
+                    bank[w_key] = (s_en, s_vi)
+                    bank_updated = True
+                    log_message(f"Scraped live Oxford OALD example for '{w_key}': {s_en}")
+        except Exception as e:
+            log_message(f"Warning looking up sentence for '{w_key}': {e}")
 
         # 4. Fallback an toàn nếu từ hoàn toàn không có trong Oxford
         if not s_en:
@@ -801,7 +809,7 @@ def generate_vocabulary_sentences(vocab_input, lesson_title="", sentence_structu
 
     return results
 
-def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, sentence_structures=None):
+def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, sentence_structures=None, class_name='VQ2-E1L-2603'):
     """
     Tạo Phiếu tập chép A4 chuẩn in ấn đơn sắc đen trắng tương phản siêu cao (ultra high-contrast monochrome):
     - Chuẩn hóa 40 từ vựng và câu ví dụ Oxford/Cambridge gói gọn đúng 4 trang A4 (10 từ & câu / trang = 2 tờ in 2 mặt).
@@ -872,7 +880,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
         <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
         <div class="info-bar">
           <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
-          <div>Lớp: <strong>VQ2-C3-2602</strong></div>
+          <div>Lớp: <strong>{class_name}</strong></div>
           <div>Bài học: <strong>{lesson_title}</strong></div>
           <div style="text-align: right;">Ngày: {date_str}</div>
         </div>
@@ -894,7 +902,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       </table>
 
       <div class="page-foot">
-        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-C3-2602 &bull; Trung tâm CEC</div>
+        <div>Học sinh: Lê Minh Huy &bull; Lớp {class_name} &bull; Trung tâm CEC</div>
         <div>Trang {p_idx} / {total_pages} (Tổng {total_words} từ &amp; câu)</div>
       </div>
     </div>"""
@@ -1775,7 +1783,7 @@ def process_report():
                 api_key=API_KEY
             )
 
-            generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), practice_items, worksheet_pdf, sentence_structures=lesson_structures)
+            generate_a4_worksheet(date_str, extracted_data.get('lesson_title', title_raw), practice_items, worksheet_pdf, sentence_structures=lesson_structures, class_name=class_name)
             generate_quizlet_file(practice_vocab, quizlet_txt)
 
             result_data = {

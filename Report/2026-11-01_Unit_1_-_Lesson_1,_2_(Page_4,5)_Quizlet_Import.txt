@@ -1,0 +1,40 @@
+one	số một (1)
+two	số hai (2)
+three	số ba (3)
+four	số bốn (4)
+five	số năm (5)
+six	số sáu (6)
+seven	số bảy (7)
+eight	số tám (8)
+nine	số chín (9)
+ten	số mười (10)
+eleven	mười một (11)
+fifteen	mười lăm (15)
+twenty	hai mươi (20)
+track	đường ray
+trail	đường mòn
+trash	rác
+trust	tin tưởng
+tree	cây cối
+traffic	giao thông
+unhealthy	không lành mạnh
+donut	bánh rán vòng
+french fries	khoai tây chiên
+cream cake	bánh kem
+sugar	đường
+healthy	lành mạnh
+sick	ốm
+toothache	đau răng
+hamburger	bánh ham bơ gơ
+oil	dầu
+act	hành động / diễn
+fact	sự thật
+strict	nghiêm khắc
+insect	côn trùng
+object	đồ vật
+subject	môn học
+plants	thực vật
+animals	động vật
+vegetables	rau củ
+fruits	hoa quả
+milk	sữa
