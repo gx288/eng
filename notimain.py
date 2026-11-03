@@ -1225,13 +1225,32 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
                     )
                 else:
                     pdf_caption = f"📄 Phiếu tập chép 5 cột A4 (Từ vựng & Câu) - {result_data.get('lesson_title', '')} ({result_data['report_date']})"
-                with open(worksheet_pdf, "rb") as f_doc:
-                    await bot.send_document(
-                        chat_id=chat_id,
-                        document=f_doc,
-                        filename=os.path.basename(worksheet_pdf),
-                        caption=pdf_caption
-                    )
+                sent_ok = False
+                for doc_attempt in range(3):
+                    try:
+                        with open(worksheet_pdf, "rb") as f_doc:
+                            await bot.send_document(
+                                chat_id=chat_id,
+                                document=f_doc,
+                                filename=os.path.basename(worksheet_pdf),
+                                caption=pdf_caption,
+                                read_timeout=60,
+                                write_timeout=60,
+                                connect_timeout=30
+                            )
+                        sent_ok = True
+                        break
+                    except Exception as de:
+                        log_message(f"send_document attempt {doc_attempt+1}/3 warning: {de}")
+                        await asyncio.sleep(2)
+                if not sent_ok and TELEGRAM_BOT_TOKEN:
+                    with open(worksheet_pdf, "rb") as f_doc:
+                        requests.post(
+                            f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendDocument",
+                            data={"chat_id": chat_id, "caption": pdf_caption},
+                            files={"document": (os.path.basename(worksheet_pdf), f_doc)},
+                            timeout=60
+                        )
                 log_message(f"Sent A4 worksheet PDF to chat_id {chat_id}")
                 await asyncio.sleep(0.5)
             except Exception as e:
