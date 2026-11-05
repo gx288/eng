@@ -2852,3 +2852,120 @@
 [2026-11-05 12:02:08] Report button for VQ2-E1L-2603 on 2026-11-04 is disabled. Waiting for teacher to publish report.
 [2026-11-05 12:02:08] Closing WebDriver
 [2026-11-05 12:02:09] Script completed
+[2026-11-05 12:16:10] Starting script
+[2026-11-05 12:16:10] Starting report check for calendar overview
+[2026-11-05 12:16:10] Loaded processed2.json: {'date': '2026-11-01', 'class_name': 'VQ2-E1L-2603', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', '2026-11-01': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf'}}
+[2026-11-05 12:16:10] Writing Google credentials to credentials.json
+[2026-11-05 12:16:10] Credentials written successfully
+[2026-11-05 12:16:10] Initializing Chrome WebDriver
+[2026-11-05 12:16:19] WebDriver session ID: 8ed50fa6b2cf3757706a19dd9ac26eae
+[2026-11-05 12:16:19] Attempting to restore session from cache...
+[2026-11-05 12:16:25] Navigating to student calendar overview with restored session...
+[2026-11-05 12:16:41] Session verified successfully! Calendar events loaded without fresh login.
+[2026-11-05 12:16:41] Active session restored, bypassed fresh login!
+[2026-11-05 12:16:41] Scrolled to bottom of page
+[2026-11-05 12:16:41] Found 30 class events
+[2026-11-05 12:16:41] Latest class date up to today: 2026-11-04
+[2026-11-05 12:16:44] Targeting report for VQ2-E1L-2603 on 2026-11-04
+[2026-11-05 12:16:44] Attempt 1/3 to click report button
+[2026-11-05 12:16:47] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf
+[2026-11-05 12:16:47] Found new report: Báo cáo bài học mới cho lớp VQ2-E1L-2603 ngày 2026-11-04
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf
+[2026-11-05 12:16:47] Updating Google Sheet 'Report' with Date 2026-11-04, Class VQ2-E1L-2603, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf
+[2026-11-05 12:16:49] Updated Google Sheet 'Report' successfully: 2026-11-04, VQ2-E1L-2603, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf at 2026-11-05 12:16:47
+[2026-11-05 12:16:49] Starting PDF processing for report analysis
+[2026-11-05 12:16:49] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf
+[2026-11-05 12:16:49] Downloading PDF from https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf
+[2026-11-05 12:16:50] Successfully downloaded PDF to temp_report.pdf
+[2026-11-05 12:16:50] Extracting text and links from PDF
+[2026-11-05 12:16:51] Extracted 5204 characters and 4 links from PDF
+[2026-11-05 12:16:51] Deleted temporary PDF file: temp_report.pdf
+[2026-11-05 12:16:51] Gemini API attempt 1/3
+[2026-11-05 12:16:51] Available Gemini models count: 46
+[2026-11-05 12:16:51] Using model: models/gemini-3.5-flash
+[2026-11-05 12:16:59] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "big": "to",
+    "small": "nhỏ",
+    "purple": "màu tím",
+    "green": "...
+[2026-11-05 12:16:59] API attempt 1 successful
+[2026-11-05 12:16:59] Updating Google Sheet 'ReportContent' with extracted data
+[2026-11-05 12:17:00] Inserted 10 rows to 'ReportContent' after header
+[2026-11-05 12:17:00] Processing total vocabulary
+[2026-11-05 12:17:00] Loaded existing vocabulary from vocab_total.json: 832 entries
+[2026-11-05 12:17:00] Added 0 new vocabulary entries. Total vocabulary: 832
+[2026-11-05 12:17:00] Saving updated vocabulary to vocab_total.json
+[2026-11-05 12:17:00] Successfully saved vocab_total.json
+[2026-11-05 12:17:00] Updating Google Sheet 'vocab' with total vocabulary
+[2026-11-05 12:17:01] Updated Google Sheet 'vocab' successfully with 832 vocabulary entries
+[2026-11-05 12:17:01] Creating Report directory if not exists
+[2026-11-05 12:17:01] Practice vocabulary count: 40 (Original lesson words: 5)
+[2026-11-05 12:17:01]   + Bài hiện tại: 5 words
+[2026-11-05 12:17:01]   + 2026-11-01_Unit_1_-_Lesson_1,_2_(Page_4,5): 13 words
+[2026-11-05 12:17:01]   + 2026-10-27_Lesson_19: 16 words
+[2026-11-05 12:17:01]   + 2026-10-25_Lesson_18: 6 words
+[2026-11-05 12:17:02] Scraped live Oxford OALD example for 'big': This shirt isn't big enough.
+[2026-11-05 12:17:03] Scraped live Oxford OALD example for 'small': They're having a relatively small wedding.
+[2026-11-05 12:17:04] Found Oxford 5000 example for 'purple': Her hair was dyed a bright shade of purple.
+[2026-11-05 12:17:06] Scraped live Oxford OALD example for 'green': Wait for the light to turn green .
+[2026-11-05 12:17:06] Updated and saved oald_sentence_bank.json with new Oxford sentences
+[2026-11-05 12:17:07] Successfully generated PDF worksheet: Report/2026-11-04_Lesson_3,4_(Page_6,7,8)_Phieu_Tap_Chep.pdf
+[2026-11-05 12:17:07] Successfully generated Quizlet file: Report/2026-11-04_Lesson_3,4_(Page_6,7,8)_Quizlet_Import.txt
+[2026-11-05 12:17:07] Saving result to Report/2026-11-04_Lesson_3,4_(Page_6,7,8).json
+[2026-11-05 12:17:07] Successfully saved: Report/2026-11-04_Lesson_3,4_(Page_6,7,8).json
+[2026-11-05 12:17:07] Starting detailed Telegram notifications
+[2026-11-05 12:17:07] Initializing Telegram Bot for detailed messages
+[2026-11-05 12:17:08] Sending detailed Telegram messages to chat_id 1900957785
+[2026-11-05 12:17:08] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-11-01*
+📅 *Ngày*: 2026-11-01
+📚 *Tiêu đề*: Lesson 3,4 (Page 6,7,8)
+🏫 *Lớp*: VQ...
+[2026-11-05 12:17:08] Sent general info message to chat_id 1900957785
+[2026-11-05 12:17:09] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-11-01*
+• `big`: to
+• `small`: nhỏ
+• `purple`: màu tím
+• `green`: màu xanh lá cây...
+[2026-11-05 12:17:09] Sent vocabulary message to chat_id 1900957785
+[2026-11-05 12:17:10] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-11-01*
+• *What color can you see?*: I can see + màu sắc....
+[2026-11-05 12:17:10] Sent sentence structures message to chat_id 1900957785
+[2026-11-05 12:17:10] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-11-01*
+Online Practice Look - Lesson 3&4; WB page: 6,7; Extra Exercise Look: ...
+[2026-11-05 12:17:11] Sent homework message to chat_id 1900957785
+[2026-11-05 12:17:11] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-11-01*
+Hôm nay con có khả năng tiếp thu bài tốt, nắm vững kiến thức về ...
+[2026-11-05 12:17:12] Sent comments message to chat_id 1900957785
+[2026-11-05 12:17:12] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-11-05 12:17:14] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-11-05 12:17:14] Completed sending detailed messages to chat_id 1900957785
+[2026-11-05 12:17:14] Sending detailed Telegram messages to chat_id 1924741087
+[2026-11-05 12:17:14] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-11-01*
+📅 *Ngày*: 2026-11-01
+📚 *Tiêu đề*: Lesson 3,4 (Page 6,7,8)
+🏫 *Lớp*: VQ...
+[2026-11-05 12:17:15] Sent general info message to chat_id 1924741087
+[2026-11-05 12:17:15] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-11-01*
+• `big`: to
+• `small`: nhỏ
+• `purple`: màu tím
+• `green`: màu xanh lá cây...
+[2026-11-05 12:17:15] Sent vocabulary message to chat_id 1924741087
+[2026-11-05 12:17:16] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-11-01*
+• *What color can you see?*: I can see + màu sắc....
+[2026-11-05 12:17:16] Sent sentence structures message to chat_id 1924741087
+[2026-11-05 12:17:17] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-11-01*
+Online Practice Look - Lesson 3&4; WB page: 6,7; Extra Exercise Look: ...
+[2026-11-05 12:17:17] Sent homework message to chat_id 1924741087
+[2026-11-05 12:17:18] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-11-01*
+Hôm nay con có khả năng tiếp thu bài tốt, nắm vững kiến thức về ...
+[2026-11-05 12:17:18] Sent comments message to chat_id 1924741087
+[2026-11-05 12:17:19] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-11-05 12:17:20] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-11-05 12:17:21] Completed sending detailed messages to chat_id 1924741087
+[2026-11-05 12:17:21] Completed detailed Telegram notifications
+[2026-11-05 12:17:21] Saving processed data to processed2.json
+[2026-11-05 12:17:21] Saved processed2.json successfully
+[2026-11-05 12:17:21] Git repository detected
+[2026-11-05 12:17:21] Committing and pushing Report and vocab files to GitHub

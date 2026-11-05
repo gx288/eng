@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phiếu Tập Chép Từ Vựng &amp; Câu - Lesson 3,4 (Page 6,7,8)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.2;
+      -webkit-font-smoothing: antialiased;
+    }
+    .a4-page {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 286mm;
+      max-height: 286mm;
+      padding: 5mm 5mm 5mm 5mm;
+      margin: 0 auto 20px auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }
+    .a4-page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    .page-head {
+      border-bottom: 2.5px solid #000000;
+      padding-bottom: 3px;
+      margin-bottom: 3px;
+    }
+    .title-main {
+      font-size: 17px;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #000000;
+      margin-bottom: 2px;
+    }
+    .info-bar {
+      display: grid;
+      grid-template-columns: 2.2fr 1.3fr 1.3fr 1fr;
+      font-size: 12px;
+      font-weight: 800;
+      color: #000000;
+      padding: 1px 0;
+    }
+    /* BẢNG TƯƠNG PHẢN SIÊU CAO, VIỀN LIỀN NÉT 100% KHÔNG BỊ MẤT VIỀN */
+    .vocab-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      flex-grow: 1;
+      border: 2.5px solid #000000;
+    }
+    .vocab-table th {
+      background: #ffffff;
+      color: #000000;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border-bottom: 2.5px solid #000000;
+      border-right: 2px solid #000000;
+      padding: 4px 2px;
+      text-align: center;
+    }
+    .vocab-table th:last-child {
+      border-right: none;
+    }
+    .row-word td {
+      height: 11.2mm;
+      border-bottom: 2px solid #000000;
+      border-right: 2px solid #000000;
+      background-color: #ffffff;
+      padding: 0 5px;
+      vertical-align: middle;
+    }
+    .row-word td:last-child {
+      border-right: none;
+    }
+    .row-sentence td {
+      height: 13.6mm;
+      border-bottom: 3px solid #000000;
+      border-right: 2px solid #000000;
+      background-color: #ffffff;
+      padding: 0 5px;
+      vertical-align: middle;
+    }
+    .row-sentence td:last-child {
+      border-right: none;
+    }
+    .col-en {
+      width: 14%;
+      font-weight: 900;
+      font-size: 15px;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.15;
+    }
+    .col-vi {
+      width: 14%;
+      font-weight: 800;
+      font-size: 13px;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.15;
+    }
+    .col-write {
+      width: 24%;
+      padding: 0 !important;
+      position: relative;
+    }
+    /* DÒNG KẺ TẬP VIẾT TÌ ĐÁY (BASELINE GUIDE LINE) */
+    .baseline-box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 6px 2.8mm 6px;
+    }
+    .baseline-line {
+      width: 100%;
+      height: 0;
+      border-bottom: 2.2px solid #000000; /* Đậm nét 2.2px chống máy in mờ */
+    }
+    .col-sent-en {
+      width: 28%;
+      font-weight: 800;
+      font-size: 12.5px;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.25;
+      padding: 0 5px !important;
+    }
+    .badge-vd {
+      font-weight: 900;
+      font-size: 10.5px;
+      background: #000000;
+      color: #ffffff;
+      padding: 1px 4px;
+      border-radius: 2px;
+      margin-right: 4px;
+      display: inline-block;
+    }
+    .col-sent-vi {
+      width: 24%;
+      font-weight: 700;
+      font-size: 11.5px;
+      color: #000000;
+      word-break: break-word;
+      line-height: 1.25;
+      padding: 0 5px !important;
+    }
+    .col-sent-write {
+      width: 48%;
+      padding: 0 !important;
+      position: relative;
+    }
+    .page-foot {
+      border-top: 2px solid #000000;
+      margin-top: 2px;
+      padding-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 800;
+      color: #000000;
+    }
+    @page {
+      size: A4 portrait;
+      margin: 5mm 5mm 5mm 5mm;
+    }
+    @media print {
+      body { background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .a4-page {
+        width: 100% !important;
+        min-height: 286mm !important;
+        max-height: 286mm !important;
+        margin: 0 !important;
+        padding: 5mm 5mm 5mm 5mm !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      .a4-page:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <div class="a4-page">
+      <div class="page-head">
+        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
+        <div class="info-bar">
+          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+          <div>Lớp: <strong>VQ2-E1L-2603</strong></div>
+          <div>Bài học: <strong>Lesson 3,4 (Page 6,7,8)</strong></div>
+          <div style="text-align: right;">Ngày: 2026-11-04</div>
+        </div>
+      </div>
+
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">Từ Vựng (EN)</th>
+            <th style="width: 14%;">Nghĩa (VI)</th>
+            <th style="width: 24%;">Lần 1 (Tập chép)</th>
+            <th style="width: 24%;">Lần 2 (Tập chép)</th>
+            <th style="width: 24%;">Lần 3 (Tập chép)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-word">
+            <td class="col-en">big</td>
+            <td class="col-vi">to</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> This shirt isn&#x27;t big enough.
+            </td>
+            <td class="col-sent-vi">
+              Chiếc áo này không đủ rộng.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">small</td>
+            <td class="col-vi">nhỏ</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> They&#x27;re having a relatively small wedding.
+            </td>
+            <td class="col-sent-vi">
+              Họ đang tổ chức một đám cưới tương đối nhỏ.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">purple</td>
+            <td class="col-vi">màu tím</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Her hair was dyed a bright shade of purple.
+            </td>
+            <td class="col-sent-vi">
+              Tóc cô được nhuộm màu tím sáng.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">green</td>
+            <td class="col-vi">màu xanh lá cây</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Wait for the light to turn green .
+            </td>
+            <td class="col-sent-vi">
+              Đợi đèn chuyển sang màu xanh.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">yellow</td>
+            <td class="col-vi">màu vàng</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> She was wearing a bright yellow hat.
+            </td>
+            <td class="col-sent-vi">
+              Cô ấy đội một chiếc mũ màu vàng tươi.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">one</td>
+            <td class="col-vi">số một (1)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> There is only one room left.
+            </td>
+            <td class="col-sent-vi">
+              Chỉ còn lại một căn phòng.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">two</td>
+            <td class="col-vi">số hai (2)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> She has two younger brothers.
+            </td>
+            <td class="col-sent-vi">
+              Cô ấy có hai người em trai.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">three</td>
+            <td class="col-vi">số ba (3)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> We waited for three hours.
+            </td>
+            <td class="col-sent-vi">
+              Chúng tôi đã đợi trong ba tiếng đồng hồ.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">four</td>
+            <td class="col-vi">số bốn (4)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> A square has four equal sides.
+            </td>
+            <td class="col-sent-vi">
+              Hình vuông có bốn cạnh bằng nhau.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">five</td>
+            <td class="col-vi">số năm (5)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Hold up your hand with five fingers.
+            </td>
+            <td class="col-sent-vi">
+              Hãy giơ bàn tay có năm ngón lên nhé.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-foot">
+        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
+        <div>Trang 1 / 4 (Tổng 40 từ &amp; câu)</div>
+      </div>
+    </div>
+
+    <div class="a4-page">
+      <div class="page-head">
+        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
+        <div class="info-bar">
+          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+          <div>Lớp: <strong>VQ2-E1L-2603</strong></div>
+          <div>Bài học: <strong>Lesson 3,4 (Page 6,7,8)</strong></div>
+          <div style="text-align: right;">Ngày: 2026-11-04</div>
+        </div>
+      </div>
+
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">Từ Vựng (EN)</th>
+            <th style="width: 14%;">Nghĩa (VI)</th>
+            <th style="width: 24%;">Lần 1 (Tập chép)</th>
+            <th style="width: 24%;">Lần 2 (Tập chép)</th>
+            <th style="width: 24%;">Lần 3 (Tập chép)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-word">
+            <td class="col-en">six</td>
+            <td class="col-vi">số sáu (6)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> There are six chairs around the table.
+            </td>
+            <td class="col-sent-vi">
+              Có sáu chiếc ghế xung quanh bàn.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">seven</td>
+            <td class="col-vi">số bảy (7)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> There are seven days in a week.
+            </td>
+            <td class="col-sent-vi">
+              Có bảy ngày trong một tuần.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">eight</td>
+            <td class="col-vi">số tám (8)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> School starts at eight o&#x27;clock.
+            </td>
+            <td class="col-sent-vi">
+              Giờ học bắt đầu lúc tám giờ đúng.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">nine</td>
+            <td class="col-vi">số chín (9)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> The shop opens at nine every morning.
+            </td>
+            <td class="col-sent-vi">
+              Cửa hàng mở cửa lúc chín giờ mỗi sáng.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">ten</td>
+            <td class="col-vi">số mười (10)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Count from one to ten slowly.
+            </td>
+            <td class="col-sent-vi">
+              Hãy đếm chậm từ một đến mười nhé.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">eleven</td>
+            <td class="col-vi">mười một (11)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> A football team has eleven players.
+            </td>
+            <td class="col-sent-vi">
+              Một đội bóng đá có mười một cầu thủ.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">fifteen</td>
+            <td class="col-vi">mười lăm (15)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> The bus arrives in fifteen minutes.
+            </td>
+            <td class="col-sent-vi">
+              Xe buýt sẽ đến trong mười lăm phút nữa.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">twenty</td>
+            <td class="col-vi">hai mươi (20)</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> There are twenty desks in the room.
+            </td>
+            <td class="col-sent-vi">
+              Có hai mươi chiếc bàn học trong phòng.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">track</td>
+            <td class="col-vi">đường ray</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> The train stopped on the track.
+            </td>
+            <td class="col-sent-vi">
+              Đoàn tàu dừng lại trên đường ray.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">trail</td>
+            <td class="col-vi">đường mòn</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> We walked along the forest trail.
+            </td>
+            <td class="col-sent-vi">
+              Chúng tôi đi bộ dọc theo đường mòn trong rừng.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-foot">
+        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
+        <div>Trang 2 / 4 (Tổng 40 từ &amp; câu)</div>
+      </div>
+    </div>
+
+    <div class="a4-page">
+      <div class="page-head">
+        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
+        <div class="info-bar">
+          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+          <div>Lớp: <strong>VQ2-E1L-2603</strong></div>
+          <div>Bài học: <strong>Lesson 3,4 (Page 6,7,8)</strong></div>
+          <div style="text-align: right;">Ngày: 2026-11-04</div>
+        </div>
+      </div>
+
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">Từ Vựng (EN)</th>
+            <th style="width: 14%;">Nghĩa (VI)</th>
+            <th style="width: 24%;">Lần 1 (Tập chép)</th>
+            <th style="width: 24%;">Lần 2 (Tập chép)</th>
+            <th style="width: 24%;">Lần 3 (Tập chép)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-word">
+            <td class="col-en">trash</td>
+            <td class="col-vi">rác</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Please throw your trash in the bin.
+            </td>
+            <td class="col-sent-vi">
+              Vui lòng bỏ rác vào thùng nhé.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">trust</td>
+            <td class="col-vi">tin tưởng</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> You can always trust a good friend.
+            </td>
+            <td class="col-sent-vi">
+              Bạn luôn có thể tin tưởng một người bạn tốt.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">tree</td>
+            <td class="col-vi">cây cối</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> We sat in the shade of a tree.
+            </td>
+            <td class="col-sent-vi">
+              Chúng tôi ngồi dưới bóng râm của một cái cây.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">traffic</td>
+            <td class="col-vi">giao thông</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> There is heavy traffic on the roads.
+            </td>
+            <td class="col-sent-vi">
+              Giao thông trên đường đang rất đông đúc.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">unhealthy</td>
+            <td class="col-vi">không lành mạnh</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Eating too much sugar is unhealthy.
+            </td>
+            <td class="col-sent-vi">
+              Ăn quá nhiều đường thì không tốt cho sức khỏe.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">donut</td>
+            <td class="col-vi">bánh rán vòng</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> She bought a box of sweet donuts.
+            </td>
+            <td class="col-sent-vi">
+              Cô ấy mua một hộp bánh rán vòng ngọt.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">french fries</td>
+            <td class="col-vi">khoai tây chiên</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> He ordered a burger and French fries.
+            </td>
+            <td class="col-sent-vi">
+              Cậu ấy gọi một chiếc bánh kẹp và khoai tây chiên.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">cream cake</td>
+            <td class="col-vi">bánh kem</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> We shared a delicious cream cake.
+            </td>
+            <td class="col-sent-vi">
+              Chúng tôi cùng ăn chung một chiếc bánh kem ngon lành.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">sugar</td>
+            <td class="col-vi">đường</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Do you take sugar in your tea?
+            </td>
+            <td class="col-sent-vi">
+              Bạn có cho đường vào trà không?
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">healthy</td>
+            <td class="col-vi">lành mạnh</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Fresh fruit keeps your body healthy.
+            </td>
+            <td class="col-sent-vi">
+              Trái cây tươi giúp cơ thể bạn khỏe mạnh.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-foot">
+        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
+        <div>Trang 3 / 4 (Tổng 40 từ &amp; câu)</div>
+      </div>
+    </div>
+
+    <div class="a4-page">
+      <div class="page-head">
+        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
+        <div class="info-bar">
+          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+          <div>Lớp: <strong>VQ2-E1L-2603</strong></div>
+          <div>Bài học: <strong>Lesson 3,4 (Page 6,7,8)</strong></div>
+          <div style="text-align: right;">Ngày: 2026-11-04</div>
+        </div>
+      </div>
+
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">Từ Vựng (EN)</th>
+            <th style="width: 14%;">Nghĩa (VI)</th>
+            <th style="width: 24%;">Lần 1 (Tập chép)</th>
+            <th style="width: 24%;">Lần 2 (Tập chép)</th>
+            <th style="width: 24%;">Lần 3 (Tập chép)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-word">
+            <td class="col-en">sick</td>
+            <td class="col-vi">ốm</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> He stayed home because he felt sick.
+            </td>
+            <td class="col-sent-vi">
+              Cậu ấy ở nhà vì cảm thấy bị ốm.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">toothache</td>
+            <td class="col-vi">đau răng</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> She went to the dentist with toothache.
+            </td>
+            <td class="col-sent-vi">
+              Cô ấy đến gặp nha sĩ vì bị đau răng.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">hamburger</td>
+            <td class="col-vi">bánh ham bơ gơ</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> He ate a hamburger for lunch.
+            </td>
+            <td class="col-sent-vi">
+              Cậu ấy đã ăn một chiếc bánh ham-bơ-gơ vào bữa trưa.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">oil</td>
+            <td class="col-vi">dầu</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Heat a little oil in the pan.
+            </td>
+            <td class="col-sent-vi">
+              Đun nóng một chút dầu ăn trong chảo.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">act</td>
+            <td class="col-vi">hành động / diễn</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> She knows how to act on stage.
+            </td>
+            <td class="col-sent-vi">
+              Cô ấy biết cách diễn xuất trên sân khấu.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">fact</td>
+            <td class="col-vi">sự thật</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> It is a well-known scientific fact.
+            </td>
+            <td class="col-sent-vi">
+              Đó là một sự thật khoa học ai cũng biết.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">strict</td>
+            <td class="col-vi">nghiêm khắc</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Our parents are very strict with us.
+            </td>
+            <td class="col-sent-vi">
+              Bố mẹ rất nghiêm khắc với chúng tôi.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">insect</td>
+            <td class="col-vi">côn trùng</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> Birds love to eat small insects.
+            </td>
+            <td class="col-sent-vi">
+              Các loài chim rất thích ăn côn trùng nhỏ.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">object</td>
+            <td class="col-vi">đồ vật</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> What is that strange metal object?
+            </td>
+            <td class="col-sent-vi">
+              Đồ vật bằng kim loại kỳ lạ kia là gì vậy?
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+          <tr class="row-word">
+            <td class="col-en">subject</td>
+            <td class="col-vi">môn học</td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+            <td class="col-write"></td>
+          </tr>
+          <tr class="row-sentence">
+            <td colspan="2" class="col-sent-en">
+              <span class="badge-vd">VD</span> English is my favourite school subject.
+            </td>
+            <td class="col-sent-vi">
+              Tiếng Anh là môn học yêu thích của em ở trường.
+            </td>
+            <td colspan="2" class="col-sent-write"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-foot">
+        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
+        <div>Trang 4 / 4 (Tổng 40 từ &amp; câu)</div>
+      </div>
+    </div>
+</body>
+</html>

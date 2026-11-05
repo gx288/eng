@@ -770,5 +770,21 @@
   "twenty": [
     "There are twenty desks in the room.",
     "Có hai mươi chiếc bàn học trong phòng."
+  ],
+  "big": [
+    "This shirt isn't big enough.",
+    "Chiếc áo này không đủ rộng."
+  ],
+  "small": [
+    "They're having a relatively small wedding.",
+    "Họ đang tổ chức một đám cưới tương đối nhỏ."
+  ],
+  "purple": [
+    "Her hair was dyed a bright shade of purple.",
+    "Tóc cô được nhuộm màu tím sáng."
+  ],
+  "green": [
+    "Wait for the light to turn green .",
+    "Đợi đèn chuyển sang màu xanh."
   ]
 }
