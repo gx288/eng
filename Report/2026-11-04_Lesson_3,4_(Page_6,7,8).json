@@ -3355,26 +3355,26 @@
         {
             "word": "big",
             "meaning": "to",
-            "sentence_en": "This shirt isn't big enough.",
-            "sentence_vi": "Chiếc áo này không đủ rộng."
+            "sentence_en": "This box is too big to carry.",
+            "sentence_vi": "Chiếc hộp này quá to để bê đi."
         },
         {
             "word": "small",
             "meaning": "nhỏ",
-            "sentence_en": "They're having a relatively small wedding.",
-            "sentence_vi": "Họ đang tổ chức một đám cưới tương đối nhỏ."
+            "sentence_en": "She lives in a small village.",
+            "sentence_vi": "Cô ấy sống trong một ngôi làng nhỏ."
         },
         {
             "word": "purple",
             "meaning": "màu tím",
-            "sentence_en": "Her hair was dyed a bright shade of purple.",
-            "sentence_vi": "Tóc cô được nhuộm màu tím sáng."
+            "sentence_en": "She wore a bright purple dress.",
+            "sentence_vi": "Cô ấy mặc một chiếc váy màu tím tươi."
         },
         {
             "word": "green",
             "meaning": "màu xanh lá cây",
-            "sentence_en": "Wait for the light to turn green .",
-            "sentence_vi": "Đợi đèn chuyển sang màu xanh."
+            "sentence_en": "Wait for the light to turn green.",
+            "sentence_vi": "Hãy đợi đèn chuyển sang màu xanh lá."
         },
         {
             "word": "yellow",
@@ -3501,96 +3501,6 @@
             "meaning": "không lành mạnh",
             "sentence_en": "Eating too much sugar is unhealthy.",
             "sentence_vi": "Ăn quá nhiều đường thì không tốt cho sức khỏe."
-        },
-        {
-            "word": "donut",
-            "meaning": "bánh rán vòng",
-            "sentence_en": "She bought a box of sweet donuts.",
-            "sentence_vi": "Cô ấy mua một hộp bánh rán vòng ngọt."
-        },
-        {
-            "word": "french fries",
-            "meaning": "khoai tây chiên",
-            "sentence_en": "He ordered a burger and French fries.",
-            "sentence_vi": "Cậu ấy gọi một chiếc bánh kẹp và khoai tây chiên."
-        },
-        {
-            "word": "cream cake",
-            "meaning": "bánh kem",
-            "sentence_en": "We shared a delicious cream cake.",
-            "sentence_vi": "Chúng tôi cùng ăn chung một chiếc bánh kem ngon lành."
-        },
-        {
-            "word": "sugar",
-            "meaning": "đường",
-            "sentence_en": "Do you take sugar in your tea?",
-            "sentence_vi": "Bạn có cho đường vào trà không?"
-        },
-        {
-            "word": "healthy",
-            "meaning": "lành mạnh",
-            "sentence_en": "Fresh fruit keeps your body healthy.",
-            "sentence_vi": "Trái cây tươi giúp cơ thể bạn khỏe mạnh."
-        },
-        {
-            "word": "sick",
-            "meaning": "ốm",
-            "sentence_en": "He stayed home because he felt sick.",
-            "sentence_vi": "Cậu ấy ở nhà vì cảm thấy bị ốm."
-        },
-        {
-            "word": "toothache",
-            "meaning": "đau răng",
-            "sentence_en": "She went to the dentist with toothache.",
-            "sentence_vi": "Cô ấy đến gặp nha sĩ vì bị đau răng."
-        },
-        {
-            "word": "hamburger",
-            "meaning": "bánh ham bơ gơ",
-            "sentence_en": "He ate a hamburger for lunch.",
-            "sentence_vi": "Cậu ấy đã ăn một chiếc bánh ham-bơ-gơ vào bữa trưa."
-        },
-        {
-            "word": "oil",
-            "meaning": "dầu",
-            "sentence_en": "Heat a little oil in the pan.",
-            "sentence_vi": "Đun nóng một chút dầu ăn trong chảo."
-        },
-        {
-            "word": "act",
-            "meaning": "hành động / diễn",
-            "sentence_en": "She knows how to act on stage.",
-            "sentence_vi": "Cô ấy biết cách diễn xuất trên sân khấu."
-        },
-        {
-            "word": "fact",
-            "meaning": "sự thật",
-            "sentence_en": "It is a well-known scientific fact.",
-            "sentence_vi": "Đó là một sự thật khoa học ai cũng biết."
-        },
-        {
-            "word": "strict",
-            "meaning": "nghiêm khắc",
-            "sentence_en": "Our parents are very strict with us.",
-            "sentence_vi": "Bố mẹ rất nghiêm khắc với chúng tôi."
-        },
-        {
-            "word": "insect",
-            "meaning": "côn trùng",
-            "sentence_en": "Birds love to eat small insects.",
-            "sentence_vi": "Các loài chim rất thích ăn côn trùng nhỏ."
-        },
-        {
-            "word": "object",
-            "meaning": "đồ vật",
-            "sentence_en": "What is that strange metal object?",
-            "sentence_vi": "Đồ vật bằng kim loại kỳ lạ kia là gì vậy?"
-        },
-        {
-            "word": "subject",
-            "meaning": "môn học",
-            "sentence_en": "English is my favourite school subject.",
-            "sentence_vi": "Tiếng Anh là môn học yêu thích của em ở trường."
         }
     ]
 }

@@ -23,18 +23,3 @@ trust	tin tưởng
 tree	cây cối
 traffic	giao thông
 unhealthy	không lành mạnh
-donut	bánh rán vòng
-french fries	khoai tây chiên
-cream cake	bánh kem
-sugar	đường
-healthy	lành mạnh
-sick	ốm
-toothache	đau răng
-hamburger	bánh ham bơ gơ
-oil	dầu
-act	hành động / diễn
-fact	sự thật
-strict	nghiêm khắc
-insect	côn trùng
-object	đồ vật
-subject	môn học

@@ -422,12 +422,12 @@ async def safe_send_message(bot, chat_id, raw_text):
 #    CÔNG CỤ TẠO PHIẾU CHÉP A4 & QUIZLET TỰ ĐỘNG
 # ────────────────────────────────────────────────
 
-def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=40, **kwargs):
+def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=25, **kwargs):
     """
     Quy tắc gộp từ vựng ôn tập:
-    - Nếu bài học >= target_max (40 từ): Giữ nguyên toàn bộ (không bị giới hạn 40).
-    - Nếu bài học < target_max (40 từ): Lấy từ vựng các bài trước (không trùng lặp),
-      lần lượt qua các bài trước cho đến khi đạt đủ target_max (40 từ).
+    - Nếu bài học >= target_max (25 từ): Giữ nguyên toàn bộ (không bị giới hạn 25).
+    - Nếu bài học < target_max (25 từ): Lấy từ vựng các bài trước (không trùng lặp),
+      lần lượt qua các bài trước cho đến khi đạt đủ target_max (25 từ).
     """
     merged = dict(current_vocab)
     
@@ -836,13 +836,29 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
     if total_words == 0:
         return None
 
-    # Phân trang chuẩn 4 trang (10 từ & câu / trang = đúng 2 tờ in 2 mặt)
-    per_page = 10
-    pages = [vocab_items[i:i + per_page] for i in range(0, total_words, per_page)]
-    total_pages = len(pages)
+    # Phân trang thông minh: chuẩn 25 từ gói gọn trong 2 trang A4 (13 + 12 từ = đúng 1 tờ in 2 mặt)
+    # Nếu bài > 26 từ thì tự động chia đều sang các trang tiếp theo (tối đa 13 từ/trang)
+    import math
+    max_per_page_limit = 13
+    total_pages = max(1, math.ceil(total_words / max_per_page_limit))
+    pages = []
+    start_i = 0
+    for p_i in range(total_pages):
+        rem_words = total_words - start_i
+        rem_pages = total_pages - p_i
+        chunk_size = math.ceil(rem_words / rem_pages)
+        pages.append(vocab_items[start_i:start_i + chunk_size])
+        start_i += chunk_size
 
-    word_row_h = "11.2mm"
-    sent_row_h = "13.6mm"
+    max_p = max(len(p) for p in pages)
+    if max_p <= 10:
+        word_row_h, sent_row_h = "11.2mm", "13.6mm"
+    elif max_p == 11:
+        word_row_h, sent_row_h = "10.2mm", "12.2mm"
+    elif max_p == 12:
+        word_row_h, sent_row_h = "9.4mm", "11.2mm"
+    else:
+        word_row_h, sent_row_h = "8.7mm", "10.3mm"
     font_en = "15px"
     font_vi = "13px"
     font_sent_en = "12.5px"
@@ -1783,7 +1799,7 @@ def process_report():
                 extracted_data.get('new_vocabulary', {}),
                 report_dir='Report',
                 current_date=date_str,
-                target_max=40
+                target_max=25
             )
             log_message(f"Practice vocabulary count: {len(practice_vocab)} (Original lesson words: {len(extracted_data.get('new_vocabulary', {}))})")
             for src_name, cnt in vocab_sources:
