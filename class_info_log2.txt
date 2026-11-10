@@ -4575,3 +4575,6 @@ Trong buổi học hôm nay, con tích cực tham gia xây dựng bài và có..
 [2026-11-10 08:18:15] Saved processed2.json successfully
 [2026-11-10 08:18:15] Git repository detected
 [2026-11-10 08:18:15] Committing and pushing Report and vocab files to GitHub
+[2026-11-10 08:18:17] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-11-10 08:18:17] Closing WebDriver
+[2026-11-10 08:18:17] Script completed
