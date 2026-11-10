@@ -786,5 +786,33 @@
   "green": [
     "Wait for the light to turn green.",
     "Hãy đợi đèn chuyển sang màu xanh lá."
+  ],
+  "bag": [
+    "He was carrying a heavy bag of groceries.",
+    "He was carrying a heavy bag of groceries."
+  ],
+  "pen": [
+    "Let me grab a pen.",
+    "Let me grab a pen."
+  ],
+  "book": [
+    "His desk was covered with piles of books.",
+    "His desk was covered with piles of books."
+  ],
+  "pencil": [
+    "I'll get a pencil and paper.",
+    "I'll get a pencil and paper."
+  ],
+  "ruler": [
+    "He eventually became ruler over all Egypt.",
+    "He eventually became ruler over all Egypt."
+  ],
+  "crayon": [
+    "She coloured the picture in with crayons.",
+    "She coloured the picture in with crayons."
+  ],
+  "a": [
+    "I can only carry two at a time.",
+    "I can only carry two at a time."
   ]
 }

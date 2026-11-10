@@ -4454,3 +4454,124 @@
 [2026-11-09 19:46:39] Report button for VQ2-E1L-2603 on 2026-11-08 is disabled. Waiting for teacher to publish report.
 [2026-11-09 19:46:39] Closing WebDriver
 [2026-11-09 19:46:39] Script completed
+[2026-11-10 08:16:18] Starting script
+[2026-11-10 08:16:18] Starting report check for calendar overview
+[2026-11-10 08:16:18] Loaded processed2.json: {'date': '2026-11-04', 'class_name': 'VQ2-E1L-2603', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', '2026-11-01': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf', '2026-11-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf'}}
+[2026-11-10 08:16:18] Writing Google credentials to credentials.json
+[2026-11-10 08:16:18] Credentials written successfully
+[2026-11-10 08:16:18] Initializing Chrome WebDriver
+[2026-11-10 08:16:26] WebDriver session ID: 8c89ae60dc638528430fd9f0edb80a03
+[2026-11-10 08:16:26] Attempting to restore session from cache...
+[2026-11-10 08:16:31] Navigating to student calendar overview with restored session...
+[2026-11-10 08:16:38] Session verified successfully! Calendar events loaded without fresh login.
+[2026-11-10 08:16:38] Active session restored, bypassed fresh login!
+[2026-11-10 08:16:38] Scrolled to bottom of page
+[2026-11-10 08:16:38] Found 30 class events
+[2026-11-10 08:16:38] Latest class date up to today: 2026-11-08
+[2026-11-10 08:16:41] Targeting report for VQ2-E1L-2603 on 2026-11-08
+[2026-11-10 08:16:41] Attempt 1/3 to click report button
+[2026-11-10 08:16:43] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf
+[2026-11-10 08:16:43] Found new report: Báo cáo bài học mới cho lớp VQ2-E1L-2603 ngày 2026-11-08
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf
+[2026-11-10 08:16:43] Updating Google Sheet 'Report' with Date 2026-11-08, Class VQ2-E1L-2603, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf
+[2026-11-10 08:16:45] Updated Google Sheet 'Report' successfully: 2026-11-08, VQ2-E1L-2603, https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf at 2026-11-10 08:16:43
+[2026-11-10 08:16:45] Starting PDF processing for report analysis
+[2026-11-10 08:16:45] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf
+[2026-11-10 08:16:45] Downloading PDF from https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf
+[2026-11-10 08:16:46] Successfully downloaded PDF to temp_report.pdf
+[2026-11-10 08:16:46] Extracting text and links from PDF
+[2026-11-10 08:16:47] Extracted 5762 characters and 4 links from PDF
+[2026-11-10 08:16:47] Deleted temporary PDF file: temp_report.pdf
+[2026-11-10 08:16:47] Gemini API attempt 1/3
+[2026-11-10 08:16:47] Available Gemini models count: 47
+[2026-11-10 08:16:47] Using model: models/gemini-3.5-flash
+[2026-11-10 08:17:50] Received API response (attempt 1): {
+  "new_vocabulary": {
+    "bag": "cặp sách",
+    "pen": "bút mực",
+    "book": "sách",
+    "pencil...
+[2026-11-10 08:17:50] API attempt 1 successful
+[2026-11-10 08:17:50] Updating Google Sheet 'ReportContent' with extracted data
+[2026-11-10 08:17:51] Inserted 15 rows to 'ReportContent' after header
+[2026-11-10 08:17:51] Processing total vocabulary
+[2026-11-10 08:17:51] Loaded existing vocabulary from vocab_total.json: 832 entries
+[2026-11-10 08:17:51] Added 4 new vocabulary entries. Total vocabulary: 836
+[2026-11-10 08:17:51] Saving updated vocabulary to vocab_total.json
+[2026-11-10 08:17:51] Successfully saved vocab_total.json
+[2026-11-10 08:17:51] Updating Google Sheet 'vocab' with total vocabulary
+[2026-11-10 08:17:53] Updated Google Sheet 'vocab' successfully with 836 vocabulary entries
+[2026-11-10 08:17:53] Creating Report directory if not exists
+[2026-11-10 08:17:53] Practice vocabulary count: 25 (Original lesson words: 10)
+[2026-11-10 08:17:53]   + Bài hiện tại: 10 words
+[2026-11-10 08:17:53]   + 2026-11-04_Lesson_3,4_(Page_6,7,8): 5 words
+[2026-11-10 08:17:53]   + 2026-11-01_Unit_1_-_Lesson_1,_2_(Page_4,5): 10 words
+[2026-11-10 08:17:53] Found Oxford 5000 example for 'bag': He was carrying a heavy bag of groceries.
+[2026-11-10 08:17:54] Scraped live Oxford OALD example for 'pen': Let me grab a pen.
+[2026-11-10 08:17:54] Found Oxford 5000 example for 'book': His desk was covered with piles of books.
+[2026-11-10 08:17:55] Found Oxford 5000 example for 'pencil': I'll get a pencil and paper.
+[2026-11-10 08:17:56] Scraped live Oxford OALD example for 'ruler': He eventually became ruler over all Egypt.
+[2026-11-10 08:17:57] Scraped live Oxford OALD example for 'crayon': She coloured the picture in with crayons.
+[2026-11-10 08:17:58] Scraped live Oxford OALD example for 'a': I can only carry two at a time.
+[2026-11-10 08:18:00] Updated and saved oald_sentence_bank.json with new Oxford sentences
+[2026-11-10 08:18:01] Successfully generated PDF worksheet: Report/2026-11-08_Unit_1_-_Lesson_1&2_(Page_9,10,11)_Phieu_Tap_Chep.pdf
+[2026-11-10 08:18:01] Successfully generated Quizlet file: Report/2026-11-08_Unit_1_-_Lesson_1&2_(Page_9,10,11)_Quizlet_Import.txt
+[2026-11-10 08:18:01] Saving result to Report/2026-11-08_Unit_1_-_Lesson_1&2_(Page_9,10,11).json
+[2026-11-10 08:18:01] Successfully saved: Report/2026-11-08_Unit_1_-_Lesson_1&2_(Page_9,10,11).json
+[2026-11-10 08:18:01] Starting detailed Telegram notifications
+[2026-11-10 08:18:01] Initializing Telegram Bot for detailed messages
+[2026-11-10 08:18:01] Sending detailed Telegram messages to chat_id 1900957785
+[2026-11-10 08:18:01] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-11-08*
+📅 *Ngày*: 2026-11-08
+📚 *Tiêu đề*: Unit 1 - Lesson 1&2 (Page 9,10,11)
+...
+[2026-11-10 08:18:02] Sent general info message to chat_id 1900957785
+[2026-11-10 08:18:03] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-11-08*
+• `bag`: cặp sách
+• `pen`: bút mực
+• `book`: sách
+• `pencil`: bút chì
+• `...
+[2026-11-10 08:18:03] Sent vocabulary message to chat_id 1900957785
+[2026-11-10 08:18:04] Sending sentence structures message to chat_id 1900957785: *CẤU TRÚC CÂU - 2026-11-08*
+• *What's this?*: It's a/an + noun....
+[2026-11-10 08:18:04] Sent sentence structures message to chat_id 1900957785
+[2026-11-10 08:18:05] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-11-08*
+Online Practice Unit 1 - Lesson 1&2; WB page: 8,9; Extra Exercise Unit...
+[2026-11-10 08:18:05] Sent homework message to chat_id 1900957785
+[2026-11-10 08:18:05] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-11-08*
+Trong buổi học hôm nay, con tích cực tham gia xây dựng bài và có...
+[2026-11-10 08:18:06] Sent comments message to chat_id 1900957785
+[2026-11-10 08:18:06] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-11-10 08:18:08] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-11-10 08:18:08] Completed sending detailed messages to chat_id 1900957785
+[2026-11-10 08:18:08] Sending detailed Telegram messages to chat_id 1924741087
+[2026-11-10 08:18:08] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-11-08*
+📅 *Ngày*: 2026-11-08
+📚 *Tiêu đề*: Unit 1 - Lesson 1&2 (Page 9,10,11)
+...
+[2026-11-10 08:18:09] Sent general info message to chat_id 1924741087
+[2026-11-10 08:18:09] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-11-08*
+• `bag`: cặp sách
+• `pen`: bút mực
+• `book`: sách
+• `pencil`: bút chì
+• `...
+[2026-11-10 08:18:10] Sent vocabulary message to chat_id 1924741087
+[2026-11-10 08:18:10] Sending sentence structures message to chat_id 1924741087: *CẤU TRÚC CÂU - 2026-11-08*
+• *What's this?*: It's a/an + noun....
+[2026-11-10 08:18:10] Sent sentence structures message to chat_id 1924741087
+[2026-11-10 08:18:11] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-11-08*
+Online Practice Unit 1 - Lesson 1&2; WB page: 8,9; Extra Exercise Unit...
+[2026-11-10 08:18:11] Sent homework message to chat_id 1924741087
+[2026-11-10 08:18:12] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-11-08*
+Trong buổi học hôm nay, con tích cực tham gia xây dựng bài và có...
+[2026-11-10 08:18:12] Sent comments message to chat_id 1924741087
+[2026-11-10 08:18:13] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-11-10 08:18:14] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-11-10 08:18:15] Completed sending detailed messages to chat_id 1924741087
+[2026-11-10 08:18:15] Completed detailed Telegram notifications
+[2026-11-10 08:18:15] Saving processed data to processed2.json
+[2026-11-10 08:18:15] Saved processed2.json successfully
+[2026-11-10 08:18:15] Git repository detected
+[2026-11-10 08:18:15] Committing and pushing Report and vocab files to GitHub
