@@ -5102,3 +5102,6 @@ Hôm nay con tiếp thu bài khá tốt, hiểu nội dung bài học và nắm 
 [2026-11-12 07:14:12] Saved processed2.json successfully
 [2026-11-12 07:14:12] Git repository detected
 [2026-11-12 07:14:12] Committing and pushing Report and vocab files to GitHub
+[2026-11-12 07:14:14] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-11-12 07:14:14] Closing WebDriver
+[2026-11-12 07:14:14] Script completed
