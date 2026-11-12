@@ -2,7 +2,7 @@
     "new_vocabulary": {
         "bag": "cặp sách",
         "pen": "bút mực",
-        "book": "sách",
+        "book": "quyển sách",
         "pencil": "bút chì",
         "pencil case": "hộp bút",
         "ruler": "thước kẻ",
@@ -12,7 +12,8 @@
         "an": "một"
     },
     "sentence_structures": {
-        "What's this?": "It's a/an + noun."
+        "What's this?": "It's a bag. / It's an eraser.",
+        "Can I have a pen, please?": "Yes, here you are."
     },
     "report_date": "2026-11-08",
     "lesson_title": "Unit 1 - Lesson 1&2 (Page 9,10,11)",
@@ -3370,68 +3371,76 @@
         {
             "word": "an",
             "meaning": "một"
+        },
+        {
+            "word": "board",
+            "meaning": "bảng"
+        },
+        {
+            "word": "poster",
+            "meaning": "tranh treo tường"
         }
     ],
     "practice_vocabulary": [
         {
             "word": "bag",
             "meaning": "cặp sách",
-            "sentence_en": "He was carrying a heavy bag of groceries.",
-            "sentence_vi": "He was carrying a heavy bag of groceries."
+            "sentence_en": "Put your books into your school bag.",
+            "sentence_vi": "Hãy cất sách vở vào trong cặp sách nhé."
         },
         {
             "word": "pen",
             "meaning": "bút mực",
-            "sentence_en": "Let me grab a pen.",
-            "sentence_vi": "Let me grab a pen."
+            "sentence_en": "Please write your name in pen.",
+            "sentence_vi": "Vui lòng viết tên của bạn bằng bút mực."
         },
         {
             "word": "book",
-            "meaning": "sách",
-            "sentence_en": "His desk was covered with piles of books.",
-            "sentence_vi": "His desk was covered with piles of books."
+            "meaning": "quyển sách",
+            "sentence_en": "Open your book at page ten.",
+            "sentence_vi": "Hãy mở sách của em ra trang số mười."
         },
         {
             "word": "pencil",
             "meaning": "bút chì",
-            "sentence_en": "I'll get a pencil and paper.",
-            "sentence_vi": "I'll get a pencil and paper."
+            "sentence_en": "Draw the picture with a sharp pencil.",
+            "sentence_vi": "Hãy vẽ bức tranh bằng một chiếc bút chì nhọn."
         },
         {
             "word": "pencil case",
             "meaning": "hộp bút",
-            "sentence_en": "Could you show me the pencil case?",
-            "sentence_vi": "Bạn có thể chỉ cho tôi hộp bút được không?"
+            "sentence_en": "I keep my pens in a pencil case.",
+            "sentence_vi": "Em đựng bút của mình trong một chiếc hộp bút."
         },
         {
             "word": "ruler",
             "meaning": "thước kẻ",
-            "sentence_en": "He eventually became ruler over all Egypt.",
-            "sentence_vi": "He eventually became ruler over all Egypt."
+            "sentence_en": "Draw a straight line with a ruler.",
+            "sentence_vi": "Hãy kẻ một đường thẳng bằng thước kẻ."
         },
         {
             "word": "eraser",
             "meaning": "cục tẩy",
-            "sentence_en": "Could you show me the eraser?",
-            "sentence_vi": "Bạn có thể chỉ cho tôi cục tẩy được không?"
+            "sentence_en": "Use an eraser to rub out mistakes.",
+            "sentence_vi": "Hãy dùng cục tẩy để xóa đi chỗ viết sai."
         },
         {
             "word": "crayon",
             "meaning": "bút màu sáp",
-            "sentence_en": "She coloured the picture in with crayons.",
-            "sentence_vi": "She coloured the picture in with crayons."
+            "sentence_en": "She coloured the picture with wax crayons.",
+            "sentence_vi": "Cô bé tô màu bức tranh bằng bút sáp màu."
         },
         {
             "word": "a",
             "meaning": "một",
-            "sentence_en": "I can only carry two at a time.",
-            "sentence_vi": "I can only carry two at a time."
+            "sentence_en": "She has a red school bag.",
+            "sentence_vi": "Cô ấy có một chiếc cặp sách màu đỏ."
         },
         {
             "word": "an",
             "meaning": "một",
-            "sentence_en": "Could you show me the an?",
-            "sentence_vi": "Bạn có thể chỉ cho tôi một được không?"
+            "sentence_en": "He ate an apple for breakfast.",
+            "sentence_vi": "Cậu ấy đã ăn một quả táo vào bữa sáng."
         },
         {
             "word": "big",

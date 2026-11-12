@@ -60,8 +60,8 @@
     "Cô ấy không nói gì về điều đó."
   ],
   "blue": [
-    "She was wearing a blue dress.",
-    "Cô ấy đang mặc một chiếc váy màu xanh."
+    "The sky is clear and blue today.",
+    "Bầu trời hôm nay trong xanh vời vợi."
   ],
   "yesterday": [
     "Where were you yesterday morning?",
@@ -120,8 +120,8 @@
     "Con mèo khẽ giật giật ria mép."
   ],
   "desk": [
-    "He was sitting at his desk.",
-    "Anh ấy đang ngồi tại bàn làm việc."
+    "Keep your school desk neat and tidy.",
+    "Hãy giữ bàn học của em gọn gàng sạch sẽ."
   ],
   "gift": [
     "This is a special gift for you.",
@@ -788,35 +788,319 @@
     "Hãy đợi đèn chuyển sang màu xanh lá."
   ],
   "bag": [
-    "He was carrying a heavy bag of groceries.",
-    "He was carrying a heavy bag of groceries."
+    "Put your books into your school bag.",
+    "Hãy cất sách vở vào trong cặp sách nhé."
   ],
   "pen": [
-    "Let me grab a pen.",
-    "Let me grab a pen."
+    "Please write your name in pen.",
+    "Vui lòng viết tên của bạn bằng bút mực."
   ],
   "book": [
-    "His desk was covered with piles of books.",
-    "His desk was covered with piles of books."
+    "Open your book at page ten.",
+    "Hãy mở sách của em ra trang số mười."
   ],
   "pencil": [
-    "I'll get a pencil and paper.",
-    "I'll get a pencil and paper."
+    "Draw the picture with a sharp pencil.",
+    "Hãy vẽ bức tranh bằng một chiếc bút chì nhọn."
   ],
   "ruler": [
-    "He eventually became ruler over all Egypt.",
-    "He eventually became ruler over all Egypt."
+    "Draw a straight line with a ruler.",
+    "Hãy kẻ một đường thẳng bằng thước kẻ."
   ],
   "crayon": [
-    "She coloured the picture in with crayons.",
-    "She coloured the picture in with crayons."
+    "She coloured the picture with wax crayons.",
+    "Cô bé tô màu bức tranh bằng bút sáp màu."
   ],
   "a": [
-    "I can only carry two at a time.",
-    "I can only carry two at a time."
+    "She has a red school bag.",
+    "Cô ấy có một chiếc cặp sách màu đỏ."
   ],
   "board": [
-    "Passengers are waiting to board.",
-    "Hành khách đang chờ lên tàu."
+    "The teacher wrote on the board.",
+    "Thầy giáo viết bài lên trên bảng."
+  ],
+  "pencil case": [
+    "I keep my pens in a pencil case.",
+    "Em đựng bút của mình trong một chiếc hộp bút."
+  ],
+  "eraser": [
+    "Use an eraser to rub out mistakes.",
+    "Hãy dùng cục tẩy để xóa đi chỗ viết sai."
+  ],
+  "rubber": [
+    "Can I borrow your rubber, please?",
+    "Cho mình mượn cục tẩy của bạn nhé?"
+  ],
+  "crayons": [
+    "She coloured the picture with wax crayons.",
+    "Cô bé tô màu bức tranh bằng bút sáp màu."
+  ],
+  "an": [
+    "He ate an apple for breakfast.",
+    "Cậu ấy đã ăn một quả táo vào bữa sáng."
+  ],
+  "chair": [
+    "She sat on a wooden chair.",
+    "Cô ấy ngồi trên một chiếc ghế gỗ."
+  ],
+  "poster": [
+    "We put a poster on the wall.",
+    "Chúng tôi dán một tấm áp phích lên tường."
+  ],
+  "table": [
+    "Set the plates on the kitchen table.",
+    "Hãy bày đĩa lên trên bàn ăn nhé."
+  ],
+  "classroom": [
+    "The students are in the classroom.",
+    "Các bạn học sinh đang ở trong lớp học."
+  ],
+  "paper": [
+    "Write your answer on a piece of paper.",
+    "Hãy viết câu trả lời lên một tờ giấy."
+  ],
+  "scissors": [
+    "Use sharp scissors to cut the paper.",
+    "Hãy dùng kéo sắc để cắt tờ giấy."
+  ],
+  "glue": [
+    "Stick the picture down with glue.",
+    "Hãy dán bức tranh xuống bằng keo dán."
+  ],
+  "notebook": [
+    "She wrote the words in her notebook.",
+    "Cô ấy chép các từ vựng vào vở ghi."
+  ],
+  "computer": [
+    "We use a computer at school.",
+    "Chúng em sử dụng máy tính ở trường."
+  ],
+  "map": [
+    "Can you find Vietnam on the map?",
+    "Bạn có tìm thấy Việt Nam trên bản đồ không?"
+  ],
+  "clock": [
+    "The classroom clock says nine o'clock.",
+    "Đồng hồ trong lớp chỉ chín giờ đúng."
+  ],
+  "door": [
+    "Please close the door quietly.",
+    "Vui lòng đóng cửa lại thật nhẹ nhàng nhé."
+  ],
+  "window": [
+    "Open the window to let air in.",
+    "Hãy mở cửa sổ cho thoáng khí nhé."
+  ],
+  "picture": [
+    "She drew a picture of her family.",
+    "Cô bé vẽ một bức tranh về gia đình mình."
+  ],
+  "ball": [
+    "Kick the ball into the goal.",
+    "Hãy sút quả bóng vào trong khung thành."
+  ],
+  "bat": [
+    "He hit the ball with his bat.",
+    "Cậu ấy dùng gậy đánh trúng quả bóng."
+  ],
+  "doll": [
+    "She dressed her favourite little doll.",
+    "Cô bé mặc váy cho con búp bê yêu thích."
+  ],
+  "game": [
+    "Let's play a board game together.",
+    "Chúng mình cùng chơi một trò chơi nhé."
+  ],
+  "kite": [
+    "The children flew a colourful kite.",
+    "Bọn trẻ thả một chiếc diều đầy màu sắc."
+  ],
+  "marble": [
+    "The glass marble rolled across the floor.",
+    "Viên bi ve lăn tròn trên sàn nhà."
+  ],
+  "plane": [
+    "The toy plane flew through the air.",
+    "Chiếc máy bay đồ chơi bay lượn trên không."
+  ],
+  "puzzle": [
+    "We finished the jigsaw puzzle together.",
+    "Chúng tôi cùng nhau ghép xong bộ xếp hình."
+  ],
+  "robot": [
+    "The toy robot can walk and talk.",
+    "Chú rô-bốt đồ chơi có thể đi và nói chuyện."
+  ],
+  "teddy bear": [
+    "She sleeps with her soft teddy bear.",
+    "Cô bé đi ngủ cùng chú gấu bông mềm mại."
+  ],
+  "teddy": [
+    "He hugged his brown teddy tightly.",
+    "Cậu bé ôm chặt chú gấu bông màu nâu."
+  ],
+  "train": [
+    "The toy train runs on a track.",
+    "Đoàn tàu đồ chơi chạy trên đường ray."
+  ],
+  "toy": [
+    "Please put your toys away now.",
+    "Bây giờ hãy cất gọn đồ chơi của con đi nhé."
+  ],
+  "car": [
+    "My father drives a blue car.",
+    "Bố tôi lái một chiếc xe ô tô màu xanh."
+  ],
+  "bike": [
+    "He rides his bike to school.",
+    "Cậu ấy đạp xe đến trường mỗi ngày."
+  ],
+  "bicycle": [
+    "She learned to ride a bicycle.",
+    "Cô ấy đã học cách đi xe đạp."
+  ],
+  "boy": [
+    "The little boy smiled at me.",
+    "Cậu bé mỉm cười thân thiện với tôi."
+  ],
+  "girl": [
+    "The girl is reading a story book.",
+    "Cô bé đang đọc một cuốn truyện."
+  ],
+  "man": [
+    "That tall man is my uncle.",
+    "Người đàn ông cao lớn kia là chú của tôi."
+  ],
+  "woman": [
+    "The kind woman helped the child.",
+    "Người phụ nữ tốt bụng đã giúp đỡ đứa trẻ."
+  ],
+  "baby": [
+    "The baby is sleeping in the cot.",
+    "Em bé đang ngủ ngon lành trong nôi."
+  ],
+  "friend": [
+    "She is my best friend at school.",
+    "Cô ấy là bạn thân nhất của em ở trường."
+  ],
+  "classmate": [
+    "He sat next to his new classmate.",
+    "Cậu ấy ngồi cạnh người bạn cùng lớp mới."
+  ],
+  "teacher": [
+    "Listen carefully to your English teacher.",
+    "Hãy lắng nghe kỹ lời thầy cô dạy tiếng Anh."
+  ],
+  "student": [
+    "She is a very bright student.",
+    "Cô ấy là một học sinh rất thông minh."
+  ],
+  "family": [
+    "We spent the weekend with our family.",
+    "Chúng tôi dành ngày cuối tuần bên gia đình."
+  ],
+  "mother": [
+    "My mother cooks delicious meals every day.",
+    "Mẹ tôi nấu những bữa ăn ngon mỗi ngày."
+  ],
+  "mom": [
+    "Mom helped me with my homework.",
+    "Mẹ đã hướng dẫn em làm bài tập về nhà."
+  ],
+  "mum": [
+    "Mum made a chocolate cake for us.",
+    "Mẹ đã làm một chiếc bánh sô-cô-la cho chúng tôi."
+  ],
+  "father": [
+    "My father reads the newspaper every morning.",
+    "Bố tôi đọc báo vào mỗi buổi sáng."
+  ],
+  "dad": [
+    "Dad took us to the zoo.",
+    "Bố đã đưa chúng tôi đi chơi sở thú."
+  ],
+  "brother": [
+    "My older brother plays football well.",
+    "Anh trai tôi chơi bóng đá rất giỏi."
+  ],
+  "sister": [
+    "My little sister loves drawing pictures.",
+    "Em gái nhỏ của tôi rất thích vẽ tranh."
+  ],
+  "grandmother": [
+    "My grandmother tells wonderful bedtime stories.",
+    "Bà của tôi kể những câu chuyện cổ tích tuyệt hay."
+  ],
+  "grandma": [
+    "We visit Grandma every Sunday afternoon.",
+    "Chúng tôi đến thăm bà vào mỗi chiều Chủ nhật."
+  ],
+  "grandfather": [
+    "My grandfather grows flowers in his garden.",
+    "Ông của tôi trồng rất nhiều hoa trong vườn."
+  ],
+  "grandpa": [
+    "Grandpa taught me how to fish.",
+    "Ông đã dạy tôi cách câu cá."
+  ],
+  "parents": [
+    "I love my parents very much.",
+    "Em rất yêu thương bố mẹ của mình."
+  ],
+  "aunt": [
+    "My aunt lives in a big city.",
+    "Cô của tôi sống ở một thành phố lớn."
+  ],
+  "uncle": [
+    "My uncle bought me a new book.",
+    "Chú tôi đã mua tặng tôi một cuốn sách mới."
+  ],
+  "cousin": [
+    "My cousin came to stay with us.",
+    "Anh họ của tôi đã đến chơi nhà chúng tôi."
+  ],
+  "red": [
+    "She wore a bright red coat.",
+    "Cô ấy mặc một chiếc áo khoác màu đỏ tươi."
+  ],
+  "orange": [
+    "He peeled a sweet juicy orange.",
+    "Cậu ấy bóc một quả cam ngọt mọng nước."
+  ],
+  "pink": [
+    "The little girl likes pink flowers.",
+    "Cô bé rất thích những bông hoa màu hồng."
+  ],
+  "black": [
+    "Please write your answers in black ink.",
+    "Vui lòng viết câu trả lời bằng mực đen."
+  ],
+  "white": [
+    "Snow covered the ground in white.",
+    "Tuyết phủ trắng xóa trên mặt đất."
+  ],
+  "brown": [
+    "The dog has soft brown fur.",
+    "Chú chó có bộ lông màu nâu mềm mượt."
+  ],
+  "grey": [
+    "Black and white paint make grey.",
+    "Màu đen pha với màu trắng tạo thành màu xám."
+  ],
+  "gray": [
+    "Dark gray clouds covered the sky.",
+    "Những đám mây xám xịt phủ kín bầu trời."
+  ],
+  "happy": [
+    "The children looked very happy today.",
+    "Hôm nay các bạn nhỏ trông rất vui vẻ."
+  ],
+  "sad": [
+    "Don't feel sad about the game.",
+    "Đừng buồn về kết quả trò chơi nhé."
+  ],
+  "fine": [
+    "Everything will be fine tomorrow.",
+    "Ngày mai mọi chuyện rồi sẽ ổn thôi."
   ]
 }

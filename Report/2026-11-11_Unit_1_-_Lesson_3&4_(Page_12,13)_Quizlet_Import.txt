@@ -1,0 +1,25 @@
+board	bảng
+chair	ghế
+desk	bàn học/bàn làm việc
+poster	tranh treo tường
+bag	cặp sách
+pen	bút mực
+book	quyển sách
+pencil	bút chì
+pencil case	hộp bút
+ruler	thước kẻ
+eraser	cục tẩy
+crayon	bút màu sáp
+a	một
+an	một
+big	to
+small	nhỏ
+purple	màu tím
+green	màu xanh lá cây
+yellow	màu vàng
+one	số một (1)
+two	số hai (2)
+three	số ba (3)
+four	số bốn (4)
+five	số năm (5)
+six	số sáu (6)

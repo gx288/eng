@@ -603,11 +603,11 @@ def generate_fallback_sentences(vocab_items, sentence_structures=None):
     """
     results = []
     generic_patterns = [
-        ("Could you show me the {w}?", "Bạn có thể chỉ cho tôi {m} được không?"),
-        ("This is a fine example of {w}.", "Đây là một ví dụ điển hình của {m}."),
-        ("Where can I find the {w}?", "Tôi có thể tìm thấy {m} ở đâu?"),
-        ("The {w} was very easy to use.", "{m_cap} này rất dễ sử dụng."),
-        ("We are learning about the {w}.", "Chúng tôi đang tìm hiểu về {m}.")
+        ("Point to the {w} in the picture.", "Hãy chỉ vào {m} ở trong bức tranh."),
+        ("Can you see the {w} over there?", "Bạn có nhìn thấy {m} ở đằng kia không?"),
+        ("Where can I find a {w}?", "Tôi có thể tìm thấy {m} ở đâu?"),
+        ("She drew a picture of a {w}.", "Cô bé đã vẽ một bức tranh về {m}."),
+        ("We learned the word {w} today.", "Hôm nay chúng em đã học từ {m}.")
     ]
 
     for idx, item in enumerate(vocab_items):
@@ -681,18 +681,32 @@ def get_oxford_5000_map(repo_dir='.'):
     return _OXFORD_5000_MAP
 
 def translate_to_vietnamese(text):
-    """Dịch câu ví dụ sang tiếng Việt tự nhiên qua Google Translation API gọn nhẹ 0.1s không cần API key"""
+    """Dịch câu ví dụ sang tiếng Việt tự nhiên qua Google Translation API (kèm retry & fallback MyMemory)"""
+    import urllib.parse
+    import urllib.request
+    q = urllib.parse.quote(text)
+    for attempt in range(3):
+        try:
+            url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q={q}"
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+            with urllib.request.urlopen(req, timeout=5) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+                vi = ''.join([part[0] for part in data[0] if part[0]]).strip()
+                if vi and vi.lower() != text.strip().lower():
+                    return vi
+        except Exception:
+            time.sleep(0.6 * (attempt + 1))
     try:
-        import urllib.parse
-        import urllib.request
-        q = urllib.parse.quote(text)
-        url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q={q}"
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=4) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            return ''.join([part[0] for part in data[0] if part[0]]).strip()
+        url2 = f"https://api.mymemory.translated.net/get?q={q}&langpair=en|vi"
+        req2 = urllib.request.Request(url2, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req2, timeout=5) as resp2:
+            data2 = json.loads(resp2.read().decode('utf-8'))
+            vi2 = data2.get('responseData', {}).get('translatedText', '').strip()
+            if vi2 and vi2.lower() != text.strip().lower():
+                return vi2
     except Exception:
-        return text
+        pass
+    return ""
 
 def scrape_oxford_live_sentence(word):
     """Trích xuất câu ví dụ ngắn gọn (4-8 từ) trực tiếp từ website Oxford Learner's Dictionaries"""
@@ -772,26 +786,37 @@ def generate_vocabulary_sentences(vocab_input, lesson_title="", sentence_structu
             # 1. Tra cứu trong Bank
             if w_key in bank:
                 s_en, s_vi = bank[w_key]
+                if not s_vi or s_vi.strip().lower() == s_en.strip().lower():
+                    s_vi = translate_to_vietnamese(s_en)
+                    if s_vi:
+                        bank[w_key] = (s_en, s_vi)
+                        bank_updated = True
             # 2. Tra cứu trong Oxford 5000
             elif w_key in o5k_map:
                 s_en = o5k_map[w_key]
                 s_vi = translate_to_vietnamese(s_en)
-                bank[w_key] = (s_en, s_vi)
-                bank_updated = True
-                log_message(f"Found Oxford 5000 example for '{w_key}': {s_en}")
+                if s_en and s_vi and s_vi.strip().lower() != s_en.strip().lower():
+                    bank[w_key] = (s_en, s_vi)
+                    bank_updated = True
+                    log_message(f"Found Oxford 5000 example for '{w_key}': {s_en}")
+                else:
+                    s_en, s_vi = None, None
             # 3. Scrape live Oxford OALD
             else:
                 s_en = scrape_oxford_live_sentence(w_orig)
                 if s_en:
                     s_vi = translate_to_vietnamese(s_en)
-                    bank[w_key] = (s_en, s_vi)
-                    bank_updated = True
-                    log_message(f"Scraped live Oxford OALD example for '{w_key}': {s_en}")
+                    if s_vi and s_vi.strip().lower() != s_en.strip().lower():
+                        bank[w_key] = (s_en, s_vi)
+                        bank_updated = True
+                        log_message(f"Scraped live Oxford OALD example for '{w_key}': {s_en}")
+                    else:
+                        s_en, s_vi = None, None
         except Exception as e:
             log_message(f"Warning looking up sentence for '{w_key}': {e}")
 
-        # 4. Fallback an toàn nếu từ hoàn toàn không có trong Oxford
-        if not s_en:
+        # 4. Fallback an toàn nếu từ hoàn toàn không có trong Oxford hoặc dịch lỗi
+        if not s_en or not s_vi or s_vi.strip().lower() == s_en.strip().lower():
             fb = generate_fallback_sentences([it], sentence_structures)[0]
             s_en = fb["sentence_en"]
             s_vi = fb["sentence_vi"]
@@ -1276,55 +1301,145 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
         log_message(f"Failed to send detailed Telegram messages to chat_id {chat_id}: {str(e)}")
         raise
 
-# Fallback parser trực tiếp từ nội dung văn bản PDF khi Gemini gặp lỗi hạn ngạch (429)
+def clean_lesson_title(raw_title, date_str=""):
+    if not raw_title or raw_title == "cannot find info":
+        return f"Lesson ({date_str})" if date_str else "Lesson"
+    t = re.sub(r'^\s*(?:Lesson\s*)?(?:\(\s*Bài\s*học\s*\)|Bài\s*học)\s*[:：\-]*\s*', '', str(raw_title), flags=re.IGNORECASE).strip()
+    t = re.sub(r'^\s*[:：\-]+\s*', '', t).strip()
+    return t or (f"Lesson ({date_str})" if date_str else "Lesson")
+
+def clean_student_comment(raw_comment):
+    if not raw_comment:
+        return ""
+    c = str(raw_comment)
+    # Cắt bỏ phần nhận xét của các học sinh tiếp theo nếu bị dính
+    c = re.split(r'(?:\n|\s{2,}|(?<=[.!?”]))\s*(?:\.\s*)?(?:Hà Chi|Hoàng Vũ|Gia Hưng|Bảo Hân|Quốc Đạt|Minh Khang|Tuấn Minh|Khánh An|Bảo Ngọc|Gia Bảo|Trân trọng cảm ơn)\s*[:：!]?', c)[0]
+    c = re.sub(r'\(\s*Nhận xét\s*', ' ', c, flags=re.IGNORECASE)
+    c = re.sub(r'\s*học sinh\s*\)', ' ', c, flags=re.IGNORECASE)
+    c = re.sub(r'Page\s*\|\s*\d+', ' ', c, flags=re.IGNORECASE)
+    c = re.sub(r'\s+', ' ', c).strip()
+    return c
+
+def clean_extracted_vocabulary(vocab_dict):
+    if not isinstance(vocab_dict, dict):
+        return {}
+    bad_exact = {
+        'class', 'lesson', 'date', 'skills', 'link', 'links', 'audio', 'phonic', 'phonics',
+        'words', 'grammar', 'summary', 'homework', 'comments', 'running content', 'warm up',
+        'opener', 'vocabulary', 'communication', 'reading', 'speaking', 'listening', 'writing',
+        'activity', 'activities', 'wrap-up', 'wrap up', 'page', 'wb page', '- wb page',
+        'minh huy', 'ha chi', 'hà chi', 'hoang vu', 'hoàng vũ', 'gia hung', 'gia hưng',
+        'bao han', 'bảo hân', 'quoc dat', 'quốc đạt', 'ng', 'chi', 'huy', 'i mystery box',
+        'mystery box', 'online practice', 'extra exercise'
+    }
+    bad_substrings = [
+        'class', 'lesson', 'date', 'skill', 'phonic', 'grammar', 'homework', 'comment',
+        'page', 'unit', 'mystery', 'box', 'minh huy', 'exercise', 'practice', 'workbook',
+        'http', 'www', 'listen', 'speak', 'read', 'write'
+    ]
+    cleaned = {}
+    for k, v in vocab_dict.items():
+        if not k or not v:
+            continue
+        w = re.sub(r'^[^a-zA-Z]+|[^a-zA-Z]+$', '', str(k)).strip().lower()
+        w = re.sub(r'\s+', ' ', w)
+        if not w or len(w) > 22 or not re.match(r'^[a-z]+(?:[\s\-][a-z]+){0,2}$', w):
+            continue
+        if w in bad_exact or any(b in w for b in bad_substrings):
+            continue
+        if len(w) == 1 and w not in ('a', 'i'):
+            continue
+        if len(w) == 2 and w not in ('an', 'in', 'on', 'up', 'go', 'no', 'he', 'we', 'my', 'ox', 'ax'):
+            continue
+        m = str(v).strip()
+        # Nếu nghĩa bị dính từ tiếng Anh viết hoa của cột bên cạnh (VD: "bảng Chair", "bàn học/bàn làm việc Poster")
+        m = re.sub(r'\s+[A-Z][a-zA-Z\s\-]*$', '', m).strip()
+        m = re.sub(r'\s+\d+\.?$', '', m).strip()
+        if not m or len(m) > 38 or any(bad_m in m.lower() for bad_m in ['hôm nay', 'buổi học', 'học sinh', 'con đã', 'bài tập']):
+            continue
+        cleaned[w] = m
+    return cleaned
+
+# Fallback parser trực tiếp từ nội dung văn bản PDF khi Gemini gặp lỗi hạn ngạch (429/504)
 def parse_report_from_text(pdf_text, date_str, pdf_links=None):
     log_message("Executing fallback regex parser on PDF text")
-    lesson_title = "Lesson"
-    m_lesson = re.search(r'(?:Lesson|Bài học)[\s:：]*([^\n\r]+)', pdf_text, re.IGNORECASE)
+    lesson_title = f"Lesson ({date_str})"
+    m_lesson = re.search(r'Lesson\s*(?:\([^)]*\))?\s*[:：]\s*([^\n\r]+)', pdf_text, re.IGNORECASE)
     if m_lesson:
-        lesson_title = m_lesson.group(1).strip()
+        lesson_title = clean_lesson_title(m_lesson.group(1), date_str)
     else:
         m_unit = re.search(r'(Unit\s+\d+[^\n\r]*)', pdf_text, re.IGNORECASE)
         if m_unit:
-            lesson_title = m_unit.group(1).strip()
+            lesson_title = clean_lesson_title(m_unit.group(1), date_str)
 
     comments = ""
-    m_comment = re.search(r'Minh Huy\s*[:：]\s*([^\n\r]+(?:\n[^\n\r]+)*?)(?=\n\s*\.\s*[A-Z]|\n\s*PHẦN|\n\s*Cambridge|\Z)', pdf_text, re.IGNORECASE)
+    m_comment = re.search(r'Minh Huy\s*[:：]\s*([\s\S]*?)(?=\n\s*(?:\.\s*)?[A-ZÀ-Ỹ][a-zà-ỹ]+(?:\s+[A-ZÀ-Ỹ][a-zà-ỹ]+){0,3}\s*[:：]|\n\s*Trân trọng|\Z)', pdf_text)
     if m_comment:
-        comments = re.sub(r'\s+', ' ', m_comment.group(1)).strip()
+        comments = clean_student_comment(m_comment.group(1))
 
     homework = ""
-    m_hw = re.search(r'(?:Homework|Bài tập về nhà)[^\n\r]*:\s*([\s\S]*?)(?=\n\s*Minh Huy|\n\s*Nhận xét|\Z)', pdf_text, re.IGNORECASE)
+    m_hw = re.search(r'Homework\s*(?:\([^)]*\))?\s*([\s\S]*?)(?=Comments|Nhận xét|\n\s*Minh Huy\s*[:：]|\Z)', pdf_text, re.IGNORECASE)
     if m_hw:
-        homework = re.sub(r'\s+', ' ', m_hw.group(1)).strip()
+        hw_raw = re.sub(r'Page\s*\|\s*\d+', ' ', m_hw.group(1))
+        homework = re.sub(r'\s+', ' ', hw_raw).strip()
 
     vocab = {}
-    lines = pdf_text.splitlines()
-    for line in lines:
+    # Chỉ quét từ vựng trong phần nội dung bài học (trước phần Homework / Comments)
+    content_Before_hw = re.split(r'Homework\s*(?:\(|:)|Comments\s*(?:\(|:)|Minh Huy\s*[:：]', pdf_text, maxsplit=1, flags=re.IGNORECASE)[0]
+    for line in content_Before_hw.splitlines():
         line = line.strip()
-        if not line or len(line) > 120:
+        if not line or len(line) > 140:
             continue
-        # Tách các cột từ vựng đánh số trên cùng 1 dòng (VD: "1. unhealthy: không lành mạnh 6. healthy: lành mạnh")
-        segments = re.split(r'(?:^|\s+)\d+\.\s*', line)
-        for seg in segments:
+        # Tách các từ vựng nằm trên cùng 1 dòng bảng 2-3 cột (VD: "Board: bảng Chair: ghế" hoặc "1. unhealthy: ... 6. healthy: ...")
+        line_split = re.sub(r'(?:^|\s+)\d+\.\s*', '\n', line)
+        line_split = re.sub(r'(?<=[^\s:：])\s+([A-Z][a-zA-Z]*(?:\s+[a-zA-Z]+)?\s*[:：])', r'\n\1', line_split)
+        for seg in line_split.splitlines():
             seg = seg.strip()
             if not seg:
                 continue
-            pairs = re.findall(r'([a-zA-Z\s\-]{2,25})\s*[:：]\s*([^:：\n\r]{1,40})', seg)
-            for w, m in pairs:
-                w_clean = w.strip().lower()
-                m_clean = re.sub(r'\s+\d+\.?$', '', m.strip()).strip()
-                if any(skip in w_clean for skip in ['class', 'lesson', 'date', 'skills', 'link', 'audio', 'phonic', 'words', 'grammar', 'summary']):
-                    continue
-                if w_clean and m_clean:
-                    vocab[w_clean] = m_clean
+            m_pair = re.match(r'^([A-Za-z][A-Za-z\s\-]{0,20})\s*[:：]\s*([^:：\n\r]{1,38})$', seg)
+            if m_pair:
+                vocab[m_pair.group(1).strip().lower()] = m_pair.group(2).strip()
+
+    vocab = clean_extracted_vocabulary(vocab)
+
+    # Đối chiếu thêm danh sách từ vựng trong phần Homework ("Danh sách từ vựng: a, b, c")
+    m_hw_words = re.search(r'Danh sách từ vựng\s*[:：]?\s*([a-zA-Z,\s\-]+?)(?=\n|\-\s*Yêu cầu|$)', pdf_text, re.IGNORECASE)
+    if m_hw_words:
+        known_map = {'a': 'một', 'an': 'một', 'crayon': 'bút màu sáp', 'eraser': 'cục tẩy', 'pencil case': 'hộp bút', 'poster': 'tranh treo tường', 'board': 'bảng', 'chair': 'ghế', 'desk': 'bàn học'}
+        if os.path.exists(VOCAB_FILE):
+            try:
+                with open(VOCAB_FILE, 'r', encoding='utf-8') as vf:
+                    for it in json.load(vf).get('vocabulary', []):
+                        if isinstance(it, dict) and it.get('word') and it.get('meaning'):
+                            known_map[it['word'].strip().lower()] = it['meaning'].strip()
+            except Exception:
+                pass
+        for hw_w in m_hw_words.group(1).split(','):
+            hw_w_clean = hw_w.strip().lower()
+            if hw_w_clean and hw_w_clean not in vocab and hw_w_clean in known_map:
+                vocab[hw_w_clean] = known_map[hw_w_clean]
+
+    # Trích xuất cấu trúc câu cơ bản từ bài học
+    structures = {}
+    for q_match in re.findall(r'[“"]([^”"]*?\?)[”"]', content_Before_hw):
+        q_clean = q_match.strip()
+        if 5 <= len(q_clean) <= 50:
+            if "Is it a" in q_clean:
+                structures[q_clean] = ["Yes, it is.", "No, it isn't."]
+            elif "What's this" in q_clean or "What is this" in q_clean:
+                structures[q_clean] = "It's a/an + noun."
+            elif "Can I have" in q_clean:
+                structures[q_clean] = "Here you are."
+            else:
+                structures[q_clean] = ""
 
     log_message(f"Fallback extracted: title='{lesson_title}', vocab_count={len(vocab)}")
     return {
         "new_vocabulary": vocab,
-        "sentence_structures": {},
+        "sentence_structures": structures,
         "report_date": date_str,
-        "lesson_title": lesson_title if lesson_title != "cannot find info" else f"Lesson ({date_str})",
+        "lesson_title": lesson_title,
         "homework": homework or "Ôn tập nội dung bài học và làm bài tập theo hướng dẫn của giáo viên.",
         "links": pdf_links or [],
         "student_comments_minh_huy": comments or "Không có nhận xét riêng trong báo cáo."
@@ -1333,11 +1448,11 @@ def parse_report_from_text(pdf_text, date_str, pdf_links=None):
 # Get available Gemini model
 def get_available_model(attempt=0):
     candidate_order = [
+        'gemini-2.5-flash',
+        'gemini-2.5-flash-lite',
+        'gemini-2.0-flash',
         'gemini-3.5-flash',
-        'gemini-3.5-flash-lite',
-        'gemini-flash-latest',
-        'gemini-3.8-flash',
-        'gemini-2.5-flash'
+        'gemini-3.5-flash-lite'
     ]
     try:
         models = [model.name for model in genai.list_models() if 'generateContent' in model.supported_generation_methods]
@@ -1709,6 +1824,9 @@ def process_report():
                     extracted_data = json.loads(cleaned_text)
                     extracted_data['links'] = list(set(extracted_data.get('links', []) + pdf_links))
                     extracted_data['report_date'] = fix_report_date(extracted_data.get('report_date', date_str), date_str)
+                    extracted_data['lesson_title'] = clean_lesson_title(extracted_data.get('lesson_title', ''), date_str)
+                    extracted_data['student_comments_minh_huy'] = clean_student_comment(extracted_data.get('student_comments_minh_huy', ''))
+                    extracted_data['new_vocabulary'] = clean_extracted_vocabulary(extracted_data.get('new_vocabulary', {}))
                     for word in extracted_data['new_vocabulary']:
                         if not extracted_data['new_vocabulary'][word]:
                             extracted_data['new_vocabulary'][word] = {
@@ -1747,6 +1865,10 @@ def process_report():
                             recovered = parse_report_from_text(pdf_text, date_str, pdf_links)
 
                         extracted_data = best_response or recovered
+
+            extracted_data['lesson_title'] = clean_lesson_title(extracted_data.get('lesson_title', ''), date_str)
+            extracted_data['student_comments_minh_huy'] = clean_student_comment(extracted_data.get('student_comments_minh_huy', ''))
+            extracted_data['new_vocabulary'] = clean_extracted_vocabulary(extracted_data.get('new_vocabulary', {}))
 
             update_report_content_sheet(extracted_data, class_name, date_str, extracted_data['lesson_title'])
 

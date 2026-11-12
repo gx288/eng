@@ -1,6 +1,6 @@
 bag	cặp sách
 pen	bút mực
-book	sách
+book	quyển sách
 pencil	bút chì
 pencil case	hộp bút
 ruler	thước kẻ
