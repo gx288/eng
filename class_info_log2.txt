@@ -4966,3 +4966,139 @@ Trong buổi học hôm nay, con tích cực tham gia xây dựng bài và có..
 [2026-11-12 06:46:34] Report button for VQ2-E1L-2603 on 2026-11-11 is disabled. Waiting for teacher to publish report.
 [2026-11-12 06:46:34] Closing WebDriver
 [2026-11-12 06:46:34] Script completed
+[2026-11-12 07:01:44] Starting script
+[2026-11-12 07:01:44] Starting report check for calendar overview
+[2026-11-12 07:01:44] Loaded processed2.json: {'date': '2026-11-08', 'class_name': 'VQ2-E1L-2603', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', '2026-11-01': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf', '2026-11-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf', '2026-11-08': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf'}}
+[2026-11-12 07:01:44] Writing Google credentials to credentials.json
+[2026-11-12 07:01:44] Credentials written successfully
+[2026-11-12 07:01:44] Initializing Chrome WebDriver
+[2026-11-12 07:01:46] WebDriver session ID: f8bee2245ab85050d0d9edb78ae1bca2
+[2026-11-12 07:01:46] Attempting to restore session from cache...
+[2026-11-12 07:01:51] Navigating to student calendar overview with restored session...
+[2026-11-12 07:01:59] Session verified successfully! Calendar events loaded without fresh login.
+[2026-11-12 07:01:59] Active session restored, bypassed fresh login!
+[2026-11-12 07:01:59] Scrolled to bottom of page
+[2026-11-12 07:01:59] Found 30 class events
+[2026-11-12 07:01:59] Latest class date up to today: 2026-11-11
+[2026-11-12 07:02:02] Targeting report for VQ2-E1L-2603 on 2026-11-11
+[2026-11-12 07:02:02] Attempt 1/3 to click report button
+[2026-11-12 07:03:03] Window switch attempt 1/3 failed: Message: 
+
+[2026-11-12 07:03:08] Attempt 2/3 to click report button
+[2026-11-12 07:03:11] Report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf
+[2026-11-12 07:03:11] Found new report: Báo cáo bài học mới cho lớp VQ2-E1L-2603 ngày 2026-11-11
+Link: https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf
+[2026-11-12 07:03:11] Updating Google Sheet 'Report' with Date 2026-11-11, Class VQ2-E1L-2603, URL https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf
+[2026-11-12 07:03:13] Updated Google Sheet 'Report' successfully: 2026-11-11, VQ2-E1L-2603, https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf at 2026-11-12 07:03:11
+[2026-11-12 07:03:14] Starting PDF processing for report analysis
+[2026-11-12 07:03:14] Extracting direct PDF URL from https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf
+[2026-11-12 07:03:14] Downloading PDF from https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf
+[2026-11-12 07:03:14] Successfully downloaded PDF to temp_report.pdf
+[2026-11-12 07:03:14] Extracting text and links from PDF
+[2026-11-12 07:03:15] Extracted 5549 characters and 5 links from PDF
+[2026-11-12 07:03:15] Deleted temporary PDF file: temp_report.pdf
+[2026-11-12 07:03:15] Gemini API attempt 1/3
+[2026-11-12 07:03:15] Available Gemini models count: 48
+[2026-11-12 07:03:15] Using model: models/gemini-3.5-flash
+[2026-11-12 07:03:37] API attempt 1/3 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.6-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.
+Please retry in 22.105090093s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://aistudio.google.com/docs/rate-limits"
+}
+, violations {
+  description: "Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits."
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-3.6-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 22
+}
+]
+[2026-11-12 07:03:40] Gemini API attempt 2/3
+[2026-11-12 07:03:41] Available Gemini models count: 48
+[2026-11-12 07:03:41] Using model: models/gemini-3.5-flash-lite
+[2026-11-12 07:03:47] Received API response (attempt 2): {"new_vocabulary": {"pot": "c\u00e1i n\u1ed3i"}, "sentence_structures": {}, "report_date": "cannot f...
+[2026-11-12 07:03:47] API attempt 2/3 failed: Gemini returned empty new_vocabulary or invalid lesson_title
+[2026-11-12 07:03:50] Gemini API attempt 3/3
+[2026-11-12 07:03:50] Available Gemini models count: 48
+[2026-11-12 07:03:50] Using model: models/gemini-flash-latest
+[2026-11-12 07:13:50] API attempt 3/3 failed: 504 Deadline expired before operation could complete.
+[2026-11-12 07:13:53] All API attempts failed. Attempting recovery from cache or PDF text.
+[2026-11-12 07:13:53] Executing fallback regex parser on PDF text
+[2026-11-12 07:13:53] Fallback extracted: title='(Bài học): Unit 1 - Lesson 3&4 (Page 12,13)', vocab_count=7
+[2026-11-12 07:13:53] Updating Google Sheet 'ReportContent' with extracted data
+[2026-11-12 07:13:55] Inserted 12 rows to 'ReportContent' after header
+[2026-11-12 07:13:55] Processing total vocabulary
+[2026-11-12 07:13:55] Loaded existing vocabulary from vocab_total.json: 836 entries
+[2026-11-12 07:13:55] Added 6 new vocabulary entries. Total vocabulary: 842
+[2026-11-12 07:13:55] Saving updated vocabulary to vocab_total.json
+[2026-11-12 07:13:55] Successfully saved vocab_total.json
+[2026-11-12 07:13:55] Updating Google Sheet 'vocab' with total vocabulary
+[2026-11-12 07:13:57] Updated Google Sheet 'vocab' successfully with 842 vocabulary entries
+[2026-11-12 07:13:57] Creating Report directory if not exists
+[2026-11-12 07:13:57] Practice vocabulary count: 25 (Original lesson words: 7)
+[2026-11-12 07:13:57]   + Bài hiện tại: 7 words
+[2026-11-12 07:13:57]   + 2026-11-08_Unit_1_-_Lesson_1&2_(Page_9,10,11): 10 words
+[2026-11-12 07:13:57]   + 2026-11-04_Lesson_3,4_(Page_6,7,8): 5 words
+[2026-11-12 07:13:57]   + 2026-11-01_Unit_1_-_Lesson_1,_2_(Page_4,5): 3 words
+[2026-11-12 07:13:58] Found Oxford 5000 example for 'board': Passengers are waiting to board.
+[2026-11-12 07:14:01] Updated and saved oald_sentence_bank.json with new Oxford sentences
+[2026-11-12 07:14:02] Successfully generated PDF worksheet: Report/2026-11-11_(Bài_học)__Unit_1_-_Lesson_3&4_(Page_12,13)_Phieu_Tap_Chep.pdf
+[2026-11-12 07:14:02] Successfully generated Quizlet file: Report/2026-11-11_(Bài_học)__Unit_1_-_Lesson_3&4_(Page_12,13)_Quizlet_Import.txt
+[2026-11-12 07:14:02] Saving result to Report/2026-11-11_(Bài_học)__Unit_1_-_Lesson_3&4_(Page_12,13).json
+[2026-11-12 07:14:02] Successfully saved: Report/2026-11-11_(Bài_học)__Unit_1_-_Lesson_3&4_(Page_12,13).json
+[2026-11-12 07:14:02] Starting detailed Telegram notifications
+[2026-11-12 07:14:02] Initializing Telegram Bot for detailed messages
+[2026-11-12 07:14:02] Sending detailed Telegram messages to chat_id 1900957785
+[2026-11-12 07:14:02] Sending general info message to chat_id 1900957785: *BÁO CÁO BÀI HỌC - 2026-11-11*
+📅 *Ngày*: 2026-11-11
+📚 *Tiêu đề*: (Bài học): Unit 1 - Lesson 3&4 (Pag...
+[2026-11-12 07:14:03] Sent general info message to chat_id 1900957785
+[2026-11-12 07:14:03] Sending vocabulary message to chat_id 1900957785: *TỪ VỰNG MỚI - 2026-11-11*
+• `board`: bảng Chair
+• `desk`: bàn học/bàn làm việc Poster
+• `ng`: Trong...
+[2026-11-12 07:14:03] Sent vocabulary message to chat_id 1900957785
+[2026-11-12 07:14:04] Sending homework message to chat_id 1900957785: *BÀI TẬP VỀ NHÀ - 2026-11-11*
+Ôn tập nội dung bài học và làm bài tập theo hướng dẫn của giáo viên....
+[2026-11-12 07:14:04] Sent homework message to chat_id 1900957785
+[2026-11-12 07:14:05] Sending comments message to chat_id 1900957785: *NHẬN XÉT VỀ MINH HUY - 2026-11-11*
+Hôm nay con tiếp thu bài khá tốt, hiểu nội dung bài học và nắm đ...
+[2026-11-12 07:14:05] Sent comments message to chat_id 1900957785
+[2026-11-12 07:14:06] Sending A4 worksheet PDF to chat_id 1900957785
+[2026-11-12 07:14:07] Sent A4 worksheet PDF to chat_id 1900957785
+[2026-11-12 07:14:07] Completed sending detailed messages to chat_id 1900957785
+[2026-11-12 07:14:07] Sending detailed Telegram messages to chat_id 1924741087
+[2026-11-12 07:14:07] Sending general info message to chat_id 1924741087: *BÁO CÁO BÀI HỌC - 2026-11-11*
+📅 *Ngày*: 2026-11-11
+📚 *Tiêu đề*: (Bài học): Unit 1 - Lesson 3&4 (Pag...
+[2026-11-12 07:14:08] Sent general info message to chat_id 1924741087
+[2026-11-12 07:14:08] Sending vocabulary message to chat_id 1924741087: *TỪ VỰNG MỚI - 2026-11-11*
+• `board`: bảng Chair
+• `desk`: bàn học/bàn làm việc Poster
+• `ng`: Trong...
+[2026-11-12 07:14:09] Sent vocabulary message to chat_id 1924741087
+[2026-11-12 07:14:09] Sending homework message to chat_id 1924741087: *BÀI TẬP VỀ NHÀ - 2026-11-11*
+Ôn tập nội dung bài học và làm bài tập theo hướng dẫn của giáo viên....
+[2026-11-12 07:14:09] Sent homework message to chat_id 1924741087
+[2026-11-12 07:14:10] Sending comments message to chat_id 1924741087: *NHẬN XÉT VỀ MINH HUY - 2026-11-11*
+Hôm nay con tiếp thu bài khá tốt, hiểu nội dung bài học và nắm đ...
+[2026-11-12 07:14:10] Sent comments message to chat_id 1924741087
+[2026-11-12 07:14:11] Sending A4 worksheet PDF to chat_id 1924741087
+[2026-11-12 07:14:12] Sent A4 worksheet PDF to chat_id 1924741087
+[2026-11-12 07:14:12] Completed sending detailed messages to chat_id 1924741087
+[2026-11-12 07:14:12] Completed detailed Telegram notifications
+[2026-11-12 07:14:12] Saving processed data to processed2.json
+[2026-11-12 07:14:12] Saved processed2.json successfully
+[2026-11-12 07:14:12] Git repository detected
+[2026-11-12 07:14:12] Committing and pushing Report and vocab files to GitHub

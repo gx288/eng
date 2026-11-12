@@ -814,5 +814,9 @@
   "a": [
     "I can only carry two at a time.",
     "I can only carry two at a time."
+  ],
+  "board": [
+    "Passengers are waiting to board.",
+    "Hành khách đang chờ lên tàu."
   ]
 }
