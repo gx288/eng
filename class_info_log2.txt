@@ -4809,3 +4809,21 @@ Hôm nay con tiếp thu bài khá tốt, hiểu nội dung bài học và nắm 
 [2026-11-13 22:31:39] Report button for VQ2-FG.3-2603 on 2026-11-14 is disabled. Waiting for teacher to publish report.
 [2026-11-13 22:31:39] Closing WebDriver
 [2026-11-13 22:31:39] Script completed
+[2026-11-13 22:46:09] Starting script
+[2026-11-13 22:46:09] Starting report check for calendar overview
+[2026-11-13 22:46:09] Loaded processed2.json: {'date': '2026-11-11', 'class_name': 'VQ2-E1L-2603', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', '2026-11-01': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf', '2026-11-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf', '2026-11-08': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf', '2026-11-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf'}}
+[2026-11-13 22:46:09] Writing Google credentials to credentials.json
+[2026-11-13 22:46:09] Credentials written successfully
+[2026-11-13 22:46:09] Initializing Chrome WebDriver
+[2026-11-13 22:46:10] WebDriver session ID: a11a48f990a298ea2776a8c6315e701c
+[2026-11-13 22:46:10] Attempting to restore session from cache...
+[2026-11-13 22:46:16] Navigating to student calendar overview with restored session...
+[2026-11-13 22:46:23] Session verified successfully! Calendar events loaded without fresh login.
+[2026-11-13 22:46:23] Active session restored, bypassed fresh login!
+[2026-11-13 22:46:23] Scrolled to bottom of page
+[2026-11-13 22:46:23] Found 30 class events
+[2026-11-13 22:46:23] Latest class date up to today: 2026-11-14
+[2026-11-13 22:46:26] Targeting report for VQ2-FG.3-2603 on 2026-11-14
+[2026-11-13 22:46:26] Report button for VQ2-FG.3-2603 on 2026-11-14 is disabled. Waiting for teacher to publish report.
+[2026-11-13 22:46:26] Closing WebDriver
+[2026-11-13 22:46:26] Script completed
