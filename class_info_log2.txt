@@ -3927,3 +3927,28 @@ Hôm nay con tiếp thu bài khá tốt, hiểu nội dung bài học và nắm 
 [2026-11-13 10:31:59] Latest class on 2026-11-11 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf. Exiting.
 [2026-11-13 10:31:59] Closing WebDriver
 [2026-11-13 10:32:00] Script completed
+[2026-11-13 10:46:22] Starting script
+[2026-11-13 10:46:22] Starting report check for calendar overview
+[2026-11-13 10:46:22] Loaded processed2.json: {'date': '2026-11-11', 'class_name': 'VQ2-E1L-2603', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', '2026-11-01': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf', '2026-11-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf', '2026-11-08': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf', '2026-11-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf'}}
+[2026-11-13 10:46:22] Writing Google credentials to credentials.json
+[2026-11-13 10:46:22] Credentials written successfully
+[2026-11-13 10:46:22] Initializing Chrome WebDriver
+[2026-11-13 10:46:31] WebDriver session ID: c799cd8c1ad7512f813e2da11df4f7a5
+[2026-11-13 10:46:31] Attempting to restore session from cache...
+[2026-11-13 10:46:38] Navigating to student calendar overview with restored session...
+[2026-11-13 10:46:45] Session cache expired or redirected to login, will perform fresh login
+[2026-11-13 10:46:45] Session cache not available or expired. Performing fresh login...
+[2026-11-13 10:46:45] Navigating to login page: https://apps.cec.com.vn/login
+[2026-11-13 10:46:45] Login attempt 1/3
+[2026-11-13 10:46:46] Entering password
+[2026-11-13 10:46:46] Clicking login button
+[2026-11-13 10:46:47] Login successful
+[2026-11-13 10:46:49] Saved session cache (0 cookies, 4 localStorage items) to cec_session.json
+[2026-11-13 10:46:49] Navigating to calendar overview page: https://apps.cec.com.vn/student-calendar/overview
+[2026-11-13 10:46:56] Saved session cache (0 cookies, 5 localStorage items) to cec_session.json
+[2026-11-13 10:46:56] Scrolled to bottom of page
+[2026-11-13 10:46:56] Found 30 class events
+[2026-11-13 10:46:56] Latest class date up to today: 2026-11-11
+[2026-11-13 10:46:56] Latest class on 2026-11-11 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf. Exiting.
+[2026-11-13 10:46:56] Closing WebDriver
+[2026-11-13 10:46:56] Script completed
