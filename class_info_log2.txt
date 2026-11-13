@@ -3536,3 +3536,20 @@ Hôm nay con tiếp thu bài khá tốt, hiểu nội dung bài học và nắm 
 [2026-11-13 04:46:37] Latest class on 2026-11-11 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf. Exiting.
 [2026-11-13 04:46:37] Closing WebDriver
 [2026-11-13 04:46:37] Script completed
+[2026-11-13 05:01:49] Starting script
+[2026-11-13 05:01:49] Starting report check for calendar overview
+[2026-11-13 05:01:50] Loaded processed2.json: {'date': '2026-11-11', 'class_name': 'VQ2-E1L-2603', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', '2026-11-01': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf', '2026-11-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf', '2026-11-08': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf', '2026-11-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf'}}
+[2026-11-13 05:01:50] Writing Google credentials to credentials.json
+[2026-11-13 05:01:50] Credentials written successfully
+[2026-11-13 05:01:50] Initializing Chrome WebDriver
+[2026-11-13 05:01:58] WebDriver session ID: d3a94c88998048454ac5b3726dfe1bc1
+[2026-11-13 05:01:58] Attempting to restore session from cache...
+[2026-11-13 05:02:04] Navigating to student calendar overview with restored session...
+[2026-11-13 05:02:12] Session verified successfully! Calendar events loaded without fresh login.
+[2026-11-13 05:02:12] Active session restored, bypassed fresh login!
+[2026-11-13 05:02:12] Scrolled to bottom of page
+[2026-11-13 05:02:12] Found 30 class events
+[2026-11-13 05:02:12] Latest class date up to today: 2026-11-11
+[2026-11-13 05:02:12] Latest class on 2026-11-11 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf. Exiting.
+[2026-11-13 05:02:12] Closing WebDriver
+[2026-11-13 05:02:12] Script completed
