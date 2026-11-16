@@ -3330,3 +3330,6 @@ Con tham gia các hoạt động trên lớp rất hăng hái và tích cực. T
 [2026-11-16 10:02:45] Saved processed2.json successfully
 [2026-11-16 10:02:45] Git repository detected
 [2026-11-16 10:02:45] Committing and pushing Report and vocab files to GitHub
+[2026-11-16 10:02:47] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-11-16 10:02:47] Closing WebDriver
+[2026-11-16 10:02:47] Script completed
