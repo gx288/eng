@@ -863,12 +863,10 @@ def build_word_search_grid(vocab_items, seed_str="cec"):
     num_w = len(cleaned_entries)
 
     if num_w <= 6:
-        grid_n = 10
-    elif num_w <= 10:
         grid_n = 11
-    elif num_w <= 14:
-        grid_n = 12
-    elif num_w <= 18:
+    elif num_w <= 10:
+        grid_n = 13
+    elif num_w <= 13:
         grid_n = 14
     else:
         grid_n = 15
@@ -893,6 +891,7 @@ def build_word_search_grid(vocab_items, seed_str="cec"):
         grid = [["" for _ in range(grid_n)] for _ in range(grid_n)]
         placements = {}
         answer_cells = set()
+        placed_centers = []
         placed_all = True
 
         for idx, entry in enumerate(sorted_entries):
@@ -909,8 +908,7 @@ def build_word_search_grid(vocab_items, seed_str="cec"):
             else:
                 dirs = [(1, 1), (-1, 1), (0, 1), (1, 0)]
 
-            best_Write = []
-            valid_Write = []
+            candidates = []
 
             for d_priority, (dr, dc) in enumerate(dirs):
                 for r in range(grid_n):
@@ -923,29 +921,57 @@ def build_word_search_grid(vocab_items, seed_str="cec"):
                             continue
                         ok = True
                         overlaps = 0
+                        adj_touches = 0
+                        word_coords = set()
                         for k_i in range(wlen):
-                            ch = grid[r + dr * k_i][c + dc * k_i]
+                            rr = r + dr * k_i
+                            cc = c + dc * k_i
+                            word_coords.add((rr, cc))
+                            ch = grid[rr][cc]
                             if ch != "" and ch != gw[k_i]:
                                 ok = False
                                 break
                             if ch == gw[k_i]:
                                 overlaps += 1
-                        if ok:
-                            if overlaps > 0 and d_priority == 0:
-                                best_Write.append((overlaps + 2, r, c, dr, dc))
-                            elif overlaps > 0:
-                                best_Write.append((overlaps, r, c, dr, dc))
-                            elif d_priority == 0:
-                                valid_Write.append((r, c, dr, dc))
-                            elif not valid_Write:
-                                valid_Write.append((r, c, dr, dc))
+                        if not ok:
+                            continue
 
-            if best_Write:
-                rng.shuffle(best_Write)
-                best_Write.sort(key=lambda x: x[0], reverse=True)
-                _, r0, c0, dr0, dc0 = best_Write[0]
-            elif valid_Write:
-                r0, c0, dr0, dc0 = rng.choice(valid_Write)
+                        # Đếm số ô xung quanh (8 hướng lân cận) đã có chữ của từ khác để tránh các từ dính sát nhau
+                        for (rr, cc) in word_coords:
+                            for nr in (-1, 0, 1):
+                                for nc in (-1, 0, 1):
+                                    if nr == 0 and nc == 0:
+                                        continue
+                                    tr, tc = rr + nr, cc + nc
+                                    if 0 <= tr < grid_n and 0 <= tc < grid_n and (tr, tc) not in word_coords:
+                                        if grid[tr][tc] != "":
+                                            adj_touches += 1
+
+                        # Phạt nặng nếu ô ngay trước chữ đầu hoặc ngay sau chữ cuối cùng hướng đã có chữ (tránh 2 từ nối đuôi nhau trên cùng 1 hàng/cột)
+                        before_r, before_c = r - dr, c - dc
+                        after_r, after_c = r + dr * wlen, c + dc * wlen
+                        if 0 <= before_r < grid_n and 0 <= before_c < grid_n and grid[before_r][before_c] != "":
+                            adj_touches += 50
+                        if 0 <= after_r < grid_n and 0 <= after_c < grid_n and grid[after_r][after_c] != "":
+                            adj_touches += 50
+
+                        # Tính khoảng cách từ tâm từ này tới các từ đã đặt để rải đều khắp bảng
+                        mid_r = r + dr * (wlen - 1) / 2.0
+                        mid_c = c + dc * (wlen - 1) / 2.0
+                        if placed_centers:
+                            min_dist = min(((mid_r - pr) ** 2 + (mid_c - pc) ** 2) ** 0.5 for pr, pc in placed_centers)
+                        else:
+                            min_dist = 10.0
+
+                        # Điểm ưu tiên:
+                        # 1. Tốt nhất là KHÔNG đè nhau (overlaps == 0) và KHÔNG chạm sát cạnh từ khác (adj_touches == 0)
+                        # 2. Ưu tiên hướng chính của từ (d_priority == 0) và khoảng cách xa các từ đã đặt (min_dist lớn)
+                        dir_Penalty = 0 if d_priority == 0 else (1 if d_priority <= 1 else 2)
+                        candidates.append((overlaps, adj_touches, dir_Penalty, -min_dist + rng.uniform(-0.8, 0.8), r, c, dr, dc))
+
+            if candidates:
+                candidates.sort(key=lambda x: (x[0], x[1], x[2], x[3]))
+                _, _, _, _, r0, c0, dr0, dc0 = candidates[0]
             else:
                 placed_all = False
                 break
@@ -956,6 +982,7 @@ def build_word_search_grid(vocab_items, seed_str="cec"):
                 grid[rr][cc] = gw[k_i]
                 answer_cells.add((rr, cc))
 
+            placed_centers.append((r0 + dr0 * (wlen - 1) / 2.0, c0 + dc0 * (wlen - 1) / 2.0))
             placements[entry["word"].lower()] = {
                 "row": r0 + 1,
                 "col": c0 + 1,
