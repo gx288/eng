@@ -3355,20 +3355,20 @@
         {
             "word": "big",
             "meaning": "to",
-            "sentence_en": "This box is too big to carry.",
-            "sentence_vi": "Chiếc hộp này quá to để bê đi."
+            "sentence_en": "They live in a big house.",
+            "sentence_vi": "Họ sống trong một ngôi nhà lớn."
         },
         {
             "word": "small",
             "meaning": "nhỏ",
-            "sentence_en": "She lives in a small village.",
-            "sentence_vi": "Cô ấy sống trong một ngôi làng nhỏ."
+            "sentence_en": "It is a very small dog.",
+            "sentence_vi": "Đó là một chú chó rất nhỏ."
         },
         {
             "word": "purple",
             "meaning": "màu tím",
-            "sentence_en": "She wore a bright purple dress.",
-            "sentence_vi": "Cô ấy mặc một chiếc váy màu tím tươi."
+            "sentence_en": "She likes her new purple bag.",
+            "sentence_vi": "Cô bé thích chiếc cặp màu tím mới."
         },
         {
             "word": "green",
@@ -3379,8 +3379,8 @@
         {
             "word": "yellow",
             "meaning": "màu vàng",
-            "sentence_en": "She was wearing a bright yellow hat.",
-            "sentence_vi": "Cô ấy đội một chiếc mũ màu vàng tươi."
+            "sentence_en": "She has a bright yellow hat.",
+            "sentence_vi": "Cô ấy có một chiếc mũ màu vàng."
         },
         {
             "word": "one",
@@ -3391,32 +3391,32 @@
         {
             "word": "two",
             "meaning": "số hai (2)",
-            "sentence_en": "She has two younger brothers.",
+            "sentence_en": "She has two little brothers.",
             "sentence_vi": "Cô ấy có hai người em trai."
         },
         {
             "word": "three",
             "meaning": "số ba (3)",
             "sentence_en": "We waited for three hours.",
-            "sentence_vi": "Chúng tôi đã đợi trong ba tiếng đồng hồ."
+            "sentence_vi": "Chúng tôi đã đợi trong ba giờ."
         },
         {
             "word": "four",
             "meaning": "số bốn (4)",
-            "sentence_en": "A square has four equal sides.",
-            "sentence_vi": "Hình vuông có bốn cạnh bằng nhau."
+            "sentence_en": "A square has four sides.",
+            "sentence_vi": "Hình vuông có bốn cạnh."
         },
         {
             "word": "five",
             "meaning": "số năm (5)",
-            "sentence_en": "Hold up your hand with five fingers.",
-            "sentence_vi": "Hãy giơ bàn tay có năm ngón lên nhé."
+            "sentence_en": "Hold up your five fingers.",
+            "sentence_vi": "Hãy giơ năm ngón tay của em lên."
         },
         {
             "word": "six",
             "meaning": "số sáu (6)",
-            "sentence_en": "There are six chairs around the table.",
-            "sentence_vi": "Có sáu chiếc ghế xung quanh bàn."
+            "sentence_en": "There are six chairs here.",
+            "sentence_vi": "Có sáu chiếc ghế ở đây."
         },
         {
             "word": "seven",
@@ -3433,74 +3433,14 @@
         {
             "word": "nine",
             "meaning": "số chín (9)",
-            "sentence_en": "The shop opens at nine every morning.",
-            "sentence_vi": "Cửa hàng mở cửa lúc chín giờ mỗi sáng."
+            "sentence_en": "The shop opens at nine o'clock.",
+            "sentence_vi": "Cửa hàng mở cửa lúc chín giờ."
         },
         {
             "word": "ten",
             "meaning": "số mười (10)",
             "sentence_en": "Count from one to ten slowly.",
-            "sentence_vi": "Hãy đếm chậm từ một đến mười nhé."
-        },
-        {
-            "word": "eleven",
-            "meaning": "mười một (11)",
-            "sentence_en": "A football team has eleven players.",
-            "sentence_vi": "Một đội bóng đá có mười một cầu thủ."
-        },
-        {
-            "word": "fifteen",
-            "meaning": "mười lăm (15)",
-            "sentence_en": "The bus arrives in fifteen minutes.",
-            "sentence_vi": "Xe buýt sẽ đến trong mười lăm phút nữa."
-        },
-        {
-            "word": "twenty",
-            "meaning": "hai mươi (20)",
-            "sentence_en": "There are twenty desks in the room.",
-            "sentence_vi": "Có hai mươi chiếc bàn học trong phòng."
-        },
-        {
-            "word": "track",
-            "meaning": "đường ray",
-            "sentence_en": "The train stopped on the track.",
-            "sentence_vi": "Đoàn tàu dừng lại trên đường ray."
-        },
-        {
-            "word": "trail",
-            "meaning": "đường mòn",
-            "sentence_en": "We walked along the forest trail.",
-            "sentence_vi": "Chúng tôi đi bộ dọc theo đường mòn trong rừng."
-        },
-        {
-            "word": "trash",
-            "meaning": "rác",
-            "sentence_en": "Please throw your trash in the bin.",
-            "sentence_vi": "Vui lòng bỏ rác vào thùng nhé."
-        },
-        {
-            "word": "trust",
-            "meaning": "tin tưởng",
-            "sentence_en": "You can always trust a good friend.",
-            "sentence_vi": "Bạn luôn có thể tin tưởng một người bạn tốt."
-        },
-        {
-            "word": "tree",
-            "meaning": "cây cối",
-            "sentence_en": "We sat in the shade of a tree.",
-            "sentence_vi": "Chúng tôi ngồi dưới bóng râm của một cái cây."
-        },
-        {
-            "word": "traffic",
-            "meaning": "giao thông",
-            "sentence_en": "There is heavy traffic on the roads.",
-            "sentence_vi": "Giao thông trên đường đang rất đông đúc."
-        },
-        {
-            "word": "unhealthy",
-            "meaning": "không lành mạnh",
-            "sentence_en": "Eating too much sugar is unhealthy.",
-            "sentence_vi": "Ăn quá nhiều đường thì không tốt cho sức khỏe."
+            "sentence_vi": "Hãy đếm chậm từ một đến mười."
         }
     ]
 }

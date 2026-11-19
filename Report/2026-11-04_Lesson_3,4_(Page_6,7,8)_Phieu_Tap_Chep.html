@@ -2,27 +2,49 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Phiếu Tập Chép Từ Vựng &amp; Câu - Lesson 3,4 (Page 6,7,8)</title>
+  <title>Trò Chơi Tìm Từ &amp; Luyện Chép Câu Oxford - Lesson 3,4 (Page 6,7,8)</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Geneva, Verdana, sans-serif;
       background-color: #ffffff;
       color: #000000;
-      line-height: 1.2;
+      line-height: 1.22;
       -webkit-font-smoothing: antialiased;
+    }
+    .web-toolbar {
+      text-align: center;
+      padding: 10px;
+      background: #1e293b;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .web-btn {
+      background: #10b981;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
     }
     .a4-page {
       background: #ffffff;
       width: 210mm;
       min-height: 286mm;
       max-height: 286mm;
-      padding: 5mm 5mm 5mm 5mm;
+      padding: 4.5mm 6mm 4.5mm 6mm;
       margin: 0 auto 20px auto;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: space-between;
       overflow: hidden;
       page-break-after: always;
       break-after: page;
@@ -34,139 +56,246 @@
     .page-head {
       border-bottom: 2.5px solid #000000;
       padding-bottom: 3px;
-      margin-bottom: 3px;
+      margin-bottom: 5px;
     }
     .title-main {
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 900;
       text-align: center;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       color: #000000;
       margin-bottom: 2px;
     }
     .info-bar {
       display: grid;
-      grid-template-columns: 2.2fr 1.3fr 1.3fr 1fr;
-      font-size: 12px;
+      grid-template-columns: 1.5fr 1.1fr 1.8fr 0.9fr;
+      font-size: 11.8px;
       font-weight: 800;
       color: #000000;
       padding: 1px 0;
     }
-    /* BẢNG TƯƠNG PHẢN SIÊU CAO, VIỀN LIỀN NÉT 100% KHÔNG BỊ MẤT VIỀN */
-    .vocab-table {
+    .guide-banner {
+      background: #ffffff;
+      border: 2px dashed #000000;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11.8px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    /* BẢNG Ô CHỮ TÌM TỪ (WORD SEARCH GRID) */
+    .ws-grid-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2px 0 4px 0;
+      flex-grow: 1;
+    }
+    .ws-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 2.5px solid #000000;
+      margin: 0 auto;
+    }
+    .ws-idx-corner {
+      width: 6mm;
+      height: 5.5mm;
+      background: #000000;
+      border-right: 1.5px solid #000000;
+      border-bottom: 1.5px solid #000000;
+    }
+    .ws-idx-top {
+      width: 12.11mm;
+      height: 5.5mm;
+      font-size: 10px;
+      font-weight: 900;
+      text-align: center;
+      vertical-align: middle;
+      border-right: 1.5px solid #000000;
+      border-bottom: 2px solid #000000;
+      background: #f1f5f9;
+    }
+    .ws-idx-left {
+      width: 6mm;
+      height: 12.11mm;
+      font-size: 10px;
+      font-weight: 900;
+      text-align: center;
+      vertical-align: middle;
+      border-right: 2px solid #000000;
+      border-bottom: 1.5px solid #000000;
+      background: #f1f5f9;
+    }
+    .ws-cell {
+      width: 12.11mm;
+      height: 12.11mm;
+      border-right: 1.6px solid #000000;
+      border-bottom: 1.6px solid #000000;
+      text-align: center;
+      vertical-align: middle;
+      font-family: "Consolas", "Courier New", "Segoe UI", monospace;
+      font-size: 17.2px;
+      font-weight: 900;
+      color: #000000;
+      user-select: none;
+    }
+    body.show-ans .ws-cell[data-ans="1"] {
+      background-color: #fde047 !important;
+      text-decoration: underline;
+    }
+    .ws-table tr td:last-child, .ws-table tr th:last-child {
+      border-right: none;
+    }
+    .ws-table tr:last-child td, .ws-table tr:last-child th {
+      border-bottom: none;
+    }
+    /* DANH SÁCH TỪ MỚI Ở CUỐI TRANG 1 */
+    .word-bank-box {
+      border: 2.5px solid #000000;
+      border-radius: 6px;
+      padding: 5px 10px 7px 10px;
+      margin-top: 2px;
+    }
+    .wb-title {
+      font-size: 12.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 3px;
+      margin-bottom: 5px;
+      letter-spacing: 0.3px;
+    }
+    .wb-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px 10px;
+    }
+    .wb-item {
+      font-size: 12px;
+      line-height: 1.28;
+      color: #000000;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .wb-check {
+      font-size: 14px;
+      font-weight: 900;
+      margin-right: 3px;
+    }
+    .wb-word {
+      font-weight: 900;
+      font-size: 12.5px;
+    }
+    .wb-mean {
+      font-weight: 700;
+    }
+    /* TRANG 2: BẢNG CHỈ CHÉP CÂU VÍ DỤ OXFORD + HỘP ĐÁP ÁN CUỐI TRANG */
+    .sent-table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      flex-grow: 1;
       border: 2.5px solid #000000;
     }
-    .vocab-table th {
+    .sent-table th {
       background: #ffffff;
       color: #000000;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 900;
       text-transform: uppercase;
       border-bottom: 2.5px solid #000000;
       border-right: 2px solid #000000;
-      padding: 4px 2px;
+      padding: 4px 4px;
       text-align: center;
     }
-    .vocab-table th:last-child {
+    .sent-table th:last-child {
       border-right: none;
     }
-    .row-word td {
-      height: 8.7mm;
-      border-bottom: 2px solid #000000;
+    .sent-only-row td {
+      height: 12.93mm;
+      border-bottom: 1.8px solid #000000;
       border-right: 2px solid #000000;
-      background-color: #ffffff;
-      padding: 0 5px;
+      padding: 1.5px 6px;
       vertical-align: middle;
     }
-    .row-word td:last-child {
+    .sent-only-row td:last-child {
       border-right: none;
     }
-    .row-sentence td {
-      height: 10.3mm;
-      border-bottom: 3px solid #000000;
-      border-right: 2px solid #000000;
-      background-color: #ffffff;
-      padding: 0 5px;
-      vertical-align: middle;
+    .sent-table tbody tr:last-child td {
+      border-bottom: none;
     }
-    .row-sentence td:last-child {
-      border-right: none;
-    }
-    .col-en {
-      width: 14%;
-      font-weight: 900;
-      font-size: 15px;
-      color: #000000;
-      word-break: break-word;
-      line-height: 1.15;
-    }
-    .col-vi {
-      width: 14%;
-      font-weight: 800;
-      font-size: 13px;
-      color: #000000;
-      word-break: break-word;
-      line-height: 1.15;
-    }
-    .col-write {
-      width: 24%;
-      padding: 0 !important;
-      position: relative;
-    }
-    /* DÒNG KẺ TẬP VIẾT TÌ ĐÁY (BASELINE GUIDE LINE) */
-    .baseline-box {
-      width: 100%;
-      height: 100%;
+    .col-word-ref { width: 17%; }
+    .ref-en { font-size: 13px; font-weight: 900; color: #000000; line-height: 1.15; }
+    .ref-vi { font-size: 11px; font-weight: 700; color: #000000; line-height: 1.15; }
+    .col-oald-sent { width: 35%; }
+    .oald-en { font-size: 12.8px; font-weight: 900; color: #000000; line-height: 1.2; }
+    .oald-vi { font-size: 11px; font-weight: 700; color: #000000; line-height: 1.15; margin-top: 1px; }
+    .col-copy-box { width: 48%; }
+
+    /* HỘP ĐÁP ÁN TRÒ CHƠI TÌM TỪ Ở CUỐI TRANG 2 */
+    .answer-key-box {
+      border: 2px solid #000000;
+      border-radius: 6px;
+      padding: 4px 8px;
+      margin-top: 4px;
       display: flex;
-      align-items: flex-end;
-      padding: 0 6px 2.8mm 6px;
+      align-items: center;
+      gap: 10px;
     }
-    .baseline-line {
-      width: 100%;
-      height: 0;
-      border-bottom: 2.2px solid #000000; /* Đậm nét 2.2px chống máy in mờ */
+    .ak-mini-table {
+      border-collapse: collapse;
+      border: 1.5px solid #000000;
+      flex-shrink: 0;
     }
-    .col-sent-en {
-      width: 28%;
-      font-weight: 800;
-      font-size: 12.5px;
-      color: #000000;
-      word-break: break-word;
-      line-height: 1.25;
-      padding: 0 5px !important;
+    .ak-cell {
+      width: 2.7mm;
+      height: 2.7mm;
+      font-size: 6.5px;
+      font-family: "Consolas", monospace;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1;
     }
-    .badge-vd {
+    .ak-hit {
       font-weight: 900;
-      font-size: 10.5px;
-      background: #000000;
-      color: #ffffff;
-      padding: 1px 4px;
-      border-radius: 2px;
-      margin-right: 4px;
-      display: inline-block;
-    }
-    .col-sent-vi {
-      width: 24%;
-      font-weight: 700;
-      font-size: 11.5px;
       color: #000000;
-      word-break: break-word;
-      line-height: 1.25;
-      padding: 0 5px !important;
+      background: #e2e8f0;
+      border: 0.4px solid #000000;
     }
-    .col-sent-write {
-      width: 48%;
-      padding: 0 !important;
-      position: relative;
+    .ak-miss {
+      color: #94a3b8;
+      font-weight: 400;
     }
+    .ak-coords-wrap {
+      flex: 1;
+    }
+    .ak-title {
+      font-size: 10.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid #000000;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+    }
+    .ak-coords-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px 8px;
+    }
+    .ak-coord-item {
+      font-size: 9.8px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .page-foot {
       border-top: 2px solid #000000;
-      margin-top: 2px;
+      margin-top: 3px;
       padding-top: 2px;
       display: flex;
       justify-content: space-between;
@@ -176,16 +305,17 @@
     }
     @page {
       size: A4 portrait;
-      margin: 5mm 5mm 5mm 5mm;
+      margin: 4.5mm 5mm 4.5mm 5mm;
     }
     @media print {
+      .web-toolbar { display: none !important; }
       body { background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .a4-page {
         width: 100% !important;
         min-height: 286mm !important;
         max-height: 286mm !important;
         margin: 0 !important;
-        padding: 5mm 5mm 5mm 5mm !important;
+        padding: 4.5mm 6mm 4.5mm 6mm !important;
         box-shadow: none !important;
         border: none !important;
         page-break-after: always !important;
@@ -199,10 +329,17 @@
   </style>
 </head>
 <body>
+  <div class="web-toolbar">
+    <button class="web-btn" onclick="document.body.classList.toggle('show-ans')">&#128273; Bật / Tắt Tô Màu Đáp Án Trên Bảng</button>
+    <button class="web-btn" style="background:#2563eb;" onclick="window.print()">&#128424; In Phiếu A4 (2 Trang)</button>
+  </div>
+  <script>if(location.search.includes('ans=1'))document.body.classList.add('show-ans');</script>
 
-    <div class="a4-page">
+  <!-- TRANG 1: GAME TÌM TỪ VỰNG (WORD SEARCH PUZZLE) -->
+  <div class="a4-page">
+    <div>
       <div class="page-head">
-        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
+        <div class="title-main">TRÒ CHƠI TINH MẮT TÌM TỪ VỰNG TIẾNG ANH (WORD SEARCH)</div>
         <div class="info-bar">
           <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
           <div>Lớp: <strong>VQ2-E1L-2603</strong></div>
@@ -210,456 +347,356 @@
           <div style="text-align: right;">Ngày: 2026-11-04</div>
         </div>
       </div>
-
-      <table class="vocab-table">
-        <thead>
-          <tr>
-            <th style="width: 14%;">Từ Vựng (EN)</th>
-            <th style="width: 14%;">Nghĩa (VI)</th>
-            <th style="width: 24%;">Lần 1 (Tập chép)</th>
-            <th style="width: 24%;">Lần 2 (Tập chép)</th>
-            <th style="width: 24%;">Lần 3 (Tập chép)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="row-word">
-            <td class="col-en">big</td>
-            <td class="col-vi">to</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> This box is too big to carry.
-            </td>
-            <td class="col-sent-vi">
-              Chiếc hộp này quá to để bê đi.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">small</td>
-            <td class="col-vi">nhỏ</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> She lives in a small village.
-            </td>
-            <td class="col-sent-vi">
-              Cô ấy sống trong một ngôi làng nhỏ.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">purple</td>
-            <td class="col-vi">màu tím</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> She wore a bright purple dress.
-            </td>
-            <td class="col-sent-vi">
-              Cô ấy mặc một chiếc váy màu tím tươi.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">green</td>
-            <td class="col-vi">màu xanh lá cây</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> Wait for the light to turn green.
-            </td>
-            <td class="col-sent-vi">
-              Hãy đợi đèn chuyển sang màu xanh lá.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">yellow</td>
-            <td class="col-vi">màu vàng</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> She was wearing a bright yellow hat.
-            </td>
-            <td class="col-sent-vi">
-              Cô ấy đội một chiếc mũ màu vàng tươi.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">one</td>
-            <td class="col-vi">số một (1)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> There is only one room left.
-            </td>
-            <td class="col-sent-vi">
-              Chỉ còn lại một căn phòng.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">two</td>
-            <td class="col-vi">số hai (2)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> She has two younger brothers.
-            </td>
-            <td class="col-sent-vi">
-              Cô ấy có hai người em trai.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">three</td>
-            <td class="col-vi">số ba (3)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> We waited for three hours.
-            </td>
-            <td class="col-sent-vi">
-              Chúng tôi đã đợi trong ba tiếng đồng hồ.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">four</td>
-            <td class="col-vi">số bốn (4)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> A square has four equal sides.
-            </td>
-            <td class="col-sent-vi">
-              Hình vuông có bốn cạnh bằng nhau.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">five</td>
-            <td class="col-vi">số năm (5)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> Hold up your hand with five fingers.
-            </td>
-            <td class="col-sent-vi">
-              Hãy giơ bàn tay có năm ngón lên nhé.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">six</td>
-            <td class="col-vi">số sáu (6)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> There are six chairs around the table.
-            </td>
-            <td class="col-sent-vi">
-              Có sáu chiếc ghế xung quanh bàn.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">seven</td>
-            <td class="col-vi">số bảy (7)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> There are seven days in a week.
-            </td>
-            <td class="col-sent-vi">
-              Có bảy ngày trong một tuần.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">eight</td>
-            <td class="col-vi">số tám (8)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> School starts at eight o&#x27;clock.
-            </td>
-            <td class="col-sent-vi">
-              Giờ học bắt đầu lúc tám giờ đúng.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="page-foot">
-        <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
-        <div>Trang 1 / 2 (Tổng 25 từ &amp; câu)</div>
+      <div class="guide-banner">
+        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>15 từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong>, <strong>CỘT DỌC (&darr;)</strong> hoặc <strong>ĐƯỜNG CHÉO (&searr; &nearr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào danh sách cuối trang! (Có bảng Đáp Án ở cuối Trang 2)
       </div>
     </div>
 
-    <div class="a4-page">
-      <div class="page-head">
-        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
-        <div class="info-bar">
-          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
-          <div>Lớp: <strong>VQ2-E1L-2603</strong></div>
-          <div>Bài học: <strong>Lesson 3,4 (Page 6,7,8)</strong></div>
-          <div style="text-align: right;">Ngày: 2026-11-04</div>
+    <div class="ws-grid-wrap">
+      <table class="ws-table">
+        <tbody>
+          <tr><th class="ws-idx-corner"></th><th class="ws-idx-top">1</th><th class="ws-idx-top">2</th><th class="ws-idx-top">3</th><th class="ws-idx-top">4</th><th class="ws-idx-top">5</th><th class="ws-idx-top">6</th><th class="ws-idx-top">7</th><th class="ws-idx-top">8</th><th class="ws-idx-top">9</th><th class="ws-idx-top">10</th><th class="ws-idx-top">11</th><th class="ws-idx-top">12</th><th class="ws-idx-top">13</th><th class="ws-idx-top">14</th></tr>
+          <tr><th class="ws-idx-left">1</th><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">S</td><td class="ws-cell" data-ans="1">B</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="0">A</td></tr>
+          <tr><th class="ws-idx-left">2</th><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="1">N</td><td class="ws-cell" data-ans="1">I</td><td class="ws-cell" data-ans="1">N</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">I</td><td class="ws-cell" data-ans="1">G</td><td class="ws-cell" data-ans="1">H</td><td class="ws-cell" data-ans="1">T</td><td class="ws-cell" data-ans="0">C</td></tr>
+          <tr><th class="ws-idx-left">3</th><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">W</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="1">S</td><td class="ws-cell" data-ans="1">F</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">V</td><td class="ws-cell" data-ans="1">G</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="0">J</td></tr>
+          <tr><th class="ws-idx-left">4</th><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">N</td><td class="ws-cell" data-ans="1">F</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="1">I</td><td class="ws-cell" data-ans="1">M</td><td class="ws-cell" data-ans="1">I</td><td class="ws-cell" data-ans="0">W</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">S</td></tr>
+          <tr><th class="ws-idx-left">5</th><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">X</td><td class="ws-cell" data-ans="0">X</td><td class="ws-cell" data-ans="1">A</td><td class="ws-cell" data-ans="1">V</td><td class="ws-cell" data-ans="1">Y</td><td class="ws-cell" data-ans="1">N</td><td class="ws-cell" data-ans="0">H</td><td class="ws-cell" data-ans="0">P</td></tr>
+          <tr><th class="ws-idx-left">6</th><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="0">N</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">M</td><td class="ws-cell" data-ans="1">P</td><td class="ws-cell" data-ans="1">U</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="1">P</td><td class="ws-cell" data-ans="1">L</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">N</td><td class="ws-cell" data-ans="0">E</td></tr>
+          <tr><th class="ws-idx-left">7</th><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="0">X</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="1">T</td><td class="ws-cell" data-ans="1">H</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">L</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="0">M</td></tr>
+          <tr><th class="ws-idx-left">8</th><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">H</td><td class="ws-cell" data-ans="0">M</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">W</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="1">L</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">L</td></tr>
+          <tr><th class="ws-idx-left">9</th><td class="ws-cell" data-ans="0">M</td><td class="ws-cell" data-ans="0">X</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">C</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="1">G</td><td class="ws-cell" data-ans="1">T</td><td class="ws-cell" data-ans="1">W</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">Y</td></tr>
+          <tr><th class="ws-idx-left">10</th><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="0">X</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">W</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">G</td><td class="ws-cell" data-ans="0">B</td></tr>
+          <tr><th class="ws-idx-left">11</th><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">G</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="1">N</td><td class="ws-cell" data-ans="0">M</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">R</td></tr>
+          <tr><th class="ws-idx-left">12</th><td class="ws-cell" data-ans="0">C</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="0">M</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">S</td></tr>
+          <tr><th class="ws-idx-left">13</th><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="0">C</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">W</td><td class="ws-cell" data-ans="0">C</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">M</td></tr>
+          <tr><th class="ws-idx-left">14</th><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">W</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">G</td><td class="ws-cell" data-ans="0">G</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">Q</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <div class="word-bank-box">
+        <div class="wb-title">DANH SÁCH TỪ MỚI CẦN TÌM (15 TỪ)</div>
+        <div class="wb-grid">
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">BIG</span>:
+            <span class="wb-mean">to</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">SMALL</span>:
+            <span class="wb-mean">nhỏ</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">PURPLE</span>:
+            <span class="wb-mean">màu tím</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">GREEN</span>:
+            <span class="wb-mean">màu xanh lá cây</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">YELLOW</span>:
+            <span class="wb-mean">màu vàng</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">ONE</span>:
+            <span class="wb-mean">số một (1)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">TWO</span>:
+            <span class="wb-mean">số hai (2)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">THREE</span>:
+            <span class="wb-mean">số ba (3)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">FOUR</span>:
+            <span class="wb-mean">số bốn (4)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">FIVE</span>:
+            <span class="wb-mean">số năm (5)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">SIX</span>:
+            <span class="wb-mean">số sáu (6)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">SEVEN</span>:
+            <span class="wb-mean">số bảy (7)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">EIGHT</span>:
+            <span class="wb-mean">số tám (8)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">NINE</span>:
+            <span class="wb-mean">số chín (9)</span>
+          </div>
+          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">TEN</span>:
+            <span class="wb-mean">số mười (10)</span>
+          </div>
         </div>
       </div>
 
-      <table class="vocab-table">
-        <thead>
-          <tr>
-            <th style="width: 14%;">Từ Vựng (EN)</th>
-            <th style="width: 14%;">Nghĩa (VI)</th>
-            <th style="width: 24%;">Lần 1 (Tập chép)</th>
-            <th style="width: 24%;">Lần 2 (Tập chép)</th>
-            <th style="width: 24%;">Lần 3 (Tập chép)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="row-word">
-            <td class="col-en">nine</td>
-            <td class="col-vi">số chín (9)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> The shop opens at nine every morning.
-            </td>
-            <td class="col-sent-vi">
-              Cửa hàng mở cửa lúc chín giờ mỗi sáng.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">ten</td>
-            <td class="col-vi">số mười (10)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> Count from one to ten slowly.
-            </td>
-            <td class="col-sent-vi">
-              Hãy đếm chậm từ một đến mười nhé.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">eleven</td>
-            <td class="col-vi">mười một (11)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> A football team has eleven players.
-            </td>
-            <td class="col-sent-vi">
-              Một đội bóng đá có mười một cầu thủ.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">fifteen</td>
-            <td class="col-vi">mười lăm (15)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> The bus arrives in fifteen minutes.
-            </td>
-            <td class="col-sent-vi">
-              Xe buýt sẽ đến trong mười lăm phút nữa.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">twenty</td>
-            <td class="col-vi">hai mươi (20)</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> There are twenty desks in the room.
-            </td>
-            <td class="col-sent-vi">
-              Có hai mươi chiếc bàn học trong phòng.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">track</td>
-            <td class="col-vi">đường ray</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> The train stopped on the track.
-            </td>
-            <td class="col-sent-vi">
-              Đoàn tàu dừng lại trên đường ray.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">trail</td>
-            <td class="col-vi">đường mòn</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> We walked along the forest trail.
-            </td>
-            <td class="col-sent-vi">
-              Chúng tôi đi bộ dọc theo đường mòn trong rừng.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">trash</td>
-            <td class="col-vi">rác</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> Please throw your trash in the bin.
-            </td>
-            <td class="col-sent-vi">
-              Vui lòng bỏ rác vào thùng nhé.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">trust</td>
-            <td class="col-vi">tin tưởng</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> You can always trust a good friend.
-            </td>
-            <td class="col-sent-vi">
-              Bạn luôn có thể tin tưởng một người bạn tốt.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">tree</td>
-            <td class="col-vi">cây cối</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> We sat in the shade of a tree.
-            </td>
-            <td class="col-sent-vi">
-              Chúng tôi ngồi dưới bóng râm của một cái cây.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">traffic</td>
-            <td class="col-vi">giao thông</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> There is heavy traffic on the roads.
-            </td>
-            <td class="col-sent-vi">
-              Giao thông trên đường đang rất đông đúc.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-          <tr class="row-word">
-            <td class="col-en">unhealthy</td>
-            <td class="col-vi">không lành mạnh</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> Eating too much sugar is unhealthy.
-            </td>
-            <td class="col-sent-vi">
-              Ăn quá nhiều đường thì không tốt cho sức khỏe.
-            </td>
-            <td colspan="2" class="col-sent-write"></td>
-          </tr>
-        </tbody>
-      </table>
-
       <div class="page-foot">
         <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
-        <div>Trang 2 / 2 (Tổng 25 từ &amp; câu)</div>
+        <div>Trang 1 / 2 (Trò chơi tìm từ vựng - Lưới 14x14)</div>
       </div>
     </div>
+  </div>
+
+  <!-- TRANG 2: LUYỆN CHÉP CÂU VÍ DỤ CHUẨN TỪ ĐIỂN OXFORD (OALD) + HỘP ĐÁP ÁN -->
+  <div class="a4-page">
+    <div class="page-head">
+      <div class="title-main">PHIẾU LUYỆN VIẾT CÂU TIẾNG ANH (CHUẨN TỪ ĐIỂN OXFORD)</div>
+      <div class="info-bar">
+        <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+        <div>Lớp: <strong>VQ2-E1L-2603</strong></div>
+        <div>Bài học: <strong>Lesson 3,4 (Page 6,7,8)</strong></div>
+        <div style="text-align: right;">Ngày: 2026-11-04</div>
+      </div>
+    </div>
+
+    <table class="sent-table">
+      <thead>
+        <tr>
+          <th style="width: 17%;">Từ Vựng &amp; Nghĩa</th>
+          <th style="width: 35%;">Câu Ví Dụ Chuẩn Oxford (OALD)</th>
+          <th style="width: 48%;">Thực Hành Chép Lại Câu Ví Dụ</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">1. big</div>
+              <div class="ref-vi">to</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">They live in a big house.</div>
+              <div class="oald-vi">Họ sống trong một ngôi nhà lớn.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">2. small</div>
+              <div class="ref-vi">nhỏ</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">It is a very small dog.</div>
+              <div class="oald-vi">Đó là một chú chó rất nhỏ.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">3. purple</div>
+              <div class="ref-vi">màu tím</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">She likes her new purple bag.</div>
+              <div class="oald-vi">Cô bé thích chiếc cặp màu tím mới.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">4. green</div>
+              <div class="ref-vi">màu xanh lá cây</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">Wait for the light to turn green.</div>
+              <div class="oald-vi">Hãy đợi đèn chuyển sang màu xanh lá.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">5. yellow</div>
+              <div class="ref-vi">màu vàng</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">She has a bright yellow hat.</div>
+              <div class="oald-vi">Cô ấy có một chiếc mũ màu vàng.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">6. one</div>
+              <div class="ref-vi">số một (1)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">There is only one room left.</div>
+              <div class="oald-vi">Chỉ còn lại một căn phòng.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">7. two</div>
+              <div class="ref-vi">số hai (2)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">She has two little brothers.</div>
+              <div class="oald-vi">Cô ấy có hai người em trai.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">8. three</div>
+              <div class="ref-vi">số ba (3)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">We waited for three hours.</div>
+              <div class="oald-vi">Chúng tôi đã đợi trong ba giờ.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">9. four</div>
+              <div class="ref-vi">số bốn (4)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">A square has four sides.</div>
+              <div class="oald-vi">Hình vuông có bốn cạnh.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">10. five</div>
+              <div class="ref-vi">số năm (5)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">Hold up your five fingers.</div>
+              <div class="oald-vi">Hãy giơ năm ngón tay của em lên.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">11. six</div>
+              <div class="ref-vi">số sáu (6)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">There are six chairs here.</div>
+              <div class="oald-vi">Có sáu chiếc ghế ở đây.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">12. seven</div>
+              <div class="ref-vi">số bảy (7)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">There are seven days in a week.</div>
+              <div class="oald-vi">Có bảy ngày trong một tuần.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">13. eight</div>
+              <div class="ref-vi">số tám (8)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">School starts at eight o&#x27;clock.</div>
+              <div class="oald-vi">Giờ học bắt đầu lúc tám giờ đúng.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">14. nine</div>
+              <div class="ref-vi">số chín (9)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">The shop opens at nine o&#x27;clock.</div>
+              <div class="oald-vi">Cửa hàng mở cửa lúc chín giờ.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">15. ten</div>
+              <div class="ref-vi">số mười (10)</div>
+            </td>
+            <td class="col-oald-sent">
+              <div class="oald-en">Count from one to ten slowly.</div>
+              <div class="oald-vi">Hãy đếm chậm từ một đến mười.</div>
+            </td>
+            <td class="col-copy-box"></td>
+          </tr>
+      </tbody>
+    </table>
+
+    <div class="answer-key-box">
+      <table class="ak-mini-table">
+        <tbody>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">S</td><td class="ak-cell ak-hit">B</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-hit">G</td><td class="ak-cell ak-hit">H</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">S</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">V</td><td class="ak-cell ak-hit">G</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-hit">M</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">X</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-hit">V</td><td class="ak-cell ak-hit">Y</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">P</td><td class="ak-cell ak-hit">U</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">P</td><td class="ak-cell ak-hit">L</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">H</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">L</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">L</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">G</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">W</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">W</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+        </tbody>
+      </table>
+      <div class="ak-coords-wrap">
+        <div class="ak-title">&#128273; ĐÁP ÁN VỊ TRÍ TỪ VỰNG TRONG BẢNG TRANG 1 (HÀNG &times; CỘT &amp; HƯỚNG)</div>
+        <div class="ak-coords-grid">
+            <div class="ak-coord-item"><strong>1. BIG:</strong> H1-C9 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>2. SMALL:</strong> H3-C7 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>3. PURPLE:</strong> H6-C6 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>4. GREEN:</strong> H9-C8 (↗ Chéo)</div>
+            <div class="ak-coord-item"><strong>5. YELLOW:</strong> H5-C11 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>6. ONE:</strong> H1-C7 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>7. TWO:</strong> H9-C9 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>8. THREE:</strong> H7-C6 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>9. FOUR:</strong> H4-C5 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>10. FIVE:</strong> H3-C8 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>11. SIX:</strong> H3-C7 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>12. SEVEN:</strong> H1-C8 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>13. EIGHT:</strong> H2-C9 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>14. NINE:</strong> H2-C6 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>15. TEN:</strong> H9-C9 (↘ Chéo)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-foot">
+      <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
+      <div>Trang 2 / 2 (Luyện chép 15 câu ví dụ Oxford &amp; Đáp án tìm từ)</div>
+    </div>
+  </div>
 </body>
 </html>

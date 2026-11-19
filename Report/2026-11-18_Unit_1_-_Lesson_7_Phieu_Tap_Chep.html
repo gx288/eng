@@ -9,15 +9,37 @@
       font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Geneva, Verdana, sans-serif;
       background-color: #ffffff;
       color: #000000;
-      line-height: 1.25;
+      line-height: 1.22;
       -webkit-font-smoothing: antialiased;
+    }
+    .web-toolbar {
+      text-align: center;
+      padding: 10px;
+      background: #1e293b;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .web-btn {
+      background: #10b981;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
     }
     .a4-page {
       background: #ffffff;
       width: 210mm;
       min-height: 286mm;
       max-height: 286mm;
-      padding: 5mm 6mm 5mm 6mm;
+      padding: 4.5mm 6mm 4.5mm 6mm;
       margin: 0 auto 20px auto;
       box-sizing: border-box;
       display: flex;
@@ -33,22 +55,22 @@
     }
     .page-head {
       border-bottom: 2.5px solid #000000;
-      padding-bottom: 4px;
-      margin-bottom: 6px;
+      padding-bottom: 3px;
+      margin-bottom: 5px;
     }
     .title-main {
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 900;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.4px;
       color: #000000;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .info-bar {
       display: grid;
       grid-template-columns: 1.5fr 1.1fr 1.8fr 0.9fr;
-      font-size: 12px;
+      font-size: 11.8px;
       font-weight: 800;
       color: #000000;
       padding: 1px 0;
@@ -58,117 +80,145 @@
       border: 2px dashed #000000;
       border-radius: 6px;
       padding: 4px 10px;
-      font-size: 12px;
+      font-size: 11.8px;
       font-weight: 800;
       text-align: center;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     /* BẢNG Ô CHỮ TÌM TỪ (WORD SEARCH GRID) */
     .ws-grid-wrap {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 2px 0 6px 0;
+      margin: 2px 0 4px 0;
       flex-grow: 1;
     }
     .ws-table {
       border-collapse: separate;
       border-spacing: 0;
-      border: 3px solid #000000;
+      border: 2.5px solid #000000;
       margin: 0 auto;
     }
+    .ws-idx-corner {
+      width: 6mm;
+      height: 5.5mm;
+      background: #000000;
+      border-right: 1.5px solid #000000;
+      border-bottom: 1.5px solid #000000;
+    }
+    .ws-idx-top {
+      width: 12.11mm;
+      height: 5.5mm;
+      font-size: 10px;
+      font-weight: 900;
+      text-align: center;
+      vertical-align: middle;
+      border-right: 1.5px solid #000000;
+      border-bottom: 2px solid #000000;
+      background: #f1f5f9;
+    }
+    .ws-idx-left {
+      width: 6mm;
+      height: 12.11mm;
+      font-size: 10px;
+      font-weight: 900;
+      text-align: center;
+      vertical-align: middle;
+      border-right: 2px solid #000000;
+      border-bottom: 1.5px solid #000000;
+      background: #f1f5f9;
+    }
     .ws-cell {
-      width: 13.29mm;
-      height: 13.29mm;
-      border-right: 1.8px solid #000000;
-      border-bottom: 1.8px solid #000000;
+      width: 12.11mm;
+      height: 12.11mm;
+      border-right: 1.6px solid #000000;
+      border-bottom: 1.6px solid #000000;
       text-align: center;
       vertical-align: middle;
       font-family: "Consolas", "Courier New", "Segoe UI", monospace;
-      font-size: 19.3px;
+      font-size: 17.2px;
       font-weight: 900;
       color: #000000;
       user-select: none;
     }
-    .ws-table tr td:last-child {
+    body.show-ans .ws-cell[data-ans="1"] {
+      background-color: #fde047 !important;
+      text-decoration: underline;
+    }
+    .ws-table tr td:last-child, .ws-table tr th:last-child {
       border-right: none;
     }
-    .ws-table tr:last-child td {
+    .ws-table tr:last-child td, .ws-table tr:last-child th {
       border-bottom: none;
     }
     /* DANH SÁCH TỪ MỚI Ở CUỐI TRANG 1 */
     .word-bank-box {
       border: 2.5px solid #000000;
       border-radius: 6px;
-      padding: 6px 10px 8px 10px;
-      margin-top: 4px;
+      padding: 5px 10px 7px 10px;
+      margin-top: 2px;
     }
     .wb-title {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 900;
       text-transform: uppercase;
       text-align: center;
       border-bottom: 2px solid #000000;
-      padding-bottom: 4px;
-      margin-bottom: 6px;
+      padding-bottom: 3px;
+      margin-bottom: 5px;
       letter-spacing: 0.3px;
     }
     .wb-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 5px 10px;
+      gap: 4px 10px;
     }
     .wb-item {
-      font-size: 12.5px;
-      line-height: 1.3;
+      font-size: 12px;
+      line-height: 1.28;
       color: #000000;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     .wb-check {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 900;
       margin-right: 3px;
     }
     .wb-word {
       font-weight: 900;
-      font-size: 13px;
-    }
-    .ws-hint {
-      font-size: 10.5px;
-      font-weight: 700;
+      font-size: 12.5px;
     }
     .wb-mean {
       font-weight: 700;
     }
-    /* TRANG 2: BẢNG CHỈ CHÉP CÂU VÍ DỤ OXFORD (OALD) */
+    /* TRANG 2: BẢNG CHỈ CHÉP CÂU VÍ DỤ OXFORD + HỘP ĐÁP ÁN CUỐI TRANG */
     .sent-table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
       border: 2.5px solid #000000;
-      flex-grow: 1;
     }
     .sent-table th {
       background: #ffffff;
       color: #000000;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 900;
       text-transform: uppercase;
       border-bottom: 2.5px solid #000000;
       border-right: 2px solid #000000;
-      padding: 5px 4px;
+      padding: 4px 4px;
       text-align: center;
     }
     .sent-table th:last-child {
       border-right: none;
     }
     .sent-only-row td {
-      height: 16.0mm;
-      border-bottom: 2px solid #000000;
+      height: 12.93mm;
+      border-bottom: 1.8px solid #000000;
       border-right: 2px solid #000000;
-      padding: 2px 6px;
+      padding: 1.5px 6px;
       vertical-align: middle;
     }
     .sent-only-row td:last-child {
@@ -177,63 +227,95 @@
     .sent-table tbody tr:last-child td {
       border-bottom: none;
     }
-    .col-word-ref {
-      width: 17%;
+    .col-word-ref { width: 17%; }
+    .ref-en { font-size: 13px; font-weight: 900; color: #000000; line-height: 1.15; }
+    .ref-vi { font-size: 11px; font-weight: 700; color: #000000; line-height: 1.15; }
+    .col-oald-sent { width: 35%; }
+    .oald-en { font-size: 12.8px; font-weight: 900; color: #000000; line-height: 1.2; }
+    .oald-vi { font-size: 11px; font-weight: 700; color: #000000; line-height: 1.15; margin-top: 1px; }
+    .col-copy-box { width: 48%; }
+
+    /* HỘP ĐÁP ÁN TRÒ CHƠI TÌM TỪ Ở CUỐI TRANG 2 */
+    .answer-key-box {
+      border: 2px solid #000000;
+      border-radius: 6px;
+      padding: 4px 8px;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .ref-en {
-      font-size: 14px;
+    .ak-mini-table {
+      border-collapse: collapse;
+      border: 1.5px solid #000000;
+      flex-shrink: 0;
+    }
+    .ak-cell {
+      width: 2.7mm;
+      height: 2.7mm;
+      font-size: 6.5px;
+      font-family: "Consolas", monospace;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .ak-hit {
       font-weight: 900;
       color: #000000;
-      line-height: 1.2;
+      background: #e2e8f0;
+      border: 0.4px solid #000000;
     }
-    .ref-vi {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #000000;
-      line-height: 1.2;
-      margin-top: 1px;
+    .ak-miss {
+      color: #94a3b8;
+      font-weight: 400;
     }
-    .col-oald-sent {
-      width: 35%;
+    .ak-coords-wrap {
+      flex: 1;
     }
-    .oald-en {
-      font-size: 13.5px;
+    .ak-title {
+      font-size: 10.5px;
       font-weight: 900;
-      color: #000000;
-      line-height: 1.25;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid #000000;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
     }
-    .oald-vi {
-      font-size: 11.5px;
+    .ak-coords-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px 8px;
+    }
+    .ak-coord-item {
+      font-size: 9.8px;
       font-weight: 700;
-      color: #000000;
-      line-height: 1.2;
-      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .col-copy-box {
-      width: 48%;
-    }
+
     .page-foot {
       border-top: 2px solid #000000;
-      margin-top: 4px;
-      padding-top: 3px;
+      margin-top: 3px;
+      padding-top: 2px;
       display: flex;
       justify-content: space-between;
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 800;
       color: #000000;
     }
     @page {
       size: A4 portrait;
-      margin: 5mm 5mm 5mm 5mm;
+      margin: 4.5mm 5mm 4.5mm 5mm;
     }
     @media print {
+      .web-toolbar { display: none !important; }
       body { background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .a4-page {
         width: 100% !important;
         min-height: 286mm !important;
         max-height: 286mm !important;
         margin: 0 !important;
-        padding: 5mm 6mm 5mm 6mm !important;
+        padding: 4.5mm 6mm 4.5mm 6mm !important;
         box-shadow: none !important;
         border: none !important;
         page-break-after: always !important;
@@ -247,6 +329,12 @@
   </style>
 </head>
 <body>
+  <div class="web-toolbar">
+    <button class="web-btn" onclick="document.body.classList.toggle('show-ans')">&#128273; Bật / Tắt Tô Màu Đáp Án Trên Bảng</button>
+    <button class="web-btn" style="background:#2563eb;" onclick="window.print()">&#128424; In Phiếu A4 (2 Trang)</button>
+  </div>
+  <script>if(location.search.includes('ans=1'))document.body.classList.add('show-ans');</script>
+
   <!-- TRANG 1: GAME TÌM TỪ VỰNG (WORD SEARCH PUZZLE) -->
   <div class="a4-page">
     <div>
@@ -260,27 +348,28 @@
         </div>
       </div>
       <div class="guide-banner">
-        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>15 từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong>, <strong>CỘT DỌC (&darr;)</strong> hoặc <strong>ĐƯỜNG CHÉO (&searr; &nearr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào danh sách cuối trang!
+        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>15 từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong>, <strong>CỘT DỌC (&darr;)</strong> hoặc <strong>ĐƯỜNG CHÉO (&searr; &nearr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào danh sách cuối trang! (Có bảng Đáp Án ở cuối Trang 2)
       </div>
     </div>
 
     <div class="ws-grid-wrap">
       <table class="ws-table">
         <tbody>
-          <tr><td class="ws-cell">E</td><td class="ws-cell">L</td><td class="ws-cell">E</td><td class="ws-cell">E</td><td class="ws-cell">E</td><td class="ws-cell">C</td><td class="ws-cell">P</td><td class="ws-cell">T</td><td class="ws-cell">N</td><td class="ws-cell">D</td><td class="ws-cell">L</td><td class="ws-cell">Q</td><td class="ws-cell">Z</td><td class="ws-cell">Z</td></tr>
-          <tr><td class="ws-cell">W</td><td class="ws-cell">E</td><td class="ws-cell">D</td><td class="ws-cell">A</td><td class="ws-cell">Z</td><td class="ws-cell">P</td><td class="ws-cell">H</td><td class="ws-cell">B</td><td class="ws-cell">D</td><td class="ws-cell">Q</td><td class="ws-cell">N</td><td class="ws-cell">Y</td><td class="ws-cell">S</td><td class="ws-cell">V</td></tr>
-          <tr><td class="ws-cell">H</td><td class="ws-cell">R</td><td class="ws-cell">T</td><td class="ws-cell">A</td><td class="ws-cell">K</td><td class="ws-cell">E</td><td class="ws-cell">C</td><td class="ws-cell">A</td><td class="ws-cell">R</td><td class="ws-cell">E</td><td class="ws-cell">O</td><td class="ws-cell">F</td><td class="ws-cell">Q</td><td class="ws-cell">R</td></tr>
-          <tr><td class="ws-cell">D</td><td class="ws-cell">Q</td><td class="ws-cell">G</td><td class="ws-cell">S</td><td class="ws-cell">K</td><td class="ws-cell">N</td><td class="ws-cell">H</td><td class="ws-cell">G</td><td class="ws-cell">I</td><td class="ws-cell">D</td><td class="ws-cell">S</td><td class="ws-cell">B</td><td class="ws-cell">F</td><td class="ws-cell">T</td></tr>
-          <tr><td class="ws-cell">X</td><td class="ws-cell">J</td><td class="ws-cell">K</td><td class="ws-cell">T</td><td class="ws-cell">B</td><td class="ws-cell">C</td><td class="ws-cell">A</td><td class="ws-cell">S</td><td class="ws-cell">Q</td><td class="ws-cell">R</td><td class="ws-cell">J</td><td class="ws-cell">K</td><td class="ws-cell">G</td><td class="ws-cell">A</td></tr>
-          <tr><td class="ws-cell">Z</td><td class="ws-cell">U</td><td class="ws-cell">D</td><td class="ws-cell">U</td><td class="ws-cell">U</td><td class="ws-cell">I</td><td class="ws-cell">V</td><td class="ws-cell">A</td><td class="ws-cell">P</td><td class="ws-cell">E</td><td class="ws-cell">Q</td><td class="ws-cell">L</td><td class="ws-cell">S</td><td class="ws-cell">L</td></tr>
-          <tr><td class="ws-cell">P</td><td class="ws-cell">P</td><td class="ws-cell">E</td><td class="ws-cell">R</td><td class="ws-cell">U</td><td class="ws-cell">L</td><td class="ws-cell">E</td><td class="ws-cell">R</td><td class="ws-cell">E</td><td class="ws-cell">B</td><td class="ws-cell">O</td><td class="ws-cell">O</td><td class="ws-cell">K</td><td class="ws-cell">E</td></tr>
-          <tr><td class="ws-cell">D</td><td class="ws-cell">Z</td><td class="ws-cell">O</td><td class="ws-cell">R</td><td class="ws-cell">J</td><td class="ws-cell">C</td><td class="ws-cell">R</td><td class="ws-cell">A</td><td class="ws-cell">Y</td><td class="ws-cell">O</td><td class="ws-cell">N</td><td class="ws-cell">Y</td><td class="ws-cell">K</td><td class="ws-cell">G</td></tr>
-          <tr><td class="ws-cell">Y</td><td class="ws-cell">L</td><td class="ws-cell">T</td><td class="ws-cell">S</td><td class="ws-cell">A</td><td class="ws-cell">A</td><td class="ws-cell">D</td><td class="ws-cell">P</td><td class="ws-cell">R</td><td class="ws-cell">A</td><td class="ws-cell">F</td><td class="ws-cell">S</td><td class="ws-cell">T</td><td class="ws-cell">G</td></tr>
-          <tr><td class="ws-cell">L</td><td class="ws-cell">E</td><td class="ws-cell">G</td><td class="ws-cell">X</td><td class="ws-cell">T</td><td class="ws-cell">S</td><td class="ws-cell">Q</td><td class="ws-cell">T</td><td class="ws-cell">C</td><td class="ws-cell">R</td><td class="ws-cell">U</td><td class="ws-cell">L</td><td class="ws-cell">Y</td><td class="ws-cell">N</td></tr>
-          <tr><td class="ws-cell">T</td><td class="ws-cell">J</td><td class="ws-cell">H</td><td class="ws-cell">L</td><td class="ws-cell">Z</td><td class="ws-cell">E</td><td class="ws-cell">E</td><td class="ws-cell">M</td><td class="ws-cell">O</td><td class="ws-cell">D</td><td class="ws-cell">W</td><td class="ws-cell">T</td><td class="ws-cell">M</td><td class="ws-cell">D</td></tr>
-          <tr><td class="ws-cell">Y</td><td class="ws-cell">Y</td><td class="ws-cell">M</td><td class="ws-cell">P</td><td class="ws-cell">C</td><td class="ws-cell">A</td><td class="ws-cell">R</td><td class="ws-cell">R</td><td class="ws-cell">O</td><td class="ws-cell">T</td><td class="ws-cell">P</td><td class="ws-cell">K</td><td class="ws-cell">T</td><td class="ws-cell">F</td></tr>
-          <tr><td class="ws-cell">F</td><td class="ws-cell">B</td><td class="ws-cell">G</td><td class="ws-cell">D</td><td class="ws-cell">Y</td><td class="ws-cell">V</td><td class="ws-cell">P</td><td class="ws-cell">B</td><td class="ws-cell">L</td><td class="ws-cell">F</td><td class="ws-cell">Y</td><td class="ws-cell">Q</td><td class="ws-cell">R</td><td class="ws-cell">P</td></tr>
-          <tr><td class="ws-cell">Z</td><td class="ws-cell">B</td><td class="ws-cell">D</td><td class="ws-cell">T</td><td class="ws-cell">R</td><td class="ws-cell">N</td><td class="ws-cell">S</td><td class="ws-cell">E</td><td class="ws-cell">H</td><td class="ws-cell">U</td><td class="ws-cell">B</td><td class="ws-cell">L</td><td class="ws-cell">L</td><td class="ws-cell">E</td></tr>
+          <tr><th class="ws-idx-corner"></th><th class="ws-idx-top">1</th><th class="ws-idx-top">2</th><th class="ws-idx-top">3</th><th class="ws-idx-top">4</th><th class="ws-idx-top">5</th><th class="ws-idx-top">6</th><th class="ws-idx-top">7</th><th class="ws-idx-top">8</th><th class="ws-idx-top">9</th><th class="ws-idx-top">10</th><th class="ws-idx-top">11</th><th class="ws-idx-top">12</th><th class="ws-idx-top">13</th><th class="ws-idx-top">14</th></tr>
+          <tr><th class="ws-idx-left">1</th><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="1">C</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">N</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="0">Z</td></tr>
+          <tr><th class="ws-idx-left">2</th><td class="ws-cell" data-ans="0">W</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="1">P</td><td class="ws-cell" data-ans="1">H</td><td class="ws-cell" data-ans="1">B</td><td class="ws-cell" data-ans="1">D</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">N</td><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">V</td></tr>
+          <tr><th class="ws-idx-left">3</th><td class="ws-cell" data-ans="0">H</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="1">T</td><td class="ws-cell" data-ans="1">A</td><td class="ws-cell" data-ans="1">K</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">C</td><td class="ws-cell" data-ans="1">A</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">F</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">R</td></tr>
+          <tr><th class="ws-idx-left">4</th><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">G</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="1">N</td><td class="ws-cell" data-ans="0">H</td><td class="ws-cell" data-ans="1">G</td><td class="ws-cell" data-ans="1">I</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="1">S</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">T</td></tr>
+          <tr><th class="ws-idx-left">5</th><td class="ws-cell" data-ans="0">X</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="1">C</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="1">K</td><td class="ws-cell" data-ans="0">G</td><td class="ws-cell" data-ans="0">A</td></tr>
+          <tr><th class="ws-idx-left">6</th><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="1">I</td><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="0">A</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">L</td></tr>
+          <tr><th class="ws-idx-left">7</th><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="1">P</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="1">U</td><td class="ws-cell" data-ans="1">L</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="1">B</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">K</td><td class="ws-cell" data-ans="0">E</td></tr>
+          <tr><th class="ws-idx-left">8</th><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="1">C</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="1">A</td><td class="ws-cell" data-ans="1">Y</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">N</td><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">G</td></tr>
+          <tr><th class="ws-idx-left">9</th><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="1">S</td><td class="ws-cell" data-ans="1">A</td><td class="ws-cell" data-ans="1">A</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="1">A</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">G</td></tr>
+          <tr><th class="ws-idx-left">10</th><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">G</td><td class="ws-cell" data-ans="0">X</td><td class="ws-cell" data-ans="1">T</td><td class="ws-cell" data-ans="1">S</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="1">C</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">N</td></tr>
+          <tr><th class="ws-idx-left">11</th><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">J</td><td class="ws-cell" data-ans="0">H</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="1">E</td><td class="ws-cell" data-ans="0">M</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">D</td><td class="ws-cell" data-ans="0">W</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">M</td><td class="ws-cell" data-ans="0">D</td></tr>
+          <tr><th class="ws-idx-left">12</th><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">M</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="1">C</td><td class="ws-cell" data-ans="1">A</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="1">R</td><td class="ws-cell" data-ans="1">O</td><td class="ws-cell" data-ans="1">T</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">K</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">F</td></tr>
+          <tr><th class="ws-idx-left">13</th><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">G</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">V</td><td class="ws-cell" data-ans="0">P</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="1">L</td><td class="ws-cell" data-ans="0">F</td><td class="ws-cell" data-ans="0">Y</td><td class="ws-cell" data-ans="0">Q</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">P</td></tr>
+          <tr><th class="ws-idx-left">14</th><td class="ws-cell" data-ans="0">Z</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">D</td><td class="ws-cell" data-ans="0">T</td><td class="ws-cell" data-ans="0">R</td><td class="ws-cell" data-ans="0">N</td><td class="ws-cell" data-ans="0">S</td><td class="ws-cell" data-ans="0">E</td><td class="ws-cell" data-ans="0">H</td><td class="ws-cell" data-ans="0">U</td><td class="ws-cell" data-ans="0">B</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">L</td><td class="ws-cell" data-ans="0">E</td></tr>
         </tbody>
       </table>
     </div>
@@ -374,7 +463,7 @@
     </div>
   </div>
 
-  <!-- TRANG 2: LUYỆN CHÉP CÂU VÍ DỤ CHUẨN TỪ ĐIỂN OXFORD (OALD) -->
+  <!-- TRANG 2: LUYỆN CHÉP CÂU VÍ DỤ CHUẨN TỪ ĐIỂN OXFORD (OALD) + HỘP ĐÁP ÁN -->
   <div class="a4-page">
     <div class="page-head">
       <div class="title-main">PHIẾU LUYỆN VIẾT CÂU TIẾNG ANH (CHUẨN TỪ ĐIỂN OXFORD)</div>
@@ -563,9 +652,50 @@
       </tbody>
     </table>
 
+    <div class="answer-key-box">
+      <table class="ak-mini-table">
+        <tbody>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">C</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">P</td><td class="ak-cell ak-hit">H</td><td class="ak-cell ak-hit">B</td><td class="ak-cell ak-hit">D</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-hit">K</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">C</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">G</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">S</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">C</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">K</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">P</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">U</td><td class="ak-cell ak-hit">L</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">B</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">K</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">C</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-hit">Y</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">S</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">S</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">C</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">D</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">C</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">L</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+        </tbody>
+      </table>
+      <div class="ak-coords-wrap">
+        <div class="ak-title">&#128273; ĐÁP ÁN VỊ TRÍ TỪ VỰNG TRONG BẢNG TRANG 1 (HÀNG &times; CỘT &amp; HƯỚNG)</div>
+        <div class="ak-coords-grid">
+            <div class="ak-coord-item"><strong>1. POSTER:</strong> H7-C2 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>2. BOARD:</strong> H7-C10 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>3. CHAIR:</strong> H1-C6 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>4. COOL:</strong> H10-C9 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>5. TAKE CARE OF:</strong> H3-C3 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>6. CARROT:</strong> H12-C5 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>7. DESK:</strong> H2-C9 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>8. BAG:</strong> H2-C8 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>9. PEN:</strong> H2-C6 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>10. BOOK:</strong> H7-C10 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>11. PENCIL:</strong> H2-C6 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>12. PENCIL CASE:</strong> H2-C6 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>13. RULER:</strong> H7-C4 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>14. ERASER:</strong> H7-C3 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>15. CRAYON:</strong> H8-C6 (→ Ngang)</div>
+        </div>
+      </div>
+    </div>
+
     <div class="page-foot">
       <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
-      <div>Trang 2 / 2 (Luyện chép 15 câu ví dụ Oxford)</div>
+      <div>Trang 2 / 2 (Luyện chép 15 câu ví dụ Oxford &amp; Đáp án tìm từ)</div>
     </div>
   </div>
 </body>
