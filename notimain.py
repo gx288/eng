@@ -422,7 +422,7 @@ async def safe_send_message(bot, chat_id, raw_text):
 #    CÔNG CỤ TẠO PHIẾU CHÉP A4 & QUIZLET TỰ ĐỘNG
 # ────────────────────────────────────────────────
 
-def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=25, **kwargs):
+def get_merged_vocabulary(current_vocab, report_dir='Report', current_date=None, target_max=15, **kwargs):
     """
     Quy tắc gộp từ vựng ôn tập:
     - Nếu bài học >= target_max (25 từ): Giữ nguyên toàn bộ (không bị giới hạn 25).
@@ -834,18 +834,129 @@ def generate_vocabulary_sentences(vocab_input, lesson_title="", sentence_structu
 
     return results
 
+def build_word_search_grid(vocab_items, seed_str="cec"):
+    """
+    Tạo bảng trò chơi Tìm Từ Vựng (Word Search Puzzle) theo HÀNG NGANG (trái -> phải)
+    và CỘT DỌC (trên -> dưới). Tự động chọn kích thước lưới N x N phù hợp với số lượng từ.
+    """
+    import random
+    rng = random.Random(seed_str)
+
+    cleaned_entries = []
+    for it in vocab_items:
+        w_raw = str(it.get("word", "")).strip()
+        m_raw = str(it.get("meaning", "")).strip()
+        letters = re.sub(r"[^A-Za-z]", "", w_raw).upper()
+        # Bỏ qua từ chỉ có 1 chữ cái (như mạo từ 'a') trong bảng ô chữ vì 1 chữ cái xuất hiện ở khắp mọi nơi
+        if len(letters) < 2:
+            continue
+        cleaned_entries.append({
+            "word": w_raw,
+            "meaning": m_raw,
+            "grid_word": letters
+        })
+
+    if not cleaned_entries:
+        cleaned_entries = [{"word": "BOOK", "meaning": "quyển sách", "grid_word": "BOOK"}]
+
+    max_w_len = max(len(e["grid_word"]) for e in cleaned_entries)
+    num_w = len(cleaned_entries)
+
+    if num_w <= 6:
+        grid_n = 10
+    elif num_w <= 10:
+        grid_n = 11
+    elif num_w <= 14:
+        grid_n = 12
+    elif num_w <= 18:
+        grid_n = 14
+    else:
+        grid_n = 15
+
+    grid_n = max(grid_n, min(16, max_w_len + 1))
+
+    # Nếu có từ quá dài (> grid_n), cắt hoặc nâng grid_n
+    if max_w_len > grid_n:
+        grid_n = min(17, max_w_len)
+
+    # Sắp xếp từ dài đến ngắn để đặt vào bảng trước
+    sorted_entries = sorted(cleaned_entries, key=lambda x: len(x["grid_word"]), reverse=True)
+
+    for try_grow in range(3):
+        grid = [["" for _ in range(grid_n)] for _ in range(grid_n)]
+        placed_all = True
+
+        for idx, entry in enumerate(sorted_entries):
+            gw = entry["grid_word"]
+            wlen = len(gw)
+            if wlen > grid_n:
+                gw = gw[:grid_n]
+                wlen = len(gw)
+
+            # 2 hướng: Hàng ngang (0, 1) và Cột dọc (1, 0)
+            dirs = [(0, 1), (1, 0)]
+            if idx % 2 == 1:
+                dirs = [(1, 0), (0, 1)]
+
+            best_Write = []
+            valid_Write = []
+
+            for dr, dc in dirs:
+                max_r = grid_n - (wlen if dr == 1 else 1)
+                max_c = grid_n - (wlen if dc == 1 else 1)
+                for r in range(max_r + 1):
+                    for c in range(max_c + 1):
+                        ok = True
+                        overlaps = 0
+                        for k_i in range(wlen):
+                            ch = grid[r + dr * k_i][c + dc * k_i]
+                            if ch != "" and ch != gw[k_i]:
+                                ok = False
+                                break
+                            if ch == gw[k_i]:
+                                overlaps += 1
+                        if ok:
+                            if overlaps > 0:
+                                best_Write.append((overlaps, r, c, dr, dc))
+                            else:
+                                valid_Write.append((r, c, dr, dc))
+
+            if best_Write:
+                rng.shuffle(best_Write)
+                best_Write.sort(key=lambda x: x[0], reverse=True)
+                _, r0, c0, dr0, dc0 = best_Write[0]
+            elif valid_Write:
+                r0, c0, dr0, dc0 = rng.choice(valid_Write)
+            else:
+                placed_all = False
+                break
+
+            for k_i in range(wlen):
+                grid[r0 + dr0 * k_i][c0 + dc0 * k_i] = gw[k_i]
+
+        if placed_all:
+            break
+        grid_n = min(17, grid_n + 1)
+
+    # Điền ngẫu nhiên các chữ cái A-Z vào các ô còn trống
+    alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ"
+    for r in range(grid_n):
+        for c in range(grid_n):
+            if not grid[r][c]:
+                grid[r][c] = rng.choice(alphabet)
+
+    return grid, grid_n, cleaned_entries
+
 def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, sentence_structures=None, class_name='VQ2-E1L-2603'):
     """
-    Tạo Phiếu tập chép A4 chuẩn in ấn đơn sắc đen trắng tương phản siêu cao (ultra high-contrast monochrome):
-    - Chuẩn hóa 40 từ vựng và câu ví dụ Oxford/Cambridge gói gọn đúng 4 trang A4 (10 từ & câu / trang = 2 tờ in 2 mặt).
-    - Mỗi từ gồm 2 dòng:
-      + Dòng 1 (Từ vựng): 5 cột (EN 14%, Nghĩa 14%, Lần 1 24%, Lần 2 24%, Lần 3 24%).
-      + Dòng 2 (Câu ví dụ): 3 ô (Câu EN 28%, Nghĩa câu 24%, Chép câu 48% rộng ~96mm).
-    - Khắc phục triệt để lỗi border-collapse: dùng border-collapse: separate; border-spacing: 0; viền dọc không bao giờ bị mất.
-    - Đường kẻ Baseline đậm nét 2.2px tì đáy (cách đáy 2.8mm) cho bé viết nắn nót, chữ thẳng tắp, có khoảng trống cho nét thòng (g, y, p).
-    - Đơn sắc đen trắng 100% (#000000), nét viền bảng 2.5px & 2px, máy in mực mờ vẫn in rõ ràng sắc sảo.
+    Tạo Phiếu Bài Tập 2 Trang A4 Chuẩn In Đen Trắng Tương Phản Siêu Cao:
+    - TRANG 1: Trò chơi Tinh Mắt Tìm Từ Vựng (Word Search Puzzle theo cột dọc & hàng ngang) ở trên
+               + Danh sách từ mới cần tìm kèm nghĩa Tiếng Việt ở cuối trang.
+               Kích thước ô tự động co giãn theo số lượng từ của bài.
+    - TRANG 2: Chỉ luyện chép câu ví dụ chuẩn từ điển Oxford (OALD) - câu ngắn gọn (4-6 từ), gần gũi, không quá khó.
     """
     import shutil
+    import html as _html
 
     if isinstance(vocab_input, dict):
         vocab_items = generate_vocabulary_sentences(vocab_input, lesson_title, sentence_structures)
@@ -857,111 +968,84 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
     else:
         return None
 
+    # Lọc bỏ từ 1 chữ cái (như 'a') nếu danh sách đã có >= 8 từ để bảng tìm từ và chép câu chất lượng hơn
+    if len(vocab_items) > 8:
+        filtered_items = [it for it in vocab_items if len(re.sub(r"[^A-Za-z]", "", str(it.get("word", "")))) >= 2]
+        if len(filtered_items) >= 6:
+            vocab_items = filtered_items
+
     total_words = len(vocab_items)
     if total_words == 0:
         return None
 
-    # Phân trang thông minh: chuẩn 25 từ gói gọn trong 2 trang A4 (13 + 12 từ = đúng 1 tờ in 2 mặt)
-    # Nếu bài > 26 từ thì tự động chia đều sang các trang tiếp theo (tối đa 13 từ/trang)
+    # 1. XÂY DỰNG TRANG 1: BẢNG WORD SEARCH + DANH SÁCH TỪ CUỐI TRANG
+    grid, grid_n, ws_entries = build_word_search_grid(vocab_items, seed_str=f"{date_str}_{lesson_title}")
+
+    # Tính toán kích thước ô vuông (cell_size_mm) và cỡ chữ tùy theo grid_n và số lượng dòng danh sách từ ở cuối trang
     import math
-    max_per_page_limit = 13
-    total_pages = max(1, math.ceil(total_words / max_per_page_limit))
-    pages = []
-    start_i = 0
-    for p_i in range(total_pages):
-        rem_words = total_words - start_i
-        rem_pages = total_pages - p_i
-        chunk_size = math.ceil(rem_words / rem_pages)
-        pages.append(vocab_items[start_i:start_i + chunk_size])
-        start_i += chunk_size
+    word_list_rows = math.ceil(len(ws_entries) / 3)
+    # Chiều cao dành cho danh sách từ cuối trang ~ word_list_rows * 7.5mm + 14mm
+    # Chiều cao tối đa cho bảng Grid trên Trang 1 để không bao giờ tràn trang:
+    avail_grid_mm = max(135, 222 - word_list_rows * 7.2)
+    cell_mm = round(min(15.2, avail_grid_mm / grid_n), 2)
+    cell_font_px = round(max(14.5, min(22.0, cell_mm * 1.45)), 1)
 
-    max_p = max(len(p) for p in pages)
-    if max_p <= 10:
-        word_row_h, sent_row_h = "11.2mm", "13.6mm"
-    elif max_p == 11:
-        word_row_h, sent_row_h = "10.2mm", "12.2mm"
-    elif max_p == 12:
-        word_row_h, sent_row_h = "9.4mm", "11.2mm"
-    else:
-        word_row_h, sent_row_h = "8.7mm", "10.3mm"
-    font_en = "15px"
-    font_vi = "13px"
-    font_sent_en = "12.5px"
-    font_sent_vi = "11.5px"
+    grid_rows_html = []
+    for r in range(grid_n):
+        tds = "".join(f'<td class="ws-cell">{grid[r][c]}</td>' for c in range(grid_n))
+        grid_rows_html.append(f"          <tr>{tds}</tr>")
+    grid_table_html = "\n".join(grid_rows_html)
 
-    def render_page(items, p_idx):
-        rows = []
-        import html as _html
-        for it in items:
-            w_esc = _html.escape(str(it.get('word', '')))
-            m_esc = _html.escape(str(it.get('meaning', '')))
-            se_esc = _html.escape(str(it.get('sentence_en', '')))
-            sv_esc = _html.escape(str(it.get('sentence_vi', '')))
-            rows.append(f"""          <tr class="row-word">
-            <td class="col-en">{w_esc}</td>
-            <td class="col-vi">{m_esc}</td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-            <td class="col-write"></td>
-          </tr>
-          <tr class="row-sentence">
-            <td colspan="2" class="col-sent-en">
-              <span class="badge-vd">VD</span> {se_esc}
+    # Danh sách từ vựng ở cuối Trang 1 (chia 3 cột)
+    word_cards_html = []
+    for e in ws_entries:
+        w_disp = _html.escape(e["word"])
+        m_disp = _html.escape(e["meaning"])
+        word_cards_html.append(f"""          <div class="wb-item">
+            <span class="wb-check">&#9744;</span>
+            <span class="wb-word">{w_disp.upper()}</span>:
+            <span class="wb-mean">{m_disp}</span>
+          </div>""")
+    word_bank_html = "\n".join(word_cards_html)
+
+    # 2. XÂY DỰNG TRANG 2: CHỈ CHÉP CÂU VÍ DỤ CHUẨN OXFORD (OALD)
+    # Nếu số câu > 16 thì lấy tối đa 16 câu đầu (ưu tiên 100% từ mới của bài ở đầu danh sách) để vừa khít 1 trang A4
+    sentence_items = vocab_items[:16]
+    num_sents = len(sentence_items)
+    # Tính chiều cao mỗi dòng câu trên Trang 2 để phủ kín đẹp mắt trang A4 (tổng chiều cao thân bảng ~ 242mm)
+    sent_row_mm = round(max(14.2, min(22.0, 240.0 / max(1, num_sents))), 2)
+
+    sent_rows_html = []
+    for idx, it in enumerate(sentence_items, 1):
+        w_esc = _html.escape(str(it.get("word", "")))
+        m_esc = _html.escape(str(it.get("meaning", "")))
+        se_esc = _html.escape(str(it.get("sentence_en", "")))
+        sv_esc = _html.escape(str(it.get("sentence_vi", "")))
+        sent_rows_html.append(f"""          <tr class="sent-only-row">
+            <td class="col-word-ref">
+              <div class="ref-en">{idx}. {w_esc}</div>
+              <div class="ref-vi">{m_esc}</div>
             </td>
-            <td class="col-sent-vi">
-              {sv_esc}
+            <td class="col-oald-sent">
+              <div class="oald-en">{se_esc}</div>
+              <div class="oald-vi">{sv_esc}</div>
             </td>
-            <td colspan="2" class="col-sent-write"></td>
+            <td class="col-copy-box"></td>
           </tr>""")
-        rows_html = "\n".join(rows)
-
-        return f"""
-    <div class="a4-page">
-      <div class="page-head">
-        <div class="title-main">PHIẾU TẬP CHÉP TỪ VỰNG &amp; CÂU TIẾNG ANH</div>
-        <div class="info-bar">
-          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
-          <div>Lớp: <strong>{class_name}</strong></div>
-          <div>Bài học: <strong>{lesson_title}</strong></div>
-          <div style="text-align: right;">Ngày: {date_str}</div>
-        </div>
-      </div>
-
-      <table class="vocab-table">
-        <thead>
-          <tr>
-            <th style="width: 14%;">Từ Vựng (EN)</th>
-            <th style="width: 14%;">Nghĩa (VI)</th>
-            <th style="width: 24%;">Lần 1 (Tập chép)</th>
-            <th style="width: 24%;">Lần 2 (Tập chép)</th>
-            <th style="width: 24%;">Lần 3 (Tập chép)</th>
-          </tr>
-        </thead>
-        <tbody>
-{rows_html}
-        </tbody>
-      </table>
-
-      <div class="page-foot">
-        <div>Học sinh: Lê Minh Huy &bull; Lớp {class_name} &bull; Trung tâm CEC</div>
-        <div>Trang {p_idx} / {total_pages} (Tổng {total_words} từ &amp; câu)</div>
-      </div>
-    </div>"""
-
-    pages_html = "\n".join(render_page(p, i + 1) for i, p in enumerate(pages))
+    sent_tbody_html = "\n".join(sent_rows_html)
 
     html_content = f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Phiếu Tập Chép Từ Vựng &amp; Câu - {lesson_title}</title>
+  <title>Trò Chơi Tìm Từ &amp; Luyện Chép Câu Oxford - {lesson_title}</title>
   <style>
     * {{ box-sizing: border-box; margin: 0; padding: 0; }}
     body {{
       font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Geneva, Verdana, sans-serif;
       background-color: #ffffff;
       color: #000000;
-      line-height: 1.2;
+      line-height: 1.25;
       -webkit-font-smoothing: antialiased;
     }}
     .a4-page {{
@@ -969,12 +1053,12 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       width: 210mm;
       min-height: 286mm;
       max-height: 286mm;
-      padding: 5mm 5mm 5mm 5mm;
+      padding: 5mm 6mm 5mm 6mm;
       margin: 0 auto 20px auto;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: space-between;
       overflow: hidden;
       page-break-after: always;
       break-after: page;
@@ -985,35 +1069,124 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
     }}
     .page-head {{
       border-bottom: 2.5px solid #000000;
-      padding-bottom: 3px;
-      margin-bottom: 3px;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
     }}
     .title-main {{
       font-size: 17px;
       font-weight: 900;
       text-align: center;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       color: #000000;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }}
     .info-bar {{
       display: grid;
-      grid-template-columns: 2.2fr 1.3fr 1.3fr 1fr;
+      grid-template-columns: 1.5fr 1.1fr 1.8fr 0.9fr;
       font-size: 12px;
       font-weight: 800;
       color: #000000;
       padding: 1px 0;
     }}
-    /* BẢNG TƯƠNG PHẢN SIÊU CAO, VIỀN LIỀN NÉT 100% KHÔNG BỊ MẤT VIỀN */
-    .vocab-table {{
+    .guide-banner {{
+      background: #ffffff;
+      border: 2px dashed #000000;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 6px;
+    }}
+    /* BẢNG Ô CHỮ TÌM TỪ (WORD SEARCH GRID) */
+    .ws-grid-wrap {{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2px 0 6px 0;
+      flex-grow: 1;
+    }}
+    .ws-table {{
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 3px solid #000000;
+      margin: 0 auto;
+    }}
+    .ws-cell {{
+      width: {cell_mm}mm;
+      height: {cell_mm}mm;
+      border-right: 1.8px solid #000000;
+      border-bottom: 1.8px solid #000000;
+      text-align: center;
+      vertical-align: middle;
+      font-family: "Consolas", "Courier New", "Segoe UI", monospace;
+      font-size: {cell_font_px}px;
+      font-weight: 900;
+      color: #000000;
+      user-select: none;
+    }}
+    .ws-table tr td:last-child {{
+      border-right: none;
+    }}
+    .ws-table tr:last-child td {{
+      border-bottom: none;
+    }}
+    /* DANH SÁCH TỪ MỚI Ở CUỐI TRANG 1 */
+    .word-bank-box {{
+      border: 2.5px solid #000000;
+      border-radius: 6px;
+      padding: 6px 10px 8px 10px;
+      margin-top: 4px;
+    }}
+    .wb-title {{
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }}
+    .wb-grid {{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px 10px;
+    }}
+    .wb-item {{
+      font-size: 12.5px;
+      line-height: 1.3;
+      color: #000000;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }}
+    .wb-check {{
+      font-size: 15px;
+      font-weight: 900;
+      margin-right: 3px;
+    }}
+    .wb-word {{
+      font-weight: 900;
+      font-size: 13px;
+    }}
+    .ws-hint {{
+      font-size: 10.5px;
+      font-weight: 700;
+    }}
+    .wb-mean {{
+      font-weight: 700;
+    }}
+    /* TRANG 2: BẢNG CHỈ CHÉP CÂU VÍ DỤ OXFORD (OALD) */
+    .sent-table {{
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      flex-grow: 1;
       border: 2.5px solid #000000;
+      flex-grow: 1;
     }}
-    .vocab-table th {{
+    .sent-table th {{
       background: #ffffff;
       color: #000000;
       font-size: 12px;
@@ -1021,108 +1194,67 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       text-transform: uppercase;
       border-bottom: 2.5px solid #000000;
       border-right: 2px solid #000000;
-      padding: 4px 2px;
+      padding: 5px 4px;
       text-align: center;
     }}
-    .vocab-table th:last-child {{
+    .sent-table th:last-child {{
       border-right: none;
     }}
-    .row-word td {{
-      height: {word_row_h};
+    .sent-only-row td {{
+      height: {sent_row_mm}mm;
       border-bottom: 2px solid #000000;
       border-right: 2px solid #000000;
-      background-color: #ffffff;
-      padding: 0 5px;
+      padding: 2px 6px;
       vertical-align: middle;
     }}
-    .row-word td:last-child {{
+    .sent-only-row td:last-child {{
       border-right: none;
     }}
-    .row-sentence td {{
-      height: {sent_row_h};
-      border-bottom: 3px solid #000000;
-      border-right: 2px solid #000000;
-      background-color: #ffffff;
-      padding: 0 5px;
-      vertical-align: middle;
+    .sent-table tbody tr:last-child td {{
+      border-bottom: none;
     }}
-    .row-sentence td:last-child {{
-      border-right: none;
+    .col-word-ref {{
+      width: 17%;
     }}
-    .col-en {{
-      width: 14%;
+    .ref-en {{
+      font-size: 14px;
       font-weight: 900;
-      font-size: {font_en};
       color: #000000;
-      word-break: break-word;
-      line-height: 1.15;
+      line-height: 1.2;
     }}
-    .col-vi {{
-      width: 14%;
-      font-weight: 800;
-      font-size: {font_vi};
-      color: #000000;
-      word-break: break-word;
-      line-height: 1.15;
-    }}
-    .col-write {{
-      width: 24%;
-      padding: 0 !important;
-      position: relative;
-    }}
-    /* DÒNG KẺ TẬP VIẾT TÌ ĐÁY (BASELINE GUIDE LINE) */
-    .baseline-box {{
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: flex-end;
-      padding: 0 6px 2.8mm 6px;
-    }}
-    .baseline-line {{
-      width: 100%;
-      height: 0;
-      border-bottom: 2.2px solid #000000; /* Đậm nét 2.2px chống máy in mờ */
-    }}
-    .col-sent-en {{
-      width: 28%;
-      font-weight: 800;
-      font-size: {font_sent_en};
-      color: #000000;
-      word-break: break-word;
-      line-height: 1.25;
-      padding: 0 5px !important;
-    }}
-    .badge-vd {{
-      font-weight: 900;
-      font-size: 10.5px;
-      background: #000000;
-      color: #ffffff;
-      padding: 1px 4px;
-      border-radius: 2px;
-      margin-right: 4px;
-      display: inline-block;
-    }}
-    .col-sent-vi {{
-      width: 24%;
+    .ref-vi {{
+      font-size: 11.5px;
       font-weight: 700;
-      font-size: {font_sent_vi};
       color: #000000;
-      word-break: break-word;
-      line-height: 1.25;
-      padding: 0 5px !important;
+      line-height: 1.2;
+      margin-top: 1px;
     }}
-    .col-sent-write {{
+    .col-oald-sent {{
+      width: 35%;
+    }}
+    .oald-en {{
+      font-size: 13.5px;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.25;
+    }}
+    .oald-vi {{
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #000000;
+      line-height: 1.2;
+      margin-top: 2px;
+    }}
+    .col-copy-box {{
       width: 48%;
-      padding: 0 !important;
-      position: relative;
     }}
     .page-foot {{
       border-top: 2px solid #000000;
-      margin-top: 2px;
-      padding-top: 2px;
+      margin-top: 4px;
+      padding-top: 3px;
       display: flex;
       justify-content: space-between;
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #000000;
     }}
@@ -1137,7 +1269,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
         min-height: 286mm !important;
         max-height: 286mm !important;
         margin: 0 !important;
-        padding: 5mm 5mm 5mm 5mm !important;
+        padding: 5mm 6mm 5mm 6mm !important;
         box-shadow: none !important;
         border: none !important;
         page-break-after: always !important;
@@ -1151,7 +1283,76 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
   </style>
 </head>
 <body>
-{pages_html}
+  <!-- TRANG 1: GAME TÌM TỪ VỰNG (WORD SEARCH PUZZLE) -->
+  <div class="a4-page">
+    <div>
+      <div class="page-head">
+        <div class="title-main">TRÒ CHƠI TINH MẮT TÌM TỪ VỰNG TIẾNG ANH (WORD SEARCH)</div>
+        <div class="info-bar">
+          <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+          <div>Lớp: <strong>{class_name}</strong></div>
+          <div>Bài học: <strong>{lesson_title}</strong></div>
+          <div style="text-align: right;">Ngày: {date_str}</div>
+        </div>
+      </div>
+      <div class="guide-banner">
+        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>{len(ws_entries)} từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong> hoặc <strong>CỘT DỌC (&darr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào ô vuông ở danh sách cuối trang!
+      </div>
+    </div>
+
+    <div class="ws-grid-wrap">
+      <table class="ws-table">
+        <tbody>
+{grid_table_html}
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <div class="word-bank-box">
+        <div class="wb-title">DANH SÁCH TỪ MỚI CẦN TÌM ({len(ws_entries)} TỪ)</div>
+        <div class="wb-grid">
+{word_bank_html}
+        </div>
+      </div>
+
+      <div class="page-foot">
+        <div>Học sinh: Lê Minh Huy &bull; Lớp {class_name} &bull; Trung tâm CEC</div>
+        <div>Trang 1 / 2 (Trò chơi tìm từ vựng - Lưới {grid_n}x{grid_n})</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANG 2: LUYỆN CHÉP CÂU VÍ DỤ CHUẨN TỪ ĐIỂN OXFORD (OALD) -->
+  <div class="a4-page">
+    <div class="page-head">
+      <div class="title-main">PHIẾU LUYỆN VIẾT CÂU TIẾNG ANH (CHUẨN TỪ ĐIỂN OXFORD)</div>
+      <div class="info-bar">
+        <div>Họ và tên: <strong>LÊ MINH HUY</strong></div>
+        <div>Lớp: <strong>{class_name}</strong></div>
+        <div>Bài học: <strong>{lesson_title}</strong></div>
+        <div style="text-align: right;">Ngày: {date_str}</div>
+      </div>
+    </div>
+
+    <table class="sent-table">
+      <thead>
+        <tr>
+          <th style="width: 17%;">Từ Vựng &amp; Nghĩa</th>
+          <th style="width: 35%;">Câu Ví Dụ Chuẩn Oxford (OALD)</th>
+          <th style="width: 48%;">Thực Hành Chép Lại Câu Ví Dụ</th>
+        </tr>
+      </thead>
+      <tbody>
+{sent_tbody_html}
+      </tbody>
+    </table>
+
+    <div class="page-foot">
+      <div>Học sinh: Lê Minh Huy &bull; Lớp {class_name} &bull; Trung tâm CEC</div>
+      <div>Trang 2 / 2 (Luyện chép {num_sents} câu ví dụ Oxford)</div>
+    </div>
+  </div>
 </body>
 </html>
 """
@@ -1921,7 +2122,7 @@ def process_report():
                 extracted_data.get('new_vocabulary', {}),
                 report_dir='Report',
                 current_date=date_str,
-                target_max=25
+                target_max=15
             )
             log_message(f"Practice vocabulary count: {len(practice_vocab)} (Original lesson words: {len(extracted_data.get('new_vocabulary', {}))})")
             for src_name, cnt in vocab_sources:

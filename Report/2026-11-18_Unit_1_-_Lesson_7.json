@@ -3389,7 +3389,7 @@
             "word": "poster",
             "meaning": "áp phích",
             "sentence_en": "We put a poster on the wall.",
-            "sentence_vi": "Chúng tôi dán một tấm áp phích lên tường."
+            "sentence_vi": "Chúng em dán một tấm áp phích lên tường."
         },
         {
             "word": "board",
@@ -3400,140 +3400,80 @@
         {
             "word": "chair",
             "meaning": "ghế",
-            "sentence_en": "She sat on a wooden chair.",
-            "sentence_vi": "Cô ấy ngồi trên một chiếc ghế gỗ."
+            "sentence_en": "Sit down on your chair, please.",
+            "sentence_vi": "Xin mời ngồi xuống ghế của bạn."
         },
         {
             "word": "cool",
             "meaning": "tuyệt vời",
-            "sentence_en": "Glass contracts as it cools.",
-            "sentence_vi": "Thủy tinh co lại khi nguội đi."
+            "sentence_en": "That is a really cool bike.",
+            "sentence_vi": "Đó là một chiếc xe đạp thật ngầu."
         },
         {
             "word": "take care of",
             "meaning": "chăm sóc",
-            "sentence_en": "Point to the take care of in the picture.",
-            "sentence_vi": "Hãy chỉ vào chăm sóc ở trong bức tranh."
+            "sentence_en": "Please take care of my dog.",
+            "sentence_vi": "Hãy chăm sóc chú chó giúp tôi nhé."
         },
         {
             "word": "carrot",
             "meaning": "củ cà rốt",
-            "sentence_en": "Point to the carrot in the picture.",
-            "sentence_vi": "Hãy chỉ vào củ cà rốt ở trong bức tranh."
+            "sentence_en": "Rabbits like to eat fresh carrots.",
+            "sentence_vi": "Thỏ rất thích ăn cà rốt tươi."
         },
         {
             "word": "desk",
             "meaning": "bàn học",
-            "sentence_en": "Keep your school desk neat and tidy.",
-            "sentence_vi": "Hãy giữ bàn học của em gọn gàng sạch sẽ."
+            "sentence_en": "Put your book on the desk.",
+            "sentence_vi": "Hãy đặt quyển sách lên bàn học."
         },
         {
             "word": "bag",
             "meaning": "cặp sách",
-            "sentence_en": "Put your books into your school bag.",
-            "sentence_vi": "Hãy cất sách vở vào trong cặp sách nhé."
+            "sentence_en": "This is my school bag.",
+            "sentence_vi": "Đây là cặp sách của em."
         },
         {
             "word": "pen",
             "meaning": "bút mực",
             "sentence_en": "Please write your name in pen.",
-            "sentence_vi": "Vui lòng viết tên của bạn bằng bút mực."
+            "sentence_vi": "Vui lòng viết tên bằng bút mực."
         },
         {
             "word": "book",
             "meaning": "quyển sách",
             "sentence_en": "Open your book at page ten.",
-            "sentence_vi": "Hãy mở sách của em ra trang số mười."
+            "sentence_vi": "Hãy mở sách ra trang số mười."
         },
         {
             "word": "pencil",
             "meaning": "bút chì",
-            "sentence_en": "Draw the picture with a sharp pencil.",
-            "sentence_vi": "Hãy vẽ bức tranh bằng một chiếc bút chì nhọn."
+            "sentence_en": "Write your name in pencil.",
+            "sentence_vi": "Hãy viết tên em bằng bút chì."
         },
         {
             "word": "pencil case",
             "meaning": "hộp bút",
-            "sentence_en": "I keep my pens in a pencil case.",
-            "sentence_vi": "Em đựng bút của mình trong một chiếc hộp bút."
+            "sentence_en": "Put your pens in the pencil case.",
+            "sentence_vi": "Hãy cất bút vào trong hộp bút."
         },
         {
             "word": "ruler",
             "meaning": "thước kẻ",
-            "sentence_en": "Draw a straight line with a ruler.",
-            "sentence_vi": "Hãy kẻ một đường thẳng bằng thước kẻ."
+            "sentence_en": "Use a ruler to draw lines.",
+            "sentence_vi": "Hãy dùng thước kẻ để kẻ dòng."
         },
         {
             "word": "eraser",
             "meaning": "cục tẩy",
-            "sentence_en": "Use an eraser to rub out mistakes.",
-            "sentence_vi": "Hãy dùng cục tẩy để xóa đi chỗ viết sai."
+            "sentence_en": "Do you have a clean eraser?",
+            "sentence_vi": "Bạn có cục tẩy sạch nào không?"
         },
         {
             "word": "crayon",
             "meaning": "bút màu sáp",
-            "sentence_en": "She coloured the picture with wax crayons.",
-            "sentence_vi": "Cô bé tô màu bức tranh bằng bút sáp màu."
-        },
-        {
-            "word": "a",
-            "meaning": "một",
-            "sentence_en": "She has a red school bag.",
-            "sentence_vi": "Cô ấy có một chiếc cặp sách màu đỏ."
-        },
-        {
-            "word": "an",
-            "meaning": "một",
-            "sentence_en": "He ate an apple for breakfast.",
-            "sentence_vi": "Cậu ấy đã ăn một quả táo vào bữa sáng."
-        },
-        {
-            "word": "big",
-            "meaning": "to",
-            "sentence_en": "This box is too big to carry.",
-            "sentence_vi": "Chiếc hộp này quá to để bê đi."
-        },
-        {
-            "word": "small",
-            "meaning": "nhỏ",
-            "sentence_en": "She lives in a small village.",
-            "sentence_vi": "Cô ấy sống trong một ngôi làng nhỏ."
-        },
-        {
-            "word": "purple",
-            "meaning": "màu tím",
-            "sentence_en": "She wore a bright purple dress.",
-            "sentence_vi": "Cô ấy mặc một chiếc váy màu tím tươi."
-        },
-        {
-            "word": "green",
-            "meaning": "màu xanh lá cây",
-            "sentence_en": "Wait for the light to turn green.",
-            "sentence_vi": "Hãy đợi đèn chuyển sang màu xanh lá."
-        },
-        {
-            "word": "yellow",
-            "meaning": "màu vàng",
-            "sentence_en": "She was wearing a bright yellow hat.",
-            "sentence_vi": "Cô ấy đội một chiếc mũ màu vàng tươi."
-        },
-        {
-            "word": "one",
-            "meaning": "số một (1)",
-            "sentence_en": "There is only one room left.",
-            "sentence_vi": "Chỉ còn lại một căn phòng."
-        },
-        {
-            "word": "two",
-            "meaning": "số hai (2)",
-            "sentence_en": "She has two younger brothers.",
-            "sentence_vi": "Cô ấy có hai người em trai."
-        },
-        {
-            "word": "three",
-            "meaning": "số ba (3)",
-            "sentence_en": "We waited for three hours.",
-            "sentence_vi": "Chúng tôi đã đợi trong ba tiếng đồng hồ."
+            "sentence_en": "He drew a picture with crayons.",
+            "sentence_vi": "Cậu bé vẽ tranh bằng bút sáp màu."
         }
     ]
 }

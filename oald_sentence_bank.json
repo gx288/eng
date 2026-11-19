@@ -120,8 +120,8 @@
     "Con mèo khẽ giật giật ria mép."
   ],
   "desk": [
-    "Keep your school desk neat and tidy.",
-    "Hãy giữ bàn học của em gọn gàng sạch sẽ."
+    "Put your book on the desk.",
+    "Hãy đặt quyển sách lên bàn học."
   ],
   "gift": [
     "This is a special gift for you.",
@@ -520,8 +520,8 @@
     "Chúng tôi ngồi trên chiếc ghế gỗ ở công viên."
   ],
   "yellow": [
-    "She was wearing a bright yellow hat.",
-    "Cô ấy đội một chiếc mũ màu vàng tươi."
+    "She has a bright yellow hat.",
+    "Cô ấy có một chiếc mũ màu vàng."
   ],
   "butter": [
     "Fry the onions in a little butter.",
@@ -696,24 +696,24 @@
     "Bạn có muốn dùng một chút mứt dâu tây không?"
   ],
   "two": [
-    "She has two younger brothers.",
+    "She has two little brothers.",
     "Cô ấy có hai người em trai."
   ],
   "three": [
     "We waited for three hours.",
-    "Chúng tôi đã đợi trong ba tiếng đồng hồ."
+    "Chúng tôi đã đợi trong ba giờ."
   ],
   "four": [
-    "A square has four equal sides.",
-    "Hình vuông có bốn cạnh bằng nhau."
+    "A square has four sides.",
+    "Hình vuông có bốn cạnh."
   ],
   "five": [
-    "Hold up your hand with five fingers.",
-    "Hãy giơ bàn tay có năm ngón lên nhé."
+    "Hold up your five fingers.",
+    "Hãy giơ năm ngón tay của em lên."
   ],
   "six": [
-    "There are six chairs around the table.",
-    "Có sáu chiếc ghế xung quanh bàn."
+    "There are six chairs here.",
+    "Có sáu chiếc ghế ở đây."
   ],
   "seven": [
     "There are seven days in a week.",
@@ -724,108 +724,108 @@
     "Giờ học bắt đầu lúc tám giờ đúng."
   ],
   "nine": [
-    "The shop opens at nine every morning.",
-    "Cửa hàng mở cửa lúc chín giờ mỗi sáng."
+    "The shop opens at nine o'clock.",
+    "Cửa hàng mở cửa lúc chín giờ."
   ],
   "ten": [
     "Count from one to ten slowly.",
-    "Hãy đếm chậm từ một đến mười nhé."
+    "Hãy đếm chậm từ một đến mười."
   ],
   "eleven": [
     "A football team has eleven players.",
-    "Một đội bóng đá có mười một cầu thủ."
+    "Đội bóng đá có mười một cầu thủ."
   ],
   "twelve": [
     "There are twelve months in a year.",
     "Có mười hai tháng trong một năm."
   ],
   "thirteen": [
-    "She turned thirteen last week.",
-    "Tuần trước cô ấy vừa tròn mười ba tuổi."
+    "My brother is thirteen years old.",
+    "Anh trai em mười ba tuổi."
   ],
   "fourteen": [
-    "The course lasts for fourteen days.",
-    "Khóa học kéo dài trong mười bốn ngày."
+    "She has fourteen coloured pencils.",
+    "Cô ấy có mười bốn chiếc bút chì màu."
   ],
   "fifteen": [
-    "The bus arrives in fifteen minutes.",
-    "Xe buýt sẽ đến trong mười lăm phút nữa."
+    "The bus comes in fifteen minutes.",
+    "Xe buýt sẽ đến trong mười lăm phút."
   ],
   "sixteen": [
-    "There are sixteen students in the class.",
-    "Có mười sáu học sinh trong lớp học."
+    "There are sixteen kids in class.",
+    "Có mười sáu bạn nhỏ trong lớp."
   ],
   "seventeen": [
-    "He is seventeen years old now.",
-    "Bây giờ anh ấy đã mười bảy tuổi."
+    "Read page seventeen of your book.",
+    "Hãy đọc trang mười bảy trong sách."
   ],
   "eighteen": [
-    "She finished school at age eighteen.",
-    "Cô ấy tốt nghiệp phổ thông ở tuổi mười tám."
+    "He has eighteen toy cars.",
+    "Cậu ấy có mười tám chiếc xe đồ chơi."
   ],
   "nineteen": [
-    "The book costs nineteen dollars.",
-    "Cuốn sách này có giá mười chín đô la."
+    "We counted nineteen birds in the tree.",
+    "Chúng em đếm được mười chín chú chim."
   ],
   "twenty": [
-    "There are twenty desks in the room.",
-    "Có hai mươi chiếc bàn học trong phòng."
+    "There are twenty desks in class.",
+    "Có hai mươi chiếc bàn học trong lớp."
   ],
   "big": [
-    "This box is too big to carry.",
-    "Chiếc hộp này quá to để bê đi."
+    "They live in a big house.",
+    "Họ sống trong một ngôi nhà lớn."
   ],
   "small": [
-    "She lives in a small village.",
-    "Cô ấy sống trong một ngôi làng nhỏ."
+    "It is a very small dog.",
+    "Đó là một chú chó rất nhỏ."
   ],
   "purple": [
-    "She wore a bright purple dress.",
-    "Cô ấy mặc một chiếc váy màu tím tươi."
+    "She likes her new purple bag.",
+    "Cô bé thích chiếc cặp màu tím mới."
   ],
   "green": [
     "Wait for the light to turn green.",
     "Hãy đợi đèn chuyển sang màu xanh lá."
   ],
   "bag": [
-    "Put your books into your school bag.",
-    "Hãy cất sách vở vào trong cặp sách nhé."
+    "This is my school bag.",
+    "Đây là cặp sách của em."
   ],
   "pen": [
     "Please write your name in pen.",
-    "Vui lòng viết tên của bạn bằng bút mực."
+    "Vui lòng viết tên bằng bút mực."
   ],
   "book": [
     "Open your book at page ten.",
-    "Hãy mở sách của em ra trang số mười."
+    "Hãy mở sách ra trang số mười."
   ],
   "pencil": [
-    "Draw the picture with a sharp pencil.",
-    "Hãy vẽ bức tranh bằng một chiếc bút chì nhọn."
+    "Write your name in pencil.",
+    "Hãy viết tên em bằng bút chì."
   ],
   "ruler": [
-    "Draw a straight line with a ruler.",
-    "Hãy kẻ một đường thẳng bằng thước kẻ."
+    "Use a ruler to draw lines.",
+    "Hãy dùng thước kẻ để kẻ dòng."
   ],
   "crayon": [
-    "She coloured the picture with wax crayons.",
-    "Cô bé tô màu bức tranh bằng bút sáp màu."
+    "He drew a picture with crayons.",
+    "Cậu bé vẽ tranh bằng bút sáp màu."
   ],
   "a": [
     "She has a red school bag.",
-    "Cô ấy có một chiếc cặp sách màu đỏ."
+    "Cô ấy có một chiếc cặp màu đỏ."
   ],
   "board": [
     "The teacher wrote on the board.",
     "Thầy giáo viết bài lên trên bảng."
   ],
   "pencil case": [
-    "I keep my pens in a pencil case.",
-    "Em đựng bút của mình trong một chiếc hộp bút."
+    "Put your pens in the pencil case.",
+    "Hãy cất bút vào trong hộp bút."
   ],
   "eraser": [
-    "Use an eraser to rub out mistakes.",
-    "Hãy dùng cục tẩy để xóa đi chỗ viết sai."
+    "Do you have a clean eraser?",
+    "Bạn có cục tẩy sạch nào không?"
   ],
   "rubber": [
     "Can I borrow your rubber, please?",
@@ -837,35 +837,35 @@
   ],
   "an": [
     "He ate an apple for breakfast.",
-    "Cậu ấy đã ăn một quả táo vào bữa sáng."
+    "Cậu ấy ăn một quả táo bữa sáng."
   ],
   "chair": [
-    "She sat on a wooden chair.",
-    "Cô ấy ngồi trên một chiếc ghế gỗ."
+    "Sit down on your chair, please.",
+    "Xin mời ngồi xuống ghế của bạn."
   ],
   "poster": [
     "We put a poster on the wall.",
-    "Chúng tôi dán một tấm áp phích lên tường."
+    "Chúng em dán một tấm áp phích lên tường."
   ],
   "table": [
-    "Set the plates on the kitchen table.",
-    "Hãy bày đĩa lên trên bàn ăn nhé."
+    "Put the books on the table.",
+    "Hãy đặt những cuốn sách lên bàn."
   ],
   "classroom": [
     "The students are in the classroom.",
     "Các bạn học sinh đang ở trong lớp học."
   ],
   "paper": [
-    "Write your answer on a piece of paper.",
-    "Hãy viết câu trả lời lên một tờ giấy."
+    "Write your answer on the paper.",
+    "Hãy viết câu trả lời lên tờ giấy."
   ],
   "scissors": [
-    "Use sharp scissors to cut the paper.",
-    "Hãy dùng kéo sắc để cắt tờ giấy."
+    "Cut the paper with sharp scissors.",
+    "Hãy cắt giấy bằng chiếc kéo sắc."
   ],
   "glue": [
-    "Stick the picture down with glue.",
-    "Hãy dán bức tranh xuống bằng keo dán."
+    "Stick the picture with some glue.",
+    "Hãy dán bức tranh bằng một ít hồ."
   ],
   "notebook": [
     "She wrote the words in her notebook.",
@@ -873,27 +873,27 @@
   ],
   "computer": [
     "We use a computer at school.",
-    "Chúng em sử dụng máy tính ở trường."
+    "Chúng em dùng máy tính ở trường."
   ],
   "map": [
-    "Can you find Vietnam on the map?",
-    "Bạn có tìm thấy Việt Nam trên bản đồ không?"
+    "Find our country on the map.",
+    "Hãy tìm đất nước mình trên bản đồ."
   ],
   "clock": [
-    "The classroom clock says nine o'clock.",
-    "Đồng hồ trong lớp chỉ chín giờ đúng."
+    "Look at the clock on the wall.",
+    "Hãy nhìn chiếc đồng hồ trên tường."
   ],
   "door": [
-    "Please close the door quietly.",
-    "Vui lòng đóng cửa lại thật nhẹ nhàng nhé."
+    "Please close the door behind you.",
+    "Vui lòng đóng cửa lại sau lưng bạn."
   ],
   "window": [
-    "Open the window to let air in.",
-    "Hãy mở cửa sổ cho thoáng khí nhé."
+    "Please open the window for air.",
+    "Vui lòng mở cửa sổ cho thoáng khí."
   ],
   "picture": [
-    "She drew a picture of her family.",
-    "Cô bé vẽ một bức tranh về gia đình mình."
+    "Draw a picture of your family.",
+    "Hãy vẽ một bức tranh về gia đình em."
   ],
   "ball": [
     "Kick the ball into the goal.",
@@ -1104,7 +1104,19 @@
     "Ngày mai mọi chuyện rồi sẽ ổn thôi."
   ],
   "cool": [
-    "Glass contracts as it cools.",
-    "Thủy tinh co lại khi nguội đi."
+    "That is a really cool bike.",
+    "Đó là một chiếc xe đạp thật ngầu."
+  ],
+  "take care of": [
+    "Please take care of my dog.",
+    "Hãy chăm sóc chú chó giúp tôi nhé."
+  ],
+  "carrot": [
+    "Rabbits like to eat fresh carrots.",
+    "Thỏ rất thích ăn cà rốt tươi."
+  ],
+  "cupboard": [
+    "Put the plates in the cupboard.",
+    "Hãy cất đĩa vào trong tủ nhé."
   ]
 }
