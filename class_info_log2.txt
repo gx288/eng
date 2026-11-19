@@ -3067,3 +3067,54 @@ Con giữ thái độ học tập tốt và nghiêm túc trong giờ học. Con 
 [2026-11-19 16:31:58] Latest class on 2026-11-18 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/11fH0rEMmC9ng8iAwrCXwHgKhft5x7s-9/export?format=pdf. Exiting.
 [2026-11-19 16:31:58] Closing WebDriver
 [2026-11-19 16:31:58] Script completed
+[2026-11-19 16:46:20] Starting script
+[2026-11-19 16:46:20] Starting report check for calendar overview
+[2026-11-19 16:46:20] Loaded processed2.json: {'date': '2026-11-18', 'class_name': 'VQ2-E1L-2603', 'report_url': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/11fH0rEMmC9ng8iAwrCXwHgKhft5x7s-9/export?format=pdf', 'processed_dates': {'2026-09-29': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1VmAZw8QSoiWOzzf6mNfekNs7wP1EyFGn/export?format=pdf', '2026-10-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1vBShZrn3gR9KyU1vuG5PKNRsBcVQ3k68/export?format=pdf', '2026-10-06': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-GRcaXVOcgvhTQfvbpufbBQfj7ji3pI1/export?format=pdf', '2026-10-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1936052PJJbHPueIm6wKv6UJFyu9AKwNO/export?format=pdf', '2026-10-13': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/14rMuPz_KyleR1fmw4R9rRS35UYOZDvs1/export?format=pdf', '2026-10-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/17u40d9dl9Uun4p0hyTs-mpLNr-m7gaN5/export?format=pdf', '2026-10-20': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1khMb-wuMlFSk1CzLAaLx4UlX0McQZUMV/export?format=pdf', '2026-10-25': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1_FngEbL4ruXbNOnELLRE5Li3OBrXcijT/export?format=pdf', '2026-10-27': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1sZcvkpdp-85AvbIVwf-2ZsPANDwznonH/export?format=pdf', '2026-11-01': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1-OanW_raogyuo-hYjgECYuEHHEEe4DXz/export?format=pdf', '2026-11-04': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wpdb92nXsV6M7K0o77iOm7CluKkJqmqt/export?format=pdf', '2026-11-08': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wuAOtP4Ce1g7VSTcIVIOKgBTm9jtQFlx/export?format=pdf', '2026-11-11': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/12lr0pQLysOlGO-jegMdszVaErxQQp1AQ/export?format=pdf', '2026-11-15': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/1jX-4Vfzv0KXKkVwLByyBW63gaTOCB6UQ/export?format=pdf', '2026-11-18': 'https://docs.google.com/viewer?url=https://docs.google.com/document/d/11fH0rEMmC9ng8iAwrCXwHgKhft5x7s-9/export?format=pdf'}}
+[2026-11-19 16:46:20] Writing Google credentials to credentials.json
+[2026-11-19 16:46:20] Credentials written successfully
+[2026-11-19 16:46:20] Initializing Chrome WebDriver
+[2026-11-19 16:47:40] WebDriver session ID: 1f70b21881ba7aebe376ae8b93552fc1
+[2026-11-19 16:48:40] WebDriver unresponsive: Message: timeout: Timed out receiving message from renderer: 60.000
+  (Session info: chrome=157.0.8103.78)
+Stacktrace:
+#0 0x6116c5d4dcaa <unknown>
+#1 0x6116c5681cc5 <unknown>
+#2 0x6116c5671b32 <unknown>
+#3 0x6116c56718a6 <unknown>
+#4 0x6116c567002b <unknown>
+#5 0x6116c567043f <unknown>
+#6 0x6116c567b9d6 <unknown>
+#7 0x6116c568cb90 <unknown>
+#8 0x6116c569299b <unknown>
+#9 0x6116c5670d17 <unknown>
+#10 0x6116c5670a38 <unknown>
+#11 0x6116c568ca53 <unknown>
+#12 0x6116c570360d <unknown>
+#13 0x6116c56be557 <unknown>
+#14 0x6116c56bd86e <unknown>
+#15 0x6116c56be341 <unknown>
+#16 0x6116c5d1079c <unknown>
+#17 0x6116c5d0efcd <unknown>
+#18 0x6116c5cf9df5 <unknown>
+#19 0x6116c5d0fc0a <unknown>
+#20 0x6116c5ce2b99 <unknown>
+#21 0x6116c5d38318 <unknown>
+#22 0x6116c5d384b5 <unknown>
+#23 0x6116c5d4c633 <unknown>
+#24 0x7718918abdeb <unknown>
+#25 0x77189193f4dc <unknown>
+
+[2026-11-19 16:48:40] Restarting WebDriver
+[2026-11-19 16:48:41] Attempting to restore session from cache...
+[2026-11-19 16:48:50] Navigating to student calendar overview with restored session...
+[2026-11-19 16:48:58] Session verified successfully! Calendar events loaded without fresh login.
+[2026-11-19 16:48:58] Attempting to restore session from cache...
+[2026-11-19 16:49:00] Navigating to student calendar overview with restored session...
+[2026-11-19 16:49:05] Session verified successfully! Calendar events loaded without fresh login.
+[2026-11-19 16:49:05] Active session restored, bypassed fresh login!
+[2026-11-19 16:49:05] Scrolled to bottom of page
+[2026-11-19 16:49:05] Found 30 class events
+[2026-11-19 16:49:06] Latest class date up to today: 2026-11-18
+[2026-11-19 16:49:06] Latest class on 2026-11-18 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/11fH0rEMmC9ng8iAwrCXwHgKhft5x7s-9/export?format=pdf. Exiting.
+[2026-11-19 16:49:06] Closing WebDriver
+[2026-11-19 16:49:06] Script completed
