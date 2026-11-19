@@ -215,7 +215,7 @@
       border-right: none;
     }
     .sent-only-row td {
-      height: 12.93mm;
+      height: 16.0mm;
       border-bottom: 1.8px solid #000000;
       border-right: 2px solid #000000;
       padding: 1.5px 6px;
@@ -235,15 +235,20 @@
     .oald-vi { font-size: 11px; font-weight: 700; color: #000000; line-height: 1.15; margin-top: 1px; }
     .col-copy-box { width: 48%; }
 
-    /* HỘP ĐÁP ÁN TRÒ CHƠI TÌM TỪ Ở CUỐI TRANG 2 */
+    /* HỘP ĐÁP ÁN CHỈ HIỆN TRÊN WEB KHI BỐ MẸ BẤM XEM ĐÁP ÁN - ẨN HOÀN TOÀN KHI IN PDF CHO BÉ */
     .answer-key-box {
-      border: 2px solid #000000;
-      border-radius: 6px;
-      padding: 4px 8px;
-      margin-top: 4px;
-      display: flex;
+      display: none;
+      max-width: 210mm;
+      border: 2.5px solid #059669;
+      background: #ecfdf5;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin: 10px auto 16px auto;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
+    }
+    body.show-ans .answer-key-box {
+      display: flex;
     }
     .ak-mini-table {
       border-collapse: collapse;
@@ -308,7 +313,7 @@
       margin: 4.5mm 5mm 4.5mm 5mm;
     }
     @media print {
-      .web-toolbar { display: none !important; }
+      .web-toolbar, .answer-key-box { display: none !important; }
       body { background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .a4-page {
         width: 100% !important;
@@ -330,8 +335,49 @@
 </head>
 <body>
   <div class="web-toolbar">
-    <button class="web-btn" onclick="document.body.classList.toggle('show-ans')">&#128273; Bật / Tắt Tô Màu Đáp Án Trên Bảng</button>
-    <button class="web-btn" style="background:#2563eb;" onclick="window.print()">&#128424; In Phiếu A4 (2 Trang)</button>
+    <button class="web-btn" onclick="document.body.classList.toggle('show-ans')">&#128273; Bật / Tắt Đáp Án Tìm Từ (Dành Cho Phụ Huynh)</button>
+    <button class="web-btn" style="background:#2563eb;" onclick="window.print()">&#128424; In Phiếu A4 Cho Bé (Không Kèm Đáp Án)</button>
+  </div>
+  <div class="answer-key-box">
+    <table class="ak-mini-table">
+      <tbody>
+              <tr><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">W</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">S</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">V</td></tr>
+              <tr><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-hit">V</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">G</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">L</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">H</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">S</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">H</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">X</td><td class="ak-cell ak-miss">&middot;</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
+              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">W</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">L</td></tr>
+              <tr><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">U</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
+              <tr><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">V</td></tr>
+              <tr><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
+              <tr><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">Y</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-hit">C</td><td class="ak-cell ak-hit">K</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td></tr>
+      </tbody>
+    </table>
+    <div class="ak-coords-wrap">
+      <div class="ak-title">&#128273; ĐÁP ÁN VỊ TRÍ TỪ VỰNG TRONG BẢNG TRANG 1 (HÀNG &times; CỘT &amp; HƯỚNG)</div>
+      <div class="ak-coords-grid">
+            <div class="ak-coord-item"><strong>1. ONE:</strong> H10-C6 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>2. TWO:</strong> H1-C1 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>3. THREE:</strong> H8-C8 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>4. FOUR:</strong> H10-C9 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>5. FIVE:</strong> H5-C7 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>6. SIX:</strong> H7-C14 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>7. SEVEN:</strong> H1-C15 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>8. EIGHT:</strong> H4-C1 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>9. NINE:</strong> H12-C1 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>10. TEN:</strong> H3-C3 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>11. ELEVEN:</strong> H10-C15 (↓ Dọc)</div>
+            <div class="ak-coord-item"><strong>12. FIFTEEN:</strong> H2-C4 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>13. TWENTY:</strong> H10-C2 (↘ Chéo)</div>
+            <div class="ak-coord-item"><strong>14. TRACK:</strong> H15-C9 (→ Ngang)</div>
+            <div class="ak-coord-item"><strong>15. TRAIL:</strong> H2-C12 (↓ Dọc)</div>
+      </div>
+    </div>
   </div>
   <script>if(location.search.includes('ans=1'))document.body.classList.add('show-ans');</script>
 
@@ -348,7 +394,7 @@
         </div>
       </div>
       <div class="guide-banner">
-        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>15 từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong>, <strong>CỘT DỌC (&darr;)</strong> hoặc <strong>ĐƯỜNG CHÉO (&searr; &nearr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào danh sách cuối trang! (Có bảng Đáp Án ở cuối Trang 2)
+        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>15 từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong>, <strong>CỘT DỌC (&darr;)</strong> hoặc <strong>ĐƯỜNG CHÉO (&searr; &nearr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào danh sách cuối trang!
       </div>
     </div>
 
@@ -653,51 +699,9 @@
       </tbody>
     </table>
 
-    <div class="answer-key-box">
-      <table class="ak-mini-table">
-        <tbody>
-              <tr><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">W</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">S</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">V</td></tr>
-              <tr><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-hit">V</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">G</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">L</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">H</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">S</td><td class="ak-cell ak-miss">&middot;</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">H</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">X</td><td class="ak-cell ak-miss">&middot;</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">F</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
-              <tr><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">W</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">O</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">L</td></tr>
-              <tr><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">U</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
-              <tr><td class="ak-cell ak-hit">I</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">V</td></tr>
-              <tr><td class="ak-cell ak-hit">N</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">E</td></tr>
-              <tr><td class="ak-cell ak-hit">E</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">Y</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">T</td><td class="ak-cell ak-hit">R</td><td class="ak-cell ak-hit">A</td><td class="ak-cell ak-hit">C</td><td class="ak-cell ak-hit">K</td><td class="ak-cell ak-miss">&middot;</td><td class="ak-cell ak-hit">N</td></tr>
-        </tbody>
-      </table>
-      <div class="ak-coords-wrap">
-        <div class="ak-title">&#128273; ĐÁP ÁN VỊ TRÍ TỪ VỰNG TRONG BẢNG TRANG 1 (HÀNG &times; CỘT &amp; HƯỚNG)</div>
-        <div class="ak-coords-grid">
-            <div class="ak-coord-item"><strong>1. ONE:</strong> H10-C6 (↘ Chéo)</div>
-            <div class="ak-coord-item"><strong>2. TWO:</strong> H1-C1 (→ Ngang)</div>
-            <div class="ak-coord-item"><strong>3. THREE:</strong> H8-C8 (→ Ngang)</div>
-            <div class="ak-coord-item"><strong>4. FOUR:</strong> H10-C9 (↘ Chéo)</div>
-            <div class="ak-coord-item"><strong>5. FIVE:</strong> H5-C7 (→ Ngang)</div>
-            <div class="ak-coord-item"><strong>6. SIX:</strong> H7-C14 (↓ Dọc)</div>
-            <div class="ak-coord-item"><strong>7. SEVEN:</strong> H1-C15 (↓ Dọc)</div>
-            <div class="ak-coord-item"><strong>8. EIGHT:</strong> H4-C1 (↘ Chéo)</div>
-            <div class="ak-coord-item"><strong>9. NINE:</strong> H12-C1 (↓ Dọc)</div>
-            <div class="ak-coord-item"><strong>10. TEN:</strong> H3-C3 (↘ Chéo)</div>
-            <div class="ak-coord-item"><strong>11. ELEVEN:</strong> H10-C15 (↓ Dọc)</div>
-            <div class="ak-coord-item"><strong>12. FIFTEEN:</strong> H2-C4 (→ Ngang)</div>
-            <div class="ak-coord-item"><strong>13. TWENTY:</strong> H10-C2 (↘ Chéo)</div>
-            <div class="ak-coord-item"><strong>14. TRACK:</strong> H15-C9 (→ Ngang)</div>
-            <div class="ak-coord-item"><strong>15. TRAIL:</strong> H2-C12 (↓ Dọc)</div>
-        </div>
-      </div>
-    </div>
-
     <div class="page-foot">
       <div>Học sinh: Lê Minh Huy &bull; Lớp VQ2-E1L-2603 &bull; Trung tâm CEC</div>
-      <div>Trang 2 / 2 (Luyện chép 15 câu ví dụ Oxford &amp; Đáp án tìm từ)</div>
+      <div>Trang 2 / 2 (Luyện chép 15 câu ví dụ Oxford)</div>
     </div>
   </div>
 </body>

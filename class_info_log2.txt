@@ -3044,3 +3044,9 @@ Con giữ thái độ học tập tốt và nghiêm túc trong giờ học. Con 
 [2026-11-19 16:16:39] Latest class on 2026-11-18 has already been processed with report URL: https://docs.google.com/viewer?url=https://docs.google.com/document/d/11fH0rEMmC9ng8iAwrCXwHgKhft5x7s-9/export?format=pdf. Exiting.
 [2026-11-19 16:16:39] Closing WebDriver
 [2026-11-19 16:16:39] Script completed
+[2026-11-19 23:30:38] Successfully generated PDF worksheet: d:\AT\English\01_DuAn_CEC_MinhHuy\Cec_Portal_Data\eng_repo\Report\2026-11-01_Unit_1_-_Lesson_1,_2_(Page_4,5)_Phieu_Tap_Chep.pdf
+[2026-11-19 23:30:39] Successfully generated PDF worksheet: d:\AT\English\01_DuAn_CEC_MinhHuy\Cec_Portal_Data\eng_repo\Report\2026-11-04_Lesson_3,4_(Page_6,7,8)_Phieu_Tap_Chep.pdf
+[2026-11-19 23:30:41] Successfully generated PDF worksheet: d:\AT\English\01_DuAn_CEC_MinhHuy\Cec_Portal_Data\eng_repo\Report\2026-11-08_Unit_1_-_Lesson_1&2_(Page_9,10,11)_Phieu_Tap_Chep.pdf
+[2026-11-19 23:30:42] Successfully generated PDF worksheet: d:\AT\English\01_DuAn_CEC_MinhHuy\Cec_Portal_Data\eng_repo\Report\2026-11-11_Unit_1_-_Lesson_3&4_(Page_12,13)_Phieu_Tap_Chep.pdf
+[2026-11-19 23:30:44] Successfully generated PDF worksheet: d:\AT\English\01_DuAn_CEC_MinhHuy\Cec_Portal_Data\eng_repo\Report\2026-11-15_Unit_1_-_Lesson_5&6_(Page_14,15)_Phieu_Tap_Chep.pdf
+[2026-11-19 23:30:46] Successfully generated PDF worksheet: d:\AT\English\01_DuAn_CEC_MinhHuy\Cec_Portal_Data\eng_repo\Report\2026-11-18_Unit_1_-_Lesson_7_Phieu_Tap_Chep.pdf

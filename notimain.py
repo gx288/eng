@@ -1071,11 +1071,11 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
           </div>""")
     word_bank_html = "\n".join(word_cards_html)
 
-    # 2. XÂY DỰNG TRANG 2: CHỈ CHÉP CÂU VÍ DỤ OXFORD (OALD) + HỘP ĐÁP ÁN TÌM TỪ Ở CUỐI TRANG 2
+    # 2. XÂY DỰNG TRANG 2: CHỈ CHÉP CÂU VÍ DỤ OXFORD (OALD) - TUYỆT ĐỐI KHÔNG IN ĐÁP ÁN LÊN GIẤY CỦA BÉ
     sentence_items = vocab_items[:15]
     num_sents = len(sentence_items)
-    # Dành ~46mm ở cuối Trang 2 cho Hộp Đáp Án (Mini Grid + Tọa độ), phần còn lại (~196mm) chia đều cho các câu
-    sent_row_mm = round(max(12.2, min(18.5, 194.0 / max(1, num_sents))), 2)
+    # Phủ kín 100% Trang 2 bằng bảng luyện chép câu rộng rãi (~16mm/dòng)
+    sent_row_mm = round(max(14.5, min(22.0, 240.0 / max(1, num_sents))), 2)
 
     sent_rows_html = []
     for idx, it in enumerate(sentence_items, 1):
@@ -1354,15 +1354,20 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
     .oald-vi {{ font-size: 11px; font-weight: 700; color: #000000; line-height: 1.15; margin-top: 1px; }}
     .col-copy-box {{ width: 48%; }}
 
-    /* HỘP ĐÁP ÁN TRÒ CHƠI TÌM TỪ Ở CUỐI TRANG 2 */
+    /* HỘP ĐÁP ÁN CHỈ HIỆN TRÊN WEB KHI BỐ MẸ BẤM XEM ĐÁP ÁN - ẨN HOÀN TOÀN KHI IN PDF CHO BÉ */
     .answer-key-box {{
-      border: 2px solid #000000;
-      border-radius: 6px;
-      padding: 4px 8px;
-      margin-top: 4px;
-      display: flex;
+      display: none;
+      max-width: 210mm;
+      border: 2.5px solid #059669;
+      background: #ecfdf5;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin: 10px auto 16px auto;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
+    }}
+    body.show-ans .answer-key-box {{
+      display: flex;
     }}
     .ak-mini-table {{
       border-collapse: collapse;
@@ -1427,7 +1432,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       margin: 4.5mm 5mm 4.5mm 5mm;
     }}
     @media print {{
-      .web-toolbar {{ display: none !important; }}
+      .web-toolbar, .answer-key-box {{ display: none !important; }}
       body {{ background: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
       .a4-page {{
         width: 100% !important;
@@ -1449,8 +1454,21 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
 </head>
 <body>
   <div class="web-toolbar">
-    <button class="web-btn" onclick="document.body.classList.toggle('show-ans')">&#128273; Bật / Tắt Tô Màu Đáp Án Trên Bảng</button>
-    <button class="web-btn" style="background:#2563eb;" onclick="window.print()">&#128424; In Phiếu A4 (2 Trang)</button>
+    <button class="web-btn" onclick="document.body.classList.toggle('show-ans')">&#128273; Bật / Tắt Đáp Án Tìm Từ (Dành Cho Phụ Huynh)</button>
+    <button class="web-btn" style="background:#2563eb;" onclick="window.print()">&#128424; In Phiếu A4 Cho Bé (Không Kèm Đáp Án)</button>
+  </div>
+  <div class="answer-key-box">
+    <table class="ak-mini-table">
+      <tbody>
+{mini_grid_html}
+      </tbody>
+    </table>
+    <div class="ak-coords-wrap">
+      <div class="ak-title">&#128273; ĐÁP ÁN VỊ TRÍ TỪ VỰNG TRONG BẢNG TRANG 1 (HÀNG &times; CỘT &amp; HƯỚNG)</div>
+      <div class="ak-coords-grid">
+{ak_coords_html}
+      </div>
+    </div>
   </div>
   <script>if(location.search.includes('ans=1'))document.body.classList.add('show-ans');</script>
 
@@ -1467,7 +1485,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
         </div>
       </div>
       <div class="guide-banner">
-        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>{len(ws_entries)} từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong>, <strong>CỘT DỌC (&darr;)</strong> hoặc <strong>ĐƯỜNG CHÉO (&searr; &nearr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào danh sách cuối trang! (Có bảng Đáp Án ở cuối Trang 2)
+        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>{len(ws_entries)} từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong>, <strong>CỘT DỌC (&darr;)</strong> hoặc <strong>ĐƯỜNG CHÉO (&searr; &nearr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào danh sách cuối trang!
       </div>
     </div>
 
@@ -1519,23 +1537,9 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
       </tbody>
     </table>
 
-    <div class="answer-key-box">
-      <table class="ak-mini-table">
-        <tbody>
-{mini_grid_html}
-        </tbody>
-      </table>
-      <div class="ak-coords-wrap">
-        <div class="ak-title">&#128273; ĐÁP ÁN VỊ TRÍ TỪ VỰNG TRONG BẢNG TRANG 1 (HÀNG &times; CỘT &amp; HƯỚNG)</div>
-        <div class="ak-coords-grid">
-{ak_coords_html}
-        </div>
-      </div>
-    </div>
-
     <div class="page-foot">
       <div>Học sinh: Lê Minh Huy &bull; Lớp {class_name} &bull; Trung tâm CEC</div>
-      <div>Trang 2 / 2 (Luyện chép {num_sents} câu ví dụ Oxford &amp; Đáp án tìm từ)</div>
+      <div>Trang 2 / 2 (Luyện chép {num_sents} câu ví dụ Oxford)</div>
     </div>
   </div>
 </body>
@@ -1638,6 +1642,22 @@ async def send_detailed_telegram_message(bot, chat_id, result_data, worksheet_pd
 
         is_padded = vocab_sources and len(vocab_sources) > 1
         total_practice_words = sum(s[1] for s in vocab_sources) if vocab_sources else len(result_data.get('new_vocabulary', {}))
+
+        # Gửi Đáp Án Tìm Từ bằng tin nhắn riêng trên Telegram cho Phụ huynh kiểm tra (không in vào tờ PDF của bé)
+        practice_items = result_data.get('practice_vocabulary', [])
+        if practice_items:
+            try:
+                _, _, ws_entries_ak, _ = build_word_search_grid(
+                    practice_items,
+                    seed_str=f"{result_data.get('report_date', '')}_{result_data.get('lesson_title', '')}"
+                )
+                ak_lines = [f"*🔑 ĐÁP ÁN GAME TÌM TỪ - {result_data['report_date']} (Dành cho Phụ huynh)*"]
+                for idx_ak, e_ak in enumerate(ws_entries_ak, 1):
+                    ak_lines.append(f"{idx_ak}. `{e_ak['word'].upper()}`: Hàng {e_ak['ans_row']}, Cột {e_ak['ans_col']} ({e_ak['ans_dir']})")
+                await safe_send_message(bot, chat_id, "\n".join(ak_lines))
+                await asyncio.sleep(0.5)
+            except Exception as ak_err:
+                log_message(f"Warning sending answer key message: {ak_err}")
 
         # Chỉ gửi thêm duy nhất file PDF tập chép A4 chuẩn in (không gửi file text quizlet)
         if worksheet_pdf and os.path.exists(worksheet_pdf):
