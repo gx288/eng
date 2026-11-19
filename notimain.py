@@ -893,19 +893,26 @@ def build_word_search_grid(vocab_items, seed_str="cec"):
                 gw = gw[:grid_n]
                 wlen = len(gw)
 
-            # 2 hướng: Hàng ngang (0, 1) và Cột dọc (1, 0)
-            dirs = [(0, 1), (1, 0)]
-            if idx % 2 == 1:
-                dirs = [(1, 0), (0, 1)]
+            # 4 hướng chuẩn: Hàng ngang (0, 1), Cột dọc (1, 0), Chéo xuống (1, 1), Chéo lên (-1, 1)
+            if idx % 3 == 0:
+                dirs = [(0, 1), (1, 0), (1, 1), (-1, 1)]
+            elif idx % 3 == 1:
+                dirs = [(1, 0), (1, 1), (-1, 1), (0, 1)]
+            else:
+                dirs = [(1, 1), (-1, 1), (0, 1), (1, 0)]
 
             best_Write = []
             valid_Write = []
 
-            for dr, dc in dirs:
-                max_r = grid_n - (wlen if dr == 1 else 1)
-                max_c = grid_n - (wlen if dc == 1 else 1)
-                for r in range(max_r + 1):
-                    for c in range(max_c + 1):
+            for d_priority, (dr, dc) in enumerate(dirs):
+                for r in range(grid_n):
+                    end_r = r + dr * (wlen - 1)
+                    if end_r < 0 or end_r >= grid_n:
+                        continue
+                    for c in range(grid_n):
+                        end_c = c + dc * (wlen - 1)
+                        if end_c < 0 or end_c >= grid_n:
+                            continue
                         ok = True
                         overlaps = 0
                         for k_i in range(wlen):
@@ -916,9 +923,14 @@ def build_word_search_grid(vocab_items, seed_str="cec"):
                             if ch == gw[k_i]:
                                 overlaps += 1
                         if ok:
-                            if overlaps > 0:
+                            # Ưu tiên hướng được phân bổ cho từ này (d_priority == 0) và có giao cắt chữ cái
+                            if overlaps > 0 and d_priority == 0:
+                                best_Write.append((overlaps + 2, r, c, dr, dc))
+                            elif overlaps > 0:
                                 best_Write.append((overlaps, r, c, dr, dc))
-                            else:
+                            elif d_priority == 0:
+                                valid_Write.append((r, c, dr, dc))
+                            elif not valid_Write:
                                 valid_Write.append((r, c, dr, dc))
 
             if best_Write:
@@ -1296,7 +1308,7 @@ def generate_a4_worksheet(date_str, lesson_title, vocab_input, output_pdf_path, 
         </div>
       </div>
       <div class="guide-banner">
-        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>{len(ws_entries)} từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong> hoặc <strong>CỘT DỌC (&darr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào ô vuông ở danh sách cuối trang!
+        &#127919; Nhiệm vụ: Tìm và khoanh tròn <strong>{len(ws_entries)} từ vựng</strong> ẩn trong bảng theo <strong>HÀNG NGANG (&rarr;)</strong>, <strong>CỘT DỌC (&darr;)</strong> hoặc <strong>ĐƯỜNG CHÉO (&searr; &nearr;)</strong>, sau đó đánh dấu <strong>&check;</strong> vào danh sách cuối trang!
       </div>
     </div>
 
