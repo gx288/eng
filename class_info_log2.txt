@@ -2634,3 +2634,6 @@ Con giữ thái độ học tập tốt và nghiêm túc trong giờ học. Con 
 [2026-11-19 10:17:11] Saved processed2.json successfully
 [2026-11-19 10:17:11] Git repository detected
 [2026-11-19 10:17:11] Committing and pushing Report and vocab files to GitHub
+[2026-11-19 10:17:13] Pushed processed2.json, class_info_log2.txt, vocab_total.json, and Report/* successfully
+[2026-11-19 10:17:13] Closing WebDriver
+[2026-11-19 10:17:13] Script completed
